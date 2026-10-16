@@ -1,8 +1,73 @@
+/* Variables CSS: Modo Oscuro con Header Carbón/Técnico original */
+:root {
+  --bg-color: #030408;
+  --bg-image: 
+    radial-gradient(circle at 75% 15%, rgba(89, 75, 160, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 25% 65%, rgba(0, 180, 216, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.20) 0%, transparent 50%);
+  --text-main: #ffffff;
+  --text-title: #94a3b8;
+  --text-muted: #64748b;
+  --text-sub: #cbd5e1;
+  
+  /* Header Oscuro Original (Carbón Técnico) */
+  --header-bg: #121422;
+  --header-border: rgba(255, 255, 255, 0.1);
+  --header-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  --header-text: #94a3b8;
+
+  --card-bg: rgba(18, 21, 38, 0.7);
+  --card-glass-glow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  
+  --card-border-green: rgba(5, 150, 105, 0.6);
+  --card-bg-green: linear-gradient(180deg, rgba(5, 150, 105, 0.14) 0%, rgba(12, 14, 26, 0.85) 100%);
+  
+  --card-border-red: rgba(194, 65, 12, 0.6);
+  --card-bg-red: linear-gradient(180deg, rgba(194, 65, 12, 0.14) 0%, rgba(12, 14, 26, 0.85) 100%);
+
+  --sponsor-bg: rgba(18, 21, 38, 0.5);
+  --sponsor-border: rgba(255, 255, 255, 0.15);
+}
+
+/* Tema Claro (Light Mode): Header Azul Marino / Slate Profundo Institucional */
+[data-theme="light"] {
+  --bg-color: #f1f5f9;
+  --bg-image: 
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(220, 38, 38, 0.06) 0%, transparent 40%),
+    linear-gradient(135deg, #e2e8f0 0%, #f8fafc 50%, #e2e8f0 100%);
+  --text-main: #0f172a;
+  --text-title: #475569;
+  --text-muted: #64748b;
+  --text-sub: #334155;
+  
+  /* Header Azul Marino / Slate Moderno (Institucional) */
+  --header-bg: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  --header-border: rgba(56, 189, 248, 0.3);
+  --header-shadow: 0 10px 30px rgba(15, 23, 42, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --header-text: #94a3b8;
+
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --card-glass-glow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+  --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  
+  --card-border-green: rgba(5, 150, 105, 0.4);
+  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(255, 255, 255, 0.9) 60%);
+  
+  --card-border-red: rgba(220, 38, 38, 0.4);
+  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.12) 0%, rgba(255, 255, 255, 0.9) 60%);
+
+  --sponsor-bg: rgba(255, 255, 255, 0.7);
+  --sponsor-border: rgba(203, 213, 225, 0.8);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 html, body {
@@ -10,15 +75,11 @@ html, body {
   width: 100%;
 }
 
-/* Fondo Mesh Gradient Aurora */
 body {
-  background-color: #030408;
-  background-image: 
-    radial-gradient(circle at 75% 15%, rgba(89, 75, 160, 0.45) 0%, transparent 50%),
-    radial-gradient(circle at 25% 65%, rgba(0, 180, 216, 0.25) 0%, transparent 55%),
-    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.20) 0%, transparent 50%);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
   background-attachment: fixed;
-  color: #ffffff;
+  color: var(--text-main);
   padding: 0 20px 20px 20px;
   min-height: 100vh;
   display: flex;
@@ -26,36 +87,66 @@ body {
   justify-content: space-between;
 }
 
-/* Cabecera estilo Glassmorphism */
+/* Cabecera */
 header {
   text-align: center;
   margin-bottom: 24px;
   margin-top: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(12, 14, 20, 0.85) 100%);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 18px 20px;
-  border-radius: 0 0 10px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 16px 20px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid var(--header-border);
   border-top: none;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: var(--header-shadow);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  position: relative;
+}
+
+.header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .header-logo {
-  max-width: 320px;
+  max-width: 300px;
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--sponsor-bg);
+  border: 1px solid var(--header-border);
+  color: var(--text-main);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-50%) scale(1.08);
 }
 
 header p {
-  color: #94a3b8;
+  color: var(--header-text);
   font-size: 0.9rem;
   margin-top: 6px;
   font-weight: 600;
@@ -73,26 +164,21 @@ header p {
 }
 
 @media (max-width: 1300px) and (min-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .dashboard-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 767px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+  .dashboard-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
-/* Tarjetas KPI */
+/* Tarjetas KPI con Reflejo de Vidrio */
 .kpi-card {
-  background: rgba(18, 21, 38, 0.7);
+  background: var(--card-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-radius: 8px;
   padding: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--card-shadow), var(--card-glass-glow);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -100,49 +186,35 @@ header p {
   min-width: 0;
 }
 
-.kpi-content-wrapper {
+.kpi-content-wrapper, .kpi-inner-row {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
 
-.kpi-inner-row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-/* Variantes de Color */
 .card-green { 
-  border: 1px solid rgba(5, 150, 105, 0.6); 
-  background: linear-gradient(180deg, rgba(5, 150, 105, 0.12) 0%, rgba(12, 14, 26, 0.8) 100%);
+  border: 1px solid var(--card-border-green); 
+  background: var(--card-bg-green);
 }
 
 .card-red { 
-  border: 1px solid rgba(194, 65, 12, 0.6); 
-  background: linear-gradient(180deg, rgba(194, 65, 12, 0.12) 0%, rgba(12, 14, 26, 0.8) 100%);
+  border: 1px solid var(--card-border-red); 
+  background: var(--card-bg-red);
 }
 
-.desktop-only-header {
-  display: block;
-  margin-bottom: 2px;
-}
-
-.mobile-only-header {
-  display: none;
-}
+.desktop-only-header { display: block; margin-bottom: 2px; }
+.mobile-only-header { display: none; }
 
 .kpi-title {
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--text-title);
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.8px;
 }
 
-/* Bloque Veredicto */
+/* Veredicto */
 .verdict-container {
   display: flex;
   flex-direction: column;
@@ -152,11 +224,7 @@ header p {
   text-align: center;
 }
 
-.verdict-icon {
-  width: 52px;
-  height: 52px;
-  margin-bottom: 6px;
-}
+.verdict-icon { width: 52px; height: 52px; margin-bottom: 6px; }
 
 .verdict-text {
   font-family: 'Orbitron', 'Chakra Petch', sans-serif;
@@ -166,27 +234,12 @@ header p {
   text-transform: uppercase;
 }
 
-/* Estado Verde (Mejoró) */
-.verdict-green .verdict-text {
-  color: #10b981;
-  text-shadow: 0 0 14px rgba(16, 185, 129, 0.6);
-}
-.verdict-green .verdict-icon path {
-  fill: #10b981;
-  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.7));
-}
+.verdict-green .verdict-text { color: #059669; }
+.verdict-green .verdict-icon path { fill: #059669; }
 
-/* Estado Rojo (Empeoró) */
-.verdict-red .verdict-text {
-  color: #ef4444;
-  text-shadow: 0 0 14px rgba(239, 68, 68, 0.6);
-}
-.verdict-red .verdict-icon path {
-  fill: #ef4444;
-  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7));
-}
+.verdict-red .verdict-text { color: #dc2626; }
+.verdict-red .verdict-icon path { fill: #dc2626; }
 
-/* Cifras y datos centrados */
 .kpi-main-stat {
   display: flex;
   align-items: baseline;
@@ -201,13 +254,13 @@ header p {
   font-weight: 800;
   line-height: 1;
   letter-spacing: -1px;
-  color: #ffffff;
+  color: var(--text-main);
 }
 
 .kpi-previous {
   text-align: center;
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   font-weight: 600;
   margin-top: 4px;
   margin-bottom: 12px;
@@ -215,105 +268,38 @@ header p {
 
 .kpi-previous span {
   font-family: 'JetBrains Mono', monospace;
-  color: #cbd5e1;
+  color: var(--text-sub);
   font-weight: 700;
 }
 
-.chart-container {
-  position: relative;
-  height: 85px;
-  width: 100%;
-}
+.chart-container { position: relative; height: 85px; width: 100%; }
 
-/* Ajuste Optimizado para Celular */
+/* Adaptación Celular */
 @media (max-width: 767px) {
   body { padding: 0 10px 10px 10px; }
-  
-  header {
-    padding: 14px;
-    margin-bottom: 14px;
-  }
-  .header-logo { max-width: 210px; }
+  header { padding: 12px; margin-bottom: 12px; }
+  .header-logo { max-width: 200px; }
+  .theme-toggle-btn { width: 34px; height: 34px; font-size: 1rem; }
   header p { font-size: 0.8rem; }
-  
   .kpi-card { padding: 12px; }
-
-  .desktop-only-header {
-    display: none;
-  }
-
-  .kpi-inner-row {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .kpi-left {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .kpi-right-column {
-    width: 110px;
-    flex-shrink: 0;
-    margin-left: 8px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mobile-only-header {
-    display: block;
-    text-align: center;
-    margin-bottom: 4px;
-  }
-
-  .mobile-only-header .kpi-title {
-    font-size: 0.65rem;
-  }
-
-  .verdict-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 8px;
-    padding: 2px 0;
-  }
-
-  .verdict-icon {
-    width: 26px;
-    height: 26px;
-    margin-bottom: 0;
-  }
-
-  .verdict-text {
-    font-size: 1rem;
-  }
-
-  .kpi-main-stat {
-    justify-content: flex-start;
-  }
-
-  .kpi-previous {
-    text-align: left;
-    margin-bottom: 0;
-    font-size: 0.75rem;
-  }
-
-  .kpi-value {
-    font-size: 1.6rem;
-  }
-
-  .chart-container {
-    width: 100%;
-    height: 55px;
-  }
-
+  .desktop-only-header { display: none; }
+  .kpi-inner-row { flex-direction: row; align-items: center; justify-content: space-between; }
+  .kpi-left { flex: 1; min-width: 0; }
+  .kpi-right-column { width: 110px; flex-shrink: 0; margin-left: 8px; display: flex; flex-direction: column; }
+  .mobile-only-header { display: block; text-align: center; margin-bottom: 4px; }
+  .mobile-only-header .kpi-title { font-size: 0.65rem; }
+  .verdict-container { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; padding: 2px 0; }
+  .verdict-icon { width: 26px; height: 26px; margin-bottom: 0; }
+  .verdict-text { font-size: 1rem; }
+  .kpi-main-stat { justify-content: flex-start; }
+  .kpi-previous { text-align: left; margin-bottom: 0; font-size: 0.75rem; }
+  .kpi-value { font-size: 1.6rem; }
+  .chart-container { width: 100%; height: 55px; }
   .sponsor-container { margin-top: 12px; gap: 8px; }
   .sponsor-box { padding: 8px; font-size: 0.7rem; }
   footer { margin-top: 12px; font-size: 0.7rem; }
 }
 
-/* Patrocinios con Glassmorphism */
 .sponsor-container {
   max-width: 1200px;
   margin: 20px auto 0 auto;
@@ -323,27 +309,25 @@ header p {
   gap: 16px;
 }
 
-@media (max-width: 767px) {
-  .sponsor-container { grid-template-columns: 1fr; }
-}
+@media (max-width: 767px) { .sponsor-container { grid-template-columns: 1fr; } }
 
 .sponsor-box {
-  background: rgba(18, 21, 38, 0.5);
-  backdrop-filter: blur(8px);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
+  background: var(--sponsor-bg);
+  border: 1px dashed var(--sponsor-border);
   border-radius: 6px;
   padding: 12px;
   text-align: center;
-  color: #64748b;
+  color: var(--text-muted);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  backdrop-filter: blur(8px);
 }
 
 footer {
   text-align: center;
   margin-top: 20px;
-  color: #475569;
+  color: var(--text-muted);
   font-size: 0.75rem;
 }

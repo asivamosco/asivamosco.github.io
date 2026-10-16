@@ -14,7 +14,13 @@
 
   <div>
     <header>
-      <img src="assets/images/logo_head.png" alt="Así Vamos" class="header-logo">
+      <div class="header-top-row">
+        <img src="assets/images/logo_head.png" alt="Así Vamos" class="header-logo">
+        <!-- Switch de Modo Claro / Oscuro -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
       <p>4 datos clave para saber cómo va el país</p>
     </header>
 
@@ -168,7 +174,6 @@
     <p>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
   </footer>
 
-  <!-- Carga de la lógica dinámica desde app.js -->
   <script src="app.js"></script>
 </body>
 </html>

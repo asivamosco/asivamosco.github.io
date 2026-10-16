@@ -1,7 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
+    initTheme();
     cargarDatosInflacion();
     cargarDatosDesempleo();
 });
+
+// Lógica de Persistencia y Switch de Tema
+function initTheme() {
+    const toggleBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        if (themeIcon) themeIcon.innerText = '☀️';
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        if (themeIcon) themeIcon.innerText = '🌙';
+    }
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                if (themeIcon) themeIcon.innerText = '🌙';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                if (themeIcon) themeIcon.innerText = '☀️';
+            }
+            // Recargar gráficas para actualizar color de grilla si es necesario
+            cargarDatosInflacion();
+            cargarDatosDesempleo();
+        });
+    }
+}
 
 function cargarDatosInflacion() {
     const cacheBuster = new Date().getTime();
@@ -10,16 +44,12 @@ function cargarDatosInflacion() {
         cache: 'no-store'
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`Error de red: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
         return response.json();
     })
-    .then(data => {
-        renderizarCommandCenterInflacion(data);
-    })
+    .then(data => renderizarCommandCenterInflacion(data))
     .catch(error => {
-        console.error("No se pudo cargar el archivo de inflación:", error);
+        console.error("Error al cargar inflación:", error);
         document.getElementById('kpiInflacion').innerText = "Error";
     });
 }
@@ -31,15 +61,10 @@ function renderizarCommandCenterInflacion(data) {
     const inflacionActual = parseFloat(ultimoRegistro.var_anual);
     const inflacionAnterior = parseFloat(penultimoRegistro.var_anual);
 
-    const inflacionActualStr = inflacionActual.toFixed(2);
-    const inflacionAnteriorStr = inflacionAnterior.toFixed(2);
-
-    document.getElementById('kpiInflacion').innerText = `${inflacionActualStr}%`;
+    document.getElementById('kpiInflacion').innerText = `${inflacionActual.toFixed(2)}%`;
     
     const elemAnterior = document.getElementById('kpiInflacionAnterior');
-    if (elemAnterior) {
-        elemAnterior.innerText = `${inflacionAnteriorStr}%`;
-    }
+    if (elemAnterior) elemAnterior.innerText = `${inflacionAnterior.toFixed(2)}%`;
 
     const cardElement = document.getElementById('cardInflacion');
     const verdictContainer = document.getElementById('verdictInflacion');
@@ -81,20 +106,14 @@ function renderizarCommandCenterInflacion(data) {
 function cargarDatosDesempleo() {
     const cacheBuster = new Date().getTime();
     
-    fetch(`desempleo_historico_dane.json?v=${cacheBuster}`, {
-        cache: 'no-store'
-    })
+    fetch(`desempleo_historico_dane.json?v=${cacheBuster}`, { cache: 'no-store' })
     .then(response => {
-        if (!response.ok) {
-            throw new Error(`Error de red: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
         return response.json();
     })
-    .then(data => {
-        renderizarCommandCenterDesempleo(data);
-    })
+    .then(data => renderizarCommandCenterDesempleo(data))
     .catch(error => {
-        console.error("No se pudo cargar el archivo de desempleo:", error);
+        console.error("Error al cargar desempleo:", error);
         document.getElementById('kpiDesempleo').innerText = "Error";
     });
 }
@@ -106,15 +125,10 @@ function renderizarCommandCenterDesempleo(data) {
     const desempleoActual = parseFloat(ultimoRegistro.tasa_desempleo);
     const desempleoAnterior = parseFloat(penultimoRegistro.tasa_desempleo);
 
-    const desempleoActualStr = desempleoActual.toFixed(1);
-    const desempleoAnteriorStr = desempleoAnterior.toFixed(1);
-
-    document.getElementById('kpiDesempleo').innerText = `${desempleoActualStr}%`;
+    document.getElementById('kpiDesempleo').innerText = `${desempleoActual.toFixed(1)}%`;
     
     const elemAnterior = document.getElementById('kpiDesempleoAnterior');
-    if (elemAnterior) {
-        elemAnterior.innerText = `${desempleoAnteriorStr}%`;
-    }
+    if (elemAnterior) elemAnterior.innerText = `${desempleoAnterior.toFixed(1)}%`;
 
     const cardElement = document.getElementById('cardDesempleo');
     const verdictContainer = document.getElementById('verdictDesempleo');
@@ -160,6 +174,9 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
         window[globalVarName].destroy();
     }
 
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const gridColor = isLight ? 'rgba(0, 0, 0, 0.08)' : 'rgba(200, 200, 200, 0.15)';
+
     window[globalVarName] = new Chart(ctx, {
         type: 'line',
         data: {
@@ -179,21 +196,11 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: {
-                padding: {
-                    left: 5,
-                    right: 10,
-                    top: 5,
-                    bottom: 0
-                }
-            },
+            layout: { padding: { left: 5, right: 10, top: 5, bottom: 0 } },
             plugins: {
                 legend: { display: false },
                 tooltip: {
                     callbacks: {
-                        title: function(context) {
-                            return context[0].label;
-                        },
                         label: function(context) {
                             return ` ${datasetLabel}: ${context.parsed.y.toFixed(2)}%`;
                         }
@@ -204,17 +211,11 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                 y: {
                     ticks: {
                         font: { size: 9 },
-                        callback: function(value) {
-                            return value.toFixed(1) + '%';
-                        }
+                        callback: function(value) { return value.toFixed(1) + '%'; }
                     },
-                    grid: { color: 'rgba(200, 200, 200, 0.15)' }
+                    grid: { color: gridColor }
                 },
-                x: { 
-                    display: false,
-                    grid: { display: false },
-                    offset: false
-                }
+                x: { display: false, grid: { display: false } }
             }
         }
     });
