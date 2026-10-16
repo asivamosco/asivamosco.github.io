@@ -19,7 +19,6 @@
   --card-glass-glow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   
-  /* Bordes y fondos más intensos para Modo Oscuro */
   --card-border-green: rgba(16, 185, 129, 0.9);
   --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.25) 0%, rgba(12, 14, 26, 0.9) 100%);
   
@@ -30,7 +29,7 @@
   --sponsor-border: rgba(255, 255, 255, 0.15);
 }
 
-/* MODO LIGHT: Colores Rojo y Verde con mucha más intensidad y presencia */
+/* MODO LIGHT: Header Gris Metálico/Pizarra Corporativo + Tarjetas Intensas */
 [data-theme="light"] {
   --bg-color: #f8f9fa;
   --bg-image: none;
@@ -40,16 +39,16 @@
   --text-muted: #64748b;
   --text-sub: #1e293b;
   
-  --header-bg: linear-gradient(110deg, #00a19c 0%, #113f48 45%, #1e293b 100%);
-  --header-border: rgba(255, 255, 255, 0.2);
+  /* Header actualizado a tonos Grises Corporativos sofisticados */
+  --header-bg: linear-gradient(110deg, #334155 0%, #1e293b 50%, #0f172a 100%);
+  --header-border: rgba(255, 255, 255, 0.15);
   --header-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
-  --header-text: #ccfbf1;
+  --header-text: #cbd5e1;
 
   --card-bg: #ffffff;
   --card-glass-glow: none;
   --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
   
-  /* Bordes más gruesos/visibles y fondos con tinte vibrante pero elegante */
   --card-border-green: #059669;
   --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, #ffffff 75%);
   
@@ -174,7 +173,7 @@ header p {
   .dashboard-grid { grid-template-columns: 1fr; gap: 12px; padding: 0 10px; }
 }
 
-/* Tarjetas KPI con Bordes más definidos */
+/* Tarjetas KPI */
 .kpi-card {
   background: var(--card-bg);
   border-radius: 8px;
