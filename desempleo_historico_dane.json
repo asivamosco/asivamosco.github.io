@@ -1,0 +1,1542 @@
+[
+    {
+        "ano": 2001,
+        "mes": "Ene",
+        "tasa_desempleo": 14.06
+    },
+    {
+        "ano": 2001,
+        "mes": "Feb",
+        "tasa_desempleo": 15.96
+    },
+    {
+        "ano": 2001,
+        "mes": "Mar",
+        "tasa_desempleo": 16.58
+    },
+    {
+        "ano": 2001,
+        "mes": "Abr",
+        "tasa_desempleo": 13.82
+    },
+    {
+        "ano": 2001,
+        "mes": "May",
+        "tasa_desempleo": 14.72
+    },
+    {
+        "ano": 2001,
+        "mes": "Jun",
+        "tasa_desempleo": 15.04
+    },
+    {
+        "ano": 2001,
+        "mes": "Jul",
+        "tasa_desempleo": 15.16
+    },
+    {
+        "ano": 2001,
+        "mes": "Ago",
+        "tasa_desempleo": 14.84
+    },
+    {
+        "ano": 2001,
+        "mes": "Sep",
+        "tasa_desempleo": 14.78
+    },
+    {
+        "ano": 2001,
+        "mes": "Oct",
+        "tasa_desempleo": 15.18
+    },
+    {
+        "ano": 2001,
+        "mes": "Nov",
+        "tasa_desempleo": 14.81
+    },
+    {
+        "ano": 2001,
+        "mes": "Dic",
+        "tasa_desempleo": 14.73
+    },
+    {
+        "ano": 2002,
+        "mes": "Ene",
+        "tasa_desempleo": 15.18
+    },
+    {
+        "ano": 2002,
+        "mes": "Feb",
+        "tasa_desempleo": 14.77
+    },
+    {
+        "ano": 2002,
+        "mes": "Mar",
+        "tasa_desempleo": 15.81
+    },
+    {
+        "ano": 2002,
+        "mes": "Abr",
+        "tasa_desempleo": 15.38
+    },
+    {
+        "ano": 2002,
+        "mes": "May",
+        "tasa_desempleo": 15.63
+    },
+    {
+        "ano": 2002,
+        "mes": "Jun",
+        "tasa_desempleo": 15.67
+    },
+    {
+        "ano": 2002,
+        "mes": "Jul",
+        "tasa_desempleo": 15.39
+    },
+    {
+        "ano": 2002,
+        "mes": "Ago",
+        "tasa_desempleo": 15.86
+    },
+    {
+        "ano": 2002,
+        "mes": "Sep",
+        "tasa_desempleo": 15.14
+    },
+    {
+        "ano": 2002,
+        "mes": "Oct",
+        "tasa_desempleo": 15.73
+    },
+    {
+        "ano": 2002,
+        "mes": "Nov",
+        "tasa_desempleo": 16.43
+    },
+    {
+        "ano": 2002,
+        "mes": "Dic",
+        "tasa_desempleo": 16.68
+    },
+    {
+        "ano": 2003,
+        "mes": "Ene",
+        "tasa_desempleo": 13.74
+    },
+    {
+        "ano": 2003,
+        "mes": "Feb",
+        "tasa_desempleo": 14.42
+    },
+    {
+        "ano": 2003,
+        "mes": "Mar",
+        "tasa_desempleo": 13.68
+    },
+    {
+        "ano": 2003,
+        "mes": "Abr",
+        "tasa_desempleo": 14.44
+    },
+    {
+        "ano": 2003,
+        "mes": "May",
+        "tasa_desempleo": 13.2
+    },
+    {
+        "ano": 2003,
+        "mes": "Jun",
+        "tasa_desempleo": 13.98
+    },
+    {
+        "ano": 2003,
+        "mes": "Jul",
+        "tasa_desempleo": 14.5
+    },
+    {
+        "ano": 2003,
+        "mes": "Ago",
+        "tasa_desempleo": 14.28
+    },
+    {
+        "ano": 2003,
+        "mes": "Sep",
+        "tasa_desempleo": 14.82
+    },
+    {
+        "ano": 2003,
+        "mes": "Oct",
+        "tasa_desempleo": 14.41
+    },
+    {
+        "ano": 2003,
+        "mes": "Nov",
+        "tasa_desempleo": 13.78
+    },
+    {
+        "ano": 2003,
+        "mes": "Dic",
+        "tasa_desempleo": 13.61
+    },
+    {
+        "ano": 2004,
+        "mes": "Ene",
+        "tasa_desempleo": 14.67
+    },
+    {
+        "ano": 2004,
+        "mes": "Feb",
+        "tasa_desempleo": 14.35
+    },
+    {
+        "ano": 2004,
+        "mes": "Mar",
+        "tasa_desempleo": 14.04
+    },
+    {
+        "ano": 2004,
+        "mes": "Abr",
+        "tasa_desempleo": 14.29
+    },
+    {
+        "ano": 2004,
+        "mes": "May",
+        "tasa_desempleo": 14.09
+    },
+    {
+        "ano": 2004,
+        "mes": "Jun",
+        "tasa_desempleo": 14.1
+    },
+    {
+        "ano": 2004,
+        "mes": "Jul",
+        "tasa_desempleo": 12.88
+    },
+    {
+        "ano": 2004,
+        "mes": "Ago",
+        "tasa_desempleo": 13.01
+    },
+    {
+        "ano": 2004,
+        "mes": "Sep",
+        "tasa_desempleo": 12.68
+    },
+    {
+        "ano": 2004,
+        "mes": "Oct",
+        "tasa_desempleo": 13.33
+    },
+    {
+        "ano": 2004,
+        "mes": "Nov",
+        "tasa_desempleo": 13.04
+    },
+    {
+        "ano": 2004,
+        "mes": "Dic",
+        "tasa_desempleo": 12.97
+    },
+    {
+        "ano": 2005,
+        "mes": "Ene",
+        "tasa_desempleo": 11.19
+    },
+    {
+        "ano": 2005,
+        "mes": "Feb",
+        "tasa_desempleo": 12.8
+    },
+    {
+        "ano": 2005,
+        "mes": "Mar",
+        "tasa_desempleo": 13.3
+    },
+    {
+        "ano": 2005,
+        "mes": "Abr",
+        "tasa_desempleo": 11.78
+    },
+    {
+        "ano": 2005,
+        "mes": "May",
+        "tasa_desempleo": 12.57
+    },
+    {
+        "ano": 2005,
+        "mes": "Jun",
+        "tasa_desempleo": 11.61
+    },
+    {
+        "ano": 2005,
+        "mes": "Jul",
+        "tasa_desempleo": 11.94
+    },
+    {
+        "ano": 2005,
+        "mes": "Ago",
+        "tasa_desempleo": 11.66
+    },
+    {
+        "ano": 2005,
+        "mes": "Sep",
+        "tasa_desempleo": 11.57
+    },
+    {
+        "ano": 2005,
+        "mes": "Oct",
+        "tasa_desempleo": 10.9
+    },
+    {
+        "ano": 2005,
+        "mes": "Nov",
+        "tasa_desempleo": 11.39
+    },
+    {
+        "ano": 2005,
+        "mes": "Dic",
+        "tasa_desempleo": 11.11
+    },
+    {
+        "ano": 2006,
+        "mes": "Ene",
+        "tasa_desempleo": 11.25
+    },
+    {
+        "ano": 2006,
+        "mes": "Feb",
+        "tasa_desempleo": 11.85
+    },
+    {
+        "ano": 2006,
+        "mes": "Mar",
+        "tasa_desempleo": 11.49
+    },
+    {
+        "ano": 2006,
+        "mes": "Abr",
+        "tasa_desempleo": 11.9
+    },
+    {
+        "ano": 2006,
+        "mes": "May",
+        "tasa_desempleo": 11.85
+    },
+    {
+        "ano": 2006,
+        "mes": "Jun",
+        "tasa_desempleo": 10.6
+    },
+    {
+        "ano": 2006,
+        "mes": "Jul",
+        "tasa_desempleo": 12.04
+    },
+    {
+        "ano": 2006,
+        "mes": "Ago",
+        "tasa_desempleo": 13.05
+    },
+    {
+        "ano": 2006,
+        "mes": "Sep",
+        "tasa_desempleo": 13.11
+    },
+    {
+        "ano": 2006,
+        "mes": "Oct",
+        "tasa_desempleo": 12.63
+    },
+    {
+        "ano": 2006,
+        "mes": "Nov",
+        "tasa_desempleo": 12.23
+    },
+    {
+        "ano": 2006,
+        "mes": "Dic",
+        "tasa_desempleo": 12.82
+    },
+    {
+        "ano": 2007,
+        "mes": "Ene",
+        "tasa_desempleo": 11.99
+    },
+    {
+        "ano": 2007,
+        "mes": "Feb",
+        "tasa_desempleo": 11.7
+    },
+    {
+        "ano": 2007,
+        "mes": "Mar",
+        "tasa_desempleo": 12.05
+    },
+    {
+        "ano": 2007,
+        "mes": "Abr",
+        "tasa_desempleo": 10.72
+    },
+    {
+        "ano": 2007,
+        "mes": "May",
+        "tasa_desempleo": 11.7
+    },
+    {
+        "ano": 2007,
+        "mes": "Jun",
+        "tasa_desempleo": 11.4
+    },
+    {
+        "ano": 2007,
+        "mes": "Jul",
+        "tasa_desempleo": 11.0
+    },
+    {
+        "ano": 2007,
+        "mes": "Ago",
+        "tasa_desempleo": 10.96
+    },
+    {
+        "ano": 2007,
+        "mes": "Sep",
+        "tasa_desempleo": 11.11
+    },
+    {
+        "ano": 2007,
+        "mes": "Oct",
+        "tasa_desempleo": 11.48
+    },
+    {
+        "ano": 2007,
+        "mes": "Nov",
+        "tasa_desempleo": 10.57
+    },
+    {
+        "ano": 2007,
+        "mes": "Dic",
+        "tasa_desempleo": 10.74
+    },
+    {
+        "ano": 2008,
+        "mes": "Ene",
+        "tasa_desempleo": 11.1
+    },
+    {
+        "ano": 2008,
+        "mes": "Feb",
+        "tasa_desempleo": 11.12
+    },
+    {
+        "ano": 2008,
+        "mes": "Mar",
+        "tasa_desempleo": 11.3
+    },
+    {
+        "ano": 2008,
+        "mes": "Abr",
+        "tasa_desempleo": 10.98
+    },
+    {
+        "ano": 2008,
+        "mes": "May",
+        "tasa_desempleo": 10.79
+    },
+    {
+        "ano": 2008,
+        "mes": "Jun",
+        "tasa_desempleo": 11.62
+    },
+    {
+        "ano": 2008,
+        "mes": "Jul",
+        "tasa_desempleo": 11.67
+    },
+    {
+        "ano": 2008,
+        "mes": "Ago",
+        "tasa_desempleo": 11.61
+    },
+    {
+        "ano": 2008,
+        "mes": "Sep",
+        "tasa_desempleo": 11.35
+    },
+    {
+        "ano": 2008,
+        "mes": "Oct",
+        "tasa_desempleo": 11.44
+    },
+    {
+        "ano": 2008,
+        "mes": "Nov",
+        "tasa_desempleo": 12.09
+    },
+    {
+        "ano": 2008,
+        "mes": "Dic",
+        "tasa_desempleo": 11.6
+    },
+    {
+        "ano": 2009,
+        "mes": "Ene",
+        "tasa_desempleo": 12.01
+    },
+    {
+        "ano": 2009,
+        "mes": "Feb",
+        "tasa_desempleo": 11.58
+    },
+    {
+        "ano": 2009,
+        "mes": "Mar",
+        "tasa_desempleo": 12.14
+    },
+    {
+        "ano": 2009,
+        "mes": "Abr",
+        "tasa_desempleo": 11.94
+    },
+    {
+        "ano": 2009,
+        "mes": "May",
+        "tasa_desempleo": 11.71
+    },
+    {
+        "ano": 2009,
+        "mes": "Jun",
+        "tasa_desempleo": 11.77
+    },
+    {
+        "ano": 2009,
+        "mes": "Jul",
+        "tasa_desempleo": 12.15
+    },
+    {
+        "ano": 2009,
+        "mes": "Ago",
+        "tasa_desempleo": 12.22
+    },
+    {
+        "ano": 2009,
+        "mes": "Sep",
+        "tasa_desempleo": 12.92
+    },
+    {
+        "ano": 2009,
+        "mes": "Oct",
+        "tasa_desempleo": 13.19
+    },
+    {
+        "ano": 2009,
+        "mes": "Nov",
+        "tasa_desempleo": 12.57
+    },
+    {
+        "ano": 2009,
+        "mes": "Dic",
+        "tasa_desempleo": 12.14
+    },
+    {
+        "ano": 2010,
+        "mes": "Ene",
+        "tasa_desempleo": 12.36
+    },
+    {
+        "ano": 2010,
+        "mes": "Feb",
+        "tasa_desempleo": 11.44
+    },
+    {
+        "ano": 2010,
+        "mes": "Mar",
+        "tasa_desempleo": 11.98
+    },
+    {
+        "ano": 2010,
+        "mes": "Abr",
+        "tasa_desempleo": 12.26
+    },
+    {
+        "ano": 2010,
+        "mes": "May",
+        "tasa_desempleo": 12.22
+    },
+    {
+        "ano": 2010,
+        "mes": "Jun",
+        "tasa_desempleo": 12.24
+    },
+    {
+        "ano": 2010,
+        "mes": "Jul",
+        "tasa_desempleo": 12.17
+    },
+    {
+        "ano": 2010,
+        "mes": "Ago",
+        "tasa_desempleo": 11.77
+    },
+    {
+        "ano": 2010,
+        "mes": "Sep",
+        "tasa_desempleo": 11.43
+    },
+    {
+        "ano": 2010,
+        "mes": "Oct",
+        "tasa_desempleo": 11.83
+    },
+    {
+        "ano": 2010,
+        "mes": "Nov",
+        "tasa_desempleo": 12.09
+    },
+    {
+        "ano": 2010,
+        "mes": "Dic",
+        "tasa_desempleo": 12.04
+    },
+    {
+        "ano": 2011,
+        "mes": "Ene",
+        "tasa_desempleo": 11.57
+    },
+    {
+        "ano": 2011,
+        "mes": "Feb",
+        "tasa_desempleo": 11.74
+    },
+    {
+        "ano": 2011,
+        "mes": "Mar",
+        "tasa_desempleo": 11.03
+    },
+    {
+        "ano": 2011,
+        "mes": "Abr",
+        "tasa_desempleo": 11.11
+    },
+    {
+        "ano": 2011,
+        "mes": "May",
+        "tasa_desempleo": 11.54
+    },
+    {
+        "ano": 2011,
+        "mes": "Jun",
+        "tasa_desempleo": 11.33
+    },
+    {
+        "ano": 2011,
+        "mes": "Jul",
+        "tasa_desempleo": 11.1
+    },
+    {
+        "ano": 2011,
+        "mes": "Ago",
+        "tasa_desempleo": 10.79
+    },
+    {
+        "ano": 2011,
+        "mes": "Sep",
+        "tasa_desempleo": 10.53
+    },
+    {
+        "ano": 2011,
+        "mes": "Oct",
+        "tasa_desempleo": 10.67
+    },
+    {
+        "ano": 2011,
+        "mes": "Nov",
+        "tasa_desempleo": 10.54
+    },
+    {
+        "ano": 2011,
+        "mes": "Dic",
+        "tasa_desempleo": 10.72
+    },
+    {
+        "ano": 2012,
+        "mes": "Ene",
+        "tasa_desempleo": 10.64
+    },
+    {
+        "ano": 2012,
+        "mes": "Feb",
+        "tasa_desempleo": 10.65
+    },
+    {
+        "ano": 2012,
+        "mes": "Mar",
+        "tasa_desempleo": 10.54
+    },
+    {
+        "ano": 2012,
+        "mes": "Abr",
+        "tasa_desempleo": 10.93
+    },
+    {
+        "ano": 2012,
+        "mes": "May",
+        "tasa_desempleo": 10.95
+    },
+    {
+        "ano": 2012,
+        "mes": "Jun",
+        "tasa_desempleo": 10.54
+    },
+    {
+        "ano": 2012,
+        "mes": "Jul",
+        "tasa_desempleo": 10.63
+    },
+    {
+        "ano": 2012,
+        "mes": "Ago",
+        "tasa_desempleo": 10.29
+    },
+    {
+        "ano": 2012,
+        "mes": "Sep",
+        "tasa_desempleo": 10.75
+    },
+    {
+        "ano": 2012,
+        "mes": "Oct",
+        "tasa_desempleo": 10.48
+    },
+    {
+        "ano": 2012,
+        "mes": "Nov",
+        "tasa_desempleo": 10.59
+    },
+    {
+        "ano": 2012,
+        "mes": "Dic",
+        "tasa_desempleo": 10.52
+    },
+    {
+        "ano": 2013,
+        "mes": "Ene",
+        "tasa_desempleo": 10.24
+    },
+    {
+        "ano": 2013,
+        "mes": "Feb",
+        "tasa_desempleo": 10.54
+    },
+    {
+        "ano": 2013,
+        "mes": "Mar",
+        "tasa_desempleo": 10.37
+    },
+    {
+        "ano": 2013,
+        "mes": "Abr",
+        "tasa_desempleo": 10.37
+    },
+    {
+        "ano": 2013,
+        "mes": "May",
+        "tasa_desempleo": 9.82
+    },
+    {
+        "ano": 2013,
+        "mes": "Jun",
+        "tasa_desempleo": 9.86
+    },
+    {
+        "ano": 2013,
+        "mes": "Jul",
+        "tasa_desempleo": 9.76
+    },
+    {
+        "ano": 2013,
+        "mes": "Ago",
+        "tasa_desempleo": 9.92
+    },
+    {
+        "ano": 2013,
+        "mes": "Sep",
+        "tasa_desempleo": 9.73
+    },
+    {
+        "ano": 2013,
+        "mes": "Oct",
+        "tasa_desempleo": 9.3
+    },
+    {
+        "ano": 2013,
+        "mes": "Nov",
+        "tasa_desempleo": 9.81
+    },
+    {
+        "ano": 2013,
+        "mes": "Dic",
+        "tasa_desempleo": 9.12
+    },
+    {
+        "ano": 2014,
+        "mes": "Ene",
+        "tasa_desempleo": 9.5
+    },
+    {
+        "ano": 2014,
+        "mes": "Feb",
+        "tasa_desempleo": 9.7
+    },
+    {
+        "ano": 2014,
+        "mes": "Mar",
+        "tasa_desempleo": 9.73
+    },
+    {
+        "ano": 2014,
+        "mes": "Abr",
+        "tasa_desempleo": 9.29
+    },
+    {
+        "ano": 2014,
+        "mes": "May",
+        "tasa_desempleo": 9.06
+    },
+    {
+        "ano": 2014,
+        "mes": "Jun",
+        "tasa_desempleo": 9.79
+    },
+    {
+        "ano": 2014,
+        "mes": "Jul",
+        "tasa_desempleo": 9.33
+    },
+    {
+        "ano": 2014,
+        "mes": "Ago",
+        "tasa_desempleo": 9.34
+    },
+    {
+        "ano": 2014,
+        "mes": "Sep",
+        "tasa_desempleo": 9.07
+    },
+    {
+        "ano": 2014,
+        "mes": "Oct",
+        "tasa_desempleo": 9.18
+    },
+    {
+        "ano": 2014,
+        "mes": "Nov",
+        "tasa_desempleo": 9.27
+    },
+    {
+        "ano": 2014,
+        "mes": "Dic",
+        "tasa_desempleo": 9.53
+    },
+    {
+        "ano": 2015,
+        "mes": "Ene",
+        "tasa_desempleo": 9.07
+    },
+    {
+        "ano": 2015,
+        "mes": "Feb",
+        "tasa_desempleo": 8.94
+    },
+    {
+        "ano": 2015,
+        "mes": "Mar",
+        "tasa_desempleo": 8.93
+    },
+    {
+        "ano": 2015,
+        "mes": "Abr",
+        "tasa_desempleo": 9.78
+    },
+    {
+        "ano": 2015,
+        "mes": "May",
+        "tasa_desempleo": 9.19
+    },
+    {
+        "ano": 2015,
+        "mes": "Jun",
+        "tasa_desempleo": 8.88
+    },
+    {
+        "ano": 2015,
+        "mes": "Jul",
+        "tasa_desempleo": 8.89
+    },
+    {
+        "ano": 2015,
+        "mes": "Ago",
+        "tasa_desempleo": 9.47
+    },
+    {
+        "ano": 2015,
+        "mes": "Sep",
+        "tasa_desempleo": 9.51
+    },
+    {
+        "ano": 2015,
+        "mes": "Oct",
+        "tasa_desempleo": 9.47
+    },
+    {
+        "ano": 2015,
+        "mes": "Nov",
+        "tasa_desempleo": 8.81
+    },
+    {
+        "ano": 2015,
+        "mes": "Dic",
+        "tasa_desempleo": 9.33
+    },
+    {
+        "ano": 2016,
+        "mes": "Ene",
+        "tasa_desempleo": 9.89
+    },
+    {
+        "ano": 2016,
+        "mes": "Feb",
+        "tasa_desempleo": 9.11
+    },
+    {
+        "ano": 2016,
+        "mes": "Mar",
+        "tasa_desempleo": 10.22
+    },
+    {
+        "ano": 2016,
+        "mes": "Abr",
+        "tasa_desempleo": 9.45
+    },
+    {
+        "ano": 2016,
+        "mes": "May",
+        "tasa_desempleo": 9.17
+    },
+    {
+        "ano": 2016,
+        "mes": "Jun",
+        "tasa_desempleo": 9.64
+    },
+    {
+        "ano": 2016,
+        "mes": "Jul",
+        "tasa_desempleo": 9.88
+    },
+    {
+        "ano": 2016,
+        "mes": "Ago",
+        "tasa_desempleo": 9.41
+    },
+    {
+        "ano": 2016,
+        "mes": "Sep",
+        "tasa_desempleo": 9.26
+    },
+    {
+        "ano": 2016,
+        "mes": "Oct",
+        "tasa_desempleo": 9.62
+    },
+    {
+        "ano": 2016,
+        "mes": "Nov",
+        "tasa_desempleo": 9.11
+    },
+    {
+        "ano": 2016,
+        "mes": "Dic",
+        "tasa_desempleo": 9.7
+    },
+    {
+        "ano": 2017,
+        "mes": "Ene",
+        "tasa_desempleo": 9.69
+    },
+    {
+        "ano": 2017,
+        "mes": "Feb",
+        "tasa_desempleo": 9.6
+    },
+    {
+        "ano": 2017,
+        "mes": "Mar",
+        "tasa_desempleo": 9.64
+    },
+    {
+        "ano": 2017,
+        "mes": "Abr",
+        "tasa_desempleo": 9.27
+    },
+    {
+        "ano": 2017,
+        "mes": "May",
+        "tasa_desempleo": 9.69
+    },
+    {
+        "ano": 2017,
+        "mes": "Jun",
+        "tasa_desempleo": 9.39
+    },
+    {
+        "ano": 2017,
+        "mes": "Jul",
+        "tasa_desempleo": 9.62
+    },
+    {
+        "ano": 2017,
+        "mes": "Ago",
+        "tasa_desempleo": 9.72
+    },
+    {
+        "ano": 2017,
+        "mes": "Sep",
+        "tasa_desempleo": 9.95
+    },
+    {
+        "ano": 2017,
+        "mes": "Oct",
+        "tasa_desempleo": 9.64
+    },
+    {
+        "ano": 2017,
+        "mes": "Nov",
+        "tasa_desempleo": 10.26
+    },
+    {
+        "ano": 2017,
+        "mes": "Dic",
+        "tasa_desempleo": 9.55
+    },
+    {
+        "ano": 2018,
+        "mes": "Ene",
+        "tasa_desempleo": 9.86
+    },
+    {
+        "ano": 2018,
+        "mes": "Feb",
+        "tasa_desempleo": 9.91
+    },
+    {
+        "ano": 2018,
+        "mes": "Mar",
+        "tasa_desempleo": 9.47
+    },
+    {
+        "ano": 2018,
+        "mes": "Abr",
+        "tasa_desempleo": 9.82
+    },
+    {
+        "ano": 2018,
+        "mes": "May",
+        "tasa_desempleo": 9.75
+    },
+    {
+        "ano": 2018,
+        "mes": "Jun",
+        "tasa_desempleo": 9.66
+    },
+    {
+        "ano": 2018,
+        "mes": "Jul",
+        "tasa_desempleo": 9.75
+    },
+    {
+        "ano": 2018,
+        "mes": "Ago",
+        "tasa_desempleo": 9.65
+    },
+    {
+        "ano": 2018,
+        "mes": "Sep",
+        "tasa_desempleo": 10.09
+    },
+    {
+        "ano": 2018,
+        "mes": "Oct",
+        "tasa_desempleo": 10.28
+    },
+    {
+        "ano": 2018,
+        "mes": "Nov",
+        "tasa_desempleo": 10.44
+    },
+    {
+        "ano": 2018,
+        "mes": "Dic",
+        "tasa_desempleo": 10.83
+    },
+    {
+        "ano": 2019,
+        "mes": "Ene",
+        "tasa_desempleo": 10.75
+    },
+    {
+        "ano": 2019,
+        "mes": "Feb",
+        "tasa_desempleo": 10.8
+    },
+    {
+        "ano": 2019,
+        "mes": "Mar",
+        "tasa_desempleo": 10.84
+    },
+    {
+        "ano": 2019,
+        "mes": "Abr",
+        "tasa_desempleo": 10.72
+    },
+    {
+        "ano": 2019,
+        "mes": "May",
+        "tasa_desempleo": 10.74
+    },
+    {
+        "ano": 2019,
+        "mes": "Jun",
+        "tasa_desempleo": 9.99
+    },
+    {
+        "ano": 2019,
+        "mes": "Jul",
+        "tasa_desempleo": 11.05
+    },
+    {
+        "ano": 2019,
+        "mes": "Ago",
+        "tasa_desempleo": 11.52
+    },
+    {
+        "ano": 2019,
+        "mes": "Sep",
+        "tasa_desempleo": 11.34
+    },
+    {
+        "ano": 2019,
+        "mes": "Oct",
+        "tasa_desempleo": 11.06
+    },
+    {
+        "ano": 2019,
+        "mes": "Nov",
+        "tasa_desempleo": 11.03
+    },
+    {
+        "ano": 2019,
+        "mes": "Dic",
+        "tasa_desempleo": 10.76
+    },
+    {
+        "ano": 2020,
+        "mes": "Ene",
+        "tasa_desempleo": 11.03
+    },
+    {
+        "ano": 2020,
+        "mes": "Feb",
+        "tasa_desempleo": 11.4
+    },
+    {
+        "ano": 2020,
+        "mes": "Mar",
+        "tasa_desempleo": 12.58
+    },
+    {
+        "ano": 2020,
+        "mes": "Abr",
+        "tasa_desempleo": 20.23
+    },
+    {
+        "ano": 2020,
+        "mes": "May",
+        "tasa_desempleo": 21.46
+    },
+    {
+        "ano": 2020,
+        "mes": "Jun",
+        "tasa_desempleo": 20.5
+    },
+    {
+        "ano": 2020,
+        "mes": "Jul",
+        "tasa_desempleo": 20.59
+    },
+    {
+        "ano": 2020,
+        "mes": "Ago",
+        "tasa_desempleo": 17.85
+    },
+    {
+        "ano": 2020,
+        "mes": "Sep",
+        "tasa_desempleo": 17.09
+    },
+    {
+        "ano": 2020,
+        "mes": "Oct",
+        "tasa_desempleo": 16.56
+    },
+    {
+        "ano": 2020,
+        "mes": "Nov",
+        "tasa_desempleo": 15.7
+    },
+    {
+        "ano": 2020,
+        "mes": "Dic",
+        "tasa_desempleo": 15.02
+    },
+    {
+        "ano": 2021,
+        "mes": "Ene",
+        "tasa_desempleo": 14.62
+    },
+    {
+        "ano": 2021,
+        "mes": "Feb",
+        "tasa_desempleo": 14.11
+    },
+    {
+        "ano": 2021,
+        "mes": "Mar",
+        "tasa_desempleo": 14.12
+    },
+    {
+        "ano": 2021,
+        "mes": "Abr",
+        "tasa_desempleo": 15.29
+    },
+    {
+        "ano": 2021,
+        "mes": "May",
+        "tasa_desempleo": 15.04
+    },
+    {
+        "ano": 2021,
+        "mes": "Jun",
+        "tasa_desempleo": 14.78
+    },
+    {
+        "ano": 2021,
+        "mes": "Jul",
+        "tasa_desempleo": 13.09
+    },
+    {
+        "ano": 2021,
+        "mes": "Ago",
+        "tasa_desempleo": 13.39
+    },
+    {
+        "ano": 2021,
+        "mes": "Sep",
+        "tasa_desempleo": 12.84
+    },
+    {
+        "ano": 2021,
+        "mes": "Oct",
+        "tasa_desempleo": 13.16
+    },
+    {
+        "ano": 2021,
+        "mes": "Nov",
+        "tasa_desempleo": 13.19
+    },
+    {
+        "ano": 2021,
+        "mes": "Dic",
+        "tasa_desempleo": 12.0
+    },
+    {
+        "ano": 2022,
+        "mes": "Ene",
+        "tasa_desempleo": 12.16
+    },
+    {
+        "ano": 2022,
+        "mes": "Feb",
+        "tasa_desempleo": 11.75
+    },
+    {
+        "ano": 2022,
+        "mes": "Mar",
+        "tasa_desempleo": 11.58
+    },
+    {
+        "ano": 2022,
+        "mes": "Abr",
+        "tasa_desempleo": 10.95
+    },
+    {
+        "ano": 2022,
+        "mes": "May",
+        "tasa_desempleo": 10.56
+    },
+    {
+        "ano": 2022,
+        "mes": "Jun",
+        "tasa_desempleo": 11.34
+    },
+    {
+        "ano": 2022,
+        "mes": "Jul",
+        "tasa_desempleo": 11.08
+    },
+    {
+        "ano": 2022,
+        "mes": "Ago",
+        "tasa_desempleo": 11.07
+    },
+    {
+        "ano": 2022,
+        "mes": "Sep",
+        "tasa_desempleo": 11.57
+    },
+    {
+        "ano": 2022,
+        "mes": "Oct",
+        "tasa_desempleo": 10.6
+    },
+    {
+        "ano": 2022,
+        "mes": "Nov",
+        "tasa_desempleo": 10.88
+    },
+    {
+        "ano": 2022,
+        "mes": "Dic",
+        "tasa_desempleo": 10.98
+    },
+    {
+        "ano": 2023,
+        "mes": "Ene",
+        "tasa_desempleo": 11.24
+    },
+    {
+        "ano": 2023,
+        "mes": "Feb",
+        "tasa_desempleo": 10.31
+    },
+    {
+        "ano": 2023,
+        "mes": "Mar",
+        "tasa_desempleo": 9.52
+    },
+    {
+        "ano": 2023,
+        "mes": "Abr",
+        "tasa_desempleo": 10.46
+    },
+    {
+        "ano": 2023,
+        "mes": "May",
+        "tasa_desempleo": 10.46
+    },
+    {
+        "ano": 2023,
+        "mes": "Jun",
+        "tasa_desempleo": 9.44
+    },
+    {
+        "ano": 2023,
+        "mes": "Jul",
+        "tasa_desempleo": 9.74
+    },
+    {
+        "ano": 2023,
+        "mes": "Ago",
+        "tasa_desempleo": 9.68
+    },
+    {
+        "ano": 2023,
+        "mes": "Sep",
+        "tasa_desempleo": 10.0
+    },
+    {
+        "ano": 2023,
+        "mes": "Oct",
+        "tasa_desempleo": 10.05
+    },
+    {
+        "ano": 2023,
+        "mes": "Nov",
+        "tasa_desempleo": 10.41
+    },
+    {
+        "ano": 2023,
+        "mes": "Dic",
+        "tasa_desempleo": 10.6
+    },
+    {
+        "ano": 2024,
+        "mes": "Ene",
+        "tasa_desempleo": 10.28
+    },
+    {
+        "ano": 2024,
+        "mes": "Feb",
+        "tasa_desempleo": 10.6
+    },
+    {
+        "ano": 2024,
+        "mes": "Mar",
+        "tasa_desempleo": 10.72
+    },
+    {
+        "ano": 2024,
+        "mes": "Abr",
+        "tasa_desempleo": 10.34
+    },
+    {
+        "ano": 2024,
+        "mes": "May",
+        "tasa_desempleo": 10.34
+    },
+    {
+        "ano": 2024,
+        "mes": "Jun",
+        "tasa_desempleo": 10.48
+    },
+    {
+        "ano": 2024,
+        "mes": "Jul",
+        "tasa_desempleo": 10.16
+    },
+    {
+        "ano": 2024,
+        "mes": "Ago",
+        "tasa_desempleo": 10.07
+    },
+    {
+        "ano": 2024,
+        "mes": "Sep",
+        "tasa_desempleo": 9.87
+    },
+    {
+        "ano": 2024,
+        "mes": "Oct",
+        "tasa_desempleo": 9.92
+    },
+    {
+        "ano": 2024,
+        "mes": "Nov",
+        "tasa_desempleo": 9.54
+    },
+    {
+        "ano": 2024,
+        "mes": "Dic",
+        "tasa_desempleo": 9.62
+    },
+    {
+        "ano": 2025,
+        "mes": "Ene",
+        "tasa_desempleo": 9.37
+    },
+    {
+        "ano": 2025,
+        "mes": "Feb",
+        "tasa_desempleo": 9.39
+    },
+    {
+        "ano": 2025,
+        "mes": "Mar",
+        "tasa_desempleo": 9.12
+    },
+    {
+        "ano": 2025,
+        "mes": "Abr",
+        "tasa_desempleo": 8.53
+    },
+    {
+        "ano": 2025,
+        "mes": "May",
+        "tasa_desempleo": 9.12
+    },
+    {
+        "ano": 2025,
+        "mes": "Jun",
+        "tasa_desempleo": 8.81
+    },
+    {
+        "ano": 2025,
+        "mes": "Jul",
+        "tasa_desempleo": 9.1
+    },
+    {
+        "ano": 2025,
+        "mes": "Ago",
+        "tasa_desempleo": 8.95
+    },
+    {
+        "ano": 2025,
+        "mes": "Sep",
+        "tasa_desempleo": 8.82
+    },
+    {
+        "ano": 2025,
+        "mes": "Oct",
+        "tasa_desempleo": 8.89
+    },
+    {
+        "ano": 2025,
+        "mes": "Nov",
+        "tasa_desempleo": 8.26
+    },
+    {
+        "ano": 2025,
+        "mes": "Dic",
+        "tasa_desempleo": 8.38
+    },
+    {
+        "ano": 2026,
+        "mes": "Ene",
+        "tasa_desempleo": 8.7
+    },
+    {
+        "ano": 2026,
+        "mes": "Feb",
+        "tasa_desempleo": 8.35
+    },
+    {
+        "ano": 2026,
+        "mes": "Mar",
+        "tasa_desempleo": 8.32
+    },
+    {
+        "ano": 2026,
+        "mes": "Abr",
+        "tasa_desempleo": 8.49
+    },
+    {
+        "ano": 2026,
+        "mes": "May",
+        "tasa_desempleo": 8.07
+    },
+    {
+        "ano": 2026,
+        "mes": "Jun",
+        "tasa_desempleo": 8.27
+    },
+    {
+        "ano": 2026,
+        "mes": "Jul",
+        "tasa_desempleo": 8.33
+    },
+    {
+        "ano": 2026,
+        "mes": "Ago",
+        "tasa_desempleo": 9.7
+    }
+]
