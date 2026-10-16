@@ -26,13 +26,16 @@
 
     <main class="dashboard-grid">
       
-      <!-- 1. INFLACIÓN -->
+      <!-- 1. INFLACIÓN (Monedas) -->
       <div class="kpi-card card-green" id="cardInflacion">
         <div class="kpi-content-wrapper">
           <div class="kpi-inner-row">
             <div class="kpi-left">
               <div class="kpi-header desktop-only-header">
-                <span class="kpi-title">🛒 Inflación (IPC)</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                  <span class="kpi-title">Inflación (IPC)</span>
+                </div>
               </div>
               
               <div class="verdict-container verdict-green" id="verdictInflacion">
@@ -50,7 +53,10 @@
             
             <div class="kpi-right-column" style="flex: 1; min-width: 0; width: 100%;">
               <div class="kpi-header mobile-only-header">
-                <span class="kpi-title">🛒 Inflación (IPC)</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                  <span class="kpi-title">Inflación (IPC)</span>
+                </div>
               </div>
               <div class="chart-container" style="position: relative; height: 140px; width: 100%;">
                 <canvas id="chartInflacion"></canvas>
@@ -66,7 +72,10 @@
           <div class="kpi-inner-row">
             <div class="kpi-left">
               <div class="kpi-header desktop-only-header">
-                <span class="kpi-title">👷 Desempleo</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="kpi-title">Desempleo</span>
+                </div>
               </div>
 
               <div class="verdict-container verdict-green" id="verdictDesempleo">
@@ -84,7 +93,10 @@
 
             <div class="kpi-right-column" style="flex: 1; min-width: 0; width: 100%;">
               <div class="kpi-header mobile-only-header">
-                <span class="kpi-title">👷 Desempleo</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <span class="kpi-title">Desempleo</span>
+                </div>
               </div>
               <div class="chart-container" style="position: relative; height: 140px; width: 100%;">
                 <canvas id="chartDesempleo"></canvas>
@@ -94,13 +106,16 @@
         </div>
       </div>
 
-      <!-- 3. SEGURIDAD -->
+      <!-- 3. SEGURIDAD (Estrella) -->
       <div class="kpi-card card-red">
         <div class="kpi-content-wrapper">
           <div class="kpi-inner-row">
             <div class="kpi-left">
               <div class="kpi-header desktop-only-header">
-                <span class="kpi-title">👮 Seguridad</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="kpi-title">Seguridad</span>
+                </div>
               </div>
 
               <div class="verdict-container verdict-red">
@@ -118,7 +133,10 @@
 
             <div class="kpi-right-column" style="flex: 1; min-width: 0; width: 100%;">
               <div class="kpi-header mobile-only-header">
-                <span class="kpi-title">👮 Seguridad</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  <span class="kpi-title">Seguridad</span>
+                </div>
               </div>
               <div class="chart-container" style="position: relative; height: 140px; width: 100%;">
                 <canvas id="chartSeguridad"></canvas>
@@ -134,7 +152,10 @@
           <div class="kpi-inner-row">
             <div class="kpi-left">
               <div class="kpi-header desktop-only-header">
-                <span class="kpi-title">🏥 Salud</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                  <span class="kpi-title">Salud</span>
+                </div>
               </div>
 
               <div class="verdict-container verdict-green">
@@ -152,7 +173,10 @@
 
             <div class="kpi-right-column" style="flex: 1; min-width: 0; width: 100%;">
               <div class="kpi-header mobile-only-header">
-                <span class="kpi-title">🏥 Salud</span>
+                <div class="kpi-title-wrapper">
+                  <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                  <span class="kpi-title">Salud</span>
+                </div>
               </div>
               <div class="chart-container" style="position: relative; height: 140px; width: 100%;">
                 <canvas id="chartSalud"></canvas>
