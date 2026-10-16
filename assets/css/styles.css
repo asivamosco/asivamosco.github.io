@@ -1,4 +1,4 @@
-/* Variables CSS: Modo Oscuro con Header Carbón/Técnico original (SIN TOCAR) */
+/* Variables CSS: Modo Oscuro con Header Carbón/Técnico original */
 :root {
   --bg-color: #030408;
   --bg-image: 
@@ -10,7 +10,6 @@
   --text-muted: #64748b;
   --text-sub: #cbd5e1;
   
-  /* Header Oscuro Original (Carbón Técnico) */
   --header-bg: #121422;
   --header-border: rgba(255, 255, 255, 0.1);
   --header-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
@@ -20,23 +19,24 @@
   --card-glass-glow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   
-  --card-border-green: rgba(5, 150, 105, 0.6);
-  --card-bg-green: linear-gradient(180deg, rgba(5, 150, 105, 0.14) 0%, rgba(12, 14, 26, 0.85) 100%);
+  /* Bordes y fondos más intensos para Modo Oscuro */
+  --card-border-green: rgba(16, 185, 129, 0.9);
+  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.25) 0%, rgba(12, 14, 26, 0.9) 100%);
   
-  --card-border-red: rgba(194, 65, 12, 0.6);
-  --card-bg-red: linear-gradient(180deg, rgba(194, 65, 12, 0.14) 0%, rgba(12, 14, 26, 0.85) 100%);
+  --card-border-red: rgba(239, 68, 68, 0.9);
+  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.25) 0%, rgba(12, 14, 26, 0.9) 100%);
 
   --sponsor-bg: rgba(18, 21, 38, 0.5);
   --sponsor-border: rgba(255, 255, 255, 0.15);
 }
 
-/* MODO LIGHT: Fondo Hueso/Blanco + Header Full-Width con Transición Verde a Gris */
+/* MODO LIGHT: Colores Rojo y Verde con mucha más intensidad y presencia */
 [data-theme="light"] {
   --bg-color: #f8f9fa;
   --bg-image: none;
   
   --text-main: #0f172a;
-  --text-title: #475569;
+  --text-title: #334155;
   --text-muted: #64748b;
   --text-sub: #1e293b;
   
@@ -47,16 +47,17 @@
 
   --card-bg: #ffffff;
   --card-glass-glow: none;
-  --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04);
   
+  /* Bordes más gruesos/visibles y fondos con tinte vibrante pero elegante */
   --card-border-green: #059669;
-  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, #ffffff 70%);
+  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, #ffffff 75%);
   
   --card-border-red: #dc2626;
-  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.06) 0%, #ffffff 70%);
+  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.15) 0%, #ffffff 75%);
 
   --sponsor-bg: #ffffff;
-  --sponsor-border: #e2e8f0;
+  --sponsor-border: #cbd5e1;
 }
 
 * {
@@ -173,7 +174,7 @@ header p {
   .dashboard-grid { grid-template-columns: 1fr; gap: 12px; padding: 0 10px; }
 }
 
-/* Tarjetas KPI */
+/* Tarjetas KPI con Bordes más definidos */
 .kpi-card {
   background: var(--card-bg);
   border-radius: 8px;
@@ -184,6 +185,8 @@ header p {
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
+  border-width: 1.5px;
+  border-style: solid;
 }
 
 .kpi-content-wrapper, .kpi-inner-row {
@@ -194,19 +197,19 @@ header p {
 }
 
 .card-green { 
-  border: 1px solid var(--card-border-green); 
+  border-color: var(--card-border-green); 
   background: var(--card-bg-green);
 }
 
 .card-red { 
-  border: 1px solid var(--card-border-red); 
+  border-color: var(--card-border-red); 
   background: var(--card-bg-red);
 }
 
 .desktop-only-header { display: block; margin-bottom: 2px; }
 .mobile-only-header { display: none; }
 
-/* Títulos y Tipografía de Élite Optimizada */
+/* Títulos y Tipografía de Élite */
 .kpi-title-wrapper {
   display: flex;
   align-items: center;
@@ -228,10 +231,10 @@ header p {
   height: 18px;
   stroke: var(--text-title);
   fill: none;
-  stroke-width: 2;
+  stroke-width: 2.2;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 /* Veredicto */
