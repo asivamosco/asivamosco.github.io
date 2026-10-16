@@ -1,4 +1,4 @@
-/* Variables CSS: Modo Oscuro con Header Carbón/Técnico original */
+/* Variables CSS: Modo Oscuro con Header Carbón/Técnico original (SIN TOCAR) */
 :root {
   --bg-color: #030408;
   --bg-image: 
@@ -30,36 +30,35 @@
   --sponsor-border: rgba(255, 255, 255, 0.15);
 }
 
-/* Tema Claro (Light Mode): Header Azul Marino / Slate Profundo Institucional */
+/* MODO LIGHT: Fondo Blanco/Hueso + Header con degradado sutil de Carbón a Verde Oliva/Tierra */
 [data-theme="light"] {
-  --bg-color: #f1f5f9;
-  --bg-image: 
-    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(220, 38, 38, 0.06) 0%, transparent 40%),
-    linear-gradient(135deg, #e2e8f0 0%, #f8fafc 50%, #e2e8f0 100%);
+  --bg-color: #f8f9fa; /* Blanco Hueso / Off-White corporativo limpio */
+  --bg-image: none;
+  
   --text-main: #0f172a;
   --text-title: #475569;
   --text-muted: #64748b;
-  --text-sub: #334155;
+  --text-sub: #1e293b;
   
-  /* Header Azul Marino / Slate Moderno (Institucional) */
-  --header-bg: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-  --header-border: rgba(56, 189, 248, 0.3);
-  --header-shadow: 0 10px 30px rgba(15, 23, 42, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  /* Header: Degradado horizontal de Gris Carbón Técnico a Verde Oliva/Tierra sobrio */
+  --header-bg: linear-gradient(110deg, #242c38 0%, #343d39 50%, #4a584e 100%);
+  --header-border: rgba(255, 255, 255, 0.18);
+  --header-shadow: 0 10px 25px rgba(15, 23, 42, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   --header-text: #94a3b8;
 
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-glass-glow: inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-  --card-shadow: 0 12px 30px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  /* Tarjetas Blancas Definidas con Sombra Limpia */
+  --card-bg: #ffffff;
+  --card-glass-glow: none;
+  --card-shadow: 0 10px 25px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
   
-  --card-border-green: rgba(5, 150, 105, 0.4);
-  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, rgba(255, 255, 255, 0.9) 60%);
+  --card-border-green: #059669;
+  --card-bg-green: linear-gradient(180deg, rgba(16, 185, 129, 0.06) 0%, #ffffff 70%);
   
-  --card-border-red: rgba(220, 38, 38, 0.4);
-  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.12) 0%, rgba(255, 255, 255, 0.9) 60%);
+  --card-border-red: #dc2626;
+  --card-bg-red: linear-gradient(180deg, rgba(239, 68, 68, 0.06) 0%, #ffffff 70%);
 
-  --sponsor-bg: rgba(255, 255, 255, 0.7);
-  --sponsor-border: rgba(203, 213, 225, 0.8);
+  --sponsor-bg: #ffffff;
+  --sponsor-border: #e2e8f0;
 }
 
 * {
@@ -67,7 +66,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 html, body {
@@ -93,9 +92,9 @@ header {
   margin-bottom: 24px;
   margin-top: 0;
   background: var(--header-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 16px 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 20px;
   border-radius: 0 0 12px 12px;
   border: 1px solid var(--header-border);
   border-top: none;
@@ -121,6 +120,10 @@ header {
   display: block;
 }
 
+[data-theme="light"] .header-logo {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
 .theme-toggle-btn {
   position: absolute;
   right: 0;
@@ -130,27 +133,26 @@ header {
   border: 1px solid var(--header-border);
   color: var(--text-main);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  backdrop-filter: blur(8px);
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .theme-toggle-btn:hover {
-  transform: translateY(-50%) scale(1.08);
+  transform: translateY(-50%) scale(1.05);
 }
 
 header p {
   color: var(--header-text);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   margin-top: 6px;
   font-weight: 600;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.5px;
 }
 
 /* Grid Principal */
@@ -171,14 +173,12 @@ header p {
   .dashboard-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
-/* Tarjetas KPI con Reflejo de Vidrio */
+/* Tarjetas KPI */
 .kpi-card {
   background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-radius: 8px;
   padding: 18px;
-  box-shadow: var(--card-shadow), var(--card-glass-glow);
+  box-shadow: var(--card-shadow);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -322,7 +322,6 @@ header p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  backdrop-filter: blur(8px);
 }
 
 footer {
