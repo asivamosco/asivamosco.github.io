@@ -195,9 +195,16 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
 
+                    const isMobile = window.innerWidth <= 900;
+
                     chart.data.datasets.forEach(function(dataset, i) {
                         const meta = chart.getDatasetMeta(i);
                         meta.data.forEach(function(point, index) {
+                            // En móvil, se omiten los valores intermedios manteniendo los puntos y la línea
+                            if (isMobile && index !== 0 && index !== meta.data.length - 1) {
+                                return;
+                            }
+
                             const rawValue = dataset.data[index];
                             const dataValue = Number(rawValue).toFixed(1);
                             ctx.fillText(dataValue, point.x, point.y - 7);
