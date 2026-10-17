@@ -12,19 +12,20 @@
 </head>
 <body>
 
-  <div>
-    <header>
+  <!-- Mapa vectorial y red de datos telemetría de fondo -->
+  <div class="bg-telemetry-map"></div>
+  <div class="bg-stat-watermark wm-left">DATA // 2026</div>
+  <div class="bg-stat-watermark wm-right">TELEMETRY</div>
+
+  <div class="page-wrapper">
+    <header class="dashboard-header">
       <div class="header-top-row">
         <img src="assets/images/logo_head.png" alt="Así Vamos" class="header-logo">
-        <!-- Switch de Modo Claro / Oscuro -->
-        <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema">
-          <span id="themeIcon">🌙</span>
-        </button>
       </div>
-      <p>4 datos clave para saber cómo va el país</p>
+      <p class="dashboard-subtitle">Tablero de Control Indicadores Sociales y Económicos</p>
     </header>
 
-    <main class="dashboard-grid">
+    <main class="dashboard-grid test-grid">
       
       <!-- 1. INFLACIÓN (IPC) -->
       <div class="kpi-card card-green" id="cardInflacion">
@@ -35,21 +36,22 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
               <span class="kpi-title">Inflación (IPC)</span>
             </div>
-            <!-- Pulgar dinámico -->
-            <svg class="kpi-status-thumb thumb-up" id="thumbInflacion" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+            <!-- Pulgar dinámico / Estado -->
+            <div id="verdictThumbInflacion"></div>
           </div>
 
-          <div class="kpi-inner-row">
+          <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
-                <span class="kpi-month-label" id="labelInflacion">Cargando</span>
+                <span class="kpi-month-label" id="labelMesInflacion">Octubre</span>
                 <div class="kpi-value" id="kpiInflacion">--%</div>
                 <div class="kpi-previous">
-                  <span class="kpi-prev-label">Anterior:</span>
+                  <span class="kpi-prev-label">SEP:</span>
                   <span class="kpi-prev-value" id="kpiInflacionAnterior">--%</span>
                 </div>
               </div>
             </div>
+            
             <div class="kpi-right-column">
               <div class="chart-container">
                 <canvas id="chartInflacion"></canvas>
@@ -68,21 +70,21 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               <span class="kpi-title">Desempleo</span>
             </div>
-            <!-- Pulgar dinámico -->
-            <svg class="kpi-status-thumb thumb-up" id="thumbDesempleo" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+            <div id="verdictThumbDesempleo"></div>
           </div>
 
-          <div class="kpi-inner-row">
+          <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
-                <span class="kpi-month-label" id="labelDesempleo">Cargando</span>
+                <span class="kpi-month-label" id="labelMesDesempleo">Octubre</span>
                 <div class="kpi-value" id="kpiDesempleo">--%</div>
                 <div class="kpi-previous">
-                  <span class="kpi-prev-label">Anterior:</span>
+                  <span class="kpi-prev-label">SEP:</span>
                   <span class="kpi-prev-value" id="kpiDesempleoAnterior">--%</span>
                 </div>
               </div>
             </div>
+
             <div class="kpi-right-column">
               <div class="chart-container">
                 <canvas id="chartDesempleo"></canvas>
@@ -104,17 +106,18 @@
             <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
           </div>
 
-          <div class="kpi-inner-row">
+          <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
                 <span class="kpi-month-label">Octubre</span>
                 <div class="kpi-value">1,240</div>
                 <div class="kpi-previous">
-                  <span class="kpi-prev-label">Anterior:</span>
+                  <span class="kpi-prev-label">SEP:</span>
                   <span class="kpi-prev-value">1,180</span>
                 </div>
               </div>
             </div>
+
             <div class="kpi-right-column">
               <div class="chart-container">
                 <canvas id="chartSeguridad"></canvas>
@@ -136,17 +139,18 @@
             <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
           </div>
 
-          <div class="kpi-inner-row">
+          <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
                 <span class="kpi-month-label">Octubre</span>
                 <div class="kpi-value">94.1%</div>
                 <div class="kpi-previous">
-                  <span class="kpi-prev-label">Anterior:</span>
+                  <span class="kpi-prev-label">SEP:</span>
                   <span class="kpi-prev-value">94.1%</span>
                 </div>
               </div>
             </div>
+
             <div class="kpi-right-column">
               <div class="chart-container">
                 <canvas id="chartSalud"></canvas>
@@ -168,6 +172,6 @@
     <p>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
   </footer>
 
-  <script src="assets/js/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

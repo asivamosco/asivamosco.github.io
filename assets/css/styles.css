@@ -1,34 +1,3 @@
-:root {
-  --bg-color: #0d131d;
-  --bg-image: 
-    radial-gradient(circle at 50% 12%, #1f2c42 0%, #0a0e17 80%),
-    linear-gradient(rgba(0, 210, 190, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 210, 190, 0.05) 1px, transparent 1px);
-  --text-main: #ffffff;
-  
-  --header-bg: #121422;
-  --header-border: rgba(255, 255, 255, 0.1);
-  --header-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
-  --header-text: #94a3b8;
-
-  --sponsor-bg: rgba(18, 20, 34, 0.6);
-  --sponsor-border: rgba(255, 255, 255, 0.2);
-}
-
-[data-theme="light"] {
-  --bg-color: #f1f5f9;
-  --bg-image: none;
-  --text-main: #0f172a;
-  
-  --header-bg: linear-gradient(110deg, #334155 0%, #1e293b 50%, #0f172a 100%);
-  --header-border: rgba(255, 255, 255, 0.15);
-  --header-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
-  --header-text: #cbd5e1;
-
-  --sponsor-bg: #ffffff;
-  --sponsor-border: #cbd5e1;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,105 +5,115 @@
   font-family: 'Inter', sans-serif;
 }
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
+/* =========================================================
+   FONDO TELEMETRÍA CON RED DIGITAL Y MARCA DE AGUA ESTADÍSTICA
+   ========================================================= */
 body {
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
+  background-color: #0d131d;
+  background-image: 
+    radial-gradient(circle at 50% 12%, #1f2c42 0%, #0a0e17 80%),
+    linear-gradient(rgba(0, 210, 190, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 210, 190, 0.05) 1px, transparent 1px);
   background-size: 100% 100%, 30px 30px, 30px 30px;
-  color: var(--text-main);
+  color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 0 20px 0;
+  align-items: center;
+  padding: 20px 15px 15px 15px;
+  position: relative;
+  overflow-x: hidden;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 24px;
-  background: var(--header-bg);
-  backdrop-filter: blur(12px);
-  padding: 20px;
+/* Fondo vectorial: Mapa & red de datos */
+.bg-telemetry-map {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-bottom: 1px solid var(--header-border);
-  box-shadow: var(--header-shadow);
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' fill='none' stroke='%2300d2be' stroke-width='1.2' stroke-dasharray='3 3'%3E%3Cpath d='M150,120 Q180,80 220,100 T300,90 T350,150 T280,220 T200,200 Z' opacity='0.5'/%3E%3Cpath d='M450,100 Q500,60 550,80 T650,110 T720,180 T680,260 T580,240 Z' opacity='0.5'/%3E%3Cpath d='M750,150 Q820,130 880,180 T920,250 T850,320 T780,280 Z' opacity='0.5'/%3E%3Ccircle cx='200' cy='120' r='4' fill='%2300d2be'/%3E%3Ccircle cx='300' cy='90' r='4' fill='%2300d2be'/%3E%3Ccircle cx='500' cy='150' r='4' fill='%23e61c34'/%3E%3Ccircle cx='650' cy='110' r='4' fill='%2300d2be'/%3E%3Ccircle cx='850' cy='200' r='4' fill='%23e61c34'/%3E%3Cline x1='200' y1='120' x2='300' y2='90' stroke='%2300d2be' stroke-dasharray='none' opacity='0.8'/%3E%3Cline x1='500' y1='150' x2='650' y2='110' stroke='%23e61c34' stroke-dasharray='none' opacity='0.8'/%3E%3Cline x1='650' y1='110' x2='850' y2='200' stroke='%2300d2be' stroke-dasharray='none' opacity='0.8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-stat-watermark {
+  position: absolute;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.02);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+.wm-left { top: 10%; left: -2%; transform: rotate(-8deg); }
+.wm-right { bottom: 15%; right: -2%; transform: rotate(6deg); }
+
+.page-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabecera */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .header-top-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
+  margin-bottom: 4px;
 }
 
 .header-logo {
-  max-width: 280px;
+  max-width: 240px;
   width: 100%;
   height: auto;
   display: block;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
-.theme-toggle-btn {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(18, 21, 38, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.1rem;
+.dashboard-subtitle {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(0, 210, 190, 0.9);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-header p {
-  color: var(--header-text);
-  font-size: 0.88rem;
-  margin-top: 6px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* Dashboard Grid 4 Columnas */
+/* Grid Principal: 4 tarjetas en horizontal (escritorio) */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 1300px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-  }
-}
-
-/* Tarjeta 3D Automotriz */
+/* =========================================================
+   DISEÑO BASE DE TARJETA 3D AUTOMOTRIZ (ESTILO SORARE)
+   ========================================================= */
 .kpi-card {
   border-radius: 20px;
-  padding: 20px 18px 18px 18px;
+  padding: 36px 18px 28px 18px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -144,17 +123,24 @@ header p {
     0 25px 40px -10px rgba(0, 0, 0, 0.75), 
     0 0 0 1px rgba(255, 255, 255, 0.25) inset,
     0 2px 5px rgba(255, 255, 255, 0.1) inset;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .kpi-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 
+    0 35px 55px -12px rgba(0, 0, 0, 0.9), 
+    0 0 0 1px rgba(255, 255, 255, 0.45) inset,
+    0 4px 12px rgba(255, 255, 255, 0.25) inset;
 }
 
+/* Brillo superior tipo Cristal / Mica */
 .kpi-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 45%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%);
   pointer-events: none;
@@ -162,26 +148,34 @@ header p {
   z-index: 2;
 }
 
+/* Muesca / Solapa geométrica metálica inferior */
 .kpi-card::after {
   content: '';
   position: absolute;
-  bottom: 0; left: 50%;
+  bottom: 0;
+  left: 50%;
   transform: translateX(-50%);
-  width: 75%; height: 6px;
+  width: 75%;
+  height: 6px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 6px 6px 0 0;
   box-shadow: 0 -1px 3px rgba(255, 255, 255, 0.25);
   z-index: 2;
 }
 
+/* ROJO AUDI (Audi Sport Red) - Tendencia Negativa */
 .card-red {
   background: radial-gradient(circle at 50% 10%, #e61c34 0%, #9e0b20 55%, #3d020a 100%);
+  border-color: rgba(230, 28, 52, 0.8);
 }
 
+/* VERDE MERCEDES (AMG Emerald) - Tendencia Positiva */
 .card-green {
   background: radial-gradient(circle at 50% 10%, #00d2be 0%, #005a50 55%, #011f1c 100%);
+  border-color: rgba(0, 210, 190, 0.8);
 }
 
+/* Patrón geométrico interno sutil */
 .card-pattern {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -199,17 +193,18 @@ header p {
   z-index: 3;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 24px;
 }
 
+/* Título de la tarjeta */
 .kpi-title-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 6px;
   background: rgba(0, 0, 0, 0.38);
-  padding: 8px 12px;
-  border-radius: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -217,30 +212,34 @@ header p {
 .kpi-title-left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .kpi-title {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .kpi-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: #ffffff;
   fill: none;
   stroke-width: 2.2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
+/* Iconos de Pulgares */
 .kpi-status-thumb {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 .thumb-down {
@@ -255,23 +254,25 @@ header p {
   stroke-width: 2.2;
 }
 
-.kpi-inner-row {
+/* =========================================================
+   POR DEFECTO EN ESCRITORIO: VERTICAL Y CENTRADO
+   ========================================================= */
+.kpi-card-inner {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
 }
 
 .kpi-left {
-  flex: 1.1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .kpi-right-column {
-  width: 125px;
+  width: 100%;
   flex-shrink: 0;
 }
 
@@ -280,83 +281,159 @@ header p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2px;
+  padding-left: 0;
+  gap: 6px;
 }
 
 .kpi-month-label {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 1.2px;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 1.8px;
+  color: rgba(255, 255, 255, 0.95);
   text-transform: uppercase;
 }
 
 .kpi-value {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 2.5rem;
+  font-size: 3.4rem;
   font-weight: 800;
   line-height: 1.05;
   color: #ffffff;
-  letter-spacing: -1.2px;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.75);
+  letter-spacing: -1.5px;
 }
 
 .kpi-previous {
-  margin-top: 4px;
+  margin-top: 6px;
   display: flex;
   align-items: baseline;
-  gap: 5px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .kpi-prev-label {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 .kpi-prev-value {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: #ffffff;
 }
 
 .chart-container {
   position: relative;
-  height: 95px;
+  height: 150px;
   width: 100%;
 }
 
+/* =========================================================
+   MEDIA QUERY PARA TABLETS Y CELULARES (<= 900px)
+   - Cuadrícula de 2x2
+   - Estructura interna VERTICAL con tarjetas y gráficas más altas
+   ========================================================= */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  body {
+    padding: 12px 10px 10px 10px;
+  }
+
+  .kpi-card {
+    padding: 18px 12px 16px 12px; /* Tarjetas un poco más altas en móvil */
+  }
+
+  .kpi-content-wrapper {
+    gap: 14px;
+  }
+
+  .kpi-card-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .kpi-left, .kpi-right-column {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+  }
+
+  .kpi-value-container {
+    align-items: center;
+    text-align: center;
+  }
+
+  .kpi-month-label {
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+  }
+
+  .kpi-value {
+    font-size: 2.2rem;
+  }
+
+  .kpi-prev-label {
+    font-size: 0.68rem;
+  }
+
+  .kpi-prev-value {
+    font-size: 0.9rem;
+  }
+
+  .chart-container {
+    height: 105px; /* Gráfica con mayor altura vertical en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .header-logo {
+    max-width: 180px;
+  }
+  .dashboard-subtitle {
+    font-size: 0.65rem;
+  }
+}
+
+/* Patrocinadores y Footer */
 .sponsor-container {
-  max-width: 1400px;
-  margin: 25px auto 0 auto;
+  max-width: 1450px;
+  margin: 8px auto 0 auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  padding: 0 20px;
+  gap: 10px;
 }
 
-@media (max-width: 600px) { .sponsor-container { grid-template-columns: 1fr; } }
-
 .sponsor-box {
-  background: var(--sponsor-bg);
-  border: 1px dashed var(--sponsor-border);
-  border-radius: 8px;
-  padding: 10px;
+  background: rgba(18, 21, 38, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 6px;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
+  font-size: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 footer {
   text-align: center;
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.6rem;
 }
