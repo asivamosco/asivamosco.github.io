@@ -210,7 +210,7 @@ function renderizarCommandCenterDesempleo(data) {
 function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, globalVarName, datasetLabel) {
     const ctx = document.getElementById(canvasId).getContext('2d');
     const esMovil = window.innerWidth <= 600;
-    const tamFuente = esMovil ? 14 : 12;   // textos de la gráfica más grandes en celular
+    const tamFuente = esMovil ? 14 : (window.innerWidth <= 1280 ? 13 : 12);   // textos de la gráfica más grandes en celular
     
     if (window[globalVarName]) {
         window[globalVarName].destroy();

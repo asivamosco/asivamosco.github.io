@@ -623,3 +623,174 @@ footer {
   .kpi-value { font-size: 2.2rem; }
   .kpi-prev-value { font-size: 1rem; }
 }
+
+/* ====================================================== */
+/* TABLETS (vertical y horizontal)                         */
+/*  - Vertical   : 601px-1100px  -> cuadrícula 2 x 2        */
+/*  - Horizontal : 601px-1280px  -> 4 tarjetas en una fila  */
+/*                 (alto mínimo 600px, así no afecta a      */
+/*                 celulares girados)                       */
+/*  Todo cabe en una sola pantalla, sin scroll, y la        */
+/*  publicidad siempre se ve. Los textos escalan con el     */
+/*  ancho de CADA tarjeta (unidad cqw).                     */
+/* ====================================================== */
+
+/* ---- Estructura común a tablet vertical y horizontal ---- */
+@media (min-width: 601px) and (max-width: 1100px) and (orientation: portrait),
+       (min-width: 601px) and (max-width: 1280px) and (orientation: landscape) and (min-height: 600px) {
+
+  html { height: 100%; overflow: hidden; }
+
+  /* Pantalla fija: sin scroll de página */
+  body {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    padding: 14px 24px 10px 24px;
+    justify-content: flex-start;
+  }
+
+  .page-wrapper {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dashboard-header { margin-bottom: 12px; flex-shrink: 0; }
+  .dashboard-subtitle { font-size: 0.7rem; letter-spacing: 2px; }
+
+  .dashboard-grid {
+    display: grid;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 0;
+    min-height: 0;
+    flex: 0 1 auto;          /* el alto (flex-basis) se define según la orientación */
+  }
+
+  /* Cada tarjeta es un "contenedor": sus textos se miden con cqw (% del ancho de la tarjeta) */
+  .kpi-card {
+    container-type: inline-size;
+    min-height: 0;
+    height: auto;
+    padding: 14px 16px 18px 16px;
+    border-radius: 18px;
+  }
+
+  .kpi-content-wrapper {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .kpi-title-box { padding: 7px 10px; gap: 8px; }
+  .kpi-title-left { min-width: 0; }
+  .kpi-title {
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+  .kpi-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+  .kpi-card-inner {
+    flex: 1 1 auto;
+    min-height: 0;
+    justify-content: flex-start;
+    gap: 6px;
+    padding-top: 10px;
+  }
+
+  .kpi-left { flex: 0 0 auto; }
+
+  .kpi-value-container { gap: 6px; }
+  .kpi-status-line { margin-top: 6px; letter-spacing: 1.5px; }
+  .kpi-status-thumb { width: 1.2em; height: 1.2em; }
+  .kpi-month-label { margin-top: 2px; }
+  .kpi-previous { margin-top: 4px; }
+
+  /* La gráfica rellena el espacio restante de la tarjeta */
+  .kpi-right-column {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .chart-container {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 70px;
+    max-height: 300px;
+  }
+
+  .chart-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Publicidad: ocupa el espacio que sobra bajo las tarjetas */
+  .sponsor-container {
+    flex: 1 1 auto;
+    min-height: 90px;
+    max-height: 260px;
+    margin: 8px 0 0 0;
+    gap: 12px;
+  }
+
+  .sponsor-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+  }
+
+  footer { margin-top: 6px; font-size: 0.6rem; flex-shrink: 0; }
+}
+
+/* ---- TABLET VERTICAL: 2 x 2 (tarjetas anchas) ---- */
+@media (min-width: 601px) and (max-width: 1100px) and (orientation: portrait) {
+  .header-logo { max-width: 200px; }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    flex-basis: clamp(520px, 70vh, 1000px);    /* respaldo */
+    flex-basis: clamp(520px, 70dvh, 1000px);   /* alto del área de tarjetas; el resto es publicidad */
+  }
+
+  .kpi-title { font-size: clamp(0.8rem, 5.4cqw, 1.25rem); }
+  .kpi-status-line { font-size: clamp(1.1rem, 8cqw, 2.2rem); }
+  .kpi-month-label { font-size: clamp(0.9rem, 5.8cqw, 1.5rem); }
+  .kpi-value { font-size: clamp(2.2rem, 16cqw, 3.8rem); }
+  .kpi-prev-label { font-size: clamp(0.8rem, 4.6cqw, 1.1rem); }
+  .kpi-prev-value { font-size: clamp(1rem, 6cqw, 1.45rem); }
+}
+
+/* ---- TABLET HORIZONTAL: 4 en fila (tarjetas altas y angostas) ---- */
+@media (min-width: 601px) and (max-width: 1280px) and (orientation: landscape) and (min-height: 600px) {
+  .header-logo { max-width: 160px; }
+  .dashboard-header { margin-bottom: 8px; }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    flex-basis: clamp(300px, 60vh, 560px);     /* respaldo */
+    flex-basis: clamp(300px, 60dvh, 560px);    /* alto del área de tarjetas; el resto es publicidad */
+  }
+
+  .kpi-title { font-size: clamp(0.65rem, 5cqw, 1rem); }
+  .kpi-status-line { font-size: clamp(1.1rem, 10.2cqw, 2rem); }
+  .kpi-month-label { font-size: clamp(0.9rem, 8.2cqw, 1.4rem); }
+  .kpi-value { font-size: clamp(2.2rem, 23cqw, 3.6rem); }
+  .kpi-prev-label { font-size: clamp(0.8rem, 5.6cqw, 1.05rem); }
+  .kpi-prev-value { font-size: clamp(1rem, 7.4cqw, 1.4rem); }
+}
