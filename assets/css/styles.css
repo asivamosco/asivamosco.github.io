@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 15px 10px 15px;
+  padding: 20px 15px 15px 15px;
   position: relative;
   overflow-x: hidden;
 }
@@ -65,7 +65,7 @@ body {
 
 .dashboard-header {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
@@ -73,11 +73,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .header-logo {
-  max-width: 200px;
+  max-width: 240px;
   width: 100%;
   height: auto;
   display: block;
@@ -86,9 +86,9 @@ body {
 
 .dashboard-subtitle {
   font-family: 'Chakra Petch', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: rgba(0, 210, 190, 0.9);
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -99,7 +99,7 @@ body {
   gap: 16px;
   width: 100%;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 /* Tarjeta principal para escritorio */
@@ -351,7 +351,7 @@ body {
   width: 100%;
 }
 
-/* CONFIGURACIÓN PARA TABLETS (De 601px a 900px mantienen 2 columnas equilibradas) */
+/* CONFIGURACIÓN PARA TABLETS (De 601px a 900px mantienen 2 columnas) */
 @media (min-width: 601px) and (max-width: 900px) {
   .dashboard-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -359,89 +359,56 @@ body {
   }
 }
 
-/* CONFIGURACIÓN ULTRA-COMPACTA EXCLUSIVA PARA CELULARES (Menor o igual a 600px: 2 columnas, tarjetas bajitas para que las 4 quepan en pantalla) */
+/* CONFIGURACIÓN ESTILO TIKTOK / SNAP SCROLL EXCLUSIVA PARA CELULARES (Menor o igual a 600px) */
 @media (max-width: 600px) {
   body {
-    padding: 6px 6px 6px 6px;
-    min-height: 100vh;
-    justify-content: flex-start;
+    padding: 10px 10px 10px 10px;
+    height: 100vh;
+    overflow: hidden; /* Evita scroll general de la página */
+  }
+  .page-wrapper {
+    height: 100%;
+    justify-content: space-between;
   }
   .dashboard-header {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
   }
   .header-logo {
-    max-width: 140px;
+    max-width: 160px;
   }
   .dashboard-subtitle {
-    font-size: 0.6rem;
-    letter-spacing: 1px;
+    font-size: 0.65rem;
   }
+  /* Contenedor tipo carrusel vertical con efecto Snap */
   .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr); /* Volvemos a 2 columnas tipo panel compacto */
-    gap: 6px;
-    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    height: calc(100vh - 120px); /* Ocupa el espacio central perfecto */
+    gap: 16px;
+    padding: 10px 5px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
-  .kpi-card { 
-    padding: 8px 6px 6px 6px; 
-    min-height: 195px; /* Altura controlada para que quepan perfecto en la pantalla del celular sin scroll */
-    border-radius: 12px;
+  /* Cada tarjeta se ajusta a gran tamaño y se "ancla" al centro al hacer scroll */
+  .kpi-card {
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    min-height: 440px; /* Tamaño grande y cómodo para leer los datos y la gráfica */
+    width: 100%;
+    padding: 20px 16px 16px 16px;
+    border-radius: 18px;
   }
-  .kpi-title-box {
-    padding: 4px 6px;
-  }
-  .kpi-title {
-    font-size: 0.62rem;
-    letter-spacing: 0.5px;
-  }
-  .kpi-icon {
-    width: 12px;
-    height: 12px;
-  }
-  .kpi-status-line { 
-    font-size: 0.85rem; 
-    margin-top: 3px; 
-    gap: 4px;
-  }
-  .kpi-status-thumb {
-    width: 15px;
-    height: 15px;
-  }
-  .kpi-month-label { 
-    font-size: 0.68rem; 
-    margin-top: 2px;
-    letter-spacing: 1px;
-  }
-  .kpi-value { 
-    font-size: 1.45rem; 
-    margin-top: 1px;
-  }
-  .kpi-previous {
-    margin-top: 2px;
-    gap: 4px;
-  }
-  .kpi-prev-label { 
-    font-size: 0.55rem; 
-  }
-  .kpi-prev-value { 
-    font-size: 0.72rem; 
-  }
-  .kpi-right-column {
-    margin-top: 4px;
-  }
-  .chart-container { 
-    height: 65px; /* Gráfica compacta y legible tipo miniatura ejecutiva */
+  .chart-container {
+    height: 150px; /* Gráfica amplia y detallada */
   }
   .sponsor-container {
-    margin-top: 4px;
-    gap: 6px;
-  }
-  .sponsor-box {
-    padding: 4px;
-    font-size: 0.5rem;
+    display: none; /* Ocultamos sponsors en móvil para máxima limpieza vertical estilo app nativa */
   }
   footer {
-    margin-top: 4px;
-    font-size: 0.5rem;
+    display: none;
   }
 }
 
