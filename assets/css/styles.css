@@ -393,6 +393,8 @@ footer {
 /* ====================================================== */
 /* MÓVIL: pestañas + carrusel horizontal con snap          */
 /* (va al final para que no lo pisen las reglas base)      */
+/* Los tamaños usan clamp(mín, vw, máx): escalan con el    */
+/* ancho de la pantalla y se mantienen coherentes entre sí */
 /* ====================================================== */
 .mobile-nav-tabs {
   display: none;
@@ -408,7 +410,7 @@ footer {
     height: auto;
     min-height: 0;
     overflow: hidden;
-    padding: 8px 16px 10px 16px;   /* márgenes laterales: nada toca los bordes */
+    padding: 8px 16px 10px 16px;
     justify-content: flex-start;
   }
 
@@ -419,13 +421,13 @@ footer {
     justify-content: flex-start;
   }
 
-  /* Cabecera compacta */
+  /* Cabecera */
   .dashboard-header {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     flex-shrink: 0;
   }
-  .header-logo { max-width: 120px; }
-  .dashboard-subtitle { font-size: 0.55rem; letter-spacing: 1px; }
+  .header-logo { max-width: 150px; }
+  .dashboard-subtitle { font-size: clamp(0.55rem, 2.6vw, 0.68rem); letter-spacing: 1px; }
 
   /* Pestañas */
   .mobile-nav-tabs {
@@ -433,9 +435,9 @@ footer {
     justify-content: space-between;
     width: 100%;
     background: rgba(13, 19, 29, 0.95);
-    padding: 4px;
+    padding: 5px;
     border-radius: 10px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     flex-shrink: 0;
   }
@@ -444,10 +446,10 @@ footer {
     -webkit-appearance: none;
     appearance: none;
     font-family: 'Orbitron', sans-serif !important;
-    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 2.3vw, 0.62rem);
     font-weight: 800;
     text-transform: uppercase;
-    padding: 6px 2px;
+    padding: 8px 6px;
     border-radius: 6px;
     color: rgba(255, 255, 255, 0.45);
     background: transparent;
@@ -455,11 +457,12 @@ footer {
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
-    flex: 1;
+    flex: 1 1 auto;          /* el ancho se reparte según el texto: "Desempleo" ya no se corta */
+    min-width: 0;
     margin: 0 2px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -497,7 +500,7 @@ footer {
     flex-direction: row;
     justify-content: flex-start;   /* con "center" la primera tarjeta queda cortada e inalcanzable */
     align-items: stretch;
-    flex: 1;
+    flex: 0 1 auto;                /* alto = alto del contenido; solo se encoge si la pantalla es muy baja */
     min-height: 0;
     height: auto;
     margin-bottom: 0;
@@ -514,7 +517,7 @@ footer {
 
   .dashboard-grid::-webkit-scrollbar { display: none; }
 
-  /* Tarjeta compacta */
+  /* Tarjeta */
   .kpi-card {
     flex: 0 0 100%;
     width: 100%;
@@ -522,55 +525,57 @@ footer {
     height: auto;
     scroll-snap-align: center;
     scroll-snap-stop: always;
-    padding: 12px 12px 16px 12px;
-    border-radius: 16px;
+    padding: 16px 16px 20px 16px;
+    border-radius: 18px;
   }
 
   .kpi-content-wrapper {
-    flex: 1;
+    flex: 1 1 auto;
     min-height: 0;
     height: auto;
     justify-content: flex-start;
   }
 
-  .kpi-title-box { padding: 5px 10px; }
-  .kpi-title { font-size: 0.75rem; }
-  .kpi-icon { width: 15px; height: 15px; }
+  /* Título de la tarjeta */
+  .kpi-title-box { padding: 8px 12px; gap: 8px; }
+  .kpi-title { font-size: clamp(0.85rem, 4vw, 1.05rem); }
+  .kpi-icon { width: 20px; height: 20px; }
 
   .kpi-card-inner {
-    flex: 1;
+    flex: 1 1 auto;
     min-height: 0;
     justify-content: flex-start;
-    gap: 4px;
-    padding-top: 6px;
+    gap: 8px;
+    padding-top: 14px;
   }
 
   .kpi-left { flex: 0 0 auto; }
 
-  .kpi-value-container { gap: 4px; }
-  .kpi-status-line { font-size: 1.45rem; margin-top: 4px; letter-spacing: 1.5px; }
-  .kpi-status-thumb { width: 26px; height: 26px; }
-  .kpi-month-label { font-size: 1.05rem; margin-top: 2px; }
-  .kpi-value { font-size: 2.5rem; }
-  .kpi-previous { margin-top: 2px; }
-  .kpi-prev-label { font-size: 0.8rem; }
-  .kpi-prev-value { font-size: 1.05rem; }
+  /* Cifras */
+  .kpi-value-container { gap: 10px; }
+  .kpi-status-line { font-size: clamp(1.6rem, 7.5vw, 2.2rem); margin-top: 12px; letter-spacing: 2px; }
+  .kpi-status-thumb { width: 1.2em; height: 1.2em; }   /* el pulgar escala con el texto */
+  .kpi-month-label { font-size: clamp(1.15rem, 5.5vw, 1.55rem); margin-top: 6px; }
+  .kpi-value { font-size: clamp(2.8rem, 15vw, 4rem); }
+  .kpi-previous { margin-top: 8px; }
+  .kpi-prev-label { font-size: clamp(0.95rem, 4.2vw, 1.2rem); }
+  .kpi-prev-value { font-size: clamp(1.2rem, 5.4vw, 1.5rem); }
 
-  /* Gráfica flexible: sube y ocupa el espacio disponible */
+  /* Gráfica: alto propio, proporcional a la pantalla (sin hueco vacío debajo) */
   .kpi-right-column {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-height: 0;
-    margin-top: 4px;
+    margin-top: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
   .chart-container {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 80px;
-    max-height: 170px;
+    flex: 0 1 auto;
+    height: clamp(130px, 25vh, 240px);    /* respaldo */
+    height: clamp(130px, 25dvh, 240px);   /* ajusta aquí el alto de la gráfica */
+    min-height: 70px;
+    max-height: none;
   }
 
   /* El canvas no empuja al contenedor: Chart.js se adapta al espacio disponible */
@@ -580,16 +585,16 @@ footer {
     left: 0;
   }
 
-  /* Espacio de publicidad bajo el carrusel */
+  /* Espacio de publicidad: ocupa todo el espacio que sobra bajo la tarjeta */
   .sponsor-container {
-    --alto-publicidad: 50px;   /* ajusta aquí el alto del espacio publicitario */
-    flex-shrink: 0;
-    margin: 6px 0 0 0;
+    --alto-publicidad: 110px;   /* alto MÍNIMO; si sobra pantalla, crece solo */
+    flex: 1 1 auto;
+    min-height: var(--alto-publicidad);
+    margin: 8px 0 0 0;
     gap: 8px;
   }
 
   .sponsor-box {
-    min-height: var(--alto-publicidad);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -598,13 +603,23 @@ footer {
   footer { display: none; }
 }
 
-/* Celulares bajitos: compactar un poco más para que todo quepa sin scroll */
+/* Celulares bajitos (menos de 700px de alto): un poco más compacto */
 @media (max-width: 600px) and (max-height: 700px) {
   .dashboard-subtitle { display: none; }
-  .header-logo { max-width: 100px; }
-  .kpi-status-line { font-size: 1.3rem; }
-  .kpi-status-thumb { width: 22px; height: 22px; }
+  .header-logo { max-width: 120px; }
+  .kpi-status-line { font-size: 1.5rem; margin-top: 4px; }
+  .kpi-month-label { font-size: 1.05rem; }
+  .kpi-value { font-size: 2.7rem; }
+  .kpi-prev-label { font-size: 0.9rem; }
+  .kpi-prev-value { font-size: 1.15rem; }
+  .chart-container { min-height: 70px; height: clamp(110px, 24dvh, 200px); }
+}
+
+/* Celulares muy bajitos (menos de 600px de alto): compactar al máximo */
+@media (max-width: 600px) and (max-height: 600px) {
+  .sponsor-container { --alto-publicidad: 90px; }
+  .kpi-status-line { font-size: 1.3rem; margin-top: 2px; }
   .kpi-month-label { font-size: 0.95rem; }
   .kpi-value { font-size: 2.2rem; }
-  .chart-container { min-height: 70px; }
+  .kpi-prev-value { font-size: 1rem; }
 }

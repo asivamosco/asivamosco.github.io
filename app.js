@@ -209,6 +209,8 @@ function renderizarCommandCenterDesempleo(data) {
 
 function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, globalVarName, datasetLabel) {
     const ctx = document.getElementById(canvasId).getContext('2d');
+    const esMovil = window.innerWidth <= 600;
+    const tamFuente = esMovil ? 14 : 12;   // textos de la gráfica más grandes en celular
     
     if (window[globalVarName]) {
         window[globalVarName].destroy();
@@ -223,8 +225,8 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                 data: valores,
                 borderColor: borderColor,
                 backgroundColor: bgColor,
-                borderWidth: 2.5,
-                pointRadius: 4.5,
+                borderWidth: esMovil ? 3 : 2.5,
+                pointRadius: esMovil ? 5.5 : 4.5,
                 pointBackgroundColor: '#ffffff',
                 fill: true,
                 tension: 0.35
@@ -234,7 +236,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
             responsive: true,
             maintainAspectRatio: false,
             layout: { 
-                padding: { left: 12, right: 12, top: 18, bottom: 2 } 
+                padding: { left: esMovil ? 16 : 12, right: esMovil ? 16 : 12, top: esMovil ? 24 : 18, bottom: 2 } 
             },
             plugins: {
                 legend: { display: false },
@@ -250,7 +252,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                     grid: { display: false },
                     ticks: {
                         color: 'rgba(255, 255, 255, 0.9)',
-                        font: { size: 12, family: 'JetBrains Mono', weight: '700' },
+                        font: { size: tamFuente, family: 'JetBrains Mono', weight: '700' },
                         callback: function(value, index, ticks) {
                             if (index === 0 || index === ticks.length - 1) {
                                 return this.getLabelForValue(value);
@@ -268,7 +270,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
             afterDatasetsDraw(chart) {
                 const ctx = chart.ctx;
                 ctx.save();
-                ctx.font = 'bold 12px "JetBrains Mono", monospace';
+                ctx.font = `bold ${tamFuente}px "JetBrains Mono", monospace`;
                 ctx.fillStyle = '#ffffff';
                 ctx.textAlign = 'center';
 
@@ -286,7 +288,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                                         valor < anterior && valor < siguiente;
 
                         ctx.textBaseline = esValle ? 'top' : 'bottom';
-                        ctx.fillText(valor.toFixed(1), point.x, esValle ? point.y + 9 : point.y - 7);
+                        ctx.fillText(valor.toFixed(1), point.x, esValle ? point.y + 10 : point.y - 9);
                     });
                 });
 
