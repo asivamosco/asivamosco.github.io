@@ -16,23 +16,30 @@ function iniciarCarruselMovil() {
     function actualizarTabs() {
         const g = grid.getBoundingClientRect();
         const centro = g.left + g.width / 2;
-        let activo = 0;
+        let cardActiva = cards[0];
         let menorDistancia = Infinity;
 
-        cards.forEach((card, i) => {
+        cards.forEach(card => {
             const r = card.getBoundingClientRect();
             const distancia = Math.abs(r.left + r.width / 2 - centro);
             if (distancia < menorDistancia) {
                 menorDistancia = distancia;
-                activo = i;
+                cardActiva = card;
             }
         });
 
-        tabs.forEach((tab, i) => {
-            tab.classList.remove('active-red', 'active-green');
+        tabs.forEach(tab => {
+            const card = document.getElementById(tab.dataset.target);
+            const esRoja = card && card.classList.contains('card-red');
+            const esActiva = card === cardActiva;
+
+            tab.classList.remove('tab-red', 'tab-green', 'active-red', 'active-green');
             tab.removeAttribute('aria-current');
-            if (i === activo) {
-                const esRoja = cards[i].classList.contains('card-red');
+
+            // Todas las pestañas llevan el color de su tarjeta (rojo = empeoró, verde = mejoró)
+            tab.classList.add(esRoja ? 'tab-red' : 'tab-green');
+
+            if (esActiva) {
                 tab.classList.add(esRoja ? 'active-red' : 'active-green');
                 tab.setAttribute('aria-current', 'true');
             }
@@ -255,32 +262,36 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                     }
                 }
             },
-            animation: {
-                onComplete: function() {
-                    const chart = this;
-                    const ctx = chart.ctx;
-                    ctx.font = 'bold 12px "JetBrains Mono", monospace';
-                    ctx.fillStyle = '#ffffff';
-                    ctx.textAlign = 'center';
-                    ctx.textBaseline = 'bottom';
+        },
+        plugins: [{
+            id: 'etiquetasValores',
+            afterDatasetsDraw(chart) {
+                const ctx = chart.ctx;
+                ctx.save();
+                ctx.font = 'bold 12px "JetBrains Mono", monospace';
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
 
-                    const isMobile = window.innerWidth <= 900;
+                chart.data.datasets.forEach((dataset, i) => {
+                    const meta = chart.getDatasetMeta(i);
+                    const total = meta.data.length;
 
-                    chart.data.datasets.forEach(function(dataset, i) {
-                        const meta = chart.getDatasetMeta(i);
-                        meta.data.forEach(function(point, index) {
-                            // En móvil, se omiten los valores intermedios manteniendo los puntos y la línea
-                            if (isMobile && index !== 0 && index !== meta.data.length - 1) {
-                                return;
-                            }
+                    meta.data.forEach((point, index) => {
+                        const valor = Number(dataset.data[index]);
+                        const anterior = Number(dataset.data[index - 1]);
+                        const siguiente = Number(dataset.data[index + 1]);
 
-                            const rawValue = dataset.data[index];
-                            const dataValue = Number(rawValue).toFixed(1);
-                            ctx.fillText(dataValue, point.x, point.y - 7);
-                        });
+                        // En un "valle" la línea sube a ambos lados: la etiqueta va debajo para no taparse
+                        const esValle = index > 0 && index < total - 1 &&
+                                        valor < anterior && valor < siguiente;
+
+                        ctx.textBaseline = esValle ? 'top' : 'bottom';
+                        ctx.fillText(valor.toFixed(1), point.x, esValle ? point.y + 9 : point.y - 7);
                     });
-                }
+                });
+
+                ctx.restore();
             }
-        }
+        }]
     });
 }

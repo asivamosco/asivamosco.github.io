@@ -457,6 +457,20 @@ footer {
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* Color según el estado de su tarjeta: así se ve de un vistazo qué empeoró y qué mejoró */
+  .nav-tab.tab-red {
+    color: #ff7a8a;
+    background: rgba(230, 28, 52, 0.10);
+    border: 1px solid rgba(230, 28, 52, 0.40);
+  }
+
+  .nav-tab.tab-green {
+    color: #3de8d4;
+    background: rgba(0, 210, 190, 0.10);
+    border: 1px solid rgba(0, 210, 190, 0.40);
+  }
+
+  /* Pestaña activa: más intensa */
   .nav-tab.active-red {
     color: #ffffff;
     background: rgba(230, 28, 52, 0.25);
@@ -501,19 +515,72 @@ footer {
     height: auto;                  /* se estira solo con align-items: stretch */
     scroll-snap-align: center;
     scroll-snap-stop: always;      /* una tarjeta por gesto */
-    padding: 18px 14px 14px 14px;
+    padding: 16px 14px 18px 14px;
     border-radius: 18px;
   }
 
-  .chart-container { height: 155px; }
+  .kpi-content-wrapper {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    justify-content: flex-start;
+  }
 
-  .sponsor-container,
+  .kpi-card-inner {
+    flex: 1;
+    min-height: 0;
+    justify-content: flex-start;
+    gap: 6px;
+    padding-top: 10px;
+  }
+
+  .kpi-left { flex: 0 0 auto; }
+
+  .kpi-right-column {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .chart-container {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 90px;
+    max-height: 240px;
+  }
+
+  /* El canvas no empuja al contenedor: Chart.js se adapta al espacio disponible */
+  .chart-container canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* Espacio de publicidad bajo el carrusel */
+  .sponsor-container {
+    --alto-publicidad: 56px;   /* ajusta aquí el alto del espacio publicitario */
+    flex-shrink: 0;
+    margin: 8px 0 0 0;
+    gap: 8px;
+  }
+
+  .sponsor-box {
+    min-height: var(--alto-publicidad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   footer { display: none; }
 }
 
 /* Celulares bajitos: compactar un poco para que todo quepa */
 @media (max-width: 600px) and (max-height: 700px) {
-  .chart-container { height: 120px; }
+  .chart-container { min-height: 80px; }
   .kpi-value { font-size: 2.6rem; }
   .kpi-status-line { font-size: 1.5rem; margin-top: 6px; }
+  .kpi-month-label { font-size: 1.1rem; }
 }
