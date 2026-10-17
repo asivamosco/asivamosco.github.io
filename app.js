@@ -1,7 +1,72 @@
 document.addEventListener("DOMContentLoaded", () => {
     cargarDatosInflacion();
     cargarDatosDesempleo();
+    iniciarCarruselMovil();
 });
+
+/* ---------- Carrusel móvil: sincroniza pestañas <-> tarjetas ---------- */
+function iniciarCarruselMovil() {
+    const grid = document.querySelector('.dashboard-grid');
+    const tabs = Array.from(document.querySelectorAll('.nav-tab'));
+    if (!grid || !tabs.length) return;
+
+    const cards = Array.from(grid.querySelectorAll('.kpi-card'));
+
+    // Marca la pestaña de la tarjeta que está al centro, con el color (rojo/verde) de esa tarjeta
+    function actualizarTabs() {
+        const g = grid.getBoundingClientRect();
+        const centro = g.left + g.width / 2;
+        let activo = 0;
+        let menorDistancia = Infinity;
+
+        cards.forEach((card, i) => {
+            const r = card.getBoundingClientRect();
+            const distancia = Math.abs(r.left + r.width / 2 - centro);
+            if (distancia < menorDistancia) {
+                menorDistancia = distancia;
+                activo = i;
+            }
+        });
+
+        tabs.forEach((tab, i) => {
+            tab.classList.remove('active-red', 'active-green');
+            tab.removeAttribute('aria-current');
+            if (i === activo) {
+                const esRoja = cards[i].classList.contains('card-red');
+                tab.classList.add(esRoja ? 'active-red' : 'active-green');
+                tab.setAttribute('aria-current', 'true');
+            }
+        });
+    }
+
+    // Toque en una pestaña -> desplaza el carrusel a esa tarjeta
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const card = document.getElementById(tab.dataset.target);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
+        });
+    });
+
+    // Deslizar con el dedo -> actualiza la pestaña (throttle con rAF)
+    let ticking = false;
+    grid.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            actualizarTabs();
+            ticking = false;
+        });
+    }, { passive: true });
+
+    window.addEventListener('resize', actualizarTabs);
+
+    // Los renders la llaman cuando una tarjeta cambia de color (rojo/verde)
+    window.actualizarTabsMovil = actualizarTabs;
+    actualizarTabs();
+}
+
 
 function cargarDatosInflacion() {
     const cacheBuster = new Date().getTime();
@@ -56,6 +121,8 @@ function renderizarCommandCenterInflacion(data) {
             `;
         }
     }
+
+    if (window.actualizarTabsMovil) window.actualizarTabsMovil();
 
     const ultimos6Meses = data.slice(-6);
     const labels = ultimos6Meses.map(d => d.mes.substring(0, 3));
@@ -120,6 +187,8 @@ function renderizarCommandCenterDesempleo(data) {
             `;
         }
     }
+
+    if (window.actualizarTabsMovil) window.actualizarTabsMovil();
 
     const ultimos6Meses = data.slice(-6);
     const labels = ultimos6Meses.map(d => d.mes.substring(0, 3));
