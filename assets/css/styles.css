@@ -359,56 +359,122 @@ body {
   }
 }
 
-/* CONFIGURACIÓN ESTILO TIKTOK / SNAP SCROLL EXCLUSIVA PARA CELULARES (Menor o igual a 600px) */
+/* ---------------------------------------------------- */
+/* NAVEGACIÓN SUPERIOR MÓVIL (Oculta por defecto en web) */
+/* ---------------------------------------------------- */
+.mobile-nav-tabs {
+  display: none;
+}
+
+/* CONFIGURACIÓN EXCLUSIVA PARA CELULARES (Menor o igual a 600px: Carrusel Horizontal + Pestañas) */
 @media (max-width: 600px) {
   body {
     padding: 10px 10px 10px 10px;
     height: 100vh;
-    overflow: hidden; /* Evita scroll general de la página */
+    overflow: hidden;
   }
   .page-wrapper {
     height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
   .dashboard-header {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     flex-shrink: 0;
   }
   .header-logo {
-    max-width: 160px;
+    max-width: 150px;
   }
   .dashboard-subtitle {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
-  /* Contenedor tipo carrusel vertical con efecto Snap */
+
+  /* Barra de pestañas superior interactiva */
+  .mobile-nav-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(13, 19, 29, 0.95);
+    padding: 6px 4px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
+  }
+
+  .nav-tab {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 0.52rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 5px 4px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.45);
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+    margin: 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Estados activos adaptados al color de cada tarjeta (Rojo / Verde) */
+  .nav-tab.active-red {
+    color: #ffffff;
+    background: rgba(230, 28, 52, 0.25);
+    border: 1px solid rgba(230, 28, 52, 0.8);
+    box-shadow: 0 0 10px rgba(230, 28, 52, 0.35);
+  }
+
+  .nav-tab.active-green {
+    color: #ffffff;
+    background: rgba(0, 210, 190, 0.25);
+    border: 1px solid rgba(0, 210, 190, 0.8);
+    box-shadow: 0 0 10px rgba(0, 210, 190, 0.35);
+  }
+
+  /* Contenedor tipo carrusel horizontal con efecto Snap */
   .dashboard-grid {
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
-    height: calc(100vh - 120px); /* Ocupa el espacio central perfecto */
-    gap: 16px;
-    padding: 10px 5px;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: calc(100vh - 145px);
+    gap: 0;
+    padding: 0;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  /* Cada tarjeta se ajusta a gran tamaño y se "ancla" al centro al hacer scroll */
+
+  .dashboard-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Cada tarjeta toma el 100% de la pantalla horizontalmente */
   .kpi-card {
     scroll-snap-align: center;
-    flex-shrink: 0;
-    min-height: 440px; /* Tamaño grande y cómodo para leer los datos y la gráfica */
+    flex: 0 0 100%;
     width: 100%;
-    padding: 20px 16px 16px 16px;
+    height: 100%;
+    min-height: unset;
+    padding: 18px 14px 14px 14px;
     border-radius: 18px;
   }
+
   .chart-container {
-    height: 150px; /* Gráfica amplia y detallada */
+    height: 155px; /* Gráfica amplia y detallada en móvil */
   }
-  .sponsor-container {
-    display: none; /* Ocultamos sponsors en móvil para máxima limpieza vertical estilo app nativa */
-  }
-  footer {
-    display: none;
+
+  .sponsor-container, footer {
+    display: none; /* Ocultar en celular para maximizar espacio */
   }
 }
 
