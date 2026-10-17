@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 15px 15px 15px;
+  padding: 15px 15px 10px 15px;
   position: relative;
   overflow-x: hidden;
 }
@@ -65,7 +65,7 @@ body {
 
 .dashboard-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   width: 100%;
 }
 
@@ -73,11 +73,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .header-logo {
-  max-width: 240px;
+  max-width: 200px;
   width: 100%;
   height: auto;
   display: block;
@@ -86,9 +86,9 @@ body {
 
 .dashboard-subtitle {
   font-family: 'Chakra Petch', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: rgba(0, 210, 190, 0.9);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -99,7 +99,7 @@ body {
   gap: 16px;
   width: 100%;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 /* Tarjeta principal para escritorio */
@@ -252,7 +252,6 @@ body {
   gap: 8px;
 }
 
-/* Línea de estado con la manita incluida */
 .kpi-status-line {
   display: inline-flex;
   align-items: center;
@@ -352,87 +351,97 @@ body {
   width: 100%;
 }
 
-/* CONFIGURACIÓN Y AJUSTES ESPECÍFICOS PARA MÓVIL (2 Columnas) */
-@media (max-width: 900px) {
+/* CONFIGURACIÓN PARA TABLETS (De 601px a 900px mantienen 2 columnas equilibradas) */
+@media (min-width: 601px) and (max-width: 900px) {
   .dashboard-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-  body { 
-    padding: 12px 8px 10px 8px; 
-  }
-  .kpi-card { 
-    padding: 12px 10px 10px 10px; 
-    min-height: unset; /* Permite adaptarse fluidamente al contenido móvil sin espacios en blanco excesivos */
-  }
-  .kpi-title-box {
-    padding: 6px 8px;
-  }
-  .kpi-title {
-    font-size: 0.72rem;
-    letter-spacing: 0.5px;
-  }
-  .kpi-icon {
-    width: 14px;
-    height: 14px;
-  }
-  .kpi-status-line { 
-    font-size: 1.15rem; /* Ajustado para pantallas de celular */
-    margin-top: 6px; 
-    gap: 6px;
-  }
-  .kpi-status-thumb {
-    width: 22px;
-    height: 22px;
-  }
-  .kpi-month-label { 
-    font-size: 0.85rem; 
-    margin-top: 2px;
-  }
-  .kpi-value { 
-    font-size: 1.9rem; /* Escalado perfecto para evitar desbordes en móviles */
-    margin-top: 2px;
-  }
-  .kpi-prev-label { 
-    font-size: 0.68rem; 
-  }
-  .kpi-prev-value { 
-    font-size: 0.9rem; 
-  }
-  .kpi-previous {
-    margin-top: 2px;
-  }
-  .kpi-right-column {
-    margin-top: 8px;
-  }
-  .chart-container { 
-    height: 115px; /* Altura equilibrada para que la gráfica luzca bien en cel */
+    gap: 12px;
   }
 }
 
-@media (max-width: 480px) {
-  .dashboard-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 6px; 
+/* CONFIGURACIÓN ULTRA-COMPACTA EXCLUSIVA PARA CELULARES (Menor o igual a 600px: 2 columnas, tarjetas bajitas para que las 4 quepan en pantalla) */
+@media (max-width: 600px) {
+  body {
+    padding: 6px 6px 6px 6px;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
-  .header-logo { 
-    max-width: 160px; 
+  .dashboard-header {
+    margin-bottom: 6px;
   }
-  .dashboard-subtitle { 
-    font-size: 0.58rem; 
+  .header-logo {
+    max-width: 140px;
   }
-  .kpi-card {
-    padding: 10px 6px 8px 6px;
+  .dashboard-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
   }
-  .kpi-status-line {
-    font-size: 1.05rem;
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr); /* Volvemos a 2 columnas tipo panel compacto */
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .kpi-card { 
+    padding: 8px 6px 6px 6px; 
+    min-height: 195px; /* Altura controlada para que quepan perfecto en la pantalla del celular sin scroll */
+    border-radius: 12px;
+  }
+  .kpi-title-box {
+    padding: 4px 6px;
+  }
+  .kpi-title {
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
+  }
+  .kpi-icon {
+    width: 12px;
+    height: 12px;
+  }
+  .kpi-status-line { 
+    font-size: 0.85rem; 
+    margin-top: 3px; 
+    gap: 4px;
   }
   .kpi-status-thumb {
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
-  .kpi-value {
-    font-size: 1.7rem;
+  .kpi-month-label { 
+    font-size: 0.68rem; 
+    margin-top: 2px;
+    letter-spacing: 1px;
+  }
+  .kpi-value { 
+    font-size: 1.45rem; 
+    margin-top: 1px;
+  }
+  .kpi-previous {
+    margin-top: 2px;
+    gap: 4px;
+  }
+  .kpi-prev-label { 
+    font-size: 0.55rem; 
+  }
+  .kpi-prev-value { 
+    font-size: 0.72rem; 
+  }
+  .kpi-right-column {
+    margin-top: 4px;
+  }
+  .chart-container { 
+    height: 65px; /* Gráfica compacta y legible tipo miniatura ejecutiva */
+  }
+  .sponsor-container {
+    margin-top: 4px;
+    gap: 6px;
+  }
+  .sponsor-box {
+    padding: 4px;
+    font-size: 0.5rem;
+  }
+  footer {
+    margin-top: 4px;
+    font-size: 0.5rem;
   }
 }
 
