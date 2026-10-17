@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function cargarDatosInflacion() {
     const cacheBuster = new Date().getTime();
     
-    fetch(`inflacion_anual_dane.json?v=${cacheBuster}`, {
-        cache: 'no-store'
-    })
+    fetch(`inflacion_anual_dane.json?v=${cacheBuster}`, { cache: 'no-store' })
     .then(response => {
         if (!response.ok) throw new Error(`Error: ${response.statusText}`);
         return response.json();
@@ -39,20 +37,22 @@ function renderizarCommandCenterInflacion(data) {
     }
 
     const cardElement = document.getElementById('cardInflacion');
-    const verdictThumb = document.getElementById('verdictThumbInflacion');
+    const verdictStatus = document.getElementById('verdictStatusInflacion');
     
     const empeoro = inflacionActual > inflacionAnterior;
 
-    if (cardElement && verdictThumb) {
+    if (cardElement && verdictStatus) {
         if (empeoro) {
             cardElement.className = "kpi-card card-red";
-            verdictThumb.innerHTML = `
+            verdictStatus.innerHTML = `
                 <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
+                <span>EMPEORÓ</span>
             `;
         } else {
             cardElement.className = "kpi-card card-green";
-            verdictThumb.innerHTML = `
+            verdictStatus.innerHTML = `
                 <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                <span>MEJORÓ</span>
             `;
         }
     }
@@ -101,20 +101,22 @@ function renderizarCommandCenterDesempleo(data) {
     }
 
     const cardElement = document.getElementById('cardDesempleo');
-    const verdictThumb = document.getElementById('verdictThumbDesempleo');
+    const verdictStatus = document.getElementById('verdictStatusDesempleo');
     
     const empeoro = desempleoActual > desempleoAnterior;
 
-    if (cardElement && verdictThumb) {
+    if (cardElement && verdictStatus) {
         if (empeoro) {
             cardElement.className = "kpi-card card-red";
-            verdictThumb.innerHTML = `
+            verdictStatus.innerHTML = `
                 <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
+                <span>EMPEORÓ</span>
             `;
         } else {
             cardElement.className = "kpi-card card-green";
-            verdictThumb.innerHTML = `
+            verdictStatus.innerHTML = `
                 <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                <span>MEJORÓ</span>
             `;
         }
     }
@@ -146,7 +148,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                 borderColor: borderColor,
                 backgroundColor: bgColor,
                 borderWidth: 2.5,
-                pointRadius: 4,
+                pointRadius: 4.5,
                 pointBackgroundColor: '#ffffff',
                 fill: true,
                 tension: 0.35
@@ -156,7 +158,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
             responsive: true,
             maintainAspectRatio: false,
             layout: { 
-                padding: { left: 10, right: 10, top: 22, bottom: 2 } 
+                padding: { left: 12, right: 12, top: 18, bottom: 2 } 
             },
             plugins: {
                 legend: { display: false },
@@ -171,8 +173,8 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                     display: true,
                     grid: { display: false },
                     ticks: {
-                        color: 'rgba(255, 255, 255, 0.8)',
-                        font: { size: 10, family: 'JetBrains Mono', weight: '700' },
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        font: { size: 12, family: 'JetBrains Mono', weight: '700' },
                         callback: function(value, index, ticks) {
                             if (index === 0 || index === ticks.length - 1) {
                                 return this.getLabelForValue(value);
@@ -188,7 +190,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                 onComplete: function() {
                     const chart = this;
                     const ctx = chart.ctx;
-                    ctx.font = 'bold 10px "JetBrains Mono", monospace';
+                    ctx.font = 'bold 12px "JetBrains Mono", monospace';
                     ctx.fillStyle = '#ffffff';
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
@@ -197,7 +199,7 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
                         const meta = chart.getDatasetMeta(i);
                         meta.data.forEach(function(point, index) {
                             const rawValue = dataset.data[index];
-                            const dataValue = Number(rawValue).toFixed(1); // Solo un decimal, sin símbolo de porcentaje
+                            const dataValue = Number(rawValue).toFixed(1);
                             ctx.fillText(dataValue, point.x, point.y - 7);
                         });
                     });

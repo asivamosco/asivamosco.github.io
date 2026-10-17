@@ -4,15 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Así Vamos | Estado de la Nación</title>
-  <!-- Fuentes y Librerías -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Chakra+Petch:wght@700&family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Enlace al archivo CSS externo -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <!-- Mapa vectorial y red de datos telemetría de fondo -->
   <div class="bg-telemetry-map"></div>
   <div class="bg-stat-watermark wm-left">DATA // 2026</div>
   <div class="bg-stat-watermark wm-right">TELEMETRY</div>
@@ -36,13 +33,12 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
               <span class="kpi-title">Inflación (IPC)</span>
             </div>
-            <!-- Pulgar dinámico / Estado -->
-            <div id="verdictThumbInflacion"></div>
           </div>
 
           <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
+                <div id="verdictStatusInflacion" class="kpi-status-line"></div>
                 <span class="kpi-month-label" id="labelMesInflacion">Octubre</span>
                 <div class="kpi-value" id="kpiInflacion">--%</div>
                 <div class="kpi-previous">
@@ -70,12 +66,12 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               <span class="kpi-title">Desempleo</span>
             </div>
-            <div id="verdictThumbDesempleo"></div>
           </div>
 
           <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
+                <div id="verdictStatusDesempleo" class="kpi-status-line"></div>
                 <span class="kpi-month-label" id="labelMesDesempleo">Octubre</span>
                 <div class="kpi-value" id="kpiDesempleo">--%</div>
                 <div class="kpi-previous">
@@ -103,12 +99,15 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               <span class="kpi-title">Seguridad</span>
             </div>
-            <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
           </div>
 
           <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
+                <div class="kpi-status-line">
+                  <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
+                  <span>EMPEORÓ</span>
+                </div>
                 <span class="kpi-month-label">Octubre</span>
                 <div class="kpi-value">1,240</div>
                 <div class="kpi-previous">
@@ -136,12 +135,15 @@
               <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
               <span class="kpi-title">Salud</span>
             </div>
-            <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
           </div>
 
           <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
+                <div class="kpi-status-line">
+                  <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                  <span>MEJORÓ</span>
+                </div>
                 <span class="kpi-month-label">Octubre</span>
                 <div class="kpi-value">94.1%</div>
                 <div class="kpi-previous">
