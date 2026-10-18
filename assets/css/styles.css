@@ -123,13 +123,13 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     border-left:6px solid var(--royal);
     padding:6px 12px 5px 10px;
     display:grid;
-    /* [mes/estado] [cifra] [serie] — mes y estado apilados a la izquierda de la cifra */
-    grid-template-columns:auto auto minmax(0,1fr);
+    /* [mes/estado] [cifra] [serie fija = 40% del ancho de la tarjeta] */
+    grid-template-columns:auto minmax(0,1fr) 40%;
     grid-template-rows:auto minmax(0,1fr) auto;
     grid-template-areas:
       "titulo  titulo  titulo"
       "mes     valor   grafica"
-      "previo  previo  eje";
+      ".       previo  eje";
     column-gap:10px; align-items:stretch;
   }
   .card.mejoro{border-top-color:rgba(255,255,255,.16);border-left-color:var(--ok)}
@@ -151,7 +151,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   }
   .card .mes .sep{display:none}
   .val{
-    grid-area:valor; margin:0; font-size:clamp(28px,4.8dvh,40px);
+    grid-area:valor; margin:0; min-width:0; font-size:clamp(26px,min(4.8dvh,10.5vw),40px);
     display:flex; align-items:center; justify-content:center;
   }
   .prev{grid-area:previo;margin:0;justify-self:center;font-size:13px;padding:2px 7px}
