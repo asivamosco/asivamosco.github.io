@@ -99,7 +99,7 @@
       </div>
 
       <!-- 3. SEGURIDAD -->
-      <div class="kpi-card card-red" id="cardSeguridad">
+      <div class="kpi-card card-green" id="cardSeguridad">
         <div class="card-pattern"></div>
         <div class="kpi-content-wrapper">
           <div class="kpi-title-box">
@@ -112,15 +112,12 @@
           <div class="kpi-card-inner">
             <div class="kpi-left">
               <div class="kpi-value-container">
-                <div class="kpi-status-line">
-                  <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-                  <span>EMPEORÓ</span>
-                </div>
-                <span class="kpi-month-label">Octubre</span>
-                <div class="kpi-value">1,240</div>
+                <div id="verdictStatusSeguridad" class="kpi-status-line"></div>
+                <span class="kpi-month-label" id="labelMesSeguridad">--</span>
+                <div class="kpi-value" id="kpiSeguridad">--</div>
                 <div class="kpi-previous">
-                  <span class="kpi-prev-label">SEP:</span>
-                  <span class="kpi-prev-value">1,180</span>
+                  <span class="kpi-prev-label">ANT:</span>
+                  <span class="kpi-prev-value" id="kpiSeguridadAnterior">--</span>
                 </div>
               </div>
             </div>
@@ -173,7 +170,7 @@
     </main>
 
     <div class="sponsor-container">
-      <div class="sponsor-box">Espacio de Patrocinio (1/8)</div>
+      <div class="sponsor-box">Espacio de Patrocinio (1/8) /8)</div>
       <div class="sponsor-box">Local Partner (2/8)</div>
     </div>
   </div>

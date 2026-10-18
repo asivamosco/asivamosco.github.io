@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     cargarDatosInflacion();
     cargarDatosDesempleo();
+    cargarDatosSeguridad();
     iniciarCarruselMovil();
 });
 
@@ -12,7 +13,6 @@ function iniciarCarruselMovil() {
 
     const cards = Array.from(grid.querySelectorAll('.kpi-card'));
 
-    // Marca la pestaña de la tarjeta que está al centro, con el color (rojo/verde) de esa tarjeta
     function actualizarTabs() {
         const g = grid.getBoundingClientRect();
         const centro = g.left + g.width / 2;
@@ -35,8 +35,6 @@ function iniciarCarruselMovil() {
 
             tab.classList.remove('tab-red', 'tab-green', 'active-red', 'active-green');
             tab.removeAttribute('aria-current');
-
-            // Todas las pestañas llevan el color de su tarjeta (rojo = empeoró, verde = mejoró)
             tab.classList.add(esRoja ? 'tab-red' : 'tab-green');
 
             if (esActiva) {
@@ -46,7 +44,6 @@ function iniciarCarruselMovil() {
         });
     }
 
-    // Toque en una pestaña -> desplaza el carrusel a esa tarjeta
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const card = document.getElementById(tab.dataset.target);
@@ -56,7 +53,6 @@ function iniciarCarruselMovil() {
         });
     });
 
-    // Deslizar con el dedo -> actualiza la pestaña (throttle con rAF)
     let ticking = false;
     grid.addEventListener('scroll', () => {
         if (ticking) return;
@@ -68,153 +64,145 @@ function iniciarCarruselMovil() {
     }, { passive: true });
 
     window.addEventListener('resize', actualizarTabs);
-
-    // Los renders la llaman cuando una tarjeta cambia de color (rojo/verde)
     window.actualizarTabsMovil = actualizarTabs;
     actualizarTabs();
 }
 
-
+/* ---------- 1. INFLACIÓN ---------- */
 function cargarDatosInflacion() {
     const cacheBuster = new Date().getTime();
-    
     fetch(`inflacion_anual_dane.json?v=${cacheBuster}`, { cache: 'no-store' })
-    .then(response => {
-        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-        return response.json();
-    })
+    .then(res => res.json())
     .then(data => renderizarCommandCenterInflacion(data))
-    .catch(error => {
-        console.error("Error al cargar inflación:", error);
-        document.getElementById('kpiInflacion').innerText = "Error";
-    });
+    .catch(err => console.error("Error inflación:", err));
 }
 
 function renderizarCommandCenterInflacion(data) {
     if (!data || data.length < 2) return;
-    const ultimoRegistro = data[data.length - 1];
-    const penultimoRegistro = data[data.length - 2];
+    const ultimo = data[data.length - 1];
+    const penultimo = data[data.length - 2];
+    const actual = parseFloat(ultimo.var_anual);
+    const anterior = parseFloat(penultimo.var_anual);
 
-    const inflacionActual = parseFloat(ultimoRegistro.var_anual);
-    const inflacionAnterior = parseFloat(penultimoRegistro.var_anual);
+    document.getElementById('kpiInflacion').innerText = `${actual.toFixed(2)}%`;
+    document.getElementById('kpiInflacionAnterior').innerText = `${anterior.toFixed(2)}%`;
+    document.getElementById('labelMesInflacion').innerText = ultimo.mes;
 
-    document.getElementById('kpiInflacion').innerText = `${inflacionActual.toFixed(2)}%`;
-    
-    const elemAnterior = document.getElementById('kpiInflacionAnterior');
-    if (elemAnterior) elemAnterior.innerText = `${inflacionAnterior.toFixed(2)}%`;
+    const card = document.getElementById('cardInflacion');
+    const verdict = document.getElementById('verdictStatusInflacion');
+    const empeoro = actual > anterior;
 
-    const labelMes = document.getElementById('labelMesInflacion');
-    if (labelMes && ultimoRegistro.mes) {
-        labelMes.innerText = ultimoRegistro.mes;
-    }
-
-    const cardElement = document.getElementById('cardInflacion');
-    const verdictStatus = document.getElementById('verdictStatusInflacion');
-    
-    const empeoro = inflacionActual > inflacionAnterior;
-
-    if (cardElement && verdictStatus) {
-        if (empeoro) {
-            cardElement.className = "kpi-card card-red";
-            verdictStatus.innerHTML = `
-                <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-                <span>EMPEORÓ</span>
-            `;
-        } else {
-            cardElement.className = "kpi-card card-green";
-            verdictStatus.innerHTML = `
-                <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-                <span>MEJORÓ</span>
-            `;
-        }
-    }
+    card.className = empeoro ? "kpi-card card-red" : "kpi-card card-green";
+    verdict.innerHTML = empeoro ? 
+        `<svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg><span>EMPEORÓ</span>` :
+        `<svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg><span>MEJORÓ</span>`;
 
     if (window.actualizarTabsMovil) window.actualizarTabsMovil();
-
-    const ultimos6Meses = data.slice(-6);
-    const labels = ultimos6Meses.map(d => d.mes.substring(0, 3));
-    const valores = ultimos6Meses.map(d => parseFloat(d.var_anual));
-
-    const colorTema = empeoro ? '#e61c34' : '#00d2be';
-    const colorBg = 'rgba(255, 255, 255, 0.12)';
-
-    renderizarGrafica('chartInflacion', labels, valores, colorTema, colorBg, 'miGraficaIPC', 'Variación Anual IPC (%)');
+    renderizarGrafica('chartInflacion', data.slice(-6).map(d => d.mes.substring(0, 3)), data.slice(-6).map(d => parseFloat(d.var_anual)), empeoro ? '#e61c34' : '#00d2be', 'rgba(255,255,255,0.12)', 'miGraficaIPC', 'IPC (%)');
 }
 
+/* ---------- 2. DESEMPLEO ---------- */
 function cargarDatosDesempleo() {
     const cacheBuster = new Date().getTime();
-    
     fetch(`desempleo_historico_dane.json?v=${cacheBuster}`, { cache: 'no-store' })
-    .then(response => {
-        if (!response.ok) throw new Error(`Error: ${response.statusText}`);
-        return response.json();
-    })
+    .then(res => res.json())
     .then(data => renderizarCommandCenterDesempleo(data))
-    .catch(error => {
-        console.error("Error al cargar desempleo:", error);
-        document.getElementById('kpiDesempleo').innerText = "Error";
-    });
+    .catch(err => console.error("Error desempleo:", err));
 }
 
 function renderizarCommandCenterDesempleo(data) {
     if (!data || data.length < 2) return;
-    const ultimoRegistro = data[data.length - 1];
-    const penultimoRegistro = data[data.length - 2];
+    const ultimo = data[data.length - 1];
+    const penultimo = data[data.length - 2];
+    const actual = parseFloat(ultimo.tasa_desempleo);
+    const anterior = parseFloat(penultimo.tasa_desempleo);
 
-    const desempleoActual = parseFloat(ultimoRegistro.tasa_desempleo);
-    const desempleoAnterior = parseFloat(penultimoRegistro.tasa_desempleo);
+    document.getElementById('kpiDesempleo').innerText = `${actual.toFixed(1)}%`;
+    document.getElementById('kpiDesempleoAnterior').innerText = `${anterior.toFixed(1)}%`;
+    document.getElementById('labelMesDesempleo').innerText = ultimo.mes;
 
-    document.getElementById('kpiDesempleo').innerText = `${desempleoActual.toFixed(1)}%`;
+    const card = document.getElementById('cardDesempleo');
+    const verdict = document.getElementById('verdictStatusDesempleo');
+    const empeoro = actual > anterior;
+
+    card.className = empeoro ? "kpi-card card-red" : "kpi-card card-green";
+    verdict.innerHTML = empeoro ? 
+        `<svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg><span>EMPEORÓ</span>` :
+        `<svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg><span>MEJORÓ</span>`;
+
+    if (window.actualizarTabsMovil) window.actualizarTabsMovil();
+    renderizarGrafica('chartDesempleo', data.slice(-6).map(d => d.mes.substring(0, 3)), data.slice(-6).map(d => parseFloat(d.tasa_desempleo)), empeoro ? '#e61c34' : '#00d2be', 'rgba(255,255,255,0.12)', 'miGraficaDesempleo', 'Desempleo (%)');
+}
+
+/* ---------- 3. SEGURIDAD (ESTÁNDAR INFLACIÓN: ÍNDICE Y COMPARACIÓN MoM) ---------- */
+function cargarDatosSeguridad() {
+    const cacheBuster = new Date().getTime();
+    fetch(`seguridad_historico.json?v=${cacheBuster}`, { cache: 'no-store' })
+    .then(res => res.json())
+    .then(data => renderizarCommandCenterSeguridad(data))
+    .catch(err => console.error("Error seguridad:", err));
+}
+
+function renderizarCommandCenterSeguridad(data) {
+    if (!data || data.length < 2) return;
+
+    const ultimo = data[data.length - 1];       // Agosto 2026
+    const penultimo = data[data.length - 2];   // Julio 2026
+
+    const actual = parseFloat(ultimo.indice);
+    const anterior = parseFloat(penultimo.indice);
+
+    // Lógica idéntica a inflación: Si el índice actual es mayor al anterior, empeoró. Si es menor, mejoró.
+    const empeoro = actual > anterior;
+
+    // 1. KPI Principal: Muestra el valor del índice actual (ej: 58.0%)
+    const kpiElem = document.getElementById('kpiSeguridad');
+    if (kpiElem) {
+        kpiElem.innerText = `${actual.toFixed(1)}%`;
+    }
     
-    const elemAnterior = document.getElementById('kpiDesempleoAnterior');
-    if (elemAnterior) elemAnterior.innerText = `${desempleoAnterior.toFixed(1)}%`;
-
-    const labelMes = document.getElementById('labelMesDesempleo');
-    if (labelMes && ultimoRegistro.mes) {
-        labelMes.innerText = ultimoRegistro.mes;
+    // 2. Subtítulo: Muestra el mes anterior con su índice (ej: JUL: 70.9%)
+    const elemAnterior = document.getElementById('kpiSeguridadAnterior');
+    if (elemAnterior) {
+        const mesCortoPenultimo = penultimo.mes.substring(0, 3).toUpperCase();
+        elemAnterior.innerText = `${mesCortoPenultimo}: ${anterior.toFixed(1)}%`;
     }
 
-    const cardElement = document.getElementById('cardDesempleo');
-    const verdictStatus = document.getElementById('verdictStatusDesempleo');
-    
-    const empeoro = desempleoActual > desempleoAnterior;
+    // 3. Etiqueta del Mes Principal
+    const labelMes = document.getElementById('labelMesSeguridad');
+    if (labelMes && ultimo.mes) {
+        labelMes.innerText = `${ultimo.mes.toUpperCase()}`;
+    }
 
-    if (cardElement && verdictStatus) {
-        if (empeoro) {
-            cardElement.className = "kpi-card card-red";
-            verdictStatus.innerHTML = `
-                <svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg>
-                <span>EMPEORÓ</span>
-            `;
-        } else {
-            cardElement.className = "kpi-card card-green";
-            verdictStatus.innerHTML = `
-                <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-                <span>MEJORÓ</span>
-            `;
-        }
+    // 4. Tarjeta y Veredicto dinámico
+    const card = document.getElementById('cardSeguridad');
+    const verdict = document.getElementById('verdictStatusSeguridad');
+
+    if (card && verdict) {
+        card.className = empeoro ? "kpi-card card-red" : "kpi-card card-green";
+        verdict.innerHTML = empeoro ? 
+            `<svg class="kpi-status-thumb thumb-down" viewBox="0 0 24 24"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path></svg><span>EMPEORÓ</span>` :
+            `<svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg><span>MEJORÓ</span>`;
     }
 
     if (window.actualizarTabsMovil) window.actualizarTabsMovil();
 
-    const ultimos6Meses = data.slice(-6);
-    const labels = ultimos6Meses.map(d => d.mes.substring(0, 3));
-    const valores = ultimos6Meses.map(d => parseFloat(d.tasa_desempleo));
+    // 5. Gráfica de los últimos 6 meses usando los valores reales del índice
+    const ultimos6 = data.slice(-6);
+    const labels = ultimos6.map(d => `${d.mes.substring(0, 3)}`);
+    const valores = ultimos6.map(d => parseFloat(d.indice));
 
-    const colorTema = empeoro ? '#e61c34' : '#00d2be';
-    const colorBg = 'rgba(255, 255, 255, 0.12)';
-
-    renderizarGrafica('chartDesempleo', labels, valores, colorTema, colorBg, 'miGraficaDesempleo', 'Tasa de Desempleo (%)');
+    renderizarGraficaSeguridad('chartSeguridad', labels, valores, empeoro ? '#e61c34' : '#00d2be', 'rgba(255,255,255,0.12)', 'miGraficaSeguridad', 'Índice (%)');
 }
 
-function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, globalVarName, datasetLabel) {
-    const ctx = document.getElementById(canvasId).getContext('2d');
+function renderizarGraficaSeguridad(canvasId, labels, valores, borderColor, bgColor, globalVarName, datasetLabel) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
     const esMovil = window.innerWidth <= 600;
-    const tamFuente = esMovil ? 14 : (window.innerWidth <= 1280 ? 13 : 12);   // textos de la gráfica más grandes en celular
+    const tamFuente = esMovil ? 13 : 11;
     
-    if (window[globalVarName]) {
-        window[globalVarName].destroy();
-    }
+    if (window[globalVarName]) window[globalVarName].destroy();
 
     window[globalVarName] = new Chart(ctx, {
         type: 'line',
@@ -235,35 +223,93 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            layout: { 
-                padding: { left: esMovil ? 16 : 12, right: esMovil ? 16 : 12, top: esMovil ? 24 : 18, bottom: 2 } 
+            layout: {
+                padding: { left: 15, right: 15, top: 25, bottom: 0 }
             },
-            plugins: {
-                legend: { display: false },
-                tooltip: { enabled: false }
-            },
+            plugins: { legend: { display: false }, tooltip: { enabled: false } },
             scales: {
-                y: { 
-                    display: false,
-                    grace: '25%' 
-                },
+                y: { display: false, grace: '30%' },
                 x: { 
                     display: true,
                     grid: { display: false },
                     ticks: {
                         color: 'rgba(255, 255, 255, 0.9)',
                         font: { size: tamFuente, family: 'JetBrains Mono', weight: '700' },
-                        callback: function(value, index, ticks) {
-                            if (index === 0 || index === ticks.length - 1) {
-                                return this.getLabelForValue(value);
-                            }
-                            return '';
-                        },
-                        maxRotation: 0,
-                        autoSkip: false
+                        callback: function(val, idx, ticks) {
+                            return (idx === 0 || idx === ticks.length - 1) ? this.getLabelForValue(val) : '';
+                        }
                     }
                 }
+            }
+        },
+        plugins: [{
+            id: 'etiquetasValoresSeguridad',
+            afterDatasetsDraw(chart) {
+                const ctx = chart.ctx;
+                ctx.save();
+                ctx.font = `bold ${tamFuente}px "JetBrains Mono", monospace`;
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
+
+                chart.data.datasets.forEach((dataset, i) => {
+                    const meta = chart.getDatasetMeta(i);
+                    meta.data.forEach((point, index) => {
+                        const valor = Number(dataset.data[index]);
+                        if (!isNaN(valor)) {
+                            ctx.fillText(`${valor.toFixed(1)}%`, point.x, point.y - 10);
+                        }
+                    });
+                });
+                ctx.restore();
+            }
+        }]
+    });
+}
+
+function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, globalVarName, datasetLabel) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    const esMovil = window.innerWidth <= 600;
+    const tamFuente = esMovil ? 14 : 12;
+    
+    if (window[globalVarName]) window[globalVarName].destroy();
+
+    window[globalVarName] = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: datasetLabel,
+                data: valores,
+                borderColor: borderColor,
+                backgroundColor: bgColor,
+                borderWidth: esMovil ? 3 : 2.5,
+                pointRadius: esMovil ? 5.5 : 4.5,
+                pointBackgroundColor: '#ffffff',
+                fill: true,
+                tension: 0.35
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+                padding: { left: 15, right: 15, top: 20, bottom: 0 }
             },
+            plugins: { legend: { display: false }, tooltip: { enabled: false } },
+            scales: {
+                y: { display: false, grace: '25%' },
+                x: { 
+                    display: true,
+                    grid: { display: false },
+                    ticks: {
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        font: { size: tamFuente, family: 'JetBrains Mono', weight: '700' },
+                        callback: function(val, idx, ticks) {
+                            return (idx === 0 || idx === ticks.length - 1) ? this.getLabelForValue(val) : '';
+                        }
+                    }
+                }
+            }
         },
         plugins: [{
             id: 'etiquetasValores',
@@ -276,22 +322,13 @@ function renderizarGrafica(canvasId, labels, valores, borderColor, bgColor, glob
 
                 chart.data.datasets.forEach((dataset, i) => {
                     const meta = chart.getDatasetMeta(i);
-                    const total = meta.data.length;
-
                     meta.data.forEach((point, index) => {
                         const valor = Number(dataset.data[index]);
-                        const anterior = Number(dataset.data[index - 1]);
-                        const siguiente = Number(dataset.data[index + 1]);
-
-                        // En un "valle" la línea sube a ambos lados: la etiqueta va debajo para no taparse
-                        const esValle = index > 0 && index < total - 1 &&
-                                        valor < anterior && valor < siguiente;
-
-                        ctx.textBaseline = esValle ? 'top' : 'bottom';
-                        ctx.fillText(valor.toFixed(1), point.x, esValle ? point.y + 10 : point.y - 9);
+                        if (!isNaN(valor)) {
+                            ctx.fillText(valor.toFixed(1), point.x, point.y - 9);
+                        }
                     });
                 });
-
                 ctx.restore();
             }
         }]
