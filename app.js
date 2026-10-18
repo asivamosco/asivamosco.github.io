@@ -9,7 +9,7 @@
 const INDICADORES = [
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
-  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '%', subeEsMalo: true  },
+  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  },
   { id: 'Salud',     archivo: 'salud_historico.json',          campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  }
 ];
 
@@ -39,19 +39,30 @@ function mesCorto(mes) {
   return capitalizar(mes).substring(0, 3);
 }
 
-/* Etiqueta del eje: "Nov 25" si el dato trae año, "Nov" si no. */
+/* ---------- Diccionario para normalizar meses abreviados a completos ---------- */
+const MESES_COMPLETOS = {
+  'ene': 'Enero', 'feb': 'Febrero', 'mar': 'Marzo', 'abr': 'Abril',
+  'may': 'Mayo', 'jun': 'Junio', 'jul': 'Julio', 'ago': 'Agosto',
+  'sep': 'Septiembre', 'oct': 'Octubre', 'nov': 'Noviembre', 'dic': 'Diciembre'
+};
+
+function obtenerMesCompleto(nombreMes) {
+  const limpio = String(nombreMes || '').trim().toLowerCase();
+  const corto = limpio.substring(0, 3);
+  return MESES_COMPLETOS[corto] || capitalizar(nombreMes);
+}
+
+/* Etiqueta del eje: Muestra únicamente el mes corto (ej. "Abr", "Sep") sin año. */
 function etiquetaEje(d) {
-  const corto = mesCorto(d.mes);
-  let anio = d.anio ?? d['año'] ?? d.ano ?? d.year;
-  if (anio === undefined && d.fecha) anio = String(d.fecha).substring(0, 4);
-  return anio !== undefined ? `${corto} ${String(anio).slice(-2)}` : corto;
+  return mesCorto(d.mes);
 }
 
 /* ---------- Render de una tarjeta ---------- */
 function renderizarIndicador(cfg, data) {
   if (!Array.isArray(data) || data.length < 2) return;
 
-  const serie = data.slice(-12);
+  // Ajustado a los últimos 6 meses exactos
+  const serie = data.slice(-6);
   const ultimo = data[data.length - 1];
   const penultimo = data[data.length - 2];
   const actual = parseFloat(ultimo[cfg.campo]);
@@ -67,7 +78,7 @@ function renderizarIndicador(cfg, data) {
   };
 
   set('kpi', fmt(actual));
-  set('labelMes', capitalizar(ultimo.mes));
+  set('labelMes', obtenerMesCompleto(ultimo.mes)); // Mes completo garantizado
   set('estado', empeoro ? 'Empeoró' : 'Mejoró');
   set('axis', '');
   const prev = document.getElementById(`kpi${cfg.id}Anterior`);
