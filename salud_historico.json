@@ -1,0 +1,786 @@
+[
+    {
+        "ano": 2017,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 46166247,
+        "reclamos_totales": 63846,
+        "indice": 13.83
+    },
+    {
+        "ano": 2018,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 44578272,
+        "reclamos_totales": 44913,
+        "indice": 10.08
+    },
+    {
+        "ano": 2018,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 44691906,
+        "reclamos_totales": 46390,
+        "indice": 10.38
+    },
+    {
+        "ano": 2018,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 44839630,
+        "reclamos_totales": 50515,
+        "indice": 11.27
+    },
+    {
+        "ano": 2018,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 44969065,
+        "reclamos_totales": 66654,
+        "indice": 14.82
+    },
+    {
+        "ano": 2018,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 44987271,
+        "reclamos_totales": 51952,
+        "indice": 11.55
+    },
+    {
+        "ano": 2018,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 44848340,
+        "reclamos_totales": 35483,
+        "indice": 7.91
+    },
+    {
+        "ano": 2019,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 44965551,
+        "reclamos_totales": 46216,
+        "indice": 10.28
+    },
+    {
+        "ano": 2019,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 45107653,
+        "reclamos_totales": 49475,
+        "indice": 10.97
+    },
+    {
+        "ano": 2019,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 45190956,
+        "reclamos_totales": 50726,
+        "indice": 11.22
+    },
+    {
+        "ano": 2019,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 45347195,
+        "reclamos_totales": 65911,
+        "indice": 14.53
+    },
+    {
+        "ano": 2019,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 45432167,
+        "reclamos_totales": 58861,
+        "indice": 12.96
+    },
+    {
+        "ano": 2019,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 45471840,
+        "reclamos_totales": 63619,
+        "indice": 13.99
+    },
+    {
+        "ano": 2019,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 45533494,
+        "reclamos_totales": 61722,
+        "indice": 13.56
+    },
+    {
+        "ano": 2019,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 45616255,
+        "reclamos_totales": 62043,
+        "indice": 13.6
+    },
+    {
+        "ano": 2019,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 45648593,
+        "reclamos_totales": 75125,
+        "indice": 16.46
+    },
+    {
+        "ano": 2019,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 45678930,
+        "reclamos_totales": 66298,
+        "indice": 14.51
+    },
+    {
+        "ano": 2019,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 45668579,
+        "reclamos_totales": 54042,
+        "indice": 11.83
+    },
+    {
+        "ano": 2020,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 45391744,
+        "reclamos_totales": 60365,
+        "indice": 13.3
+    },
+    {
+        "ano": 2020,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 45850611,
+        "reclamos_totales": 68802,
+        "indice": 15.01
+    },
+    {
+        "ano": 2020,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 46327133,
+        "reclamos_totales": 59453,
+        "indice": 12.83
+    },
+    {
+        "ano": 2020,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 46220611,
+        "reclamos_totales": 55347,
+        "indice": 11.97
+    },
+    {
+        "ano": 2020,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 46153563,
+        "reclamos_totales": 55938,
+        "indice": 12.12
+    },
+    {
+        "ano": 2020,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 46193100,
+        "reclamos_totales": 65098,
+        "indice": 14.09
+    },
+    {
+        "ano": 2020,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 47330341,
+        "reclamos_totales": 66888,
+        "indice": 14.13
+    },
+    {
+        "ano": 2020,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 46774146,
+        "reclamos_totales": 56260,
+        "indice": 12.03
+    },
+    {
+        "ano": 2020,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 47010034,
+        "reclamos_totales": 61688,
+        "indice": 13.12
+    },
+    {
+        "ano": 2020,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 47343866,
+        "reclamos_totales": 63763,
+        "indice": 13.47
+    },
+    {
+        "ano": 2020,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 47277178,
+        "reclamos_totales": 64718,
+        "indice": 13.69
+    },
+    {
+        "ano": 2020,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 48356872,
+        "reclamos_totales": 87795,
+        "indice": 18.16
+    },
+    {
+        "ano": 2021,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 47330341,
+        "reclamos_totales": 66888,
+        "indice": 14.13
+    },
+    {
+        "ano": 2021,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 47511797,
+        "reclamos_totales": 72060,
+        "indice": 15.17
+    },
+    {
+        "ano": 2021,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 47654070,
+        "reclamos_totales": 78036,
+        "indice": 16.38
+    },
+    {
+        "ano": 2021,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 46652994,
+        "reclamos_totales": 75069,
+        "indice": 16.09
+    },
+    {
+        "ano": 2021,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 47916514,
+        "reclamos_totales": 66159,
+        "indice": 13.81
+    },
+    {
+        "ano": 2021,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 48010802,
+        "reclamos_totales": 75695,
+        "indice": 15.77
+    },
+    {
+        "ano": 2021,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 48083320,
+        "reclamos_totales": 81264,
+        "indice": 16.9
+    },
+    {
+        "ano": 2021,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 48184043,
+        "reclamos_totales": 83751,
+        "indice": 17.38
+    },
+    {
+        "ano": 2021,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 48396372,
+        "reclamos_totales": 79048,
+        "indice": 16.33
+    },
+    {
+        "ano": 2021,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 48476199,
+        "reclamos_totales": 85901,
+        "indice": 17.72
+    },
+    {
+        "ano": 2021,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 48782309,
+        "reclamos_totales": 101902,
+        "indice": 20.89
+    },
+    {
+        "ano": 2021,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 48549774,
+        "reclamos_totales": 66784,
+        "indice": 13.76
+    },
+    {
+        "ano": 2022,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 48591358,
+        "reclamos_totales": 81193,
+        "indice": 16.71
+    },
+    {
+        "ano": 2022,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 48710766,
+        "reclamos_totales": 86640,
+        "indice": 17.79
+    },
+    {
+        "ano": 2022,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 48782309,
+        "reclamos_totales": 101902,
+        "indice": 20.89
+    },
+    {
+        "ano": 2022,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 48899871,
+        "reclamos_totales": 89190,
+        "indice": 18.24
+    },
+    {
+        "ano": 2022,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 49104212,
+        "reclamos_totales": 102421,
+        "indice": 20.86
+    },
+    {
+        "ano": 2022,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 49203709,
+        "reclamos_totales": 97933,
+        "indice": 19.9
+    },
+    {
+        "ano": 2022,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 48547484,
+        "reclamos_totales": 106152,
+        "indice": 21.87
+    },
+    {
+        "ano": 2022,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 48663885,
+        "reclamos_totales": 99934,
+        "indice": 20.54
+    },
+    {
+        "ano": 2022,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 48859310,
+        "reclamos_totales": 101993,
+        "indice": 20.87
+    },
+    {
+        "ano": 2022,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 48997811,
+        "reclamos_totales": 97251,
+        "indice": 19.85
+    },
+    {
+        "ano": 2022,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 49090099,
+        "reclamos_totales": 100763,
+        "indice": 20.53
+    },
+    {
+        "ano": 2022,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 49160009,
+        "reclamos_totales": 88287,
+        "indice": 17.96
+    },
+    {
+        "ano": 2023,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 47488624,
+        "reclamos_totales": 96472,
+        "indice": 20.31
+    },
+    {
+        "ano": 2023,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 47551797,
+        "reclamos_totales": 103373,
+        "indice": 21.74
+    },
+    {
+        "ano": 2023,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 47688670,
+        "reclamos_totales": 117808,
+        "indice": 24.7
+    },
+    {
+        "ano": 2023,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 47748843,
+        "reclamos_totales": 100969,
+        "indice": 21.15
+    },
+    {
+        "ano": 2023,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 47753366,
+        "reclamos_totales": 116185,
+        "indice": 24.33
+    },
+    {
+        "ano": 2023,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 47753127,
+        "reclamos_totales": 108561,
+        "indice": 22.73
+    },
+    {
+        "ano": 2023,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 47789294,
+        "reclamos_totales": 105909,
+        "indice": 22.16
+    },
+    {
+        "ano": 2023,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 47862415,
+        "reclamos_totales": 118492,
+        "indice": 24.76
+    },
+    {
+        "ano": 2023,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 47923988,
+        "reclamos_totales": 118211,
+        "indice": 24.67
+    },
+    {
+        "ano": 2023,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 47981733,
+        "reclamos_totales": 125216,
+        "indice": 26.1
+    },
+    {
+        "ano": 2023,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 48051824,
+        "reclamos_totales": 112865,
+        "indice": 23.49
+    },
+    {
+        "ano": 2023,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 47968616,
+        "reclamos_totales": 76684,
+        "indice": 15.99
+    },
+    {
+        "ano": 2024,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 47843949,
+        "reclamos_totales": 102881,
+        "indice": 21.5
+    },
+    {
+        "ano": 2024,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 47854034,
+        "reclamos_totales": 112404,
+        "indice": 23.49
+    },
+    {
+        "ano": 2024,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 47931873,
+        "reclamos_totales": 111215,
+        "indice": 23.2
+    },
+    {
+        "ano": 2024,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 47979965,
+        "reclamos_totales": 141994,
+        "indice": 29.59
+    },
+    {
+        "ano": 2024,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 47993797,
+        "reclamos_totales": 132686,
+        "indice": 27.65
+    },
+    {
+        "ano": 2024,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 48047437,
+        "reclamos_totales": 119501,
+        "indice": 24.87
+    },
+    {
+        "ano": 2024,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 48021803,
+        "reclamos_totales": 135699,
+        "indice": 28.26
+    },
+    {
+        "ano": 2024,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 48077333,
+        "reclamos_totales": 134571,
+        "indice": 27.99
+    },
+    {
+        "ano": 2024,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 48116687,
+        "reclamos_totales": 148654,
+        "indice": 30.89
+    },
+    {
+        "ano": 2024,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 48176082,
+        "reclamos_totales": 174164,
+        "indice": 36.15
+    },
+    {
+        "ano": 2024,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 48236560,
+        "reclamos_totales": 155972,
+        "indice": 32.33
+    },
+    {
+        "ano": 2024,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 48269375,
+        "reclamos_totales": 135235,
+        "indice": 28.02
+    },
+    {
+        "ano": 2025,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 48224825,
+        "reclamos_totales": 162007,
+        "indice": 33.59
+    },
+    {
+        "ano": 2025,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 48305627,
+        "reclamos_totales": 158046,
+        "indice": 32.72
+    },
+    {
+        "ano": 2025,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 48397718,
+        "reclamos_totales": 168810,
+        "indice": 34.88
+    },
+    {
+        "ano": 2025,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 48395842,
+        "reclamos_totales": 158142,
+        "indice": 32.68
+    },
+    {
+        "ano": 2025,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 48471736,
+        "reclamos_totales": 176554,
+        "indice": 36.42
+    },
+    {
+        "ano": 2025,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 48594468,
+        "reclamos_totales": 154634,
+        "indice": 31.82
+    },
+    {
+        "ano": 2025,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 48609532,
+        "reclamos_totales": 199195,
+        "indice": 40.98
+    },
+    {
+        "ano": 2025,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 48630501,
+        "reclamos_totales": 156688,
+        "indice": 32.22
+    },
+    {
+        "ano": 2025,
+        "mes": "Septiembre",
+        "mes_num": 9,
+        "afiliados_totales": 48680245,
+        "reclamos_totales": 205842,
+        "indice": 42.28
+    },
+    {
+        "ano": 2025,
+        "mes": "Octubre",
+        "mes_num": 10,
+        "afiliados_totales": 48730472,
+        "reclamos_totales": 197194,
+        "indice": 40.47
+    },
+    {
+        "ano": 2025,
+        "mes": "Noviembre",
+        "mes_num": 11,
+        "afiliados_totales": 48720484,
+        "reclamos_totales": 168828,
+        "indice": 34.65
+    },
+    {
+        "ano": 2025,
+        "mes": "Diciembre",
+        "mes_num": 12,
+        "afiliados_totales": 48739866,
+        "reclamos_totales": 142519,
+        "indice": 29.24
+    },
+    {
+        "ano": 2026,
+        "mes": "Enero",
+        "mes_num": 1,
+        "afiliados_totales": 48605626,
+        "reclamos_totales": 160153,
+        "indice": 32.95
+    },
+    {
+        "ano": 2026,
+        "mes": "Febrero",
+        "mes_num": 2,
+        "afiliados_totales": 48695359,
+        "reclamos_totales": 169188,
+        "indice": 34.74
+    },
+    {
+        "ano": 2026,
+        "mes": "Marzo",
+        "mes_num": 3,
+        "afiliados_totales": 48705678,
+        "reclamos_totales": 182986,
+        "indice": 37.57
+    },
+    {
+        "ano": 2026,
+        "mes": "Abril",
+        "mes_num": 4,
+        "afiliados_totales": 48719093,
+        "reclamos_totales": 179535,
+        "indice": 36.85
+    },
+    {
+        "ano": 2026,
+        "mes": "Mayo",
+        "mes_num": 5,
+        "afiliados_totales": 48795352,
+        "reclamos_totales": 171396,
+        "indice": 35.13
+    },
+    {
+        "ano": 2026,
+        "mes": "Junio",
+        "mes_num": 6,
+        "afiliados_totales": 48800850,
+        "reclamos_totales": 170989,
+        "indice": 35.04
+    },
+    {
+        "ano": 2026,
+        "mes": "Julio",
+        "mes_num": 7,
+        "afiliados_totales": 48776113,
+        "reclamos_totales": 185908,
+        "indice": 38.11
+    },
+    {
+        "ano": 2026,
+        "mes": "Agosto",
+        "mes_num": 8,
+        "afiliados_totales": 48809039,
+        "reclamos_totales": 144932,
+        "indice": 29.69
+    }
+]

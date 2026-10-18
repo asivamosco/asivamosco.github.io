@@ -3,26 +3,14 @@
    Tarjetas "glass" con mini-gráfica SVG (sin Chart.js)
    ========================================================= */
 
-/* Salud aún no tiene JSON: valores de ejemplo (últimos 12 meses).
-   Cuando exista el archivo, basta con reemplazar este arreglo
-   o cargarlo con cargarIndicador() como los demás. */
-const SALUD_EJEMPLO = [
-  { mes: 'Noviembre',  valor: 91.2 }, { mes: 'Diciembre', valor: 91.4 },
-  { mes: 'Enero',      valor: 91.9 }, { mes: 'Febrero',   valor: 91.6 },
-  { mes: 'Marzo',      valor: 92.3 }, { mes: 'Abril',     valor: 92.5 },
-  { mes: 'Mayo',       valor: 93.0 }, { mes: 'Junio',     valor: 92.8 },
-  { mes: 'Julio',      valor: 93.4 }, { mes: 'Agosto',    valor: 93.7 },
-  { mes: 'Septiembre', valor: 93.9 }, { mes: 'Octubre',   valor: 94.1 }
-];
-
 /* Configuración de cada indicador.
-   subeEsMalo: true  -> si el valor sube, EMPEORÓ (inflación, desempleo, seguridad)
-               false -> si el valor sube, MEJORÓ  (salud)                            */
+   subeEsMalo: true  -> si el valor sube, EMPEORÓ (inflación, desempleo, seguridad, salud)
+               false -> si el valor sube, MEJORÓ                                      */
 const INDICADORES = [
-  { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',  campo: 'var_anual',     dec: 2, sufijo: '%', subeEsMalo: true  },
+  { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
-  { id: 'Seguridad', archivo: 'seguridad_historico.json',   campo: 'indice',        dec: 1, sufijo: '%', subeEsMalo: true  },
-  { id: 'Salud',     datos: SALUD_EJEMPLO,                  campo: 'valor',         dec: 1, sufijo: '%', subeEsMalo: false }
+  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '%', subeEsMalo: true  },
+  { id: 'Salud',     archivo: 'salud_historico.json',          campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
