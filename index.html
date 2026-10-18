@@ -2,183 +2,91 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Así Vamos | Estado de la Nación</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Chakra+Petch:wght@700&family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <div class="bg-telemetry-map"></div>
-  <div class="bg-stat-watermark wm-left">DATA // 2026</div>
-  <div class="bg-stat-watermark wm-right">TELEMETRY</div>
+<div class='field'><svg viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice' aria-hidden='true'>
+<defs>
+<pattern id='g1' width='60' height='60' patternUnits='userSpaceOnUse'><path d='M60 0H0V60' fill='none' stroke='#fff' stroke-opacity='.035'/></pattern>
+<pattern id='g2' width='240' height='240' patternUnits='userSpaceOnUse'><path d='M240 0H0V240' fill='none' stroke='#fff' stroke-opacity='.06'/></pattern>
+<linearGradient id='bar' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7cc4ee' stop-opacity='.24'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='.01'/></linearGradient>
+<linearGradient id='ar' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7cc4ee' stop-opacity='.32'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='0'/></linearGradient>
+<linearGradient id='ln' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='#7cc4ee' stop-opacity='0'/><stop offset='.5' stop-color='#7cc4ee' stop-opacity='.6'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='0'/></linearGradient>
+<radialGradient id='orb'><stop offset='0' stop-color='#3b6fc0' stop-opacity='.24'/><stop offset='1' stop-color='#4f8fe8' stop-opacity='0'/></radialGradient>
+<radialGradient id='calm' cx='.6' cy='.62' r='.62'><stop offset='0' stop-color='#08162a' stop-opacity='.85'/><stop offset='.6' stop-color='#08162a' stop-opacity='.5'/><stop offset='1' stop-color='#08162a' stop-opacity='0'/></radialGradient>
+<radialGradient id='vg' cx='.5' cy='.45' r='.8'><stop offset='.45' stop-color='#050a16' stop-opacity='0'/><stop offset='1' stop-color='#050a16' stop-opacity='.6'/></radialGradient>
+</defs>
+<rect width='1600' height='900' fill='url(#g1)'/><rect width='1600' height='900' fill='url(#g2)'/>
+<circle cx='420' cy='330' r='300' fill='url(#orb)'/><circle cx='1190' cy='290' r='320' fill='url(#orb)'/><circle cx='800' cy='560' r='280' fill='url(#orb)'/>
+<g fill='none' stroke='#fff' stroke-opacity='.09'><circle cx='1430' cy='110' r='110'/><circle cx='1430' cy='110' r='190'/><circle cx='1430' cy='110' r='290'/><circle cx='1430' cy='110' r='410'/><circle cx='140' cy='800' r='90'/><circle cx='140' cy='800' r='170'/><circle cx='140' cy='800' r='260'/></g>
+<g fill='url(#bar)'><rect x='6' y='757' width='10' height='143'/><rect x='28' y='736' width='10' height='164'/><rect x='50' y='743' width='10' height='157'/><rect x='72' y='742' width='10' height='158'/><rect x='94' y='736' width='10' height='164'/><rect x='116' y='738' width='10' height='162'/><rect x='138' y='780' width='10' height='120'/><rect x='160' y='748' width='10' height='152'/><rect x='182' y='758' width='10' height='142'/><rect x='204' y='782' width='10' height='118'/><rect x='226' y='777' width='10' height='123'/><rect x='248' y='750' width='10' height='150'/><rect x='270' y='747' width='10' height='153'/><rect x='292' y='703' width='10' height='197'/><rect x='314' y='674' width='10' height='226'/><rect x='336' y='715' width='10' height='185'/><rect x='358' y='666' width='10' height='234'/><rect x='380' y='656' width='10' height='244'/><rect x='402' y='654' width='10' height='246'/><rect x='424' y='702' width='10' height='198'/><rect x='446' y='710' width='10' height='190'/><rect x='468' y='705' width='10' height='195'/><rect x='490' y='702' width='10' height='198'/><rect x='512' y='697' width='10' height='203'/><rect x='534' y='654' width='10' height='246'/><rect x='556' y='624' width='10' height='276'/><rect x='578' y='624' width='10' height='276'/><rect x='600' y='652' width='10' height='248'/><rect x='622' y='631' width='10' height='269'/><rect x='644' y='613' width='10' height='287'/><rect x='666' y='672' width='10' height='228'/><rect x='688' y='616' width='10' height='284'/><rect x='710' y='588' width='10' height='312'/><rect x='732' y='595' width='10' height='305'/><rect x='754' y='592' width='10' height='308'/><rect x='776' y='612' width='10' height='288'/><rect x='798' y='634' width='10' height='266'/><rect x='820' y='574' width='10' height='326'/><rect x='842' y='610' width='10' height='290'/><rect x='864' y='563' width='10' height='337'/><rect x='886' y='543' width='10' height='357'/><rect x='908' y='589' width='10' height='311'/><rect x='930' y='584' width='10' height='316'/><rect x='952' y='530' width='10' height='370'/><rect x='974' y='545' width='10' height='355'/><rect x='996' y='590' width='10' height='310'/><rect x='1018' y='589' width='10' height='311'/><rect x='1040' y='581' width='10' height='319'/><rect x='1062' y='509' width='10' height='391'/><rect x='1084' y='512' width='10' height='388'/><rect x='1106' y='567' width='10' height='333'/><rect x='1128' y='501' width='10' height='399'/><rect x='1150' y='482' width='10' height='418'/><rect x='1172' y='506' width='10' height='394'/><rect x='1194' y='528' width='10' height='372'/><rect x='1216' y='506' width='10' height='394'/><rect x='1238' y='538' width='10' height='362'/><rect x='1260' y='544' width='10' height='356'/><rect x='1282' y='453' width='10' height='447'/><rect x='1304' y='477' width='10' height='423'/><rect x='1326' y='483' width='10' height='417'/><rect x='1348' y='441' width='10' height='459'/><rect x='1370' y='481' width='10' height='419'/><rect x='1392' y='437' width='10' height='463'/><rect x='1414' y='436' width='10' height='464'/><rect x='1436' y='486' width='10' height='414'/><rect x='1458' y='477' width='10' height='423'/><rect x='1480' y='469' width='10' height='431'/><rect x='1502' y='468' width='10' height='432'/><rect x='1524' y='432' width='10' height='468'/><rect x='1546' y='457' width='10' height='443'/><rect x='1568' y='437' width='10' height='463'/><rect x='1590' y='458' width='10' height='442'/></g>
+<g stroke='#7cc4ee' stroke-opacity='.15'><line x1='518' y1='122' x2='527' y2='166'/><line x1='518' y1='122' x2='544' y2='62'/><line x1='1041' y1='74' x2='1082' y2='63'/><line x1='1041' y1='74' x2='983' y2='121'/><line x1='857' y1='253' x2='923' y2='272'/><line x1='857' y1='253' x2='928' y2='308'/><line x1='93' y1='340' x2='129' y2='304'/><line x1='93' y1='340' x2='60' y2='295'/><line x1='60' y1='295' x2='36' y2='312'/><line x1='60' y1='295' x2='7' y2='286'/><line x1='112' y1='85' x2='100' y2='71'/><line x1='112' y1='85' x2='137' y2='92'/><line x1='679' y1='534' x2='669' y2='492'/><line x1='679' y1='534' x2='626' y2='562'/><line x1='198' y1='166' x2='207' y2='181'/><line x1='198' y1='166' x2='231' y2='102'/><line x1='1004' y1='608' x2='1035' y2='636'/><line x1='1004' y1='608' x2='879' y2='569'/><line x1='923' y1='272' x2='928' y2='308'/><line x1='1562' y1='58' x2='1568' y2='102'/><line x1='1562' y1='58' x2='1532' y2='122'/><line x1='1374' y1='207' x2='1401' y2='221'/><line x1='1374' y1='207' x2='1315' y2='204'/><line x1='231' y1='102' x2='269' y2='101'/><line x1='494' y1='528' x2='574' y2='569'/><line x1='494' y1='528' x2='626' y2='562'/><line x1='289' y1='385' x2='243' y2='328'/><line x1='289' y1='385' x2='391' y2='380'/><line x1='1022' y1='257' x2='1089' y2='291'/><line x1='876' y1='68' x2='869' y2='46'/><line x1='876' y1='68' x2='845' y2='119'/><line x1='95' y1='156' x2='137' y2='92'/><line x1='1089' y1='291' x2='1112' y2='393'/><line x1='503' y1='387' x2='591' y2='375'/><line x1='503' y1='387' x2='391' y2='380'/><line x1='725' y1='213' x2='746' y2='325'/><line x1='725' y1='213' x2='628' y2='273'/><line x1='1271' y1='456' x2='1223' y2='380'/><line x1='1271' y1='456' x2='1311' y2='557'/><line x1='391' y1='380' x2='373' y2='326'/><line x1='840' y1='564' x2='879' y2='569'/><line x1='840' y1='564' x2='852' y2='505'/><line x1='1167' y1='206' x2='1315' y2='204'/><line x1='1568' y1='102' x2='1532' y2='122'/><line x1='669' y1='492' x2='617' y2='438'/><line x1='243' y1='328' x2='162' y2='252'/><line x1='63' y1='438' x2='97' y2='458'/><line x1='63' y1='438' x2='94' y2='499'/><line x1='1223' y1='380' x2='1112' y2='393'/><line x1='1401' y1='221' x2='1315' y2='204'/><line x1='1344' y1='606' x2='1358' y2='636'/><line x1='1344' y1='606' x2='1311' y2='557'/><line x1='759' y1='435' x2='825' y2='407'/><line x1='97' y1='458' x2='94' y2='499'/><line x1='1035' y1='636' x2='879' y2='569'/><line x1='1315' y1='204' x2='1326' y2='128'/><line x1='617' y1='438' x2='591' y2='375'/><line x1='36' y1='312' x2='7' y2='286'/><line x1='269' y1='101' x2='334' y2='129'/><line x1='207' y1='181' x2='282' y2='171'/><line x1='626' y1='562' x2='574' y2='569'/><line x1='129' y1='304' x2='162' y2='252'/><line x1='879' y1='569' x2='845' y2='627'/><line x1='1311' y1='557' x2='1358' y2='636'/><line x1='445' y1='283' x2='418' y2='254'/><line x1='445' y1='283' x2='404' y2='242'/><line x1='282' y1='171' x2='334' y2='129'/><line x1='943' y1='190' x2='983' y2='121'/><line x1='1525' y1='451' x2='1439' y2='506'/><line x1='1525' y1='451' x2='1399' y2='517'/><line x1='825' y1='407' x2='852' y2='505'/><line x1='1082' y1='63' x2='983' y2='121'/><line x1='1439' y1='506' x2='1399' y2='517'/><line x1='1439' y1='506' x2='1381' y2='455'/><line x1='1399' y1='517' x2='1381' y2='455'/><line x1='628' y1='273' x2='548' y2='192'/><line x1='100' y1='71' x2='137' y2='92'/><line x1='544' y1='62' x2='583' y2='105'/><line x1='41' y1='563' x2='37' y2='610'/><line x1='404' y1='242' x2='418' y2='254'/><line x1='548' y1='192' x2='527' y2='166'/><line x1='845' y1='119' x2='869' y2='46'/></g>
+<g fill='#7cc4ee' fill-opacity='.38'><circle cx='518' cy='122' r='2.4'/><circle cx='1041' cy='74' r='2.4'/><circle cx='857' cy='253' r='2.4'/><circle cx='93' cy='340' r='2.4'/><circle cx='60' cy='295' r='2.4'/><circle cx='112' cy='85' r='2.4'/><circle cx='679' cy='534' r='2.4'/><circle cx='198' cy='166' r='2.4'/><circle cx='1004' cy='608' r='2.4'/><circle cx='923' cy='272' r='2.4'/><circle cx='1562' cy='58' r='2.4'/><circle cx='1374' cy='207' r='2.4'/><circle cx='231' cy='102' r='2.4'/><circle cx='494' cy='528' r='2.4'/><circle cx='289' cy='385' r='2.4'/><circle cx='1022' cy='257' r='2.4'/><circle cx='876' cy='68' r='2.4'/><circle cx='95' cy='156' r='2.4'/><circle cx='1089' cy='291' r='2.4'/><circle cx='503' cy='387' r='2.4'/><circle cx='725' cy='213' r='2.4'/><circle cx='1271' cy='456' r='2.4'/><circle cx='391' cy='380' r='2.4'/><circle cx='840' cy='564' r='2.4'/><circle cx='1167' cy='206' r='2.4'/><circle cx='1568' cy='102' r='2.4'/><circle cx='669' cy='492' r='2.4'/><circle cx='243' cy='328' r='2.4'/><circle cx='63' cy='438' r='2.4'/><circle cx='1223' cy='380' r='2.4'/><circle cx='1401' cy='221' r='2.4'/><circle cx='1112' cy='393' r='2.4'/><circle cx='928' cy='308' r='2.4'/><circle cx='1344' cy='606' r='2.4'/><circle cx='759' cy='435' r='2.4'/><circle cx='97' cy='458' r='2.4'/><circle cx='1035' cy='636' r='2.4'/><circle cx='1315' cy='204' r='2.4'/><circle cx='617' cy='438' r='2.4'/><circle cx='36' cy='312' r='2.4'/><circle cx='269' cy='101' r='2.4'/><circle cx='94' cy='499' r='2.4'/><circle cx='207' cy='181' r='2.4'/><circle cx='626' cy='562' r='2.4'/><circle cx='129' cy='304' r='2.4'/><circle cx='879' cy='569' r='2.4'/><circle cx='1311' cy='557' r='2.4'/><circle cx='445' cy='283' r='2.4'/><circle cx='574' cy='569' r='2.4'/><circle cx='1532' cy='122' r='2.4'/><circle cx='282' cy='171' r='2.4'/><circle cx='373' cy='326' r='2.4'/><circle cx='943' cy='190' r='2.4'/><circle cx='7' cy='286' r='2.4'/><circle cx='591' cy='375' r='2.4'/><circle cx='1525' cy='451' r='2.4'/><circle cx='825' cy='407' r='2.4'/><circle cx='1082' cy='63' r='2.4'/><circle cx='1439' cy='506' r='2.4'/><circle cx='1399' cy='517' r='2.4'/><circle cx='628' cy='273' r='2.4'/><circle cx='166' cy='417' r='2.4'/><circle cx='100' cy='71' r='2.4'/><circle cx='334' cy='129' r='2.4'/><circle cx='544' cy='62' r='2.4'/><circle cx='0' cy='122' r='2.4'/><circle cx='162' cy='252' r='2.4'/><circle cx='41' cy='563' r='2.4'/><circle cx='983' cy='121' r='2.4'/><circle cx='404' cy='242' r='2.4'/><circle cx='583' cy='105' r='2.4'/><circle cx='1358' cy='636' r='2.4'/><circle cx='746' cy='325' r='2.4'/><circle cx='137' cy='92' r='2.4'/><circle cx='548' cy='192' r='2.4'/><circle cx='1326' cy='128' r='2.4'/><circle cx='37' cy='610' r='2.4'/><circle cx='845' cy='119' r='2.4'/><circle cx='869' cy='46' r='2.4'/><circle cx='845' cy='627' r='2.4'/><circle cx='1381' cy='455' r='2.4'/><circle cx='418' cy='254' r='2.4'/><circle cx='267' cy='501' r='2.4'/><circle cx='852' cy='505' r='2.4'/><circle cx='527' cy='166' r='2.4'/></g>
+<g fill='#7cc4ee' fill-opacity='.65'><circle cx='518' cy='122' r='4'/><circle cx='518' cy='122' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='923' cy='272' r='4'/><circle cx='923' cy='272' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='1089' cy='291' r='4'/><circle cx='1089' cy='291' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='243' cy='328' r='4'/><circle cx='243' cy='328' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='1035' cy='636' r='4'/><circle cx='1035' cy='636' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='879' cy='569' r='4'/><circle cx='879' cy='569' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='591' cy='375' r='4'/><circle cx='591' cy='375' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='334' cy='129' r='4'/><circle cx='334' cy='129' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='746' cy='325' r='4'/><circle cx='746' cy='325' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/><circle cx='418' cy='254' r='4'/><circle cx='418' cy='254' r='10' fill='none' stroke='#7cc4ee' stroke-opacity='.25'/></g>
+<g fill='none' stroke='url(#ln)' stroke-width='3' stroke-linejoin='round'><polyline points='0,582 100,584 200,542 300,481 400,452 500,443 600,460 700,472 800,440 900,398 1000,368 1100,325 1200,325 1300,319 1400,338 1500,329 1600,276'/><polyline points='0,398 100,368 200,343 300,350 400,364 500,358 600,342 700,328 800,277 900,256 1000,276 1100,277 1200,292 1300,269 1400,239 1500,190 1600,181'/><polyline points='0,228 100,239 200,256 300,265 400,247 500,223 600,175 700,175 800,195 900,204 1000,215 1100,183 1200,163 1300,131 1400,128 1500,138 1600,140'/></g>
+<rect x='450' y='440' width='1150' height='460' fill='url(#calm)'/>
+<rect width='1600' height='900' fill='url(#vg)'/>
+</svg></div>
 
-  <div class="page-wrapper">
-    <header class="dashboard-header">
-      <div class="header-top-row">
-        <img src="assets/images/logo_head.png" alt="Así Vamos" class="header-logo">
-      </div>
-      <p class="dashboard-subtitle">Tablero de Control Indicadores Sociales y Económicos</p>
-    </header>
+<div class="page">
+  <header>
+    <h1>Así Vamos<span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></h1>
+    <p>Indicadores que nos marcan el rumbo del país</p>
+  </header>
 
-    <!-- Pestañas (solo visibles en celular) -->
-    <nav class="mobile-nav-tabs" id="mobileNavTabs" aria-label="Indicadores">
-      <button type="button" class="nav-tab" data-target="cardInflacion">Inflación</button>
-      <button type="button" class="nav-tab" data-target="cardDesempleo">Desempleo</button>
-      <button type="button" class="nav-tab" data-target="cardSeguridad">Seguridad</button>
-      <button type="button" class="nav-tab" data-target="cardSalud">Salud</button>
-    </nav>
+  <main class="grid">
 
-    <main class="dashboard-grid test-grid">
-      
-      <!-- 1. INFLACIÓN (IPC) -->
-      <div class="kpi-card card-green" id="cardInflacion">
-        <div class="card-pattern"></div>
-        <div class="kpi-content-wrapper">
-          <div class="kpi-title-box">
-            <div class="kpi-title-left">
-              <svg class="kpi-icon" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-              <span class="kpi-title">Inflación (IPC)</span>
-            </div>
-          </div>
+    <article class="card glass" id="cardInflacion">
+      <h2>Inflación (IPC)</h2>
+      <div class="mes"><span id="labelMesInflacion">Octubre</span> - <span class="est" id="estadoInflacion">--</span></div>
+      <div class="val" id="kpiInflacion">--</div>
+      <span class="prev" id="kpiInflacionAnterior">--</span>
+      <div class="chart" id="chartInflacion"></div>
+      <div class="axis" id="axisInflacion"></div>
+    </article>
 
-          <div class="kpi-card-inner">
-            <div class="kpi-left">
-              <div class="kpi-value-container">
-                <div id="verdictStatusInflacion" class="kpi-status-line"></div>
-                <span class="kpi-month-label" id="labelMesInflacion">Octubre</span>
-                <div class="kpi-value" id="kpiInflacion">--%</div>
-                <div class="kpi-previous">
-                  <span class="kpi-prev-label">SEP:</span>
-                  <span class="kpi-prev-value" id="kpiInflacionAnterior">--%</span>
-                </div>
-              </div>
-            </div>
-            
-            <div class="kpi-right-column">
-              <div class="chart-container">
-                <canvas id="chartInflacion"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <article class="card glass" id="cardDesempleo">
+      <h2>Desempleo</h2>
+      <div class="mes"><span id="labelMesDesempleo">Octubre</span> - <span class="est" id="estadoDesempleo">--</span></div>
+      <div class="val" id="kpiDesempleo">--</div>
+      <span class="prev" id="kpiDesempleoAnterior">--</span>
+      <div class="chart" id="chartDesempleo"></div>
+      <div class="axis" id="axisDesempleo"></div>
+    </article>
 
-      <!-- 2. DESEMPLEO -->
-      <div class="kpi-card card-green" id="cardDesempleo">
-        <div class="card-pattern"></div>
-        <div class="kpi-content-wrapper">
-          <div class="kpi-title-box">
-            <div class="kpi-title-left">
-              <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              <span class="kpi-title">Desempleo</span>
-            </div>
-          </div>
+    <article class="card glass" id="cardSeguridad">
+      <h2>Seguridad</h2>
+      <div class="mes"><span id="labelMesSeguridad">--</span> - <span class="est" id="estadoSeguridad">--</span></div>
+      <div class="val" id="kpiSeguridad">--</div>
+      <span class="prev" id="kpiSeguridadAnterior">--</span>
+      <div class="chart" id="chartSeguridad"></div>
+      <div class="axis" id="axisSeguridad"></div>
+    </article>
 
-          <div class="kpi-card-inner">
-            <div class="kpi-left">
-              <div class="kpi-value-container">
-                <div id="verdictStatusDesempleo" class="kpi-status-line"></div>
-                <span class="kpi-month-label" id="labelMesDesempleo">Octubre</span>
-                <div class="kpi-value" id="kpiDesempleo">--%</div>
-                <div class="kpi-previous">
-                  <span class="kpi-prev-label">SEP:</span>
-                  <span class="kpi-prev-value" id="kpiDesempleoAnterior">--%</span>
-                </div>
-              </div>
-            </div>
+    <article class="card glass" id="cardSalud">
+      <h2>Salud</h2>
+      <div class="mes"><span id="labelMesSalud">Octubre</span> - <span class="est" id="estadoSalud">--</span></div>
+      <div class="val" id="kpiSalud">--</div>
+      <span class="prev" id="kpiSaludAnterior">--</span>
+      <div class="chart" id="chartSalud"></div>
+      <div class="axis" id="axisSalud"></div>
+    </article>
+  </main>
 
-            <div class="kpi-right-column">
-              <div class="chart-container">
-                <canvas id="chartDesempleo"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="sponsors">
+    <div class="sp glass"><b>Espacio de Patrocinio</b>1 / 8</div>
+    <div class="sp glass"><b>Local Partner</b>2 / 8</div>
+  </section>
 
-      <!-- 3. SEGURIDAD -->
-      <div class="kpi-card card-green" id="cardSeguridad">
-        <div class="card-pattern"></div>
-        <div class="kpi-content-wrapper">
-          <div class="kpi-title-box">
-            <div class="kpi-title-left">
-              <svg class="kpi-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <span class="kpi-title">Seguridad</span>
-            </div>
-          </div>
+  <footer>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</footer>
+</div>
 
-          <div class="kpi-card-inner">
-            <div class="kpi-left">
-              <div class="kpi-value-container">
-                <div id="verdictStatusSeguridad" class="kpi-status-line"></div>
-                <span class="kpi-month-label" id="labelMesSeguridad">--</span>
-                <div class="kpi-value" id="kpiSeguridad">--</div>
-                <div class="kpi-previous">
-                  <span class="kpi-prev-label">ANT:</span>
-                  <span class="kpi-prev-value" id="kpiSeguridadAnterior">--</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="kpi-right-column">
-              <div class="chart-container">
-                <canvas id="chartSeguridad"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. SALUD -->
-      <div class="kpi-card card-green" id="cardSalud">
-        <div class="card-pattern"></div>
-        <div class="kpi-content-wrapper">
-          <div class="kpi-title-box">
-            <div class="kpi-title-left">
-              <svg class="kpi-icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
-              <span class="kpi-title">Salud</span>
-            </div>
-          </div>
-
-          <div class="kpi-card-inner">
-            <div class="kpi-left">
-              <div class="kpi-value-container">
-                <div class="kpi-status-line">
-                  <svg class="kpi-status-thumb thumb-up" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
-                  <span>MEJORÓ</span>
-                </div>
-                <span class="kpi-month-label">Octubre</span>
-                <div class="kpi-value">94.1%</div>
-                <div class="kpi-previous">
-                  <span class="kpi-prev-label">SEP:</span>
-                  <span class="kpi-prev-value">94.1%</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="kpi-right-column">
-              <div class="chart-container">
-                <canvas id="chartSalud"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-    <div class="sponsor-container">
-      <div class="sponsor-box">Espacio de Patrocinio (1/8) /8)</div>
-      <div class="sponsor-box">Local Partner (2/8)</div>
-    </div>
-  </div>
-
-  <footer>
-    <p>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
-  </footer>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

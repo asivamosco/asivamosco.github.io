@@ -1,796 +1,117 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
+/* =========================================================
+   Así Vamos · Estado de la Nación — diseño "glass"
+   ========================================================= */
+:root{
+  --text:#f2f5fa; --muted:#bccade; --accent:#7cc4ee;
+  --royal:#1c3f9e; --ok:#3fbf7f; --mal:#ff8a80;
+  --foto-capa:linear-gradient(transparent,transparent);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  min-height:100vh; color:var(--text);
+  font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    var(--foto-capa),
+    radial-gradient(ellipse 60% 28% at 50% 0%,rgba(80,140,230,.42),transparent 70%),
+    radial-gradient(circle at 18% 62%,rgba(40,90,190,.22),transparent 42%),
+    radial-gradient(circle at 86% 72%,rgba(40,120,200,.18),transparent 42%),
+    linear-gradient(180deg,#0b1b3a 0%,#091428 55%,#071a2a 100%);
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+.field{position:fixed;inset:0;pointer-events:none}
+.field svg{width:100%;height:100%;display:block}
+
+.page{position:relative;max-width:1000px;margin:0 auto;padding:14px 20px 40px}
+
+/* ---------- Encabezado ---------- */
+header{text-align:center;margin-bottom:20px}
+h1{margin:0;font-size:26px;line-height:1.1}
+header p{margin:4px 0 0;color:var(--muted);font-size:13px}
+.tag{
+  font-size:11px; font-weight:400; color:var(--muted);
+  letter-spacing:.2em; margin-left:8px; vertical-align:middle;
+  display:inline-flex; align-items:center; gap:5px;
+}
+.col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;
+  vertical-align:middle;box-shadow:0 0 2px rgba(0,0,0,.3)}
+.col-flag span{display:block;width:100%}
+.col-flag .yellow{height:50%;background:#ffcc00}
+.col-flag .blue{height:25%;background:#0033a0}
+.col-flag .red{height:25%;background:#ce1126}
+
+/* ---------- Vidrio reutilizable ---------- */
+.glass{
+  background:linear-gradient(135deg,rgba(55,78,120,.28),rgba(20,32,58,.22));
+  -webkit-backdrop-filter:blur(6px) saturate(1.4);
+  backdrop-filter:blur(6px) saturate(1.4);
+  border:1px solid rgba(255,255,255,.16);
+  border-top:6px solid var(--royal);
+  box-shadow:0 20px 50px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+  border-radius:4px;
+}
+.card.mejoro{
+  background:linear-gradient(135deg,rgba(63,191,127,.22),rgba(20,32,58,.35));
+  border-top-color:var(--ok);
+}
+.card.empeoro{
+  background:linear-gradient(135deg,rgba(255,138,128,.22),rgba(20,32,58,.35));
+  border-top-color:var(--mal);
 }
 
-body {
-  background-color: #0d131d;
-  background-image: 
-    radial-gradient(circle at 50% 12%, #1f2c42 0%, #0a0e17 80%),
-    linear-gradient(rgba(0, 210, 190, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 210, 190, 0.05) 1px, transparent 1px);
-  background-size: 100% 100%, 30px 30px, 30px 30px;
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 15px 15px 15px;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.bg-telemetry-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.18;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' fill='none' stroke='%2300d2be' stroke-width='1.2' stroke-dasharray='3 3'%3E%3Cpath d='M150,120 Q180,80 220,100 T300,90 T350,150 T280,220 T200,200 Z' opacity='0.5'/%3E%3Cpath d='M450,100 Q500,60 550,80 T650,110 T720,180 T680,260 T580,240 Z' opacity='0.5'/%3E%3Cpath d='M750,150 Q820,130 880,180 T920,250 T850,320 T780,280 Z' opacity='0.5'/%3E%3Ccircle cx='200' cy='120' r='4' fill='%2300d2be'/%3E%3Ccircle cx='300' cy='90' r='4' fill='%2300d2be'/%3E%3Ccircle cx='500' cy='150' r='4' fill='%23e61c34'/%3E%3Ccircle cx='650' cy='110' r='4' fill='%2300d2be'/%3E%3Ccircle cx='850' cy='200' r='4' fill='%23e61c34'/%3E%3Cline x1='200' y1='120' x2='300' y2='90' stroke='%2300d2be' stroke-dasharray='none' opacity='0.8'/%3E%3Cline x1='500' y1='150' x2='650' y2='110' stroke='%23e61c34' stroke-dasharray='none' opacity='0.8'/%3E%3Cline x1='650' y1='110' x2='850' y2='200' stroke='%2300d2be' stroke-dasharray='none' opacity='0.8'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.bg-stat-watermark {
-  position: absolute;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 8rem;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.02);
-  user-select: none;
-  pointer-events: none;
-  z-index: 0;
-  text-transform: uppercase;
-  letter-spacing: -4px;
-}
-.wm-left { top: 10%; left: -2%; transform: rotate(-8deg); }
-.wm-right { bottom: 15%; right: -2%; transform: rotate(6deg); }
-
-.page-wrapper {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dashboard-header {
-  text-align: center;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.header-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4px;
-}
-
-.header-logo {
-  max-width: 240px;
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
-}
-
-.dashboard-subtitle {
-  font-family: 'Chakra Petch', sans-serif;
-  font-size: 0.8rem;
-  color: rgba(0, 210, 190, 0.9);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  width: 100%;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-/* Tarjeta principal para escritorio */
-.kpi-card {
-  border-radius: 20px;
-  padding: 24px 18px 18px 18px;
-  min-height: 500px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-  box-shadow: 
-    0 25px 40px -10px rgba(0, 0, 0, 0.75), 
-    0 0 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 2px 5px rgba(255, 255, 255, 0.1) inset;
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-@media (hover: hover) {
-  .kpi-card:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 
-      0 35px 55px -12px rgba(0, 0, 0, 0.9), 
-      0 0 0 1px rgba(255, 255, 255, 0.45) inset,
-      0 4px 12px rgba(255, 255, 255, 0.25) inset;
-  }
-}
-
-.kpi-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  border-radius: 20px 20px 0 0;
-  z-index: 2;
-}
-
-.kpi-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75%;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 6px 6px 0 0;
-  box-shadow: 0 -1px 3px rgba(255, 255, 255, 0.25);
-  z-index: 2;
-}
-
-.card-red {
-  background: radial-gradient(circle at 50% 10%, #e61c34 0%, #9e0b20 55%, #3d020a 100%);
-  border-color: rgba(230, 28, 52, 0.8);
-}
-
-.card-green {
-  background: radial-gradient(circle at 50% 10%, #00d2be 0%, #005a50 55%, #011f1c 100%);
-  border-color: rgba(0, 210, 190, 0.8);
-}
-
-.card-pattern {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: 
-    linear-gradient(30deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03)),
-    linear-gradient(150deg, rgba(255, 255, 255, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.03) 87.5%, rgba(255, 255, 255, 0.03));
-  background-size: 24px 42px;
-  pointer-events: none;
-  opacity: 0.5;
-  z-index: 1;
-}
-
-.kpi-content-wrapper {
-  position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.kpi-title-box {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.38);
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.kpi-title-left {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.kpi-title {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 0.9rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.kpi-icon {
-  width: 18px;
-  height: 18px;
-  stroke: #ffffff;
-  fill: none;
-  stroke-width: 2.2;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-}
-
-.kpi-card-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  padding-top: 12px;
-  width: 100%;
-}
-
-.kpi-left {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.kpi-right-column {
-  width: 100%;
-  flex-shrink: 0;
-  margin-top: 16px; 
-}
-
-.kpi-value-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-}
-
-.kpi-status-line {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: 'Orbitron', sans-serif !important; 
-  font-size: 1.85rem; 
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-top: 12px; 
-
-  background: linear-gradient(180deg, rgba(15, 2, 4, 0.95) 0%, rgba(85, 4, 12, 0.98) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  
-  filter: 
-    drop-shadow(0 2px 0 rgba(255, 190, 190, 0.55))
-    drop-shadow(0 -1px 0.5px rgba(0, 0, 0, 0.75));
-}
-
-.kpi-status-line span {
-  font-family: 'Orbitron', sans-serif !important;
-}
-
-.kpi-status-thumb {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  stroke-width: 2.2;
-  filter: none;
-}
-
-.thumb-down {
-  stroke: #9e2a38;
-  fill: rgba(20, 2, 4, 0.98);
-}
-
-.thumb-up {
-  stroke: #007a6e;
-  fill: rgba(1, 20, 18, 0.98);
-}
-
-.kpi-month-label {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 1.3rem; 
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.95);
-  text-transform: uppercase;
-  margin-top: 6px; 
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.9), 0px -1px 1px rgba(255, 255, 255, 0.35);
-}
-
-.kpi-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 3.1rem; 
-  font-weight: 800;
-  line-height: 1;
-  color: #ffffff;
-  margin-top: 2px; 
-  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.95), 0px -1px 1px rgba(255, 255, 255, 0.35);
-  letter-spacing: -1.5px;
-}
-
-.kpi-previous {
-  margin-top: 6px;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 8px;
-}
-
-.kpi-prev-label {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 0.95rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.85);
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9), 0px -1px 1px rgba(255, 255, 255, 0.3);
-}
-
-.kpi-prev-value {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #ffffff;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.9), 0px -1px 1px rgba(255, 255, 255, 0.3);
-}
-
-.chart-container {
-  position: relative;
-  height: 180px;
-  width: 100%;
-}
-
-/* CONFIGURACIÓN PARA TABLETS (De 601px a 900px mantienen 2 columnas) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-}
-
-.sponsor-container {
-  max-width: 1450px;
-  margin: 8px auto 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.sponsor-box {
-  background: rgba(18, 21, 38, 0.6);
-  border: 1px dashed rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  padding: 6px;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 8px;
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.6rem;
-}
-
-/* ====================================================== */
-/* MÓVIL: pestañas + carrusel horizontal con snap          */
-/* (va al final para que no lo pisen las reglas base)      */
-/* Los tamaños usan clamp(mín, vw, máx): escalan con el    */
-/* ancho de la pantalla y se mantienen coherentes entre sí */
-/* ====================================================== */
-.mobile-nav-tabs {
-  display: none;
-}
-
-@media (max-width: 600px) {
-  html { height: 100%; overflow: hidden; }
-
-  /* Pantalla fija: no hay scroll de página y el área de publicidad siempre queda visible */
-  body {
-    position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
-    height: auto;
-    min-height: 0;
-    overflow: hidden;
-    padding: 8px 16px 10px 16px;
-    justify-content: flex-start;
-  }
-
-  .page-wrapper {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  /* Cabecera */
-  .dashboard-header {
-    margin-bottom: 6px;
-    flex-shrink: 0;
-  }
-  .header-logo { max-width: 150px; }
-  .dashboard-subtitle { font-size: clamp(0.55rem, 2.6vw, 0.68rem); letter-spacing: 1px; }
-
-  /* Pestañas */
-  .mobile-nav-tabs {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background: rgba(13, 19, 29, 0.95);
-    padding: 5px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    flex-shrink: 0;
-  }
-
-  .nav-tab {
-    -webkit-appearance: none;
-    appearance: none;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: clamp(0.5rem, 2.3vw, 0.62rem);
-    font-weight: 800;
-    text-transform: uppercase;
-    padding: 8px 6px;
-    border-radius: 6px;
-    color: rgba(255, 255, 255, 0.45);
-    background: transparent;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-    flex: 1 1 auto;          /* el ancho se reparte según el texto: "Desempleo" ya no se corta */
-    min-width: 0;
-    margin: 0 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* Color según el estado de su tarjeta: rojo = empeoró, verde = mejoró */
-  .nav-tab.tab-red {
-    color: #ff7a8a;
-    background: rgba(230, 28, 52, 0.10);
-    border: 1px solid rgba(230, 28, 52, 0.40);
-  }
-
-  .nav-tab.tab-green {
-    color: #3de8d4;
-    background: rgba(0, 210, 190, 0.10);
-    border: 1px solid rgba(0, 210, 190, 0.40);
-  }
-
-  /* Pestaña activa: más intensa */
-  .nav-tab.active-red {
-    color: #ffffff;
-    background: rgba(230, 28, 52, 0.25);
-    border: 1px solid rgba(230, 28, 52, 0.8);
-    box-shadow: 0 0 10px rgba(230, 28, 52, 0.35);
-  }
-
-  .nav-tab.active-green {
-    color: #ffffff;
-    background: rgba(0, 210, 190, 0.25);
-    border: 1px solid rgba(0, 210, 190, 0.8);
-    box-shadow: 0 0 10px rgba(0, 210, 190, 0.35);
-  }
-
-  /* Carrusel */
-  .dashboard-grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;   /* con "center" la primera tarjeta queda cortada e inalcanzable */
-    align-items: stretch;
-    flex: 0 1 auto;                /* alto = alto del contenido; solo se encoge si la pantalla es muy baja */
-    min-height: 0;
-    height: auto;
-    margin-bottom: 0;
-    gap: 10px;
-    padding: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    overscroll-behavior-x: contain;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .dashboard-grid::-webkit-scrollbar { display: none; }
-
-  /* Tarjeta */
-  .kpi-card {
-    flex: 0 0 100%;
-    width: 100%;
-    min-height: 0;
-    height: auto;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    padding: 16px 16px 20px 16px;
-    border-radius: 18px;
-  }
-
-  .kpi-content-wrapper {
-    flex: 1 1 auto;
-    min-height: 0;
-    height: auto;
-    justify-content: flex-start;
-  }
-
-  /* Título de la tarjeta */
-  .kpi-title-box { padding: 8px 12px; gap: 8px; }
-  .kpi-title { font-size: clamp(0.85rem, 4vw, 1.05rem); }
-  .kpi-icon { width: 20px; height: 20px; }
-
-  .kpi-card-inner {
-    flex: 1 1 auto;
-    min-height: 0;
-    justify-content: flex-start;
-    gap: 8px;
-    padding-top: 14px;
-  }
-
-  .kpi-left { flex: 0 0 auto; }
-
-  /* Cifras */
-  .kpi-value-container { gap: 10px; }
-  .kpi-status-line { font-size: clamp(1.6rem, 7.5vw, 2.2rem); margin-top: 12px; letter-spacing: 2px; }
-  .kpi-status-thumb { width: 1.2em; height: 1.2em; }   /* el pulgar escala con el texto */
-  .kpi-month-label { font-size: clamp(1.15rem, 5.5vw, 1.55rem); margin-top: 6px; }
-  .kpi-value { font-size: clamp(2.8rem, 15vw, 4rem); }
-  .kpi-previous { margin-top: 8px; }
-  .kpi-prev-label { font-size: clamp(0.95rem, 4.2vw, 1.2rem); }
-  .kpi-prev-value { font-size: clamp(1.2rem, 5.4vw, 1.5rem); }
-
-  /* Gráfica: alto propio, proporcional a la pantalla (sin hueco vacío debajo) */
-  .kpi-right-column {
-    flex: 0 1 auto;
-    min-height: 0;
-    margin-top: 12px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .chart-container {
-    flex: 0 1 auto;
-    height: clamp(130px, 25vh, 240px);    /* respaldo */
-    height: clamp(130px, 25dvh, 240px);   /* ajusta aquí el alto de la gráfica */
-    min-height: 70px;
-    max-height: none;
-  }
-
-  /* El canvas no empuja al contenedor: Chart.js se adapta al espacio disponible */
-  .chart-container canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  /* Espacio de publicidad: ocupa todo el espacio que sobra bajo la tarjeta */
-  .sponsor-container {
-    --alto-publicidad: 110px;   /* alto MÍNIMO; si sobra pantalla, crece solo */
-    flex: 1 1 auto;
-    min-height: var(--alto-publicidad);
-    margin: 8px 0 0 0;
-    gap: 8px;
-  }
-
-  .sponsor-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer { display: none; }
-}
-
-/* Celulares bajitos (menos de 700px de alto): un poco más compacto */
-@media (max-width: 600px) and (max-height: 700px) {
-  .dashboard-subtitle { display: none; }
-  .header-logo { max-width: 120px; }
-  .kpi-status-line { font-size: 1.5rem; margin-top: 4px; }
-  .kpi-month-label { font-size: 1.05rem; }
-  .kpi-value { font-size: 2.7rem; }
-  .kpi-prev-label { font-size: 0.9rem; }
-  .kpi-prev-value { font-size: 1.15rem; }
-  .chart-container { min-height: 70px; height: clamp(110px, 24dvh, 200px); }
-}
-
-/* Celulares muy bajitos (menos de 600px de alto): compactar al máximo */
-@media (max-width: 600px) and (max-height: 600px) {
-  .sponsor-container { --alto-publicidad: 90px; }
-  .kpi-status-line { font-size: 1.3rem; margin-top: 2px; }
-  .kpi-month-label { font-size: 0.95rem; }
-  .kpi-value { font-size: 2.2rem; }
-  .kpi-prev-value { font-size: 1rem; }
-}
-
-/* ====================================================== */
-/* TABLETS (vertical y horizontal)                         */
-/*  - Vertical   : 601px-1100px  -> cuadrícula 2 x 2        */
-/*  - Horizontal : 601px-1280px  -> 4 tarjetas en una fila  */
-/*                 (alto mínimo 600px, así no afecta a      */
-/*                 celulares girados)                       */
-/*  Todo cabe en una sola pantalla, sin scroll, y la        */
-/*  publicidad siempre se ve. Los textos escalan con el     */
-/*  ancho de CADA tarjeta (unidad cqw).                     */
-/* ====================================================== */
-
-/* ---- Estructura común a tablet vertical y horizontal ---- */
-@media (min-width: 601px) and (max-width: 1100px) and (orientation: portrait),
-       (min-width: 601px) and (max-width: 1280px) and (orientation: landscape) and (min-height: 600px) {
-
-  html { height: 100%; overflow: hidden; }
-
-  /* Pantalla fija: sin scroll de página */
-  body {
-    position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
-    height: auto;
-    min-height: 0;
-    overflow: hidden;
-    padding: 14px 24px 10px 24px;
-    justify-content: flex-start;
-  }
-
-  .page-wrapper {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .dashboard-header { margin-bottom: 12px; flex-shrink: 0; }
-  .dashboard-subtitle { font-size: 0.7rem; letter-spacing: 2px; }
-
-  .dashboard-grid {
-    display: grid;
-    gap: 14px;
-    width: 100%;
-    margin-bottom: 0;
-    min-height: 0;
-    flex: 0 1 auto;          /* el alto (flex-basis) se define según la orientación */
-  }
-
-  /* Cada tarjeta es un "contenedor": sus textos se miden con cqw (% del ancho de la tarjeta) */
-  .kpi-card {
-    container-type: inline-size;
-    min-height: 0;
-    height: auto;
-    padding: 14px 16px 18px 16px;
-    border-radius: 18px;
-  }
-
-  .kpi-content-wrapper {
-    flex: 1 1 auto;
-    min-height: 0;
-    height: auto;
-    justify-content: flex-start;
-  }
-
-  .kpi-title-box { padding: 7px 10px; gap: 8px; }
-  .kpi-title-left { min-width: 0; }
-  .kpi-title {
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 0;
-  }
-  .kpi-icon { width: 18px; height: 18px; flex-shrink: 0; }
-
-  .kpi-card-inner {
-    flex: 1 1 auto;
-    min-height: 0;
-    justify-content: flex-start;
-    gap: 6px;
-    padding-top: 10px;
-  }
-
-  .kpi-left { flex: 0 0 auto; }
-
-  .kpi-value-container { gap: 6px; }
-  .kpi-status-line { margin-top: 6px; letter-spacing: 1.5px; }
-  .kpi-status-thumb { width: 1.2em; height: 1.2em; }
-  .kpi-month-label { margin-top: 2px; }
-  .kpi-previous { margin-top: 4px; }
-
-  /* La gráfica rellena el espacio restante de la tarjeta */
-  .kpi-right-column {
-    flex: 1 1 auto;
-    min-height: 0;
-    margin-top: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .chart-container {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 70px;
-    max-height: 300px;
-  }
-
-  .chart-container canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  /* Publicidad: ocupa el espacio que sobra bajo las tarjetas */
-  .sponsor-container {
-    flex: 1 1 auto;
-    min-height: 90px;
-    max-height: 260px;
-    margin: 8px 0 0 0;
-    gap: 12px;
-  }
-
-  .sponsor-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.72rem;
-  }
-
-  footer { margin-top: 6px; font-size: 0.6rem; flex-shrink: 0; }
-}
-
-/* ---- TABLET VERTICAL: 2 x 2 (tarjetas anchas) ---- */
-@media (min-width: 601px) and (max-width: 1100px) and (orientation: portrait) {
-  .header-logo { max-width: 200px; }
-
-  .dashboard-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    flex-basis: clamp(520px, 70vh, 1000px);    /* respaldo */
-    flex-basis: clamp(520px, 70dvh, 1000px);   /* alto del área de tarjetas; el resto es publicidad */
-  }
-
-  .kpi-title { font-size: clamp(0.8rem, 5.4cqw, 1.25rem); }
-  .kpi-status-line { font-size: clamp(1.1rem, 8cqw, 2.2rem); }
-  .kpi-month-label { font-size: clamp(0.9rem, 5.8cqw, 1.5rem); }
-  .kpi-value { font-size: clamp(2.2rem, 16cqw, 3.8rem); }
-  .kpi-prev-label { font-size: clamp(0.8rem, 4.6cqw, 1.1rem); }
-  .kpi-prev-value { font-size: clamp(1rem, 6cqw, 1.45rem); }
-}
-
-/* ---- TABLET HORIZONTAL: 4 en fila (tarjetas altas y angostas) ---- */
-@media (min-width: 601px) and (max-width: 1280px) and (orientation: landscape) and (min-height: 600px) {
-  .header-logo { max-width: 160px; }
-  .dashboard-header { margin-bottom: 8px; }
-
-  .dashboard-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: minmax(0, 1fr);
-    flex-basis: clamp(300px, 60vh, 560px);     /* respaldo */
-    flex-basis: clamp(300px, 60dvh, 560px);    /* alto del área de tarjetas; el resto es publicidad */
-  }
-
-  .kpi-title { font-size: clamp(0.65rem, 5cqw, 1rem); }
-  .kpi-status-line { font-size: clamp(1.1rem, 10.2cqw, 2rem); }
-  .kpi-month-label { font-size: clamp(0.9rem, 8.2cqw, 1.4rem); }
-  .kpi-value { font-size: clamp(2.2rem, 23cqw, 3.6rem); }
-  .kpi-prev-label { font-size: clamp(0.8rem, 5.6cqw, 1.05rem); }
-  .kpi-prev-value { font-size: clamp(1rem, 7.4cqw, 1.4rem); }
+/* ---------- Tarjetas ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{padding:24px 20px 22px;position:relative;overflow:hidden;min-width:0}
+.card h2{margin:0;font-size:17px;font-weight:600}
+.card .mes{font-size:13px;color:var(--muted);margin-top:2px}
+.est{font-weight:600}
+.card.mejoro .est{color:var(--ok)}
+.card.empeoro .est{color:var(--mal)}
+
+.val{font-size:42px;font-weight:700;line-height:1;margin:20px 0 12px;text-align:center}
+.prev{display:block;width:max-content;margin:0 auto;font-size:13px;padding:3px 8px;
+  border-radius:4px;background:rgba(255,255,255,.13);color:#dbe5f3}
+
+/* ---------- Gráfica (SVG generado en app.js) ---------- */
+.chart{position:relative;margin-top:26px}
+.spark{display:block;width:100%;height:84px;margin:0}
+.dot{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent);transform:translate(-50%,-50%)}
+.dot.cur{width:9px;height:9px;box-shadow:0 0 0 3px rgba(124,196,238,.28)}
+.mm{position:absolute;font-size:10.5px;font-weight:600;color:#dbe8f7;white-space:nowrap;line-height:1}
+.axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:2px}
+
+/* ---------- Patrocinadores ---------- */
+.sponsors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+.sp{padding:22px;text-align:center;color:var(--muted);font-size:14px;
+  border-top:1px solid rgba(255,255,255,.12)}
+.sp b{display:block;color:var(--text);font-size:16px;margin-bottom:4px}
+
+footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
+
+/* =========================================================
+   CELULAR: las 4 tarjetas en una sola fila horizontal,
+   todas visibles a la vez (sin pestañas ni deslizar una a una)
+   ========================================================= */
+@media (max-width:850px){
+  .page{padding:12px 8px 32px}
+  h1{font-size:24px}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .card{padding:12px 6px 10px;border-top-width:4px}
+  .card h2{font-size:clamp(10px,2.9vw,15px);line-height:1.15;min-height:2.3em}
+  .card .mes{font-size:clamp(8.5px,2.4vw,12px);margin-top:3px;line-height:1.2}
+  .val{font-size:clamp(15px,4.7vw,30px);margin:12px 0 8px;letter-spacing:-.02em}
+  .prev{font-size:clamp(8.5px,2.3vw,12px);padding:2px 4px}
+  .chart{margin-top:16px}
+  .spark{height:56px}
+  .dot{width:5px;height:5px}
+  .dot.cur{width:6px;height:6px;box-shadow:0 0 0 2px rgba(124,196,238,.28)}
+  .mm{font-size:clamp(7.5px,2vw,10px)}
+  .axis{font-size:clamp(7px,1.9vw,10px)}
+  .sponsors{gap:8px;grid-template-columns:1fr 1fr}
+  .sp{padding:14px 8px;font-size:12px}
+  .sp b{font-size:13px}
 }

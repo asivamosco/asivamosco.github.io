@@ -116,6 +116,22 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
 footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
 @media (max-width:520px){h1{font-size:27px}.val{font-size:40px}}
+
+/* ÚNICO CAMBIO: Convierte la cuadrícula en fila horizontal deslizable exclusivamente en pantallas verticales de móviles/tablets sin alterar el tamaño de tus tarjetas */
+@media (max-width: 850px) and (orientation: portrait) {
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 12px;
+  }
+  .card {
+    flex: 0 0 280px;
+    scroll-snap-align: center;
+  }
+}
+
 .card.mejoro .est{color:var(--ok)}
 .card.empeoro .est{color:var(--mal)}
 .est{font-weight:600}
