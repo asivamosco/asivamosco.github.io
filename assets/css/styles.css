@@ -75,7 +75,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .card.empeoro .est{color:var(--mal)}
 
 .val{font-size:48px;font-weight:700;line-height:1;margin:6px 0 12px;text-align:center}
-.prev{display:block;width:max-content;margin:0 auto;font-size:15px;padding:3px 9px;
+.prev{display:block;width:max-content;margin:0 auto;font-size:16.5px;padding:3px 10px;
   border-radius:4px;background:rgba(255,255,255,.13);color:#dbe5f3}
 
 /* ---------- Gráfica (SVG generado en app.js) ---------- */
@@ -151,10 +151,10 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   }
   .card .mes .sep{display:none}
   .val{
-    grid-area:valor; margin:0; min-width:0; font-size:clamp(32px,min(5.8dvh,12vw),50px);
+    grid-area:valor; margin:0; min-width:0; font-size:clamp(30px,min(5.4dvh,11.5vw),46px);
     display:flex; align-items:center; justify-content:center;
   }
-  .prev{grid-area:previo;margin:0;justify-self:center;font-size:14px;padding:3px 8px;max-width:100%;white-space:nowrap}
+  .prev{grid-area:previo;margin:0;justify-self:center;font-size:15.5px;padding:3px 8px;max-width:100%;white-space:nowrap}
   .chart{grid-area:grafica;margin:6px 4px 0 0;min-height:0}
   .spark{height:100%}
   .axis{grid-area:eje;font-size:10px;margin:0;align-self:end;padding-right:4px}

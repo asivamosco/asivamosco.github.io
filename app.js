@@ -49,7 +49,7 @@ function obtenerMesCompleto(nombreMes) {
 }
 
 function etiquetaEje(d) {
-  return mesCorto(d.mes);
+  return obtenerMesCompleto(d.mes);
 }
 
 /* ---------- Render de una tarjeta ---------- */
