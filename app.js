@@ -3,9 +3,6 @@
    Tarjetas "glass" con mini-gráfica SVG (sin Chart.js)
    ========================================================= */
 
-/* Configuración de cada indicador.
-   subeEsMalo: true  -> si el valor sube, EMPEORÓ (inflación, desempleo, seguridad, salud)
-               false -> si el valor sube, MEJORÓ                                      */
 const INDICADORES = [
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
@@ -39,7 +36,6 @@ function mesCorto(mes) {
   return capitalizar(mes).substring(0, 3);
 }
 
-/* ---------- Diccionario para normalizar meses abreviados a completos ---------- */
 const MESES_COMPLETOS = {
   'ene': 'Enero', 'feb': 'Febrero', 'mar': 'Marzo', 'abr': 'Abril',
   'may': 'Mayo', 'jun': 'Junio', 'jul': 'Julio', 'ago': 'Agosto',
@@ -52,7 +48,6 @@ function obtenerMesCompleto(nombreMes) {
   return MESES_COMPLETOS[corto] || capitalizar(nombreMes);
 }
 
-/* Etiqueta del eje: Muestra únicamente el mes corto (ej. "Abr", "Sep") sin año. */
 function etiquetaEje(d) {
   return mesCorto(d.mes);
 }
@@ -61,16 +56,22 @@ function etiquetaEje(d) {
 function renderizarIndicador(cfg, data) {
   if (!Array.isArray(data) || data.length < 2) return;
 
-  // Ajustado a los últimos 6 meses exactos
   const serie = data.slice(-6);
   const ultimo = data[data.length - 1];
   const penultimo = data[data.length - 2];
+  
   const actual = parseFloat(ultimo[cfg.campo]);
   const anterior = parseFloat(penultimo[cfg.campo]);
   if (isNaN(actual) || isNaN(anterior)) return;
 
   const empeoro = cfg.subeEsMalo ? actual > anterior : actual < anterior;
-  const fmt = v => `${v.toFixed(cfg.dec)}${cfg.sufijo}`;
+  
+  // Truncamiento estricto a 'dec' decimales sin redondear
+  const fmt = v => {
+    const factor = Math.pow(10, cfg.dec);
+    const truncado = Math.trunc(v * factor) / factor;
+    return `${truncado.toFixed(cfg.dec)}${cfg.sufijo}`;
+  };
 
   const set = (suffix, txt) => {
     const el = document.getElementById(suffix + cfg.id);
@@ -78,9 +79,10 @@ function renderizarIndicador(cfg, data) {
   };
 
   set('kpi', fmt(actual));
-  set('labelMes', obtenerMesCompleto(ultimo.mes)); // Mes completo garantizado
-  set('estado', empeoro ? 'Empeoró' : 'Mejoró');
+  set('labelMes', obtenerMesCompleto(ultimo.mes));
+  set('estado', empeoro ? 'AUMENTÓ' : 'DISMINUYÓ');
   set('axis', '');
+  
   const prev = document.getElementById(`kpi${cfg.id}Anterior`);
   if (prev) prev.innerText = `${mesCorto(penultimo.mes).toUpperCase()}: ${fmt(anterior)}`;
 
@@ -97,7 +99,7 @@ function renderizarIndicador(cfg, data) {
   }
 }
 
-/* ---------- Mini-gráfica SVG (primer y último punto con etiqueta) ---------- */
+/* ---------- Mini-gráfica SVG ---------- */
 function construirSparkline(valores, fmt) {
   const W = 200, H = 64, TOP = 18, BAJO = 46;
   const n = valores.length;
@@ -117,7 +119,6 @@ function construirSparkline(valores, fmt) {
   const ultimo = pts[n - 1];
   const pct = y => ((y / H) * 100).toFixed(1);
 
-  /* La etiqueta va arriba del punto si está en la mitad superior, abajo si no */
   const etiqueta = (p, valor, alinearDerecha) => {
     const arriba = (p.y / H) < 0.5;
     const top = arriba ? `calc(${pct(p.y)}% - 8px)` : `calc(${pct(p.y)}% + 9px)`;

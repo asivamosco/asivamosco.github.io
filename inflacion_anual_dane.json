@@ -1,653 +1,1997 @@
 [
   {
+    "ano": 2003,
+    "mes": "Enero",
+    "var_m": 1.17,
+    "indice_acumulado": 50.44477257560178,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Febrero",
+    "var_m": 1.11,
+    "indice_acumulado": 51.00470955119097,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Marzo",
+    "var_m": 1.05,
+    "indice_acumulado": 51.540259001478475,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Abril",
+    "var_m": 1.15,
+    "indice_acumulado": 52.13297197999548,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Mayo",
+    "var_m": 0.49,
+    "indice_acumulado": 52.38842354269745,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Junio",
+    "var_m": -0.05,
+    "indice_acumulado": 52.362229330926105,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Julio",
+    "var_m": -0.14,
+    "indice_acumulado": 52.28892220986281,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Agosto",
+    "var_m": 0.31,
+    "indice_acumulado": 52.45101786871339,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Septiembre",
+    "var_m": 0.22,
+    "indice_acumulado": 52.56641010802456,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Octubre",
+    "var_m": 0.06,
+    "indice_acumulado": 52.59794995408937,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Noviembre",
+    "var_m": 0.35,
+    "indice_acumulado": 52.78204277892869,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2003,
+    "mes": "Diciembre",
+    "var_m": 0.61,
+    "indice_acumulado": 53.10401323988015,
+    "var_anual": 0.0
+  },
+  {
+    "ano": 2004,
+    "mes": "Enero",
+    "var_m": 0.89,
+    "indice_acumulado": 53.57663895771508,
+    "var_anual": 6.208505306312095
+  },
+  {
+    "ano": 2004,
+    "mes": "Febrero",
+    "var_m": 1.2,
+    "indice_acumulado": 54.21955862520767,
+    "var_anual": 6.303043586181212
+  },
+  {
+    "ano": 2004,
+    "mes": "Marzo",
+    "var_m": 0.98,
+    "indice_acumulado": 54.750910299734706,
+    "var_anual": 6.229404664350113
+  },
+  {
+    "ano": 2004,
+    "mes": "Abril",
+    "var_m": 0.46,
+    "indice_acumulado": 55.00276448711348,
+    "var_anual": 5.504755240539905
+  },
+  {
+    "ano": 2004,
+    "mes": "Mayo",
+    "var_m": 0.38,
+    "indice_acumulado": 55.211774992164514,
+    "var_anual": 5.38926590750719
+  },
+  {
+    "ano": 2004,
+    "mes": "Junio",
+    "var_m": 0.6,
+    "indice_acumulado": 55.543045642117505,
+    "var_anual": 6.07463882236341
+  },
+  {
+    "ano": 2004,
+    "mes": "Julio",
+    "var_m": -0.03,
+    "indice_acumulado": 55.52638272842487,
+    "var_anual": 6.1914845090293325
+  },
+  {
+    "ano": 2004,
+    "mes": "Agosto",
+    "var_m": 0.03,
+    "indice_acumulado": 55.543040643243394,
+    "var_anual": 5.895067245919683
+  },
+  {
+    "ano": 2004,
+    "mes": "Septiembre",
+    "var_m": 0.3,
+    "indice_acumulado": 55.70966976517312,
+    "var_anual": 5.979597333523667
+  },
+  {
+    "ano": 2004,
+    "mes": "Octubre",
+    "var_m": -0.01,
+    "indice_acumulado": 55.704098798196604,
+    "var_anual": 5.905456100130269
+  },
+  {
+    "ano": 2004,
+    "mes": "Noviembre",
+    "var_m": 0.28,
+    "indice_acumulado": 55.86007027483155,
+    "var_anual": 5.831580844255702
+  },
+  {
+    "ano": 2004,
+    "mes": "Diciembre",
+    "var_m": 0.3,
+    "indice_acumulado": 56.02765048565604,
+    "var_anual": 5.505492085069541
+  },
+  {
+    "ano": 2005,
+    "mes": "Enero",
+    "var_m": 0.82,
+    "indice_acumulado": 56.487077219638415,
+    "var_anual": 5.432289741468055
+  },
+  {
+    "ano": 2005,
+    "mes": "Febrero",
+    "var_m": 1.02,
+    "indice_acumulado": 57.06324540727873,
+    "var_anual": 5.244761953390342
+  },
+  {
+    "ano": 2005,
+    "mes": "Marzo",
+    "var_m": 0.77,
+    "indice_acumulado": 57.50263239691478,
+    "var_anual": 5.025892870302484
+  },
+  {
+    "ano": 2005,
+    "mes": "Abril",
+    "var_m": 0.44,
+    "indice_acumulado": 57.7556439794612,
+    "var_anual": 5.004983873115476
+  },
+  {
+    "ano": 2005,
+    "mes": "Mayo",
+    "var_m": 0.41,
+    "indice_acumulado": 57.99244211977699,
+    "var_anual": 5.036366115755375
+  },
+  {
+    "ano": 2005,
+    "mes": "Junio",
+    "var_m": 0.4,
+    "indice_acumulado": 58.2244118882561,
+    "var_anual": 4.827546302403962
+  },
+  {
+    "ano": 2005,
+    "mes": "Julio",
+    "var_m": 0.05,
+    "indice_acumulado": 58.25352409420022,
+    "var_anual": 4.911433505606855
+  },
+  {
+    "ano": 2005,
+    "mes": "Agosto",
+    "var_m": 0.0,
+    "indice_acumulado": 58.25352409420022,
+    "var_anual": 4.879969514752425
+  },
+  {
+    "ano": 2005,
+    "mes": "Septiembre",
+    "var_m": 0.43,
+    "indice_acumulado": 58.50401424780528,
+    "var_anual": 5.015905666665876
+  },
+  {
+    "ano": 2005,
+    "mes": "Octubre",
+    "var_m": 0.23,
+    "indice_acumulado": 58.63857348057523,
+    "var_anual": 5.267969046603849
+  },
+  {
+    "ano": 2005,
+    "mes": "Noviembre",
+    "var_m": 0.11,
+    "indice_acumulado": 58.70307591140387,
+    "var_anual": 5.089513175663285
+  },
+  {
+    "ano": 2005,
+    "mes": "Diciembre",
+    "var_m": 0.07,
+    "indice_acumulado": 58.74416806454185,
+    "var_anual": 4.8485302441537925
+  },
+  {
+    "ano": 2006,
+    "mes": "Enero",
+    "var_m": 0.54,
+    "indice_acumulado": 59.061386572090385,
+    "var_anual": 4.55734210223393
+  },
+  {
+    "ano": 2006,
+    "mes": "Febrero",
+    "var_m": 0.66,
+    "indice_acumulado": 59.45119172346618,
+    "var_anual": 4.184736250355048
+  },
+  {
+    "ano": 2006,
+    "mes": "Marzo",
+    "var_m": 0.7,
+    "indice_acumulado": 59.86735006553044,
+    "var_anual": 4.112364199769281
+  },
+  {
+    "ano": 2006,
+    "mes": "Abril",
+    "var_m": 0.45,
+    "indice_acumulado": 60.13675314082532,
+    "var_anual": 4.1227298274275626
+  },
+  {
+    "ano": 2006,
+    "mes": "Mayo",
+    "var_m": 0.33,
+    "indice_acumulado": 60.335204426190046,
+    "var_anual": 4.039771771594558
+  },
+  {
+    "ano": 2006,
+    "mes": "Junio",
+    "var_m": 0.3,
+    "indice_acumulado": 60.51621003946861,
+    "var_anual": 3.9361465009057017
+  },
+  {
+    "ano": 2006,
+    "mes": "Julio",
+    "var_m": 0.41,
+    "indice_acumulado": 60.76432650063043,
+    "var_anual": 4.310129636741045
+  },
+  {
+    "ano": 2006,
+    "mes": "Agosto",
+    "var_m": 0.39,
+    "indice_acumulado": 61.00130737398289,
+    "var_anual": 4.716939142324339
+  },
+  {
+    "ano": 2006,
+    "mes": "Septiembre",
+    "var_m": 0.29,
+    "indice_acumulado": 61.178211165367436,
+    "var_anual": 4.57096312440215
+  },
+  {
+    "ano": 2006,
+    "mes": "Octubre",
+    "var_m": -0.14,
+    "indice_acumulado": 61.09256166973592,
+    "var_anual": 4.184938417667339
+  },
+  {
+    "ano": 2006,
+    "mes": "Noviembre",
+    "var_m": 0.24,
+    "indice_acumulado": 61.23918381774329,
+    "var_anual": 4.320230016851201
+  },
+  {
+    "ano": 2006,
+    "mes": "Diciembre",
+    "var_m": 0.23,
+    "indice_acumulado": 61.38003394052409,
+    "var_anual": 4.487025627950381
+  },
+  {
+    "ano": 2007,
+    "mes": "Enero",
+    "var_m": 0.77,
+    "indice_acumulado": 61.85266020186613,
+    "var_anual": 4.72605502813368
+  },
+  {
+    "ano": 2007,
+    "mes": "Febrero",
+    "var_m": 1.17,
+    "indice_acumulado": 62.57633632622797,
+    "var_anual": 5.256655942740762
+  },
+  {
+    "ano": 2007,
+    "mes": "Marzo",
+    "var_m": 1.21,
+    "indice_acumulado": 63.33350999577532,
+    "var_anual": 5.789733346224346
+  },
+  {
+    "ano": 2007,
+    "mes": "Abril",
+    "var_m": 0.9,
+    "indice_acumulado": 63.90351158573729,
+    "var_anual": 6.2636545010854805
+  },
+  {
+    "ano": 2007,
+    "mes": "Mayo",
+    "var_m": 0.3,
+    "indice_acumulado": 64.0952221204945,
+    "var_anual": 6.231880259731604
+  },
+  {
+    "ano": 2007,
+    "mes": "Junio",
+    "var_m": 0.12,
+    "indice_acumulado": 64.1721363870391,
+    "var_anual": 6.041234811608498
+  },
+  {
+    "ano": 2007,
+    "mes": "Julio",
+    "var_m": 0.17,
+    "indice_acumulado": 64.28122901889706,
+    "var_anual": 5.787775033152287
+  },
+  {
+    "ano": 2007,
+    "mes": "Agosto",
+    "var_m": -0.13,
+    "indice_acumulado": 64.1976634211725,
+    "var_anual": 5.239815644595303
+  },
+  {
+    "ano": 2007,
+    "mes": "Septiembre",
+    "var_m": 0.08,
+    "indice_acumulado": 64.24902155190944,
+    "var_anual": 5.019451088952986
+  },
+  {
+    "ano": 2007,
+    "mes": "Octubre",
+    "var_m": 0.01,
+    "indice_acumulado": 64.25544645406463,
+    "var_anual": 5.177201115623764
+  },
+  {
+    "ano": 2007,
+    "mes": "Noviembre",
+    "var_m": 0.47,
+    "indice_acumulado": 64.55744705239873,
+    "var_anual": 5.418529490090984
+  },
+  {
+    "ano": 2007,
+    "mes": "Diciembre",
+    "var_m": 0.49,
+    "indice_acumulado": 64.87377854295548,
+    "var_anual": 5.691988710558138
+  },
+  {
+    "ano": 2008,
+    "mes": "Enero",
+    "var_m": 1.06,
+    "indice_acumulado": 65.5614405955108,
+    "var_anual": 5.99615340963584
+  },
+  {
+    "ano": 2008,
+    "mes": "Febrero",
+    "var_m": 1.51,
+    "indice_acumulado": 66.551418348503,
+    "var_anual": 6.352372567086428
+  },
+  {
+    "ano": 2008,
+    "mes": "Marzo",
+    "var_m": 0.81,
+    "indice_acumulado": 67.09048483712589,
+    "var_anual": 5.932048992075711
+  },
+  {
+    "ano": 2008,
+    "mes": "Abril",
+    "var_m": 0.71,
+    "indice_acumulado": 67.56682727946949,
+    "var_anual": 5.732573379503947
+  },
+  {
+    "ano": 2008,
+    "mes": "Mayo",
+    "var_m": 0.93,
+    "indice_acumulado": 68.19519877316857,
+    "var_anual": 6.396696223263576
+  },
+  {
+    "ano": 2008,
+    "mes": "Junio",
+    "var_m": 0.86,
+    "indice_acumulado": 68.78167748261781,
+    "var_anual": 7.183088105057545
+  },
+  {
+    "ano": 2008,
+    "mes": "Julio",
+    "var_m": 0.48,
+    "indice_acumulado": 69.11182953453437,
+    "var_anual": 7.514791781932528
+  },
+  {
+    "ano": 2008,
+    "mes": "Agosto",
+    "var_m": 0.19,
+    "indice_acumulado": 69.24314201064998,
+    "var_anual": 7.8592869593653525
+  },
+  {
+    "ano": 2008,
+    "mes": "Septiembre",
+    "var_m": -0.19,
+    "indice_acumulado": 69.11158004082974,
+    "var_anual": 7.568299674403045
+  },
+  {
+    "ano": 2008,
+    "mes": "Octubre",
+    "var_m": 0.35,
+    "indice_acumulado": 69.35347057097265,
+    "var_anual": 7.933995323731091
+  },
+  {
+    "ano": 2008,
+    "mes": "Noviembre",
+    "var_m": 0.28,
+    "indice_acumulado": 69.54766028857136,
+    "var_anual": 7.729880074288364
+  },
+  {
+    "ano": 2008,
+    "mes": "Diciembre",
+    "var_m": 0.44,
+    "indice_acumulado": 69.85366999384108,
+    "var_anual": 7.676277785466468
+  },
+  {
+    "ano": 2009,
+    "mes": "Enero",
+    "var_m": 0.59,
+    "indice_acumulado": 70.26580664680475,
+    "var_anual": 7.175507445478657
+  },
+  {
+    "ano": 2009,
+    "mes": "Febrero",
+    "var_m": 0.84,
+    "indice_acumulado": 70.8560394226379,
+    "var_anual": 6.468113198720027
+  },
+  {
+    "ano": 2009,
+    "mes": "Marzo",
+    "var_m": 0.5,
+    "indice_acumulado": 71.21031961975109,
+    "var_anual": 6.140713981463741
+  },
+  {
+    "ano": 2009,
+    "mes": "Abril",
+    "var_m": 0.32,
+    "indice_acumulado": 71.4381926425343,
+    "var_anual": 5.729683513260286
+  },
+  {
+    "ano": 2009,
+    "mes": "Mayo",
+    "var_m": 0.01,
+    "indice_acumulado": 71.44533646179856,
+    "var_anual": 4.765933301903891
+  },
+  {
+    "ano": 2009,
+    "mes": "Junio",
+    "var_m": -0.06,
+    "indice_acumulado": 71.40246925992147,
+    "var_anual": 3.810305117908741
+  },
+  {
+    "ano": 2009,
+    "mes": "Julio",
+    "var_m": -0.04,
+    "indice_acumulado": 71.3739082722175,
+    "var_anual": 3.273070258620203
+  },
+  {
+    "ano": 2009,
+    "mes": "Agosto",
+    "var_m": 0.04,
+    "indice_acumulado": 71.40245783552639,
+    "var_anual": 3.11845442331935
+  },
+  {
+    "ano": 2009,
+    "mes": "Septiembre",
+    "var_m": -0.11,
+    "indice_acumulado": 71.32391513190731,
+    "var_anual": 3.2011062252817357
+  },
+  {
+    "ano": 2009,
+    "mes": "Octubre",
+    "var_m": -0.13,
+    "indice_acumulado": 71.23119404223584,
+    "var_anual": 2.707468646924638
+  },
+  {
+    "ano": 2009,
+    "mes": "Noviembre",
+    "var_m": -0.07,
+    "indice_acumulado": 71.18133220640627,
+    "var_anual": 2.34899622942939
+  },
+  {
+    "ano": 2009,
+    "mes": "Diciembre",
+    "var_m": 0.08,
+    "indice_acumulado": 71.23827727217139,
+    "var_anual": 1.9821539490371576
+  },
+  {
+    "ano": 2010,
+    "mes": "Enero",
+    "var_m": 0.69,
+    "indice_acumulado": 71.72982138534937,
+    "var_anual": 2.083537937454527
+  },
+  {
+    "ano": 2010,
+    "mes": "Febrero",
+    "var_m": 0.83,
+    "indice_acumulado": 72.32517890284777,
+    "var_anual": 2.073414619531344
+  },
+  {
+    "ano": 2010,
+    "mes": "Marzo",
+    "var_m": 0.25,
+    "indice_acumulado": 72.50599185010488,
+    "var_anual": 1.8195006528160862
+  },
+  {
+    "ano": 2010,
+    "mes": "Abril",
+    "var_m": 0.46,
+    "indice_acumulado": 72.83951941261536,
+    "var_anual": 1.9615932573953554
+  },
+  {
+    "ano": 2010,
+    "mes": "Mayo",
+    "var_m": 0.1,
+    "indice_acumulado": 72.91235893202797,
+    "var_anual": 2.053349515701175
+  },
+  {
+    "ano": 2010,
+    "mes": "Junio",
+    "var_m": 0.11,
+    "indice_acumulado": 72.9925625268532,
+    "var_anual": 2.226944366788519
+  },
+  {
+    "ano": 2010,
+    "mes": "Julio",
+    "var_m": -0.04,
+    "indice_acumulado": 72.96336550184247,
+    "var_anual": 2.2269443667885414
+  },
+  {
+    "ano": 2010,
+    "mes": "Agosto",
+    "var_m": 0.11,
+    "indice_acumulado": 73.0436252038945,
+    "var_anual": 2.298474615745727
+  },
+  {
+    "ano": 2010,
+    "mes": "Septiembre",
+    "var_m": -0.14,
+    "indice_acumulado": 72.94136412860905,
+    "var_anual": 2.267751277689123
+  },
+  {
+    "ano": 2010,
+    "mes": "Octubre",
+    "var_m": -0.09,
+    "indice_acumulado": 72.87571690089331,
+    "var_anual": 2.3087116266538477
+  },
+  {
+    "ano": 2010,
+    "mes": "Noviembre",
+    "var_m": 0.19,
+    "indice_acumulado": 73.014180763005,
+    "var_anual": 2.574900609170916
+  },
+  {
+    "ano": 2010,
+    "mes": "Diciembre",
+    "var_m": 0.65,
+    "indice_acumulado": 73.48877293796453,
+    "var_anual": 3.1591101749905315
+  },
+  {
+    "ano": 2011,
+    "mes": "Enero",
+    "var_m": 0.91,
+    "indice_acumulado": 74.1575207717,
+    "var_anual": 3.384504993130366
+  },
+  {
+    "ano": 2011,
+    "mes": "Febrero",
+    "var_m": 0.6,
+    "indice_acumulado": 74.6024658963302,
+    "var_anual": 3.1486779957246247
+  },
+  {
+    "ano": 2011,
+    "mes": "Marzo",
+    "var_m": 0.27,
+    "indice_acumulado": 74.80389255425028,
+    "var_anual": 3.169256285599076
+  },
+  {
+    "ano": 2011,
+    "mes": "Abril",
+    "var_m": 0.12,
+    "indice_acumulado": 74.8936572253154,
+    "var_anual": 2.8200869929741357
+  },
+  {
+    "ano": 2011,
+    "mes": "Mayo",
+    "var_m": 0.28,
+    "indice_acumulado": 75.10335946554628,
+    "var_anual": 3.004978258296176
+  },
+  {
+    "ano": 2011,
+    "mes": "Junio",
+    "var_m": 0.32,
+    "indice_acumulado": 75.34369021583603,
+    "var_anual": 3.2210510325868746
+  },
+  {
+    "ano": 2011,
+    "mes": "Julio",
+    "var_m": 0.14,
+    "indice_acumulado": 75.4491713821382,
+    "var_anual": 3.406923273341822
+  },
+  {
+    "ano": 2011,
+    "mes": "Agosto",
+    "var_m": -0.03,
+    "indice_acumulado": 75.42653663072356,
+    "var_anual": 3.262312652442123
+  },
+  {
+    "ano": 2011,
+    "mes": "Septiembre",
+    "var_m": 0.31,
+    "indice_acumulado": 75.66035889427882,
+    "var_anual": 3.727644523998319
+  },
+  {
+    "ano": 2011,
+    "mes": "Octubre",
+    "var_m": 0.19,
+    "indice_acumulado": 75.80411357617794,
+    "var_anual": 4.0183435577959115
+  },
+  {
+    "ano": 2011,
+    "mes": "Noviembre",
+    "var_m": 0.14,
+    "indice_acumulado": 75.9102393351846,
+    "var_anual": 3.9664330160463557
+  },
+  {
+    "ano": 2011,
+    "mes": "Diciembre",
+    "var_m": 0.42,
+    "indice_acumulado": 76.22906234039237,
+    "var_anual": 3.728854480589927
+  },
+  {
+    "ano": 2012,
+    "mes": "Enero",
+    "var_m": 0.73,
+    "indice_acumulado": 76.78553449547725,
+    "var_anual": 3.5438262989775593
+  },
+  {
+    "ano": 2012,
+    "mes": "Febrero",
+    "var_m": 0.61,
+    "indice_acumulado": 77.25392625589966,
+    "var_anual": 3.554118925846228
+  },
+  {
+    "ano": 2012,
+    "mes": "Marzo",
+    "var_m": 0.12,
+    "indice_acumulado": 77.34663096740674,
+    "var_anual": 3.3992060123239964
+  },
+  {
+    "ano": 2012,
+    "mes": "Abril",
+    "var_m": 0.14,
+    "indice_acumulado": 77.45491625076112,
+    "var_anual": 3.4198610674602836
+  },
+  {
+    "ano": 2012,
+    "mes": "Mayo",
+    "var_m": 0.3,
+    "indice_acumulado": 77.68728099951339,
+    "var_anual": 3.44048728626114
+  },
+  {
+    "ano": 2012,
+    "mes": "Junio",
+    "var_m": 0.08,
+    "indice_acumulado": 77.749430824313,
+    "var_anual": 3.193022005671975
+  },
+  {
+    "ano": 2012,
+    "mes": "Julio",
+    "var_m": -0.02,
+    "indice_acumulado": 77.73388093814813,
+    "var_anual": 3.0281439996712844
+  },
+  {
+    "ano": 2012,
+    "mes": "Agosto",
+    "var_m": 0.04,
+    "indice_acumulado": 77.76497449052339,
+    "var_anual": 3.1002853428740096
+  },
+  {
+    "ano": 2012,
+    "mes": "Septiembre",
+    "var_m": 0.29,
+    "indice_acumulado": 77.99049291654589,
+    "var_anual": 3.079729010435961
+  },
+  {
+    "ano": 2012,
+    "mes": "Octubre",
+    "var_m": 0.16,
+    "indice_acumulado": 78.11527770521236,
+    "var_anual": 3.0488637357547477
+  },
+  {
+    "ano": 2012,
+    "mes": "Noviembre",
+    "var_m": -0.14,
+    "indice_acumulado": 78.00591631642507,
+    "var_anual": 2.760730304098935
+  },
+  {
+    "ano": 2012,
+    "mes": "Diciembre",
+    "var_m": 0.09,
+    "indice_acumulado": 78.07612164110985,
+    "var_anual": 2.423038200928729
+  },
+  {
+    "ano": 2013,
+    "mes": "Enero",
+    "var_m": 0.3,
+    "indice_acumulado": 78.31035000603318,
+    "var_anual": 1.9858108959907472
+  },
+  {
+    "ano": 2013,
+    "mes": "Febrero",
+    "var_m": 0.44,
+    "indice_acumulado": 78.65491554605971,
+    "var_anual": 1.8134861981245365
+  },
+  {
+    "ano": 2013,
+    "mes": "Marzo",
+    "var_m": 0.21,
+    "indice_acumulado": 78.82009086870643,
+    "var_anual": 1.905008508929873
+  },
+  {
+    "ano": 2013,
+    "mes": "Abril",
+    "var_m": 0.25,
+    "indice_acumulado": 79.01714109587819,
+    "var_anual": 2.016947303976613
+  },
+  {
+    "ano": 2013,
+    "mes": "Mayo",
+    "var_m": 0.28,
+    "indice_acumulado": 79.23838909094664,
+    "var_anual": 1.9966049416029419
+  },
+  {
+    "ano": 2013,
+    "mes": "Junio",
+    "var_m": 0.23,
+    "indice_acumulado": 79.42063738585581,
+    "var_anual": 2.149477550927892
+  },
+  {
+    "ano": 2013,
+    "mes": "Julio",
+    "var_m": 0.04,
+    "indice_acumulado": 79.45240564081016,
+    "var_anual": 2.2107794978478257
+  },
+  {
+    "ano": 2013,
+    "mes": "Agosto",
+    "var_m": 0.08,
+    "indice_acumulado": 79.5159675653228,
+    "var_anual": 2.251647462461115
+  },
+  {
+    "ano": 2013,
+    "mes": "Septiembre",
+    "var_m": 0.29,
+    "indice_acumulado": 79.74656387126223,
+    "var_anual": 2.251647462461137
+  },
+  {
+    "ano": 2013,
+    "mes": "Octubre",
+    "var_m": -0.26,
+    "indice_acumulado": 79.53922280519694,
+    "var_anual": 1.8228765765362809
+  },
+  {
+    "ano": 2013,
+    "mes": "Noviembre",
+    "var_m": -0.22,
+    "indice_acumulado": 79.36423651502551,
+    "var_anual": 1.7413040737711771
+  },
+  {
+    "ano": 2013,
+    "mes": "Diciembre",
+    "var_m": 0.26,
+    "indice_acumulado": 79.57058352996457,
+    "var_anual": 1.9141087664731327
+  },
+  {
+    "ano": 2014,
+    "mes": "Enero",
+    "var_m": 0.49,
+    "indice_acumulado": 79.96047938926138,
+    "var_anual": 2.1071664002281665
+  },
+  {
+    "ano": 2014,
+    "mes": "Febrero",
+    "var_m": 0.63,
+    "indice_acumulado": 80.46423040941373,
+    "var_anual": 2.300320139933909
+  },
+  {
+    "ano": 2014,
+    "mes": "Marzo",
+    "var_m": 0.39,
+    "indice_acumulado": 80.77804090801044,
+    "var_anual": 2.48407483133386
+  },
+  {
+    "ano": 2014,
+    "mes": "Abril",
+    "var_m": 0.46,
+    "indice_acumulado": 81.14961989618728,
+    "var_anual": 2.6987546888358915
+  },
+  {
+    "ano": 2014,
+    "mes": "Mayo",
+    "var_m": 0.48,
+    "indice_acumulado": 81.53913807168897,
+    "var_anual": 2.90357869100748
+  },
+  {
+    "ano": 2014,
+    "mes": "Junio",
+    "var_m": 0.09,
+    "indice_acumulado": 81.61252329595348,
+    "var_anual": 2.7598442700083714
+  },
+  {
+    "ano": 2014,
+    "mes": "Julio",
+    "var_m": 0.15,
+    "indice_acumulado": 81.73494208089741,
+    "var_anual": 2.8728349024524036
+  },
+  {
+    "ano": 2014,
+    "mes": "Agosto",
+    "var_m": 0.2,
+    "indice_acumulado": 81.89841196505921,
+    "var_anual": 2.9961836253570295
+  },
+  {
+    "ano": 2014,
+    "mes": "Septiembre",
+    "var_m": 0.14,
+    "indice_acumulado": 82.0130697418103,
+    "var_anual": 2.842136087777991
+  },
+  {
+    "ano": 2014,
+    "mes": "Octubre",
+    "var_m": 0.16,
+    "indice_acumulado": 82.14429065339719,
+    "var_anual": 3.2751990229781924
+  },
+  {
+    "ano": 2014,
+    "mes": "Noviembre",
+    "var_m": 0.13,
+    "indice_acumulado": 82.25107823124661,
+    "var_anual": 3.6374591919303034
+  },
+  {
+    "ano": 2014,
+    "mes": "Diciembre",
+    "var_m": 0.27,
+    "indice_acumulado": 82.47315614247097,
+    "var_anual": 3.6477960619873517
+  },
+  {
+    "ano": 2015,
+    "mes": "Enero",
+    "var_m": 0.64,
+    "indice_acumulado": 83.00098434178278,
+    "var_anual": 3.8025096594527685
+  },
+  {
+    "ano": 2015,
+    "mes": "Febrero",
+    "var_m": 1.15,
+    "indice_acumulado": 83.95549566171329,
+    "var_anual": 4.338903428934193
+  },
+  {
+    "ano": 2015,
+    "mes": "Marzo",
+    "var_m": 0.59,
+    "indice_acumulado": 84.4508330861174,
+    "var_anual": 4.546770554004298
+  },
+  {
+    "ano": 2015,
+    "mes": "Abril",
+    "var_m": 0.54,
+    "indice_acumulado": 84.90686758478243,
+    "var_anual": 4.630024999995941
+  },
+  {
+    "ano": 2015,
+    "mes": "Mayo",
+    "var_m": 0.26,
+    "indice_acumulado": 85.12762544050287,
+    "var_anual": 4.400938559908396
+  },
+  {
+    "ano": 2015,
+    "mes": "Junio",
+    "var_m": 0.1,
+    "indice_acumulado": 85.21275306594336,
+    "var_anual": 4.411369266128773
+  },
+  {
+    "ano": 2015,
+    "mes": "Julio",
+    "var_m": 0.19,
+    "indice_acumulado": 85.37465729676866,
+    "var_anual": 4.4530712608431555
+  },
+  {
+    "ano": 2015,
+    "mes": "Agosto",
+    "var_m": 0.48,
+    "indice_acumulado": 85.78445565179314,
+    "var_anual": 4.74495609071377
+  },
+  {
+    "ano": 2015,
+    "mes": "Septiembre",
+    "var_m": 0.72,
+    "indice_acumulado": 86.40210373248605,
+    "var_anual": 5.351627496072409
+  },
+  {
+    "ano": 2015,
+    "mes": "Octubre",
+    "var_m": 0.68,
+    "indice_acumulado": 86.98963803786695,
+    "var_anual": 5.898580833711753
+  },
+  {
+    "ano": 2015,
+    "mes": "Noviembre",
+    "var_m": 0.6,
+    "indice_acumulado": 87.51157586609416,
+    "var_anual": 6.395657963361656
+  },
+  {
+    "ano": 2015,
+    "mes": "Diciembre",
+    "var_m": 0.62,
+    "indice_acumulado": 88.05414763646394,
+    "var_anual": 6.76704003464097
+  },
+  {
+    "ano": 2016,
+    "mes": "Enero",
+    "var_m": 1.29,
+    "indice_acumulado": 89.19004614097432,
+    "var_anual": 7.456612530890139
+  },
+  {
+    "ano": 2016,
+    "mes": "Febrero",
+    "var_m": 1.28,
+    "indice_acumulado": 90.33167873157878,
+    "var_anual": 7.59471791526003
+  },
+  {
+    "ano": 2016,
+    "mes": "Marzo",
+    "var_m": 0.94,
+    "indice_acumulado": 91.18079651165563,
+    "var_anual": 7.9690906289526575
+  },
+  {
+    "ano": 2016,
+    "mes": "Abril",
+    "var_m": 0.5,
+    "indice_acumulado": 91.6367004942139,
+    "var_anual": 7.926134953349329
+  },
+  {
+    "ano": 2016,
+    "mes": "Mayo",
+    "var_m": 0.51,
+    "indice_acumulado": 92.1040476667344,
+    "var_anual": 8.195250590077219
+  },
+  {
+    "ano": 2016,
+    "mes": "Junio",
+    "var_m": 0.48,
+    "indice_acumulado": 92.54614709553472,
+    "var_anual": 8.605981811098484
+  },
+  {
+    "ano": 2016,
+    "mes": "Julio",
+    "var_m": 0.52,
+    "indice_acumulado": 93.02738706043151,
+    "var_anual": 8.963701882938624
+  },
+  {
+    "ano": 2016,
+    "mes": "Agosto",
+    "var_m": -0.32,
+    "indice_acumulado": 92.72969942183813,
+    "var_anual": 8.096156485781481
+  },
+  {
+    "ano": 2016,
+    "mes": "Septiembre",
+    "var_m": -0.05,
+    "indice_acumulado": 92.68333457212722,
+    "var_anual": 7.269766091678509
+  },
+  {
+    "ano": 2016,
+    "mes": "Octubre",
+    "var_m": -0.06,
+    "indice_acumulado": 92.62772457138394,
+    "var_anual": 6.481331179999517
+  },
+  {
+    "ano": 2016,
+    "mes": "Noviembre",
+    "var_m": 0.11,
+    "indice_acumulado": 92.72961506841247,
+    "var_anual": 5.962684537075069
+  },
+  {
+    "ano": 2016,
+    "mes": "Diciembre",
+    "var_m": 0.42,
+    "indice_acumulado": 93.1190794516998,
+    "var_anual": 5.752065009074525
+  },
+  {
+    "ano": 2017,
+    "mes": "Enero",
+    "var_m": 1.02,
+    "indice_acumulado": 94.06889406210713,
+    "var_anual": 5.470170867970259
+  },
+  {
+    "ano": 2017,
+    "mes": "Febrero",
+    "var_m": 1.01,
+    "indice_acumulado": 95.01898989213441,
+    "var_anual": 5.189000388760645
+  },
+  {
+    "ano": 2017,
+    "mes": "Marzo",
+    "var_m": 0.47,
+    "indice_acumulado": 95.46557914462744,
+    "var_anual": 4.699216059627309
+  },
+  {
+    "ano": 2017,
+    "mes": "Abril",
+    "var_m": 0.47,
+    "indice_acumulado": 95.91426736660718,
+    "var_anual": 4.6679625622960685
+  },
+  {
+    "ano": 2017,
+    "mes": "Mayo",
+    "var_m": 0.23,
+    "indice_acumulado": 96.13487018155037,
+    "var_anual": 4.376379341547443
+  },
+  {
+    "ano": 2017,
+    "mes": "Junio",
+    "var_m": 0.11,
+    "indice_acumulado": 96.24061853875008,
+    "var_anual": 3.9920316071090367
+  },
+  {
+    "ano": 2017,
+    "mes": "Julio",
+    "var_m": -0.05,
+    "indice_acumulado": 96.19249822948072,
+    "var_anual": 3.4023434055963753
+  },
+  {
+    "ano": 2017,
+    "mes": "Agosto",
+    "var_m": 0.14,
+    "indice_acumulado": 96.32716772700199,
+    "var_anual": 3.879521154057186
+  },
+  {
+    "ano": 2017,
+    "mes": "Septiembre",
+    "var_m": 0.04,
+    "indice_acumulado": 96.36569859409279,
+    "var_anual": 3.973059492264941
+  },
+  {
+    "ano": 2017,
+    "mes": "Octubre",
+    "var_m": 0.02,
+    "indice_acumulado": 96.38497173381161,
+    "var_anual": 4.056287876889542
+  },
+  {
+    "ano": 2017,
+    "mes": "Noviembre",
+    "var_m": 0.18,
+    "indice_acumulado": 96.55846468293247,
+    "var_anual": 4.129047243100503
+  },
+  {
+    "ano": 2017,
+    "mes": "Diciembre",
+    "var_m": 0.38,
+    "indice_acumulado": 96.92538684872761,
+    "var_anual": 4.0875698293410645
+  },
+  {
+    "ano": 2018,
+    "mes": "Enero",
+    "var_m": 0.63,
+    "indice_acumulado": 97.5360167858746,
+    "var_anual": 3.6857271028171823
+  },
+  {
+    "ano": 2018,
+    "mes": "Febrero",
+    "var_m": 0.71,
+    "indice_acumulado": 98.22852250505431,
+    "var_anual": 3.3777801853749123
+  },
+  {
+    "ano": 2018,
+    "mes": "Marzo",
+    "var_m": 0.24,
+    "indice_acumulado": 98.46427095906644,
+    "var_anual": 3.141123577007865
+  },
+  {
+    "ano": 2018,
+    "mes": "Abril",
+    "var_m": 0.46,
+    "indice_acumulado": 98.91720660547814,
+    "var_anual": 3.1308577142053595
+  },
+  {
+    "ano": 2018,
+    "mes": "Mayo",
+    "var_m": 0.25,
+    "indice_acumulado": 99.16449962199184,
+    "var_anual": 3.151436554415721
+  },
+  {
+    "ano": 2018,
+    "mes": "Junio",
+    "var_m": 0.15,
+    "indice_acumulado": 99.31324637142482,
+    "var_anual": 3.1926517922758135
+  },
+  {
+    "ano": 2018,
+    "mes": "Julio",
+    "var_m": -0.13,
+    "indice_acumulado": 99.18413915114198,
+    "var_anual": 3.1100563731324193
+  },
+  {
+    "ano": 2018,
+    "mes": "Agosto",
+    "var_m": 0.12,
+    "indice_acumulado": 99.30316011812336,
+    "var_anual": 3.0894631923109594
+  },
+  {
+    "ano": 2018,
+    "mes": "Septiembre",
+    "var_m": 0.16,
+    "indice_acumulado": 99.46204517431237,
+    "var_anual": 3.2131210849846825
+  },
+  {
+    "ano": 2018,
+    "mes": "Octubre",
+    "var_m": 0.12,
+    "indice_acumulado": 99.58139962852155,
+    "var_anual": 3.316313567573159
+  },
+  {
+    "ano": 2018,
+    "mes": "Noviembre",
+    "var_m": 0.12,
+    "indice_acumulado": 99.70089730807578,
+    "var_anual": 3.2544351605652277
+  },
+  {
+    "ano": 2018,
+    "mes": "Diciembre",
+    "var_m": 0.3,
+    "indice_acumulado": 100.0,
+    "var_anual": 3.17214431763988
+  },
+  {
     "ano": 2019,
     "mes": "Enero",
-    "var_m": "0.60",
-    "indice_acumulado": "100.600000",
-    "var_anual": "3.14"
+    "var_m": 0.6,
+    "indice_acumulado": 100.6,
+    "var_anual": 3.141386448917549
   },
   {
     "ano": 2019,
     "mes": "Febrero",
-    "var_m": "0.57",
-    "indice_acumulado": "101.173420",
-    "var_anual": "3.00"
+    "var_m": 0.57,
+    "indice_acumulado": 101.17342,
+    "var_anual": 2.998006505487405
   },
   {
     "ano": 2019,
     "mes": "Marzo",
-    "var_m": "0.43",
-    "indice_acumulado": "101.608466",
-    "var_anual": "3.19"
+    "var_m": 0.43,
+    "indice_acumulado": 101.60846570599999,
+    "var_anual": 3.1932341714495216
   },
   {
     "ano": 2019,
     "mes": "Abril",
-    "var_m": "0.50",
-    "indice_acumulado": "102.116508",
-    "var_anual": "3.23"
+    "var_m": 0.5,
+    "indice_acumulado": 102.11650803452999,
+    "var_anual": 3.2343224589953756
   },
   {
     "ano": 2019,
     "mes": "Mayo",
-    "var_m": "0.31",
-    "indice_acumulado": "102.433069",
-    "var_anual": "3.30"
+    "var_m": 0.31,
+    "indice_acumulado": 102.43306920943704,
+    "var_anual": 3.2961085871503926
   },
   {
     "ano": 2019,
     "mes": "Junio",
-    "var_m": "0.27",
-    "indice_acumulado": "102.709638",
-    "var_anual": "3.42"
+    "var_m": 0.27,
+    "indice_acumulado": 102.7096384963025,
+    "var_anual": 3.4198782629412783
   },
   {
     "ano": 2019,
     "mes": "Julio",
-    "var_m": "0.22",
-    "indice_acumulado": "102.935600",
-    "var_anual": "3.78"
+    "var_m": 0.22,
+    "indice_acumulado": 102.93559970099437,
+    "var_anual": 3.7823190098325243
   },
   {
     "ano": 2019,
     "mes": "Agosto",
-    "var_m": "0.09",
-    "indice_acumulado": "103.028242",
-    "var_anual": "3.75"
+    "var_m": 0.09,
+    "indice_acumulado": 103.02824174072526,
+    "var_anual": 3.7512216309841806
   },
   {
     "ano": 2019,
     "mes": "Septiembre",
-    "var_m": "0.23",
-    "indice_acumulado": "103.265207",
-    "var_anual": "3.82"
+    "var_m": 0.23,
+    "indice_acumulado": 103.26520669672892,
+    "var_anual": 3.8237314703828185
   },
   {
     "ano": 2019,
     "mes": "Octubre",
-    "var_m": "0.16",
-    "indice_acumulado": "103.430431",
-    "var_anual": "3.87"
+    "var_m": 0.16,
+    "indice_acumulado": 103.43043102744369,
+    "var_anual": 3.8652111873106465
   },
   {
     "ano": 2019,
     "mes": "Noviembre",
-    "var_m": "0.10",
-    "indice_acumulado": "103.533861",
-    "var_anual": "3.84"
+    "var_m": 0.1,
+    "indice_acumulado": 103.53386145847112,
+    "var_anual": 3.8444630428465354
   },
   {
     "ano": 2019,
     "mes": "Diciembre",
-    "var_m": "0.26",
-    "indice_acumulado": "103.803049",
-    "var_anual": "3.80"
+    "var_m": 0.26,
+    "indice_acumulado": 103.80304949826314,
+    "var_anual": 3.8030494982631335
   },
   {
     "ano": 2020,
     "mes": "Enero",
-    "var_m": "0.42",
-    "indice_acumulado": "104.239022",
-    "var_anual": "3.62"
+    "var_m": 0.42,
+    "indice_acumulado": 104.23902230615583,
+    "var_anual": 3.617318395781144
   },
   {
     "ano": 2020,
     "mes": "Febrero",
-    "var_m": "0.67",
-    "indice_acumulado": "104.937424",
-    "var_anual": "3.72"
+    "var_m": 0.67,
+    "indice_acumulado": 104.93742375560707,
+    "var_anual": 3.7203484429082945
   },
   {
     "ano": 2020,
     "mes": "Marzo",
-    "var_m": "0.57",
-    "indice_acumulado": "105.535567",
-    "var_anual": "3.86"
+    "var_m": 0.57,
+    "indice_acumulado": 105.53556707101403,
+    "var_anual": 3.864935207640019
   },
   {
     "ano": 2020,
     "mes": "Abril",
-    "var_m": "0.16",
-    "indice_acumulado": "105.704424",
-    "var_anual": "3.51"
+    "var_m": 0.16,
+    "indice_acumulado": 105.70442397832765,
+    "var_anual": 3.513551347236077
   },
   {
     "ano": 2020,
     "mes": "Mayo",
-    "var_m": "-0.32",
-    "indice_acumulado": "105.366170",
-    "var_anual": "2.86"
+    "var_m": -0.32,
+    "indice_acumulado": 105.36616982159701,
+    "var_anual": 2.863431345753087
   },
   {
     "ano": 2020,
     "mes": "Junio",
-    "var_m": "-0.38",
-    "indice_acumulado": "104.965778",
-    "var_anual": "2.20"
+    "var_m": -0.38,
+    "indice_acumulado": 104.96577837627494,
+    "var_anual": 2.19661943416698
   },
   {
     "ano": 2020,
     "mes": "Julio",
-    "var_m": "0.00",
-    "indice_acumulado": "104.965778",
-    "var_anual": "1.97"
+    "var_m": 0.0,
+    "indice_acumulado": 104.96577837627494,
+    "var_anual": 1.9722804172490394
   },
   {
     "ano": 2020,
     "mes": "Agosto",
-    "var_m": "-0.01",
-    "indice_acumulado": "104.955282",
-    "var_anual": "1.87"
+    "var_m": -0.01,
+    "indice_acumulado": 104.95528179843731,
+    "var_anual": 1.8703998293608803
   },
   {
     "ano": 2020,
     "mes": "Septiembre",
-    "var_m": "0.32",
-    "indice_acumulado": "105.291139",
-    "var_anual": "1.96"
+    "var_m": 0.32,
+    "indice_acumulado": 105.29113870019232,
+    "var_anual": 1.9618728013717002
   },
   {
     "ano": 2020,
     "mes": "Octubre",
-    "var_m": "-0.06",
-    "indice_acumulado": "105.227964",
-    "var_anual": "1.74"
+    "var_m": -0.06,
+    "indice_acumulado": 105.2279640169722,
+    "var_anual": 1.7379150136690003
   },
   {
     "ano": 2020,
     "mes": "Noviembre",
-    "var_m": "-0.15",
-    "indice_acumulado": "105.070122",
-    "var_anual": "1.48"
+    "var_m": -0.15,
+    "indice_acumulado": 105.07012207094674,
+    "var_anual": 1.4838243168316723
   },
   {
     "ano": 2020,
     "mes": "Diciembre",
-    "var_m": "0.38",
-    "indice_acumulado": "105.469389",
-    "var_anual": "1.61"
+    "var_m": 0.38,
+    "indice_acumulado": 105.46938853481633,
+    "var_anual": 1.60528909758193
   },
   {
     "ano": 2021,
     "mes": "Enero",
-    "var_m": "0.41",
-    "indice_acumulado": "105.901813",
-    "var_anual": "1.60"
+    "var_m": 0.41,
+    "indice_acumulado": 105.90181302780908,
+    "var_anual": 1.5951710644115158
   },
   {
     "ano": 2021,
     "mes": "Febrero",
-    "var_m": "0.64",
-    "indice_acumulado": "106.579585",
-    "var_anual": "1.56"
+    "var_m": 0.64,
+    "indice_acumulado": 106.57958463118706,
+    "var_anual": 1.5648953603096594
   },
   {
     "ano": 2021,
     "mes": "Marzo",
-    "var_m": "0.51",
-    "indice_acumulado": "107.123141",
-    "var_anual": "1.50"
+    "var_m": 0.51,
+    "indice_acumulado": 107.12314051280613,
+    "var_anual": 1.5043018063510605
   },
   {
     "ano": 2021,
     "mes": "Abril",
-    "var_m": "0.59",
-    "indice_acumulado": "107.755167",
-    "var_anual": "1.94"
+    "var_m": 0.59,
+    "indice_acumulado": 107.75516704183168,
+    "var_anual": 1.940073070096382
   },
   {
     "ano": 2021,
     "mes": "Mayo",
-    "var_m": "1.00",
-    "indice_acumulado": "108.832719",
-    "var_anual": "3.29"
+    "var_m": 1.0,
+    "indice_acumulado": 108.83271871225,
+    "var_anual": 3.290001806578391
   },
   {
     "ano": 2021,
     "mes": "Junio",
-    "var_m": "-0.05",
-    "indice_acumulado": "108.778302",
-    "var_anual": "3.63"
+    "var_m": -0.05,
+    "indice_acumulado": 108.77830235289387,
+    "var_anual": 3.632159009912761
   },
   {
     "ano": 2021,
     "mes": "Julio",
-    "var_m": "0.32",
-    "indice_acumulado": "109.126393",
-    "var_anual": "3.96"
+    "var_m": 0.32,
+    "indice_acumulado": 109.12639292042314,
+    "var_anual": 3.963781918744491
   },
   {
     "ano": 2021,
     "mes": "Agosto",
-    "var_m": "0.45",
-    "indice_acumulado": "109.617462",
-    "var_anual": "4.44"
+    "var_m": 0.45,
+    "indice_acumulado": 109.61746168856504,
+    "var_anual": 4.44206314369322
   },
   {
     "ano": 2021,
     "mes": "Septiembre",
-    "var_m": "0.38",
-    "indice_acumulado": "110.034008",
-    "var_anual": "4.50"
+    "var_m": 0.38,
+    "indice_acumulado": 110.0340080429816,
+    "var_anual": 4.504528492463367
   },
   {
     "ano": 2021,
     "mes": "Octubre",
-    "var_m": "0.01",
-    "indice_acumulado": "110.045011",
-    "var_anual": "4.58"
+    "var_m": 0.01,
+    "indice_acumulado": 110.0450114437859,
+    "var_anual": 4.577725580661007
   },
   {
     "ano": 2021,
     "mes": "Noviembre",
-    "var_m": "0.50",
-    "indice_acumulado": "110.595237",
-    "var_anual": "5.26"
+    "var_m": 0.5,
+    "indice_acumulado": 110.59523650100482,
+    "var_anual": 5.258501961506568
   },
   {
     "ano": 2021,
     "mes": "Diciembre",
-    "var_m": "0.73",
-    "indice_acumulado": "111.402582",
-    "var_anual": "5.63"
+    "var_m": 0.73,
+    "indice_acumulado": 111.40258172746216,
+    "var_anual": 5.625512079921879
   },
   {
     "ano": 2022,
     "mes": "Enero",
-    "var_m": "1.67",
-    "indice_acumulado": "113.263005",
-    "var_anual": "6.95"
+    "var_m": 1.67,
+    "indice_acumulado": 113.26300484231078,
+    "var_anual": 6.950959198940909
   },
   {
     "ano": 2022,
     "mes": "Febrero",
-    "var_m": "1.63",
-    "indice_acumulado": "115.109192",
-    "var_anual": "8.00"
+    "var_m": 1.63,
+    "indice_acumulado": 115.10919182124044,
+    "var_anual": 8.003040375480563
   },
   {
     "ano": 2022,
     "mes": "Marzo",
-    "var_m": "1.00",
-    "indice_acumulado": "116.260284",
-    "var_anual": "8.53"
+    "var_m": 1.0,
+    "indice_acumulado": 116.26028373945284,
+    "var_anual": 8.529569972376239
   },
   {
     "ano": 2022,
     "mes": "Abril",
-    "var_m": "1.25",
-    "indice_acumulado": "117.713537",
-    "var_anual": "9.24"
+    "var_m": 1.25,
+    "indice_acumulado": 117.713537286196,
+    "var_anual": 9.241663780724663
   },
   {
     "ano": 2022,
     "mes": "Mayo",
-    "var_m": "0.84",
-    "indice_acumulado": "118.702331",
-    "var_anual": "9.07"
+    "var_m": 0.84,
+    "indice_acumulado": 118.70233099940005,
+    "var_anual": 9.068607679685892
   },
   {
     "ano": 2022,
     "mes": "Junio",
-    "var_m": "0.51",
-    "indice_acumulado": "119.307713",
-    "var_anual": "9.68"
+    "var_m": 0.51,
+    "indice_acumulado": 119.307712887497,
+    "var_anual": 9.679697427566092
   },
   {
     "ano": 2022,
     "mes": "Julio",
-    "var_m": "0.81",
-    "indice_acumulado": "120.274105",
-    "var_anual": "10.22"
+    "var_m": 0.81,
+    "indice_acumulado": 120.27410536188573,
+    "var_anual": 10.21541365303964
   },
   {
     "ano": 2022,
     "mes": "Agosto",
-    "var_m": "1.02",
-    "indice_acumulado": "121.500901",
-    "var_anual": "10.84"
+    "var_m": 1.02,
+    "indice_acumulado": 121.50090123657696,
+    "var_anual": 10.840827150125087
   },
   {
     "ano": 2022,
     "mes": "Septiembre",
-    "var_m": "0.93",
-    "indice_acumulado": "122.630860",
-    "var_anual": "11.45"
+    "var_m": 0.93,
+    "indice_acumulado": 122.63085961807714,
+    "var_anual": 11.448143895817143
   },
   {
     "ano": 2022,
     "mes": "Octubre",
-    "var_m": "0.72",
-    "indice_acumulado": "123.513802",
-    "var_anual": "12.24"
+    "var_m": 0.72,
+    "indice_acumulado": 123.51380180732731,
+    "var_anual": 12.239346597207312
   },
   {
     "ano": 2022,
     "mes": "Noviembre",
-    "var_m": "0.77",
-    "indice_acumulado": "124.464858",
-    "var_anual": "12.54"
+    "var_m": 0.77,
+    "indice_acumulado": 124.46485808124373,
+    "var_anual": 12.540885140304292
   },
   {
     "ano": 2022,
     "mes": "Diciembre",
-    "var_m": "1.26",
-    "indice_acumulado": "126.033115",
-    "var_anual": "13.13"
+    "var_m": 1.26,
+    "indice_acumulado": 126.0331152930674,
+    "var_anual": 13.133029180057697
   },
   {
     "ano": 2023,
     "mes": "Enero",
-    "var_m": "1.78",
-    "indice_acumulado": "128.276505",
-    "var_anual": "13.26"
+    "var_m": 1.78,
+    "indice_acumulado": 128.276504745284,
+    "var_anual": 13.255431395163498
   },
   {
     "ano": 2023,
     "mes": "Febrero",
-    "var_m": "1.66",
-    "indice_acumulado": "130.405895",
-    "var_anual": "13.29"
+    "var_m": 1.66,
+    "indice_acumulado": 130.4058947240557,
+    "var_anual": 13.288863087989
   },
   {
     "ano": 2023,
     "mes": "Marzo",
-    "var_m": "1.05",
-    "indice_acumulado": "131.775157",
-    "var_anual": "13.34"
+    "var_m": 1.05,
+    "indice_acumulado": 131.7751566186583,
+    "var_anual": 13.344946683577108
   },
   {
     "ano": 2023,
     "mes": "Abril",
-    "var_m": "0.78",
-    "indice_acumulado": "132.803003",
-    "var_anual": "12.82"
+    "var_m": 0.78,
+    "indice_acumulado": 132.80300284028382,
+    "var_anual": 12.818802239712612
   },
   {
     "ano": 2023,
     "mes": "Mayo",
-    "var_m": "0.43",
-    "indice_acumulado": "133.374056",
-    "var_anual": "12.36"
+    "var_m": 0.43,
+    "indice_acumulado": 133.37405575249704,
+    "var_anual": 12.360098263926389
   },
   {
     "ano": 2023,
     "mes": "Junio",
-    "var_m": "0.30",
-    "indice_acumulado": "133.774178",
-    "var_anual": "12.13"
+    "var_m": 0.3,
+    "indice_acumulado": 133.77417791975452,
+    "var_anual": 12.125339328144591
   },
   {
     "ano": 2023,
     "mes": "Julio",
-    "var_m": "0.50",
-    "indice_acumulado": "134.443049",
-    "var_anual": "11.78"
+    "var_m": 0.5,
+    "indice_acumulado": 134.4430488093533,
+    "var_anual": 11.780543621451557
   },
   {
     "ano": 2023,
     "mes": "Agosto",
-    "var_m": "0.70",
-    "indice_acumulado": "135.384150",
-    "var_anual": "11.43"
+    "var_m": 0.7,
+    "indice_acumulado": 135.38415015101876,
+    "var_anual": 11.42645755969285
   },
   {
     "ano": 2023,
     "mes": "Septiembre",
-    "var_m": "0.54",
-    "indice_acumulado": "136.115225",
-    "var_anual": "11.00"
+    "var_m": 0.54,
+    "indice_acumulado": 136.11522456183428,
+    "var_anual": 10.995898573779051
   },
   {
     "ano": 2023,
     "mes": "Octubre",
-    "var_m": "0.25",
-    "indice_acumulado": "136.455513",
-    "var_anual": "10.48"
+    "var_m": 0.25,
+    "indice_acumulado": 136.45551262323886,
+    "var_anual": 10.477947101085672
   },
   {
     "ano": 2023,
     "mes": "Noviembre",
-    "var_m": "0.47",
-    "indice_acumulado": "137.096854",
-    "var_anual": "10.15"
+    "var_m": 0.47,
+    "indice_acumulado": 137.09685353256808,
+    "var_anual": 10.149045799802291
   },
   {
     "ano": 2023,
     "mes": "Diciembre",
-    "var_m": "0.45",
-    "indice_acumulado": "137.713789",
-    "var_anual": "9.27"
+    "var_m": 0.45,
+    "indice_acumulado": 137.71378937346464,
+    "var_anual": 9.267940456153866
   },
   {
     "ano": 2024,
     "mes": "Enero",
-    "var_m": "0.92",
-    "indice_acumulado": "138.980756",
-    "var_anual": "8.34"
+    "var_m": 0.92,
+    "indice_acumulado": 138.9807562357005,
+    "var_anual": 8.344670375663664
   },
   {
     "ano": 2024,
     "mes": "Febrero",
-    "var_m": "1.09",
-    "indice_acumulado": "140.495646",
-    "var_anual": "7.74"
+    "var_m": 1.09,
+    "indice_acumulado": 140.49564647866964,
+    "var_anual": 7.737189929921695
   },
   {
     "ano": 2024,
     "mes": "Marzo",
-    "var_m": "0.70",
-    "indice_acumulado": "141.479116",
-    "var_anual": "7.36"
+    "var_m": 0.7,
+    "indice_acumulado": 141.4791160040203,
+    "var_anual": 7.364027965790343
   },
   {
     "ano": 2024,
     "mes": "Abril",
-    "var_m": "0.59",
-    "indice_acumulado": "142.313843",
-    "var_anual": "7.16"
+    "var_m": 0.59,
+    "indice_acumulado": 142.31384278844402,
+    "var_anual": 7.161615132753019
   },
   {
     "ano": 2024,
     "mes": "Mayo",
-    "var_m": "0.43",
-    "indice_acumulado": "142.925792",
-    "var_anual": "7.16"
+    "var_m": 0.43,
+    "indice_acumulado": 142.92579231243434,
+    "var_anual": 7.161615132753041
   },
   {
     "ano": 2024,
     "mes": "Junio",
-    "var_m": "0.32",
-    "indice_acumulado": "143.383155",
-    "var_anual": "7.18"
+    "var_m": 0.32,
+    "indice_acumulado": 143.38315484783413,
+    "var_anual": 7.182983351124483
   },
   {
     "ano": 2024,
     "mes": "Julio",
-    "var_m": "0.20",
-    "indice_acumulado": "143.669921",
-    "var_anual": "6.86"
+    "var_m": 0.2,
+    "indice_acumulado": 143.6699211575298,
+    "var_anual": 6.863034147091285
   },
   {
     "ano": 2024,
     "mes": "Agosto",
-    "var_m": "0.00",
-    "indice_acumulado": "143.669921",
-    "var_anual": "6.12"
+    "var_m": 0.0,
+    "indice_acumulado": 143.6699211575298,
+    "var_anual": 6.120192797508728
   },
   {
     "ano": 2024,
     "mes": "Septiembre",
-    "var_m": "0.24",
-    "indice_acumulado": "144.014729",
-    "var_anual": "5.80"
+    "var_m": 0.24,
+    "indice_acumulado": 144.01472896830788,
+    "var_anual": 5.803542132706108
   },
   {
     "ano": 2024,
     "mes": "Octubre",
-    "var_m": "-0.13",
-    "indice_acumulado": "143.827510",
-    "var_anual": "5.40"
+    "var_m": -0.13,
+    "indice_acumulado": 143.82750982064908,
+    "var_anual": 5.402491299684398
   },
   {
     "ano": 2024,
     "mes": "Noviembre",
-    "var_m": "0.27",
-    "indice_acumulado": "144.215844",
-    "var_anual": "5.19"
+    "var_m": 0.27,
+    "indice_acumulado": 144.21584409716482,
+    "var_anual": 5.192672465605197
   },
   {
     "ano": 2024,
     "mes": "Diciembre",
-    "var_m": "0.46",
-    "indice_acumulado": "144.879237",
-    "var_anual": "5.20"
+    "var_m": 0.46,
+    "indice_acumulado": 144.87923698001177,
+    "var_anual": 5.203144608210031
   },
   {
     "ano": 2025,
     "mes": "Enero",
-    "var_m": "0.94",
-    "indice_acumulado": "146.241102",
-    "var_anual": "5.22"
+    "var_m": 0.94,
+    "indice_acumulado": 146.2411018076239,
+    "var_anual": 5.223993427989693
   },
   {
     "ano": 2025,
     "mes": "Febrero",
-    "var_m": "1.14",
-    "indice_acumulado": "147.908250",
-    "var_anual": "5.28"
+    "var_m": 1.14,
+    "indice_acumulado": 147.90825036823082,
+    "var_anual": 5.276038137371453
   },
   {
     "ano": 2025,
     "mes": "Marzo",
-    "var_m": "0.52",
-    "indice_acumulado": "148.677373",
-    "var_anual": "5.09"
+    "var_m": 0.52,
+    "indice_acumulado": 148.67737327014564,
+    "var_anual": 5.0878585260037745
   },
   {
     "ano": 2025,
     "mes": "Abril",
-    "var_m": "0.66",
-    "indice_acumulado": "149.658644",
-    "var_anual": "5.16"
+    "var_m": 0.66,
+    "indice_acumulado": 149.6586439337286,
+    "var_anual": 5.160988559772761
   },
   {
     "ano": 2025,
     "mes": "Mayo",
-    "var_m": "0.32",
-    "indice_acumulado": "150.137552",
-    "var_anual": "5.05"
+    "var_m": 0.32,
+    "indice_acumulado": 150.13755159431653,
+    "var_anual": 5.045806754121296
   },
   {
     "ano": 2025,
     "mes": "Junio",
-    "var_m": "0.10",
-    "indice_acumulado": "150.287689",
-    "var_anual": "4.82"
+    "var_m": 0.1,
+    "indice_acumulado": 150.28768914591083,
+    "var_anual": 4.8154431428183875
   },
   {
     "ano": 2025,
     "mes": "Julio",
-    "var_m": "0.28",
-    "indice_acumulado": "150.708495",
-    "var_anual": "4.90"
+    "var_m": 0.28,
+    "indice_acumulado": 150.70849467551938,
+    "var_anual": 4.899128127363528
   },
   {
     "ano": 2025,
     "mes": "Agosto",
-    "var_m": "0.19",
-    "indice_acumulado": "150.994841",
-    "var_anual": "5.10"
+    "var_m": 0.19,
+    "indice_acumulado": 150.99484081540285,
+    "var_anual": 5.098436470805523
   },
   {
     "ano": 2025,
     "mes": "Septiembre",
-    "var_m": "0.32",
-    "indice_acumulado": "151.478024",
-    "var_anual": "5.18"
+    "var_m": 0.32,
+    "indice_acumulado": 151.47802430601214,
+    "var_anual": 5.182313914118231
   },
   {
     "ano": 2025,
     "mes": "Octubre",
-    "var_m": "0.18",
-    "indice_acumulado": "151.750685",
-    "var_anual": "5.51"
+    "var_m": 0.18,
+    "indice_acumulado": 151.75068474976297,
+    "var_anual": 5.508803523744499
   },
   {
     "ano": 2025,
     "mes": "Noviembre",
-    "var_m": "0.07",
-    "indice_acumulado": "151.856910",
-    "var_anual": "5.30"
+    "var_m": 0.07,
+    "indice_acumulado": 151.8569102290878,
+    "var_anual": 5.298354130059968
   },
   {
     "ano": 2025,
     "mes": "Diciembre",
-    "var_m": "0.27",
-    "indice_acumulado": "152.266924",
-    "var_anual": "5.10"
+    "var_m": 0.27,
+    "indice_acumulado": 152.2669238867063,
+    "var_anual": 5.099203350797454
   },
   {
     "ano": 2026,
     "mes": "Enero",
-    "var_m": "1.18",
-    "indice_acumulado": "154.063674",
-    "var_anual": "5.35"
+    "var_m": 1.18,
+    "indice_acumulado": 154.06367358856946,
+    "var_anual": 5.349092481015316
   },
   {
     "ano": 2026,
     "mes": "Febrero",
-    "var_m": "1.08",
-    "indice_acumulado": "155.727561",
-    "var_anual": "5.29"
+    "var_m": 1.08,
+    "indice_acumulado": 155.727561263326,
+    "var_anual": 5.286595491210466
   },
   {
     "ano": 2026,
     "mes": "Marzo",
-    "var_m": "0.78",
-    "indice_acumulado": "156.942236",
-    "var_anual": "5.56"
+    "var_m": 0.78,
+    "indice_acumulado": 156.94223624117996,
+    "var_anual": 5.558924528493736
   },
   {
     "ano": 2026,
     "mes": "Abril",
-    "var_m": "0.78",
-    "indice_acumulado": "158.166386",
-    "var_anual": "5.68"
+    "var_m": 0.78,
+    "indice_acumulado": 158.16638568386117,
+    "var_anual": 5.684764692843225
   },
   {
     "ano": 2026,
     "mes": "Mayo",
-    "var_m": "0.47",
-    "indice_acumulado": "158.909768",
-    "var_anual": "5.84"
+    "var_m": 0.47,
+    "indice_acumulado": 158.9097676965753,
+    "var_anual": 5.842786171151904
   },
   {
     "ano": 2026,
     "mes": "Junio",
-    "var_m": "0.39",
-    "indice_acumulado": "159.529516",
-    "var_anual": "6.15"
+    "var_m": 0.39,
+    "indice_acumulado": 159.52951579059194,
+    "var_anual": 6.149423613605798
   },
   {
     "ano": 2026,
     "mes": "Julio",
-    "var_m": "0.17",
-    "indice_acumulado": "159.800716",
-    "var_anual": "6.03"
+    "var_m": 0.17,
+    "indice_acumulado": 159.80071596743596,
+    "var_anual": 6.032985274978997
   },
   {
     "ano": 2026,
     "mes": "Agosto",
-    "var_m": "0.39",
-    "indice_acumulado": "160.423939",
-    "var_anual": "6.24"
+    "var_m": 0.39,
+    "indice_acumulado": 160.42393875970896,
+    "var_anual": 6.244649084291276
   },
   {
     "ano": 2026,
     "mes": "Septiembre",
-    "var_m": "0.37",
-    "indice_acumulado": "161.017507",
-    "var_anual": "6.29"
+    "var_m": 0.37,
+    "indice_acumulado": 161.01750733311988,
+    "var_anual": 6.297601959632315
   }
 ]
