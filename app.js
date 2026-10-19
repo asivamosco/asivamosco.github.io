@@ -84,7 +84,7 @@ function renderizarIndicador(cfg, data) {
   set('axis', '');
   
   const prev = document.getElementById(`kpi${cfg.id}Anterior`);
-  if (prev) prev.innerText = `${mesCorto(penultimo.mes).toUpperCase()}: ${fmt(anterior)}`;
+  if (prev) prev.innerText = `${obtenerMesCompleto(penultimo.mes)}: ${fmt(anterior)}`;
 
   const card = document.getElementById(`card${cfg.id}`);
   if (card) card.className = `card glass ${empeoro ? 'empeoro' : 'mejoro'}`;
