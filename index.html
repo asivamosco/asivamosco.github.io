@@ -52,11 +52,11 @@
     </div>
     <!-- PUBLICIDAD 1 (header, mitad derecha)
          Desktop y tablet: 728x90, centrado sobre las 3 tarjetas. Móvil: 320x50. No se estira.
-         Reemplaza el contenido de este div por tu <img>, <a> o código del anunciante. -->
+         Para cambiar el anuncio, reemplaza los archivos assets/img/ads/ad-header-desktop.png y ad-header-mobile.png (mismos nombres y tamaños); no hay que tocar este HTML. -->
     <div class="ad ad-header" id="adHeader">
       <picture>
-        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-header-ambiente-mobile.png">
-        <img src="assets/img/ads/ad-header-ambiente-desktop.png" width="728" height="90" alt="Mensaje por el medio ambiente · Así Vamos">
+        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-header-mobile.png">
+        <img src="assets/img/ads/ad-header-desktop.png" width="728" height="90" alt="Publicidad">
       </picture>
     </div>
   </header>
@@ -113,15 +113,13 @@
   </main>
 
   <!-- PUBLICIDAD 2 (ancho completo)
-       Desktop (ventana >=1010px): 970x90. Tablet: 728x90. Móvil: 320x100 (320x50 en celulares bajitos). No se estira.
+       Desktop y tablet: 970x90 (en tablet se reduce, nunca se agranda). Móvil: 320x50.
        Móvil: 320x50 o 320x100 (Mobile Banner / Large Mobile Banner). -->
   <section class="sponsors">
     <div class="sp glass" id="adFooter">
       <picture>
-        <source media="(max-width:850px) and (orientation:portrait) and (max-height:700px)" srcset="assets/img/ads/ad-footer-ambiente-mobile-50.png">
-        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-footer-ambiente-mobile.png">
-        <source media="(max-width:1009px)" srcset="assets/img/ads/ad-footer-ambiente-728.png">
-        <img src="assets/img/ads/ad-footer-ambiente-desktop.png" width="970" height="90" alt="Mensaje por el medio ambiente · Así Vamos">
+        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-footer-mobile.png">
+        <img src="assets/img/ads/ad-footer-desktop.png" width="970" height="90" alt="Publicidad">
       </picture>
     </div>
   </section>

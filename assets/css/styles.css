@@ -128,8 +128,8 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
   padding:0; border:0; background:none; box-shadow:none; border-radius:0;
   -webkit-backdrop-filter:none; backdrop-filter:none;
 }
-@media (max-width:1009px){ .sp{aspect-ratio:728/90; width:min(728px,100%)} }
-@media (max-width:767px), (max-width:850px) and (orientation:portrait){ .sp{aspect-ratio:320/100; width:min(320px,100%)} }
+/* en tablet el 970 se reduce solo (width:min(970px,100%)); nunca se agranda */
+@media (max-width:767px), (max-width:850px) and (orientation:portrait){ .sp{aspect-ratio:320/50; width:min(320px,100%)} }
 
 footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
 
@@ -200,10 +200,9 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .spark{height:100%}
   .axis{grid-area:eje;font-size:10px;margin:0;align-self:end;padding-right:4px}
 
-  /* patrocinio inferior: 320x100 centrado (320x50 en celulares bajitos) */
+  /* patrocinio inferior: 320x50 centrado */
   .sponsors{flex:0 0 auto; margin:0}
   .sp{font-size:12px; padding:0 6px; border-top-width:1px}
-  @media (max-height:700px){ .sp{aspect-ratio:320/50} }
 
   footer{margin:0;font-size:10px;line-height:1.2}
 }
