@@ -46,8 +46,19 @@
 
 <div class="page">
   <header>
-    <h1>Así Vamos<span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></h1>
-    <p>Indicadores que nos marcan el rumbo del país</p>
+    <div class="hd-text">
+      <h1>Así Vamos<span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></h1>
+      <p>Indicadores que nos marcan el rumbo del país</p>
+    </div>
+    <!-- PUBLICIDAD 1 (header, mitad derecha)
+         Desktop: ocupa el ancho de 3 tarjetas (~860px): 728x90 centrado o 970x90 (se reduce). Móvil: 320x50.
+         Reemplaza el contenido de este div por tu <img>, <a> o código del anunciante. -->
+    <div class="ad ad-header" id="adHeader">
+      <picture>
+        <source media="(max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-header-ambiente-mobile.png">
+        <img src="assets/img/ads/ad-header-ambiente-desktop.png" alt="Mensaje por el medio ambiente · Así Vamos">
+      </picture>
+    </div>
   </header>
 
   <main class="grid">
@@ -101,9 +112,16 @@
     </article>
   </main>
 
+  <!-- PUBLICIDAD 2 (ancho completo)
+       Desktop: 970x90 (Billboard); también acepta 728x90 (queda centrado).
+       Móvil: 320x50 o 320x100 (Mobile Banner / Large Mobile Banner). -->
   <section class="sponsors">
-    <div class="sp glass"><b>Espacio de Patrocinio</b>1 / 8</div>
-    <div class="sp glass"><b>Local Partner</b>2 / 8</div>
+    <div class="sp glass" id="adFooter">
+      <picture>
+        <source media="(max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-footer-ambiente-mobile.png">
+        <img src="assets/img/ads/ad-footer-ambiente-desktop.png" alt="Mensaje por el medio ambiente · Así Vamos">
+      </picture>
+    </div>
   </section>
 
   <footer>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</footer>

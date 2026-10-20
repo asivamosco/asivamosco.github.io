@@ -26,10 +26,14 @@ body{
 .field{position:fixed;inset:0;pointer-events:none}
 .field svg{width:100%;height:100%;display:block}
 
-.page{position:relative;max-width:1000px;margin:0 auto;padding:14px 20px 40px}
+.page{position:relative;max-width:1200px;margin:0 auto;padding:14px 20px 40px}
 
 /* ---------- Encabezado ---------- */
-header{text-align:center;margin-bottom:20px}
+header{
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); align-items:center; column-gap:18px; row-gap:8px;
+  text-align:left; margin-bottom:20px;
+}
+.hd-text{min-width:0}
 h1{margin:0;font-size:26px;line-height:1.1}
 header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .tag{
@@ -43,6 +47,24 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .col-flag .yellow{height:50%;background:#ffcc00}
 .col-flag .blue{height:25%;background:#0033a0}
 .col-flag .red{height:25%;background:#ce1126}
+
+/* ---------- Espacios publicitarios ---------- */
+.ad{
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  border:1px dashed rgba(255,255,255,.28); border-radius:4px;
+  background:rgba(255,255,255,.05); color:var(--muted); font-size:12px;
+  letter-spacing:.04em; text-align:center;
+}
+.ad img,.ad iframe,.ad a{max-width:100%;max-height:100%;display:block;border:0}
+.ad-header img{width:728px;height:auto;object-fit:contain}
+/* alineado con las tarjetas: título sobre la 1.ª, anuncio sobre las otras 3 */
+.ad-header{grid-column:2 / span 3; justify-self:stretch; width:100%; height:90px}
+
+/* sin espacio para 4 columnas: título arriba, anuncio debajo a todo el ancho */
+@media (max-width:980px){
+  header{grid-template-columns:1fr}
+  .ad-header{grid-column:auto}
+}
 
 /* ---------- Vidrio reutilizable ---------- */
 .glass{
@@ -86,11 +108,16 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .mm{position:absolute;font-size:10.5px;font-weight:600;color:#dbe8f7;white-space:nowrap;line-height:1}
 .axis{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:2px}
 
-/* ---------- Patrocinadores ---------- */
-.sponsors{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
-.sp{padding:22px;text-align:center;color:var(--muted);font-size:14px;
-  border-top:1px solid rgba(255,255,255,.12)}
-.sp b{display:block;color:var(--text);font-size:16px;margin-bottom:4px}
+/* ---------- Patrocinador inferior (ancho completo) ---------- */
+.sponsors{margin-top:22px}
+.sp{
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+  width:100%; min-height:90px; padding:0 12px;
+  color:var(--muted); font-size:13px; letter-spacing:.04em; text-align:center;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.sp img,.sp iframe,.sp a{max-width:100%;max-height:100%;display:block;border:0}
+.sp img{width:970px;height:auto;object-fit:contain}
 
 footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
 
@@ -106,10 +133,13 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     height:100dvh; max-width:none; padding:8px 10px 6px;
     display:flex; flex-direction:column; gap:6px;
   }
-  header{margin:0}
+  header{margin:0;gap:6px;grid-template-columns:1fr;text-align:center}
   h1{font-size:20px}
-  .tag{font-size:9px;margin-left:6px}
+  .tag{font-size:9px;margin-left:6px;display:inline-flex}
   header p{font-size:11px;margin:2px 0 0}
+  /* anuncio del header: fila propia, ancho completo, 320x50 estándar */
+  .ad-header{justify-self:stretch;max-width:none;width:100%;height:50px;font-size:11px}
+  .ad-header img,.sp img{width:320px}
 
   /* 4 filas iguales que se reparten el alto disponible */
   .grid{
@@ -159,16 +189,9 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .spark{height:100%}
   .axis{grid-area:eje;font-size:10px;margin:0;align-self:end;padding-right:4px}
 
-  /* los patrocinios ocupan todo el alto que sobra */
-  .sponsors{
-    flex:1; min-height:56px;
-    grid-template-columns:1fr 1fr; gap:6px; margin:0;
-  }
-  .sp{
-    padding:6px 4px;font-size:12px;line-height:1.2;border-top-width:1px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-  }
-  .sp b{font-size:13px;margin-bottom:2px}
+  /* el patrocinio inferior ocupa todo el ancho y el alto que sobra */
+  .sponsors{flex:1; min-height:50px; margin:0; display:flex}
+  .sp{min-height:50px; padding:0 6px; font-size:12px; border-top-width:1px}
 
   footer{margin:0;font-size:10px;line-height:1.2}
 }
