@@ -51,12 +51,12 @@
       <p>Indicadores que nos marcan el rumbo del país</p>
     </div>
     <!-- PUBLICIDAD 1 (header, mitad derecha)
-         Desktop: ocupa el ancho de 3 tarjetas (~860px): 728x90 centrado o 970x90 (se reduce). Móvil: 320x50.
+         Desktop y tablet: 728x90, centrado sobre las 3 tarjetas. Móvil: 320x50. No se estira.
          Reemplaza el contenido de este div por tu <img>, <a> o código del anunciante. -->
     <div class="ad ad-header" id="adHeader">
       <picture>
-        <source media="(max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-header-ambiente-mobile.png">
-        <img src="assets/img/ads/ad-header-ambiente-desktop.png" alt="Mensaje por el medio ambiente · Así Vamos">
+        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-header-ambiente-mobile.png">
+        <img src="assets/img/ads/ad-header-ambiente-desktop.png" width="728" height="90" alt="Mensaje por el medio ambiente · Así Vamos">
       </picture>
     </div>
   </header>
@@ -113,13 +113,15 @@
   </main>
 
   <!-- PUBLICIDAD 2 (ancho completo)
-       Desktop: 970x90 (Billboard); también acepta 728x90 (queda centrado).
+       Desktop (ventana >=1010px): 970x90. Tablet: 728x90. Móvil: 320x100 (320x50 en celulares bajitos). No se estira.
        Móvil: 320x50 o 320x100 (Mobile Banner / Large Mobile Banner). -->
   <section class="sponsors">
     <div class="sp glass" id="adFooter">
       <picture>
-        <source media="(max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-footer-ambiente-mobile.png">
-        <img src="assets/img/ads/ad-footer-ambiente-desktop.png" alt="Mensaje por el medio ambiente · Así Vamos">
+        <source media="(max-width:850px) and (orientation:portrait) and (max-height:700px)" srcset="assets/img/ads/ad-footer-ambiente-mobile-50.png">
+        <source media="(max-width:767px), (max-width:850px) and (orientation:portrait)" srcset="assets/img/ads/ad-footer-ambiente-mobile.png">
+        <source media="(max-width:1009px)" srcset="assets/img/ads/ad-footer-ambiente-728.png">
+        <img src="assets/img/ads/ad-footer-ambiente-desktop.png" width="970" height="90" alt="Mensaje por el medio ambiente · Así Vamos">
       </picture>
     </div>
   </section>
