@@ -68,7 +68,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .card{padding:24px 20px 22px;position:relative;overflow:hidden;min-width:0}
 .card h2{margin:0;font-size:17px;font-weight:600}
-.card .sub{font-size:13px;color:var(--muted);margin-top:2px}
+.card .sub{font-size:11.5px;color:var(--muted);margin-top:2px;letter-spacing:.02em}
 .card .sub::before{content:"Fuente: "}
 .card .mes{font-size:16px;color:var(--muted);margin-top:18px;text-align:center}
 .est{font-weight:600}
@@ -166,7 +166,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   }
   .card h2{font-size:15px;line-height:1.1;white-space:nowrap;flex:none}
   .card .sub{
-    margin:0; font-size:11px; min-width:0;
+    margin:0; font-size:10px; min-width:0;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
   .card .sub::before{content:"/ Fuente: ";margin-right:2px;opacity:.7}
