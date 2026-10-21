@@ -75,8 +75,8 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .card.mejoro .est{color:var(--ok)}
 .card.empeoro .est{color:var(--mal)}
 
-.val{font-size:48px;font-weight:700;line-height:1;margin:6px 0 12px;text-align:center}
-.prev{display:block;width:max-content;margin:0 auto;font-size:16.5px;padding:3px 10px;
+.val{font-size:48px;font-weight:700;line-height:1;margin:6px 0 6px;text-align:center}
+.prev{display:block;width:max-content;margin:4px auto 0;font-size:16.5px;padding:3px 10px;
   border-radius:4px;background:rgba(255,255,255,.13);color:#dbe5f3}
 
 /* ---------- Gráfica ---------- */
