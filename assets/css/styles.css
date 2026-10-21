@@ -4,6 +4,7 @@
 :root{
   --text:#f2f5fa; --muted:#bccade; --accent:#7cc4ee;
   --royal:#1c3f9e; --ok:#3fbf7f; --mal:#ff8a80;
+  --brillo:radial-gradient(ellipse 85% 55% at 50% 22%,rgba(70,130,225,.15),transparent 72%);
   --foto-capa:linear-gradient(transparent,transparent);
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -14,12 +15,7 @@ html,body{margin:0}
 body{
   min-height:100vh; color:var(--text);
   font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
-  background:
-    var(--foto-capa),
-    radial-gradient(ellipse 60% 28% at 50% 0%,rgba(80,140,230,.42),transparent 70%),
-    radial-gradient(circle at 18% 62%,rgba(40,90,190,.22),transparent 42%),
-    radial-gradient(circle at 86% 72%,rgba(40,120,200,.18),transparent 42%),
-    linear-gradient(180deg,#0b1b3a 0%,#091428 55%,#071a2a 100%);
+  background:var(--foto-capa),#0a1830;
   background-attachment:fixed;
   overflow-x:hidden;
 }
@@ -46,7 +42,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
 /* ---------- Vidrio reutilizable ---------- */
 .glass{
-  background:linear-gradient(135deg,rgba(55,78,120,0),rgba(20,32,58,0));
+  background:var(--brillo),linear-gradient(135deg,rgba(55,78,120,0),rgba(20,32,58,0));
   -webkit-backdrop-filter:blur(0) saturate(1.4);
   backdrop-filter:blur(0) saturate(1.4);
   border:1px solid rgba(255,255,255,.16);
@@ -55,11 +51,11 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
   border-radius:4px;
 }
 .card.mejoro{
-  background:linear-gradient(135deg,rgba(63,191,127,.26),rgba(20,32,58,0) 80%);
+  background:var(--brillo),linear-gradient(135deg,rgba(63,191,127,.16),rgba(20,32,58,0) 80%);
   border-top-color:var(--ok);
 }
 .card.empeoro{
-  background:linear-gradient(135deg,rgba(255,138,128,.26),rgba(20,32,58,0) 80%);
+  background:var(--brillo),linear-gradient(135deg,rgba(255,138,128,.16),rgba(20,32,58,0) 80%);
   border-top-color:var(--mal);
 }
 
