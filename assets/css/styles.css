@@ -151,13 +151,15 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .card.mejoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--ok);
-    background: linear-gradient(to right, rgba(63, 191, 127, 0.32) 0%, rgba(63, 191, 127, 0.08) 40%, transparent 75%),
+    /* Resplandor superior vertical (de arriba hacia abajo) */
+    background: linear-gradient(to bottom, rgba(63, 191, 127, 0.32) 0%, rgba(63, 191, 127, 0.08) 40%, transparent 75%),
                 linear-gradient(135deg,rgba(63,191,127,.12),rgba(20,32,58,0) 80%);
   }
   .card.empeoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--mal);
-    background: linear-gradient(to right, rgba(255, 138, 128, 0.32) 0%, rgba(255, 138, 128, 0.08) 40%, transparent 75%),
+    /* Resplandor superior vertical (de arriba hacia abajo) */
+    background: linear-gradient(to bottom, rgba(255, 138, 128, 0.32) 0%, rgba(255, 138, 128, 0.08) 40%, transparent 75%),
                 linear-gradient(135deg,rgba(255,138,128,.12),rgba(20,32,58,0) 80%);
   }
   .head{
