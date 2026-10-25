@@ -1,11 +1,8 @@
 {
-  "segundos": 20,
-  "espacio1": [
-    { "desktop": "assets/img/ads/ad-a1-desktop.png", "mobile": "assets/img/ads/ad-a1-mobile.png", "enlace": "", "alt": "Publicidad" },
-    { "desktop": "assets/img/ads/ad-a2-desktop.png", "mobile": "assets/img/ads/ad-a2-mobile.png", "enlace": "", "alt": "Publicidad" }
-  ],
-  "espacio2": [
-    { "desktop": "assets/img/ads/ad-b1-desktop.png", "mobile": "assets/img/ads/ad-b1-mobile.png", "enlace": "", "alt": "Publicidad" },
-    { "desktop": "assets/img/ads/ad-b2-desktop.png", "mobile": "assets/img/ads/ad-b2-mobile.png", "enlace": "", "alt": "Publicidad" }
-  ]
+  "anuncio": {
+    "desktop": "assets/img/ads/ad-a2-desktop.png",
+    "mobile": "assets/img/ads/ad-a2-mobile.png",
+    "enlace": "",
+    "alt": "Muévete hoy, tu cuerpo lo agradece - Mensaje de Así Vamos"
+  }
 }
