@@ -6,8 +6,7 @@
 const INDICADORES = [
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
-  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  },
-  { id: 'Salud',     archivo: 'salud_historico.json',          campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  }
+  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -146,27 +145,29 @@ function construirSparkline(valores, fmt) {
 }
 
 /* =========================================================
-   Publicidad rotativa: 2 espacios (lee ads.json)
-   - espacio1 -> #adA · espacio2 -> #adB. Cada anuncio: imagen desktop (468x60) y móvil (320x50).
-   - Cada espacio empieza en un anuncio al azar y cambia cada "segundos" (mínimo 5, por defecto 20);
-     el segundo espacio cambia a mitad de intervalo para que no cambien los dos a la vez.
-   - Se pausa con el mouse encima, con el foco, o si la pestaña está oculta.
-   - Un espacio sin anuncios queda oculto; si no hay ninguno, se oculta todo el bloque.
+   Publicidad: 1 solo espacio (lee ads.json)
+   - Formato de ads.json:
+     { "anuncio": { "desktop": "img/970x90.jpg", "mobile": "img/320x100.jpg",
+                    "enlace": "https://...", "alt": "Texto" } }
+   - desktop: 970x90 · mobile: 320x100. Sin rotación.
+   - Si no hay anuncio, se oculta todo el bloque.
    ========================================================= */
 (function () {
   const MOVIL = '(max-width:767px), (max-width:850px) and (orientation:portrait)';
 
   document.addEventListener('DOMContentLoaded', () => {
     const wrap = document.getElementById('adWrap');
-    if (!wrap) return;
+    const cont = document.getElementById('adA');
+    if (!wrap || !cont) return;
 
     fetch(`ads.json?v=${Date.now()}`, { cache: 'no-store' })
       .then(res => res.json())
       .then(cfg => {
-        const ms = Math.max(5, Number(cfg.segundos) || 20) * 1000;
-        const a = iniciar(document.getElementById('adA'), cfg.espacio1, ms, 0);
-        const b = iniciar(document.getElementById('adB'), cfg.espacio2, ms, ms / 2);
-        wrap.hidden = !(a || b);
+        const a = cfg.anuncio || (cfg.espacio1 && cfg.espacio1[0]);
+        if (!a || !a.desktop) { wrap.hidden = true; return; }
+        cont.replaceChildren(crearAnuncio(a));
+        cont.hidden = false;
+        wrap.hidden = false;
       })
       .catch(err => console.error('Error publicidad:', err));
   });
@@ -192,56 +193,5 @@ function construirSparkline(valores, fmt) {
     link.rel = 'sponsored noopener';
     link.appendChild(pic);
     return link;
-  }
-
-  // devuelve true si el espacio quedó activo
-  function iniciar(cont, anuncios, ms, retraso) {
-    if (!cont) return false;
-    const lista = (anuncios || []).filter(a => a && a.desktop);
-    if (!lista.length) { cont.hidden = true; return false; }
-
-    const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const esMovil = window.matchMedia(MOVIL).matches;
-    let actual = Math.floor(Math.random() * lista.length);
-    let timer = null, espera = null;
-
-    // precarga solo la variante que corresponde a este dispositivo
-    lista.forEach(a => { new Image().src = esMovil && a.mobile ? a.mobile : a.desktop; });
-
-    const mostrar = (n, animar) => {
-      const poner = () => {
-        cont.replaceChildren(crearAnuncio(lista[n]));
-        cont.classList.remove('cambia');
-      };
-      if (animar && !sinMovimiento) {
-        cont.classList.add('cambia');
-        setTimeout(poner, 350);
-      } else {
-        poner();
-      }
-    };
-
-    const girar = () => {
-      actual = (actual + 1) % lista.length;
-      mostrar(actual, true);
-    };
-    const arrancar = (primeraVez) => {
-      if (lista.length < 2 || timer || espera || document.hidden) return;
-      const empezar = () => { espera = null; timer = setInterval(girar, ms); };
-      if (primeraVez && retraso) espera = setTimeout(empezar, retraso);
-      else empezar();
-    };
-    const parar = () => { clearInterval(timer); clearTimeout(espera); timer = espera = null; };
-
-    mostrar(actual, false);
-    cont.hidden = false;
-    arrancar(true);
-
-    cont.addEventListener('mouseenter', parar);
-    cont.addEventListener('mouseleave', () => arrancar(false));
-    cont.addEventListener('focusin', parar);
-    cont.addEventListener('focusout', () => arrancar(false));
-    document.addEventListener('visibilitychange', () => (document.hidden ? parar() : arrancar(false)));
-    return true;
   }
 })();
