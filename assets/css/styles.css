@@ -30,10 +30,13 @@ header{text-align:center;margin-bottom:20px}
 h1{margin:0;font-size:26px;line-height:1.1}
 header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
-/* V invertida (roja) y V normal (verde) */
+/* V invertida (roja) y V normal (verde) alineadas */
 .v-invertida {
   display: inline-block;
   transform: rotate(180deg);
+  transform-origin: center 55%;
+  position: relative;
+  top: 2px;
   color: var(--mal); /* Roja */
 }
 .letra-v {
