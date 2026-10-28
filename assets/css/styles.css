@@ -31,15 +31,15 @@ h1{margin:0;font-size:26px;line-height:1.1}
 header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 
 /* "A" hecha con SVG: apoyada en la línea base, escala con el tamaño de letra */
-.a-logo{
+.a-logo,
+.v-logo{
   display:inline-block;
   height:.7em;          /* altura de mayúscula de Barlow */
   width:.56em;
   vertical-align:baseline;
-  margin-right:.03em;
-  fill:var(--mal);      /* roja */
 }
-.letra-v{ color:var(--ok); }  /* Verde */
+.a-logo{ margin-right:.03em; fill:var(--mal); }  /* roja */
+.v-logo{ margin-left:.03em;  fill:var(--ok);  }  /* verde */
 
 .tag{
   font-size:11px; font-weight:400; color:var(--muted);
