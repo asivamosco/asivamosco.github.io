@@ -124,7 +124,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   html,body{height:100%}
   body{
     overflow:hidden;
-    background:var(--foto-capa),linear-gradient(to left,#0a4f73 0%,#052c42 40%,#021520 75%,#010a10 100%),#010f18;
+    background:var(--foto-capa),linear-gradient(to right,#0a4f73 0%,#052c42 40%,#021520 75%,#010a10 100%),#010f18;
     background-attachment:fixed;
   }
   .page{
