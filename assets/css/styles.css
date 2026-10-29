@@ -142,8 +142,8 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     grid-template-rows:repeat(3,minmax(96px,1fr));
   }
   .card{
-    border-top:6px solid var(--royal);
-    border-left:1px solid rgba(255,255,255,.16);
+    border-top:1px solid rgba(255,255,255,.16);
+    border-left:6px solid var(--royal);
     padding:10px 12px 8px 10px;
     -webkit-backdrop-filter:none; backdrop-filter:none; /* sin saturación sobre el fondo */
     display:grid;
@@ -159,14 +159,14 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     column-gap:12px; align-items:stretch;
   }
   .card.mejoro{
-    border-top-color:var(--ok);
-    border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to top,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to bottom,rgba(63,209,143,.34) 0%,transparent 50%);
+    border-top-color:rgba(255,255,255,.16);
+    border-left-color:var(--ok);
+    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to right,rgba(63,209,143,.34) 0%,transparent 50%);
   }
   .card.empeoro{
-    border-top-color:var(--mal);
-    border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to top,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to bottom,rgba(217,119,87,.45) 0%,transparent 50%);
+    border-top-color:rgba(255,255,255,.16);
+    border-left-color:var(--mal);
+    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to right,rgba(217,119,87,.45) 0%,transparent 50%);
   }
   .card::after{
     content:"6 meses"; grid-area:stit; align-self:center; text-align:center;
