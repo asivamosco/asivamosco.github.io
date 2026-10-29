@@ -147,14 +147,14 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     padding:10px 12px 8px 10px;
     -webkit-backdrop-filter:none; backdrop-filter:none; /* sin saturación sobre el fondo */
     display:grid;
-    /* Izquierda (50%): serie con título "6 meses". Derecha (50%): mes-estado, cifra y anterior apilados */
+    /* Izquierda (50%): mes-estado, cifra y anterior apilados. Derecha (50%): serie con título "6 meses" */
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
     grid-template-rows:auto auto minmax(0,1fr) auto;
     grid-template-areas:
       "titulo  titulo"
-      "stit    mes"
-      "grafica valor"
-      "eje     previo";
+      "mes     stit"
+      "valor   grafica"
+      "previo  eje";
     column-gap:12px; align-items:stretch;
   }
   .card.mejoro{
