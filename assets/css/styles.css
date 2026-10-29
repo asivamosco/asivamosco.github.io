@@ -124,7 +124,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   html,body{height:100%}
   body{
     overflow:hidden;
-    background:var(--foto-capa),#083e5b;
+    background:var(--foto-capa),#094667;
     background-attachment:fixed;
   }
   .page{
@@ -174,14 +174,14 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   }
   .head{
     grid-area:titulo; min-width:0;
-    display:flex; align-items:baseline; justify-content:flex-start; gap:5px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:5px;
   }
   .card h2{font-size:15px;line-height:1.1;white-space:nowrap;flex:none}
   .card .sub{
-    margin:0; font-size:10px; min-width:0;
+    margin:0; font-size:10px; min-width:0; text-align:right;
     white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
   }
-  .card .sub::before{content:"/ Fuente: ";margin-right:2px;opacity:.7}
+  .card .sub::before{content:"Fuente: ";margin-right:2px;opacity:.7}
   .card .mes{
     grid-area:mes; margin:8px 0 0; font-size:18.5px; line-height:1.1; text-align:center;
     display:flex; flex-direction:column; justify-content:center; align-items:center;
