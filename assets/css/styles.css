@@ -124,7 +124,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   html,body{height:100%}
   body{
     overflow:hidden;
-    background:var(--foto-capa),linear-gradient(to right,#0a4f73 0%,#083e5b 40%,#06324a 75%,#062d42 100%),#010f18;
+    background:var(--foto-capa),#083e5b;
     background-attachment:fixed;
   }
   .page{
@@ -161,12 +161,12 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .card.mejoro{
     border-top-color:var(--ok);
     border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to top,rgba(0,0,0,.25) 0%,transparent 45%),linear-gradient(to bottom,rgba(63,209,143,.30) 0%,transparent 50%);
+    background:linear-gradient(to top,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to bottom,rgba(63,209,143,.30) 0%,transparent 50%);
   }
   .card.empeoro{
     border-top-color:var(--mal);
     border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to top,rgba(0,0,0,.25) 0%,transparent 45%),linear-gradient(to bottom,rgba(255,122,89,.34) 0%,transparent 50%);
+    background:linear-gradient(to top,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to bottom,rgba(255,122,89,.34) 0%,transparent 50%);
   }
   .card::after{
     content:"6 meses"; grid-area:stit; align-self:center; text-align:center;
