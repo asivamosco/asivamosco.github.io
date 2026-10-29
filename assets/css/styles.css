@@ -149,23 +149,24 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     display:grid;
     /* Izquierda (50%): mes-estado, cifra y anterior apilados. Derecha (50%): serie con título "6 meses" */
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    grid-template-rows:auto auto minmax(0,1fr) auto;
+    grid-template-rows:auto auto minmax(0,1fr) auto auto;
     grid-template-areas:
       "titulo  titulo"
-      "mes     stit"
+      "mes     grafica"
       "valor   grafica"
-      "previo  eje";
+      "previo  eje"
+      "previo  stit";
     column-gap:12px; align-items:stretch;
   }
   .card.mejoro{
     border-top-color:var(--ok);
     border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to bottom,rgba(63,209,143,.22) 0%,transparent 50%);
+    background:linear-gradient(to bottom,rgba(63,209,143,.30) 0%,transparent 50%);
   }
   .card.empeoro{
     border-top-color:var(--mal);
     border-left-color:rgba(255,255,255,.16);
-    background:linear-gradient(to bottom,rgba(255,122,89,.25) 0%,transparent 50%);
+    background:linear-gradient(to bottom,rgba(255,122,89,.34) 0%,transparent 50%);
   }
   .card::after{
     content:"6 meses"; grid-area:stit; align-self:center; text-align:center;
@@ -190,7 +191,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     grid-area:valor; margin:0; min-width:0; font-size:clamp(28px,min(5.4dvh,11vw),44px);
     display:flex; align-items:center; justify-content:center;
   }
-  .prev{grid-area:previo;margin:0;justify-self:center;font-size:15.5px;padding:3px 8px;max-width:100%;white-space:nowrap}
+  .prev{grid-area:previo;margin:0;justify-self:center;align-self:center;font-size:15.5px;padding:3px 8px;max-width:100%;white-space:nowrap}
   .chart{grid-area:grafica;margin:6px 12px 0;min-height:0}
   .spark{height:100%}
   .axis{grid-area:eje;font-size:10px;margin:0 12px;align-self:end;padding:0}
