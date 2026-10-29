@@ -145,6 +145,7 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
     border-top:1px solid rgba(255,255,255,.16);
     border-left:6px solid var(--royal);
     padding:10px 12px 8px 10px;
+    -webkit-backdrop-filter:none; backdrop-filter:none; /* sin saturación sobre el fondo */
     display:grid;
     /* Izquierda (50%): serie con título "6 meses". Derecha (50%): mes-estado, cifra y anterior apilados */
     grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -159,12 +160,12 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .card.mejoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--ok);
-    background:linear-gradient(to right,rgba(63,209,143,.22) 0%,transparent 50%),rgba(255,255,255,.03);
+    background:linear-gradient(to right,rgba(63,209,143,.22) 0%,transparent 50%);
   }
   .card.empeoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--mal);
-    background:linear-gradient(to right,rgba(255,122,89,.25) 0%,transparent 50%),rgba(255,255,255,.03);
+    background:linear-gradient(to right,rgba(255,122,89,.25) 0%,transparent 50%);
   }
   .card::after{
     content:"6 meses"; grid-area:stit; align-self:center; text-align:center;
