@@ -131,12 +131,12 @@ function construirSparkline(valores, fmt) {
     <svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
       <defs>
         <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#7cc4ee" stop-opacity=".32"/>
-          <stop offset="1" stop-color="#7cc4ee" stop-opacity="0"/>
+          <stop offset="0" stop-color="#78d2ff" stop-opacity=".32"/>
+          <stop offset="1" stop-color="#78d2ff" stop-opacity="0"/>
         </linearGradient>
       </defs>
       <polygon points="${area}" fill="url(#areaGrad)"/>
-      <polyline points="${linea}" fill="none" stroke="#7cc4ee" stroke-width="2" vector-effect="non-scaling-stroke"/>
+      <polyline points="${linea}" fill="none" stroke="#78d2ff" stroke-width="2" vector-effect="non-scaling-stroke"/>
     </svg>
     <span class="dot" style="left:0%;top:${pct(primero.y)}%"></span>
     ${etiqueta(primero, valores[0], false)}
