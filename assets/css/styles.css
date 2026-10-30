@@ -131,15 +131,15 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   .grid{flex:1 1 0;min-height:0;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:6px}
 
   .card{
-    padding:7px 8px 6px; justify-content:center;
+    padding:5px 8px 4px; justify-content:center;
     border-top:4px solid var(--u); border-left:none;
     box-shadow:0 8px 18px rgba(0,0,0,.3);
   }
 
   .head{gap:4px}
   .card h2{font-size:13px}
-  .card .sub{font-size:10px;margin-top:3px}
-  .card .mes{margin-top:4px;font-size:14px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
+  .card .sub{font-size:10px;margin-top:auto;padding-top:3px}
+  .card .mes{margin-top:auto;padding-top:3px;font-size:14px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
   .card .mes .sep{display:none}
   .est{font-size:inherit;letter-spacing:.03em}
   .val{font-size:clamp(26px,min(5.2dvh,9.5vw),40px);margin:3px 0}
