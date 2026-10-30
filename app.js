@@ -1,13 +1,27 @@
 /* =========================================================
    Así Vamos · Estado de la Nación
-   Tarjetas "glass" con mini-gráfica SVG (sin Chart.js)
+   6 indicadores: Impacto cotidiano + Ámbito nacional
+   Cada indicador tiene su propio mes (según la fuente).
    ========================================================= */
 
 const INDICADORES = [
+  // --- Impacto cotidiano (con datos reales en JSON) ---
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
-  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  }
+  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  },
+
+  // --- Ámbito nacional (DATOS DE EJEMPLO inventados; reemplazar por archivo JSON) ---
+  // ambar: true => la tarjeta se pinta en ámbar (estado intermedio). Al conectar datos reales,
+  // reemplazar por una regla (ej. cfg.umbralAmbar) y quitar este forzado.
+  { id: 'Economia', campo: 'pib_anual', dec: 1, sufijo: '%', subeEsMalo: false,
+    datos: [ { mes: 'Junio', pib_anual: 2.1 }, { mes: 'Julio', pib_anual: 2.5 }, { mes: 'Agosto', pib_anual: 2.8 } ] },
+  { id: 'Narco', campo: 'ataques', dec: 0, sufijo: '', subeEsMalo: true, ambar: true,
+    datos: [ { mes: 'Julio', ataques: 52 }, { mes: 'Agosto', ataques: 39 }, { mes: 'Septiembre', ataques: 47 } ] },
+  { id: 'Corrupcion', campo: 'denuncias', dec: 0, sufijo: '', subeEsMalo: true, ambar: true,
+    datos: [ { mes: 'Junio', denuncias: 1210 }, { mes: 'Julio', denuncias: 1284 }, { mes: 'Agosto', denuncias: 1150 } ] }
 ];
+
+const ETIQUETAS = { mejoro: 'FAVORABLE', empeoro: 'DESFAVORABLE', ambar: 'DESFAVORABLE' };
 
 document.addEventListener('DOMContentLoaded', () => {
   INDICADORES.forEach(cfg => {
@@ -18,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---------- Carga de datos ---------- */
 function cargarIndicador(cfg) {
-  const url = `${cfg.archivo}?v=${Date.now()}`;
-  fetch(url, { cache: 'no-store' })
+  fetch(`${cfg.archivo}?v=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(data => renderizarIndicador(cfg, data))
     .catch(err => console.error(`Error ${cfg.id}:`, err));
@@ -31,10 +44,6 @@ function capitalizar(txt) {
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 
-function mesCorto(mes) {
-  return capitalizar(mes).substring(0, 3);
-}
-
 const MESES_COMPLETOS = {
   'ene': 'Enero', 'feb': 'Febrero', 'mar': 'Marzo', 'abr': 'Abril',
   'may': 'Mayo', 'jun': 'Junio', 'jul': 'Julio', 'ago': 'Agosto',
@@ -42,115 +51,54 @@ const MESES_COMPLETOS = {
 };
 
 function obtenerMesCompleto(nombreMes) {
-  const limpio = String(nombreMes || '').trim().toLowerCase();
-  const corto = limpio.substring(0, 3);
+  const corto = String(nombreMes || '').trim().toLowerCase().substring(0, 3);
   return MESES_COMPLETOS[corto] || capitalizar(nombreMes);
-}
-
-function etiquetaEje(d) {
-  return obtenerMesCompleto(d.mes);
 }
 
 /* ---------- Render de una tarjeta ---------- */
 function renderizarIndicador(cfg, data) {
   if (!Array.isArray(data) || data.length < 2) return;
 
-  const serie = data.slice(-6);
   const ultimo = data[data.length - 1];
   const penultimo = data[data.length - 2];
-  
   const actual = parseFloat(ultimo[cfg.campo]);
   const anterior = parseFloat(penultimo[cfg.campo]);
   if (isNaN(actual) || isNaN(anterior)) return;
 
-  const empeoro = cfg.subeEsMalo ? actual > anterior : actual < anterior;
-  
+  const sube = actual > anterior;
+  const igual = actual === anterior;
+  const empeoro = cfg.subeEsMalo ? sube : actual < anterior;
+
   // Truncamiento estricto a 'dec' decimales sin redondear
   const fmt = v => {
     const factor = Math.pow(10, cfg.dec);
-    const truncado = Math.trunc(v * factor) / factor;
-    return `${truncado.toFixed(cfg.dec)}${cfg.sufijo}`;
+    let s = (Math.trunc(v * factor) / factor).toFixed(cfg.dec);
+    if (cfg.dec === 0) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return `${s}${cfg.sufijo}`;
   };
 
-  const set = (suffix, txt) => {
-    const el = document.getElementById(suffix + cfg.id);
+  const set = (prefijo, txt) => {
+    const el = document.getElementById(prefijo + cfg.id);
     if (el) el.innerText = txt;
   };
 
   set('kpi', fmt(actual));
   set('labelMes', obtenerMesCompleto(ultimo.mes));
-  set('estado', empeoro ? 'AUMENTÓ' : 'DISMINUYÓ');
-  set('axis', '');
-  
+
   const prev = document.getElementById(`kpi${cfg.id}Anterior`);
   if (prev) prev.innerText = `${obtenerMesCompleto(penultimo.mes)}: ${fmt(anterior)}`;
 
   const card = document.getElementById(`card${cfg.id}`);
-  if (card) card.className = `card glass ${empeoro ? 'empeoro' : 'mejoro'}`;
+  const clase = cfg.ambar ? 'ambar' : (empeoro ? 'empeoro' : 'mejoro');
+  if (card) card.className = `card glass ${clase}`;
 
-  const valores = serie.map(d => parseFloat(d[cfg.campo]));
-  const chart = document.getElementById(`chart${cfg.id}`);
-  if (chart) chart.innerHTML = construirSparkline(valores, fmt);
-
-  const axis = document.getElementById(`axis${cfg.id}`);
-  if (axis) {
-    axis.innerHTML = `<span>${etiquetaEje(serie[0])}</span><span>${etiquetaEje(serie[serie.length - 1])}</span>`;
-  }
-}
-
-/* ---------- Mini-gráfica SVG ---------- */
-function construirSparkline(valores, fmt) {
-  const W = 200, H = 64, TOP = 18, BAJO = 46;
-  const n = valores.length;
-  const min = Math.min(...valores);
-  const max = Math.max(...valores);
-  const rango = (max - min) || 1;
-
-  const pts = valores.map((v, i) => ({
-    x: n > 1 ? (i / (n - 1)) * W : 0,
-    y: BAJO - ((v - min) / rango) * (BAJO - TOP)
-  }));
-
-  const linea = pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-  const area = `${linea} ${W},${H} 0,${H}`;
-
-  const primero = pts[0];
-  const ultimo = pts[n - 1];
-  const pct = y => ((y / H) * 100).toFixed(1);
-
-  const etiqueta = (p, valor, alinearDerecha) => {
-    const arriba = (p.y / H) < 0.5;
-    const top = arriba ? `calc(${pct(p.y)}% - 8px)` : `calc(${pct(p.y)}% + 9px)`;
-    const tx = alinearDerecha ? '-100%' : '0';
-    const ty = arriba ? '-100%' : '0';
-    const left = alinearDerecha ? '100' : '0';
-    return `<span class="mm" style="left:${left}%;top:${top};transform:translate(${tx},${ty})">${fmt(valor)}</span>`;
-  };
-
-  return `
-    <svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
-      <defs>
-        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#78d2ff" stop-opacity=".32"/>
-          <stop offset="1" stop-color="#78d2ff" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <polygon points="${area}" fill="url(#areaGrad)"/>
-      <polyline points="${linea}" fill="none" stroke="#78d2ff" stroke-width="2" vector-effect="non-scaling-stroke"/>
-    </svg>
-    <span class="dot" style="left:0%;top:${pct(primero.y)}%"></span>
-    ${etiqueta(primero, valores[0], false)}
-    <span class="dot cur" style="left:100%;top:${pct(ultimo.y)}%"></span>
-    ${etiqueta(ultimo, valores[n - 1], true)}`;
+  // Estado en texto, con el color de la tarjeta (el ámbar también se rotula DESFAVORABLE)
+  set('estado', ETIQUETAS[clase]);
 }
 
 /* =========================================================
    Publicidad: 1 solo espacio (lee ads.json)
-   - Formato de ads.json:
-     { "anuncio": { "desktop": "img/970x90.jpg", "mobile": "img/320x100.jpg",
-                    "enlace": "https://...", "alt": "Texto" } }
-   - desktop: 970x90 · mobile: 320x100. Sin rotación.
-   - Si no hay anuncio, se oculta todo el bloque.
+   desktop: 970x90 · mobile: 320x100. Sin rotación.
    ========================================================= */
 (function () {
   const MOVIL = '(max-width:767px), (max-width:850px) and (orientation:portrait)';

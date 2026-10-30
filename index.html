@@ -15,7 +15,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-EYRYT7V7YQ');
   </script>
 </head>
@@ -25,12 +24,6 @@
 <defs>
 <pattern id='g1' width='40' height='40' patternUnits='userSpaceOnUse'><path d='M40 0H0V40' fill='none' stroke='#fff' stroke-opacity='.05'/></pattern>
 <pattern id='g2' width='160' height='160' patternUnits='userSpaceOnUse'><path d='M160 0H0V160' fill='none' stroke='#fff' stroke-opacity='.08'/></pattern>
-<linearGradient id='bar' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7cc4ee' stop-opacity='.24'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='.01'/></linearGradient>
-<linearGradient id='ar' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#7cc4ee' stop-opacity='.32'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='0'/></linearGradient>
-<linearGradient id='ln' x1='0' y1='0' x2='1' y2='0'><stop offset='0' stop-color='#7cc4ee' stop-opacity='0'/><stop offset='.5' stop-color='#7cc4ee' stop-opacity='.6'/><stop offset='1' stop-color='#7cc4ee' stop-opacity='0'/></linearGradient>
-<radialGradient id='orb'><stop offset='0' stop-color='#3b6fc0' stop-opacity='.24'/><stop offset='1' stop-color='#4f8fe8' stop-opacity='0'/></radialGradient>
-<radialGradient id='calm' cx='.6' cy='.62' r='.62'><stop offset='0' stop-color='#0b0e14' stop-opacity='.85'/><stop offset='.6' stop-color='#0b0e14' stop-opacity='.5'/><stop offset='1' stop-color='#0b0e14' stop-opacity='0'/></radialGradient>
-<radialGradient id='vg' cx='.5' cy='.45' r='.8'><stop offset='.45' stop-color='#05070a' stop-opacity='0'/><stop offset='1' stop-color='#05070a' stop-opacity='.6'/></radialGradient>
 </defs>
 <rect width='1600' height='900' fill='url(#g1)'/><rect width='1600' height='900' fill='url(#g2)'/>
 <g fill='none' stroke='#fff' stroke-opacity='.10'><circle cx='800' cy='900' r='110'/><circle cx='800' cy='900' r='190'/><circle cx='800' cy='900' r='290'/><circle cx='800' cy='900' r='410'/><circle cx='800' cy='900' r='550'/><circle cx='800' cy='900' r='710'/><circle cx='800' cy='900' r='890'/><circle cx='800' cy='900' r='1090'/><circle cx='800' cy='900' r='1310'/><circle cx='800' cy='900' r='1550'/></g>
@@ -42,43 +35,65 @@
     <p>Datos para estar al tanto de cómo va el país</p>
   </header>
 
-  <main class="grid">
+  <main class="cats">
 
-    <article class="card glass" id="cardInflacion">
-      <div class="head">
-        <h2>Costo de Vida</h2>
-        <div class="sub">Dane</div>
-      </div>
-      <div class="mes"><span id="labelMesInflacion">Octubre</span><span class="sep"> - </span><span class="est" id="estadoInflacion">--</span></div>
-      <div class="val" id="kpiInflacion">--</div>
-      <span class="prev" id="kpiInflacionAnterior">--</span>
-      <div class="chart" id="chartInflacion"></div>
-      <div class="axis" id="axisInflacion"></div>
-    </article>
+    <!-- ========== Impacto cotidiano ========== -->
+    <section class="cat" aria-labelledby="catCotidiano">
+      <h3 class="cat-title" id="catCotidiano">Impacto cotidiano</h3>
+      <div class="grid">
 
-    <article class="card glass" id="cardDesempleo">
-      <div class="head">
-        <h2>Desempleo</h2>
-        <div class="sub">Dane</div>
-      </div>
-      <div class="mes"><span id="labelMesDesempleo">Octubre</span><span class="sep"> - </span><span class="est" id="estadoDesempleo">--</span></div>
-      <div class="val" id="kpiDesempleo">--</div>
-      <span class="prev" id="kpiDesempleoAnterior">--</span>
-      <div class="chart" id="chartDesempleo"></div>
-      <div class="axis" id="axisDesempleo"></div>
-    </article>
+        <article class="card glass" id="cardInflacion">
+          <div class="head"><h2>Costo de Vida</h2><div class="sub">Dane</div></div>
+          <div class="mes"><span id="labelMesInflacion">--</span><span class="est" id="estadoInflacion"></span></div>
+          <div class="val" id="kpiInflacion">--</div>
+          <span class="prev" id="kpiInflacionAnterior">--</span>
+        </article>
 
-    <article class="card glass" id="cardSeguridad">
-      <div class="head">
-        <h2>Criminalidad</h2>
-        <div class="sub">Policía Nal.</div>
+        <article class="card glass" id="cardDesempleo">
+          <div class="head"><h2>Desempleo</h2><div class="sub">Dane</div></div>
+          <div class="mes"><span id="labelMesDesempleo">--</span><span class="est" id="estadoDesempleo"></span></div>
+          <div class="val" id="kpiDesempleo">--</div>
+          <span class="prev" id="kpiDesempleoAnterior">--</span>
+        </article>
+
+        <article class="card glass" id="cardSeguridad">
+          <div class="head"><h2>Criminalidad</h2><div class="sub">Policía Nal.</div></div>
+          <div class="mes"><span id="labelMesSeguridad">--</span><span class="est" id="estadoSeguridad"></span></div>
+          <div class="val" id="kpiSeguridad">--</div>
+          <span class="prev" id="kpiSeguridadAnterior">--</span>
+        </article>
+
       </div>
-      <div class="mes"><span id="labelMesSeguridad">--</span><span class="sep"> - </span><span class="est" id="estadoSeguridad">--</span></div>
-      <div class="val" id="kpiSeguridad">--</div>
-      <span class="prev" id="kpiSeguridadAnterior">--</span>
-      <div class="chart" id="chartSeguridad"></div>
-      <div class="axis" id="axisSeguridad"></div>
-    </article>
+    </section>
+
+    <!-- ========== Ámbito nacional ========== -->
+    <section class="cat" aria-labelledby="catNacional">
+      <h3 class="cat-title" id="catNacional">Ámbito nacional</h3>
+      <div class="grid">
+
+        <article class="card glass" id="cardEconomia">
+          <div class="head"><h2>Economía</h2><div class="sub">Dane</div></div>
+          <div class="mes"><span id="labelMesEconomia">--</span><span class="est" id="estadoEconomia"></span></div>
+          <div class="val" id="kpiEconomia">--</div>
+          <span class="prev" id="kpiEconomiaAnterior">--</span>
+        </article>
+
+        <article class="card glass" id="cardNarco">
+          <div class="head"><h2>Narcoterrorismo</h2><div class="sub">Mindefensa</div></div>
+          <div class="mes"><span id="labelMesNarco">--</span><span class="est" id="estadoNarco"></span></div>
+          <div class="val" id="kpiNarco">--</div>
+          <span class="prev" id="kpiNarcoAnterior">--</span>
+        </article>
+
+        <article class="card glass" id="cardCorrupcion">
+          <div class="head"><h2>Corrupción</h2><div class="sub">Fiscalía</div></div>
+          <div class="mes"><span id="labelMesCorrupcion">--</span><span class="est" id="estadoCorrupcion"></span></div>
+          <div class="val" id="kpiCorrupcion">--</div>
+          <span class="prev" id="kpiCorrupcionAnterior">--</span>
+        </article>
+
+      </div>
+    </section>
 
   </main>
 
