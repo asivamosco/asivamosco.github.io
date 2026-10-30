@@ -10,6 +10,8 @@
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#043b48;    /* Turquesa oscuro, fondo de un solo tono */
+  /* Luz inferior: nace del centro de los círculos concéntricos */
+  --luz:radial-gradient(ellipse 90% 60% at 50% 100%,rgba(20,150,165,.55) 0%,rgba(20,150,165,.18) 45%,transparent 100%);
   --g-top:.22;     /* intensidad del degradado superior de la card */
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -20,7 +22,8 @@ html,body{margin:0}
 body{
   min-height:100vh; color:var(--text);
   font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--bg);
+  background:var(--luz),var(--bg);
+  background-attachment:fixed;
   overflow-x:hidden;
 }
 .field{position:fixed;inset:0;pointer-events:none}
@@ -86,7 +89,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .card h2{margin:0;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
 .card .sub{font-size:12px;font-weight:600;letter-spacing:.02em;color:#d3dcf7;min-width:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .mes{font-size:17px;color:var(--muted);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
-.est{font-weight:600;font-size:inherit;letter-spacing:.05em}
+.est{font-weight:400;font-size:inherit;letter-spacing:.05em}
 .card.mejoro .est{color:var(--ok)}
 .card.empeoro .est{color:var(--mal)}
 .card.ambar .est{color:var(--ambar-txt)}
@@ -115,7 +118,8 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   html,body{height:100%}
   body{
     overflow:hidden;
-    background:var(--bg);
+    background:var(--luz),var(--bg);
+  background-attachment:fixed;
   }
   .page{height:100dvh;max-width:none;padding:8px 10px 6px;display:flex;flex-direction:column;gap:6px}
   header{margin:0}
