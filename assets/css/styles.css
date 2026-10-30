@@ -3,7 +3,7 @@
    6 tarjetas compactas en 2 categorías
    ========================================================= */
 :root{
-  --text:#f5f7ff; --muted:#a9b5de; --accent:#78d2ff;
+  --text:#f5f7ff; --tit:#e3e9ff; --muted:#a9b5de; --accent:#78d2ff;
   --royal:#1c3f9e; 
   /* Semáforo pastel: solo para el indicador (triángulo) junto a la cifra */
   --ok:#9af0bd;    --ok-rgb:154,240,189;
@@ -81,7 +81,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .card{padding:16px 14px 14px;position:relative;overflow:hidden;min-width:0;
   display:flex;flex-direction:column;align-items:center;text-align:center}
 .head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
-.card h2{margin:0;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
+.card h2{margin:0;color:var(--tit);font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
 /* Fuente: abajo a la derecha, blanca y sin negrita */
 .card .sub{font-size:12px;font-weight:400;letter-spacing:.02em;color:#fff;width:100%;min-width:0;margin-top:10px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .mes{font-size:17px;color:var(--muted);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
@@ -137,7 +137,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   }
 
   .head{gap:4px}
-  .card h2{font-size:13px}
+  .card h2{font-size:14px}
   .card .sub{font-size:10px;margin-top:auto;padding-top:3px}
   .card .mes{margin-top:auto;padding-top:3px;font-size:14px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
   .card .mes .sep{display:none}
