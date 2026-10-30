@@ -161,12 +161,12 @@ footer{margin-top:34px;text-align:center;color:var(--muted);font-size:13px}
   .card.mejoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--ok);
-    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to right,rgba(63,209,143,.34) 0%,transparent 65%);
+    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(155deg,rgba(63,209,143,.34) 0%,transparent 65%);
   }
   .card.empeoro{
     border-top-color:rgba(255,255,255,.16);
     border-left-color:var(--mal);
-    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(to right,rgba(217,119,87,.45) 0%,transparent 65%);
+    background:linear-gradient(to left,rgba(0,0,0,.35) 0%,transparent 45%),linear-gradient(155deg,rgba(217,119,87,.45) 0%,transparent 65%);
   }
   .card::after{
     content:"6 meses"; grid-area:stit; align-self:center; text-align:center;
