@@ -4,8 +4,13 @@
    ========================================================= */
 :root{
   --text:#f5f7ff; --muted:#a9b5de; --accent:#78d2ff;
-  --royal:#1c3f9e; --ok:#3fd18f; --mal:#D97757;
-  --ambar:#e8a043; --ambar-txt:#f6a431;
+  --royal:#1c3f9e; 
+  /* Tema Pastel */
+  --ok:#9af0bd;    --ok-rgb:154,240,189;
+  --mal:#ff9a8a;   --mal-rgb:255,154,138;
+  --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
+  --bg:#043b48;    /* Turquesa oscuro, fondo de un solo tono */
+  --g-top:.22;     /* intensidad del degradado superior de la card */
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -15,8 +20,7 @@ html,body{margin:0}
 body{
   min-height:100vh; color:var(--text);
   font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
-  background:#07405c;
-  background-attachment:fixed;
+  background:var(--bg);
   overflow-x:hidden;
 }
 .field{position:fixed;inset:0;pointer-events:none}
@@ -62,15 +66,15 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 }
 
 .card.mejoro{
-  background:linear-gradient(to bottom, rgba(63,209,143,.25) 0%, rgba(63,209,143,.04) 45%, transparent 80%);
+  background:linear-gradient(to bottom, rgba(var(--ok-rgb),var(--g-top)) 0%, rgba(var(--ok-rgb),.04) 45%, transparent 80%);
   border-top-color:var(--ok);
 }
 .card.empeoro{
-  background:linear-gradient(to bottom, rgba(217,119,87,.28) 0%, rgba(217,119,87,.04) 45%, transparent 80%);
+  background:linear-gradient(to bottom, rgba(var(--mal-rgb),var(--g-top)) 0%, rgba(var(--mal-rgb),.04) 45%, transparent 80%);
   border-top-color:var(--mal);
 }
 .card.ambar{
-  background:linear-gradient(to bottom, rgba(240,162,50,.26) 0%, rgba(240,162,50,.04) 45%, transparent 80%);
+  background:linear-gradient(to bottom, rgba(var(--ambar-rgb),var(--g-top)) 0%, rgba(var(--ambar-rgb),.04) 45%, transparent 80%);
   border-top-color:var(--ambar);
 }
 
@@ -80,9 +84,9 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
   display:flex;flex-direction:column;align-items:center;text-align:center}
 .head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
 .card h2{margin:0;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
-.card .sub{font-size:11px;color:var(--muted);min-width:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card .mes{font-size:19px;color:var(--muted);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
-.est{font-weight:600;font-size:16px;letter-spacing:.05em}
+.card .sub{font-size:12px;font-weight:600;letter-spacing:.02em;color:#d3dcf7;min-width:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .mes{font-size:17px;color:var(--muted);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
+.est{font-weight:400;font-size:inherit;letter-spacing:.05em}
 .card.mejoro .est{color:var(--ok)}
 .card.empeoro .est{color:var(--mal)}
 .card.ambar .est{color:var(--ambar-txt)}
@@ -109,7 +113,10 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
    ========================================================= */
 @media (max-width:600px) and (orientation:portrait){
   html,body{height:100%}
-  body{overflow:hidden;background:#07405c;background-attachment:fixed}
+  body{
+    overflow:hidden;
+    background:var(--bg);
+  }
   .page{height:100dvh;max-width:none;padding:8px 10px 6px;display:flex;flex-direction:column;gap:6px}
   header{margin:0}
   h1{font-size:20px}
@@ -128,23 +135,23 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   }
   .card.mejoro{
     border-top-color:var(--ok);
-    background:linear-gradient(to bottom, rgba(63,209,143,.25) 0%, rgba(63,209,143,.04) 45%, transparent 80%);
+    background:linear-gradient(to bottom, rgba(var(--ok-rgb),var(--g-top)) 0%, rgba(var(--ok-rgb),.04) 45%, transparent 80%);
   }
   .card.empeoro{
     border-top-color:var(--mal);
-    background:linear-gradient(to bottom, rgba(217,119,87,.28) 0%, rgba(217,119,87,.04) 45%, transparent 80%);
+    background:linear-gradient(to bottom, rgba(var(--mal-rgb),var(--g-top)) 0%, rgba(var(--mal-rgb),.04) 45%, transparent 80%);
   }
   .card.ambar{
     border-top-color:var(--ambar);
-    background:linear-gradient(to bottom, rgba(240,162,50,.26) 0%, rgba(240,162,50,.04) 45%, transparent 80%);
+    background:linear-gradient(to bottom, rgba(var(--ambar-rgb),var(--g-top)) 0%, rgba(var(--ambar-rgb),.04) 45%, transparent 80%);
   }
 
   .head{gap:4px}
   .card h2{font-size:13px}
-  .card .sub{font-size:9px}
-  .card .mes{margin-top:4px;font-size:15px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
+  .card .sub{font-size:10px}
+  .card .mes{margin-top:4px;font-size:14px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
   .card .mes .sep{display:none}
-  .est{font-size:13.5px;letter-spacing:.03em}
+  .est{font-size:inherit;letter-spacing:.03em}
   .val{font-size:clamp(26px,min(5.2dvh,9.5vw),40px);margin:3px 0}
   .prev{font-size:13.5px;padding:2px 7px}
 

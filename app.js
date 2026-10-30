@@ -11,17 +11,18 @@ const INDICADORES = [
   { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  },
 
   // --- Ámbito nacional (DATOS DE EJEMPLO inventados; reemplazar por archivo JSON) ---
-  // ambar: true => la tarjeta se pinta en ámbar (estado intermedio). Al conectar datos reales,
-  // reemplazar por una regla (ej. cfg.umbralAmbar) y quitar este forzado.
+  // umbralEstable: variación (en las unidades del indicador) igual o menor a la cual
+  // el dato se considera CAMBIO LEVE y la tarjeta se pinta en ámbar. Si se omite, solo es
+  // estable cuando el valor no cambia.
   { id: 'Economia', campo: 'pib_anual', dec: 1, sufijo: '%', subeEsMalo: false,
     datos: [ { mes: 'Junio', pib_anual: 2.1 }, { mes: 'Julio', pib_anual: 2.5 }, { mes: 'Agosto', pib_anual: 2.8 } ] },
-  { id: 'Narco', campo: 'ataques', dec: 0, sufijo: '', subeEsMalo: true, ambar: true,
+  { id: 'Narco', campo: 'ataques', dec: 0, sufijo: '', subeEsMalo: true, umbralEstable: 3,
     datos: [ { mes: 'Julio', ataques: 52 }, { mes: 'Agosto', ataques: 39 }, { mes: 'Septiembre', ataques: 47 } ] },
-  { id: 'Corrupcion', campo: 'denuncias', dec: 0, sufijo: '', subeEsMalo: true, ambar: true,
-    datos: [ { mes: 'Junio', denuncias: 1210 }, { mes: 'Julio', denuncias: 1284 }, { mes: 'Agosto', denuncias: 1150 } ] }
+  { id: 'Corrupcion', campo: 'denuncias', dec: 0, sufijo: '', subeEsMalo: true, umbralEstable: 25,
+    datos: [ { mes: 'Junio', denuncias: 1210 }, { mes: 'Julio', denuncias: 1284 }, { mes: 'Agosto', denuncias: 1276 } ] }
 ];
 
-const ETIQUETAS = { mejoro: 'FAVORABLE', empeoro: 'DESFAVORABLE', ambar: 'DESFAVORABLE' };
+const ETIQUETAS = { mejoro: 'FAVORABLE', empeoro: 'DESFAVORABLE', ambar: 'CAMBIO LEVE' };
 
 document.addEventListener('DOMContentLoaded', () => {
   INDICADORES.forEach(cfg => {
@@ -89,11 +90,13 @@ function renderizarIndicador(cfg, data) {
   if (prev) prev.innerText = `${obtenerMesCompleto(penultimo.mes)}: ${fmt(anterior)}`;
 
   const card = document.getElementById(`card${cfg.id}`);
-  const clase = cfg.ambar ? 'ambar' : (empeoro ? 'empeoro' : 'mejoro');
+  // Ámbar = CAMBIO LEVE: sin cambio o variación dentro del umbral del indicador
+  const estable = igual || Math.abs(actual - anterior) <= (cfg.umbralEstable || 0);
+  const clase = estable ? 'ambar' : (empeoro ? 'empeoro' : 'mejoro');
   if (card) card.className = `card glass ${clase}`;
 
-  // Estado en texto, con el color de la tarjeta (el ámbar también se rotula DESFAVORABLE)
-  set('estado', ETIQUETAS[clase]);
+  // Estado en texto, con el color de la tarjeta (el ámbar se rotula CAMBIO LEVE; si el valor es idéntico, SIN CAMBIO)
+  set('estado', igual ? 'SIN CAMBIO' : ETIQUETAS[clase]);
 }
 
 /* =========================================================
