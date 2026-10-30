@@ -5,13 +5,15 @@
 :root{
   --text:#f5f7ff; --muted:#a9b5de; --accent:#78d2ff;
   --royal:#1c3f9e; 
-  /* Tema Pastel */
+  /* Semáforo pastel: solo para el indicador (triángulo) junto a la cifra */
   --ok:#9af0bd;    --ok-rgb:154,240,189;
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#043b48;    /* Turquesa oscuro, fondo de un solo tono */
-  /* Luz inferior: nace del centro de los círculos concéntricos */
-  --luz:radial-gradient(ellipse 90% 60% at 50% 100%,rgba(20,150,165,.55) 0%,rgba(20,150,165,.18) 45%,transparent 100%);
+  /* Tema Unicolor: las 6 cards comparten barra y degradado en un solo color (azul aqua) */
+  --u:#5ee0ff;     --u-rgb:94,224,255;
+  /* Luz suave arriba y abajo */
+  --luz:radial-gradient(ellipse 80% 45% at 50% 0%,rgba(20,150,165,.40) 0%,transparent 100%),radial-gradient(ellipse 80% 45% at 50% 100%,rgba(20,150,165,.40) 0%,transparent 100%);
   --g-top:.22;     /* intensidad del degradado superior de la card */
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -63,22 +65,15 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .glass{
   background: transparent;
   border:1px solid rgba(255,255,255,.18);
-  border-top:4px solid var(--royal);
+  border-top:4px solid var(--u);
   box-shadow:0 12px 30px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.15);
   border-radius:4px;
 }
 
-.card.mejoro{
-  background:linear-gradient(to bottom, rgba(var(--ok-rgb),var(--g-top)) 0%, rgba(var(--ok-rgb),.04) 45%, transparent 80%);
-  border-top-color:var(--ok);
-}
-.card.empeoro{
-  background:linear-gradient(to bottom, rgba(var(--mal-rgb),var(--g-top)) 0%, rgba(var(--mal-rgb),.04) 45%, transparent 80%);
-  border-top-color:var(--mal);
-}
-.card.ambar{
-  background:linear-gradient(to bottom, rgba(var(--ambar-rgb),var(--g-top)) 0%, rgba(var(--ambar-rgb),.04) 45%, transparent 80%);
-  border-top-color:var(--ambar);
+/* Unicolor: misma barra y mismo degradado en todas las cards */
+.card.glass{
+  background:linear-gradient(to bottom, rgba(var(--u-rgb),var(--g-top)) 0%, rgba(var(--u-rgb),.04) 45%, transparent 80%);
+  border-top-color:var(--u);
 }
 
 /* ---------- Tarjetas compactas ---------- */
@@ -87,13 +82,16 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
   display:flex;flex-direction:column;align-items:center;text-align:center}
 .head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
 .card h2{margin:0;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
-.card .sub{font-size:12px;font-weight:600;letter-spacing:.02em;color:#d3dcf7;min-width:0;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* Fuente: abajo a la derecha, blanca y sin negrita */
+.card .sub{font-size:12px;font-weight:400;letter-spacing:.02em;color:#fff;width:100%;min-width:0;margin-top:10px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .mes{font-size:17px;color:var(--muted);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
-.est{font-weight:400;font-size:inherit;letter-spacing:.05em}
-.card.mejoro .est{color:var(--ok)}
-.card.empeoro .est{color:var(--mal)}
-.card.ambar .est{color:var(--ambar-txt)}
-.val{font-size:48px;font-weight:700;line-height:1;margin:8px 0}
+.est{font-weight:400;font-size:inherit;letter-spacing:.05em;color:var(--text)}
+.val{font-size:48px;font-weight:700;line-height:1;margin:8px 0;display:flex;align-items:center;justify-content:center;gap:.26em}
+/* Indicador junto a la cifra: ▲ subió · ▼ bajó · ▬ sin cambio. Color = bueno (verde), malo (rojo) o sin cambio (ámbar) */
+.ind{width:.36em;height:.36em;flex:none;fill:currentColor}
+.ind.mejoro{color:var(--ok)}
+.ind.empeoro{color:var(--mal)}
+.ind.ambar{color:var(--ambar)}
 .prev{display:block;width:max-content;max-width:100%;font-size:16px;padding:3px 12px;
   border-radius:4px;background:rgba(255,255,255,.10);color:#dbe3ff}
 
@@ -134,25 +132,13 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 
   .card{
     padding:7px 8px 6px; justify-content:center;
-    border-top:4px solid var(--royal); border-left:none;
+    border-top:4px solid var(--u); border-left:none;
     box-shadow:0 8px 18px rgba(0,0,0,.3);
-  }
-  .card.mejoro{
-    border-top-color:var(--ok);
-    background:linear-gradient(to bottom, rgba(var(--ok-rgb),var(--g-top)) 0%, rgba(var(--ok-rgb),.04) 45%, transparent 80%);
-  }
-  .card.empeoro{
-    border-top-color:var(--mal);
-    background:linear-gradient(to bottom, rgba(var(--mal-rgb),var(--g-top)) 0%, rgba(var(--mal-rgb),.04) 45%, transparent 80%);
-  }
-  .card.ambar{
-    border-top-color:var(--ambar);
-    background:linear-gradient(to bottom, rgba(var(--ambar-rgb),var(--g-top)) 0%, rgba(var(--ambar-rgb),.04) 45%, transparent 80%);
   }
 
   .head{gap:4px}
   .card h2{font-size:13px}
-  .card .sub{font-size:10px}
+  .card .sub{font-size:10px;margin-top:3px}
   .card .mes{margin-top:4px;font-size:14px;line-height:1.1;display:flex;flex-direction:column;align-items:center;gap:0}
   .card .mes .sep{display:none}
   .est{font-size:inherit;letter-spacing:.03em}

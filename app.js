@@ -6,15 +6,14 @@
 
 const INDICADORES = [
   // --- Impacto cotidiano (con datos reales en JSON) ---
-  { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '%', subeEsMalo: true  },
-  { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '%', subeEsMalo: true  },
+  { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, sufijo: '', subeEsMalo: true  },
+  { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, sufijo: '', subeEsMalo: true  },
   { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, sufijo: '',  subeEsMalo: true  },
 
   // --- Ámbito nacional (DATOS DE EJEMPLO inventados; reemplazar por archivo JSON) ---
-  // umbralEstable: variación (en las unidades del indicador) igual o menor a la cual
-  // el dato se considera CAMBIO LEVE y la tarjeta se pinta en ámbar. Si se omite, solo es
-  // estable cuando el valor no cambia.
-  { id: 'Economia', campo: 'pib_anual', dec: 1, sufijo: '%', subeEsMalo: false,
+  // umbralEstable: ya no tiene efecto visual en el tema Unicolor (el indicador se pinta
+  // solo por bueno/malo, o ámbar si el valor es idéntico). Se conserva por si se retoma.
+  { id: 'Economia', campo: 'pib_anual', dec: 1, sufijo: '', subeEsMalo: false,
     datos: [ { mes: 'Junio', pib_anual: 2.1 }, { mes: 'Julio', pib_anual: 2.5 }, { mes: 'Agosto', pib_anual: 2.8 } ] },
   { id: 'Narco', campo: 'ataques', dec: 0, sufijo: '', subeEsMalo: true, umbralEstable: 3,
     datos: [ { mes: 'Julio', ataques: 52 }, { mes: 'Agosto', ataques: 39 }, { mes: 'Septiembre', ataques: 47 } ] },
@@ -22,7 +21,12 @@ const INDICADORES = [
     datos: [ { mes: 'Junio', denuncias: 1210 }, { mes: 'Julio', denuncias: 1284 }, { mes: 'Agosto', denuncias: 1276 } ] }
 ];
 
-const ETIQUETAS = { mejoro: 'FAVORABLE', empeoro: 'DESFAVORABLE', ambar: 'CAMBIO LEVE' };
+/* Indicador junto a la cifra: ▲ subió · ▼ bajó · ▬ sin cambio */
+const FORMAS = {
+  sube:  '<polygon points="6,0.5 12,11.5 0,11.5"/>',
+  baja:  '<polygon points="0,0.5 12,0.5 6,11.5"/>',
+  igual: '<rect x="0" y="4" width="12" height="4"/>'
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   INDICADORES.forEach(cfg => {
@@ -89,14 +93,18 @@ function renderizarIndicador(cfg, data) {
   const prev = document.getElementById(`kpi${cfg.id}Anterior`);
   if (prev) prev.innerText = `${obtenerMesCompleto(penultimo.mes)}: ${fmt(anterior)}`;
 
-  const card = document.getElementById(`card${cfg.id}`);
-  // Ámbar = CAMBIO LEVE: sin cambio o variación dentro del umbral del indicador
-  const estable = igual || Math.abs(actual - anterior) <= (cfg.umbralEstable || 0);
-  const clase = estable ? 'ambar' : (empeoro ? 'empeoro' : 'mejoro');
-  if (card) card.className = `card glass ${clase}`;
+  // Texto del estado (siempre blanco): AUMENTÓ / DISMINUYÓ; SIN CAMBIO si el valor es idéntico
+  set('estado', igual ? 'SIN CAMBIO' : (sube ? 'AUMENTÓ' : 'DISMINUYÓ'));
 
-  // Estado en texto, con el color de la tarjeta (el ámbar se rotula CAMBIO LEVE; si el valor es idéntico, SIN CAMBIO)
-  set('estado', igual ? 'SIN CAMBIO' : ETIQUETAS[clase]);
+  // Indicador: forma según suba o baje; color según sea bueno (verde) o malo (rojo).
+  // Ámbar solo cuando el valor no cambió.
+  const ind = document.getElementById(`ind${cfg.id}`);
+  if (ind) {
+    const dir = igual ? 'igual' : (sube ? 'sube' : 'baja');
+    const tono = igual ? 'ambar' : (empeoro ? 'empeoro' : 'mejoro');
+    ind.innerHTML = FORMAS[dir];
+    ind.setAttribute('class', `ind ${tono}`);
+  }
 }
 
 /* =========================================================
