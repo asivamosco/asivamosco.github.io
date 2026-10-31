@@ -99,7 +99,9 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .ad-wrap[hidden],.sp[hidden]{display:none}
 .ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.85;margin:0 0 4px 2px}
 .sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;
-  background:rgba(15,22,35,.6);box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+  /* Efecto de las cards (tile translúcido, borde fino, hilo superior de luz) pero en tono gris */
+  background:rgba(115,120,125,.55);
+  border:1px solid rgba(255,255,255,.10);border-top:2px solid rgba(255,255,255,.25);border-radius:2px}
 .sp a,.sp picture{display:block;width:100%;height:100%}
 .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 @media (max-width:767px), (max-width:850px) and (orientation:portrait){
