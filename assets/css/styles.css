@@ -80,7 +80,7 @@ header p{margin:4px 0 0;color:var(--muted);font-size:13px}
 .head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
 .card h2{margin:0;color:#fff;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
 /* Fuente: abajo a la derecha, discreta (opacidad .6) */
-.card .sub{font-size:12px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.75);opacity:.6;padding-bottom:4px;width:100%;min-width:0;margin-top:10px;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .sub{font-size:12px;font-weight:400;letter-spacing:.02em;color:rgba(255,255,255,.75);opacity:.6;padding-bottom:4px;width:100%;min-width:0;margin-top:10px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .mes{font-size:17px;color:rgba(255,255,255,.75);margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.1}
 .est{font-weight:400;font-size:inherit;letter-spacing:.05em;color:var(--text)}
 .val{font-size:48px;font-weight:700;line-height:1;margin:8px 0;display:flex;align-items:center;justify-content:center;gap:.26em}
@@ -177,7 +177,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 .spark .v1{font-size:11px;fill:rgba(255,255,255,.7)}
 .spark .v2{font-size:19px;font-weight:700;fill:#fff}
 .meses{width:100%;display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.6);text-transform:lowercase}
-.nota{margin:14px auto 0;max-width:714px;text-align:center;font-size:12px;color:var(--muted)}
+.nota{margin:14px auto 0;width:100%;max-width:714px;text-align:center;font-size:12px;color:var(--muted)}
 
 @media (max-width:600px) and (orientation:portrait){
   .card{justify-content:flex-start}
@@ -188,5 +188,8 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   .spark svg{height:100%}
   .meses{font-size:11px}
   .card .sub{margin-top:2px;padding-top:0;padding-bottom:0}
-  .nota{flex:0 0 auto;margin:0;font-size:10px;line-height:1.25}
+  .nota{flex:0 0 auto;margin:0;width:100%;text-align:center;font-size:10px;line-height:1.25}
 }
+
+/* Fuente de cada tarjeta: siempre centrada (va al final para ganar sobre reglas anteriores) */
+.card .sub{display:block;width:100%;align-self:stretch;text-align:center !important}
