@@ -12,8 +12,6 @@
   --bg:#043b48;    /* Turquesa oscuro, fondo de un solo tono */
   /* Tema Unicolor: las 6 cards comparten barra y degradado en un solo color (azul aqua) */
   --u:#5ee0ff;     --u-rgb:94,224,255;
-  /* Luz suave arriba y abajo */
-  --luz:radial-gradient(ellipse 80% 45% at 50% 0%,rgba(20,150,165,.40) 0%,transparent 100%),radial-gradient(ellipse 80% 45% at 50% 100%,rgba(20,150,165,.40) 0%,transparent 100%);
   --g-top:.22;     /* intensidad del degradado superior de la card */
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -24,7 +22,7 @@ html,body{margin:0}
 body{
   min-height:100vh; color:var(--text);
   font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
-  background:var(--luz),var(--bg);
+  background:var(--bg);
   background-attachment:fixed;
   overflow-x:hidden;
 }
@@ -117,7 +115,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   html,body{height:100%}
   body{
     overflow:hidden;
-    background:var(--luz),var(--bg);
+    background:var(--bg);
   background-attachment:fixed;
   }
   .page{height:100dvh;max-width:none;padding:8px 10px 6px;display:flex;flex-direction:column;gap:6px}
