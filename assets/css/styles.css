@@ -250,6 +250,7 @@ header{
   padding:10px 20px 9px;
   position:relative;
   background:rgba(2,28,36,.78);   /* turquesa oscuro, más profundo que el fondo */
+  text-align:left;                /* título alineado a la izquierda */
 }
 
 @media (max-width:600px) and (orientation:portrait){
@@ -287,11 +288,14 @@ header{
   .tend{margin-top:7px}
 }
 
-/* Franja tricolor en el borde inferior del header (mismas proporciones que la bandera: 2/1/1) */
-header::after{
-  content:"";
-  position:absolute;
-  left:0; right:0; bottom:0;
-  height:4px;
-  background:linear-gradient(to bottom,#ffcc00 0 50%,#0033a0 50% 75%,#ce1126 75% 100%);
+/* =========================================================
+   AJUSTES 6: título del header alineado con el borde izquierdo de las cards
+   (la barra sigue de lado a lado; solo el contenido se alinea)
+   ========================================================= */
+@media (min-width:601px) and (max-width:900px){
+  header{padding-left:calc(max(0px,(100vw - 820px)/2) + 24px)}
+}
+@media (min-width:901px){
+  /* 3 cards de 226px + 2 huecos de 14px = 706px, centradas */
+  header{padding-left:calc((100vw - 706px)/2)}
 }
