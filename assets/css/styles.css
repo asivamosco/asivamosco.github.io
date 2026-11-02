@@ -193,3 +193,105 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 
 /* Fuente de cada tarjeta: siempre centrada (va al final para ganar sobre reglas anteriores) */
 .card .sub{display:block;width:100%;align-self:stretch;text-align:center !important}
+
+/* =========================================================
+   AJUSTES: veredicto, flecha y fuente
+   ========================================================= */
+
+/* 1. "AL ALZA" del mismo tamaño que "Tendencia:" y sin bold.
+      La línea de tendencia pasa a flex para poder poner la flecha debajo. */
+.tend{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  column-gap:.3em;
+}
+.tv{
+  display:contents;          /* el texto queda en la línea; la flecha se reubica */
+  font-size:inherit;
+  font-weight:400;
+  letter-spacing:.03em;
+}
+
+/* 2. Flecha debajo, centrada y más grande */
+.tv svg{
+  order:2;                   /* después del texto */
+  flex:0 0 100%;             /* ocupa su propia línea */
+  width:100%;
+  height:20px;               /* se centra dentro del ancho por el viewBox */
+  margin-top:6px;
+}
+
+/* 3. Fuente más abajo */
+.card{padding-bottom:8px}
+.card .sub{margin-top:18px}
+
+@media (max-width:600px) and (orientation:portrait){
+  .tv svg{height:15px;margin-top:3px}
+  .card{padding-bottom:2px}
+  .card .sub{margin-top:auto}
+}
+
+/* =========================================================
+   AJUSTES 2: tendencia centrada + barra en el header del sitio
+   ========================================================= */
+
+/* "Tendencia: AL ALZA" centrado */
+.tend{
+  justify-content:center;
+  text-align:center;
+}
+
+/* Header del sitio (Así Vamos + slogan): barra gris de lado a lado, un solo tono */
+.page{padding-top:0}
+header{
+  width:100vw;
+  margin-left:calc(50% - 50vw);   /* rompe el ancho máximo de .page y llega a los bordes */
+  padding:10px 20px 9px;
+  position:relative;
+  background:rgba(2,28,36,.78);   /* turquesa oscuro, más profundo que el fondo */
+}
+
+@media (max-width:600px) and (orientation:portrait){
+  .page{padding-top:0}
+  header{padding:5px 10px 4px}
+}
+
+/* =========================================================
+   AJUSTES 3: sin títulos de categoría
+   ========================================================= */
+.cat-title{display:none}
+@media (min-width:601px){
+  .cat{margin-bottom:14px}   /* mismo espacio entre filas que entre columnas */
+}
+
+/* =========================================================
+   AJUSTES 4: veredicto sin mayúsculas (Al Alza · A la Baja · Estable)
+   ========================================================= */
+.tv{text-transform:none}
+
+/* =========================================================
+   AJUSTES 5: más aire arriba del título + fuente (Dane, etc.) más pequeña
+   ========================================================= */
+.card{padding-top:24px}          /* baja el bloque del título (el tamaño del título no cambia) */
+.card .sub{font-size:10.5px}
+
+@media (max-width:600px) and (orientation:portrait){
+  .card{padding-top:9px}
+  .card .sub{font-size:9px}
+}
+
+/* Tendencia más separada del título */
+.tend{margin-top:16px}
+@media (max-width:600px) and (orientation:portrait){
+  .tend{margin-top:7px}
+}
+
+/* Franja tricolor en el borde inferior del header (mismas proporciones que la bandera: 2/1/1) */
+header::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:4px;
+  background:linear-gradient(to bottom,#ffcc00 0 50%,#0033a0 50% 75%,#ce1126 75% 100%);
+}
