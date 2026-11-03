@@ -53,8 +53,10 @@ function fmt(v, dec) {
 }
 
 /* Sparkline SVG: ancho completo (12 a 148) y v1 centrado exactamente arriba del punto inicial */
-function sparkline(vals, dec, subeEsMalo, mesIni, mesFin) {
+function sparkline(vals, dec, subeEsMalo, mesIni, mesFin, uid) {
   const W = 160, H = 100, x0 = 12, x1 = 148, yTop = 28, yBot = 72;
+  const yBase = 82;  // base del área de relleno (por encima de las etiquetas de mes)
+  const GRAD = { 'ln-mejoro': 'ok', 'ln-empeoro': 'mal', 'ln-neu': 'neu' };
   const prom = vals.reduce((a, b) => a + b, 0) / vals.length;
   let min = Math.min(...vals), max = Math.max(...vals);
   if (max - min < Math.abs(prom) * RANGO_MIN) {
@@ -64,6 +66,7 @@ function sparkline(vals, dec, subeEsMalo, mesIni, mesFin) {
   const pts = vals.map((v, i) => [x0 + i * (x1 - x0) / (vals.length - 1), yBot - (v - min) / (max - min) * (yBot - yTop)]);
   
   let paths = '';
+  let areas = '';
   for (let i = 0; i < pts.length - 1; i++) {
     const p1 = pts[i];
     const p2 = pts[i + 1];
@@ -73,6 +76,8 @@ function sparkline(vals, dec, subeEsMalo, mesIni, mesFin) {
       const malo = subeEsMalo ? diff > 0 : diff < 0;
       colorClass = malo ? 'ln-empeoro' : 'ln-mejoro';
     }
+    const f = n => n.toFixed(1);
+    areas += `<polygon points="${f(p1[0])},${f(p1[1])} ${f(p2[0])},${f(p2[1])} ${f(p2[0])},${yBase} ${f(p1[0])},${yBase}" fill="url(#ga-${uid}-${GRAD[colorClass]})" stroke="none"/>`;
     paths += `<line x1="${p1[0].toFixed(1)}" y1="${p1[1].toFixed(1)}" x2="${p2[0].toFixed(1)}" y2="${p2[1].toFixed(1)}" class="ln ${colorClass}" stroke-width="2.2" stroke-linecap="round"/>`;
   }
 
@@ -86,9 +91,13 @@ function sparkline(vals, dec, subeEsMalo, mesIni, mesFin) {
     return `<circle class="${ptClass}" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2.6"/>`;
   }).join('');
 
+  // Degradados verticales (de color a transparente), uno por tipo de segmento
+  const grad = (k, c, op) => `<linearGradient id="ga-${uid}-${k}" gradientUnits="userSpaceOnUse" x1="0" y1="${yTop}" x2="0" y2="${yBase}"><stop offset="0" style="stop-color:${c};stop-opacity:${op}"/><stop offset="1" style="stop-color:${c};stop-opacity:0"/></linearGradient>`;
+  const defs = `<defs>${grad('ok', 'var(--ok)', .38)}${grad('mal', 'var(--mal)', .38)}${grad('neu', '#d9f4ff', .22)}</defs>`;
+
   const a = pts[0], b = pts[pts.length - 1];
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-    ${paths}${medios}
+    ${defs}${areas}${paths}${medios}
     <circle class="pt" cx="${a[0]}" cy="${a[1].toFixed(1)}" r="3.2"/>
     <circle class="fin" cx="${b[0]}" cy="${b[1].toFixed(1)}" r="4.2"/>
     <text class="v1" x="${a[0]}" y="${(a[1] - 10).toFixed(1)}" text-anchor="middle">${fmt(vals[0], dec)}</text>
@@ -110,7 +119,7 @@ function renderizarIndicador(cfg, data) {
 
   const $ = id => document.getElementById(id + cfg.id);
   const sp = $('spark');
-  if (sp) sp.innerHTML = sparkline(vals, cfg.dec, cfg.subeEsMalo, serie[0].mes, serie[serie.length - 1].mes);
+  if (sp) sp.innerHTML = sparkline(vals, cfg.dec, cfg.subeEsMalo, serie[0].mes, serie[serie.length - 1].mes, cfg.id);
   
   const card = document.getElementById(`card${cfg.id}`);
   if (card) {
