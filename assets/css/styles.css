@@ -9,7 +9,7 @@
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#043b48;
-  --u:#b9a8ff;     --u-rgb:185,168,255;   /* Lavanda */
+  --u:#8ea2ff;     --u-rgb:142,162,255;   /* Índigo */
   --g-top:.22;     
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -68,7 +68,7 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
 .cat-title{display:none}
 
 /* ---------- Tema Glass ---------- */
-/* Lavanda · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
+/* Índigo · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
 .glass{
   background:transparent;
   border:1px solid rgba(var(--u-rgb),.25);
