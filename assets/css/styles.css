@@ -8,7 +8,7 @@
   --ok:#9af0bd;    --ok-rgb:154,240,189;
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
-  --bg:#043b48;
+  --bg:#032d38;
   --u:#8ea2ff;     --u-rgb:142,162,255;   /* Índigo */
   --g-top:.22;     
   box-sizing:border-box;
@@ -35,7 +35,7 @@ header{
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
   /* Glass fija: translúcida con desenfoque, fija arriba. Respaldo casi opaco sin backdrop-filter */
-  background:rgba(2,28,36,.9);
+  background:rgba(2,23,28,.9);
   border-bottom:1px solid rgba(var(--u-rgb),.25);
   position:sticky;
   top:0;
@@ -44,7 +44,7 @@ header{
 }
 @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
   header{
-    background:rgba(2,28,36,.55);
+    background:rgba(2,23,28,.55);
     -webkit-backdrop-filter:blur(14px) saturate(140%);
     backdrop-filter:blur(14px) saturate(140%);
   }
