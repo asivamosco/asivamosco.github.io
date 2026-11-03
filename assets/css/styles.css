@@ -9,7 +9,7 @@
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#043b48;
-  --u:#5ee0ff;     --u-rgb:94,224,255;
+  --u:#78d2ff;     --u-rgb:120,210,255;   /* Azul cielo */
   --g-top:.22;     
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -34,7 +34,7 @@ header{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
-  background:rgba(2,28,36,.78);
+  background:linear-gradient(to bottom,rgba(2,28,36,.95) 0%,rgba(2,28,36,.55) 60%,rgba(2,28,36,0) 100%);
   position:relative;
   padding:10px 0 9px;
 }
@@ -68,18 +68,19 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
 .cat-title{display:none}
 
 /* ---------- Tema Glass ---------- */
+/* Aqua · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
 .glass{
   background:transparent;
-  border:1px solid rgba(255,255,255,.10);
-  border-top:2px solid rgba(255,255,255,.25);
-  box-shadow:none;
-  border-radius:2px;
+  border:1px solid rgba(120,220,255,.25);
+  border-top:2px solid rgba(var(--u-rgb),.38);
+  box-shadow:0 12px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);
+  border-radius:4px;
 }
 .card.glass{
-  background:rgba(255,255,255,.115);
-  transition:background .12s,border-color .12s;
+  background:linear-gradient(to bottom,rgba(var(--u-rgb),var(--g-top)) 0%,rgba(var(--u-rgb),.04) 45%,transparent 80%);
+  transition:border-color .12s;
 }
-.card.glass:hover{background:rgba(255,255,255,.19);border-color:rgba(255,255,255,.32)}
+.card.glass:hover{border-color:rgba(120,220,255,.45);border-top-color:rgba(var(--u-rgb),.6)}
 
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -99,8 +100,8 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
 .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 .head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
-.card h2{margin:0;color:#fff;font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
-.go{color:rgba(255,255,255,.55);font-size:20px;line-height:1;flex:none}
+.card h2{margin:0;color:var(--tit);font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
+.go{color:var(--muted);font-size:20px;line-height:1;flex:none}
 
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
 .spark{width:100%;margin-top:6px;flex:1 1 auto;display:flex;align-items:center;}
@@ -112,7 +113,7 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
 .spark .pt{fill:#d9f4ff;opacity:.55}
 .spark .pt.mejoro{fill:var(--ok);opacity:.85;}
 .spark .pt.empeoro{fill:var(--mal);opacity:.85;}
-.spark .fin{fill:#fff}
+.spark .fin{fill:#fff;stroke:var(--u);stroke-width:1.6}
 .spark .v1{font-size:11px;fill:rgba(255,255,255,.7)}
 .spark .v2{font-size:19px;font-weight:700;fill:#fff}
 .spark .lbl-mes{font-size:11px;fill:rgba(255,255,255,.6);font-family:inherit;}
