@@ -9,7 +9,7 @@
   --mal:#ff9a8a;   --mal-rgb:255,154,138;
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#043b48;
-  --u:#78d2ff;     --u-rgb:120,210,255;   /* Azul cielo */
+  --u:#b9a8ff;     --u-rgb:185,168,255;   /* Lavanda */
   --g-top:.22;     
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -68,10 +68,10 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
 .cat-title{display:none}
 
 /* ---------- Tema Glass ---------- */
-/* Aqua · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
+/* Lavanda · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
 .glass{
   background:transparent;
-  border:1px solid rgba(120,220,255,.25);
+  border:1px solid rgba(var(--u-rgb),.25);
   border-top:2px solid rgba(var(--u-rgb),.38);
   box-shadow:0 12px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);
   border-radius:4px;
@@ -80,7 +80,7 @@ header p{margin:4px auto 0;color:var(--muted);font-size:13px}
   background:linear-gradient(to bottom,rgba(var(--u-rgb),var(--g-top)) 0%,rgba(var(--u-rgb),.04) 45%,transparent 80%);
   transition:border-color .12s;
 }
-.card.glass:hover{border-color:rgba(120,220,255,.45);border-top-color:rgba(var(--u-rgb),.6)}
+.card.glass:hover{border-color:rgba(var(--u-rgb),.45);border-top-color:rgba(var(--u-rgb),.6)}
 
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
