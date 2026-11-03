@@ -93,7 +93,7 @@ function sparkline(vals, dec, subeEsMalo, mesIni, mesFin, uid) {
 
   // Degradados verticales (de color a transparente), uno por tipo de segmento
   const grad = (k, c, op) => `<linearGradient id="ga-${uid}-${k}" gradientUnits="userSpaceOnUse" x1="0" y1="${yTop}" x2="0" y2="${yBase}"><stop offset="0" style="stop-color:${c};stop-opacity:${op}"/><stop offset="1" style="stop-color:${c};stop-opacity:0"/></linearGradient>`;
-  const defs = `<defs>${grad('ok', 'var(--ok)', .38)}${grad('mal', 'var(--mal)', .38)}${grad('neu', '#d9f4ff', .22)}</defs>`;
+  const defs = `<defs>${grad('ok', 'var(--ok)', .20)}${grad('mal', 'var(--mal)', .20)}${grad('neu', '#d9f4ff', .22)}</defs>`;
 
   const a = pts[0], b = pts[pts.length - 1];
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
