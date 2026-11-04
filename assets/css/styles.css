@@ -3,13 +3,13 @@
    6 tarjetas compactas en 2 categorías
    ========================================================= */
 :root{
-  --text:#f5f7ff; --tit:#e3e9ff; --muted:#a9b5de; --accent:#78d2ff;
+  --text:#f5f7ff; --tit:#e3e9ff; --muted:#a9b5de; --accent:#3aa7b8;
   --royal:#1c3f9e; 
   --ok:#4fe3d0;    --ok-rgb:79,227,208;    /* Turquesa */
   --mal:#e2725b;   --mal-rgb:226,114,91;    /* Terracota */
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#0f2231;    /* Azul noche */
-  --u:#78d2ff;     --u-rgb:120,210,255;   /* Azul cielo */
+  --u:#3aa7b8;     --u-rgb:58,167,184;    /* Petróleo */
   --g-top:.22;     
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -87,7 +87,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .cat-title{display:none}
 
 /* ---------- Tema Glass ---------- */
-/* Azul cielo · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
+/* Petróleo · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
 .glass{
   background:transparent;
   border:1px solid rgba(var(--u-rgb),.25);
