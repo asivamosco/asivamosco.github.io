@@ -252,3 +252,10 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
     justify-content: space-between;
   }
 }
+
+/* ---------- Celular en vertical: resplandores laterales (en vertical) ---------- */
+@media (max-width:600px) and (orientation:portrait){
+  :root{
+    --luz:radial-gradient(ellipse 55% 80% at 0% 50%,rgba(58,167,184,.40) 0%,transparent 100%),radial-gradient(ellipse 55% 80% at 100% 50%,rgba(58,167,184,.40) 0%,transparent 100%);
+  }
+}
