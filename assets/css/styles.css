@@ -262,8 +262,8 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
     content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
     /* filas: 3 de igual alto con 6px de separación */
     background:
-      radial-gradient(ellipse 110% 90px at 50% 0,                                  rgba(58,167,184,.28) 0%,transparent 100%),
-      radial-gradient(ellipse 110% 90px at 50% calc((100% - 12px)/3 + 6px),        rgba(58,167,184,.28) 0%,transparent 100%),
-      radial-gradient(ellipse 110% 90px at 50% calc((100% - 12px)*2/3 + 12px),     rgba(58,167,184,.28) 0%,transparent 100%);
+      radial-gradient(ellipse 130% 130px at 50% 0,                                 rgba(58,167,184,.28) 0%,transparent 100%),
+      radial-gradient(ellipse 130% 130px at 50% calc((100% - 12px)/3 + 6px),       rgba(58,167,184,.28) 0%,transparent 100%),
+      radial-gradient(ellipse 130% 130px at 50% calc((100% - 12px)*2/3 + 12px),    rgba(58,167,184,.28) 0%,transparent 100%);
   }
 }
