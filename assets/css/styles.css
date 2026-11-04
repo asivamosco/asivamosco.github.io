@@ -259,10 +259,11 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   :root{ --luz:none; }
   .cats{position:relative}
   .cats::before{
-    content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+    content:"";position:absolute;top:0;bottom:0;left:-10px;right:-10px;pointer-events:none;z-index:0;
+    /* ocupa todo el ancho de la pantalla (sale del padding de .page) para que el brillo se vea sobre el fondo, no solo entre cards */
     /* filas: 3 de igual alto con 6px de separación */
     background:
-      radial-gradient(ellipse 130% 130px at 50% 0,                                 rgba(58,167,184,.20) 0%,transparent 100%),
-      radial-gradient(ellipse 130% 130px at 50% calc((100% - 12px)*2/3 + 12px),    rgba(58,167,184,.20) 0%,transparent 100%);
+      radial-gradient(ellipse 100% 150px at 50% 0,                                 rgba(58,167,184,.26) 0%,transparent 100%),
+      radial-gradient(ellipse 100% 150px at 50% calc((100% - 12px)*2/3 + 12px),    rgba(58,167,184,.26) 0%,transparent 100%);
   }
 }
