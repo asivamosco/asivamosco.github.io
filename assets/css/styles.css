@@ -256,7 +256,8 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 /* ---------- Celular en vertical: 3 resplandores leves horizontales,
    uno a la altura de la parte alta de cada fila de cards ---------- */
 @media (max-width:600px) and (orientation:portrait){
-  :root{ --luz:none; }
+  /* Tercer resplandor: en el borde inferior de la pantalla (fondo fijo) */
+  :root{ --luz:radial-gradient(ellipse 100% 150px at 50% 100%,rgba(58,167,184,.26) 0%,transparent 100%); }
   .cats{position:relative}
   .cats::before{
     content:"";position:absolute;top:0;bottom:0;left:-10px;right:-10px;pointer-events:none;z-index:0;
