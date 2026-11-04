@@ -9,7 +9,7 @@
   --mal:#e2725b;   --mal-rgb:226,114,91;    /* Terracota */
   --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
   --bg:#1a1d24;    /* Grafito */
-  --u:#9aa6b2;     --u-rgb:154,166,178;   /* Gris humo */
+  --u:#b8bfc9;     --u-rgb:184,191,201;   /* Ceniza */
   --luz:radial-gradient(ellipse 80% 45% at 50% 0%,rgba(58,167,184,.40) 0%,transparent 100%),radial-gradient(ellipse 80% 45% at 50% 100%,rgba(58,167,184,.40) 0%,transparent 100%); /* Luz: arriba y abajo */
   --g-top:.22;     
   box-sizing:border-box;
