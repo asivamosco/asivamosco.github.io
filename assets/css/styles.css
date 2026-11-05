@@ -40,8 +40,8 @@ header{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
-  background:rgba(255,255,255,.92);   /* respaldo casi opaco sin backdrop-filter */
-  box-shadow:0 10px 30px rgba(130,140,200,.16);
+  background:#fff;   /* respaldo opaco sin backdrop-filter */
+  box-shadow:0 8px 24px rgba(130,140,200,.20);
   position:sticky;
   top:0;
   z-index:20;
@@ -49,7 +49,7 @@ header{
 }
 @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
   header{
-    background:rgba(255,255,255,.8);
+    background:rgba(255,255,255,.9);
     -webkit-backdrop-filter:blur(14px);
     backdrop-filter:blur(14px);
   }
@@ -63,7 +63,13 @@ header h1, header p{
   padding-right:20px;
 }
 header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
-header p{margin:4px auto 0;color:var(--muted);font-size:13px;font-weight:600}
+header p{margin:4px auto 0;color:#5d6690;font-size:13px;font-weight:600}   /* subtítulo más oscuro: pasa WCAG AA */
+
+/* Línea de marca: borde inferior con el gradiente rojo → índigo → cian */
+header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:linear-gradient(90deg,var(--mal),var(--accent) 50%,var(--ok));
+}
 
 /* Enlaces de navegación (a la derecha, en la línea del logo) */
 header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px));
@@ -77,7 +83,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .a-logo{margin-right:.03em;fill:var(--mal)}
 .v-logo{margin-left:.03em;fill:var(--ok)}
 
-.tag{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.2em;margin-left:8px;
+.tag{font-size:11px;font-weight:700;color:#6a739c;letter-spacing:.2em;margin-left:8px;
   vertical-align:middle;display:inline-flex;align-items:center;gap:5px}
 .col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;
   vertical-align:middle;box-shadow:0 0 0 1px rgba(43,51,88,.12)}
