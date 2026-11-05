@@ -14,7 +14,7 @@
   --ok:#2ec8ee;    --ok-rgb:46,200,238;     /* Cian */
   --mal:#f2555f;   --mal-rgb:242,85,95;     /* Rojo */
   --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
-  --bg:#eef1f8;    /* Lavanda claro */
+  --bg:#e9ebef;    /* Gris ceniza */
   --radius:6px;
   /* Sombra flotante en capas, tono azul profundo: varias sombras suaves apiladas (de más cerca y tenue a más lejos y difusa) */
   --sombra:0 1px 2px rgba(10,42,107,.06),0 4px 8px rgba(10,42,107,.07),0 12px 20px rgba(10,42,107,.09),0 28px 44px rgba(10,42,107,.14);
