@@ -16,6 +16,9 @@
   --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
   --bg:#eef1f8;    /* Lavanda claro */
   --radius:6px;
+  /* Sombra "suspendida": ring tenue + sombra de color + sombra de suelo angosta debajo (la tarjeta se ve flotando) */
+  --sombra:0 0 0 1px rgba(91,108,240,.06),0 10px 18px -6px rgba(91,108,240,.18),0 34px 26px -22px rgba(43,51,88,.38),0 46px 30px -30px rgba(43,51,88,.22);
+  --sombra-hover:0 0 0 1px rgba(91,108,240,.10),0 14px 24px -6px rgba(91,108,240,.24),0 40px 30px -22px rgba(43,51,88,.42),0 52px 34px -30px rgba(43,51,88,.26);
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -94,12 +97,12 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   background:#fff;
   border:0;
   border-radius:var(--radius);
-  box-shadow:0 14px 34px rgba(130,140,200,.18),0 2px 6px rgba(130,140,200,.08);
+  box-shadow:var(--sombra);
   transition:transform .15s ease,box-shadow .15s ease;
 }
 .card.glass:hover{
   transform:translateY(-2px);
-  box-shadow:0 20px 40px rgba(var(--accent-rgb),.20),0 3px 8px rgba(130,140,200,.10);
+  box-shadow:var(--sombra-hover);
 }
 
 /* ---------- Tarjetas compactas ---------- */
@@ -180,6 +183,10 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 
 /* ---------- Celulares en vertical ---------- */
 @media (max-width:600px) and (orientation:portrait){
+  :root{
+    --sombra:0 0 0 1px rgba(91,108,240,.06),0 5px 9px -4px rgba(91,108,240,.18),0 14px 10px -9px rgba(43,51,88,.34);
+    --sombra-hover:0 0 0 1px rgba(91,108,240,.10),0 7px 12px -4px rgba(91,108,240,.24),0 16px 11px -9px rgba(43,51,88,.38);
+  }
   html,body{height:100%}
   body{overflow:hidden}
   .page{height:100dvh;max-width:none;padding:0 10px 6px;display:flex;flex-direction:column;gap:6px}
