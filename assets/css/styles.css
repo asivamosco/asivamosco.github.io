@@ -132,7 +132,8 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 }
 .card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-.head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px;
+  background:#faf8f5;padding:3px 3px 3px 9px;border-radius:var(--radius)}   /* recuadro crema: abarca título + flecha */
 .card h2{margin:0;color:var(--tit);font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
 /* Flecha: negra, sin círculo */
 .go{
@@ -221,6 +222,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
   .grid{flex:1 1 0;min-height:0;grid-template-columns:1fr;grid-template-rows:repeat(3,minmax(0,1fr));gap:6px}
 
   .card{padding:10px 8px 8px;justify-content:flex-start}
+  .head{padding:2px 2px 2px 6px}
   .card h2{font-size:14px}
   .go{width:22px;height:22px;font-size:22px}
   .spark{flex:1 1 0;min-height:0;margin-top:4px}
