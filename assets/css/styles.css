@@ -65,10 +65,10 @@ header h1, header p{
 header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
 header p{margin:4px auto 0;color:#5d6690;font-size:13px;font-weight:600}   /* subtítulo más oscuro: pasa WCAG AA */
 
-/* Línea de marca: borde inferior con el gradiente rojo → índigo → cian */
+/* Línea de marca: borde inferior en gris sutil */
 header::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
-  background:linear-gradient(90deg,var(--mal),var(--accent) 50%,var(--ok));
+  background:linear-gradient(90deg,#d5d9e2,#c3c8d4 50%,#d5d9e2);
 }
 
 /* Enlaces de navegación (a la derecha, en la línea del logo) */
