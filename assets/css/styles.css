@@ -1,17 +1,21 @@
 /* =========================================================
-   Así Vamos · Estado de la Nación — diseño "glass"
+   Así Vamos · Estado de la Nación — tema Soft UI
+   Fondo lavanda claro, tarjetas blancas con sombra difusa,
+   acento índigo + cian, rojo para alertas, Roboto Condensed
    6 tarjetas compactas en 2 categorías
    ========================================================= */
+/* Carga la tipografía desde aquí para no depender del <link> del HTML del index (que seguía pidiendo Barlow) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap');
+
 :root{
-  --text:#f5f7ff; --tit:#e3e9ff; --muted:#a9b5de; --accent:#3aa7b8;
-  --royal:#1c3f9e; 
-  --ok:#4fe3d0;    --ok-rgb:79,227,208;    /* Turquesa */
-  --mal:#e2725b;   --mal-rgb:226,114,91;    /* Terracota */
-  --ambar:#ffe08a; --ambar-rgb:255,224,138; --ambar-txt:#ffe9a8;
-  --bg:#1a1d24;    /* Grafito */
-  --u:#b8bfc9;     --u-rgb:184,191,201;   /* Ceniza */
-  --luz:radial-gradient(ellipse 80% 45% at 50% 0%,rgba(58,167,184,.40) 0%,transparent 100%),radial-gradient(ellipse 80% 45% at 50% 100%,rgba(58,167,184,.40) 0%,transparent 100%); /* Luz: arriba y abajo */
-  --g-top:.22;     
+  --text:#2b3358; --tit:#2b3358; --muted:#8a93b5;
+  --accent:#5b6cf0; --accent-rgb:91,108,240;   /* Índigo */
+  --royal:#5b6cf0;
+  --ok:#2ec8ee;    --ok-rgb:46,200,238;     /* Cian */
+  --mal:#f2555f;   --mal-rgb:242,85,95;     /* Rojo */
+  --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
+  --bg:#eef1f8;    /* Lavanda claro */
+  --radius:6px;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -20,24 +24,21 @@
 html,body{margin:0}
 body{
   min-height:100vh; color:var(--text);
-  font-family:"Barlow Semi Condensed","Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Roboto Condensed","Segoe UI",Roboto,Arial,sans-serif;
   background:var(--bg);
-  background-attachment:fixed;
   overflow-x:hidden;
 }
-.field{position:fixed;inset:0;pointer-events:none;background:var(--luz,none)}
-.field svg{width:100%;height:100%;display:block}
+.field{display:none}   /* el tema Soft UI no lleva cuadrícula ni círculos */
 
 .page{position:relative;max-width:1000px;margin:0 auto;padding:0 20px 40px}
 
-/* ---------- Encabezado ---------- */
+/* ---------- Encabezado: panel blanco flotante ---------- */
 header{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
-  /* Glass fija: translúcida con desenfoque, fija arriba. Respaldo casi opaco sin backdrop-filter */
-  background:rgba(7,48,58,.9);
-  border-bottom:1px solid rgba(var(--u-rgb),.25);
+  background:rgba(255,255,255,.92);   /* respaldo casi opaco sin backdrop-filter */
+  box-shadow:0 10px 30px rgba(130,140,200,.16);
   position:sticky;
   top:0;
   z-index:20;
@@ -45,9 +46,9 @@ header{
 }
 @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
   header{
-    background:rgba(7,48,58,.55);
-    -webkit-backdrop-filter:blur(14px) saturate(140%);
-    backdrop-filter:blur(14px) saturate(140%);
+    background:rgba(255,255,255,.8);
+    -webkit-backdrop-filter:blur(14px);
+    backdrop-filter:blur(14px);
   }
 }
 header h1, header p{
@@ -58,25 +59,25 @@ header h1, header p{
   padding-left:20px;
   padding-right:20px;
 }
-header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap}
-header p{margin:4px auto 0;color:var(--muted);font-size:13px}
+header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
+header p{margin:4px auto 0;color:var(--muted);font-size:13px;font-weight:600}
 
 /* Enlaces de navegación (a la derecha, en la línea del logo) */
 header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px));
   display:flex;gap:18px;height:29px;align-items:center}
-.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:600;letter-spacing:.02em;
+.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.02em;
   padding:4px 0 3px;border-bottom:2px solid transparent;transition:color .12s}
-.nav a:hover{color:#fff}
-.nav a.act{color:#fff;border-bottom-color:var(--u)}
+.nav a:hover{color:var(--text)}
+.nav a.act{color:var(--text);border-bottom-color:var(--accent)}
 
 .a-logo,.v-logo{display:inline-block;height:.7em;width:.56em;vertical-align:baseline}
 .a-logo{margin-right:.03em;fill:var(--mal)}
 .v-logo{margin-left:.03em;fill:var(--ok)}
 
-.tag{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.2em;margin-left:8px;
+.tag{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.2em;margin-left:8px;
   vertical-align:middle;display:inline-flex;align-items:center;gap:5px}
 .col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;
-  vertical-align:middle;box-shadow:0 0 2px rgba(0,0,0,.3)}
+  vertical-align:middle;box-shadow:0 0 0 1px rgba(43,51,88,.12)}
 .col-flag span{display:block;width:100%}
 .col-flag .yellow{height:50%;background:#ffcc00}
 .col-flag .blue{height:25%;background:#0033a0}
@@ -87,20 +88,19 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .cat{margin-bottom:22px;min-width:0}
 .cat-title{display:none}
 
-/* ---------- Tema Glass ---------- */
-/* Petróleo · línea fina: contorno de 1px uniforme + línea superior de 2px al 38 % */
-.glass{
-  background:transparent;
-  border:1px solid rgba(var(--u-rgb),.25);
-  border-top:2px solid rgba(var(--u-rgb),.38);
-  box-shadow:0 12px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.15);
-  border-radius:4px;
-}
+/* ---------- Tarjeta Soft UI (la clase "glass" se conserva por compatibilidad con el HTML) ---------- */
+.glass,
 .card.glass{
-  background:linear-gradient(to bottom,rgba(var(--u-rgb),var(--g-top)) 0%,rgba(var(--u-rgb),.04) 45%,transparent 80%);
-  transition:border-color .12s;
+  background:#fff;
+  border:0;
+  border-radius:var(--radius);
+  box-shadow:0 14px 34px rgba(130,140,200,.18),0 2px 6px rgba(130,140,200,.08);
+  transition:transform .15s ease,box-shadow .15s ease;
 }
-.card.glass:hover{border-color:rgba(var(--u-rgb),.45);border-top-color:rgba(var(--u-rgb),.6)}
+.card.glass:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 40px rgba(var(--accent-rgb),.20),0 3px 8px rgba(130,140,200,.10);
+}
 
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -117,34 +117,38 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   color:inherit;
   cursor:pointer;
 }
-.card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-.head{width:100%;text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:6px}
-.card h2{margin:0;color:var(--tit);font-size:16px;font-weight:600;line-height:1.15;white-space:nowrap;flex:none}
-.go{color:var(--muted);font-size:20px;line-height:1;flex:none}
+.head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px}
+.card h2{margin:0;color:var(--tit);font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
+/* Flecha: botón circular */
+.go{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:#f0f2fb;color:var(--accent);font-size:18px;font-weight:700;line-height:1;
+  box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.10);
+}
 
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
 .spark{width:100%;margin-top:6px;flex:1 1 auto;display:flex;align-items:center;}
 .spark svg{display:block;width:100%;height:auto;overflow:visible}
-.spark .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-.spark .ln.ln-mejoro{stroke:var(--ok);opacity:1;}
-.spark .ln.ln-empeoro{stroke:var(--mal);opacity:1;}
-.spark .ln.ln-neu{stroke:#d9f4ff;opacity:.9;}
-.spark .pt{fill:#d9f4ff;opacity:.55}
-.spark .pt.mejoro{fill:var(--ok);opacity:.85;}
-.spark .pt.empeoro{fill:var(--mal);opacity:.85;}
-.spark .fin{fill:#fff;stroke:var(--u);stroke-width:1.6}
-.spark .v1{font-size:11px;fill:rgba(255,255,255,.7)}
-.spark .v2{font-size:19px;font-weight:700;fill:#fff}
-.spark .lbl-mes{font-size:11px;fill:rgba(255,255,255,.6);font-family:inherit;}
+.spark .ln{fill:none;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
+.spark .ln.ln-mejoro{stroke:var(--ok)}
+.spark .ln.ln-empeoro{stroke:var(--mal)}
+.spark .ln.ln-neu{stroke:#b9c0e0}
+.spark .pt{fill:#b9c0e0}
+.spark .pt.mejoro{fill:var(--ok)}
+.spark .pt.empeoro{fill:var(--mal)}
+.spark .fin{fill:#fff;stroke:var(--accent);stroke-width:2.4}
+.spark .v1{font-size:14px;fill:#8a93b5;font-weight:600}
+.spark .v2{font-size:19px;font-weight:800;fill:#2b3358}
+.spark .lbl-mes{font-size:11px;fill:#a2a9c6;font-weight:600;font-family:inherit;}
 
 /* Fuente de cada tarjeta */
 .card .sub{
   font-size:10.5px;
-  font-weight:400;
+  font-weight:600;
   letter-spacing:.02em;
-  color:rgba(255,255,255,.75);
-  opacity:.6;
+  color:var(--muted);
   width:100%;
   min-width:0;
   margin-top:4px;
@@ -158,17 +162,17 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 /* ---------- Publicidad ---------- */
 .sponsors{margin-top:8px}
 .ad-wrap[hidden],.sp[hidden]{display:none}
-.ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);opacity:.85;margin:0 0 4px 2px}
+.ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 4px 2px}
 .sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;
-  background:rgba(115,120,125,.55);
-  border:1px solid rgba(255,255,255,.10);border-top:2px solid rgba(255,255,255,.25);border-radius:2px}
+  background:#e4e8f5;border-radius:var(--radius);
+  box-shadow:inset 0 2px 6px rgba(130,140,200,.18)}
 .sp a,.sp picture{display:block;width:100%;height:100%}
 .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 @media (max-width:767px), (max-width:850px) and (orientation:portrait){
   .sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}
 }
 
-footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
+footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-weight:600}
 
 /* =========================================================
    RESPONSIVE DESIGN
@@ -177,7 +181,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 /* ---------- Celulares en vertical ---------- */
 @media (max-width:600px) and (orientation:portrait){
   html,body{height:100%}
-  body{overflow:hidden;background:var(--bg);background-attachment:fixed}
+  body{overflow:hidden}
   .page{height:100dvh;max-width:none;padding:0 10px 6px;display:flex;flex-direction:column;gap:6px}
 
   /* Header de borde a borde: sin 100vw, compensando el padding lateral
@@ -201,6 +205,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
 
   .card{padding:10px 8px 8px;justify-content:flex-start}
   .card h2{font-size:14px}
+  .go{width:22px;height:22px;font-size:15px}
   .spark{flex:1 1 0;min-height:0;margin-top:4px}
   .spark svg{height:100%}
   .card .sub{font-size:9px;margin-top:auto;padding-top:4px}
@@ -225,46 +230,16 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px}
   header .nav{top:6px;height:26px}
 }
 
-/* ---------- Escritorio ---------- */
+/* ---------- Escritorio: tarjetas cuadradas de 226 x 226 px ---------- */
 @media (min-width:901px){
   .cats{max-width:714px;margin:0 auto}
   .grid{grid-template-columns:repeat(3,226px) !important;justify-content:center;gap:14px !important}
+  .card{height:226px;justify-content:space-between}
   .sponsors{max-width:714px;margin-left:auto;margin-right:auto}
   header h1, header p{max-width:714px;padding-left:0;padding-right:0;}
   header .nav{right:calc(50% - 357px)}
 }
 
-/* Tarjetas cuadradas de 226px x 226px en escritorio */
-@media (min-width: 901px) {
-  .grid {
-    grid-template-columns: repeat(3, 226px) !important;
-    gap: 14px !important;
-  }
-  .card {
-    height: 226px;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-  .card {
-    min-height: 220px;
-    justify-content: space-between;
-  }
-}
-
-/* ---------- Celular en vertical: 3 resplandores leves horizontales,
-   uno a la altura de la parte alta de cada fila de cards ---------- */
-@media (max-width:600px) and (orientation:portrait){
-  /* Tercer resplandor: en el borde inferior de la pantalla (fondo fijo) */
-  :root{ --luz:radial-gradient(ellipse 120% 210px at 50% 100%,rgba(58,167,184,.26) 0%,transparent 100%); }
-  .cats{position:relative}
-  .cats::before{
-    content:"";position:absolute;top:0;bottom:0;left:-10px;right:-10px;pointer-events:none;z-index:0;
-    /* ocupa todo el ancho de la pantalla (sale del padding de .page) para que el brillo se vea sobre el fondo, no solo entre cards */
-    /* filas: 3 de igual alto con 6px de separación */
-    background:
-      radial-gradient(ellipse 100% 150px at 50% 0,                                 rgba(58,167,184,.26) 0%,transparent 100%),
-      radial-gradient(ellipse 100% 150px at 50% calc((100% - 12px)*2/3 + 12px),    rgba(58,167,184,.26) 0%,transparent 100%);
-  }
+@media (min-width:601px) and (max-width:900px){
+  .card{min-height:220px;justify-content:space-between}
 }
