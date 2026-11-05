@@ -54,7 +54,7 @@ header{
     backdrop-filter:blur(14px);
   }
 }
-header h1, header p{
+header h1{
   width:100%;
   max-width:1000px;
   margin-left:auto;
@@ -63,7 +63,6 @@ header h1, header p{
   padding-right:20px;
 }
 header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
-header p{margin:4px auto 0;color:#5d6690;font-size:13px;font-weight:600}   /* subtítulo más oscuro: pasa WCAG AA */
 
 /* Línea de marca: borde inferior en gris sutil */
 header::after{
@@ -79,6 +78,11 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .nav a:hover{color:var(--text)}
 .nav a.act{color:var(--text);border-bottom-color:var(--accent)}
 
+.menu-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 8px 0 -6px;padding:0;
+  vertical-align:middle;background:none;border:0;border-radius:var(--radius);cursor:pointer;color:#000}
+.menu-btn svg{display:block;width:22px;height:16px}
+.menu-btn:hover{background:rgba(0,0,0,.05)}
+.menu-btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .a-logo,.v-logo{display:inline-block;height:.7em;width:.56em;vertical-align:baseline}
 .a-logo{margin-right:.03em;fill:var(--mal)}
 .v-logo{margin-left:.03em;fill:var(--ok)}
@@ -130,11 +134,10 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 
 .head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px}
 .card h2{margin:0;color:var(--tit);font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
-/* Flecha: botón circular */
+/* Flecha: negra, sin círculo */
 .go{
-  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;
-  background:#f0f2fb;color:var(--accent);font-size:18px;font-weight:700;line-height:1;
-  box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.10);
+  width:26px;height:26px;display:grid;place-items:center;flex:none;
+  color:#000;font-size:26px;font-weight:700;line-height:1;
 }
 
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
@@ -204,11 +207,12 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
     margin:0 -10px;
     padding:6px 10px 5px;
   }
-  header h1, header p{max-width:none;padding-left:0;padding-right:0}
+  header h1{max-width:none;padding-left:0;padding-right:0}
   header h1{font-size:20px}
+  .menu-btn{width:30px;height:30px;margin:0 6px 0 -4px}
+  .menu-btn svg{width:19px;height:14px}
   .tag{font-size:9px;margin-left:6px;letter-spacing:.14em}
-  header p{font-size:11px;margin:2px 0 0}
-  /* En celular los enlaces pasan a la línea del subtítulo */
+  /* En celular los enlaces pasan a la parte baja del header */
   header .nav{top:auto;bottom:5px;right:10px;height:auto;gap:12px}
   .nav a{font-size:11.5px;padding:0 0 1px}
 
@@ -218,7 +222,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 
   .card{padding:10px 8px 8px;justify-content:flex-start}
   .card h2{font-size:14px}
-  .go{width:22px;height:22px;font-size:15px}
+  .go{width:22px;height:22px;font-size:22px}
   .spark{flex:1 1 0;min-height:0;margin-top:4px}
   .spark svg{height:100%}
   .card .sub{font-size:9px;margin-top:auto;padding-top:4px}
@@ -231,7 +235,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 /* ---------- Tablets ---------- */
 @media (min-width:601px) and (max-width:1100px){
   .page{max-width:820px;padding:0 24px 40px}
-  header h1, header p{max-width:820px;padding-left:24px;padding-right:24px;}
+  header h1{max-width:820px;padding-left:24px;padding-right:24px;}
   header h1{font-size:24px}
 }
 
@@ -239,7 +243,6 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 @media (orientation:landscape) and (max-height:500px){
   header{padding:6px 0 5px;margin-bottom:12px}
   header h1{font-size:22px}
-  header p{font-size:12px;margin-top:2px}
   header .nav{top:6px;height:26px}
 }
 
@@ -249,7 +252,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
   .grid{grid-template-columns:repeat(3,226px) !important;justify-content:center;gap:14px !important}
   .card{height:226px;justify-content:space-between}
   .sponsors{max-width:714px;margin-left:auto;margin-right:auto}
-  header h1, header p{max-width:714px;padding-left:0;padding-right:0;}
+  header h1{max-width:714px;padding-left:0;padding-right:0;}
   header .nav{right:calc(50% - 357px)}
 }
 
