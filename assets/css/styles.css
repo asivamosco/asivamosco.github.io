@@ -141,6 +141,33 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   color:#000;font-size:26px;font-weight:700;line-height:1;
 }
 
+/* Encabezado de la card: banda a todo el ancho (sangrada hasta los bordes de la tarjeta) con corte diagonal.
+   Bloque izquierdo (degradado + dos franjas diagonales tenues) para el título, y bloque derecho más vivo, separado por
+   una línea diagonal, que sostiene la flecha ›. Se activa con data-encab en cada <section class="cat">:
+   fila de arriba = indigo (índigo real / violeta noche), fila de abajo = acero (azul acero). */
+.cat[data-encab="indigo"]{--h1:#1b1650;--h2:#3a3299;--h3:#6b63e0}
+.cat[data-encab="acero"]{--h1:#254663;--h2:#4682b4;--h3:#8fb8dc}
+.cat[data-encab] .card .head{
+  position:relative;isolation:isolate;background:none;border-radius:0;
+  margin:-18px -14px 0;width:calc(100% + 28px);padding:10px 12px 10px 14px;
+}
+.cat[data-encab] .card .head::before,
+.cat[data-encab] .card .head::after{content:"";position:absolute;top:0;bottom:0;z-index:-1}
+.cat[data-encab] .card .head::before{
+  left:0;width:82%;
+  background:
+    linear-gradient(110deg,transparent 0 36%,var(--hb1,rgba(255,255,255,.10)) 36% 52%,transparent 52% 60%,var(--hb2,rgba(255,255,255,.07)) 60% 67%,transparent 67%),
+    linear-gradient(90deg,var(--h1),var(--h2));
+  clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%);
+}
+.cat[data-encab] .card .head::after{
+  left:calc(82% - 7px);right:0;
+  background:var(--h3);
+  clip-path:polygon(12px 0,100% 0,100% 100%,0 100%);
+}
+.cat[data-encab] .card h2,
+.cat[data-encab] .card .go{color:var(--htxt,#fff)}
+
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
 .spark{width:100%;margin-top:6px;flex:1 1 auto;display:flex;align-items:center;}
 .spark svg{display:block;width:100%;height:auto;overflow:visible}
@@ -223,6 +250,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 
   .card{padding:10px 8px 8px;justify-content:flex-start}
   .head{padding:2px 2px 2px 6px}
+  .cat[data-encab] .card .head{margin:-10px -8px 0;width:calc(100% + 16px);padding:6px 6px 6px 8px}
   .card h2{font-size:14px}
   .go{width:22px;height:22px;font-size:22px}
   .spark{flex:1 1 0;min-height:0;margin-top:4px}
