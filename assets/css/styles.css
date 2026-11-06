@@ -268,3 +268,9 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 
 /* ---------- Halo blanco del texto (cristal total + translúcido) ---------- */
 .card.glass :is(h2,.sub){text-shadow:0 0 8px rgba(255,255,255,.8),0 0 2px rgba(255,255,255,.65)}
+
+/* ---------- Celular: encuadre del fondo en la zona con más figuras ---------- */
+/* En pantalla vertical el fondo (cover) solo muestra una franja; la parte con los hexágonos grandes está a la izquierda */
+@media (max-width:600px){
+  body{background-position:12% 50%}
+}
