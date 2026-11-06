@@ -144,8 +144,8 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 /* Encabezado de la card: banda a todo el ancho (sangrada hasta los bordes de la tarjeta) con corte diagonal.
    Bloque izquierdo (degradado + dos franjas diagonales tenues) para el título, y bloque derecho más vivo, separado por
    una línea diagonal, que sostiene la flecha ›. Se activa con data-encab en cada <section class="cat">:
-   fila de arriba = indigo (índigo real / violeta noche), fila de abajo = acero (azul acero). */
-.cat[data-encab="indigo"]{--h1:#1b1650;--h2:#3a3299;--h3:#6b63e0}
+   fila de arriba = oro (oro viejo / dorado), fila de abajo = acero (azul acero). */
+.cat[data-encab="oro"]{--h1:#5c4410;--h2:#94741c;--h3:#c9a032}
 .cat[data-encab="acero"]{--h1:#254663;--h2:#4682b4;--h3:#8fb8dc}
 .cat[data-encab] .card .head{
   position:relative;isolation:isolate;background:none;border-radius:0;
