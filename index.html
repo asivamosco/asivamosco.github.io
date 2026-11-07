@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20">
+  <link rel="stylesheet" href="assets/css/styles.css?v=21">
+
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYRYT7V7YQ"></script>
@@ -20,14 +21,7 @@
 </head>
 <body>
 
-<div class='field'><svg viewBox='0 0 1600 900' preserveAspectRatio='xMidYMid slice' aria-hidden='true'>
-<defs>
-<pattern id='g1' width='40' height='40' patternUnits='userSpaceOnUse'><path d='M40 0H0V40' fill='none' stroke='#fff' stroke-opacity='.05'/></pattern>
-<pattern id='g2' width='160' height='160' patternUnits='userSpaceOnUse'><path d='M160 0H0V160' fill='none' stroke='#fff' stroke-opacity='.08'/></pattern>
-</defs>
-<rect width='1600' height='900' fill='url(#g1)'/><rect width='1600' height='900' fill='url(#g2)'/>
-<g fill='none' stroke='#fff' stroke-opacity='.10'><circle cx='800' cy='900' r='110'/><circle cx='800' cy='900' r='190'/><circle cx='800' cy='900' r='290'/><circle cx='800' cy='900' r='410'/><circle cx='800' cy='900' r='550'/><circle cx='800' cy='900' r='710'/><circle cx='800' cy='900' r='890'/><circle cx='800' cy='900' r='1090'/><circle cx='800' cy='900' r='1310'/><circle cx='800' cy='900' r='1550'/></g>
-</svg></div>
+<svg id="bgCol" aria-hidden="true"></svg>
 
 <div class="page">
   <header>
@@ -94,6 +88,64 @@
   <footer>Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</footer>
 </div>
 
+<script>
+/* Fondo de siluetas de Colombia: verticales, sin cruces, repartidas de forma pareja */
+(function(){
+  var RAW=[[499,90],[523,116],[497,128],[470,138],[455,155],[449,185],[449,215],[453,237],[463,270],[474,303],
+  [510,305],[545,307],[567,322],[590,337],[625,340],[663,341],[654,370],[648,400],[653,430],[658,465],
+  [670,485],[680,510],[655,503],[615,507],[572,512],[572,528],[597,537],[592,550],[562,558],[560,580],
+  [575,600],[590,618],[582,680],[571,741],[552,730],[537,720],[548,698],[555,678],[545,668],[500,666],
+  [450,667],[410,625],[370,577],[335,573],[300,570],[275,555],[245,537],[217,518],[250,477],[290,437],
+  [285,400],[282,365],[270,325],[260,290],[300,252],[340,215],[355,185],[368,153],[405,143],[440,133],
+  [470,112]];
+  var S=16.8/651,P=RAW.map(function(p){return [(p[0]-448)*S,(p[1]-415)*S];});
+  var SIZES=[48,44,28,27,26,25,17,16,15,14,13,12,11,10,9,8,8,7,7,6.5,6.5,6,6,5.5,5.5,5,5,5,4.5,4.5,4.5,4];
+  function style(k){
+    if(k>=35)return [4.2,'#c4c7cc',5,5];
+    if(k>=20)return [3.1,'#c9ccd1',3.6,6];
+    if(k>=11)return [2.2,'#cfd2d6',2.4,8];
+    if(k>=7) return [1.6,'#d6d8dc',1.6,10];
+    return [1.3,'#dcdee1',1.2,10];
+  }
+  var svg=document.getElementById('bgCol'),lastW=0;
+  function render(){
+    var W=window.innerWidth,H=window.innerHeight,f=Math.min(1,Math.max(.5,W/1300)),seed=11,out='',placed=[];
+    function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
+    svg.setAttribute('viewBox','0 0 '+W+' '+H);
+    function shape(k,cx,cy,sw,col,nr,step){
+      var pts=[],dots='';
+      P.forEach(function(p,i){
+        var x=cx+p[0]*k,y=cy+p[1]*k;
+        pts.push(x.toFixed(1)+','+y.toFixed(1));
+        if(i%step===0)dots+='<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+nr+'" fill="'+col+'"/>';
+      });
+      out+='<polygon points="'+pts.join(' ')+'" fill="none" stroke="'+col+'" stroke-width="'+sw+'" stroke-linejoin="round"/>'+dots;
+    }
+    SIZES.forEach(function(k0){
+      var k=k0*f,hw=6.0*k,hh=8.4*k,m=14,best=null,bs=-1e9;
+      for(var t=0;t<700;t++){
+        var x=-.04*W+rnd()*1.08*W,y=-.04*H+rnd()*1.08*H,ok=true,sc=1e9;
+        for(var q=0;q<placed.length;q++){
+          var p=placed[q],gap=Math.max(Math.abs(x-p[0])-(hw+p[2]),Math.abs(y-p[1])-(hh+p[3]));
+          if(gap<m){ok=false;break}
+          if(gap<sc)sc=gap;
+        }
+        if(ok&&sc>bs){bs=sc;best=[x,y]}
+      }
+      if(best){placed.push([best[0],best[1],hw,hh]);var st=style(k0);shape(k,best[0],best[1],st[0],st[1],st[2],st[3])}
+    });
+    for(var j=0;j<25;j++){
+      var R=[2,2.5,4,6,1.5];
+      out+='<circle cx="'+(rnd()*W).toFixed(0)+'" cy="'+(rnd()*H).toFixed(0)+'" r="'+R[Math.floor(rnd()*R.length)]+'" fill="#cfd2d6" opacity="'+(.5+rnd()*.4).toFixed(2)+'"/>';
+    }
+    svg.innerHTML=out;lastW=W;
+  }
+  render();
+  var tm;window.addEventListener('resize',function(){
+    clearTimeout(tm);tm=setTimeout(function(){if(Math.abs(window.innerWidth-lastW)>40)render()},200);
+  });
+})();
+</script>
 <script src="app.js?v=2"></script>
 </body>
 </html>
