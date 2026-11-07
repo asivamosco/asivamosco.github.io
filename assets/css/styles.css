@@ -286,3 +286,13 @@ body,body::before{background-image:none!important}
 body{background:linear-gradient(135deg,#e6e8ec 0%,#f4f5f7 35%,#fcfcfc 100%) fixed!important}
 body::before{display:none!important}
 #bgCol{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+
+/* Celular: un solo mapa con la altura del bloque de tarjetas (lo dimensiona el CSS) */
+.map-solo{display:none}
+@media (max-width:600px){
+  #bgCol{display:none}
+  main.cats{position:relative}
+  .map-solo{display:block;position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:visible}
+  .map-solo polygon{fill:none;stroke:#c4c7cc;stroke-width:4.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+  .map-solo g{fill:#c4c7cc}
+}

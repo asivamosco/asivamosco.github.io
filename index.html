@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=21">
+  <link rel="stylesheet" href="assets/css/styles.css?v=22">
 
 
   <!-- Google tag (gtag.js) -->
@@ -29,6 +29,7 @@
   </header>
 
   <main class="cats">
+    <svg class="map-solo" viewBox="210 83 478 664" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><polygon points="499,90 523,116 497,128 470,138 455,155 449,185 449,215 453,237 463,270 474,303 510,305 545,307 567,322 590,337 625,340 663,341 654,370 648,400 653,430 658,465 670,485 680,510 655,503 615,507 572,512 572,528 597,537 592,550 562,558 560,580 575,600 590,618 582,680 571,741 552,730 537,720 548,698 555,678 545,668 500,666 450,667 410,625 370,577 335,573 300,570 275,555 245,537 217,518 250,477 290,437 285,400 282,365 270,325 260,290 300,252 340,215 355,185 368,153 405,143 440,133 470,112"/><g><circle cx="499" cy="90" r="6"/><circle cx="449" cy="185" r="6"/><circle cx="510" cy="305" r="6"/><circle cx="663" cy="341" r="6"/><circle cx="670" cy="485" r="6"/><circle cx="572" cy="528" r="6"/><circle cx="575" cy="600" r="6"/><circle cx="537" cy="720" r="6"/><circle cx="450" cy="667" r="6"/><circle cx="275" cy="555" r="6"/><circle cx="285" cy="400" r="6"/><circle cx="340" cy="215" r="6"/><circle cx="470" cy="112" r="6"/></g></svg>
     <section class="cat" data-encab="oro" aria-label="Indicadores">
       <div class="grid">
 
@@ -109,6 +110,7 @@
   }
   var svg=document.getElementById('bgCol'),lastW=0;
   function render(){
+    if(window.matchMedia('(max-width:600px)').matches){svg.innerHTML='';lastW=window.innerWidth;return}
     var W=window.innerWidth,H=window.innerHeight,f=Math.min(1,Math.max(.5,W/1300)),seed=11,out='',placed=[];
     function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647}
     svg.setAttribute('viewBox','0 0 '+W+' '+H);
