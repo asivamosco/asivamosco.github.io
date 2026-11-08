@@ -287,12 +287,26 @@ body{background:linear-gradient(135deg,#e6e8ec 0%,#f4f5f7 35%,#fcfcfc 100%) fixe
 body::before{display:none!important}
 #bgCol{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 
-/* Celular: un solo mapa con la altura del bloque de tarjetas (lo dimensiona el CSS) */
-.map-solo{display:none}
+/* Mapa de Colombia: su altura va de justo debajo del header al final del pie de página */
+#bgCol{display:none}
+body{overflow-x:hidden}
+.zone{--hdr-gap:18px;--pg-pad:40px;position:relative}
+/* Tablet/escritorio: la zona llega al borde inferior de la pantalla */
+@media (min-width:601px){
+  .page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+  .zone{flex:1 0 auto}
+}
+.map-solo{display:block;position:absolute;top:calc(-1*var(--hdr-gap) - (100% + var(--hdr-gap) + var(--pg-pad))*.010545);left:50%;height:calc((100% + var(--hdr-gap) + var(--pg-pad))*1.02109);width:auto;aspect-ratio:423/581;transform:translateX(-50%);z-index:-1;pointer-events:none;overflow:visible}
+.map-solo .out{fill:none;stroke:#9aa0ab;stroke-width:2.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.map-solo .dep{fill:none;stroke:#aeb3bc;stroke-width:.9;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.map-solo .cap{fill:#8f95a1}
+@media (orientation:landscape) and (max-height:500px){ .zone{--hdr-gap:12px} }
+/* Celular vertical: .zone sigue el layout flex de la página */
+@media (max-width:600px) and (orientation:portrait){
+  .zone{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:6px}
+}
+/* Celular: el mapa usa todo el ancho de la pantalla */
 @media (max-width:600px){
-  #bgCol{display:none}
-  main.cats{position:relative}
-  .map-solo{display:block;position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:visible}
-  .map-solo polygon{fill:none;stroke:#c4c7cc;stroke-width:4.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
-  .map-solo g{fill:#c4c7cc}
+  /* centrado sobre las tarjetas (descuenta pie de página y separaciones) */
+  .map-solo{top:calc(50% - 12px);width:100vw;height:auto;transform:translate(-50%,-50%)}
 }
