@@ -18,8 +18,8 @@ const INDICADORES = [
     datos: [ { mes: 'Abril', pib_anual: 1.6 }, { mes: 'Mayo', pib_anual: 1.9 }, { mes: 'Junio', pib_anual: 2.1 }, { mes: 'Julio', pib_anual: 2.5 }, { mes: 'Agosto', pib_anual: 2.8 } ] },
   // Contención de cocaína (ICC): generado por load_cocaina.py. Más contención = mejor.
   { id: 'Narco', archivo: 'cocaina_historico.json', campo: 'icc_score', dec: 1, subeEsMalo: false },
-  { id: 'Corrupcion', campo: 'denuncias', dec: 0, subeEsMalo: true,
-    datos: [ { mes: 'Abril', denuncias: 1198 }, { mes: 'Mayo', denuncias: 1235 }, { mes: 'Junio', denuncias: 1210 }, { mes: 'Julio', denuncias: 1284 }, { mes: 'Agosto', denuncias: 1276 } ] }
+  // Denuncias sobre corrupción: más denuncias = mayor fiscalización (verde al subir)
+  { id: 'Corrupcion', archivo: 'corrupcion_historico.json', campo: 'total', dec: 0, subeEsMalo: false }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

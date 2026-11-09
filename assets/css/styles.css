@@ -300,6 +300,8 @@ body{overflow-x:hidden}
 .map-solo .out{fill:none;stroke:#9aa0ab;stroke-width:2.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
 .map-solo .dep{fill:none;stroke:#aeb3bc;stroke-width:.9;stroke-linejoin:round;stroke-linecap:round;vector-effect:non-scaling-stroke}
 .map-solo .cap{fill:#8f95a1}
+/* Departamentos con relleno (la mitad, alternados): gris un poco más oscuro que el fondo */
+.map-solo .fil{fill:#aeb3bc;fill-opacity:.38;stroke:none}
 @media (orientation:landscape) and (max-height:500px){ .zone{--hdr-gap:12px} }
 /* Celular vertical: .zone sigue el layout flex de la página */
 @media (max-width:600px) and (orientation:portrait){

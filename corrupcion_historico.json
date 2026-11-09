@@ -1,0 +1,32 @@
+[
+  {
+    "mes": "Mayo",
+    "anio": 2026,
+    "total": 199,
+    "variacion_interanual_pct": -9.5455
+  },
+  {
+    "mes": "Junio",
+    "anio": 2026,
+    "total": 178,
+    "variacion_interanual_pct": -2.1978
+  },
+  {
+    "mes": "Julio",
+    "anio": 2026,
+    "total": 209,
+    "variacion_interanual_pct": -0.9479
+  },
+  {
+    "mes": "Agosto",
+    "anio": 2026,
+    "total": 271,
+    "variacion_interanual_pct": 79.4702
+  },
+  {
+    "mes": "Septiembre",
+    "anio": 2026,
+    "total": 308,
+    "variacion_interanual_pct": 32.7586
+  }
+]
