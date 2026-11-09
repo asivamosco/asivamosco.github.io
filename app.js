@@ -10,12 +10,13 @@ const RANGO_MIN = 0.10;    // la escala Y nunca muestra menos del 10 % del prome
 const INDICADORES = [
   // --- Impacto cotidiano (datos reales en JSON) ---
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, subeEsMalo: true },
-  { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, subeEsMalo: true },
+  // Desempleo (GEIH): generado por load_desempleo.py. TD nacional (serie original), redondeada como la publica el DANE y la reportan los medios.
+  { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, redondear: true, subeEsMalo: true },
   { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, subeEsMalo: true },
 
   // --- Ámbito nacional ---
-  { id: 'Economia', campo: 'pib_anual', dec: 1, subeEsMalo: false,
-    datos: [ { mes: 'Abril', pib_anual: 1.6 }, { mes: 'Mayo', pib_anual: 1.9 }, { mes: 'Junio', pib_anual: 2.1 }, { mes: 'Julio', pib_anual: 2.5 }, { mes: 'Agosto', pib_anual: 2.8 } ] },
+  // Economía (ISE): generado por load_economia.py. Muestra el índice del ISE (serie original) tal como lo publica el DANE. Más actividad = mejor.
+  { id: 'Economia', archivo: 'economia_historico.json', campo: 'indice', dec: 2, redondear: true, subeEsMalo: false },
   // Contención de cocaína (ICC): generado por load_cocaina.py. Más contención = mejor.
   { id: 'Narco', archivo: 'cocaina_historico.json', campo: 'icc_score', dec: 1, subeEsMalo: false },
   // Denuncias sobre corrupción: más denuncias = mayor fiscalización (verde al subir)
@@ -44,16 +45,51 @@ function mesCapitalizado(m) {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-/* Truncamiento estricto a 'dec' decimales sin redondear */
-function fmt(v, dec) {
+/* Por defecto: truncamiento estricto a 'dec' decimales sin redondear.
+   Con redondear = true (ej. Economía y Desempleo, que replican la cifra publicada por el DANE) se redondea. */
+function fmt(v, dec, redondear = false) {
   const factor = Math.pow(10, dec);
-  let s = (Math.trunc(v * factor) / factor).toFixed(dec);
+  let s = redondear ? v.toFixed(dec) : (Math.trunc(v * factor) / factor).toFixed(dec);
+  if (Number(s) === 0) s = s.replace('-', '');   // evita '-0.00'
   if (dec === 0) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   return s;
 }
 
+/* ---------- Posición de los números (que no se pisen con la línea) ---------- */
+const FS_V1 = 14, FS_V2 = 19;   // tamaños de .v1 y .v2 en styles.css (unidades del SVG)
+
+/* Ancho aproximado de un texto: dígitos ~0.52 em, punto/coma ~0.3 em, signo ~0.4 em */
+function anchoTexto(txt, fs) {
+  return [...String(txt)].reduce((w, c) => w + (/\d/.test(c) ? 0.52 : c === '-' ? 0.4 : 0.3) * fs, 0);
+}
+
+/* Punto más alto de la línea (menor y) entre xa y xb, interpolando entre puntos */
+function yMinTramo(pts, xa, xb) {
+  const xIni = pts[0][0], xFin = pts[pts.length - 1][0];
+  const a = Math.max(xa, xIni), b = Math.min(xb, xFin);
+  if (a > b) return Infinity;
+  let y = Infinity;
+  for (let x = a; x <= b + 0.001; x += 0.5) {
+    let i = 0;
+    while (i < pts.length - 2 && x > pts[i + 1][0]) i++;
+    const [x1, y1] = pts[i], [x2, y2] = pts[i + 1];
+    y = Math.min(y, y1 + (y2 - y1) * (x - x1) / (x2 - x1));
+  }
+  return y;
+}
+
+/* Línea base de v1 y v2: por defecto sobre su punto; si la línea sube más arriba dentro del
+   ancho del texto, el número se sube hasta quedar por encima de ella. */
+function posicionesNumeros(pts, txt1, txt2) {
+  const a = pts[0], b = pts[pts.length - 1];
+  const w1 = anchoTexto(txt1, FS_V1), w2 = anchoTexto(txt2, FS_V2);
+  const y1 = Math.min(a[1] - 10, yMinTramo(pts, a[0] - w1 / 2 - 2, a[0] + w1 / 2 + 2) - 10);
+  const y2 = Math.min(b[1] - 9,  yMinTramo(pts, b[0] + 8 - w2 - 2, b[0] + 8 + 2) - 9);
+  return [y1, y2];
+}
+
 /* Sparkline SVG: ancho completo (12 a 148) y v1 centrado exactamente arriba del punto inicial */
-function sparkline(vals, dec, subeEsMalo, mesIni, mesFin, uid) {
+function sparkline(vals, dec, subeEsMalo, mesIni, mesFin, uid, redondear = false) {
   const W = 160, H = 100, x0 = 12, x1 = 148, yTop = 28, yBot = 72;
   const yBase = 82;  // base del área de relleno (por encima de las etiquetas de mes)
   const GRAD = { 'ln-mejoro': 'ok', 'ln-empeoro': 'mal', 'ln-neu': 'neu' };
@@ -96,12 +132,14 @@ function sparkline(vals, dec, subeEsMalo, mesIni, mesFin, uid) {
   const defs = `<defs>${grad('ok', 'var(--ok)', .20)}${grad('mal', 'var(--mal)', .20)}${grad('neu', '#d9f4ff', .22)}</defs>`;
 
   const a = pts[0], b = pts[pts.length - 1];
+  const txt1 = fmt(vals[0], dec, redondear), txt2 = fmt(vals[vals.length - 1], dec, redondear);
+  const [yv1, yv2] = posicionesNumeros(pts, txt1, txt2);
   return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
     ${defs}${areas}${paths}${medios}
     <circle class="pt" cx="${a[0]}" cy="${a[1].toFixed(1)}" r="3.2"/>
     <circle class="fin" cx="${b[0]}" cy="${b[1].toFixed(1)}" r="4.2"/>
-    <text class="v1" x="${a[0]}" y="${(a[1] - 10).toFixed(1)}" text-anchor="middle">${fmt(vals[0], dec)}</text>
-    <text class="v2" x="${b[0] + 8}" y="${(b[1] - 9).toFixed(1)}" text-anchor="end">${fmt(vals[vals.length - 1], dec)}</text>
+    <text class="v1" x="${a[0]}" y="${yv1.toFixed(1)}" text-anchor="middle">${txt1}</text>
+    <text class="v2" x="${b[0] + 8}" y="${yv2.toFixed(1)}" text-anchor="end">${txt2}</text>
     <text class="lbl-mes" x="${a[0]}" y="94" text-anchor="start">${mesCapitalizado(mesIni)}</text>
     <text class="lbl-mes" x="${b[0]}" y="94" text-anchor="end">${mesCapitalizado(mesFin)}</text>
   </svg>`;
@@ -119,12 +157,12 @@ function renderizarIndicador(cfg, data) {
 
   const $ = id => document.getElementById(id + cfg.id);
   const sp = $('spark');
-  if (sp) sp.innerHTML = sparkline(vals, cfg.dec, cfg.subeEsMalo, serie[0].mes, serie[serie.length - 1].mes, cfg.id);
+  if (sp) sp.innerHTML = sparkline(vals, cfg.dec, cfg.subeEsMalo, serie[0].mes, serie[serie.length - 1].mes, cfg.id, cfg.redondear);
   
   const card = document.getElementById(`card${cfg.id}`);
   if (card) {
     const titulo = card.querySelector('h2').innerText;
-    card.setAttribute('aria-label', `${titulo}: último valor ${fmt(vals[vals.length - 1], cfg.dec)}`);
+    card.setAttribute('aria-label', `${titulo}: último valor ${fmt(vals[vals.length - 1], cfg.dec, cfg.redondear)}`);
   }
 }
 

@@ -1,27 +1,37 @@
 [
   {
-    "ano": 2026,
-    "mes": "Abr",
-    "tasa_desempleo": 8.49
+    "mes": "Mayo",
+    "anio": 2026,
+    "tasa_desempleo": 8.020651,
+    "var_anual_pp": -1.015765,
+    "tasa_13ciudades": 8.512966
   },
   {
-    "ano": 2026,
-    "mes": "May",
-    "tasa_desempleo": 8.07
+    "mes": "Junio",
+    "anio": 2026,
+    "tasa_desempleo": 8.026926,
+    "var_anual_pp": -0.527094,
+    "tasa_13ciudades": 7.998127
   },
   {
-    "ano": 2026,
-    "mes": "Jun",
-    "tasa_desempleo": 8.27
+    "mes": "Julio",
+    "anio": 2026,
+    "tasa_desempleo": 8.104578,
+    "var_anual_pp": -0.737234,
+    "tasa_13ciudades": 8.549514
   },
   {
-    "ano": 2026,
-    "mes": "Jul",
-    "tasa_desempleo": 8.33
+    "mes": "Agosto",
+    "anio": 2026,
+    "tasa_desempleo": 9.36368,
+    "var_anual_pp": 0.765229,
+    "tasa_13ciudades": 9.142528
   },
   {
-    "ano": 2026,
-    "mes": "Ago",
-    "tasa_desempleo": 9.7
+    "mes": "Septiembre",
+    "anio": 2026,
+    "tasa_desempleo": 8.017019,
+    "var_anual_pp": -0.156464,
+    "tasa_13ciudades": 8.2975
   }
 ]

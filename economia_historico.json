@@ -1,0 +1,32 @@
+[
+  {
+    "mes": "Abril",
+    "anio": 2026,
+    "indice": 124.1604,
+    "var_anual": 3.2197
+  },
+  {
+    "mes": "Mayo",
+    "anio": 2026,
+    "indice": 129.3941,
+    "var_anual": 4.2835
+  },
+  {
+    "mes": "Junio",
+    "anio": 2026,
+    "indice": 127.2999,
+    "var_anual": 3.4253
+  },
+  {
+    "mes": "Julio",
+    "anio": 2026,
+    "indice": 131.7049,
+    "var_anual": 1.0562
+  },
+  {
+    "mes": "Agosto",
+    "anio": 2026,
+    "indice": 127.266,
+    "var_anual": -0.0365
+  }
+]
