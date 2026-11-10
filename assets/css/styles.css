@@ -107,8 +107,8 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 /* ---------- Tarjeta Soft UI (la clase "glass" se conserva por compatibilidad con el HTML) ---------- */
 .glass,
 .card.glass{
-  /* Cristal total + translúcido (85 %), sin desenfoque (igual que el probador) */
-  background:rgba(255,255,255,.85);
+  /* Cristal total + translúcido (78 %), sin desenfoque (igual que el probador) */
+  background:rgba(255,255,255,.78);
   -webkit-backdrop-filter:none;backdrop-filter:none;
   border:1px solid rgba(255,255,255,.7);
   border-radius:var(--radius);
