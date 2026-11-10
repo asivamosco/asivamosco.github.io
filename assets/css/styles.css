@@ -330,6 +330,8 @@ body{overflow-x:hidden}
   #bgDeptos,#bgRed{display:none!important}
   .map-solo{display:block!important}
   .map-solo .fil,.map-solo .dep{display:none}   /* solo el croquis (contorno), los puntos y sus conexiones */
+  .map-solo .out{stroke:#b3b8c1}   /* croquis un poco más claro (antes #9aa0ab) */
+  .map-solo .cap{fill:#aeb3bc}      /* puntos un poco más claros (antes #8f95a1) */
 }
 @media (orientation:landscape){.map-solo{display:none!important}}   /* horizontal: se oculta el mapa grande (en vertical se muestra) */
 
