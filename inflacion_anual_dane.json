@@ -1,37 +1,27 @@
 [
   {
-    "ano": 2026,
-    "mes": "Mayo",
-    "var_m": 0.47,
-    "indice_acumulado": 158.9097676965753,
-    "var_anual": 5.842786171151904
-  },
-  {
-    "ano": 2026,
     "mes": "Junio",
-    "var_m": 0.39,
-    "indice_acumulado": 159.52951579059194,
-    "var_anual": 6.149423613605798
+    "anio": 2026,
+    "var_anual": 6.14
   },
   {
-    "ano": 2026,
     "mes": "Julio",
-    "var_m": 0.17,
-    "indice_acumulado": 159.80071596743596,
-    "var_anual": 6.032985274978997
+    "anio": 2026,
+    "var_anual": 6.03
   },
   {
-    "ano": 2026,
     "mes": "Agosto",
-    "var_m": 0.39,
-    "indice_acumulado": 160.42393875970896,
-    "var_anual": 6.244649084291276
+    "anio": 2026,
+    "var_anual": 6.24
   },
   {
-    "ano": 2026,
     "mes": "Septiembre",
-    "var_m": 0.37,
-    "indice_acumulado": 161.01750733311988,
-    "var_anual": 6.297601959632315
+    "anio": 2026,
+    "var_anual": 6.29
+  },
+  {
+    "mes": "Octubre",
+    "anio": 2026,
+    "var_anual": 6.3
   }
 ]

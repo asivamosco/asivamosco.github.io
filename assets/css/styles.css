@@ -312,3 +312,28 @@ body{overflow-x:hidden}
   /* centrado sobre las tarjetas (descuenta pie de página y separaciones) */
   .map-solo{top:calc(50% - 12px);width:100vw;height:auto;transform:translate(-50%,-50%)}
 }
+
+/* =========================================================
+   Fondo: departamentos de Colombia + red de conexiones
+   (reemplaza visualmente a las siluetas #bgCol y al mapa .map-solo)
+   ========================================================= */
+#bgDeptos{position:fixed;inset:0;z-index:-1;pointer-events:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:3vmin;padding:3vmin;align-content:space-around}
+#bgDeptos .dp{width:100%;height:clamp(80px,13vh,130px);fill:#e3e5e9;stroke:#c4c7cc;stroke-width:1.1;stroke-linejoin:round}
+@media (max-width:600px){#bgDeptos{grid-template-columns:repeat(3,1fr)}}
+/* horizontal: conserva el orden original; flex centrado para que la última fila, si queda incompleta, quede centrada */
+@media (orientation:landscape){
+  #bgDeptos{display:flex;flex-wrap:wrap;justify-content:center;align-content:space-around}
+  #bgDeptos .dp{order:var(--o);flex:0 0 140px;width:140px}
+}
+/* Pantalla vertical: menos columnas, más filas (33 deptos = 3 cols x 11 filas, ordenadas geográficamente: oeste/centro/este, norte a sur) */
+@media (orientation:portrait){
+  #bgDeptos{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(11,minmax(0,1fr));gap:2vmin;padding:2.5vmin;align-content:stretch}
+  #bgDeptos .dp{height:100%;min-height:0}
+}
+.map-solo{display:none!important}
+
+#bgRed{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#bgRed .ln line{stroke:#cfd2d8;stroke-width:1;opacity:.7}
+#bgRed .nd circle{fill:#bfc3ca}
+#bgRed .tx text{font:500 10px/1 system-ui,-apple-system,"Segoe UI",sans-serif;fill:#b3b7bf;text-anchor:middle;letter-spacing:.02em}
+@media (max-width:600px){#bgRed .tx text{font-size:8px}}
