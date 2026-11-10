@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=37">
+  <link rel="stylesheet" href="assets/css/styles.css?v=38">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYRYT7V7YQ"></script>
@@ -224,7 +224,7 @@
 })();
 </script>
 <script>
-/* Fondo de departamentos: conexiones por vecindad (horizontal) o al azar repartidas (vertical) */
+/* Fondo de departamentos con conexiones por vecindad real (solo en horizontal; en vertical se usa el mapa de Colombia) */
 (function(){
   var g=document.getElementById('bgDeptos'),s=document.getElementById('bgRed');
   if(!g||!s)return;
@@ -233,6 +233,7 @@
   function dist(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
   function draw(){
     while(s.firstChild)s.removeChild(s.firstChild);
+    if(matchMedia('(orientation:portrait)').matches)return;   // vertical: se muestra el mapa .map-solo con su propia red
     s.setAttribute('viewBox','0 0 '+innerWidth+' '+innerHeight);
     var N=[];
     g.querySelectorAll('.dp').forEach(function(c){
@@ -292,25 +293,6 @@
     function take(e){link(e[0],e[1]);deg[e[0]]++;deg[e[1]]++;e.done=1}
     C.forEach(function(e){if(!e.done&&deg[e[0]]<MAX&&deg[e[1]]<MAX&&(deg[e[0]]===0||deg[e[1]]===0))take(e)});
     C.forEach(function(e){if(!e.done&&deg[e[0]]<MAX&&deg[e[1]]<MAX)take(e)});
-    // Pantalla vertical: se ignora la vecindad real y se generan conexiones al azar (semilla fija,
-    // así no cambian al redibujar), repartidas a partes iguales entre horizontales, verticales y diagonales.
-    if(matchMedia('(orientation:portrait)').matches){
-      E={};var dg=N.map(function(){return 0}),seed=20260,P=[[],[],[]]; // P: horizontal, vertical, diagonal
-      function rnd(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
-      for(var i=0;i<N.length;i++)for(var j=i+1;j<N.length;j++){
-        var dr=Math.abs((j/3|0)-(i/3|0)),dc=Math.abs(j%3-i%3);
-        if(dr===0)P[0].push([i,j]);                 // misma fila
-        else if(dc===0&&dr===1)P[1].push([i,j]);    // fila contigua, misma columna
-        else if(dc>0&&dr<=2)P[2].push([i,j]);       // diagonal
-      }
-      P.forEach(function(l){for(var m=l.length-1;m>0;m--){var r=rnd()*(m+1)|0,t=l[m];l[m]=l[r];l[r]=t}});
-      for(var more=true;more;){more=false;
-        P.forEach(function(l){
-          while(l.length){var e=l.pop();
-            if(dg[e[0]]<MAX&&dg[e[1]]<MAX){link(e[0],e[1]);dg[e[0]]++;dg[e[1]]++;more=true;break}}
-        });
-      }
-    }
     var L=el('g',{'class':'ln'}),D=el('g',{'class':'nd'}),T=el('g',{'class':'tx'});
     for(var k in E){var a=N[E[k][0]],b=N[E[k][1]];L.appendChild(el('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y}))}
     N.forEach(function(a){
@@ -323,6 +305,38 @@
   addEventListener('resize',later);
   if(window.ResizeObserver)new ResizeObserver(later).observe(g);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',draw);else draw();
+})();
+</script>
+<script>
+/* Mapa de Colombia (vertical): red de conexiones entre las capitales (puntos .cap), máx. 3 por punto, sin cruces */
+(function(){
+  var m=document.querySelector('.map-solo');if(!m)return;
+  var NS='http://www.w3.org/2000/svg',P=[];
+  m.querySelectorAll('.cap').forEach(function(c){
+    if(c.tagName==='circle'){P.push({x:+c.getAttribute('cx'),y:+c.getAttribute('cy'),el:c});return}
+    var q=c.getAttribute('points').trim().split(/\s+/).map(function(s){return s.split(',').map(Number)}),x=0,y=0;
+    q.forEach(function(p){x+=p[0];y+=p[1]});P.push({x:x/q.length,y:y/q.length,el:c});   // estrella de Bogotá
+  });
+  var n=P.length,MAX=3,deg=P.map(function(){return 0}),par=P.map(function(_,i){return i}),S=[];
+  function d(i,j){return Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y)}
+  function find(i){while(par[i]!==i)i=par[i]=par[par[i]];return i}
+  function ccw(a,b,c){return(P[c].y-P[a].y)*(P[b].x-P[a].x)-(P[b].y-P[a].y)*(P[c].x-P[a].x)}
+  function cross(e,f){                       // ¿se cruzan dos segmentos que no comparten extremo?
+    if(e[0]===f[0]||e[0]===f[1]||e[1]===f[0]||e[1]===f[1])return false;
+    return ccw(e[0],e[1],f[0])*ccw(e[0],e[1],f[1])<0&&ccw(f[0],f[1],e[0])*ccw(f[0],f[1],e[1])<0;
+  }
+  function free(e){return deg[e[0]]<MAX&&deg[e[1]]<MAX&&!S.some(function(f){return cross(e,f)})}
+  function add(e){S.push(e);deg[e[0]]++;deg[e[1]]++;par[find(e[0])]=find(e[1])}
+  var C=[];for(var i=0;i<n;i++)for(var j=i+1;j<n;j++)C.push([i,j,d(i,j)]);
+  C.sort(function(a,b){return a[2]-b[2]});
+  C.forEach(function(e){if(find(e[0])!==find(e[1])&&free(e))add(e)});       // 1) árbol: todo conectado
+  var lim=0;S.forEach(function(e){lim+=e[2]});lim=1.5*lim/S.length;
+  C.forEach(function(e){if(e[2]<=lim&&S.indexOf(e)<0&&free(e))add(e)});    // 2) mallas cortas extra
+  C.forEach(function(e){if(find(e[0])!==find(e[1])&&!S.some(function(f){return cross(e,f)}))add(e)}); // 3) respaldo de conexión
+  var g=document.createElementNS(NS,'g');g.setAttribute('class','red');
+  S.forEach(function(e){var l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',P[e[0]].x);l.setAttribute('y1',P[e[0]].y);l.setAttribute('x2',P[e[1]].x);l.setAttribute('y2',P[e[1]].y);g.appendChild(l)});
+  m.insertBefore(g,P[0].el);                  // las líneas quedan debajo de los puntos
 })();
 </script>
 <script src="app.js?v=2"></script>

@@ -325,15 +325,18 @@ body{overflow-x:hidden}
   #bgDeptos{display:flex;flex-wrap:wrap;justify-content:center;align-content:space-around}
   #bgDeptos .dp{order:var(--o);flex:0 0 140px;width:140px}
 }
-/* Pantalla vertical: menos columnas, más filas (33 deptos = 3 cols x 11 filas, ordenadas geográficamente: oeste/centro/este, norte a sur) */
+/* Pantalla vertical: se muestra el mapa de Colombia (.map-solo) con su red entre capitales, en lugar de la cuadrícula de departamentos */
 @media (orientation:portrait){
-  #bgDeptos{grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(11,minmax(0,1fr));gap:2vmin;padding:2.5vmin;align-content:stretch}
-  #bgDeptos .dp{height:100%;min-height:0}
+  #bgDeptos,#bgRed{display:none!important}
+  .map-solo{display:block!important}
 }
-.map-solo{display:none!important}
+@media (orientation:landscape){.map-solo{display:none!important}}   /* horizontal: se oculta el mapa grande (en vertical se muestra) */
 
 #bgRed{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
 #bgRed .ln line{stroke:#cfd2d8;stroke-width:1;opacity:.7}
 #bgRed .nd circle{fill:#bfc3ca}
 #bgRed .tx text{font:500 10px/1 system-ui,-apple-system,"Segoe UI",sans-serif;fill:#b3b7bf;text-anchor:middle;letter-spacing:.02em}
 @media (max-width:600px){#bgRed .tx text{font-size:8px}}
+
+/* Red de conexiones entre capitales dentro del mapa de Colombia (vertical) */
+.map-solo .red line{stroke:#8f95a1;stroke-width:1;opacity:.6;vector-effect:non-scaling-stroke}
