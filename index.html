@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=42">
+  <link rel="stylesheet" href="assets/css/styles.css?v=43">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYRYT7V7YQ"></script>
@@ -308,7 +308,7 @@
 })();
 </script>
 <script>
-/* Mapa de Colombia (vertical): red de conexiones entre las capitales (puntos .cap), máx. 3 por punto, sin cruces */
+/* Mapa de Colombia (vertical): red de conexiones entre las capitales (puntos .cap), máx. 5 por punto, sin cruces */
 (function(){
   var m=document.querySelector('.map-solo');if(!m)return;
   var NS='http://www.w3.org/2000/svg',P=[];
@@ -317,7 +317,7 @@
     var q=c.getAttribute('points').trim().split(/\s+/).map(function(s){return s.split(',').map(Number)}),x=0,y=0;
     q.forEach(function(p){x+=p[0];y+=p[1]});P.push({x:x/q.length,y:y/q.length,el:c});   // estrella de Bogotá
   });
-  var n=P.length,MAX=3,deg=P.map(function(){return 0}),par=P.map(function(_,i){return i}),S=[];
+  var n=P.length,MAX=5,deg=P.map(function(){return 0}),par=P.map(function(_,i){return i}),S=[];
   function d(i,j){return Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y)}
   function find(i){while(par[i]!==i)i=par[i]=par[par[i]];return i}
   function ccw(a,b,c){return(P[c].y-P[a].y)*(P[b].x-P[a].x)-(P[b].y-P[a].y)*(P[c].x-P[a].x)}
@@ -330,7 +330,7 @@
   var C=[];for(var i=0;i<n;i++)for(var j=i+1;j<n;j++)C.push([i,j,d(i,j)]);
   C.sort(function(a,b){return a[2]-b[2]});
   C.forEach(function(e){if(find(e[0])!==find(e[1])&&free(e))add(e)});       // 1) árbol: todo conectado
-  var lim=0;S.forEach(function(e){lim+=e[2]});lim=1.5*lim/S.length;
+  var lim=0;S.forEach(function(e){lim+=e[2]});lim=2.4*lim/S.length;
   C.forEach(function(e){if(e[2]<=lim&&S.indexOf(e)<0&&free(e))add(e)});    // 2) mallas cortas extra
   C.forEach(function(e){if(find(e[0])!==find(e[1])&&!S.some(function(f){return cross(e,f)}))add(e)}); // 3) respaldo de conexión
   var g=document.createElementNS(NS,'g');g.setAttribute('class','red');
