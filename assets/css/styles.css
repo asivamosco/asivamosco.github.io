@@ -329,6 +329,7 @@ body{overflow-x:hidden}
 @media (orientation:portrait){
   #bgDeptos,#bgRed{display:none!important}
   .map-solo{display:block!important}
+  .map-solo .fil,.map-solo .dep{display:none}   /* solo el croquis (contorno), los puntos y sus conexiones */
 }
 @media (orientation:landscape){.map-solo{display:none!important}}   /* horizontal: se oculta el mapa grande (en vertical se muestra) */
 
