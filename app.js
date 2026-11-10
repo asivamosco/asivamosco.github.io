@@ -12,7 +12,7 @@ const INDICADORES = [
   { id: 'Inflacion', archivo: 'inflacion_anual_dane.json',      campo: 'var_anual',      dec: 2, subeEsMalo: true },
   // Desempleo (GEIH): generado por load_desempleo.py. TD nacional (serie original), redondeada como la publica el DANE y la reportan los medios.
   { id: 'Desempleo', archivo: 'desempleo_historico_dane.json', campo: 'tasa_desempleo', dec: 1, redondear: true, subeEsMalo: true },
-  { id: 'Seguridad', archivo: 'seguridad_historico.json',      campo: 'indice',         dec: 1, subeEsMalo: true },
+  { id: 'Seguridad', archivo: 'crimen_historico.json',         campo: 'indice',         dec: 1, subeEsMalo: true },
 
   // --- Ámbito nacional ---
   // Economía (ISE): generado por load_economia.py. Muestra el índice del ISE (serie original) tal como lo publica el DANE. Más actividad = mejor.
