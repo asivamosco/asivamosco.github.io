@@ -17,10 +17,10 @@ const INDICADORES = [
   // --- Ámbito nacional ---
   // Economía (ISE): generado por load_economia.py. Muestra el índice del ISE (serie original) tal como lo publica el DANE. Más actividad = mejor.
   { id: 'Economia', archivo: 'economia_historico.json', campo: 'indice', dec: 2, redondear: true, subeEsMalo: false },
-  // Contención de cocaína (ICC): generado por load_cocaina.py. Más contención = mejor.
-  { id: 'Narco', archivo: 'cocaina_historico.json', campo: 'icc_score', dec: 1, subeEsMalo: false },
-  // Denuncias sobre corrupción: más denuncias = mayor fiscalización (verde al subir)
-  { id: 'Corrupcion', archivo: 'corrupcion_historico.json', campo: 'total', dec: 0, subeEsMalo: false }
+  // Incautación de cocaína: generado por load_cocaina.py. Campo 'total' en kg (Colombia + exterior); se muestra en toneladas (escala 1000). Más incautación = mejor.
+  { id: 'Narco', archivo: 'cocaina_historico.json', campo: 'total', escala: 1000, dec: 1, subeEsMalo: false },
+  // Terrorismo: más hechos = peor (rojo al subir)
+  { id: 'Terrorismo', archivo: 'terrorismo_historico.json', campo: 'valor', dec: 1, subeEsMalo: true }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -150,7 +150,7 @@ function renderizarIndicador(cfg, data) {
   if (!Array.isArray(data) || data.length < 3) return;
 
   const serie = data.slice(-N_PUNTOS)
-    .map(r => ({ mes: r.mes, v: parseFloat(r[cfg.campo]) }))
+    .map(r => ({ mes: r.mes, v: parseFloat(r[cfg.campo]) / (cfg.escala || 1) }))
     .filter(r => !isNaN(r.v));
   if (serie.length < 3) return;
   const vals = serie.map(r => r.v);

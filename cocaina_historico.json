@@ -2,26 +2,36 @@
   {
     "mes": "Mayo",
     "anio": 2026,
-    "icc_score": 100.26
+    "total": 93755.96,
+    "colombia": 30427.91,
+    "exterior": 63328.05
   },
   {
     "mes": "Junio",
     "anio": 2026,
-    "icc_score": 122.46
+    "total": 72128.53,
+    "colombia": 34091.94,
+    "exterior": 38036.59
   },
   {
     "mes": "Julio",
     "anio": 2026,
-    "icc_score": 106.92
+    "total": 79823.04,
+    "colombia": 33188.47,
+    "exterior": 46634.57
   },
   {
     "mes": "Agosto",
     "anio": 2026,
-    "icc_score": 85.5
+    "total": 84660.69,
+    "colombia": 19820.72,
+    "exterior": 64839.97
   },
   {
     "mes": "Septiembre",
     "anio": 2026,
-    "icc_score": 101.38
+    "total": 36635.24,
+    "colombia": 15601.53,
+    "exterior": 21033.71
   }
 ]
