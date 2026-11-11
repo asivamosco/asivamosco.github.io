@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=43">
+  <link rel="stylesheet" href="assets/css/styles.css?v=44">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYRYT7V7YQ"></script>
@@ -308,35 +308,51 @@
 })();
 </script>
 <script>
-/* Mapa de Colombia (vertical): red de conexiones entre las capitales (puntos .cap), máx. 5 por punto, sin cruces */
+/* Mapa de Colombia (vertical): triangulación (Delaunay) de puntos aleatorios repartidos dentro del croquis.
+   Semilla fija = siempre el mismo dibujo. Para otra distribución, cambiar SEED; para más/menos triángulos, cambiar R. */
 (function(){
-  var m=document.querySelector('.map-solo');if(!m)return;
-  var NS='http://www.w3.org/2000/svg',P=[];
-  m.querySelectorAll('.cap').forEach(function(c){
-    if(c.tagName==='circle'){P.push({x:+c.getAttribute('cx'),y:+c.getAttribute('cy'),el:c});return}
-    var q=c.getAttribute('points').trim().split(/\s+/).map(function(s){return s.split(',').map(Number)}),x=0,y=0;
-    q.forEach(function(p){x+=p[0];y+=p[1]});P.push({x:x/q.length,y:y/q.length,el:c});   // estrella de Bogotá
-  });
-  var n=P.length,MAX=5,deg=P.map(function(){return 0}),par=P.map(function(_,i){return i}),S=[];
-  function d(i,j){return Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y)}
-  function find(i){while(par[i]!==i)i=par[i]=par[par[i]];return i}
-  function ccw(a,b,c){return(P[c].y-P[a].y)*(P[b].x-P[a].x)-(P[b].y-P[a].y)*(P[c].x-P[a].x)}
-  function cross(e,f){                       // ¿se cruzan dos segmentos que no comparten extremo?
-    if(e[0]===f[0]||e[0]===f[1]||e[1]===f[0]||e[1]===f[1])return false;
-    return ccw(e[0],e[1],f[0])*ccw(e[0],e[1],f[1])<0&&ccw(f[0],f[1],e[0])*ccw(f[0],f[1],e[1])<0;
+  var m=document.querySelector('.map-solo'),o=m&&m.querySelector('polygon.out');if(!m||!o)return;
+  var SEED=7,R=36,NS='http://www.w3.org/2000/svg';
+  var poly=o.getAttribute('points').trim().split(/\s+/).map(function(s){var q=s.split(',');return[+q[0],+q[1]]});
+  function inside(p){var x=p[0],y=p[1],c=false;
+    for(var i=0,j=poly.length-1;i<poly.length;j=i++){var a=poly[i],b=poly[j];
+      if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
+  var s=SEED;function rnd(){s|=0;s=s+0x6D2B79F5|0;var t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
+  function d(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1])}
+  // 1) puntos sobre el contorno (cada ~R*1.3) para que la malla llegue hasta los bordes
+  var P=[],step=R*1.3,acc=0;
+  for(var i=0;i<poly.length;i++){var a=poly[i],b=poly[(i+1)%poly.length],L=d(a,b),t=step-acc;
+    while(t<=L){P.push([a[0]+(b[0]-a[0])*t/L,a[1]+(b[1]-a[1])*t/L]);t+=step}acc=L-(t-step)}
+  var nB=P.length;
+  // 2) puntos interiores aleatorios, repartidos parejo (distancia mínima R)
+  var xs=poly.map(function(p){return p[0]}),ys=poly.map(function(p){return p[1]}),x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+  for(var k=0;k<9000;k++){var p=[x0+rnd()*(x1-x0),y0+rnd()*(y1-y0)];
+    if(inside(p)&&P.every(function(q){return d(p,q)>=R}))P.push(p)}
+  // 3) Delaunay (Bowyer-Watson)
+  var W=Math.max(x1-x0,y1-y0)*20,cx=(x0+x1)/2,cy=(y0+y1)/2,V=P.concat([[cx-W,cy-W],[cx+W,cy-W],[cx,cy+W]]),n=P.length;
+  function circ(t){var A=V[t[0]],B=V[t[1]],C=V[t[2]],D=2*(A[0]*(B[1]-C[1])+B[0]*(C[1]-A[1])+C[0]*(A[1]-B[1])),
+      a2=A[0]*A[0]+A[1]*A[1],b2=B[0]*B[0]+B[1]*B[1],c2=C[0]*C[0]+C[1]*C[1],
+      ux=(a2*(B[1]-C[1])+b2*(C[1]-A[1])+c2*(A[1]-B[1]))/D,uy=(a2*(C[0]-B[0])+b2*(A[0]-C[0])+c2*(B[0]-A[0]))/D;
+    return[ux,uy,Math.hypot(A[0]-ux,A[1]-uy)]}
+  var T=[[n,n+1,n+2]];T[0].c=circ(T[0]);
+  for(var i=0;i<n;i++){
+    var bad=[],keep=[];T.forEach(function(t){(Math.hypot(P[i][0]-t.c[0],P[i][1]-t.c[1])<t.c[2]?bad:keep).push(t)});
+    var E={};bad.forEach(function(t){for(var e=0;e<3;e++){var u=t[e],v=t[(e+1)%3],k=u<v?u+'_'+v:v+'_'+u;E[k]=E[k]?null:[u,v]}});
+    T=keep;for(var k in E)if(E[k]){var t=[E[k][0],E[k][1],i];t.c=circ(t);T.push(t)}
   }
-  function free(e){return deg[e[0]]<MAX&&deg[e[1]]<MAX&&!S.some(function(f){return cross(e,f)})}
-  function add(e){S.push(e);deg[e[0]]++;deg[e[1]]++;par[find(e[0])]=find(e[1])}
-  var C=[];for(var i=0;i<n;i++)for(var j=i+1;j<n;j++)C.push([i,j,d(i,j)]);
-  C.sort(function(a,b){return a[2]-b[2]});
-  C.forEach(function(e){if(find(e[0])!==find(e[1])&&free(e))add(e)});       // 1) árbol: todo conectado
-  var lim=0;S.forEach(function(e){lim+=e[2]});lim=2.4*lim/S.length;
-  C.forEach(function(e){if(e[2]<=lim&&S.indexOf(e)<0&&free(e))add(e)});    // 2) mallas cortas extra
-  C.forEach(function(e){if(find(e[0])!==find(e[1])&&!S.some(function(f){return cross(e,f)}))add(e)}); // 3) respaldo de conexión
-  var g=document.createElementNS(NS,'g');g.setAttribute('class','red');
-  S.forEach(function(e){var l=document.createElementNS(NS,'line');
-    l.setAttribute('x1',P[e[0]].x);l.setAttribute('y1',P[e[0]].y);l.setAttribute('x2',P[e[1]].x);l.setAttribute('y2',P[e[1]].y);g.appendChild(l)});
-  m.insertBefore(g,P[0].el);                  // las líneas quedan debajo de los puntos
+  // 4) quedarse con triángulos dentro del croquis y dibujar sus aristas
+  var seen={},g=document.createElementNS(NS,'g');g.setAttribute('class','red');
+  T.forEach(function(t){
+    if(t[0]>=n||t[1]>=n||t[2]>=n)return;
+    var A=P[t[0]],B=P[t[1]],C=P[t[2]];
+    if(!inside([(A[0]+B[0]+C[0])/3,(A[1]+B[1]+C[1])/3]))return;
+    for(var e=0;e<3;e++){var u=t[e],v=t[(e+1)%3],M=[(P[u][0]+P[v][0])/2,(P[u][1]+P[v][1])/2];
+      if(!inside(M))return}
+    for(var e=0;e<3;e++){var u=t[e],v=t[(e+1)%3],k=u<v?u+'_'+v:v+'_'+u;if(seen[k])continue;seen[k]=1;
+      var l=document.createElementNS(NS,'line');
+      l.setAttribute('x1',P[u][0]);l.setAttribute('y1',P[u][1]);l.setAttribute('x2',P[v][0]);l.setAttribute('y2',P[v][1]);g.appendChild(l)}
+  });
+  m.insertBefore(g,o);                       // las líneas quedan debajo del contorno
 })();
 </script>
 <script src="app.js?v=2"></script>
