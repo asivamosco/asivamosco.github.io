@@ -6,7 +6,7 @@
   <title>Ayuda | Así Vamos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="assets/css/styles.css?v=45">
+  <link rel="stylesheet" href="assets/css/styles.css?v=46">
   <style>
         .container {
             max-width: 800px;
@@ -86,6 +86,11 @@
             background: rgba(91,108,240,.08); border: 1px solid rgba(91,108,240,.35); }
         .volver-inferior:hover { background: rgba(91,108,240,.16); }
         .pie-volver { text-align: center; }
+        /* styles.css fija el body a una sola pantalla en celular vertical (dashboard); aquí la página debe poder desplazarse */
+        html, body.ayuda { height: auto; }
+        body.ayuda { overflow-x: hidden; overflow-y: auto; }
+        body.ayuda .page { height: auto; min-height: 100dvh; display: block; }
+        body.ayuda .container { margin-bottom: 24px; }
     </style>
 
   <!-- Google tag (gtag.js) -->
@@ -97,7 +102,7 @@
     gtag('config', 'G-EYRYT7V7YQ');
   </script>
 </head>
-<body>
+<body class="ayuda">
 
 <div class="page">
   <header>
