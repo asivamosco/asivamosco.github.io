@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Denuncias sobre Corrupción</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ayuda | Así Vamos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css?v=45">
+  <style>
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 6px auto 0;
             background: #fff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
-        h1 {
+        .titulo {
             color: #1a202c;
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 10px;
@@ -85,12 +80,34 @@
             border-radius: 4px;
             margin-top: 8px;
         }
+            .titulo { margin-top: 0; }
+        .volver-inferior { display: inline-block; margin-top: 10px; padding: 9px 18px; border-radius: 999px;
+            font-weight: 700; text-decoration: none; color: #2b3358;
+            background: rgba(91,108,240,.08); border: 1px solid rgba(91,108,240,.35); }
+        .volver-inferior:hover { background: rgba(91,108,240,.16); }
+        .pie-volver { text-align: center; }
     </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYRYT7V7YQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EYRYT7V7YQ');
+  </script>
 </head>
 <body>
 
-<div class="container">
-    <h1>Guía de Denuncias sobre Corrupción</h1>
+<div class="page">
+  <header>
+    <h1 aria-label="Así Vamos"><button class="menu-btn" type="button" aria-label="Abrir menú" aria-haspopup="true"><svg viewBox="0 0 22 16" aria-hidden="true"><path d="M1 2h20M1 8h20M1 14h20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button><svg class="a-logo" viewBox="0 0 56 70" aria-hidden="true"><polygon points="35,0 21,0 0,70 16,70 28,26 35.7,54.2 30.9,55.6 48,69.2 54.8,48.4 50,49.9"/></svg><span aria-hidden="true">sí <svg class="v-logo" viewBox="0 0 56 70" aria-hidden="true"><polygon points="35,70 21,70 0,0 16,0 28,44 35.7,15.8 30.9,14.4 48,0.8 54.8,21.6 50,20.1"/></svg>amos</span><span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></h1>
+    <a class="help-btn" href="index.html" aria-label="Volver al inicio"><span class="q" aria-hidden="true">←</span><span class="t">Volver</span></a>
+  </header>
+
+  <main>
+    <div class="container">
+    <h2 class="titulo">Guía de Denuncias sobre Corrupción</h2>
 
     <div class="metodologia-box">
         <h2>Periodos de actualización de las fuentes</h2>
@@ -151,6 +168,10 @@
         <div class="ejemplo"><strong>Ejemplo:</strong> Usar los fondos destinados exclusivamente al Programa de Alimentación Escolar (PAE) para pagar la gasolina de las patrullas de policía local.</div>
     </div>
 
+
+    <div class="pie-volver"><a class="volver-inferior" href="index.html">← Volver al inicio</a></div>
+    </div>
+  </main>
 </div>
 
 </body>

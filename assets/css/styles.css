@@ -343,3 +343,16 @@ body{overflow-x:hidden}
 
 /* Red de conexiones entre capitales dentro del mapa de Colombia (vertical) */
 .map-solo .red line{stroke:#8f95a1;stroke-width:1;opacity:.6;vector-effect:non-scaling-stroke}
+
+
+/* ---------- Botones del header: Ayuda (index) y Volver (ayuda) ---------- */
+.help-btn{position:absolute;z-index:2;top:50%;right:max(20px,calc(50% - 480px));transform:translateY(-50%);
+  display:inline-flex;align-items:center;gap:7px;padding:5px 13px 5px 6px;border-radius:999px;
+  font-size:14px;font-weight:700;line-height:1;letter-spacing:.02em;color:var(--text);text-decoration:none;
+  background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.35);
+  transition:background .15s,border-color .15s}
+.help-btn:hover{background:rgba(var(--accent-rgb),.16);border-color:rgba(var(--accent-rgb),.6)}
+.help-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.help-btn .q{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;
+  background:var(--accent);color:#fff;font-weight:800;font-size:13px}
+@media (max-width:480px){.help-btn{padding:5px;gap:0}.help-btn .t{display:none}}
