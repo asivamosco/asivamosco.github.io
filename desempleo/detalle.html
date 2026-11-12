@@ -19,9 +19,10 @@ body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",
 .up{color:var(--up)} .dn{color:var(--dn)}
 a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-.top{position:sticky;top:0;z-index:5;background:#fff;box-shadow:0 1px 0 var(--line);padding:10px 16px;display:flex;align-items:center;gap:12px}
+.top{position:sticky;top:0;z-index:5;background:#fff;box-shadow:0 1px 0 var(--line);padding:10px 0}
+.top-in{max-width:960px;margin:0 auto;padding:0 16px;display:flex;align-items:center}
 .top a.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:#000;border-radius:var(--r)}
-.top .chev{width:20px;height:20px;flex:none}
+.top .chev{width:20px;height:20px;flex:none;margin-left:-6px}
 .logo{font:800 26px/1.1 "Barlow Semi Condensed",system-ui,sans-serif;letter-spacing:-.01em;white-space:nowrap}
 .a-logo,.v-logo{display:inline-block;height:.7em;width:.56em;vertical-align:baseline}
 .a-logo{margin-right:.03em;fill:var(--mal)} .v-logo{margin-left:.03em;fill:var(--ok)}
@@ -29,7 +30,6 @@ a,button{font:inherit;color:inherit}
 .col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;vertical-align:middle;box-shadow:0 0 0 1px rgba(43,51,88,.12)}
 .col-flag span{display:block;width:100%}
 .col-flag .yellow{height:50%;background:#ffcc00} .col-flag .blue{height:25%;background:#0033a0} .col-flag .red{height:25%;background:#ce1126}
-.top .sub{color:var(--mute);font-weight:500;margin-left:auto;font-size:14px}
 main{max-width:960px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:18px}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
 .card h2{margin:0 0 12px;font-size:19px;font-weight:700}
@@ -91,13 +91,12 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 </style>
 </head>
 <body>
-<header class="top">
+<header class="top"><div class="top-in">
   <a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio">
     <svg class="chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <span class="logo" aria-hidden="true"><svg class="a-logo" viewBox="0 0 56 70"><polygon points="35,0 21,0 0,70 16,70 28,26 35.7,54.2 30.9,55.6 48,69.2 54.8,48.4 50,49.9"/></svg>sí <svg class="v-logo" viewBox="0 0 56 70"><polygon points="35,70 21,70 0,0 16,0 28,44 35.7,15.8 30.9,14.4 48,0.8 54.8,21.6 50,20.1"/></svg>amos<span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></span>
   </a>
-  <span class="sub" id="fuente"></span>
-</header>
+</div></header>
 <main id="app" aria-live="polite"><div class="card err mute">Cargando…</div></main>
 
 <script>
@@ -121,11 +120,10 @@ fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.st
 
 function render() {
   document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
-  $('#fuente').textContent = `Fuente: ${D.fuente}`;
   const h = D.hero, dim = D.dimensiones, ciu = dim.ciudades;
   $('#app').innerHTML = `
   <section class="card hero" aria-label="Indicador nacional">
-    <span class="badge">Actualización oficial · ${esc(D.periodo.etiqueta)}</span>
+    <span class="badge">${esc(D.periodo.etiqueta)} · Fuente: ${esc(D.fuente)}</span>
     <div class="ttl">Desempleo nacional</div>
     <div class="big">${fmt(h.tasa_desempleo, 1)}<span>%</span></div>
     <div class="vars">
