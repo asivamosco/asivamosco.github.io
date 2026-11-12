@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detalle · Así Vamos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e9ebef; --card:#fff; --ink:#1f2547; --mute:#7f84a6; --line:#e3e5ee;
+  --acc:#5b63f0; --up:#e8434f; --dn:#0f9ccf; --up-l:#f4505e; --dn-l:#2fc4ee;
+  --r:6px; --sh:0 1px 2px rgba(40,50,110,.06),0 10px 26px rgba(40,50,110,.09);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif}
+.up{color:var(--up)} .dn{color:var(--dn)}
+a,button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:#fff;box-shadow:0 1px 0 var(--line);padding:10px 16px;display:flex;align-items:center;gap:12px}
+.top a{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700}
+.top .sub{color:var(--mute);font-weight:500;margin-left:auto;font-size:14px}
+main{max-width:960px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:18px}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
+.card h2{margin:0 0 12px;font-size:19px;font-weight:700}
+.badge{position:absolute;top:-10px;right:14px;background:#dfe3ee;color:#4b5478;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
+.mute{color:var(--mute)} small{font-size:13px}
+/* hero */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:8px 36px;align-items:center}
+.hero .big{font-size:84px;font-weight:700;line-height:1;letter-spacing:-1px}
+.hero .big span{font-size:32px;margin-left:4px;color:var(--mute)}
+.hero .ttl{grid-column:1/-1;font-size:22px;font-weight:700;margin-bottom:4px}
+.vars{display:grid;gap:10px}
+.vars div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.vars b{font-size:22px}
+.frase{grid-column:1/-1;margin:6px 0 0;font-size:18px}
+/* hallazgos */
+.hz{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
+.hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
+.hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
+.hz p{margin:0;font-size:17px}
+/* sexo */
+.sx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sx button{all:unset;cursor:pointer;display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r)}
+.sx button:focus-visible{outline:2px solid var(--acc)}
+.sx button[aria-pressed=true]{border-color:var(--acc);background:#f5f6ff}
+.sx .n{font-size:15px;color:var(--mute)} .sx .t{font-size:40px;font-weight:700;line-height:1.1}
+.sx .row2{display:flex;justify-content:space-between;margin-top:6px}
+.brecha{margin:12px 0 0;font-size:17px}
+/* ciudades */
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.head h2{margin:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
+.seg button[aria-pressed=true]{background:var(--acc);color:#fff}
+.list{display:grid}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto 96px;gap:4px 12px;align-items:center;padding:9px 6px;border-top:1px solid var(--line)}
+.row:hover{background:#f7f8fc} .row[aria-pressed=true]{background:#f0f1ff}
+.row:focus-visible{outline:2px solid var(--acc)}
+.rk{color:var(--mute);text-align:right;font-size:14px}
+.nm{display:grid;gap:5px;min-width:0}
+.bar{display:block;height:6px;background:#eceef6;border-radius:3px;overflow:hidden}
+.bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+.vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
+.vr{text-align:right;font-size:15px;font-weight:500}
+.ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
+/* serie */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:inherit;fill:var(--mute);font-size:15px}
+svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
+.err{padding:24px;text-align:center}
+@media(max-width:560px){
+  .hero{grid-template-columns:1fr} .hero .big{font-size:68px}
+  .row{grid-template-columns:22px 1fr auto;} .vr{grid-column:2/-1;text-align:left}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a href="index.html" aria-label="Volver al inicio"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Así Vamos</a>
+  <span class="sub" id="fuente"></span>
+</header>
+<main id="app" aria-live="polite"><div class="card err mute">Cargando…</div></main>
+
+<script>
+const IND = new URLSearchParams(location.search).get('ind') || 'desempleo';
+const URL_JSON = `detalle_${IND}.json`;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (n, d = 1) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
+const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
+const pers = m => m == null ? '—' : Math.round(m * 1000).toLocaleString('es-CO');
+const persSg = m => m == null ? '—' : (m > 0 ? '+' : m < 0 ? '−' : '') + pers(Math.abs(m));
+// En desempleo, subir es lo malo (rojo) y bajar lo bueno (cian)
+const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
+const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
+
+let D, st = {orden: 'cantidad', serie: null, tab: 'doce'};
+
+fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => { D = d; st.serie = {nombre: 'Nacional', datos: d.serie.doce_meses, nac: true}; render(); })
+  .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend y publícalo junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
+
+function render() {
+  document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
+  $('#fuente').textContent = `Fuente: ${D.fuente}`;
+  const h = D.hero, dim = D.dimensiones, ciu = dim.ciudades;
+  $('#app').innerHTML = `
+  <section class="card hero" aria-label="Indicador nacional">
+    <span class="badge">Actualización oficial · ${esc(D.periodo.etiqueta)}</span>
+    <div class="ttl">Desempleo nacional</div>
+    <div class="big">${fmt(h.tasa_desempleo, 1)}<span>%</span></div>
+    <div class="vars">
+      <div><span class="mute">Frente al mes anterior</span><b class="${cls(h.cambio_mes_pp)}">${flecha(h.cambio_mes_pp)} ${sg(h.cambio_mes_pp)} pp</b></div>
+      <div><span class="mute">Frente a hace un año</span><b class="${cls(h.var_anual_pp)}">${flecha(h.var_anual_pp)} ${sg(h.var_anual_pp)} pp</b></div>
+    </div>
+    <p class="frase">${esc(h.comentario_popular)}</p>
+  </section>
+
+  <section aria-label="Hallazgos"><div class="hz">${D.hallazgos.map(x => `
+    <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}">
+      <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div></section>
+
+  <section class="card" aria-label="Por sexo">
+    <h2>Por sexo</h2>
+    <div class="sx">${dim.sexo.items.map((s, i) => `
+      <button data-sx="${i}" aria-pressed="${st.serie.nombre === s.sexo}">
+        <div class="n">${esc(s.sexo)}</div>
+        <div class="t">${fmt(s.tasa_desempleo, 1)} %</div>
+        <div class="row2"><span>${pers(s.desocupados_miles)} personas</span>
+          <span class="${cls(s.var_anual_pp)}">${flecha(s.var_anual_pp)} ${sg(s.var_anual_pp)} pp</span></div>
+      </button>`).join('')}</div>
+    ${dim.sexo.brecha ? `<p class="brecha"><b>Brecha: ${fmt(dim.sexo.brecha.brecha_pp, 1)} pp</b> <span class="mute">(mujeres menos hombres)</span> · ${esc(dim.sexo.brecha.comentario_popular)}</p>` : ''}
+  </section>
+
+  <section class="card" aria-label="Por ciudad">
+    <div class="head"><h2>Por ciudad</h2>
+      <div class="seg" role="group" aria-label="Ordenar por">
+        <button data-ord="cantidad" aria-pressed="${st.orden === 'cantidad'}">Personas</button>
+        <button data-ord="tasa" aria-pressed="${st.orden === 'tasa'}">Tasa</button></div></div>
+    <div class="list" id="lista"></div>
+    <p class="ref">${esc(ciu.nota)} Toca una ciudad para ver su serie abajo.${refTxt(ciu.referencias)}</p>
+  </section>
+
+  <section class="card" aria-label="Serie">
+    <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
+    <div id="chart"></div>
+  </section>`;
+  lista(); serie();
+}
+
+function refTxt(refs) {
+  const t = (refs || []).find(r => /23/.test(r.nombre));
+  return t ? ` Referencia, ${esc(t.nombre)}: ${fmt(t.tasa_desempleo, 1)} % y ${pers(t.desocupados_miles)} personas.` : '';
+}
+
+function lista() {
+  const items = [...D.dimensiones.ciudades.items], porC = st.orden === 'cantidad';
+  items.sort((a, b) => (porC ? a.puesto_cantidad - b.puesto_cantidad : a.puesto_tasa - b.puesto_tasa));
+  const mxT = Math.max(...items.map(c => c.tasa_desempleo || 0));
+  $('#lista').innerHTML = items.map((c, i) => {
+    const w = porC ? c.barra : 100 * c.tasa_desempleo / mxT;
+    const v = porC ? c.desocupados_var_anual_miles : c.var_anual_pp;
+    return `<button class="row" data-ci="${D.dimensiones.ciudades.items.indexOf(c)}" aria-pressed="${st.serie.nombre === c.ciudad}">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span>${esc(c.ciudad)}</span><span class="bar"><b style="width:${w}%"></b></span></span>
+      <span class="vl"><strong>${porC ? pers(c.desocupados_miles) : fmt(c.tasa_desempleo, 1) + ' %'}</strong>
+        <small class="mute">${porC ? fmt(c.tasa_desempleo, 1) + ' %' : pers(c.desocupados_miles) + ' personas'}</small></span>
+      <span class="vr ${cls(v)}">${flecha(v)} ${porC ? persSg(v) : sg(v) + ' pp'}</span></button>`;
+  }).join('');
+}
+
+function serie() {
+  const s = st.serie, mm = st.tab === 'mismo' && s.nac, datos = mm ? D.serie.mismo_mes : s.datos;
+  $('#serieT').textContent = `${s.nombre}: ${mm ? 'este mes, año a año' : 'últimos 12 meses'}`;
+  $('#tabs').innerHTML = s.nac
+    ? `<button data-tab="doce" aria-pressed="${!mm}">12 meses</button><button data-tab="mismo" aria-pressed="${mm}">Mismo mes por año</button>`
+    : `<button data-tab="nac" aria-pressed="false">Volver al nacional</button>`;
+  $('#chart').innerHTML = grafica(datos || [], mm);
+}
+
+function grafica(d, mm) {
+  if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
+  const W = 640, H = 250, L = 28, R = 28, T = 30, B = 34;
+  const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
+  const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
+  let seg = '', pts = '', lab = '';
+  d.forEach((p, i) => {
+    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="3.5" stroke-linecap="round"/>`;
+    const ult = i === d.length - 1;
+    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4}" fill="${ult ? '#fff' : 'var(--ink)'}" stroke="${ult ? 'var(--acc)' : 'none'}" stroke-width="3.5"/>`;
+    if (i === 0 || ult || p.valor === mx || p.valor === mn)
+      lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor, 1)}</text>`;
+    lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || !D) return;
+  const dim = D.dimensiones;
+  if (b.dataset.ord) { st.orden = b.dataset.ord; document.querySelectorAll('[data-ord]').forEach(x => x.setAttribute('aria-pressed', x === b)); lista(); return; }
+  if (b.dataset.tab) {
+    if (b.dataset.tab === 'nac') { st.serie = {nombre: 'Nacional', datos: D.serie.doce_meses, nac: true}; st.tab = 'doce'; }
+    else st.tab = b.dataset.tab;
+  } else if (b.dataset.ci != null) { const c = dim.ciudades.items[b.dataset.ci]; st.serie = {nombre: c.ciudad, datos: c.serie_12m}; }
+  else if (b.dataset.sx != null) { const s = dim.sexo.items[b.dataset.sx]; st.serie = {nombre: s.sexo, datos: s.serie_12m}; }
+  else return;
+  document.querySelectorAll('[data-sx]').forEach(x => x.setAttribute('aria-pressed', dim.sexo.items[x.dataset.sx].sexo === st.serie.nombre));
+  lista(); serie();
+});
+</script>
+</body>
+</html>

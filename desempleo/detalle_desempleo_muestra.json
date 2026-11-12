@@ -1,0 +1,2304 @@
+{
+  "indicador": "desempleo",
+  "fuente": "Dane",
+  "generado_en": "2026-11-12T20:43:57+00:00",
+  "periodo": {
+    "anio": 2026,
+    "mes_num": 9,
+    "mes_nombre": "Septiembre",
+    "etiqueta": "Septiembre 2026"
+  },
+  "hero": {
+    "tasa_desempleo": 8.017,
+    "var_anual_pp": -0.1565,
+    "cambio_mes_pp": -1.3467,
+    "direccion_mes": "baja",
+    "direccion_anual": "baja",
+    "comparado_con_hace_un_ano": "",
+    "previo": "",
+    "actual": "",
+    "meses_seguidos_vs_ano_anterior": null,
+    "comentario_popular": "Prácticamente igual que hace un año.",
+    "rama": "muestra",
+    "unidad": "%"
+  },
+  "hallazgos": [
+    {
+      "tipo": "indicador",
+      "titulo": "Desempleo nacional",
+      "texto": "Prácticamente igual que hace un año.",
+      "rama": "muestra"
+    },
+    {
+      "tipo": "brecha",
+      "titulo": "Brecha de género",
+      "texto": "Mujeres con mayor desempleo que hombres (texto de muestra).",
+      "valor": 3.5882,
+      "unidad": "pp"
+    },
+    {
+      "tipo": "ciudad_sube",
+      "titulo": "Mayor aumento anual",
+      "texto": "Cartagena De Indias: +4.01 pp frente a hace un año (hoy 13.7 %).",
+      "valor": 4.0094,
+      "unidad": "pp",
+      "ciudad": "Cartagena De Indias"
+    },
+    {
+      "tipo": "ciudad_baja",
+      "titulo": "Mayor reducción anual",
+      "texto": "Riohacha: -3.42 pp frente a hace un año (hoy 10.8 %).",
+      "valor": -3.4202,
+      "unidad": "pp",
+      "ciudad": "Riohacha"
+    }
+  ],
+  "dimensiones": {
+    "unidad_cantidad": "miles de personas",
+    "sexo": {
+      "items": [
+        {
+          "sexo": "Mujeres",
+          "tasa_desempleo": 10.0652,
+          "var_anual_pp": 0.4258,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 1138.8259,
+          "desocupados_var_anual_miles": null,
+          "tgp": 52.574,
+          "tasa_ocup": 47.2823,
+          "subempleo": 7.2835,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 10.8563
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 9.0524
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 10.1097
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 13.8159
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 11.6774
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 11.0235
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.9289
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.8975
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.8742
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 10.0546
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 11.6017
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.0652
+            }
+          ]
+        },
+        {
+          "sexo": "Hombres",
+          "tasa_desempleo": 6.477,
+          "var_anual_pp": -0.5947,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 974.6829,
+          "desocupados_var_anual_miles": null,
+          "tgp": 75.9389,
+          "tasa_ocup": 71.0203,
+          "subempleo": 6.4872,
+          "comentario_popular": "Más baja que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 6.2221
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.5108
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 6.3828
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 8.6574
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7.3871
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7.1159
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7.1334
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.6204
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.6022
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.6501
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.6675
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.477
+            }
+          ]
+        }
+      ],
+      "brecha": {
+        "brecha_pp": 3.5882,
+        "td_mujeres": 10.0652,
+        "td_hombres": 6.477,
+        "variacion_anual_brecha_pp": 1.0205,
+        "cambio_mes_pp": null,
+        "direccion_anual": null,
+        "comentario_popular": "Mujeres con mayor desempleo que hombres (texto de muestra)."
+      }
+    },
+    "ciudades": {
+      "nota": "Cifras de ciudades: trimestre móvil que termina en el mes del periodo.",
+      "orden_defecto": "cantidad",
+      "items": [
+        {
+          "ciudad": "Bogotá, D.C.",
+          "tasa_desempleo": 7.6338,
+          "var_anual_pp": -0.4264,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 362.882,
+          "desocupados_var_anual_miles": null,
+          "tgp": 70.5661,
+          "tasa_ocup": 65.1792,
+          "subempleo": 6.222,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más baja que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 7.6723
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6.9742
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 6.4813
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.5115
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8.1855
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 8.7972
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 8.1777
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.4259
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.1276
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.0474
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.9148
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.6338
+            }
+          ],
+          "puesto_cantidad": 1,
+          "puesto_tasa": 23,
+          "puesto_variacion": 21,
+          "barra": 100.0,
+          "participacion_pct": 29.6
+        },
+        {
+          "ciudad": "Medellín",
+          "tasa_desempleo": 7.7605,
+          "var_anual_pp": 1.3643,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 185.4504,
+          "desocupados_var_anual_miles": null,
+          "tgp": 66.7216,
+          "tasa_ocup": 61.5437,
+          "subempleo": 6.631,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 6.8783
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.2761
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.512
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.9872
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.0187
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10.3783
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 9.8372
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.5911
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.0715
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.9693
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.472
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.7605
+            }
+          ],
+          "puesto_cantidad": 2,
+          "puesto_tasa": 21,
+          "puesto_variacion": 7,
+          "barra": 51.1,
+          "participacion_pct": 15.1
+        },
+        {
+          "ciudad": "Cali",
+          "tasa_desempleo": 9.5925,
+          "var_anual_pp": 1.4532,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 119.7947,
+          "desocupados_var_anual_miles": null,
+          "tgp": 64.2433,
+          "tasa_ocup": 58.0807,
+          "subempleo": 7.4783,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.4548
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.2532
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.2991
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 8.1586
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.0382
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9.8247
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 8.7259
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.5566
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.378
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.8936
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.1799
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 9.5925
+            }
+          ],
+          "puesto_cantidad": 3,
+          "puesto_tasa": 14,
+          "puesto_variacion": 4,
+          "barra": 33.0,
+          "participacion_pct": 9.8
+        },
+        {
+          "ciudad": "Barranquilla",
+          "tasa_desempleo": 10.1765,
+          "var_anual_pp": 0.5358,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 100.3586,
+          "desocupados_var_anual_miles": null,
+          "tgp": 60.6391,
+          "tasa_ocup": 54.4682,
+          "subempleo": 7.9011,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 9.2041
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.8777
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.7222
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 8.7209
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.962
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9.9853
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.7397
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.3541
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.2698
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.5998
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.5901
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.1765
+            }
+          ],
+          "puesto_cantidad": 4,
+          "puesto_tasa": 11,
+          "puesto_variacion": 13,
+          "barra": 27.7,
+          "participacion_pct": 8.2
+        },
+        {
+          "ciudad": "Cartagena De Indias",
+          "tasa_desempleo": 13.6795,
+          "var_anual_pp": 4.0094,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 64.7261,
+          "desocupados_var_anual_miles": null,
+          "tgp": 63.2461,
+          "tasa_ocup": 54.5943,
+          "subempleo": 7.5909,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 11.1449
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 12.6344
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 14.1358
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 14.5987
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 14.1767
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 13.7715
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 13.052
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 12.8474
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 13.1818
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 13.5865
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 14.4313
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 13.6795
+            }
+          ],
+          "puesto_cantidad": 5,
+          "puesto_tasa": 2,
+          "puesto_variacion": 1,
+          "barra": 17.8,
+          "participacion_pct": 5.3
+        },
+        {
+          "ciudad": "Bucaramanga",
+          "tasa_desempleo": 8.4758,
+          "var_anual_pp": 0.1613,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 56.2243,
+          "desocupados_var_anual_miles": null,
+          "tgp": 64.3124,
+          "tasa_ocup": 58.8614,
+          "subempleo": 4.3272,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 7.2854
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.5524
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.2468
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.1173
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.0896
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 8.4437
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7.9342
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.3285
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.2161
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 7.2392
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.2837
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 8.4758
+            }
+          ],
+          "puesto_cantidad": 6,
+          "puesto_tasa": 19,
+          "puesto_variacion": 18,
+          "barra": 15.5,
+          "participacion_pct": 4.6
+        },
+        {
+          "ciudad": "Cúcuta",
+          "tasa_desempleo": 10.3907,
+          "var_anual_pp": 0.0834,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 50.0278,
+          "desocupados_var_anual_miles": null,
+          "tgp": 60.4943,
+          "tasa_ocup": 54.2085,
+          "subempleo": 7.749,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 10.497
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 10.4706
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 11.0577
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 12.6291
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 12.3271
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 12.0094
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.8553
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 11.1323
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 10.0088
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9.6398
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 10.0934
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.3907
+            }
+          ],
+          "puesto_cantidad": 7,
+          "puesto_tasa": 10,
+          "puesto_variacion": 19,
+          "barra": 13.8,
+          "participacion_pct": 4.1
+        },
+        {
+          "ciudad": "Pereira",
+          "tasa_desempleo": 9.7395,
+          "var_anual_pp": 1.3873,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 32.7894,
+          "desocupados_var_anual_miles": null,
+          "tgp": 59.2334,
+          "tasa_ocup": 53.4643,
+          "subempleo": 3.7725,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 7.3393
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.6315
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.2616
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.0767
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8.879
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9.095
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7.6022
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 7.792
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.2013
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 7.4849
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.929
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 9.7395
+            }
+          ],
+          "puesto_cantidad": 8,
+          "puesto_tasa": 13,
+          "puesto_variacion": 6,
+          "barra": 9.0,
+          "participacion_pct": 2.7
+        },
+        {
+          "ciudad": "Ibagué",
+          "tasa_desempleo": 11.1414,
+          "var_anual_pp": -0.263,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 27.1438,
+          "desocupados_var_anual_miles": null,
+          "tgp": 57.2647,
+          "tasa_ocup": 50.8846,
+          "subempleo": 4.4098,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más baja que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 9.5409
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 9.3969
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 10.2101
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 12.4467
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 13.0083
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 12.3351
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 11.184
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 11.5383
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 12.7601
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 12.7493
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 11.7598
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 11.1414
+            }
+          ],
+          "puesto_cantidad": 9,
+          "puesto_tasa": 6,
+          "puesto_variacion": 20,
+          "barra": 7.5,
+          "participacion_pct": 2.2
+        },
+        {
+          "ciudad": "Manizales",
+          "tasa_desempleo": 8.5717,
+          "var_anual_pp": 0.389,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 22.6695,
+          "desocupados_var_anual_miles": null,
+          "tgp": 60.9054,
+          "tasa_ocup": 55.6848,
+          "subempleo": 4.0127,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.1667
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.1526
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.4177
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.6621
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8.5919
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 8.5092
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 8.3189
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.235
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.0832
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.3291
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 8.7179
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 8.5717
+            }
+          ],
+          "puesto_cantidad": 10,
+          "puesto_tasa": 18,
+          "puesto_variacion": 14,
+          "barra": 6.2,
+          "participacion_pct": 1.8
+        },
+        {
+          "ciudad": "Montería",
+          "tasa_desempleo": 11.3108,
+          "var_anual_pp": 1.9238,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 22.6528,
+          "desocupados_var_anual_miles": null,
+          "tgp": 62.9283,
+          "tasa_ocup": 55.8106,
+          "subempleo": 6.607,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.0813
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.5854
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.525
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 10.1687
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 10.4799
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 11.2265
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.5851
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 10.8685
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 11.3299
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 11.2232
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 11.6699
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 11.3108
+            }
+          ],
+          "puesto_cantidad": 11,
+          "puesto_tasa": 5,
+          "puesto_variacion": 3,
+          "barra": 6.2,
+          "participacion_pct": 1.8
+        },
+        {
+          "ciudad": "Valledupar",
+          "tasa_desempleo": 10.0268,
+          "var_anual_pp": 0.3293,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 22.1423,
+          "desocupados_var_anual_miles": null,
+          "tgp": 57.5291,
+          "tasa_ocup": 51.7608,
+          "subempleo": 5.314,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 9.8151
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 9.7761
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 9.15
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.6265
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.5931
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10.5234
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 9.4739
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.5866
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.5055
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9.7536
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 10.1431
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.0268
+            }
+          ],
+          "puesto_cantidad": 12,
+          "puesto_tasa": 12,
+          "puesto_variacion": 15,
+          "barra": 6.1,
+          "participacion_pct": 1.8
+        },
+        {
+          "ciudad": "Villavicencio",
+          "tasa_desempleo": 7.7136,
+          "var_anual_pp": 1.1178,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 21.8025,
+          "desocupados_var_anual_miles": null,
+          "tgp": 67.769,
+          "tasa_ocup": 62.5416,
+          "subempleo": 8.0809,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 6.8114
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6.7595
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 6.9818
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.7119
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8.013
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 8.0223
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7.4505
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 7.5488
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.9093
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.0575
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.9887
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.7136
+            }
+          ],
+          "puesto_cantidad": 13,
+          "puesto_tasa": 22,
+          "puesto_variacion": 9,
+          "barra": 6.0,
+          "participacion_pct": 1.8
+        },
+        {
+          "ciudad": "Santa Marta",
+          "tasa_desempleo": 8.7608,
+          "var_anual_pp": 0.1721,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 19.6533,
+          "desocupados_var_anual_miles": null,
+          "tgp": 56.2997,
+          "tasa_ocup": 51.3674,
+          "subempleo": 8.8948,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 9.1055
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 9.064
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 9.8386
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.959
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 10.6785
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 11.7209
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 11.963
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 11.7376
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 10.1306
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.8726
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 8.6395
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 8.7608
+            }
+          ],
+          "puesto_cantidad": 14,
+          "puesto_tasa": 17,
+          "puesto_variacion": 17,
+          "barra": 5.4,
+          "participacion_pct": 1.6
+        },
+        {
+          "ciudad": "Neiva",
+          "tasa_desempleo": 10.4779,
+          "var_anual_pp": 1.055,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 18.6115,
+          "desocupados_var_anual_miles": null,
+          "tgp": 64.9796,
+          "tasa_ocup": 58.1711,
+          "subempleo": 8.1158,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.3388
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 9.0238
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.3049
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 8.4521
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8.0697
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9.0608
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 8.13
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.2197
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.9585
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9.7694
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 10.1976
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.4779
+            }
+          ],
+          "puesto_cantidad": 15,
+          "puesto_tasa": 8,
+          "puesto_variacion": 10,
+          "barra": 5.1,
+          "participacion_pct": 1.5
+        },
+        {
+          "ciudad": "Sincelejo",
+          "tasa_desempleo": 12.665,
+          "var_anual_pp": 1.1972,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 16.8694,
+          "desocupados_var_anual_miles": null,
+          "tgp": 63.1114,
+          "tasa_ocup": 55.1183,
+          "subempleo": 9.335,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 12.3037
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 11.52
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 11.3873
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 11.5602
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 12.3442
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 11.7805
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.7544
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 10.9748
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 11.7194
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 12.9655
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 12.9145
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 12.665
+            }
+          ],
+          "puesto_cantidad": 16,
+          "puesto_tasa": 4,
+          "puesto_variacion": 8,
+          "barra": 4.6,
+          "participacion_pct": 1.4
+        },
+        {
+          "ciudad": "Armenia",
+          "tasa_desempleo": 10.4602,
+          "var_anual_pp": 1.4006,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 16.5919,
+          "desocupados_var_anual_miles": null,
+          "tgp": 59.3819,
+          "tasa_ocup": 53.1705,
+          "subempleo": 5.6536,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 9.0883
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.3827
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 9.8316
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 11.3635
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 12.9613
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 12.7061
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.8663
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.9398
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.6967
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.5139
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.1811
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.4602
+            }
+          ],
+          "puesto_cantidad": 17,
+          "puesto_tasa": 9,
+          "puesto_variacion": 5,
+          "barra": 4.6,
+          "participacion_pct": 1.4
+        },
+        {
+          "ciudad": "Pasto",
+          "tasa_desempleo": 9.2083,
+          "var_anual_pp": 0.7512,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 16.4428,
+          "desocupados_var_anual_miles": null,
+          "tgp": 68.8828,
+          "tasa_ocup": 62.5399,
+          "subempleo": 13.7013,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.2852
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.895
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.2098
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.5522
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 10.0933
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10.9529
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 9.276
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.6598
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.166
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9.7432
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.3644
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 9.2083
+            }
+          ],
+          "puesto_cantidad": 18,
+          "puesto_tasa": 16,
+          "puesto_variacion": 11,
+          "barra": 4.5,
+          "participacion_pct": 1.3
+        },
+        {
+          "ciudad": "Popayán",
+          "tasa_desempleo": 9.217,
+          "var_anual_pp": 0.1822,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 12.6658,
+          "desocupados_var_anual_miles": null,
+          "tgp": 60.7461,
+          "tasa_ocup": 55.1471,
+          "subempleo": 8.6161,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.6605
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.9245
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 9.3105
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 10.7829
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 11.8003
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10.596
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 9.8651
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.4471
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.7966
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.1976
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.308
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 9.217
+            }
+          ],
+          "puesto_cantidad": 19,
+          "puesto_tasa": 15,
+          "puesto_variacion": 16,
+          "barra": 3.5,
+          "participacion_pct": 1.0
+        },
+        {
+          "ciudad": "Tunja",
+          "tasa_desempleo": 13.1602,
+          "var_anual_pp": 3.9179,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 11.6144,
+          "desocupados_var_anual_miles": null,
+          "tgp": 60.3165,
+          "tasa_ocup": 52.3787,
+          "subempleo": 3.9972,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.6669
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.8659
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 9.8522
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 11.1945
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 11.8783
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 12.1444
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 11.5439
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 11.568
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 11.5602
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 12.4288
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 12.5167
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 13.1602
+            }
+          ],
+          "puesto_cantidad": 20,
+          "puesto_tasa": 3,
+          "puesto_variacion": 2,
+          "barra": 3.2,
+          "participacion_pct": 0.9
+        },
+        {
+          "ciudad": "Quibdó",
+          "tasa_desempleo": 23.373,
+          "var_anual_pp": -0.5948,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 10.7918,
+          "desocupados_var_anual_miles": null,
+          "tgp": 55.8135,
+          "tasa_ocup": 42.7682,
+          "subempleo": 2.4556,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más baja que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 23.9328
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 21.7671
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 23.0937
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 24.5616
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 26.3177
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 25.9641
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 25.0923
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 23.9373
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 23.2913
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 22.9594
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 23.8258
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 23.373
+            }
+          ],
+          "puesto_cantidad": 21,
+          "puesto_tasa": 1,
+          "puesto_variacion": 22,
+          "barra": 3.0,
+          "participacion_pct": 0.9
+        },
+        {
+          "ciudad": "Riohacha",
+          "tasa_desempleo": 10.8213,
+          "var_anual_pp": -3.4202,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 7.9053,
+          "desocupados_var_anual_miles": null,
+          "tgp": 62.6725,
+          "tasa_ocup": 55.8905,
+          "subempleo": 9.0488,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más baja que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 12.1515
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 11.7123
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 11.0354
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 13.6355
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 14.2604
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 14.6666
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 12.8168
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 12.0571
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 11.8103
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 11.7969
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 11.3835
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 10.8213
+            }
+          ],
+          "puesto_cantidad": 22,
+          "puesto_tasa": 7,
+          "puesto_variacion": 23,
+          "barra": 2.2,
+          "participacion_pct": 0.6
+        },
+        {
+          "ciudad": "Florencia",
+          "tasa_desempleo": 8.237,
+          "var_anual_pp": 0.6775,
+          "cambio_mes_pp": null,
+          "direccion_anual": null,
+          "desocupados_miles": 5.9845,
+          "desocupados_var_anual_miles": null,
+          "tgp": 57.71,
+          "tasa_ocup": 52.9565,
+          "subempleo": 4.8941,
+          "rank_hoy": null,
+          "rank_prev": null,
+          "lectura_ranking": null,
+          "brecha_vs_23_ciudades": null,
+          "lectura_vs_23_ciudades": null,
+          "comentario_popular": "Más alta que hace un año.",
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 8.144
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 8.163
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8.5529
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.0273
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 10.2763
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10.9657
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.9122
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.7934
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.2188
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.0609
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 8.1741
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 8.237
+            }
+          ],
+          "puesto_cantidad": 23,
+          "puesto_tasa": 20,
+          "puesto_variacion": 12,
+          "barra": 1.6,
+          "participacion_pct": 0.5
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total 13 ciudades",
+          "tasa_desempleo": 8.662,
+          "var_anual_pp": 0.5373,
+          "desocupados_miles": 1082.9647,
+          "desocupados_var_anual_miles": null
+        },
+        {
+          "nombre": "Total 10 ciudades",
+          "tasa_desempleo": 10.7217,
+          "var_anual_pp": 0.6245,
+          "desocupados_miles": 142.8303,
+          "desocupados_var_anual_miles": null
+        },
+        {
+          "nombre": "Total 23 ciudades",
+          "tasa_desempleo": 8.8603,
+          "var_anual_pp": 0.5445,
+          "desocupados_miles": 1225.7949,
+          "desocupados_var_anual_miles": null
+        }
+      ]
+    }
+  },
+  "serie": {
+    "doce_meses": [
+      {
+        "mes": "Oct",
+        "anio": 2025,
+        "valor": 8.2037
+      },
+      {
+        "mes": "Nov",
+        "anio": 2025,
+        "valor": 7.0249
+      },
+      {
+        "mes": "Dic",
+        "anio": 2025,
+        "valor": 7.9771
+      },
+      {
+        "mes": "Ene",
+        "anio": 2026,
+        "valor": 10.8595
+      },
+      {
+        "mes": "Feb",
+        "anio": 2026,
+        "valor": 9.235
+      },
+      {
+        "mes": "Mar",
+        "anio": 2026,
+        "valor": 8.7934
+      },
+      {
+        "mes": "Abr",
+        "anio": 2026,
+        "valor": 8.7815
+      },
+      {
+        "mes": "May",
+        "anio": 2026,
+        "valor": 8.0207
+      },
+      {
+        "mes": "Jun",
+        "anio": 2026,
+        "valor": 8.0269
+      },
+      {
+        "mes": "Jul",
+        "anio": 2026,
+        "valor": 8.1046
+      },
+      {
+        "mes": "Ago",
+        "anio": 2026,
+        "valor": 9.3637
+      },
+      {
+        "mes": "Sep",
+        "anio": 2026,
+        "valor": 8.017
+      }
+    ],
+    "mismo_mes": [
+      {
+        "anio": 2019,
+        "valor": 10.8003
+      },
+      {
+        "anio": 2020,
+        "valor": 16.2928
+      },
+      {
+        "anio": 2021,
+        "valor": 11.9613
+      },
+      {
+        "anio": 2022,
+        "valor": 10.7484
+      },
+      {
+        "anio": 2023,
+        "valor": 9.2527
+      },
+      {
+        "anio": 2024,
+        "valor": 9.1345
+      },
+      {
+        "anio": 2025,
+        "valor": 8.1735
+      },
+      {
+        "anio": 2026,
+        "valor": 8.017
+      }
+    ]
+  }
+}
