@@ -43,8 +43,9 @@ header{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
-  background:#fff;   /* respaldo opaco sin backdrop-filter */
-  box-shadow:0 8px 24px rgba(130,140,200,.20);
+  background:#0c3544;   /* azul petróleo oscuro (referencia PulseMetrics) */
+  color:#fff;
+  box-shadow:0 8px 24px rgba(8,51,68,.28);
   position:sticky;
   top:0;
   z-index:20;
@@ -52,7 +53,7 @@ header{
 }
 @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
   header{
-    background:rgba(255,255,255,.9);
+    background:rgba(12,53,68,.96);
     -webkit-backdrop-filter:blur(14px);
     backdrop-filter:blur(14px);
   }
@@ -65,35 +66,35 @@ header h1{
   padding-left:20px;
   padding-right:20px;
 }
-header h1{margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
+header h1{color:#fff;margin:0 auto;font-size:26px;line-height:1.1;white-space:nowrap;font-weight:800;letter-spacing:-.01em}
 
 /* Línea de marca: borde inferior en gris sutil */
 header::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
-  background:linear-gradient(90deg,#d5d9e2,#c3c8d4 50%,#d5d9e2);
+  background:#d97706;
 }
 
 /* Enlaces de navegación (a la derecha, en la línea del logo) */
 header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px));
   display:flex;gap:18px;height:29px;align-items:center}
-.nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.02em;
+.nav a{color:#9fbac4;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.02em;
   padding:4px 0 3px;border-bottom:2px solid transparent;transition:color .12s}
-.nav a:hover{color:var(--text)}
-.nav a.act{color:var(--text);border-bottom-color:var(--accent)}
+.nav a:hover{color:#fff}
+.nav a.act{color:#fff;border-bottom-color:var(--accent)}
 
 .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 8px 0 -6px;padding:0;
-  vertical-align:middle;background:none;border:0;border-radius:var(--radius);cursor:pointer;color:#000}
+  vertical-align:middle;background:none;border:0;border-radius:var(--radius);cursor:pointer;color:#fff}
 .menu-btn svg{display:block;width:22px;height:16px}
-.menu-btn:hover{background:rgba(0,0,0,.05)}
-.menu-btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.menu-btn:hover{background:rgba(255,255,255,.12)}
+.menu-btn:focus-visible{outline:2px solid #fff;outline-offset:1px}
 .a-logo,.v-logo{display:inline-block;height:.7em;width:.56em;vertical-align:baseline}
 .a-logo{margin-right:.03em;fill:var(--mal)}
 .v-logo{margin-left:.03em;fill:var(--ok)}
 
-.tag{font-size:11px;font-weight:700;color:#6a739c;letter-spacing:.2em;margin-left:8px;
+.tag{font-size:11px;font-weight:700;color:#a9c3cc;letter-spacing:.2em;margin-left:8px;
   vertical-align:middle;display:inline-flex;align-items:center;gap:5px}
 .col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;
-  vertical-align:middle;box-shadow:0 0 0 1px rgba(43,51,88,.12)}
+  vertical-align:middle;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 .col-flag span{display:block;width:100%}
 .col-flag .yellow{height:50%;background:#ffcc00}
 .col-flag .blue{height:25%;background:#0033a0}
@@ -348,13 +349,13 @@ body{overflow-x:hidden}
 /* ---------- Botones del header: Ayuda (index) y Volver (ayuda) ---------- */
 .help-btn{position:absolute;z-index:2;top:50%;right:max(20px,calc(50% - 480px));transform:translateY(-50%);
   display:inline-flex;align-items:center;gap:7px;padding:5px 13px 5px 6px;border-radius:999px;
-  font-size:14px;font-weight:700;line-height:1;letter-spacing:.02em;color:var(--text);text-decoration:none;
-  background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.35);
+  font-size:14px;font-weight:700;line-height:1;letter-spacing:.02em;color:#fff;text-decoration:none;
+  background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.35);
   transition:background .15s,border-color .15s}
-.help-btn:hover{background:rgba(var(--accent-rgb),.16);border-color:rgba(var(--accent-rgb),.6)}
-.help-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.help-btn:hover{background:rgba(255,255,255,.20);border-color:rgba(255,255,255,.6)}
+.help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .help-btn .q{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;
-  background:var(--accent);color:#fff;font-weight:800;font-size:13px}
+  background:#d97706;color:#fff;font-weight:800;font-size:13px}
 @media (max-width:480px){.help-btn{padding:5px;gap:0}.help-btn .t{display:none}}
 @media (min-width:601px) and (max-width:1100px){.help-btn{right:max(24px,calc(50% - 386px))}}
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
