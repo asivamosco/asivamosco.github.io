@@ -112,7 +112,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   /* Cristal total + translúcido (78 %), sin desenfoque (igual que el probador) */
   background:rgba(255,255,255,.78);
   -webkit-backdrop-filter:none;backdrop-filter:none;
-  border:1px solid rgba(255,255,255,.7);
+  border:1px solid var(--borde-card);
   border-radius:var(--radius);
   box-shadow:var(--sombra);
   transition:transform .15s ease,box-shadow .15s ease;
@@ -123,10 +123,10 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 }
 
 /* ---------- Borde superior de tarjetas (del probador): ámbar = economía (arriba), azul = seguridad (abajo) ---------- */
-:root{--line:#f59e0b; --seg:#2f7de1}
+:root{--line:#f59e0b; --seg:#2f7de1; --borde-card:#c3c9d3}   /* gris perla visible: borde de las 6 tarjetas */
 .card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:transparent;pointer-events:none}
-.cat[data-encab="oro"] .card::before{background:var(--line)}
-.cat[data-encab="marino"] .card::before{background:var(--seg)}
+.cat[data-encab="oro"] .card::before,
+.cat[data-encab="marino"] .card::before{background:var(--borde-card)}
 
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -318,7 +318,10 @@ body{overflow-x:hidden}
 /* Tablet/escritorio: la zona llega al borde inferior de la pantalla */
 @media (min-width:601px){
   .page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
-  .zone{flex:1 0 auto}
+  .zone{flex:1 0 auto;display:flex;flex-direction:column}
+  /* Pie de página pegado al borde inferior aunque haya poco contenido */
+  .zone .cats{margin-bottom:30px}
+  .zone footer.site-foot{margin-top:auto}
 }
 .map-solo{display:block;position:absolute;top:calc(-1*var(--hdr-gap) - (100% + var(--hdr-gap) + var(--pg-pad))*.010545);left:50%;height:calc((100% + var(--hdr-gap) + var(--pg-pad))*1.02109);width:auto;aspect-ratio:423/581;transform:translateX(-50%);z-index:-1;pointer-events:none;overflow:visible}
 .map-solo .out{fill:none;stroke:#9aa0ab;stroke-width:2.2;stroke-linejoin:round;vector-effect:non-scaling-stroke}
