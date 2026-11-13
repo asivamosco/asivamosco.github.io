@@ -308,7 +308,7 @@ header.hd{
 }
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
 .hd-title{font-size:19px;font-weight:800;line-height:1.05;letter-spacing:.005em;white-space:nowrap;color:#fff}
-.hd-right{flex:none;display:flex;align-items:center;padding:10px var(--gx) 9px 0}
+.hd-right{flex:none;display:flex;align-items:center;gap:12px;padding:10px var(--gx) 9px 0}
 header.hd h1.brand{
   position:static;transform:none;flex:none;
   width:auto;max-width:none;margin:0;padding:0;
@@ -318,29 +318,39 @@ header.hd h1.brand{
 header.hd .brand-txt{display:flex;align-items:center}
 header.hd .a-logo,header.hd .v-logo{height:.86em;width:.69em}
 header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;padding-left:.32em;line-height:1;color:#cfe3ea}
-/* Ayuda: recuadro transparente con borde blanco solo para el "?", y "Ayuda" en letra pequeña debajo, por fuera; a la derecha del header */
+/* Ayuda: un solo recuadro de borde blanco con el "?" y la palabra "Ayuda" adentro */
 header.hd .help-btn{
-  position:static;transform:none;flex:none;
-  flex-direction:column;justify-content:center;gap:3px;
-  width:auto;height:auto;padding:0;border:0;border-radius:0;
-  background:transparent;color:#fff;
+  position:static;transform:none;flex:none;box-sizing:border-box;
+  flex-direction:column;justify-content:center;align-items:center;gap:3px;
+  width:auto;height:44px;padding:0 11px;border:1.5px solid #fff;border-radius:6px;
+  background:transparent;color:#fff;transition:background .15s;
 }
-header.hd .help-btn:hover{background:transparent;border-color:transparent}
-header.hd .help-btn .q{
-  width:30px;height:30px;border-radius:6px;border:1.5px solid #fff;background:transparent;
-  color:#fff;font-size:17px;font-weight:800;line-height:1;transition:background .15s}
-header.hd .help-btn:hover .q{background:rgba(255,255,255,.18)}
+header.hd .help-btn:hover{background:rgba(255,255,255,.18);border-color:#fff}
+header.hd .help-btn .q{width:auto;height:auto;border:0;border-radius:0;background:transparent;
+  color:#fff;font-size:17px;font-weight:800;line-height:1}
 header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spacing:.02em;line-height:1}
+/* Botón ABELARDO / PETRO: mismo alto que Ayuda; nombre en dos líneas separadas por una raya, sin icono */
+header.hd .pulse-btn{
+  display:inline-flex;align-items:center;gap:7px;flex:none;box-sizing:border-box;
+  height:44px;padding:0 12px;border:1.5px solid #fff;border-radius:6px;
+  background:transparent;color:#fff;text-decoration:none;transition:background .15s}
+header.hd .pulse-btn:hover{background:rgba(255,255,255,.18)}
+header.hd .pulse-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+header.hd .pulse-txt{display:flex;flex-direction:column;align-items:stretch;gap:3px;font-size:11px;font-weight:800;letter-spacing:.06em;line-height:1;text-align:center}
+header.hd .pulse-txt i{display:block;height:1px;background:#fff}
 @media (min-width:901px){header.hd{width:100%;max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
   .hd-title{font-size:14px;white-space:normal;max-width:100px}
-  .hd-right{padding-top:6px;padding-bottom:5px}
+  .hd-right{padding-top:6px;padding-bottom:5px;gap:8px}
+  header.hd .pulse-btn{height:38px;padding:0 8px;gap:4px}
+    header.hd .pulse-txt{font-size:9px;gap:2px}
   header.hd h1.brand{font-size:15px}
   header.hd .brand-sub{font-size:7.5px}
-  header.hd .help-btn .q{width:25px;height:25px;font-size:15px}
-  header.hd .help-btn .t{font-size:9px}
+  header.hd .help-btn{height:38px;padding:0 8px;gap:2px}
+  header.hd .help-btn .q{font-size:15px}
+  header.hd .help-btn .t{font-size:8.5px}
 }
 
 /* =========================================================
