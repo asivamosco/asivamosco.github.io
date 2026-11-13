@@ -136,11 +136,12 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 
 .head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px;
   padding:0}   /* sin recuadro: título y flecha directamente sobre la tarjeta */
-.card h2{margin:0;color:var(--tit);font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
-/* Flecha: negra, sin círculo */
+.card h2{margin:0;color:#056083;   /* azul del header */
+  font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
+/* Flecha: azul del header, sin círculo */
 .go{
   width:26px;height:26px;display:grid;place-items:center;flex:none;
-  color:#000;font-size:26px;font-weight:700;line-height:1;
+  color:#056083;font-size:26px;font-weight:700;line-height:1;
 }
 
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
