@@ -1,0 +1,46 @@
+/* =========================================================
+   Así Vamos · Fondo de la página (degradé, departamentos y mapa)
+   Se carga después de styles.css. La lógica está en assets/js/background.js
+   ========================================================= */
+body{
+  background-color:#f1f2f4;
+  /* Degradé suave de fondo (sin hexágonos) */
+  background-image:linear-gradient(135deg,#e6e8ec 0%,#f4f5f7 35%,#fcfcfc 100%);
+  background-size:cover;background-position:center;background-attachment:fixed;
+}
+
+/* ---------- Celular: fondo vertical ajustado a la pantalla ---------- */
+@media (max-width:600px){
+  body{background-image:none}
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-color:#f1f2f4;
+    background-image:url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%20430%20932%27%20preserveAspectRatio=%27xMidYMid%20slice%27%3E%3Cdefs%3E%3ClinearGradient%20id=%27g%27%20x1=%270%27%20y1=%270%27%20x2=%271%27%20y2=%271%27%3E%3Cstop%20offset=%270%27%20stop-color=%27%23e6e8ec%27/%3E%3Cstop%20offset=%27.35%27%20stop-color=%27%23f4f5f7%27/%3E%3Cstop%20offset=%271%27%20stop-color=%27%23fcfcfc%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%27430%27%20height=%27932%27%20fill=%27url%28%23g%29%27/%3E%3C/svg%3E");
+    background-size:cover;background-position:center;background-repeat:no-repeat;
+  }
+}
+
+/* ---------- Fondo: departamentos de Colombia + red de conexiones ---------- */
+#bgDeptos{position:fixed;inset:0;z-index:-1;pointer-events:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:3vmin;padding:3vmin;align-content:space-around}
+#bgDeptos .dp{width:100%;height:clamp(80px,13vh,130px);fill:#e3e5e9;stroke:#c4c7cc;stroke-width:1.1;stroke-linejoin:round}
+@media (max-width:600px){#bgDeptos{grid-template-columns:repeat(3,1fr)}}
+@media (orientation:landscape){
+  #bgDeptos{display:flex;flex-wrap:wrap;justify-content:center;align-content:space-around}
+  #bgDeptos .dp{order:var(--o);flex:0 0 140px;width:140px}
+}
+@media (orientation:portrait){
+  #bgDeptos,#bgRed{display:none!important}
+  .map-solo{display:block!important}
+  .map-solo .fil,.map-solo .dep{display:none}   
+  .map-solo .out{stroke:#b3b8c1}   
+  .map-solo .cap{display:none}      
+}
+@media (orientation:landscape){.map-solo{display:none!important}}
+
+#bgRed{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+#bgRed .ln line{stroke:#cfd2d8;stroke-width:1;opacity:.7}
+#bgRed .nd circle{fill:#bfc3ca}
+#bgRed .tx text{font:500 10px/1 system-ui,-apple-system,"Segoe UI",sans-serif;fill:#b3b7bf;text-anchor:middle;letter-spacing:.02em}
+@media (max-width:600px){#bgRed .tx text{font-size:8px}}
+
+.map-solo .red line{stroke:#8f95a1;stroke-width:1;opacity:.6;vector-effect:non-scaling-stroke}
