@@ -296,26 +296,26 @@ footer.site-foot{
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
 @media (max-width:600px) and (orientation:portrait){.help-btn{right:10px}}
 /* =========================================================
-   Header (index): degradé azul → verde azulado, título a la izquierda,
-   "Así Vamos" al centro con la bandera debajo, y botón Ayuda a la derecha.
+   Header (index): azul sólido (igual al footer). A la izquierda: menú + "Así Vamos - Principales indicadores"; botón Ayuda a la derecha.
    Todo va bajo header.hd para no tocar otras páginas.
    ========================================================= */
 header.hd{
   --gx:20px;
   display:flex;align-items:stretch;padding:0;
-  background:linear-gradient(90deg,#056083 35%,#038da1 100%);color:#fff;
+  background:#056083;color:#fff;   /* sólido, mismo azul del footer */
 }
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
-.hd-title{font-size:21px;font-weight:800;line-height:1.05;letter-spacing:.005em;white-space:nowrap;color:#fff}
+.hd-title{font-size:19px;font-weight:800;line-height:1.05;letter-spacing:.005em;white-space:nowrap;color:#fff}
 .hd-right{flex:none;display:flex;align-items:center;gap:10px;padding-right:var(--gx)}
 header.hd h1.brand{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  position:static;transform:none;flex:none;
   width:auto;max-width:none;margin:0;padding:0;
-  display:flex;flex-direction:column;align-items:center;gap:3px;
-  font-size:19px;line-height:1.1;font-weight:800;letter-spacing:-.01em;white-space:nowrap;color:#fff;
+  display:flex;align-items:center;
+  font-size:21px;line-height:1.05;font-weight:800;letter-spacing:.005em;white-space:nowrap;color:#fff;
 }
 header.hd .brand-txt{display:flex;align-items:center}
-header.hd .flag{display:block;flex:none;width:20px;height:13px;margin:0;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+header.hd .a-logo,header.hd .v-logo{height:.86em;width:.69em}
+header.hd .hd-sep{flex:none;margin:0 .4em;font-size:21px;font-weight:800;line-height:1.05;color:#fff}
 /* Ayuda: recuadro transparente con borde blanco solo para el "?", y "Ayuda" en letra pequeña debajo, por fuera; a la derecha del header */
 header.hd .help-btn{
   position:static;transform:none;flex:none;
@@ -334,10 +334,10 @@ header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spaci
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
-  .hd-title{font-size:15px;white-space:normal;max-width:100px}
+  .hd-title{font-size:14px;white-space:normal;max-width:100px}
   .hd-right{gap:6px}
   header.hd h1.brand{font-size:15px}
-  header.hd .flag{width:16px;height:11px}
+  header.hd .hd-sep{font-size:15px}
   header.hd .help-btn .q{width:25px;height:25px;font-size:15px}
   header.hd .help-btn .t{font-size:9px}
 }
