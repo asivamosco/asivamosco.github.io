@@ -8,9 +8,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --text:#2b3358; --tit:#2b3358; --muted:#8a93b5;
-  --accent:#5b6cf0; --accent-rgb:91,108,240;   /* Índigo */
-  --royal:#5b6cf0;
+  --text:#12303d; --tit:#12303d; --muted:#8a93b5;   /* texto: azul petróleo muy oscuro, de la familia del header */
+  --accent:#0f6b7a; --accent-rgb:15,107,122;   /* Teal (aro del último punto, foco) */
+  --royal:#0f6b7a;
   --ok:#0fa37f;    --ok-rgb:15,163,127;     /* Verde esmeralda (armoniza con el teal del header) */
   --mal:#ee5a4a;   --mal-rgb:238,90,74;     /* Rojo coral */
   --ok-txt:#0a8566; --mal-txt:#d6402f;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
@@ -81,7 +81,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .nav a{color:#9fbac4;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.02em;
   padding:4px 0 3px;border-bottom:2px solid transparent;transition:color .12s}
 .nav a:hover{color:#fff}
-.nav a.act{color:#fff;border-bottom-color:var(--accent)}
+.nav a.act{color:#fff;border-bottom-color:#d97706}
 
 .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 8px 0 -6px;padding:0;
   vertical-align:middle;background:none;border:0;border-radius:var(--radius);cursor:pointer;color:#fff}
@@ -160,7 +160,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .spark .pt.empeoro{fill:var(--mal)}
 .spark .fin{fill:#fff;stroke:var(--accent);stroke-width:2.4}
 .spark .v1{font-size:14px;fill:#8a93b5;font-weight:600}
-.spark .v2{font-size:19px;font-weight:800;fill:#2b3358}
+.spark .v2{font-size:19px;font-weight:800;fill:#12303d}
 .spark .lbl-mes{font-size:11px;fill:#a2a9c6;font-weight:600;font-family:inherit;}
 
 /* Fuente de cada tarjeta */
@@ -184,8 +184,8 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .ad-wrap[hidden],.sp[hidden]{display:none}
 .ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 4px 2px}
 .sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;
-  background:#e4e8f5;border-radius:var(--radius);
-  box-shadow:inset 0 2px 6px rgba(130,140,200,.18)}
+  background:#0f4c5c;border-radius:var(--radius);   /* teal de la familia del header; el texto blanco del mensaje se lee bien */
+  box-shadow:inset 0 2px 6px rgba(8,51,68,.35)}
 .sp a,.sp picture{display:block;width:100%;height:100%}
 .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 @media (max-width:767px), (max-width:850px) and (orientation:portrait){
