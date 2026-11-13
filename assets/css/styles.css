@@ -297,7 +297,7 @@ footer.site-foot{
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
 @media (max-width:600px) and (orientation:portrait){.help-btn{right:10px}}
 /* =========================================================
-   Header (index): azul sólido (igual al footer). Izquierda: "Principales indicadores"; centro: botón Ayuda; derecha: "Así Vamos" con COLOMBIA debajo.
+   Header (index): azul sólido (igual al footer). Izquierda: "Así Vamos" con COLOMBIA debajo; derecha: botón Ayuda.
    Todo va bajo header.hd para no tocar otras páginas.
    ========================================================= */
 header.hd{
@@ -320,7 +320,7 @@ header.hd .a-logo,header.hd .v-logo{height:.86em;width:.69em}
 header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;padding-left:.32em;line-height:1;color:#cfe3ea}
 /* Ayuda: recuadro transparente con borde blanco solo para el "?", y "Ayuda" en letra pequeña debajo, por fuera; a la derecha del header */
 header.hd .help-btn{
-  position:absolute;top:50%;left:50%;right:auto;transform:translate(-50%,-50%);flex:none;
+  position:static;transform:none;flex:none;
   flex-direction:column;justify-content:center;gap:3px;
   width:auto;height:auto;padding:0;border:0;border-radius:0;
   background:transparent;color:#fff;
@@ -331,7 +331,7 @@ header.hd .help-btn .q{
   color:#fff;font-size:17px;font-weight:800;line-height:1;transition:background .15s}
 header.hd .help-btn:hover .q{background:rgba(255,255,255,.18)}
 header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spacing:.02em;line-height:1}
-@media (min-width:901px){header.hd{max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
+@media (min-width:901px){header.hd{width:100%;max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
@@ -341,4 +341,18 @@ header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spaci
   header.hd .brand-sub{font-size:7.5px}
   header.hd .help-btn .q{width:25px;height:25px;font-size:15px}
   header.hd .help-btn .t{font-size:9px}
+}
+
+/* =========================================================
+   Footer: el azul llena todo el espacio desde el footer hasta el
+   final de la pantalla (no solo la altura de su contenido).
+   No aplica en celular vertical, donde la página ya ocupa 100dvh.
+   ========================================================= */
+@media not all and (max-width:600px) and (orientation:portrait){
+  .page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+  .page > .zone{flex:1 1 auto;display:flex;flex-direction:column}
+  .page > .zone > footer.site-foot{flex:1 0 auto}
+  /* En un contenedor flex, margin:auto hace que el elemento se encoja a su contenido: se fuerza el ancho */
+  .page > header.hd{width:100%}
+  .page > .zone > .cats{width:100%}
 }
