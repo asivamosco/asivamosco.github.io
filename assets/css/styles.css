@@ -11,9 +11,9 @@
   --text:#12303d; --tit:#12303d; --muted:#8a93b5;   /* texto: azul petróleo muy oscuro, de la familia del header */
   --accent:#0f6b7a; --accent-rgb:15,107,122;   /* Teal (aro del último punto, foco) */
   --royal:#0f6b7a;
-  --ok:#1fb98f;    --ok-rgb:31,185,143;     /* Verde esmeralda (armoniza con el petróleo azulado del header) */
-  --mal:#e5484d;   --mal-rgb:229,72,77;     /* Rojo carmín */
-  --ok-txt:#0a8566; --mal-txt:#cf3a40;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
+  --ok:#14b8a6;    --ok-rgb:20,184,166;     /* Verde mar (paleta elegida en el probador) */
+  --mal:#e8553d;   --mal-rgb:232,85,61;     /* Rojo cálido */
+  --ok-txt:#0b8577; --mal-txt:#c4412b;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
   --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
   --bg:#e9ebef;    /* Gris ceniza */
   --radius:6px;
@@ -41,13 +41,13 @@ body{
 
 /* ---------- Encabezado: panel blanco flotante ---------- */
 header{
-  width:calc(100vw - 20px);          /* luz de 10 px a cada lado */
-  margin-left:calc(50% - 50vw + 10px);
+  width:calc(100vw - 10px);          /* luz de 5 px a cada lado */
+  margin-left:calc(50% - 50vw + 5px);
   margin-bottom:18px;
   background:#055f82;background:linear-gradient(100deg,#03739b 0%,#056083 45%,#05435b 100%);   /* degradé de la referencia: azul petróleo claro → oscuro */
   color:#fff;
   box-shadow:none;
-  border-radius:0 0 18px 18px;
+  border-radius:0 0 12px 12px;
   position:sticky;
   top:0;
   z-index:20;
@@ -111,10 +111,10 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 }
 
 /* ---------- Borde superior de tarjetas (del probador): ámbar = economía (arriba), azul = seguridad (abajo) ---------- */
-:root{--line:#f59e0b; --seg:#2f7de1; --borde-card:#c3c9d3}   /* gris perla visible: borde de las 6 tarjetas */
+:root{--line:#f59e0b; --seg:#2f7de1; --borde-card:#c3c9d3; --borde-top:#056083}   /* borde-card: gris perla del contorno; borde-top: azul del header, solo franja superior */
 .card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:transparent;pointer-events:none}
 .cat[data-encab="oro"] .card::before,
-.cat[data-encab="marino"] .card::before{background:var(--borde-card)}
+.cat[data-encab="marino"] .card::before{background:var(--borde-top)}
 
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -219,8 +219,8 @@ footer.site-foot{
      de .page (10px) para quedar alineado con las tarjetas */
   header{
     width:auto;
-    margin:0;
-    padding:6px 10px 5px;
+    margin:0 -5px;
+    padding:6px 15px 5px;
   }
   header h1{max-width:none;padding-left:0;padding-right:0}
   header h1{font-size:20px}
