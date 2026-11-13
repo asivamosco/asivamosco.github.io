@@ -296,26 +296,23 @@ footer.site-foot{
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
 @media (max-width:600px) and (orientation:portrait){.help-btn{right:10px}}
 /* =========================================================
-   Header (index): azul, con "Así Vamos" + bandera en un recuadro blanco
-   que cuelga desde el borde superior y ocupa todo el alto del header.
+   Header (index): degradé azul → turquesa, "Así Vamos" + bandera en blanco.
    Todo va bajo header.hd para no tocar otras páginas.
    ========================================================= */
 header.hd{
   --gx:20px;
   display:flex;align-items:stretch;padding:0;
-  background:#056083;color:#fff;
+  background:linear-gradient(90deg,#056083 0%,#02cfce 100%);color:#fff;
 }
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
 .hd-title{font-size:15px;font-weight:800;letter-spacing:.01em;white-space:nowrap;color:#fff}
-.hd-right{flex:none;display:flex;align-items:flex-start;gap:10px;padding-right:var(--gx)}
+.hd-right{flex:none;display:flex;align-items:center;gap:10px;padding-right:var(--gx)}
 header.hd h1.brand{
-  width:auto;max-width:none;margin:0;padding:0 14px;
-  height:calc(50% + 14px);   /* de arriba hasta el borde inferior del botón Ayuda (28 px, centrado) */
+  width:auto;max-width:none;margin:0;padding:0;
   display:flex;align-items:center;gap:0;
-  background:#fff;border-radius:0 0 8px 8px;
-  font-size:22px;line-height:1.1;font-weight:800;letter-spacing:-.01em;white-space:nowrap;color:#056083;
+  font-size:24px;line-height:1.1;font-weight:800;letter-spacing:-.01em;white-space:nowrap;color:#fff;
 }
-header.hd .flag{display:block;flex:none;width:24px;height:16px;margin-left:8px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.12)}
+header.hd .flag{display:block;flex:none;width:24px;height:16px;margin-left:8px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.35)}
 header.hd .help-btn{position:static;transform:none;flex:none;align-self:center;height:28px;padding-top:0;padding-bottom:0}
 @media (min-width:601px) and (max-width:1100px){header.hd{--gx:max(24px,calc(50vw - 386px))}}
 @media (min-width:901px){header.hd{--gx:calc(50vw - 357px)}}
@@ -324,7 +321,7 @@ header.hd .help-btn{position:static;transform:none;flex:none;align-self:center;h
   .hd-left{padding-top:6px;padding-bottom:5px}
   .hd-title{font-size:12.5px}
   .hd-right{gap:6px}
-  header.hd h1.brand{font-size:17px;padding:0 9px;height:calc(50% + 13px)}
+  header.hd h1.brand{font-size:18px}
   header.hd .help-btn{height:26px}
   header.hd .flag{width:18px;height:12px;margin-left:6px}
 }
