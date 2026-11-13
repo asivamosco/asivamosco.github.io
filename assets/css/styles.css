@@ -11,9 +11,9 @@
   --text:#12303d; --tit:#12303d; --muted:#8a93b5;   /* texto: azul petróleo muy oscuro, de la familia del header */
   --accent:#0f6b7a; --accent-rgb:15,107,122;   /* Teal (aro del último punto, foco) */
   --royal:#0f6b7a;
-  --ok:#0fa37f;    --ok-rgb:15,163,127;     /* Verde esmeralda (armoniza con el teal del header) */
-  --mal:#ee5a4a;   --mal-rgb:238,90,74;     /* Rojo coral */
-  --ok-txt:#0a8566; --mal-txt:#d6402f;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
+  --ok:#1fb98f;    --ok-rgb:31,185,143;     /* Verde esmeralda (armoniza con el petróleo azulado del header) */
+  --mal:#e5484d;   --mal-rgb:229,72,77;     /* Rojo carmín */
+  --ok-txt:#0a8566; --mal-txt:#cf3a40;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
   --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
   --bg:#e9ebef;    /* Gris ceniza */
   --radius:6px;
@@ -44,9 +44,9 @@ header{
   width:100vw;
   margin-left:calc(50% - 50vw);
   margin-bottom:18px;
-  background:#0c3544;   /* azul petróleo oscuro (referencia PulseMetrics) */
+  background:#0b3a53;   /* petróleo azulado */
   color:#fff;
-  box-shadow:0 8px 24px rgba(8,51,68,.28);
+  box-shadow:0 8px 24px rgba(7,40,60,.30);
   position:sticky;
   top:0;
   z-index:20;
@@ -54,7 +54,7 @@ header{
 }
 @supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
   header{
-    background:rgba(12,53,68,.96);
+    background:rgba(11,58,83,.96);
     -webkit-backdrop-filter:blur(14px);
     backdrop-filter:blur(14px);
   }
@@ -72,7 +72,7 @@ header h1{color:#fff;margin:0 auto;font-size:26px;line-height:1.1;white-space:no
 /* Línea de marca: borde inferior en gris sutil */
 header::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
-  background:#d97706;
+  background:#f59e0b;   /* ámbar */
 }
 
 /* Enlaces de navegación (a la derecha, en la línea del logo) */
@@ -81,7 +81,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .nav a{color:#9fbac4;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:.02em;
   padding:4px 0 3px;border-bottom:2px solid transparent;transition:color .12s}
 .nav a:hover{color:#fff}
-.nav a.act{color:#fff;border-bottom-color:#d97706}
+.nav a.act{color:#fff;border-bottom-color:#f59e0b}
 
 .menu-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 8px 0 -6px;padding:0;
   vertical-align:middle;background:none;border:0;border-radius:var(--radius);cursor:pointer;color:#fff}
@@ -356,7 +356,7 @@ body{overflow-x:hidden}
 .help-btn:hover{background:rgba(255,255,255,.20);border-color:rgba(255,255,255,.6)}
 .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .help-btn .q{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;
-  background:#d97706;color:#fff;font-weight:800;font-size:13px}
+  background:#f59e0b;color:#0b3a53;font-weight:800;font-size:13px}
 @media (max-width:480px){.help-btn{padding:5px;gap:0}.help-btn .t{display:none}}
 @media (min-width:601px) and (max-width:1100px){.help-btn{right:max(24px,calc(50% - 386px))}}
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
