@@ -122,6 +122,12 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   box-shadow:var(--sombra-hover);
 }
 
+/* ---------- Borde superior de tarjetas (del probador): ámbar = economía (arriba), azul = seguridad (abajo) ---------- */
+:root{--line:#f59e0b; --seg:#2f7de1}
+.card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:transparent;pointer-events:none}
+.cat[data-encab="oro"] .card::before{background:var(--line)}
+.cat[data-encab="marino"] .card::before{background:var(--seg)}
+
 /* ---------- Tarjetas compactas ---------- */
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .card{
@@ -192,7 +198,21 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
   .sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}
 }
 
-footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-weight:600}
+/* Pie de página: mismo azul del header, a todo el ancho, línea ámbar arriba; contiene publicidad y texto */
+.page:has(.site-foot){padding-bottom:0}
+footer.site-foot{
+  width:100vw;margin:30px 0 0 calc(50% - 50vw);
+  background:#0b3a53;color:#fff;position:relative;
+  box-shadow:0 -8px 24px rgba(7,40,60,.30);
+  padding:14px 0 12px;
+}
+footer.site-foot::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--line)}
+.foot-in{max-width:1000px;margin:0 auto;padding:0 20px}
+.site-foot .sponsors{margin-top:0}
+.site-foot .ad-label{color:#a9c3cc}
+.site-foot .sp{box-shadow:none}
+.foot-txt{margin:10px 0 0;text-align:center;color:#a9c3cc;font-size:13px;font-weight:600}
+.sponsors:has(.ad-wrap[hidden]) + .foot-txt{margin-top:0}
 
 /* =========================================================
    RESPONSIVE DESIGN
@@ -237,7 +257,9 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
 
   .sponsors{flex:0 0 auto;margin:0}
   .ad-label{font-size:9px;margin-bottom:3px;text-align:center}
-  footer{margin:0;font-size:10px;line-height:1.2}
+  footer.site-foot{width:auto;margin:0 -10px;padding:8px 10px 6px}
+  .foot-in{padding:0}
+  .foot-txt{margin-top:6px;font-size:10px;line-height:1.2}
 }
 
 /* ---------- Tablets ---------- */
@@ -259,7 +281,7 @@ footer{margin-top:30px;text-align:center;color:var(--muted);font-size:13px;font-
   .cats{max-width:714px;margin:0 auto}
   .grid{grid-template-columns:repeat(3,226px) !important;justify-content:center;gap:14px !important}
   .card{height:226px;justify-content:space-between}
-  .sponsors{max-width:714px;margin-left:auto;margin-right:auto}
+  .foot-in{max-width:714px;padding:0}
   header h1{max-width:714px;padding-left:0;padding-right:0;}
   header .nav{right:calc(50% - 357px)}
 }
@@ -292,7 +314,7 @@ body::before{display:none!important}
 /* Mapa de Colombia: su altura va de justo debajo del header al final del pie de página */
 #bgCol{display:none}
 body{overflow-x:hidden}
-.zone{--hdr-gap:18px;--pg-pad:40px;position:relative}
+.zone{--hdr-gap:18px;--pg-pad:0px;position:relative}
 /* Tablet/escritorio: la zona llega al borde inferior de la pantalla */
 @media (min-width:601px){
   .page{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
