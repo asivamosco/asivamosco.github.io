@@ -296,29 +296,30 @@ footer.site-foot{
 @media (min-width:901px){.help-btn{right:calc(50% - 357px)}}
 @media (max-width:600px) and (orientation:portrait){.help-btn{right:10px}}
 /* =========================================================
-   Header (index): azul sólido (igual al footer). A la izquierda: menú + "Así Vamos - Principales indicadores"; botón Ayuda a la derecha.
+   Header (index): azul sólido (igual al footer). Izquierda: "Principales indicadores"; centro: botón Ayuda; derecha: "Así Vamos" con COLOMBIA debajo.
    Todo va bajo header.hd para no tocar otras páginas.
    ========================================================= */
 header.hd{
   --gx:20px;
+  width:auto;margin-left:0;margin-right:0;   /* mismo ancho que las tarjetas (el contenido de .page) */
   display:flex;align-items:stretch;padding:0;
   background:#056083;color:#fff;   /* sólido, mismo azul del footer */
 }
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
 .hd-title{font-size:19px;font-weight:800;line-height:1.05;letter-spacing:.005em;white-space:nowrap;color:#fff}
-.hd-right{flex:none;display:flex;align-items:center;gap:10px;padding-right:var(--gx)}
+.hd-right{flex:none;display:flex;align-items:center;padding:10px var(--gx) 9px 0}
 header.hd h1.brand{
   position:static;transform:none;flex:none;
   width:auto;max-width:none;margin:0;padding:0;
-  display:flex;align-items:center;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
   font-size:21px;line-height:1.05;font-weight:800;letter-spacing:.005em;white-space:nowrap;color:#fff;
 }
 header.hd .brand-txt{display:flex;align-items:center}
 header.hd .a-logo,header.hd .v-logo{height:.86em;width:.69em}
-header.hd .hd-sep{flex:none;margin:0 .4em;font-size:21px;font-weight:800;line-height:1.05;color:#fff}
+header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;padding-left:.32em;line-height:1;color:#cfe3ea}
 /* Ayuda: recuadro transparente con borde blanco solo para el "?", y "Ayuda" en letra pequeña debajo, por fuera; a la derecha del header */
 header.hd .help-btn{
-  position:static;transform:none;flex:none;
+  position:absolute;top:50%;left:50%;right:auto;transform:translate(-50%,-50%);flex:none;
   flex-direction:column;justify-content:center;gap:3px;
   width:auto;height:auto;padding:0;border:0;border-radius:0;
   background:transparent;color:#fff;
@@ -329,15 +330,14 @@ header.hd .help-btn .q{
   color:#fff;font-size:17px;font-weight:800;line-height:1;transition:background .15s}
 header.hd .help-btn:hover .q{background:rgba(255,255,255,.18)}
 header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spacing:.02em;line-height:1}
-@media (min-width:601px) and (max-width:1100px){header.hd{--gx:max(24px,calc(50vw - 386px))}}
-@media (min-width:901px){header.hd{--gx:calc(50vw - 357px)}}
+@media (min-width:901px){header.hd{max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
   .hd-title{font-size:14px;white-space:normal;max-width:100px}
-  .hd-right{gap:6px}
+  .hd-right{padding-top:6px;padding-bottom:5px}
   header.hd h1.brand{font-size:15px}
-  header.hd .hd-sep{font-size:15px}
+  header.hd .brand-sub{font-size:7.5px}
   header.hd .help-btn .q{width:25px;height:25px;font-size:15px}
   header.hd .help-btn .t{font-size:9px}
 }
