@@ -9,14 +9,16 @@
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#1f2547; --mute:#7f84a6; --line:#e3e5ee;
-  --acc:#5b63f0; --up:#e8434f; --dn:#0f9ccf; --up-l:#f4505e; --dn-l:#2fc4ee;
-  --mal:#f2555f; --ok:#2ec8ee;
+  --acc:#5b63f0; --up:#ee5a4a; --dn:#0fa37f; --up-l:#ee5a4a; --dn-l:#0fa37f;
+  --mal:#ee5a4a; --ok:#0fa37f; --up-t:#d6402f; --dn-t:#0a8566;
   --r:6px; --sh:0 1px 2px rgba(40,50,110,.06),0 10px 26px rgba(40,50,110,.09);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif}
 .up{color:var(--up)} .dn{color:var(--dn)}
+/* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
+.vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
 a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .top{position:sticky;top:0;z-index:5;background:#0c3544;box-shadow:0 4px 14px rgba(8,51,68,.28);border-bottom:3px solid #d97706;padding:10px 0}

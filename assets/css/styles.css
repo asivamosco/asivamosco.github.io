@@ -11,8 +11,9 @@
   --text:#2b3358; --tit:#2b3358; --muted:#8a93b5;
   --accent:#5b6cf0; --accent-rgb:91,108,240;   /* Índigo */
   --royal:#5b6cf0;
-  --ok:#2ec8ee;    --ok-rgb:46,200,238;     /* Cian */
-  --mal:#f2555f;   --mal-rgb:242,85,95;     /* Rojo */
+  --ok:#0fa37f;    --ok-rgb:15,163,127;     /* Verde esmeralda (armoniza con el teal del header) */
+  --mal:#ee5a4a;   --mal-rgb:238,90,74;     /* Rojo coral */
+  --ok-txt:#0a8566; --mal-txt:#d6402f;      /* Variantes más oscuras para texto pequeño sobre blanco (≈4,5:1) */
   --ambar:#f5b84a; --ambar-rgb:245,184,74; --ambar-txt:#c98a10;
   --bg:#e9ebef;    /* Gris ceniza */
   --radius:6px;
