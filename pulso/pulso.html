@@ -87,9 +87,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   .mid{padding:8px 10px}
   .tabs{grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto}
   .pers{align-self:stretch;padding-bottom:8px}
-  .foto{height:92px;aspect-ratio:auto}
-  .foto img{object-fit:cover;object-position:center 20%}
-  .pnom{font-size:13px;margin-top:5px}.pper{display:none}
+  .pnom{font-size:13px;margin-top:2px;white-space:nowrap}.pper{display:none}
   .score{margin-top:2px;gap:5px}.score b{font-size:20px}.score span{font-size:10px;max-width:none}
   .head h3{font-size:18px}.head .src{display:none}
   .win{font-size:14px;padding:4px 9px}
@@ -99,6 +97,9 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 @media(orientation:portrait){
   main{grid-template-rows:none;align-content:center}
   #chart{flex:none;height:min(40vh,85vw);height:min(40dvh,85vw);min-height:150px}
+}
+@media(orientation:portrait) and (max-width:760px){
+  #chart{height:min(34vh,70vw);height:min(34dvh,70vw);min-height:140px}
 }
 </style>
 </head>
