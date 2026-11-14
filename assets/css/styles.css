@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700;800&display=swap');
 
 :root{
-  --text:#12303d; --tit:#12303d; --muted:#8a93b5;   /* texto: azul petróleo muy oscuro, de la familia del header */
+  --text:#12303d; --tit:#12303d; --muted:#7d93a0;   /* texto: azul petróleo muy oscuro, de la familia del header */
   --accent:#0f6b7a; --accent-rgb:15,107,122;   /* Teal (aro del último punto, foco) */
   --royal:#0f6b7a;
   --ok:#14b8a6;    --ok-rgb:20,184,166;     /* Verde mar (paleta elegida en el probador) */
@@ -150,14 +150,14 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 .spark .ln{fill:none;stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round}
 .spark .ln.ln-mejoro{stroke:var(--ok)}
 .spark .ln.ln-empeoro{stroke:var(--mal)}
-.spark .ln.ln-neu{stroke:#b9c0e0}
-.spark .pt{fill:#b9c0e0}
+.spark .ln.ln-neu{stroke:#a9bac4}
+.spark .pt{fill:#a9bac4}
 .spark .pt.mejoro{fill:var(--ok)}
 .spark .pt.empeoro{fill:var(--mal)}
 .spark .fin{fill:#fff;stroke:var(--accent);stroke-width:2.4}
-.spark .v1{font-size:14px;fill:#8a93b5;font-weight:600}
+.spark .v1{font-size:14px;fill:#7d93a0;font-weight:600}
 .spark .v2{font-size:19px;font-weight:800;fill:#12303d}
-.spark .lbl-mes{font-size:11px;fill:#a2a9c6;font-weight:600;font-family:inherit;}
+.spark .lbl-mes{font-size:11px;fill:#9db0bb;font-weight:600;font-family:inherit;}
 
 /* Fuente de cada tarjeta */
 .card .sub{
@@ -358,6 +358,11 @@ header.hd .pulse-btn .chev{font-size:18px;font-weight:800;line-height:1;margin-t
   header.hd .brand-sub{font-size:7px;letter-spacing:.28em}
   header.hd .help-btn{height:38px;width:38px}
   header.hd .help-btn .q{font-size:16px}
+}
+
+/* Celular vertical: el header va de borde a borde de la pantalla (compensa el padding de 10px de .page; el contenido sigue alineado con las tarjetas) */
+@media (max-width:600px) and (orientation:portrait){
+  header.hd{width:auto;margin-left:-10px;margin-right:-10px;border-radius:0}
 }
 
 /* =========================================================
