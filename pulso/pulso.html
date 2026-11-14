@@ -19,12 +19,12 @@ body{background:var(--bg);color:var(--ink);font:400 15px/1.35 "Roboto Condensed"
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
-header.hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px max(16px,env(safe-area-inset-left,0px)) 7px;background:#12303d;color:#fff}
+header.hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;--gx:max(16px,calc(50vw - 414px));padding:8px var(--gx) 7px;background:#12303d;color:#fff}
 .ttl{display:flex;align-items:baseline;gap:10px;min-width:0}
 .ttl h1{margin:0;font:400 28px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
 .ttl span{font-size:15px;color:#cfe3ea}
 .rt{display:flex;align-items:center;gap:14px}
-.brand{display:flex;flex-direction:column;align-items:flex-end;gap:4px;color:#fff;text-decoration:none}
+.brand{display:flex;flex-direction:column;align-items:flex-start;gap:4px;color:#fff;text-decoration:none}
 .brand b{font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
 .brand span{font-size:8px;font-weight:700;letter-spacing:.32em;color:#cfe3ea}
 .back i{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid #cfe3ea;border-radius:6px;background:rgba(255,255,255,.08);font-style:normal;font-size:16px;color:#cfe3ea;text-decoration:none}
@@ -34,7 +34,10 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:860px;margin:
   display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid #12303d}
 
-.pers.p{grid-area:a}.pers.a{grid-area:p}.tabs{grid-area:t}.mid{grid-area:c}
+.pers.p{grid-area:a}.pers.a{grid-area:p}.tcol{grid-area:t;align-self:center;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ptl{display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center}
+.ptl h1{margin:0;font:400 26px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
+.ptl span{font-size:14px;color:var(--mute)}.mid{grid-area:c}
 .pers{display:flex;flex-direction:column;align-items:center;text-align:center;align-self:center;min-width:0;background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid;overflow:hidden;padding-bottom:10px}
 .pers.a{border-top-color:var(--cA)}.pers.p{border-top-color:var(--cP)}
 .foto{width:100%;aspect-ratio:600/490;position:relative;background:linear-gradient(180deg,#f7f9fa,#e6edf0)}
@@ -77,6 +80,7 @@ dialog strong{color:var(--ink)}
 dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padding:7px 14px;cursor:pointer}
 
 @media(max-width:760px){
+  header.hd{--gx:10px}
   .ttl h1{font-size:22px}.ttl span{display:none}
   .brand b{font-size:20px}.back{display:none}
   main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
@@ -95,11 +99,8 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 </head>
 <body>
 <header class="hd">
-  <div class="ttl"><h1>Pulso</h1><span>Dos gobiernos, mismas reglas</span></div>
-  <div class="rt">
-    <a class="brand" href="../index.html" aria-label="Así Vamos, volver al inicio"><b>Así Vamos</b><span>COLOMBIA</span></a>
-    <a class="back" href="../index.html" aria-label="Volver al inicio"><i aria-hidden="true">←</i></a>
-  </div>
+  <a class="brand" href="../index.html" aria-label="Así Vamos, volver al inicio"><b>Así Vamos</b><span>COLOMBIA</span></a>
+  <a class="back" href="../index.html" aria-label="Volver al inicio"><i aria-hidden="true">←</i></a>
 </header>
 
 <main aria-live="polite">
@@ -110,7 +111,10 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
     <div class="score"><b id="sP"></b><span>indicadores favorables</span></div>
   </article>
 
-  <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
+  <div class="tcol">
+    <div class="ptl"><h1>Pulso</h1><span>Dos gobiernos, mismas reglas</span></div>
+    <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
+  </div>
   <section class="card mid" aria-label="Comparación por indicador">
     <div class="head">
       <div><h3 id="tit"></h3><div class="src" id="src"></div></div>
