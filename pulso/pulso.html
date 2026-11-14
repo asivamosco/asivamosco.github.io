@@ -28,10 +28,12 @@ header.hd{flex:none;display:flex;align-items:center;justify-content:space-betwee
 .brand b{font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
 .brand span{font-size:8px;font-weight:700;letter-spacing:.32em;color:#cfe3ea}
 .back i{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid #cfe3ea;border-radius:6px;background:rgba(255,255,255,.08);font-style:normal;font-size:16px;color:#cfe3ea;text-decoration:none}
+.back{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:#cfe3ea;font:700 8.5px/1 Montserrat,sans-serif;letter-spacing:.05em;text-transform:uppercase}
+.back i{width:32px;height:32px}
 footer{flex:none;background:#12303d;color:#cfe3ea;text-align:center;font-size:12px;font-weight:600;padding:8px 10px}
 
 main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:860px;margin:0 auto;padding:12px 16px;
-  display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
+  display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid #12303d}
 
 .pers.p{grid-area:a}.pers.a{grid-area:p}.tcol{grid-area:t;align-self:center;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -49,7 +51,7 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:860px;margin:
 .score b{font-size:24px;line-height:1;font-weight:800}.score b small{font-size:14px;color:var(--mute)}
 .score span{font-size:11px;color:var(--mute);line-height:1.1;text-align:left;max-width:80px}
 
-.mid{display:flex;flex-direction:column;min-height:0;padding:12px 14px;gap:10px}
+.mid{display:flex;flex-direction:column;padding:12px 14px;gap:10px}
 .tabs{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto auto auto;gap:6px;grid-auto-flow:column;align-self:center;min-height:0}
 .tabs button{display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid var(--line);background:#fff;border-radius:var(--r);padding:7px 6px;cursor:pointer;font-weight:700;font-size:14px;white-space:nowrap}
 .tabs button[aria-selected=true]{background:#12303d;color:#fff;border-color:#12303d}
@@ -82,8 +84,8 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 @media(max-width:760px){
   header.hd{--gx:10px}
   .ttl h1{font-size:22px}.ttl span{display:none}
-  .brand b{font-size:20px}.back{display:none}
-  main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
+  .brand b{font-size:20px}
+  main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
   .mid{padding:8px 10px}
   .tabs{grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto}
   .pers{align-self:stretch;padding-bottom:8px}
@@ -106,7 +108,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 <body>
 <header class="hd">
   <a class="brand" href="../index.html" aria-label="Así Vamos, volver al inicio"><b>Así Vamos</b><span>COLOMBIA</span></a>
-  <a class="back" href="../index.html" aria-label="Volver al inicio"><i aria-hidden="true">←</i></a>
+  <a class="back" href="../index.html" aria-label="Volver al inicio"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></i><span>Volver</span></a>
 </header>
 
 <main aria-live="polite">
@@ -201,7 +203,7 @@ const COL = {a:'var(--cA)', p:'var(--cP)', e:'#a9bac4'};
 function drawChart(ind){
   const el = $('#chart'), W = el.clientWidth, H = el.clientHeight;
   if (!W || !H) return;
-  const L = 46, R = 56, T = 16, B = 26;
+  const L = 46, R = 56, T = 16, B = 32;
   const A = ind.A, P = ind.P.slice(0, win + 1), all = A.concat(P);
   let mn = Math.min(...all), mx = Math.max(...all); const pad = (mx - mn || 1) * .14; mn -= pad; mx += pad;
   const x = m => L + m * (W - L - R) / win, y = v => T + (H - T - B) * (1 - (v - mn) / (mx - mn));
@@ -211,7 +213,7 @@ function drawChart(ind){
     s += `<line x1="${L}" x2="${W-R}" y1="${yy}" y2="${yy}" stroke="#e1e7ea"/><text x="${L-6}" y="${yy+4}" text-anchor="end" font-size="11" fill="#6f8695">${fmt(v, ind.d)}</text>`;
   }
   const step = win === 3 ? 1 : win === 12 ? 2 : 12;
-  for (let m = 0; m <= win; m += step) s += `<text x="${x(m)}" y="${H-7}" text-anchor="middle" font-size="11" fill="#6f8695">${m === 0 ? 'mes 0' : 'mes ' + m}</text>`;
+  for (let m = 0; m <= win; m += step) s += `<text x="${x(m)}" y="${H-10}" text-anchor="middle" font-size="11" fill="#6f8695">${m === 0 ? 'mes 0' : 'mes ' + m}</text>`;
   if (win > MA) s += `<line x1="${x(MA)}" x2="${x(MA)}" y1="${T}" y2="${H-B}" stroke="#a9bac4" stroke-dasharray="4 4"/><text x="${x(MA)+4}" y="${T+8}" font-size="10" fill="#6f8695">mes 3: comparación</text>`;
   const path = (v, c) => `<polyline fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" points="${v.map((q,i)=>x(i).toFixed(1)+','+y(q).toFixed(1)).join(' ')}"/>`;
   const dots = (v, c) => (v.length <= 14 ? v.map((q,i)=>`<circle cx="${x(i)}" cy="${y(q)}" r="3.5" fill="${c}"/>`).join('') : '');
