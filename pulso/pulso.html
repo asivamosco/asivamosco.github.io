@@ -86,10 +86,11 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(0,1fr);grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
   .mid{padding:8px 10px}
   .tabs{grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto}
-  .pers{flex-direction:row;align-items:center;text-align:left;gap:8px;align-self:stretch;padding:0 6px 0 0}
-  .foto{flex:none;width:72px;align-self:stretch;aspect-ratio:auto}
-  .pnom{font-size:13px;margin:0;padding:0}.pper{display:none}
-  .score{margin-top:3px;justify-content:flex-start}.score b{font-size:20px}.score span{font-size:10px}
+  .pers{align-self:stretch;padding-bottom:8px}
+  .foto{height:92px;aspect-ratio:auto}
+  .foto img{object-fit:cover;object-position:center 20%}
+  .pnom{font-size:13px;margin-top:5px}.pper{display:none}
+  .score{margin-top:2px;gap:5px}.score b{font-size:20px}.score span{font-size:10px;max-width:none}
   .head h3{font-size:18px}.head .src{display:none}
   .win{font-size:14px;padding:4px 9px}
   .tabs button{padding:7px 4px;font-size:13px}
@@ -97,7 +98,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 }
 @media(orientation:portrait){
   main{grid-template-rows:none;align-content:center}
-  #chart{flex:none;height:40dvh;min-height:170px}
+  #chart{flex:none;height:min(40vh,85vw);height:min(40dvh,85vw);min-height:150px}
 }
 </style>
 </head>
