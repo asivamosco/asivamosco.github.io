@@ -112,7 +112,7 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 }
 
 /* ---------- Borde superior de tarjetas (del probador): ámbar = economía (arriba), azul = seguridad (abajo) ---------- */
-:root{--line:#f59e0b; --seg:#2f7de1; --borde-card:#c3c9d3; --borde-top:#056083}   /* borde-card: gris perla del contorno; borde-top: azul del header, solo franja superior */
+:root{--line:#f59e0b; --seg:#2f7de1; --borde-card:#c3c9d3; --borde-top:#12303d}   /* borde-card: gris perla del contorno; borde-top: petróleo de marca, solo franja superior */
 .card::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:transparent;pointer-events:none}
 .cat[data-encab="oro"] .card::before,
 .cat[data-encab="marino"] .card::before{background:var(--borde-top)}
@@ -136,12 +136,12 @@ header .nav{position:absolute;z-index:2;top:10px;right:max(24px,calc(50% - 386px
 
 .head{width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:6px;
   padding:0}   /* sin recuadro: título y flecha directamente sobre la tarjeta */
-.card h2{margin:0;color:#056083;   /* azul del header */
+.card h2{margin:0;color:#12303d;   /* petróleo de marca */
   font-size:15.5px;font-weight:800;line-height:1.15;white-space:nowrap;flex:none}
-/* Flecha: azul del header, sin círculo */
+/* Flecha: petróleo de marca, sin círculo */
 .go{
   width:26px;height:26px;display:grid;place-items:center;flex:none;
-  color:#056083;font-size:26px;font-weight:700;line-height:1;
+  color:#12303d;font-size:26px;font-weight:700;line-height:1;
 }
 
 /* Gráfico sparkline y etiquetas nativas dentro del SVG */
@@ -197,6 +197,7 @@ footer.site-foot{
   padding:14px 0 12px;
 }
 .foot-in{max-width:1000px;margin:0 auto;padding:0 20px}
+.page:has(header.hd) footer.site-foot{background:#12303d}   /* footer petróleo en el index */
 .site-foot .sponsors{margin-top:0}
 .site-foot .ad-label{color:#cfe3ea}
 .site-foot .sp{box-shadow:none}
@@ -304,7 +305,7 @@ header.hd{
   --gx:20px;
   width:auto;margin-left:0;margin-right:0;   /* mismo ancho que las tarjetas (el contenido de .page) */
   display:flex;align-items:stretch;padding:0;
-  background:#056083;color:#fff;   /* sólido, mismo azul del footer */
+  background:#12303d;color:#fff;   /* petróleo de marca */
 }
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
 .hd-title{font-size:19px;font-weight:800;line-height:1.05;letter-spacing:.005em;white-space:nowrap;color:#fff}
@@ -312,45 +313,51 @@ header.hd{
 header.hd h1.brand{
   position:static;transform:none;flex:none;
   width:auto;max-width:none;margin:0;padding:0;
-  display:flex;flex-direction:column;align-items:center;gap:3px;
-  font-size:21px;line-height:1.05;font-weight:800;letter-spacing:.005em;white-space:nowrap;color:#fff;
+  display:flex;flex-direction:row;align-items:center;gap:10px;
+  color:#fff;white-space:nowrap;
 }
-header.hd .brand-txt{display:flex;align-items:center}
-header.hd .a-logo,header.hd .v-logo{height:.86em;width:.69em}
-header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;padding-left:.32em;line-height:1;color:#cfe3ea}
-/* Ayuda: un solo recuadro de borde blanco con el "?" y la palabra "Ayuda" adentro */
-header.hd .help-btn{
-  position:static;transform:none;flex:none;box-sizing:border-box;
-  flex-direction:column;justify-content:center;align-items:center;gap:3px;
-  width:auto;height:44px;padding:0 11px;border:1.5px solid #fff;border-radius:6px;
-  background:transparent;color:#fff;transition:background .15s;
-}
-header.hd .help-btn:hover{background:rgba(255,255,255,.18);border-color:#fff}
-header.hd .help-btn .q{width:auto;height:auto;border:0;border-radius:0;background:transparent;
-  color:#fff;font-size:17px;font-weight:800;line-height:1}
-header.hd .help-btn .t{display:block;font-size:10px;font-weight:700;letter-spacing:.02em;line-height:1}
-/* Botón ABELARDO / PETRO: mismo alto que Ayuda; nombre en dos líneas separadas por una raya, sin icono */
+header.hd .brand-col{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+header.hd .brand-txt{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.01em}
+header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;line-height:1;color:#cfe3ea}
+/* Botones del header (opción 2 del probador: Ámbar #f59e0b sobre petróleo; mismo ámbar de la línea de tendencia --line).
+   Cada botón lleva su etiqueta debajo en Montserrat. */
+header.hd{--hd-acc:#f59e0b;--hd-acc-bg:rgba(245,158,11,.12);--hd-acc-bg-h:rgba(245,158,11,.25)}
+header.hd .btn-group{display:flex;flex-direction:column;align-items:center;gap:4px}
+header.hd .btn-caption{font-family:Montserrat,"Segoe UI",sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.05em;line-height:1;color:#cfe3ea;text-transform:uppercase;white-space:nowrap}
+header.hd .help-btn,
 header.hd .pulse-btn{
-  display:inline-flex;align-items:center;gap:7px;flex:none;box-sizing:border-box;
-  height:44px;padding:0 12px;border:1.5px solid #fff;border-radius:6px;
-  background:transparent;color:#fff;text-decoration:none;transition:background .15s}
-header.hd .pulse-btn:hover{background:rgba(255,255,255,.18)}
+  position:static;transform:none;flex:none;box-sizing:border-box;height:40px;
+  display:inline-flex;align-items:center;
+  border:1.5px solid var(--hd-acc);border-radius:6px;background:var(--hd-acc-bg);color:var(--hd-acc);
+  text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+header.hd .help-btn:hover,
+header.hd .pulse-btn:hover{background:var(--hd-acc-bg-h);border-color:var(--hd-acc);color:#fff}
+header.hd .help-btn:focus-visible,
 header.hd .pulse-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* Ayuda: cuadrado con "?" */
+header.hd .help-btn{justify-content:center;width:40px;padding:0}
+header.hd .help-btn .q{width:auto;height:auto;border:0;border-radius:0;background:transparent;color:inherit;font-size:18px;font-weight:800;line-height:1}
+/* ABELARDO / PETRO: nombre en dos líneas con raya, borde izquierdo grueso y flecha › */
+header.hd .pulse-btn{justify-content:space-between;gap:10px;padding:0 11px 0 9px;border-left-width:4.5px}
 header.hd .pulse-txt{display:flex;flex-direction:column;align-items:stretch;gap:3px;font-size:11px;font-weight:800;letter-spacing:.06em;line-height:1;text-align:center}
-header.hd .pulse-txt i{display:block;height:1px;background:#fff}
+header.hd .pulse-txt i{display:block;height:1px;background:var(--hd-acc);transition:background .15s}
+header.hd .pulse-btn:hover .pulse-txt i{background:#fff}
+header.hd .pulse-btn .chev{font-size:18px;font-weight:800;line-height:1;margin-top:-1px}
 @media (min-width:901px){header.hd{width:100%;max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
   .hd-title{font-size:14px;white-space:normal;max-width:100px}
   .hd-right{padding-top:6px;padding-bottom:5px;gap:8px}
-  header.hd .pulse-btn{height:38px;padding:0 8px;gap:4px}
-    header.hd .pulse-txt{font-size:9px;gap:2px}
-  header.hd h1.brand{font-size:15px}
-  header.hd .brand-sub{font-size:7.5px}
-  header.hd .help-btn{height:38px;padding:0 8px;gap:2px}
-  header.hd .help-btn .q{font-size:15px}
-  header.hd .help-btn .t{font-size:8.5px}
+  header.hd .pulse-btn{height:38px;padding:0 7px 0 7px;gap:5px;border-left-width:4px}
+  header.hd .pulse-txt{font-size:9px;gap:2px}
+  header.hd .pulse-btn .chev{font-size:15px}
+  header.hd .btn-caption{font-size:7px}
+  header.hd h1.brand{gap:7px}
+  header.hd .brand-txt{font-size:22px}
+  header.hd .brand-sub{font-size:7px;letter-spacing:.28em}
+  header.hd .help-btn{height:38px;width:38px}
+  header.hd .help-btn .q{font-size:16px}
 }
 
 /* =========================================================
