@@ -95,6 +95,10 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   .tabs button{padding:7px 4px;font-size:13px}
   #chart{min-height:130px}
 }
+@media(orientation:portrait){
+  main{grid-template-rows:none;align-content:center}
+  #chart{flex:none;height:40dvh;min-height:170px}
+}
 </style>
 </head>
 <body>
