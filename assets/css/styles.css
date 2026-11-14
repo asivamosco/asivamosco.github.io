@@ -335,15 +335,17 @@ header.hd .pulse-btn:hover{background:var(--hd-acc-bg-h);border-color:var(--hd-a
 header.hd .help-btn:focus-visible,
 header.hd .pulse-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 /* Ayuda: cuadrado con "?" */
+/* Ayuda: tono neutro (blanco azulado, opción 6 del probador) para que no compita con el ámbar del botón de Pulso */
+header.hd .help-btn{--hd-acc:#cfe3ea;--hd-acc-bg:rgba(255,255,255,.08);--hd-acc-bg-h:rgba(255,255,255,.2)}
+header.hd .help-btn:hover{border-color:#fff}
 header.hd .help-btn{justify-content:center;width:40px;padding:0}
 header.hd .help-btn .q{width:auto;height:auto;border:0;border-radius:0;background:transparent;color:inherit;font-size:18px;font-weight:800;line-height:1}
 /* ABELARDO / PETRO: nombre en dos líneas con raya, borde izquierdo grueso y flecha › */
 header.hd .pulse-btn{justify-content:space-between;gap:10px;padding:0 11px 0 9px;border-left-width:4.5px}
-header.hd .pulse-txt{display:flex;flex-direction:column;align-items:stretch;gap:3px;font-size:11px;font-weight:800;letter-spacing:.06em;line-height:1;text-align:center}
+header.hd .pulse-txt{display:flex;flex-direction:column;align-items:stretch;gap:3px;font-size:11px;font-weight:800;letter-spacing:.06em;line-height:1;text-align:left}
 header.hd .pulse-txt i{display:block;height:1px;background:var(--hd-acc);transition:background .15s}
 header.hd .pulse-btn:hover .pulse-txt i{background:#fff}
 header.hd .pulse-btn .chev{font-size:18px;font-weight:800;line-height:1;margin-top:-1px}
-@media (min-width:901px){header.hd{width:100%;max-width:706px;margin-left:auto;margin-right:auto}}   /* 3 tarjetas de 226 + 2 huecos de 14 */
 @media (max-width:600px){
   header.hd{--gx:10px}
   .hd-left{padding-top:6px;padding-bottom:5px}
@@ -375,6 +377,18 @@ header.hd .pulse-btn .chev{font-size:18px;font-weight:800;line-height:1;margin-t
   .page > .zone{flex:1 1 auto;display:flex;flex-direction:column}
   .page > .zone > footer.site-foot{flex:1 0 auto}
   /* En un contenedor flex, margin:auto hace que el elemento se encoja a su contenido: se fuerza el ancho */
-  .page > header.hd{width:100%}
+  /* Header a todo el ancho de la pantalla (igual que el footer); el contenido se alinea con las tarjetas mediante --gx */
+  .page > header.hd{width:100vw;max-width:none;margin-left:calc(50% - 50vw);margin-right:0;border-radius:0}
   .page > .zone > .cats{width:100%}
+}
+
+/* Header a todo el ancho: logo y botones alineados con el borde de las tarjetas */
+@media not all and (max-width:600px) and (orientation:portrait){
+  header.hd{--gx:20px}
+}
+@media (min-width:601px) and (max-width:900px){
+  header.hd{--gx:max(24px,calc(50vw - 386px))}
+}
+@media (min-width:901px){
+  header.hd{--gx:max(20px,calc(50vw - 353px))}   /* 3 tarjetas de 226 + 2 huecos de 14 = 706 */
 }
