@@ -5,37 +5,58 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Barlow+Semi+Condensed:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
 <style>
 :root{
-  --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#7f84a6; --line:#e3e5ee;
-  --acc:#0f6b7a; --up:#e5484d; --dn:#1fb98f; --up-l:#e5484d; --dn-l:#1fb98f;
-  --mal:#e5484d; --ok:#1fb98f; --up-t:#cf3a40; --dn-t:#0a8566;
-  --r:6px; --sh:0 1px 2px rgba(40,50,110,.06),0 10px 26px rgba(40,50,110,.09);
+  --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
+  --acc:#0f6b7a; --up:#e8553d; --dn:#14b8a6; --up-l:#e8553d; --dn-l:#14b8a6;
+  --mal:#e8553d; --ok:#14b8a6; --up-t:#c4412b; --dn-t:#0b8577;
+  --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
 .up{color:var(--up)} .dn{color:var(--dn)}
 /* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
 .vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
 a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-.top{position:sticky;top:0;margin:0 10px;z-index:5;background:#055f82;background:linear-gradient(100deg,#03739b 0%,#056083 45%,#05435b 100%);box-shadow:none;border-radius:0 0 18px 18px;padding:10px 0}
-.top-in{max-width:960px;margin:0 auto;padding:0 16px;display:flex;align-items:center}
-.top a.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;border-radius:var(--r)}
-.top .chev{width:20px;height:20px;flex:none;margin-left:-6px}
-.logo{font:800 26px/1.1 "Barlow Semi Condensed",system-ui,sans-serif;letter-spacing:-.01em;white-space:nowrap}
-.a-logo,.v-logo{display:inline-block;height:.7em;width:.56em;vertical-align:baseline}
-.a-logo{margin-right:.03em;fill:currentColor} .v-logo{margin-left:.03em;fill:currentColor}
-.tag{font-size:11px;font-weight:700;color:#cfe3ea;letter-spacing:.2em;margin-left:8px;vertical-align:middle;display:inline-flex;align-items:center;gap:5px}
-.col-flag{display:inline-block;width:14px;height:10px;border-radius:1px;overflow:hidden;vertical-align:middle;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
-.col-flag span{display:block;width:100%}
-.col-flag .yellow{height:50%;background:#ffcc00} .col-flag .blue{height:25%;background:#0033a0} .col-flag .red{height:25%;background:#ce1126}
-main{max-width:960px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:18px}
+/* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
+header.hd{--gx:max(16px,calc(50vw - 464px));--hd-acc:#cfe3ea;--hd-acc-bg:rgba(255,255,255,.08);--hd-acc-bg-h:rgba(255,255,255,.2);
+  position:sticky;top:0;z-index:20;display:flex;align-items:stretch;margin:0;padding:0;background:#12303d;color:#fff}
+.hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx)}
+.hd-right{flex:none;display:flex;align-items:center;gap:12px;padding:10px var(--gx) 9px 0}
+header.hd h1.brand{margin:0;padding:0;display:flex;font-size:inherit;font-weight:400;color:#fff;white-space:nowrap}
+header.hd a.home{display:block;color:#fff;text-decoration:none;border-radius:6px}
+header.hd a.home:focus-visible{outline:2px solid #fff;outline-offset:4px}
+header.hd .brand-col{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+header.hd .brand-txt{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.01em}
+header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;line-height:1;color:#cfe3ea}
+header.hd .btn-group{display:flex;flex-direction:column;align-items:center;gap:4px}
+header.hd .btn-caption{font-family:Montserrat,"Segoe UI",sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.05em;line-height:1;color:#cfe3ea;text-transform:uppercase;white-space:nowrap}
+header.hd .help-btn{box-sizing:border-box;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;
+  border:1.5px solid var(--hd-acc);border-radius:6px;background:var(--hd-acc-bg);color:var(--hd-acc);
+  font-size:18px;font-weight:800;line-height:1;text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+header.hd .help-btn:hover{background:var(--hd-acc-bg-h);border-color:#fff;color:#fff}
+header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+footer.site-foot{background:#12303d;color:#fff;padding:14px 0 12px}
+.foot-in{max-width:960px;margin:0 auto;padding:0 16px}
+.foot-txt{margin:0;text-align:center;color:#cfe3ea;font-size:13px;font-weight:600}
+@media(max-width:600px){
+  header.hd{--gx:10px}
+  .hd-left{padding-top:6px;padding-bottom:5px}
+  .hd-right{padding-top:6px;padding-bottom:5px}
+  header.hd .brand-txt{font-size:22px}
+  header.hd .brand-sub{font-size:7px;letter-spacing:.28em}
+  header.hd .help-btn{width:38px;height:38px}
+  header.hd .btn-caption{font-size:7px}
+  .foot-in{padding:0 10px}
+  .foot-txt{font-size:10px;line-height:1.2}
+}
+main{flex:1 0 auto;width:100%;max-width:960px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:18px}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
 .card h2{margin:0 0 12px;font-size:19px;font-weight:700}
-.badge{position:absolute;top:-10px;right:14px;background:#dfe3ee;color:#4b5478;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
+.badge{position:absolute;top:-10px;right:14px;background:#dde5ea;color:#3f5563;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
 .mute{color:var(--mute)} small{font-size:13px}
 /* hero */
 .hero{display:grid;grid-template-columns:auto 1fr;gap:8px 36px;align-items:center}
@@ -68,11 +89,11 @@ main{max-width:960px;margin:0 auto;padding:20px 16px 48px;display:grid;gap:18px}
 .seg button[aria-pressed=true]{background:var(--acc);color:#fff}
 .list{display:grid}
 .row{all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto 96px;gap:4px 12px;align-items:center;padding:9px 6px;border-top:1px solid var(--line)}
-.row:hover{background:#f7f8fc} .row[aria-pressed=true]{background:#e8f3f5}
+.row:hover{background:#f4f7f8} .row[aria-pressed=true]{background:#e8f3f5}
 .row:focus-visible{outline:2px solid var(--acc)}
 .rk{color:var(--mute);text-align:right;font-size:14px}
 .nm{display:grid;gap:5px;min-width:0}
-.bar{display:block;height:6px;background:#eceef6;border-radius:3px;overflow:hidden}
+.bar{display:block;height:6px;background:#e6ecef;border-radius:3px;overflow:hidden}
 .bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
 .vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
 .vr{text-align:right;font-size:15px;font-weight:500}
@@ -85,7 +106,6 @@ svg{width:100%;height:auto;display:block}
 svg text{font-family:inherit;fill:var(--mute);font-size:15px}
 svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .err{padding:24px;text-align:center}
-@media(max-width:480px){.tag{display:none}}
 @media(max-width:560px){
   .hero{grid-template-columns:1fr} .hero .big{font-size:68px}
   .row{grid-template-columns:22px 1fr auto;} .vr{grid-column:2/-1;text-align:left}
@@ -93,13 +113,21 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 </style>
 </head>
 <body>
-<header class="top"><div class="top-in">
-  <a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio">
-    <svg class="chev" viewBox="0 0 20 20" aria-hidden="true"><path d="M12 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <span class="logo" aria-hidden="true"><svg class="a-logo" viewBox="0 0 56 70"><polygon points="35,0 21,0 0,70 16,70 28,26 35.7,54.2 30.9,55.6 48,69.2 54.8,48.4 50,49.9"/></svg>sí <svg class="v-logo" viewBox="0 0 56 70"><polygon points="35,70 21,70 0,0 16,0 28,44 35.7,15.8 30.9,14.4 48,0.8 54.8,21.6 50,20.1"/></svg>amos<span class="tag"><i class="col-flag"><span class="yellow"></span><span class="blue"></span><span class="red"></span></i> COLOMBIA</span></span>
-  </a>
-</div></header>
+<header class="hd">
+  <div class="hd-left">
+    <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true">Así Vamos</span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
+  </div>
+  <div class="hd-right">
+    <div class="btn-group">
+      <a class="help-btn" href="../index.html" aria-label="Volver al inicio"><span aria-hidden="true">←</span></a>
+      <span class="btn-caption" aria-hidden="true">Volver</span>
+    </div>
+  </div>
+</header>
 <main id="app" aria-live="polite"><div class="card err mute">Cargando…</div></main>
+<footer class="site-foot">
+  <div class="foot-in"><p class="foot-txt">Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p></div>
+</footer>
 
 <script>
 const IND = new URLSearchParams(location.search).get('ind') || 'desempleo';
@@ -110,7 +138,7 @@ const fmt = (n, d = 1) => n == null ? '—' : Number(n).toLocaleString('es-CO', 
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
 const pers = m => m == null ? '—' : Math.round(m * 1000).toLocaleString('es-CO');
 const persSg = m => m == null ? '—' : (m > 0 ? '+' : m < 0 ? '−' : '') + pers(Math.abs(m));
-// En desempleo, subir es lo malo (rojo) y bajar lo bueno (cian)
+// En desempleo, subir es lo malo (rojo) y bajar lo bueno (verde)
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
 
