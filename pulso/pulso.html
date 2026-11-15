@@ -33,12 +33,16 @@ header.hd{flex:none;display:flex;align-items:center;justify-content:space-betwee
 .hdt{display:none;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;min-width:0}
 .hdt h1{margin:0;font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em;color:#fff}
 .hdt span{font-size:11px;line-height:1.1;color:#cfe3ea}
-footer{flex:none;background:#12303d;color:#cfe3ea;text-align:center;font-size:12px;font-weight:600;padding:8px 10px}
-.foot-txt{margin:0}
-.ad-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 3px;text-align:center}
-.sp{position:relative;overflow:hidden;width:100%;max-width:728px;aspect-ratio:970/90;margin:0 auto 6px;background:#0f4c5c;border-radius:var(--r);display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
+footer{flex:none;background:#12303d;color:#cfe3ea;padding:14px 0 12px}
+.foot-in{max-width:1000px;margin:0 auto;padding:0 20px}
+.foot-txt{margin:10px 0 0;text-align:center;color:#cfe3ea;font-size:13px;font-weight:600}
+.ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 4px 2px}
+.sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;background:#0f4c5c;border-radius:var(--r);display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
 .sp a,.sp picture{display:block;width:100%;height:100%}
 .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
+@media (max-width:767px), (max-width:850px) and (orientation:portrait){.sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}}
+@media (min-width:901px){.foot-in{max-width:714px;padding:0}}
+@media (max-width:600px) and (orientation:portrait){footer{padding:8px 10px 6px}.foot-in{padding:0}.ad-label{font-size:9px;margin-bottom:3px;text-align:center}.foot-txt{margin-top:6px;font-size:10px;line-height:1.2}}
 
 main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:0 auto;padding:12px 16px;
   display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr) minmax(140px,260px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
@@ -110,12 +114,8 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   .tabs button{padding:7px 4px;font-size:13px}
   #chart{min-height:130px}
 }
-@media(orientation:landscape) and (max-height:500px){
-  .ad-label{display:none}.sp{max-width:468px;margin-bottom:4px}
-}
 @media(orientation:portrait){
   .hdt{display:flex}.ptl{display:none}
-  .sp{max-width:320px;aspect-ratio:320/100}
   .tmenu{display:block}.seg{display:none}
   .head{flex-wrap:wrap}.head>div:first-child{min-width:0}
   main{grid-template-rows:none;align-content:start}
@@ -176,11 +176,13 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 </dialog>
 
 <footer>
+ <div class="foot-in">
   <div class="ad-wrap" id="adWrap">
     <div class="ad-label">Aliado estratégico</div>
     <div class="sp" id="adA"><span>Espacio publicitario</span></div>
   </div>
   <p class="foot-txt">Prototipo con datos de ejemplo · Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
+ </div>
 </footer>
 
 <script>
