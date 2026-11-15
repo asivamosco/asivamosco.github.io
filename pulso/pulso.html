@@ -19,7 +19,7 @@ body{background:var(--bg);color:var(--ink);font:400 15px/1.35 "Roboto Condensed"
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
-header.hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;--gx:max(16px,calc(50vw - 474px));padding:8px var(--gx) 7px;background:#12303d;color:#fff}
+header.hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;--gx:max(16px,calc(50vw - 344px));padding:8px var(--gx) 7px;background:#12303d;color:#fff}
 .ttl{display:flex;align-items:baseline;gap:10px;min-width:0}
 .ttl h1{margin:0;font:400 28px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
 .ttl span{font-size:15px;color:#cfe3ea}
@@ -41,11 +41,11 @@ footer{flex:none;background:#12303d;color:#cfe3ea;padding:14px 0 12px}
 .sp a,.sp picture{display:block;width:100%;height:100%}
 .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 @media (max-width:767px), (max-width:850px) and (orientation:portrait){.sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}}
-@media (min-width:901px){.foot-in{max-width:714px;padding:0}}
+@media (min-width:901px){.foot-in{max-width:688px;padding:0}}
 @media (max-width:600px) and (orientation:portrait){footer{padding:8px 10px 6px}.foot-in{padding:0}.ad-label{font-size:9px;margin-bottom:3px;text-align:center}.foot-txt{margin-top:6px;font-size:10px;line-height:1.2}}
 
-main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:0 auto;padding:12px 16px;
-  display:grid;grid-template-columns:minmax(140px,225px) minmax(0,1fr) minmax(140px,225px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
+main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:0 auto;padding:12px 16px;
+  display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid #12303d}
 
 .pers.p{grid-area:a}.pers.a{grid-area:p}.tcol{grid-area:t;align-self:center;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -103,6 +103,20 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:
 .stats b{font-weight:800}
 .dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 .ok{color:var(--ok-t)}.mal{color:var(--mal-t)}.neu{color:var(--mute)}
+#tabla{flex:1 0 auto;display:none;flex-direction:column;justify-content:center;gap:10px}
+.vt #tabla{display:flex}
+.vt #chart,.vt .foot,.vt .win,.vt .tmenu,.vt .bk{display:none}
+.bk{display:inline-flex;align-items:center;height:26px;padding:0 9px;border:1.5px solid var(--mute);border-radius:var(--r);background:#fff;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.tb{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center}
+.tb .th{font-size:13px;font-weight:700;color:var(--mute);text-align:center}
+.tb .ln{grid-column:1/-1;height:1px;background:var(--line)}
+.tt{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:38px;padding:6px 10px;border:1px solid var(--line);border-left:5px solid #12303d;border-radius:var(--r);background:#fff;font-weight:700;font-size:15px;text-align:left;cursor:pointer}
+.tt:hover{background:#eef2f4}.tt i{font-style:normal;color:var(--mute)}
+.sq{justify-self:center;width:min(100%,38px);aspect-ratio:1;border-radius:6px;display:grid;place-items:center;color:#fff;font:800 17px/1 Montserrat,sans-serif}
+.sq.p{background:var(--cP)}.sq.a{background:var(--cA)}.sq.e{background:#a9bac4}
+.mk{text-align:center;font:400 24px/1 Anton,Impact,sans-serif;color:var(--ink)}
+.lg{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:13px;color:var(--mute)}
+.lg b{display:inline-grid;place-items:center;width:16px;height:16px;border-radius:4px;margin-right:5px;color:#fff;font:800 10px/1 Montserrat,sans-serif;vertical-align:-3px}
 dialog{max-width:520px;border:0;border-radius:var(--r);box-shadow:var(--sh);padding:16px 18px;color:#3f5563}
 dialog::backdrop{background:rgba(18,48,61,.45)}
 dialog h4{margin:0 0 8px;font-size:18px;color:var(--ink)}
@@ -160,6 +174,119 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
     padding:6px 10px;border-radius:var(--r);border:2px solid var(--bg);box-shadow:var(--sh)}
   #chart{height:min(22vh,50vw);height:min(22dvh,50vw);min-height:115px}
 }
+
+/* ===== Mejor desempeño: lista por presidente, junto a su card ===== */
+.mdt{margin:0;text-align:center;font:800 16px/1.1 "Roboto Condensed",system-ui,sans-serif;color:var(--ink);letter-spacing:.02em}
+.mdt::after{content:"";display:block;width:34px;height:3px;margin:5px auto 0;border-radius:2px;background:#12303d}
+.tcol .tabs{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-auto-flow:row;gap:6px 8px;align-items:start;align-self:stretch;width:100%;container-type:normal}
+.tcol .tg{display:flex;flex-direction:column;gap:6px;min-width:0;flex:none;margin:0;grid-template-columns:none}
+.tcol .tg.tp{grid-column:1;grid-row:1;order:1}
+.tcol .tg.ta{grid-column:2;grid-row:1;order:2}
+.tcol .tg.c2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.tcol .tg.te{grid-column:1/-1;grid-row:2;order:3;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center}
+.tcol .tg.te:empty{display:none}
+.tcol .tg.te .tgt{flex:0 0 100%;text-align:center;font-size:12px;color:var(--mute)}
+.tcol .tg button{grid-column:auto!important;width:100%;min-width:0;padding:7px 6px;font-size:13px;line-height:1.1;white-space:normal;text-align:center}
+.tcol .tg.te button{width:auto;flex:0 0 calc(50% - 4px)}
+@media(max-width:760px){
+  .tcol .tg.c2{display:flex}
+  .tcol .tabs{column-gap:8px}
+}
+@media(orientation:portrait) and (max-width:760px){
+  /* mismas columnas y separación que las cards de arriba: cada lista queda justo debajo de su presidente */
+  .tcol .tabs{column-gap:20px}
+  .tcol{gap:10px}
+  .tcol .tg button{min-height:34px}
+}
+/* ===== Tabla: que se pinte bien en vertical ===== */
+@media(max-width:480px){
+  .mid{padding:10px 8px}
+  .tb{grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));gap:6px}
+  .tt{min-height:36px;padding:5px 6px 5px 8px;font-size:13.5px;line-height:1.1;border-left-width:4px;gap:2px}
+  .tb .th{font-size:12px}
+  .sq{width:min(100%,34px);font-size:15px}
+  .mk{font-size:21px}
+  .lg{font-size:12px;gap:4px 10px}
+  .head h3{font-size:17px}
+}
+
+/* ===== Lista simple (sin cards), una sola columna por presidente ===== */
+.tcol .tabs .tg.c2{display:flex;flex-direction:column}
+.tcol .tabs .tg{gap:2px}
+.tcol .tabs .tg button[data-v]{width:100%;min-height:0;padding:4px 2px;border:0;border-radius:0;background:transparent;box-shadow:none;
+  justify-content:flex-start;text-align:left;gap:7px;font-size:14px;font-weight:500;line-height:1.15;white-space:normal;color:var(--ink)}
+.tcol .tabs .tg button[data-v]::before{content:"";flex:none;width:8px;height:8px;border-radius:2px;background:var(--cP)}
+.tcol .tabs .tg.ta button[data-v]::before{background:var(--cA)}
+.tcol .tabs .tg.te button[data-v]::before{background:#a9bac4}
+.tcol .tabs .tg button[data-v]:hover{text-decoration:underline}
+.tcol .tabs .tg button[data-v][aria-selected=true]{background:transparent;border:0;font-weight:800;text-decoration:underline}
+.tcol .tabs .tg.te button[data-v]{width:auto;flex:0 0 auto}
+@media(orientation:portrait) and (max-width:760px){.tcol .tg button{min-height:0}}
+
+/* ===== Tabla: temas sin card, cuadros claros con letra oscura, marcador bajo cada mes ===== */
+.tt{border:0;border-radius:0;background:transparent;box-shadow:none;padding:6px 2px;min-height:34px;font-weight:600}
+.tt:hover{background:transparent;text-decoration:underline}
+.sq.p{background:#fdf0cf;color:#8a5200}
+.sq.a{background:#dce8fa;color:#00347f}
+.sq.e{background:#e6ecef;color:#5b7381}
+.lg b.p{background:#fdf0cf;color:#8a5200}.lg b.a{background:#dce8fa;color:#00347f}.lg b.e{background:#e6ecef;color:#5b7381}
+.tb .th{align-self:end}
+@media(max-width:480px){.tt{padding:5px 2px;border-left-width:0}}
+
+/* Vista tabla: sin título ni fuente, solo el botón de info */
+.vt .head>div:first-child{display:none}
+.vt .head{justify-content:flex-end;margin-bottom:-6px}
+
+/* Lista de Abelardo pegada al borde derecho, contra su card */
+.tcol .tabs .tg.ta button[data-v]{flex-direction:row-reverse;justify-content:flex-start;text-align:right}
+
+/* ===== Columna Total ===== */
+.tb{grid-template-columns:minmax(0,1.45fr) repeat(4,minmax(0,1fr))}
+.th-tot,.mk-tot{color:var(--ink)}
+.th-tot{font-weight:800}
+.mk-tot{font-size:26px}
+.sq-tot{box-shadow:0 0 0 2px #12303d}
+@media(max-width:480px){.tb{grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));gap:6px 5px}.mk{font-size:19px}.mk-tot{font-size:22px}.tt{font-size:13px}}
+
+/* Botón i junto al título "Marcador" (a su izquierda) */
+.vt .head{display:none}
+.mkl{display:flex;align-items:center;justify-content:flex-start;gap:6px;text-align:left}
+.info-t{width:22px;height:22px;font-size:12px;line-height:1;padding:0;display:grid;place-items:center}
+@media(max-width:480px){.mkl{gap:4px;font-size:12px}.info-t{width:20px;height:20px;font-size:11px}}
+
+/* ===== Tabla compacta (evitar scroll) ===== */
+.mid{padding:8px 10px;gap:6px}
+#tabla{gap:6px}
+.tb{gap:3px 5px}
+.tt{min-height:28px;padding:2px 2px;font-size:14px}
+.sq{width:min(100%,29px);font-size:14px;border-radius:5px}
+.sq-tot{box-shadow:0 0 0 1.5px #12303d}
+.tb .th{font-size:12px}
+.mk{font-size:20px}.mk-tot{font-size:22px}
+.tb .ln{margin:1px 0}
+.lg{font-size:11.5px;gap:2px 10px}.lg b{width:14px;height:14px;font-size:9px}
+@media(max-width:480px){.mid{padding:6px 8px}.tt{font-size:13px;min-height:28px}.sq{width:min(100%,28px)}.mk{font-size:18px}.mk-tot{font-size:20px}}
+
+@media(max-height:780px){
+  main{padding-top:8px;padding-bottom:8px;row-gap:8px}
+  .mid{padding:6px 10px;gap:4px}#tabla{gap:4px}
+  .tb{gap:2px 5px}
+  .tt{min-height:24px;padding:1px 2px}
+  .sq{width:min(100%,25px);font-size:13px}
+  .tb .th{font-size:11px}.mk{font-size:17px;line-height:1.05}.mk-tot{font-size:19px}
+  .lg{font-size:11px}
+}
+
+/* Tabla pegada arriba: sin espacio sobrante entre el borde de la card y los encabezados */
+.vt #tabla{justify-content:flex-start}
+main.vt .mid{align-self:start;padding-top:4px}
+@media(min-width:761px){.pid.nw .pnom{font-size:15.5px}}
+
+/* Listas de mejor desempeño compactas */
+.mdt{font-size:15px}.mdt::after{margin-top:4px}
+.tcol .tabs .tg{gap:0}
+.tcol .tabs .tg button[data-v]{padding:2px 2px;font-size:13.5px;line-height:1.15}
+@media(orientation:portrait) and (max-width:760px){.tcol{gap:6px}.tcol .tabs{margin-bottom:0}}
 </style>
 </head>
 <body>
@@ -177,13 +304,15 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 
   <div class="tcol">
     <div class="ptl"><h1>Pulso <b class="sc"></b></h1><span>Dos gobiernos, mismas reglas</span></div>
+    <h2 class="mdt">Mejor desempeño</h2>
     <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
   </div>
   <section class="card mid" aria-label="Comparación por indicador">
     <div class="head">
       <div><h3 id="tit"></h3><div class="src" id="src"></div></div>
-      <div class="hr"><div class="win" id="win"></div><div class="tmenu"><button class="tbtn" id="tbtn" aria-haspopup="true" aria-expanded="false" aria-controls="tlist">Tiempo <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></button><div class="tlist" id="tlist" role="group" aria-label="Rango del gráfico"></div></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
+      <div class="hr"><button class="bk" id="bk" aria-label="Volver a la tabla">‹ Tabla</button><div class="win" id="win"></div><div class="tmenu"><button class="tbtn" id="tbtn" aria-haspopup="true" aria-expanded="false" aria-controls="tlist">Tiempo <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></button><div class="tlist" id="tlist" role="group" aria-label="Rango del gráfico"></div></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
     </div>
+    <div id="tabla"></div>
     <div id="chart"></div>
     <div class="foot">
       <div class="stats" id="stats"></div>
@@ -201,7 +330,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   <h4>Cómo se compara</h4>
   <ul>
     <li><strong>Mismo reloj.</strong> Cada serie arranca en el mes 0 (la posesión, 7 de agosto) y avanza por meses de gobierno, no por fechas del calendario.</li>
-    <li><strong>Quién gana.</strong> Se compara el cambio de cada gobierno desde su mes 0 hasta el mes 3, que es lo que lleva Abelardo. Gana quien mejora más en la dirección favorable.</li>
+    <li><strong>Quién gana.</strong> Se compara el cambio de cada gobierno desde su mes 0 hasta cada mes (la tabla muestra los meses 1, 2 y 3; Abelardo lleva 3). Gana quien mejora más en la dirección favorable.</li>
     <li><strong>Dirección favorable.</strong> Menos es mejor en costo de vida, desempleo, criminalidad y terrorismo; más es mejor en economía e incautación de cocaína.</li>
     <li><strong>Rango del gráfico.</strong> Amplía el eje para ver el año o el mandato completo de Petro; el ganador no cambia.</li>
     <li><strong>Fuentes.</strong> Dane, Policía Nacional y Mindefensa. Este prototipo usa cifras inventadas solo para probar el diseño.</li>
@@ -247,17 +376,18 @@ const IND = [
   A:[210,225,240,220], P:serie([[0,160],[4,148],[18,190],[36,215],[48,240]],6,67,0)}
 ];
 const VENT = [{k:3,l:'3 meses'},{k:12,l:'12 meses'},{k:48,l:'Mandato'}];
-let win = 3, sel = 0;
+let win = 3, sel = 0, vista = 't';
 
 const $ = s => document.querySelector(s);
 const fmt = (n,d=1) => Number(n).toLocaleString('es-CO',{minimumFractionDigits:d,maximumFractionDigits:d});
 const sg = (n,d) => (n>0?'+':n<0?'−':'') + fmt(Math.abs(n),d);
 const eps = d => 0.5 * Math.pow(10,-d);
-const mejora = (ind, s) => { const dl = s[MA] - s[0]; return ind.mejor === 'bajar' ? -dl : dl; };
-const veredicto = ind => {
-  const a = mejora(ind, ind.A), p = mejora(ind, ind.P);
+const mejora = (ind, s, m = MA) => { const dl = s[m] - s[0]; return ind.mejor === 'bajar' ? -dl : dl; };
+const veredictoM = (ind, m) => {
+  const a = mejora(ind, ind.A, m), p = mejora(ind, ind.P, m);
   return Math.abs(a - p) < eps(ind.d) ? 'e' : a > p ? 'a' : 'p';
 };
+const veredicto = ind => veredictoM(ind, MA);
 const cls = (ind, s) => { const m = mejora(ind, s); return Math.abs(m) < eps(ind.d) ? 'neu' : m > 0 ? 'ok' : 'mal'; };
 const flecha = dl => Math.abs(dl) < 1e-9 ? '■' : dl > 0 ? '▲' : '▼';
 const COL = {a:'var(--cA)', p:'var(--cP)', e:'#a9bac4'};
@@ -288,11 +418,26 @@ function drawChart(ind){
   el.innerHTML = `<svg role="img" aria-label="Serie de ${ind.t}: Abelardo y Petro por mes de gobierno">${s}</svg>`;
 }
 
+function drawTabla(){
+  const np_ = IND.filter(q => veredicto(q) === 'p').length, na_ = IND.filter(q => veredicto(q) === 'a').length;
+  const ms = [1,2,3], NOM = {p:'Petro', a:'Abelardo', e:'Empate'}, LT = {p:'P', a:'A', e:'='};
+  let h = '<div class="th"></div>' + ms.map(m => `<div class="th">Mes ${m}</div>`).join('') + '<div class="th th-tot">Total</div>';
+  h += '<div class="th mkl"><button class="info info-t" aria-label="Cómo se compara">i</button><span>Marcador</span></div>' +
+    ms.map(m => { const c = {p:0,a:0,e:0}; IND.forEach(q => c[veredictoM(q, m)]++); return `<div class="mk" aria-label="Mes ${m}: Petro ${c.p}, Abelardo ${c.a}">${c.p}-${c.a}</div>`; }).join('') + `<div class="mk mk-tot" aria-label="Total: Petro ${np_}, Abelardo ${na_}">${np_}-${na_}</div>`;
+  h += '<div class="ln"></div>';
+  IND.forEach((q, i) => {
+    h += `<button class="tt" data-i="${i}" aria-label="Ver serie de ${q.t}"><span>${q.c}</span><i aria-hidden="true">›</i></button>` +
+      ms.map(m => { const v = veredictoM(q, m); return `<div class="sq ${v}" role="img" aria-label="${q.c}, mes ${m}: ${NOM[v]}">${LT[v]}</div>`; }).join('') + (() => { const v = veredicto(q); return `<div class="sq ${v} sq-tot" role="img" aria-label="${q.c}, total: ${NOM[v]}">${LT[v]}</div>`; })();
+  });
+  $('#tabla').innerHTML = `<div class="tb">${h}</div><div class="lg"><span><b class="p">P</b>Petro</span><span><b class="a">A</b>Abelardo</span><span><b class="e">=</b>Empate</span><span>Marcador: Petro-Abelardo</span></div>`;
+}
+
 function render(){
+  document.querySelector('main').classList.toggle('vt', vista === 't');
   const ind = IND[sel], v = veredicto(ind);
   const G = {p:[], e:[], a:[]};
-  [0,1,2,3,5,4].forEach(i => { const q = IND[i], v = veredicto(q); G[v].push(`<button role="tab" data-i="${i}" aria-selected="${i===sel}" data-v="${v}">${q.c}</button>`); });
-  $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>3?' c2':''}">${k!=='e'&&G[k].length?'<div class="tgt">Mejor Desempeño</div>':''}${G[k].join('')}</div>`).join('');
+  IND.forEach((q, i) => { const vv = veredicto(q); G[vv].push(`<button role="tab" data-i="${i}" data-v="${vv}" aria-selected="${vista==='s'&&i===sel}">${q.c}</button>`); });
+  $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>3?' c2':''}">${k==='e'&&G[k].length?'<div class="tgt">Empate</div>':''}${G[k].join('')}</div>`).join('');
   const np = IND.filter(q => veredicto(q) === 'p').length, na = IND.filter(q => veredicto(q) === 'a').length;
   document.querySelectorAll('.sc').forEach(e => e.textContent = np + '-' + na);
   $('#tit').textContent = ind.t;
@@ -303,15 +448,23 @@ function render(){
   $('#stats').innerHTML = st('Petro', ind.P, 'var(--cP)') + st('Abelardo', ind.A, 'var(--cA)');
   const opts = VENT.map(q => `<button data-k="${q.k}" aria-pressed="${q.k===win}">${q.l}</button>`).join('');
   $('#seg').innerHTML = opts; $('#tlist').innerHTML = opts;
-  drawChart(ind);
+  if (vista === 't'){
+    $('#tit').textContent = 'Marcador por mes';
+    $('#src').textContent = 'Cambio desde la posesión · Fuentes: Dane, Policía Nal. y Mindefensa';
+    drawTabla();
+  } else drawChart(ind);
 }
 document.addEventListener('click', e => {
   const t = e.target.closest('#tabs button'), s = e.target.closest('#seg button, #tlist button'), m = e.target.closest('#tbtn');
   const closeM = () => { $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); };
   if (m){ const o = $('#tlist').classList.toggle('open'); m.setAttribute('aria-expanded', o); return; }
   closeM();
-  if (t){ sel = +t.dataset.i; render(); } else if (s){ win = +s.dataset.k; render(); }
+  const tt = e.target.closest('.tt'), bk = e.target.closest('#bk');
+  if (tt){ sel = +tt.dataset.i; vista = 's'; render(); return; }
+  if (bk){ vista = 't'; render(); return; }
+  if (t){ sel = +t.dataset.i; vista = 's'; render(); } else if (s){ win = +s.dataset.k; render(); }
 });
+document.addEventListener('click', e => { if (e.target.closest('.info-t')) $('#dlg').showModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); } });
 $('#infoBtn').addEventListener('click', () => $('#dlg').showModal());
 new ResizeObserver(() => drawChart(IND[sel])).observe($('#chart'));
