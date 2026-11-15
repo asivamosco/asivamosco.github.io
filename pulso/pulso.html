@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
-  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#1f6fd6;--cP:#d98a00;--tA:#e9f1fc;--tP:#fcf4df;
+  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#0051BA;--cP:#d98a00;--cPt:#d98a00;--tA:#e6eefa;--tP:#fcf4df;
   --r:6px;--sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#12303d}
 *{box-sizing:border-box}
@@ -30,14 +30,22 @@ header.hd{flex:none;display:flex;align-items:center;justify-content:space-betwee
 .back i{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid #cfe3ea;border-radius:6px;background:rgba(255,255,255,.08);font-style:normal;font-size:16px;color:#cfe3ea;text-decoration:none}
 .back{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:#cfe3ea;font:700 8.5px/1 Montserrat,sans-serif;letter-spacing:.05em;text-transform:uppercase}
 .back i{width:32px;height:32px}
+.hdt{display:none;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;min-width:0}
+.hdt h1{margin:0;font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em;color:#fff}
+.hdt span{font-size:11px;line-height:1.1;color:#cfe3ea}
 footer{flex:none;background:#12303d;color:#cfe3ea;text-align:center;font-size:12px;font-weight:600;padding:8px 10px}
+.foot-txt{margin:0}
+.ad-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 3px;text-align:center}
+.sp{position:relative;overflow:hidden;width:100%;max-width:728px;aspect-ratio:970/90;margin:0 auto 6px;background:#0f4c5c;border-radius:var(--r);display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
+.sp a,.sp picture{display:block;width:100%;height:100%}
+.sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 
 main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:0 auto;padding:12px 16px;
   display:grid;grid-template-columns:minmax(140px,260px) minmax(0,1fr) minmax(140px,260px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid #12303d}
 
 .pers.p{grid-area:a}.pers.a{grid-area:p}.tcol{grid-area:t;align-self:center;display:flex;flex-direction:column;gap:8px;min-width:0}
-.ptl{display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center}
+.ptl{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-align:center}
 .ptl h1{margin:0;font:400 26px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
 .ptl span{font-size:14px;color:var(--mute)}.mid{grid-area:c}
 .pers{display:flex;flex-direction:column;align-items:center;text-align:center;align-self:center;min-width:0;border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid;overflow:hidden;padding-bottom:12px}
@@ -64,6 +72,15 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:
 .info{width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid var(--mute);background:#fff;color:var(--mute);font-weight:800;cursor:pointer}
 #chart{flex:1 1 0;min-height:150px;position:relative}
 #chart svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tmenu{display:none;position:relative}
+.tbtn{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;border:1.5px solid var(--mute);border-radius:var(--r);background:#fff;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.tbtn svg{width:10px;height:10px;transition:transform .15s}
+.tbtn[aria-expanded=true]{background:#12303d;border-color:#12303d;color:#fff}.tbtn[aria-expanded=true] svg{transform:rotate(180deg)}
+.tlist{position:absolute;right:0;top:calc(100% + 4px);z-index:20;min-width:130px;display:none;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.tlist.open{display:flex}
+.tlist button{border:0;background:#fff;padding:9px 12px;text-align:left;font-weight:500;font-size:14px;cursor:pointer;white-space:nowrap}
+.tlist button+button{border-top:1px solid var(--line)}
+.tlist button[aria-pressed=true]{background:#12303d;color:#fff;font-weight:700}
 .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .seg button{border:0;background:#fff;padding:6px 11px;cursor:pointer;font-weight:500;white-space:nowrap}
@@ -93,8 +110,15 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   .tabs button{padding:7px 4px;font-size:13px}
   #chart{min-height:130px}
 }
+@media(orientation:landscape) and (max-height:500px){
+  .ad-label{display:none}.sp{max-width:468px;margin-bottom:4px}
+}
 @media(orientation:portrait){
-  main{grid-template-rows:none;align-content:center}
+  .hdt{display:flex}.ptl{display:none}
+  .sp{max-width:320px;aspect-ratio:320/100}
+  .tmenu{display:block}.seg{display:none}
+  .head{flex-wrap:wrap}.head>div:first-child{min-width:0}
+  main{grid-template-rows:none;align-content:start}
   #chart{flex:none;height:min(40vh,85vw);height:min(40dvh,85vw);min-height:150px}
 }
 @media(orientation:portrait) and (max-width:760px){
@@ -105,6 +129,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 <body>
 <header class="hd">
   <a class="brand" href="../index.html" aria-label="Así Vamos, volver al inicio"><b>Así Vamos</b><span>COLOMBIA</span></a>
+  <div class="hdt"><h1>Pulso</h1><span>Dos gobiernos, mismas reglas</span></div>
   <a class="back" href="../index.html" aria-label="Volver al inicio"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></i><span>Volver</span></a>
 </header>
 
@@ -122,7 +147,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   <section class="card mid" aria-label="Comparación por indicador">
     <div class="head">
       <div><h3 id="tit"></h3><div class="src" id="src"></div></div>
-      <div class="hr"><div class="win" id="win"></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
+      <div class="hr"><div class="win" id="win"></div><div class="tmenu"><button class="tbtn" id="tbtn" aria-haspopup="true" aria-expanded="false" aria-controls="tlist">Tiempo <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></button><div class="tlist" id="tlist" role="group" aria-label="Rango del gráfico"></div></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
     </div>
     <div id="chart"></div>
     <div class="foot">
@@ -150,7 +175,13 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   <button onclick="this.closest('dialog').close()">Cerrar</button>
 </dialog>
 
-<footer>Prototipo con datos de ejemplo · Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</footer>
+<footer>
+  <div class="ad-wrap" id="adWrap">
+    <div class="ad-label">Aliado estratégico</div>
+    <div class="sp" id="adA"><span>Espacio publicitario</span></div>
+  </div>
+  <p class="foot-txt">Prototipo con datos de ejemplo · Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
+</footer>
 
 <script>
 const MA = 3;
@@ -214,7 +245,7 @@ function drawChart(ind){
   const dots = (v, c) => (v.length <= 14 ? v.map((q,i)=>`<circle cx="${x(i)}" cy="${y(q)}" r="3.5" fill="${c}"/>`).join('') : '');
   const end = (v, c) => `<circle cx="${x(v.length-1)}" cy="${y(v[v.length-1])}" r="6" fill="#fff" stroke="${c}" stroke-width="3"/>`;
   s += path(P, 'var(--cP)') + dots(P, 'var(--cP)') + path(A, 'var(--cA)') + dots(A, 'var(--cA)') + end(P, 'var(--cP)') + end(A, 'var(--cA)');
-  const lab = (v, yy, c, xx, anc) => `<text x="${xx}" y="${yy}" text-anchor="${anc}" font-size="13" font-weight="800" fill="${c}" stroke="#fff" stroke-width="4" paint-order="stroke">${fmt(v[v.length-1], ind.d)}</text>`;
+  const lab = (v, yy, c, xx, anc) => `<text x="${xx}" y="${yy}" text-anchor="${anc}" font-size="13" font-weight="800" fill="${c==='var(--cP)'?'var(--cPt)':c}" stroke="#fff" stroke-width="4" paint-order="stroke">${fmt(v[v.length-1], ind.d)}</text>`;
   let ya = y(A[MA]), yp = y(P[P.length-1]);
   if (win === MA){ if (Math.abs(ya - yp) < 15){ const mid = (ya + yp) / 2, sgn = ya <= yp ? -1 : 1; ya = mid + sgn * 8; yp = mid - sgn * 8; } s += lab(A, ya + 4, 'var(--cA)', x(MA) + 10, 'start') + lab(P, yp + 4, 'var(--cP)', x(MA) + 10, 'start'); }
   else s += lab(A, y(A[MA]) - 12, 'var(--cA)', x(MA), 'middle') + lab(P, yp + 4, 'var(--cP)', x(win) + 10, 'start');
@@ -227,17 +258,21 @@ function render(){
   $('#tit').textContent = ind.t;
   $('#src').textContent = `${ind.sub} · Fuente: ${ind.fuente}`;
   const w = $('#win'); w.className = 'win ' + v;
-  w.innerHTML = v === 'e' ? 'Empate' : `<span>Gana ${v === 'a' ? 'Abelardo' : 'Petro'}</span>`;
-  w.innerHTML += `<small>en los primeros 3 meses</small>`;
+  w.innerHTML = v === 'e' ? 'Empate' : `<span>Mejor ${v === 'a' ? 'Abelardo' : 'Petro'}</span>`;
   const st = (n, s, col) => { const dl = s[MA] - s[0]; return `<span><i class="dot" style="background:${col}"></i>${n} <b>${fmt(s[MA], ind.d)}${ind.u}</b> <span class="${cls(ind, s)}">${flecha(dl)} ${sg(dl, ind.d)}${ind.du}</span></span>`; };
   $('#stats').innerHTML = st('Petro', ind.P, 'var(--cP)') + st('Abelardo', ind.A, 'var(--cA)');
-  $('#seg').innerHTML = VENT.map(q => `<button data-k="${q.k}" aria-pressed="${q.k===win}">${q.l}</button>`).join('');
+  const opts = VENT.map(q => `<button data-k="${q.k}" aria-pressed="${q.k===win}">${q.l}</button>`).join('');
+  $('#seg').innerHTML = opts; $('#tlist').innerHTML = opts;
   drawChart(ind);
 }
 document.addEventListener('click', e => {
-  const t = e.target.closest('#tabs button'), s = e.target.closest('#seg button');
+  const t = e.target.closest('#tabs button'), s = e.target.closest('#seg button, #tlist button'), m = e.target.closest('#tbtn');
+  const closeM = () => { $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); };
+  if (m){ const o = $('#tlist').classList.toggle('open'); m.setAttribute('aria-expanded', o); return; }
+  closeM();
   if (t){ sel = +t.dataset.i; render(); } else if (s){ win = +s.dataset.k; render(); }
 });
+document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); } });
 $('#infoBtn').addEventListener('click', () => $('#dlg').showModal());
 new ResizeObserver(() => drawChart(IND[sel])).observe($('#chart'));
 render();
