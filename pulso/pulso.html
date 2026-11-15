@@ -107,9 +107,11 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:
 .vt #tabla{display:flex}
 .vt #chart,.vt .foot,.vt .win,.vt .tmenu,.vt .bk{display:none}
 .bk{display:inline-flex;align-items:center;height:26px;padding:0 9px;border:1.5px solid var(--mute);border-radius:var(--r);background:#fff;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
-.tb{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center}
+.tb{display:flex;flex-direction:column;gap:2px}
+.r{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center;padding:0 6px;border-radius:6px}
+.r.z{background:#eceff1}
 .tb .th{font-size:13px;font-weight:700;color:var(--mute);text-align:center}
-.tb .ln{grid-column:1/-1;height:1px;background:var(--line)}
+.tb .ln{height:1px;background:var(--line)}
 .tt{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:38px;padding:6px 10px;border:1px solid var(--line);border-left:5px solid #12303d;border-radius:var(--r);background:#fff;font-weight:700;font-size:15px;text-align:left;cursor:pointer}
 .tt:hover{background:#eef2f4}.tt i{font-style:normal;color:var(--mute)}
 .sq{justify-self:center;width:min(100%,38px);aspect-ratio:1;border-radius:6px;display:grid;place-items:center;color:#fff;font:800 17px/1 Montserrat,sans-serif}
@@ -201,7 +203,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* ===== Tabla: que se pinte bien en vertical ===== */
 @media(max-width:480px){
   .mid{padding:10px 8px}
-  .tb{grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));gap:6px}
+  .r{grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));gap:6px}
   .tt{min-height:36px;padding:5px 6px 5px 8px;font-size:13.5px;line-height:1.1;border-left-width:4px;gap:2px}
   .tb .th{font-size:12px}
   .sq{width:min(100%,34px);font-size:15px}
@@ -226,10 +228,10 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* ===== Tabla: temas sin card, cuadros claros con letra oscura, marcador bajo cada mes ===== */
 .tt{border:0;border-radius:0;background:transparent;box-shadow:none;padding:6px 2px;min-height:34px;font-weight:600}
 .tt:hover{background:transparent;text-decoration:underline}
-.sq.p{background:#fdf0cf;color:#8a5200}
-.sq.a{background:#dce8fa;color:#00347f}
-.sq.e{background:#e6ecef;color:#5b7381}
-.lg b.p{background:#fdf0cf;color:#8a5200}.lg b.a{background:#dce8fa;color:#00347f}.lg b.e{background:#e6ecef;color:#5b7381}
+.sq.p{background:transparent;color:#8a5200}
+.sq.a{background:transparent;color:#00347f}
+.sq.e{background:transparent;color:#5b7381}
+.lg b.p{background:transparent;color:#8a5200}.lg b.a{background:transparent;color:#00347f}.lg b.e{background:transparent;color:#5b7381}
 .tb .th{align-self:end}
 @media(max-width:480px){.tt{padding:5px 2px;border-left-width:0}}
 
@@ -240,13 +242,8 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* Lista de Abelardo pegada al borde derecho, contra su card */
 .tcol .tabs .tg.ta button[data-v]{flex-direction:row-reverse;justify-content:flex-start;text-align:right}
 
-/* ===== Columna Total ===== */
-.tb{grid-template-columns:minmax(0,1.45fr) repeat(4,minmax(0,1fr))}
-.th-tot,.mk-tot{color:var(--ink)}
-.th-tot{font-weight:800}
-.mk-tot{font-size:26px}
-.sq-tot{box-shadow:0 0 0 2px #12303d}
-@media(max-width:480px){.tb{grid-template-columns:minmax(0,1.3fr) repeat(4,minmax(0,1fr));gap:6px 5px}.mk{font-size:19px}.mk-tot{font-size:22px}.tt{font-size:13px}}
+/* ===== Filas con gris intercalado ===== */
+@media(max-width:480px){.r{grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));gap:6px 5px}.mk{font-size:19px}.tt{font-size:13px}}
 
 /* Botón i junto al título "Marcador" (a su izquierda) */
 .vt .head{display:none}
@@ -257,23 +254,22 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* ===== Tabla compacta (evitar scroll) ===== */
 .mid{padding:8px 10px;gap:6px}
 #tabla{gap:6px}
-.tb{gap:3px 5px}
+.r{gap:3px 5px}
 .tt{min-height:28px;padding:2px 2px;font-size:14px}
 .sq{width:min(100%,29px);font-size:14px;border-radius:5px}
-.sq-tot{box-shadow:0 0 0 1.5px #12303d}
 .tb .th{font-size:12px}
-.mk{font-size:20px}.mk-tot{font-size:22px}
+.mk{font-size:20px}
 .tb .ln{margin:1px 0}
 .lg{font-size:11.5px;gap:2px 10px}.lg b{width:14px;height:14px;font-size:9px}
-@media(max-width:480px){.mid{padding:6px 8px}.tt{font-size:13px;min-height:28px}.sq{width:min(100%,28px)}.mk{font-size:18px}.mk-tot{font-size:20px}}
+@media(max-width:480px){.mid{padding:6px 8px}.tt{font-size:13px;min-height:28px}.sq{width:min(100%,28px)}.mk{font-size:18px}}
 
 @media(max-height:780px){
   main{padding-top:8px;padding-bottom:8px;row-gap:8px}
   .mid{padding:6px 10px;gap:4px}#tabla{gap:4px}
-  .tb{gap:2px 5px}
+  .r{gap:2px 5px}
   .tt{min-height:24px;padding:1px 2px}
   .sq{width:min(100%,25px);font-size:13px}
-  .tb .th{font-size:11px}.mk{font-size:17px;line-height:1.05}.mk-tot{font-size:19px}
+  .tb .th{font-size:11px}.mk{font-size:17px;line-height:1.05}
   .lg{font-size:11px}
 }
 
@@ -419,15 +415,14 @@ function drawChart(ind){
 }
 
 function drawTabla(){
-  const np_ = IND.filter(q => veredicto(q) === 'p').length, na_ = IND.filter(q => veredicto(q) === 'a').length;
   const ms = [1,2,3], NOM = {p:'Petro', a:'Abelardo', e:'Empate'}, LT = {p:'P', a:'A', e:'='};
-  let h = '<div class="th"></div>' + ms.map(m => `<div class="th">Mes ${m}</div>`).join('') + '<div class="th th-tot">Total</div>';
-  h += '<div class="th mkl"><button class="info info-t" aria-label="Cómo se compara">i</button><span>Marcador</span></div>' +
-    ms.map(m => { const c = {p:0,a:0,e:0}; IND.forEach(q => c[veredictoM(q, m)]++); return `<div class="mk" aria-label="Mes ${m}: Petro ${c.p}, Abelardo ${c.a}">${c.p}-${c.a}</div>`; }).join('') + `<div class="mk mk-tot" aria-label="Total: Petro ${np_}, Abelardo ${na_}">${np_}-${na_}</div>`;
+  let h = '<div class="r"><div class="th"></div>' + ms.map(m => `<div class="th">Mes ${m}</div>`).join('') + '</div>';
+  h += '<div class="r"><div class="th mkl"><button class="info info-t" aria-label="Cómo se compara">i</button><span>Marcador</span></div>' +
+    ms.map(m => { const c = {p:0,a:0,e:0}; IND.forEach(q => c[veredictoM(q, m)]++); return `<div class="mk" aria-label="Mes ${m}: Petro ${c.p}, Abelardo ${c.a}">${c.p}-${c.a}</div>`; }).join('') + '</div>';
   h += '<div class="ln"></div>';
   IND.forEach((q, i) => {
-    h += `<button class="tt" data-i="${i}" aria-label="Ver serie de ${q.t}"><span>${q.c}</span><i aria-hidden="true">›</i></button>` +
-      ms.map(m => { const v = veredictoM(q, m); return `<div class="sq ${v}" role="img" aria-label="${q.c}, mes ${m}: ${NOM[v]}">${LT[v]}</div>`; }).join('') + (() => { const v = veredicto(q); return `<div class="sq ${v} sq-tot" role="img" aria-label="${q.c}, total: ${NOM[v]}">${LT[v]}</div>`; })();
+    h += `<div class="r${i % 2 ? '' : ' z'}"><button class="tt" data-i="${i}" aria-label="Ver serie de ${q.t}"><span>${q.c}</span><i aria-hidden="true">›</i></button>` +
+      ms.map(m => { const v = veredictoM(q, m); return `<div class="sq ${v}" role="img" aria-label="${q.c}, mes ${m}: ${NOM[v]}">${LT[v]}</div>`; }).join('') + '</div>';
   });
   $('#tabla').innerHTML = `<div class="tb">${h}</div><div class="lg"><span><b class="p">P</b>Petro</span><span><b class="a">A</b>Abelardo</span><span><b class="e">=</b>Empate</span><span>Marcador: Petro-Abelardo</span></div>`;
 }
