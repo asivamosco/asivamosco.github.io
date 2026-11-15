@@ -70,6 +70,7 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:940px;margin:
 .tabs button[aria-selected=true]{font-weight:700;background:#eef2f4;color:var(--ink);border-color:#a9bac4}
 .tabs button{border-left-width:5px}.tabs button[data-v=e]{border-left-color:#a9bac4}
 .tabs button[data-v=a]{background:#fff;border-color:var(--cA)}.tabs button[data-v=p]{background:#fff;border-color:var(--cP)}
+.tabs button[data-v=a]{border-left-width:1px;border-right-width:5px}
 .tabs button[data-v=a][aria-selected=true]{background:var(--tA);color:var(--ink);border-color:var(--cA)}.tabs button[data-v=p][aria-selected=true]{background:var(--tP);color:var(--ink);border-color:var(--cP)}
 .head{display:flex;align-items:center;justify-content:space-between;gap:6px 12px}
 .head h3{margin:0;font-size:22px;font-weight:800;line-height:1.1}
@@ -121,6 +122,7 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
   #chart{min-height:130px}
 }
 @media(orientation:portrait){
+  .foto{aspect-ratio:600/490}.foto img{object-fit:contain;object-position:center bottom}
   .hdt{display:flex}.ptl{display:none}
   .pw{display:none}
   .tmenu{display:block}.seg{display:none}
