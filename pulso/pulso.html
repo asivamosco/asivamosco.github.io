@@ -283,6 +283,14 @@ main.vt .mid{align-self:start;padding-top:4px}
 .tcol .tabs .tg{gap:0}
 .tcol .tabs .tg button[data-v]{padding:2px 2px;font-size:13.5px;line-height:1.15}
 @media(orientation:portrait) and (max-width:760px){.tcol{gap:6px}.tcol .tabs{margin-bottom:0}}
+
+/* ===== Listas de desempeño (solo vertical): 2 columnas (4-5 temas) o 3 columnas (los 6) ===== */
+@media(orientation:portrait){
+.tcol .tabs .tg.c2,.tcol .tabs .tg.c3{display:grid;flex-direction:initial;column-gap:10px;row-gap:0;align-content:start}
+.tcol .tabs .tg.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tcol .tabs .tg.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tcol .tabs .tg.c3 button[data-v]{font-size:12.5px;gap:5px}
+}
 </style>
 </head>
 <body>
@@ -300,7 +308,7 @@ main.vt .mid{align-self:start;padding-top:4px}
 
   <div class="tcol">
     <div class="ptl"><h1>Pulso <b class="sc"></b></h1><span>Dos gobiernos, mismas reglas</span></div>
-    <h2 class="mdt">Mejor desempeño</h2>
+    <h2 class="mdt">Balance mejor desempeño primeros 3 meses</h2>
     <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
   </div>
   <section class="card mid" aria-label="Comparación por indicador">
@@ -432,7 +440,7 @@ function render(){
   const ind = IND[sel], v = veredicto(ind);
   const G = {p:[], e:[], a:[]};
   IND.forEach((q, i) => { const vv = veredicto(q); G[vv].push(`<button role="tab" data-i="${i}" data-v="${vv}" aria-selected="${vista==='s'&&i===sel}">${q.c}</button>`); });
-  $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>3?' c2':''}">${k==='e'&&G[k].length?'<div class="tgt">Empate</div>':''}${G[k].join('')}</div>`).join('');
+  $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>5?' c3':G[k].length>3?' c2':''}">${k==='e'&&G[k].length?'<div class="tgt">Empate</div>':''}${G[k].join('')}</div>`).join('');
   const np = IND.filter(q => veredicto(q) === 'p').length, na = IND.filter(q => veredicto(q) === 'a').length;
   document.querySelectorAll('.sc').forEach(e => e.textContent = np + '-' + na);
   $('#tit').textContent = ind.t;
