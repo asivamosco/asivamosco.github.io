@@ -314,6 +314,39 @@ main.vt .mid{align-self:start;padding-top:4px}
 .sq{width:100%;aspect-ratio:auto;border-radius:0;font:800 13px/1.1 "Roboto Condensed",system-ui,sans-serif;letter-spacing:.01em;text-align:center}
 @media(max-width:480px){.sq{font-size:11.5px}}
 @media(max-width:360px){.sq{font-size:10.5px}}
+
+/* ===== Pestañas de vista (Barras / Tabla / Serie) y gráficas de barras por tema ===== */
+.vtabs{display:flex;align-items:center;gap:8px}
+.vtabs .sg{display:flex;flex:none;margin-left:auto;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.vtabs .sg button{flex:none;border:0;background:#fff;padding:7px 10px;cursor:pointer;font-weight:600;font-size:14px;white-space:nowrap}
+.vtabs .sg button+button{border-left:1px solid var(--line)}
+.vtabs .sg button[aria-selected=true]{background:#12303d;color:#fff;font-weight:700}
+.vtabs .info{display:none}.vb .vtabs .info{display:grid}
+main.vb .mid{align-self:start}
+#barras{display:none}
+.vb #barras{display:flex;flex-direction:column;gap:8px}
+.vb .head,.vb #tabla,.vb #chart,.vb .foot{display:none}
+.bcap{display:none;flex:1;min-width:0;margin:0;text-align:left;font-size:12.5px;line-height:1.2;color:var(--mute)}
+.vb .vtabs .bcap{display:block}
+.bgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.bc{display:flex;flex-direction:column;gap:2px;min-width:0;padding:6px 6px 7px;border:1px solid var(--line);border-top:3px solid var(--w,#a9bac4);border-radius:var(--r);background:#fff;cursor:pointer;text-align:center;box-shadow:0 1px 2px rgba(18,48,61,.06)}
+.bc:hover{box-shadow:var(--sh)}
+.bt{font-weight:800;font-size:13px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bh{font-size:10px;line-height:1.1;color:var(--mute);white-space:nowrap}
+.bp{position:relative;height:104px;margin-top:2px}
+.bi{position:absolute;inset:16px 0}
+.bz{position:absolute;left:0;right:0;height:1px;background:#a9bac4}
+.bb{position:absolute;width:34%;min-height:2px;border-radius:2px 2px 0 0}
+.bb.neg{border-radius:0 0 2px 2px}
+.bb.p{left:11%;background:var(--cP)}.bb.a{left:55%;background:var(--cA)}
+.bv{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-weight:800;font-size:11px;line-height:1.1}
+.bb:not(.neg) .bv{bottom:100%;margin-bottom:2px}
+.bb.neg .bv{top:100%;margin-top:2px}
+.bv .u{font-weight:600;font-size:9.5px;margin-left:2px}
+.bn{display:grid;grid-template-columns:1fr 1fr;font-size:11px;font-weight:800;line-height:1.1}
+.bn .p{color:var(--cPt)}.bn .a{color:var(--cA)}
+@media(max-width:480px){.bgrid{gap:6px}.bc{padding:5px 4px 6px}.bt{font-size:12px}.bv{font-size:10px}.bv .u{font-size:8.5px;margin-left:1px}.bn{font-size:10px}.bcap{font-size:11.5px}.vtabs .sg button{padding:7px 8px;font-size:13px}}
+@media(orientation:portrait) and (max-width:760px){.tcol{display:none}main{grid-template-areas:"a p" "c c"}}
 </style>
 </head>
 <body>
@@ -331,13 +364,13 @@ main.vt .mid{align-self:start;padding-top:4px}
 
   <div class="tcol">
     <div class="ptl"><h1>Pulso <b class="sc"></b></h1></div>
-    <h2 class="mdt">Balance mejor desempeño primeros 3 meses</h2>
-    <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
   </div>
   <section class="card mid" aria-label="Comparación por indicador">
+    <div class="vtabs"><span class="bcap">Cambio en los primeros 3 meses de gobierno</span><div class="sg" role="tablist" aria-label="Vista"><button role="tab" data-vista="b">Barras</button><button role="tab" data-vista="t">Tabla</button><button role="tab" data-vista="s">Serie</button></div><button class="info info-t" aria-label="Cómo se compara">i</button></div>
+    <div id="barras"></div>
     <div class="head">
       <div><h3 id="tit"></h3><div class="src" id="src"></div></div>
-      <div class="hr"><button class="bk" id="bk" aria-label="Volver a la tabla">‹ Tabla</button><div class="win" id="win"></div><div class="tmenu"><button class="tbtn" id="tbtn" aria-haspopup="true" aria-expanded="false" aria-controls="tlist">Tiempo <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></button><div class="tlist" id="tlist" role="group" aria-label="Rango del gráfico"></div></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
+      <div class="hr"><div class="win" id="win"></div><div class="tmenu"><button class="tbtn" id="tbtn" aria-haspopup="true" aria-expanded="false" aria-controls="tlist">Tiempo <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></button><div class="tlist" id="tlist" role="group" aria-label="Rango del gráfico"></div></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
     </div>
     <div id="tabla"></div>
     <div id="chart"></div>
@@ -359,6 +392,7 @@ main.vt .mid{align-self:start;padding-top:4px}
     <li><strong>Mismo reloj.</strong> Cada serie arranca en el mes 0 (la posesión, 7 de agosto) y avanza por meses de gobierno, no por fechas del calendario.</li>
     <li><strong>Quién gana.</strong> Se compara el cambio de cada gobierno desde su mes 0 hasta cada mes (la tabla muestra los meses 1, 2 y 3; Abelardo lleva 3). Gana quien mejora más en la dirección favorable.</li>
     <li><strong>Dirección favorable.</strong> Menos es mejor en costo de vida, desempleo, criminalidad y terrorismo; más es mejor en economía e incautación de cocaína.</li>
+    <li><strong>Barras.</strong> Cada barra es el cambio de ese gobierno entre el mes 0 y el mes 3. La franja superior de cada gráfica toma el color de quien mejora más; al tocar una gráfica ves su serie.</li>
     <li><strong>Rango del gráfico.</strong> Amplía el eje para ver el año o el mandato completo de Petro; el ganador no cambia.</li>
     <li><strong>Fuentes.</strong> Dane, Policía Nacional y Mindefensa. Este prototipo usa cifras inventadas solo para probar el diseño.</li>
   </ul>
@@ -403,7 +437,7 @@ const IND = [
   A:[210,225,240,220], P:serie([[0,160],[4,148],[18,190],[36,215],[48,240]],6,67,0)}
 ];
 const VENT = [{k:3,l:'3 meses'},{k:12,l:'12 meses'},{k:48,l:'Mandato'}];
-let win = 3, sel = 0, vista = 't';
+let win = 3, sel = 0, vista = 'b';
 
 const $ = s => document.querySelector(s);
 const fmt = (n,d=1) => Number(n).toLocaleString('es-CO',{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -445,6 +479,24 @@ function drawChart(ind){
   el.innerHTML = `<svg role="img" aria-label="Serie de ${ind.t}: Abelardo y Petro por mes de gobierno">${s}</svg>`;
 }
 
+function drawBarras(){
+  const cuerpo = IND.map((q, i) => {
+    const dp = q.P[MA] - q.P[0], da = q.A[MA] - q.A[0], v = veredicto(q);
+    const lo = Math.min(0, dp, da), hi = Math.max(0, dp, da), span = hi - lo || 1, zb = -lo / span * 100;
+    const bar = (d, k, s) => {
+      const z = Math.abs(d) < eps(q.d), h = Math.abs(d) / span * 100, neg = !z && d < 0;
+      const txt = (z ? fmt(0, q.d) : sg(d, q.d)) + (q.du ? `<span class="u">${q.du}</span>` : '');
+      return `<div class="bb ${k}${neg ? ' neg' : ''}" style="bottom:${neg ? zb - h : zb}%;height:${h}%"><span class="bv ${cls(q, s)}">${txt}</span></div>`;
+    };
+    const ganador = v === 'e' ? 'Empate' : 'Mejor ' + (v === 'a' ? 'Abelardo' : 'Petro');
+    return `<button class="bc" data-i="${i}" style="--w:${COL[v]}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
+      `<span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span>` +
+      `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
+      `<div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
+  }).join('');
+  $('#barras').innerHTML = `<div class="bgrid">${cuerpo}</div>`;
+}
+
 function drawTabla(){
   const ms = [1,2,3], NOM = {p:'Petro', a:'Abelardo', e:'Empate'}, LT = NOM;
   let h = '<div class="r"><div class="th"></div>' + ms.map(m => `<div class="th">Mes ${m}</div>`).join('') + '</div>';
@@ -460,10 +512,9 @@ function drawTabla(){
 
 function render(){
   document.querySelector('main').classList.toggle('vt', vista === 't');
+  document.querySelector('main').classList.toggle('vb', vista === 'b');
+  document.querySelectorAll('.vtabs [data-vista]').forEach(b => b.setAttribute('aria-selected', b.dataset.vista === vista));
   const ind = IND[sel], v = veredicto(ind);
-  const G = {p:[], e:[], a:[]};
-  IND.forEach((q, i) => { const vv = veredicto(q); G[vv].push(`<button role="tab" data-i="${i}" data-v="${vv}" style="order:${i}" title="${vv==='p'?'Mejor Petro':vv==='a'?'Mejor Abelardo':'Empate'}" aria-selected="${vista==='s'&&i===sel}">${q.c}</button>`); });
-  $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>5?' c3':G[k].length>3?' c2':''}">${k==='e'&&G[k].length?'<div class="tgt">Empate</div>':''}${G[k].join('')}</div>`).join('');
   const np = IND.filter(q => veredicto(q) === 'p').length, na = IND.filter(q => veredicto(q) === 'a').length;
   document.querySelectorAll('.sc').forEach(e => e.textContent = np + '-' + na);
   $('#tit').textContent = ind.t;
@@ -474,21 +525,22 @@ function render(){
   $('#stats').innerHTML = st('Petro', ind.P, 'var(--cP)') + st('Abelardo', ind.A, 'var(--cA)');
   const opts = VENT.map(q => `<button data-k="${q.k}" aria-pressed="${q.k===win}">${q.l}</button>`).join('');
   $('#seg').innerHTML = opts; $('#tlist').innerHTML = opts;
-  if (vista === 't'){
+  if (vista === 'b') drawBarras();
+  else if (vista === 't'){
     $('#tit').textContent = 'Marcador por mes';
     $('#src').textContent = 'Cambio desde la posesión · Fuentes: Dane, Policía Nal. y Mindefensa';
     drawTabla();
   } else drawChart(ind);
 }
 document.addEventListener('click', e => {
-  const t = e.target.closest('#tabs button'), s = e.target.closest('#seg button, #tlist button'), m = e.target.closest('#tbtn');
+  const s = e.target.closest('#seg button, #tlist button'), m = e.target.closest('#tbtn');
   const closeM = () => { $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); };
   if (m){ const o = $('#tlist').classList.toggle('open'); m.setAttribute('aria-expanded', o); return; }
   closeM();
-  const tt = e.target.closest('.tt'), bk = e.target.closest('#bk');
+  const vv = e.target.closest('.vtabs [data-vista]'), tt = e.target.closest('.tt, .bc');
+  if (vv){ vista = vv.dataset.vista; render(); return; }
   if (tt){ sel = +tt.dataset.i; vista = 's'; render(); return; }
-  if (bk){ vista = 't'; render(); return; }
-  if (t){ sel = +t.dataset.i; vista = 's'; render(); } else if (s){ win = +s.dataset.k; render(); }
+  if (s){ win = +s.dataset.k; render(); }
 });
 document.addEventListener('click', e => { if (e.target.closest('.info-t')) $('#dlg').showModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $('#tlist').classList.remove('open'); $('#tbtn').setAttribute('aria-expanded','false'); } });
