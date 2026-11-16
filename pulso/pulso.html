@@ -378,6 +378,14 @@ main{row-gap:0}
 
 /* Cards de los presidentes: esquinas inferiores rectas */
 .pers{border-radius:var(--r) var(--r) 0 0}
+
+/* Vertical (celular): las cards se angostan para que el cuadro Pulso quede entre ellas sin taparlas */
+@media(orientation:portrait) and (max-width:760px){
+  .vs{width:62px;padding:6px 0;text-align:center}
+  main{column-gap:70px}
+  .pid.nw{max-width:calc(100% - 12px);white-space:normal}
+  .pper{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -578,8 +586,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape'){ $('#tlist')
 $('#infoBtn').addEventListener('click', () => $('#dlg').showModal());
 const mqD = matchMedia('(min-width:761px)');
 function ubicaTabs(){ const v = $('.vtabs'); if (mqD.matches) $('.tcol').appendChild(v); else $('.mid').prepend(v); }
-mqD.addEventListener('change', ubicaTabs); ubicaTabs();
-new ResizeObserver(() => drawChart(IND[sel])).observe($('#chart'));
+try { mqD.addEventListener('change', ubicaTabs); }
+catch (_) { try { mqD.addListener(ubicaTabs); } catch (__) { window.addEventListener('resize', ubicaTabs); } }
+ubicaTabs();
+if (window.ResizeObserver) new ResizeObserver(() => drawChart(IND[sel])).observe($('#chart'));
+else window.addEventListener('resize', () => drawChart(IND[sel]));
 render();
 </script>
 </body>
