@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
-  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#0051BA;--cP:#d98a00;--cPt:#d98a00;--tA:#e6eefa;--tP:#fcf4df;
+  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#1f4b87;--cP:#d98a00;--cPt:#d98a00;--tA:#e7edf5;--tP:#fcf4df;
   --r:6px;--sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#12303d}
 *{box-sizing:border-box}
@@ -108,7 +108,7 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:
 .vt #chart,.vt .foot,.vt .win,.vt .tmenu,.vt .bk{display:none}
 .bk{display:inline-flex;align-items:center;height:26px;padding:0 9px;border:1.5px solid var(--mute);border-radius:var(--r);background:#fff;color:var(--ink);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
 .tb{display:flex;flex-direction:column;gap:2px}
-.r{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center;padding:0 6px;border-radius:6px}
+.r{display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));gap:6px 8px;align-items:center;padding:0 6px;border-radius:2px}
 .r.z{background:#eceff1}
 .tb .th{font-size:13px;font-weight:700;color:var(--mute);text-align:center}
 .tb .ln{height:1px;background:var(--line)}
@@ -229,9 +229,9 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 .tt{border:0;border-radius:0;background:transparent;box-shadow:none;padding:6px 2px;min-height:34px;font-weight:600}
 .tt:hover{background:transparent;text-decoration:underline}
 .sq.p{background:transparent;color:#8a5200}
-.sq.a{background:transparent;color:#00347f}
+.sq.a{background:transparent;color:#163a6b}
 .sq.e{background:transparent;color:#5b7381}
-.lg b.p{background:transparent;color:#8a5200}.lg b.a{background:transparent;color:#00347f}.lg b.e{background:transparent;color:#5b7381}
+.lg b.p{background:transparent;color:#8a5200}.lg b.a{background:transparent;color:#163a6b}.lg b.e{background:transparent;color:#5b7381}
 .tb .th{align-self:end}
 @media(max-width:480px){.tt{padding:5px 2px;border-left-width:0}}
 
@@ -284,13 +284,36 @@ main.vt .mid{align-self:start;padding-top:4px}
 .tcol .tabs .tg button[data-v]{padding:2px 2px;font-size:13.5px;line-height:1.15}
 @media(orientation:portrait) and (max-width:760px){.tcol{gap:6px}.tcol .tabs{margin-bottom:0}}
 
-/* ===== Listas de desempeño (solo vertical): 2 columnas (4-5 temas) o 3 columnas (los 6) ===== */
-@media(orientation:portrait){
-.tcol .tabs .tg.c2,.tcol .tabs .tg.c3{display:grid;flex-direction:initial;column-gap:10px;row-gap:0;align-content:start}
-.tcol .tabs .tg.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.tcol .tabs .tg.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.tcol .tabs .tg.c3 button[data-v]{font-size:12.5px;gap:5px}
-}
+/* ===== Tabla 3 x 2 (todos los modos): botón gris claro con franja inferior del color del ganador ===== */
+.tcol .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row;gap:8px;column-gap:8px;align-items:stretch}
+.tcol .tabs .tg,.tcol .tabs .tg.c2,.tcol .tabs .tg.c3,.tcol .tabs .tg.te{display:contents}
+.tcol .tabs .tg .tgt{display:none}
+.tcol .tabs .tg button[data-v],.tcol .tabs .tg.ta button[data-v],.tcol .tabs .tg.te button[data-v],.tcol .tabs .tg.c3 button[data-v]{
+  --k:#6f8695;
+  position:relative;overflow:hidden;width:100%;min-height:56px;padding:10px 6px 0;border:1px solid #c3cad0;border-radius:2px;
+  background:linear-gradient(180deg,#f7f8f9 0%,#e3e6e9 100%);
+  flex-direction:column;justify-content:space-between;align-items:center;gap:0;text-align:center;
+  font:800 11px/1.15 "Roboto Condensed",system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;color:#3b4852;text-shadow:0 1px 0 #fff;text-decoration:none;cursor:pointer;
+  box-shadow:inset 0 1px 0 #fff,0 1px 2px rgba(18,48,61,.18),0 4px 10px rgba(18,48,61,.08);
+  transition:filter .12s,transform .12s}
+.tcol .tabs .tg button[role=tab][data-v=p]{--k:var(--cP)}
+.tcol .tabs .tg button[role=tab][data-v=a]{--k:var(--cA)}
+.tcol .tabs .tg button[role=tab][data-v=e]{--k:#6f8695}
+.tcol .tabs .tg button[data-v]::before{display:none}
+.tcol .tabs .tg button[data-v]::after{content:"Empate";display:block;align-self:stretch;margin:9px -6px 0;padding:5px 4px 4px;background:var(--k);
+  box-shadow:inset 0 1px 0 rgba(0,0,0,.18);color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.28);font:700 9px/1 "Roboto Condensed",system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.tcol .tabs .tg button[data-v=p]::after{content:"Petro"}
+.tcol .tabs .tg button[data-v=a]::after{content:"Abelardo"}
+.tcol .tabs .tg button[data-v]:hover{filter:brightness(1.03);transform:translateY(-1px);text-decoration:none}
+.tcol .tabs .tg button[data-v][aria-selected=true]{border-color:var(--ink);background:linear-gradient(180deg,#e3e6e9 0%,#f1f3f4 100%);box-shadow:inset 0 2px 3px rgba(18,48,61,.18);text-decoration:none;font-weight:800}
+@media(max-width:480px){.tcol .tabs{gap:6px}.tcol .tabs .tg button[data-v],.tcol .tabs .tg.ta button[data-v],.tcol .tabs .tg.te button[data-v],.tcol .tabs .tg.c3 button[data-v]{font-size:10px;letter-spacing:.02em;padding:8px 3px 0;min-height:48px}.tcol .tabs .tg button[data-v]::after{margin:7px -3px 0;font-size:8.5px}}
+@media(orientation:landscape){.tcol .tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 8px}
+.tcol .tabs .tg button[data-v],.tcol .tabs .tg.ta button[data-v],.tcol .tabs .tg.te button[data-v],.tcol .tabs .tg.c3 button[data-v]{min-height:42px;padding:7px 6px 0}
+.tcol .tabs .tg button[data-v]::after{margin-top:6px;padding:4px 4px 3px}}
+/* Tabla de meses: nombre completo en lugar de P / A */
+.sq{width:100%;aspect-ratio:auto;border-radius:0;font:800 13px/1.1 "Roboto Condensed",system-ui,sans-serif;letter-spacing:.01em;text-align:center}
+@media(max-width:480px){.sq{font-size:11.5px}}
+@media(max-width:360px){.sq{font-size:10.5px}}
 </style>
 </head>
 <body>
@@ -307,7 +330,7 @@ main.vt .mid{align-self:start;padding-top:4px}
   </article>
 
   <div class="tcol">
-    <div class="ptl"><h1>Pulso <b class="sc"></b></h1><span>Dos gobiernos, mismas reglas</span></div>
+    <div class="ptl"><h1>Pulso <b class="sc"></b></h1></div>
     <h2 class="mdt">Balance mejor desempeño primeros 3 meses</h2>
     <div class="tabs" role="tablist" id="tabs" aria-label="Indicador"></div>
   </div>
@@ -423,7 +446,7 @@ function drawChart(ind){
 }
 
 function drawTabla(){
-  const ms = [1,2,3], NOM = {p:'Petro', a:'Abelardo', e:'Empate'}, LT = {p:'P', a:'A', e:'='};
+  const ms = [1,2,3], NOM = {p:'Petro', a:'Abelardo', e:'Empate'}, LT = NOM;
   let h = '<div class="r"><div class="th"></div>' + ms.map(m => `<div class="th">Mes ${m}</div>`).join('') + '</div>';
   h += '<div class="r"><div class="th mkl"><button class="info info-t" aria-label="Cómo se compara">i</button><span>Marcador</span></div>' +
     ms.map(m => { const c = {p:0,a:0,e:0}; IND.forEach(q => c[veredictoM(q, m)]++); return `<div class="mk" aria-label="Mes ${m}: Petro ${c.p}, Abelardo ${c.a}">${c.p}-${c.a}</div>`; }).join('') + '</div>';
@@ -432,14 +455,14 @@ function drawTabla(){
     h += `<div class="r${i % 2 ? '' : ' z'}"><button class="tt" data-i="${i}" aria-label="Ver serie de ${q.t}"><span>${q.c}</span><i aria-hidden="true">›</i></button>` +
       ms.map(m => { const v = veredictoM(q, m); return `<div class="sq ${v}" role="img" aria-label="${q.c}, mes ${m}: ${NOM[v]}">${LT[v]}</div>`; }).join('') + '</div>';
   });
-  $('#tabla').innerHTML = `<div class="tb">${h}</div><div class="lg"><span><b class="p">P</b>Petro</span><span><b class="a">A</b>Abelardo</span><span><b class="e">=</b>Empate</span><span>Marcador: Petro-Abelardo</span></div>`;
+  $('#tabla').innerHTML = `<div class="tb">${h}</div><div class="lg"><span>Marcador: Petro-Abelardo</span></div>`;
 }
 
 function render(){
   document.querySelector('main').classList.toggle('vt', vista === 't');
   const ind = IND[sel], v = veredicto(ind);
   const G = {p:[], e:[], a:[]};
-  IND.forEach((q, i) => { const vv = veredicto(q); G[vv].push(`<button role="tab" data-i="${i}" data-v="${vv}" aria-selected="${vista==='s'&&i===sel}">${q.c}</button>`); });
+  IND.forEach((q, i) => { const vv = veredicto(q); G[vv].push(`<button role="tab" data-i="${i}" data-v="${vv}" style="order:${i}" title="${vv==='p'?'Mejor Petro':vv==='a'?'Mejor Abelardo':'Empate'}" aria-selected="${vista==='s'&&i===sel}">${q.c}</button>`); });
   $('#tabs').innerHTML = ['p','e','a'].map(k => `<div class="tg t${k}${G[k].length>5?' c3':G[k].length>3?' c2':''}">${k==='e'&&G[k].length?'<div class="tgt">Empate</div>':''}${G[k].join('')}</div>`).join('');
   const np = IND.filter(q => veredicto(q) === 'p').length, na = IND.filter(q => veredicto(q) === 'a').length;
   document.querySelectorAll('.sc').forEach(e => e.textContent = np + '-' + na);
