@@ -70,16 +70,21 @@
     .btn-pulso::after{right:0;left:auto;transform:translateY(-4px)}
     .btn-pulso:hover::after,.btn-pulso:focus-within::after{transform:translateY(0)}
 
+    /* Icono de serie entre los nombres */
+    .pulse-txt .pulse-ico{width:22px;height:22px;flex:none;opacity:.9}
+
     /* Móvil: pestaña Pulso y botón Ayuda más compactos */
     @media (max-width:600px){
       .btn-pulso{right:calc(12px + 34px + 8px)}
       .pulse-btn{padding:5px 9px !important}
       .pulse-txt{font-size:12px !important;gap:4px}
       .pulse-btn .chev{display:none}
+      .pulse-txt .pulse-ico{width:15px;height:15px}
       .help-btn{width:34px;height:34px}
     }
     @media (max-width:380px){
       .pulse-txt{font-size:10.5px !important;gap:3px}
+      .pulse-txt .pulse-ico{width:13px;height:13px}
       .pulse-btn{padding:4px 7px !important}
     }
   </style>
@@ -104,7 +109,7 @@
     </div>
     <div class="hd-right">
       <div class="btn-group btn-pulso" data-tip="Comparación desempeño">
-        <a class="pulse-btn" href="pulso/index.html" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>ABELARDO</span><em class="vs" aria-hidden="true">vs</em><span>PETRO</span></span><span class="chev" aria-hidden="true">›</span></a>
+        <a class="pulse-btn" href="pulso/index.html" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>PETRO</span><svg class="pulse-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="2,17 8,11 13,15 22,6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="16,6 22,6 22,12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>ABELARDO</span></span><span class="chev" aria-hidden="true">›</span></a>
       </div>
       <div class="btn-group btn-ayuda" data-tip="Ayuda">
         <a class="help-btn" href="ayuda.html" aria-label="Ayuda" title="Ayuda"><span class="q" aria-hidden="true">?</span></a>
