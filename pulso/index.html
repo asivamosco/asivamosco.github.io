@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
-  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#1f4b87;--cP:#d98a00;--cPt:#d98a00;--tA:#e7edf5;--tP:#fcf4df;
+  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#00639c;--cP:#ff8000;--cPt:#e36f00;--tA:#e0eef7;--tP:#fff0e0;
   --r:6px;--sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#12303d}
 *{box-sizing:border-box}
@@ -58,7 +58,7 @@ main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:
 .tgt{display:block;grid-column:1/-1;font-weight:800;font-size:14px;line-height:1.1;padding:0 2px 1px}
 .tg.tp .tgt{color:var(--cPt)}.tg.ta .tgt{color:var(--cA);text-align:right}
 .pers{display:flex;flex-direction:column;align-items:center;text-align:center;align-self:center;min-width:0;border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid;overflow:hidden;overflow:clip;padding-bottom:0}
-.pers.a{border-top-color:var(--cA);--tint:var(--tA);--tint2:#a3b9da}.pers.p{border-top-color:var(--cP);--tint:var(--tP);--tint2:#efcf8a}.pers{background:linear-gradient(180deg,var(--tint) 50%,var(--tint2) 100%)}
+.pers.a{border-top-color:var(--cA);--tint:var(--tA);--tint2:#9fc3dc}.pers.p{border-top-color:var(--cP);--tint:var(--tP);--tint2:#ffc58a}.pers{background:linear-gradient(180deg,var(--tint) 50%,var(--tint2) 100%)}
 .foto{width:100%;aspect-ratio:600/490;position:relative;background:transparent}
 .foto img{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;object-fit:contain;object-position:center bottom}
 .pid{position:absolute;top:10px;right:10px;z-index:2;max-width:48%;text-align:right}
@@ -228,10 +228,10 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* ===== Tabla: temas sin card, cuadros claros con letra oscura, marcador bajo cada mes ===== */
 .tt{border:0;border-radius:0;background:transparent;box-shadow:none;padding:6px 2px;min-height:34px;font-weight:600}
 .tt:hover{background:transparent;text-decoration:underline}
-.sq.p{background:transparent;color:#8a5200}
-.sq.a{background:transparent;color:#163a6b}
+.sq.p{background:transparent;color:#b34f00}
+.sq.a{background:transparent;color:#00436b}
 .sq.e{background:transparent;color:#5b7381}
-.lg b.p{background:transparent;color:#8a5200}.lg b.a{background:transparent;color:#163a6b}.lg b.e{background:transparent;color:#5b7381}
+.lg b.p{background:transparent;color:#b34f00}.lg b.a{background:transparent;color:#00436b}.lg b.e{background:transparent;color:#5b7381}
 .tb .th{align-self:end}
 @media(max-width:480px){.tt{padding:5px 2px;border-left-width:0}}
 
@@ -416,6 +416,22 @@ main{row-gap:0}
   @media (max-width:767px), (max-width:850px) and (orientation:portrait){.sp{padding-bottom:31.25%}}
 }
 .sq.n{background:transparent;color:#a9bac4;font-weight:600}
+
+/* ===== Barras: la base es el extremo pegado al eje; ahí va la luz (mismo tono, más claro) y la punta queda más oscura ===== */
+.bb{box-shadow:none}
+.bb.p{background:linear-gradient(0deg,#ff9a3c 0%,#ff8000 38%,#c95f00 100%)}
+.bb.a{background:linear-gradient(0deg,#1a8fd0 0%,#00639c 38%,#003a5c 100%)}
+.bb.neg.p{background:linear-gradient(180deg,#ff9a3c 0%,#ff8000 38%,#c95f00 100%)}
+.bb.neg.a{background:linear-gradient(180deg,#1a8fd0 0%,#00639c 38%,#003a5c 100%)}
+.bb::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;border-radius:inherit;pointer-events:none}
+.bb.neg::after{bottom:auto;top:0}
+.bb.p::after{background:radial-gradient(ellipse 90% 100% at 50% 100%,rgba(255,176,96,.85) 0%,rgba(255,176,96,.3) 45%,rgba(255,176,96,0) 100%)}
+.bb.a::after{background:radial-gradient(ellipse 90% 100% at 50% 100%,rgba(70,170,230,.85) 0%,rgba(70,170,230,.3) 45%,rgba(70,170,230,0) 100%)}
+.bb.neg.p::after{background:radial-gradient(ellipse 90% 100% at 50% 0%,rgba(255,176,96,.85) 0%,rgba(255,176,96,.3) 45%,rgba(255,176,96,0) 100%)}
+.bb.neg.a::after{background:radial-gradient(ellipse 90% 100% at 50% 0%,rgba(70,170,230,.85) 0%,rgba(70,170,230,.3) 45%,rgba(70,170,230,0) 100%)}
+
+/* Fondo de cada gráfica: tono del ganador, muy claro */
+.bc{background:var(--wt,#fff)}
 </style>
 </head>
 <body>
@@ -497,6 +513,7 @@ const veredicto = ind => veredictoM(ind, mx(ind));
 const cls = (ind, s) => { const m = mejora(ind, s); return Math.abs(m) < eps(ind.d) ? 'neu' : m > 0 ? 'ok' : 'mal'; };
 const flecha = dl => Math.abs(dl) < 1e-9 ? '■' : dl > 0 ? '▲' : '▼';
 const COL = {a:'var(--cA)', p:'var(--cP)', e:'#a9bac4'};
+const TINT = {a:'#eaf3f9', p:'#fff4e9', e:'#f1f4f6', n:'#f1f4f6'};   // fondo muy claro del color del ganador
 
 function drawChart(ind){
   if (!ind) return;
@@ -528,7 +545,7 @@ function drawChart(ind){
 function drawBarras(){
   const cuerpo = IND.map((q, i) => {
     const m = mx(q);
-    if (m < 1) return `<button class="bc" data-i="${i}" style="--w:#a9bac4" title="Sin datos"><span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span><div class="bp" style="display:grid;place-items:center;color:var(--mute);font-size:12px">Sin datos aún</div><div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
+    if (m < 1) return `<button class="bc" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6" title="Sin datos"><span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span><div class="bp" style="display:grid;place-items:center;color:var(--mute);font-size:12px">Sin datos aún</div><div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
     const dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0], v = veredicto(q);
     const lo = Math.min(0, dp, da), hi = Math.max(0, dp, da), span = hi - lo || 1, zb = -lo / span * 100;
     const bar = (d, k, s) => {
@@ -537,7 +554,7 @@ function drawBarras(){
       return `<div class="bb ${k}${neg ? ' neg' : ''}" style="bottom:${neg ? zb - h : zb}%;height:${h}%"><span class="bv ${cls(q, s)}">${txt}</span></div>`;
     };
     const ganador = v === 'e' ? 'Empate' : 'Mejor ' + (v === 'a' ? 'Abelardo' : 'Petro');
-    return `<button class="bc" data-i="${i}" style="--w:${COL[v]}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
+    return `<button class="bc" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
       `<span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}${m < MA ? ' · mes ' + m : ''}</span>` +
       `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
       `<div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
