@@ -16,18 +16,19 @@
     .hd{position:relative;z-index:50}
     .hd-right{position:static}
 
-    /* Pulso: pestaña que cuelga de la parte inferior del header */
-    .btn-pulso{position:absolute;bottom:-2px;top:auto;right:calc(16px + 40px + 14px);margin:0;padding:0;line-height:0;z-index:60}
+    /* Pulso: pestaña que sale de la parte superior del header */
+    .btn-pulso{position:absolute;top:-2px;bottom:auto;right:calc(16px + 40px + 14px);margin:0;padding:0;line-height:0;z-index:60}
     .pulse-btn{
       line-height:normal;
-      border-left:0 !important;
       border:0 !important;
-      border-top:4px solid #f57c00 !important;
-      border-bottom:0 !important;
+      border-top:0 !important;
+      border-left:1px solid rgba(245,124,0,.6) !important;
+      border-right:1px solid rgba(245,124,0,.6) !important;
+      border-bottom:3px solid #f57c00 !important;
       box-shadow:none !important;
       display:block;
       position:relative;z-index:61;pointer-events:auto;
-      border-radius:6px 6px 0 0 !important;
+      border-radius:0 0 6px 6px !important;
       margin:0 !important;
     }
 
@@ -39,6 +40,15 @@
       display:inline-flex;align-items:center;justify-content:center;
       padding:0 !important;
     }
+
+    .btn-pulso{display:block !important;height:auto !important;min-height:0 !important;gap:0 !important;padding:0 !important;margin:0 !important}
+    .btn-pulso .pulse-btn{margin:0 !important;margin-bottom:0 !important;vertical-align:top}
+
+    /* Texto en una sola línea: ABELARDO vs PETRO */
+    .pulse-txt{display:flex !important;flex-direction:row !important;align-items:center;gap:7px;white-space:nowrap;font-size:17px !important;line-height:1.1}
+    .pulse-txt span{font-size:inherit !important}
+    .pulse-txt .vs{font-style:normal;font-weight:600;text-transform:lowercase;opacity:.85}
+    .pulse-txt i{display:none !important}
 
     /* Se eliminan los rótulos fijos y se muestran al pasar el mouse */
     .btn-caption{display:none !important}
@@ -81,7 +91,7 @@
     </div>
     <div class="hd-right">
       <div class="btn-group btn-pulso" data-tip="Comparación desempeño">
-        <a class="pulse-btn" href="pulso/index.html" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>ABELARDO</span><i aria-hidden="true"></i><span>PETRO</span></span><span class="chev" aria-hidden="true">›</span></a>
+        <a class="pulse-btn" href="pulso/index.html" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>ABELARDO</span><em class="vs" aria-hidden="true">vs</em><span>PETRO</span></span><span class="chev" aria-hidden="true">›</span></a>
       </div>
       <div class="btn-group btn-ayuda" data-tip="Ayuda">
         <a class="help-btn" href="ayuda.html" aria-label="Ayuda" title="Ayuda"><span class="q" aria-hidden="true">?</span></a>
@@ -155,6 +165,21 @@
   </div>
 </div>
 
+<script>
+/* Pega la pestaña Pulso exactamente al borde superior del header */
+(function(){
+  function snap(){
+    var hd=document.querySelector('.hd'),g=document.querySelector('.btn-pulso'),a=g&&g.querySelector('.pulse-btn');
+    if(!hd||!a)return;
+    g.style.top='0px';
+    var gap=a.getBoundingClientRect().top-hd.getBoundingClientRect().top;
+    g.style.top=(-gap)+'px';
+  }
+  window.addEventListener('load',snap);
+  window.addEventListener('resize',snap);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(snap);
+})();
+</script>
 <script src="assets/js/background.js?v=1"></script>
 <script src="app.js?v=2"></script>
 </body>
