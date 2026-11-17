@@ -22,15 +22,19 @@
       line-height:normal;
       border:0 !important;
       border-top:0 !important;
-      border-left:1px solid rgba(245,124,0,.6) !important;
-      border-right:1px solid rgba(245,124,0,.6) !important;
-      border-bottom:3px solid #f57c00 !important;
+      border-left:1px solid var(--hd-acc) !important;
+      border-right:1px solid var(--hd-acc) !important;
+      border-bottom:3px solid var(--hd-acc) !important;
       box-shadow:none !important;
       display:block;
       position:relative;z-index:61;pointer-events:auto;
       border-radius:0 0 6px 6px !important;
       margin:0 !important;
     }
+
+    /* Pulso: mismos colores que Ayuda */
+    header.hd .pulse-btn{--hd-acc:#cfe3ea;--hd-acc-bg:rgba(255,255,255,.08);--hd-acc-bg-h:rgba(255,255,255,.2)}
+    header.hd .pulse-btn:hover{border-left-color:#fff !important;border-right-color:#fff !important;border-bottom-color:#fff !important}
 
     /* Ayuda: círculo en lugar de cuadrado */
     .help-btn{
