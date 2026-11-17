@@ -69,6 +69,19 @@
     .btn-group[data-tip]:focus-within::after{opacity:1;transform:translateX(-50%) translateY(0)}
     .btn-pulso::after{right:0;left:auto;transform:translateY(-4px)}
     .btn-pulso:hover::after,.btn-pulso:focus-within::after{transform:translateY(0)}
+
+    /* Móvil: pestaña Pulso y botón Ayuda más compactos */
+    @media (max-width:600px){
+      .btn-pulso{right:calc(12px + 34px + 8px)}
+      .pulse-btn{padding:5px 9px !important}
+      .pulse-txt{font-size:12px !important;gap:4px}
+      .pulse-btn .chev{display:none}
+      .help-btn{width:34px;height:34px}
+    }
+    @media (max-width:380px){
+      .pulse-txt{font-size:10.5px !important;gap:3px}
+      .pulse-btn{padding:4px 7px !important}
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
