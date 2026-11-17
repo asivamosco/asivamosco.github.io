@@ -13,11 +13,11 @@
 
   <style>
     /* Ajustes botones Pulso y Ayuda */
-    .hd{position:relative}
+    .hd{position:relative;z-index:50}
     .hd-right{position:static}
 
     /* Pulso: pestaña que cuelga de la parte inferior del header */
-    .btn-pulso{position:absolute;bottom:-2px;top:auto;right:calc(16px + 40px + 14px);margin:0;padding:0;line-height:0;z-index:5}
+    .btn-pulso{position:absolute;bottom:-2px;top:auto;right:calc(16px + 40px + 14px);margin:0;padding:0;line-height:0;z-index:60}
     .pulse-btn{
       line-height:normal;
       border-left:0 !important;
@@ -26,6 +26,7 @@
       border-bottom:0 !important;
       box-shadow:none !important;
       display:block;
+      position:relative;z-index:61;pointer-events:auto;
       border-radius:6px 6px 0 0 !important;
       margin:0 !important;
     }
@@ -80,7 +81,7 @@
     </div>
     <div class="hd-right">
       <div class="btn-group btn-pulso" data-tip="Comparación desempeño">
-        <a class="pulse-btn" href="pulso/" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>ABELARDO</span><i aria-hidden="true"></i><span>PETRO</span></span><span class="chev" aria-hidden="true">›</span></a>
+        <a class="pulse-btn" href="pulso/index.html" aria-label="Comparación desempeño" title="Comparación desempeño"><span class="pulse-txt"><span>ABELARDO</span><i aria-hidden="true"></i><span>PETRO</span></span><span class="chev" aria-hidden="true">›</span></a>
       </div>
       <div class="btn-group btn-ayuda" data-tip="Ayuda">
         <a class="help-btn" href="ayuda.html" aria-label="Ayuda" title="Ayuda"><span class="q" aria-hidden="true">?</span></a>
