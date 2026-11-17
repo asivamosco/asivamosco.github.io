@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---------- Carga de datos ---------- */
 function cargarIndicador(cfg) {
-  fetch(`${cfg.archivo}?v=${Date.now()}`, { cache: 'no-store' })
+  fetch(`data/${cfg.archivo}?v=${Date.now()}`, { cache: 'no-store' })
     .then(res => res.json())
     .then(data => renderizarIndicador(cfg, data))
     .catch(err => console.error(`Error ${cfg.id}:`, err));
@@ -177,7 +177,7 @@ function renderizarIndicador(cfg, data) {
     const cont = document.getElementById('adA');
     if (!wrap || !cont) return;
 
-    fetch(`ads.json?v=${Date.now()}`, { cache: 'no-store' })
+    fetch(`data/ads.json?v=${Date.now()}`, { cache: 'no-store' })
       .then(res => res.json())
       .then(cfg => {
         const a = cfg.anuncio || (cfg.espacio1 && cfg.espacio1[0]);
