@@ -563,7 +563,7 @@ function drawBarras(){
     };
     const ganador = v === 'e' ? 'Empate' : 'Mejor ' + (v === 'a' ? 'Abelardo' : 'Petro');
     return `<button class="bc" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
-      `<span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}${' · hasta ' + etq(m)}</span>` +
+      `<span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}${' · a ' + etq(m)}</span>` +
       `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
       `<div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
   }).join('');
@@ -592,7 +592,7 @@ function render(){
   const np = IND.filter(q => veredicto(q) === 'p').length, na = IND.filter(q => veredicto(q) === 'a').length;
   document.querySelectorAll('.sc').forEach(e => e.textContent = np + '-' + na);
   $('#tit').textContent = ind.t;
-  $('#src').textContent = `${ind.sub} · Fuente: ${ind.fuente}${' · Abelardo con dato hasta ' + etq(m)}`;
+  $('#src').textContent = `${ind.sub} · Fuente: ${ind.fuente}${' · Abelardo con dato a ' + etq(m)}`;
   const w = $('#win'); w.className = 'win ' + (v === 'n' ? 'e' : v);
   w.innerHTML = v === 'n' ? 'Sin datos' : v === 'e' ? 'Empate' : `<span>Mejor ${v === 'a' ? 'Abelardo' : 'Petro'}</span>`;
   const st = (n, s, col) => { const dl = s[m] - s[0]; return `<span><i class="dot" style="background:${col}"></i>${n} <b>${fmt(s[m], ind.d)}${ind.u}</b> <span class="${cls(ind, s)}">${flecha(dl)} ${sg(dl, ind.d)}${ind.du}</span></span>`; };
