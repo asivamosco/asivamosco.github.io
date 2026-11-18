@@ -70,3 +70,15 @@ body.app .page > header.hd{flex:none}
 body.app .page > .zone{flex:1 1 0;min-height:0;display:flex;flex-direction:column}
 body.app .page > .zone > .cats{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
+
+/* ---------- FOOTER (escritorio/tablet ancha): banner arriba como siempre; debajo, en una sola línea,
+   el texto a la izquierda y "Aliado estratégico" a la derecha ---------- */
+@media (min-width:768px){
+  footer.site-foot{padding-top:10px;padding-bottom:8px}
+  footer.site-foot .foot-in{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"sp sp" "txt label";align-items:center;row-gap:6px;column-gap:16px}
+  footer.site-foot .foot-in .sponsors,footer.site-foot .foot-in .ad-wrap{display:contents}
+  footer.site-foot .foot-in .ad-wrap[hidden]{display:none}
+  footer.site-foot .foot-in .sp{grid-area:sp}
+  footer.site-foot .foot-in .ad-label{grid-area:label;margin:0;text-align:right;white-space:nowrap}
+  footer.site-foot .foot-in > p.foot-txt{grid-area:txt;margin:0;text-align:left;font-size:13px;line-height:1.2}
+}
