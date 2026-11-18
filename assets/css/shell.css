@@ -17,6 +17,8 @@ header.hd{--gx:max(var(--gutter),calc(50vw - var(--col)/2));flex:none;display:fl
 .hd-right{flex:none;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:10px var(--gx,20px) 9px 0}
 header.hd h1.brand{margin:0;padding:0;display:flex;font-size:inherit;font-weight:400;color:#fff;white-space:nowrap}
 header.hd a.home{display:block;color:#fff;text-decoration:none;border-radius:6px}
+/* Ícono en la línea de "Así Vamos": apoyado en la línea base y con la altura de las mayúsculas A y V de Anton (0,86em) */
+header.hd .brand-ico{display:inline-block;width:.89em;height:.86em;margin-left:.3em;vertical-align:baseline;color:#fff}
 header.hd a.home:focus-visible{outline:2px solid #fff;outline-offset:4px}
 header.hd .brand-col{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
 header.hd .brand-txt{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.01em}
