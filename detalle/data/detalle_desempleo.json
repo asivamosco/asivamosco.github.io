@@ -1,7 +1,7 @@
 {
   "indicador": "desempleo",
   "fuente": "Dane",
-  "generado_en": "2026-11-12T20:55:27+00:00",
+  "generado_en": "2026-11-18T13:33:17+00:00",
   "periodo": {
     "anio": 2026,
     "mes_num": 9,
@@ -304,7 +304,7 @@
           "puesto_cantidad": 1,
           "puesto_tasa": 23,
           "puesto_variacion": 21,
-          "barra": 100.0,
+          "barra": 100,
           "participacion_pct": 29.6
         },
         {
@@ -474,7 +474,7 @@
           "puesto_cantidad": 3,
           "puesto_tasa": 14,
           "puesto_variacion": 4,
-          "barra": 33.0,
+          "barra": 33,
           "participacion_pct": 9.8
         },
         {
@@ -899,7 +899,7 @@
           "puesto_cantidad": 8,
           "puesto_tasa": 13,
           "puesto_variacion": 6,
-          "barra": 9.0,
+          "barra": 9,
           "participacion_pct": 2.7
         },
         {
@@ -1324,7 +1324,7 @@
           "puesto_cantidad": 13,
           "puesto_tasa": 22,
           "puesto_variacion": 9,
-          "barra": 6.0,
+          "barra": 6,
           "participacion_pct": 1.8
         },
         {
@@ -1835,7 +1835,7 @@
           "puesto_tasa": 15,
           "puesto_variacion": 16,
           "barra": 3.5,
-          "participacion_pct": 1.0
+          "participacion_pct": 1
         },
         {
           "ciudad": "Tunja",
@@ -2004,7 +2004,7 @@
           "puesto_cantidad": 21,
           "puesto_tasa": 1,
           "puesto_variacion": 22,
-          "barra": 3.0,
+          "barra": 3,
           "participacion_pct": 0.9
         },
         {

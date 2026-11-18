@@ -97,6 +97,16 @@
       .btn-pulso{right:4px}
       .btn-ayuda{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
     }
+
+    /* Footer: espacio de Aliado estratégico (igual que en Pulso) */
+    footer.site-foot .sponsors,footer.site-foot .ad-wrap{display:block}
+    footer.site-foot .ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 4px 2px}
+    footer.site-foot .sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;background:#0f4c5c;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
+    footer.site-foot .sp a,footer.site-foot .sp picture{display:block;width:100%;height:100%}
+    footer.site-foot .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
+    footer.site-foot .sponsors+.foot-txt{margin-top:10px}
+    @media (max-width:767px), (max-width:850px) and (orientation:portrait){footer.site-foot .sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}}
+    @media (max-width:600px) and (orientation:portrait){footer.site-foot .ad-label{font-size:9px;margin-bottom:3px;text-align:center}footer.site-foot .sponsors+.foot-txt{margin-top:6px}}
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -182,9 +192,9 @@
   <footer class="site-foot">
     <div class="foot-in">
       <section class="sponsors" aria-label="Publicidad">
-        <div class="ad-wrap" id="adWrap" hidden>
+        <div class="ad-wrap" id="adWrap">
           <div class="ad-label">Aliado estratégico</div>
-          <div class="sp" id="adA" hidden></div>
+          <div class="sp" id="adA"><span>Espacio publicitario</span></div>
         </div>
       </section>
       <p class="foot-txt">Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>

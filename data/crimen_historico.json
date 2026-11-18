@@ -1,11 +1,5 @@
 [
   {
-    "mes": "Octubre",
-    "anio": 2025,
-    "indice": 5.3802,
-    "var_anual": -0.35
-  },
-  {
     "mes": "Noviembre",
     "anio": 2025,
     "indice": 4.5045,
@@ -70,5 +64,11 @@
     "anio": 2026,
     "indice": 4.2143,
     "var_anual": -20.33
+  },
+  {
+    "mes": "Octubre",
+    "anio": 2026,
+    "indice": 4.0462,
+    "var_anual": -24.79
   }
 ]

@@ -1,0 +1,39 @@
+{
+  "id": "desempleo",
+  "t": "Desempleo",
+  "c": "Desempleo",
+  "sub": "Tasa de desempleo",
+  "fuente": "Dane",
+  "mejor": "bajar",
+  "d": 1,
+  "u": " %",
+  "du": " pp",
+  "A": [
+    8.1,
+    9.4,
+    8.0
+  ],
+  "P": [
+    11.0,
+    10.6,
+    10.7
+  ],
+  "periodos": {
+    "A": [
+      "2026-07-01",
+      "2026-08-01",
+      "2026-09-01"
+    ],
+    "P": [
+      "2022-07-01",
+      "2022-08-01",
+      "2022-09-01"
+    ]
+  },
+  "meta": {
+    "tipo_serie": "level",
+    "mes_max_A": 2,
+    "mes_max_P": 2,
+    "generado": "2026-11-18T11:05:12+00:00"
+  }
+}
