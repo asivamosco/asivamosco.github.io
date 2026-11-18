@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700;800&family=Roboto+Condensed:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/shell.css?v=1">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
   --ok-t:#0b8577;--mal-t:#c4412b;--cA:#00639c;--cP:#e49c30;--cPt:#b87a14;--tA:#e0eef7;--tP:#fdf1dc;
@@ -19,30 +20,7 @@ body{background:var(--bg);color:var(--ink);font:400 15px/1.35 "Roboto Condensed"
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
-header.hd{flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;--gx:max(16px,calc(50vw - 344px));padding:8px var(--gx) 7px;background:#12303d;color:#fff}
-.ttl{display:flex;align-items:baseline;gap:10px;min-width:0}
-.ttl h1{margin:0;font:400 28px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
-.ttl span{font-size:15px;color:#cfe3ea}
-.rt{display:flex;align-items:center;gap:14px}
-.brand{display:flex;flex-direction:column;align-items:flex-start;gap:4px;color:#fff;text-decoration:none}
-.brand b{font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em}
-.brand span{font-size:8px;font-weight:700;letter-spacing:.32em;color:#cfe3ea}
-.back i{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid #cfe3ea;border-radius:50%;background:rgba(255,255,255,.08);font-style:normal;font-size:16px;color:#cfe3ea;text-decoration:none}
-.back{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:#cfe3ea;font:700 8.5px/1 Montserrat,sans-serif;letter-spacing:.05em;text-transform:uppercase}
-.back i{width:32px;height:32px}
-.hdt{display:none;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;min-width:0}
-.hdt h1{margin:0;font:400 24px/1 Anton,Impact,sans-serif;letter-spacing:.01em;color:#fff}
-.hdt span{font-size:11px;line-height:1.1;color:#cfe3ea}
-footer{flex:none;background:#12303d;color:#cfe3ea;padding:14px 0 12px}
-.foot-in{max-width:1000px;margin:0 auto;padding:0 20px}
-.foot-txt{margin:10px 0 0;text-align:center;color:#cfe3ea;font-size:13px;font-weight:600}
-.ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 4px 2px}
-.sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;background:#0f4c5c;border-radius:var(--r);display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
-.sp a,.sp picture{display:block;width:100%;height:100%}
-.sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
-@media (max-width:767px), (max-width:850px) and (orientation:portrait){.sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}}
-@media (min-width:901px){.foot-in{max-width:688px;padding:0}}
-@media (max-width:600px) and (orientation:portrait){footer{padding:8px 10px 6px}.foot-in{padding:0}.ad-label{font-size:9px;margin-bottom:3px;text-align:center}.foot-txt{margin-top:6px;font-size:10px;line-height:1.2}}
+header.hd{--gx:max(16px,calc(50vw - 344px))}
 
 main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:0 auto;padding:12px 16px;
   display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
@@ -134,7 +112,6 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 @media(max-width:760px){
   header.hd{--gx:10px}
   .ttl h1{font-size:22px}.ttl span{display:none}
-  .brand b{font-size:20px}
   main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
   .mid{padding:8px 10px}
   .pers{align-self:stretch}
@@ -433,10 +410,16 @@ main{row-gap:0}
 .bc{background:var(--wt,#fff)}
 </style>
 </head>
-<body>
+<body class="app">
 <header class="hd">
-  <a class="brand" href="../index.html" aria-label="Así Vamos, volver al inicio"><b>Así Vamos</b><span>COLOMBIA</span></a>
-  <a class="back" href="../index.html" aria-label="Volver al inicio"><i><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></svg></i></a>
+  <div class="hd-left">
+    <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true">Así Vamos</span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
+  </div>
+  <div class="hd-right">
+    <div class="btn-group">
+      <a class="help-btn" href="../index.html" aria-label="Volver al inicio" title="Inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h5v-6h3v6h5V10"/></svg></a>
+    </div>
+  </div>
 </header>
 
 <main aria-live="polite">
@@ -481,7 +464,7 @@ main{row-gap:0}
   <button onclick="this.closest('dialog').close()">Cerrar</button>
 </dialog>
 
-<footer>
+<footer class="site-foot">
  <div class="foot-in">
   <div class="ad-wrap" id="adWrap">
     <div class="ad-label">Aliado estratégico</div>
