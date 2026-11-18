@@ -5,11 +5,14 @@
      - .foot-in{max-width/padding} (ancho de su columna)
    ========================================================= */
 
-/* Ancho de columna común (banner del footer y contenido que quiera alinearse) */
-:root{--col:960px}
+/* Ancho de columna común = el de las tarjetas del index (3 de 226px + 2 huecos de 14px = 706px).
+   Lo usan footer/banner, header y el contenido de todas las páginas. */
+:root{--col:706px;--gutter:20px}
+@media (min-width:601px) and (max-width:900px){:root{--col:772px}}
+@media (max-width:600px){:root{--gutter:10px}}
 
 /* ---------- HEADER ---------- */
-header.hd{flex:none;display:flex;align-items:stretch;padding:0;background:#12303d;color:#fff}
+header.hd{--gx:max(var(--gutter),calc(50vw - var(--col)/2));flex:none;display:flex;align-items:stretch;padding:0;background:#12303d;color:#fff}
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx,20px)}
 .hd-right{flex:none;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:10px var(--gx,20px) 9px 0}
 header.hd h1.brand{margin:0;padding:0;display:flex;font-size:inherit;font-weight:400;color:#fff;white-space:nowrap}
@@ -38,18 +41,14 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 }
 
 /* ---------- FOOTER ---------- */
-footer.site-foot{flex:none;background:#12303d;color:#fff;padding-top:14px;padding-bottom:12px}
-.site-foot .foot-in{max-width:var(--col);margin:0 auto;padding:0 16px}
+footer.site-foot{flex:none;background:#12303d;color:#fff;padding:14px var(--gutter) 12px}
+.site-foot .foot-in{max-width:var(--col);margin:0 auto;padding:0}
 .site-foot .ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 4px 2px}
 .site-foot .sp{position:relative;overflow:hidden;width:100%;aspect-ratio:970/90;background:#0f4c5c;border-radius:6px;display:grid;place-items:center;font-size:11px;font-weight:600;color:#9fbccb}
 .site-foot .sp a,.site-foot .sp picture{display:block;width:100%;height:100%}
 .site-foot .sp img{display:block;width:100%;height:100%;object-fit:fill;border:0}
 .site-foot .foot-txt{margin:0;text-align:center;color:#cfe3ea;font-size:13px;font-weight:600}
 .site-foot .ad-wrap+.foot-txt,.site-foot .sponsors+.foot-txt{margin-top:10px}
-@media (max-width:600px){
-  footer.site-foot{padding-left:10px;padding-right:10px}
-  .site-foot .foot-in{padding:0}
-}
 @media (max-width:767px), (max-width:850px) and (orientation:portrait){
   .site-foot .sp{max-width:320px;aspect-ratio:320/100;margin:0 auto}
 }

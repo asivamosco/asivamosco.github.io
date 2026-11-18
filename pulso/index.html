@@ -20,9 +20,8 @@ body{background:var(--bg);color:var(--ink);font:400 15px/1.35 "Roboto Condensed"
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 
-header.hd{--gx:max(16px,calc(50vw - 344px))}
 
-main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:720px;margin:0 auto;padding:12px 16px;
+main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;max-width:calc(var(--col) + 32px);margin:0 auto;padding:12px 16px;
   display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr) minmax(140px,210px);grid-template-rows:auto 1fr;grid-template-areas:"a t p" "c c c";gap:12px 16px;align-items:stretch}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border-top:3px solid #12303d}
 
@@ -110,7 +109,6 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 
 @media(min-width:761px){.foto{aspect-ratio:600/566}.foto img{object-fit:contain;object-position:center bottom}}
 @media(max-width:760px){
-  header.hd{--gx:10px}
   .ttl h1{font-size:22px}.ttl span{display:none}
   main{grid-template-columns:1fr 1fr;grid-template-rows:auto auto 1fr;grid-template-areas:"a p" "t t" "c c";padding:8px 10px;gap:8px}
   .mid{padding:8px 10px}
@@ -389,8 +387,7 @@ main{row-gap:0}
   .pid,.pid.nw{position:relative;z-index:1}
 }
 @media(orientation:portrait) and (min-width:761px){
-  header.hd{--gx:max(16px,calc(50vw - 374px))}
-  main{max-width:780px;grid-template-columns:minmax(140px,240px) minmax(0,1fr) minmax(140px,240px)}
+  main{max-width:calc(var(--col) + 32px);grid-template-columns:minmax(140px,240px) minmax(0,1fr) minmax(140px,240px)}
 }
 
 /* ===== Respaldo para navegadores sin aspect-ratio (tablets antiguas) ===== */
