@@ -24,7 +24,8 @@ a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 /* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
 header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
-.hd-left,.hd-right{flex:1 1 0}
+.hd-left{flex:1 1 0}
+.hd-right{flex:none}
 .hd-mid{flex:none;display:flex;align-items:flex-end;align-self:flex-end;gap:6px;padding:0 12px}
 header.hd .vt{border:0;border-radius:10px 10px 0 0;background:rgba(255,255,255,.1);color:var(--hd-acc);padding:12px 22px 11px;
   font-family:Montserrat,"Segoe UI",sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;line-height:1;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s}
@@ -60,15 +61,26 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
 .hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
 .hz p{margin:0;font-size:17px}
-/* sexo */
-.sx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.sx button{all:unset;cursor:pointer;display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r)}
-.sx button:focus-visible{outline:2px solid var(--acc)}
-.sx button[aria-pressed=true]{border-color:var(--acc);background:#eef6f7}
-.sx .n{font-size:15px;color:var(--mute)} .sx .t{font-size:40px;font-weight:700;line-height:1.1}
-.sx .row2{display:flex;justify-content:space-between;margin-top:6px}
-.brecha{margin:12px 0 0;font-size:17px}
+/* sexo: un panel por serie (mujeres amarillo, hombres azul), mismos colores que la gráfica */
+.sx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pn{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.pn .n{font-size:15px;color:var(--mute);display:flex;align-items:center;gap:8px}
+.pn .n i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
+.pn .t{font-size:44px;font-weight:700;line-height:1.1;margin:2px 0 4px}
+.pn .t span{font-size:22px;margin-left:3px;color:var(--mute)}
+.pn .ds{font-size:15px;line-height:1.25}
+.pv div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.pv{border-top:1px solid var(--line);padding-top:8px}
+.pv div:last-child{border-bottom:0;padding-bottom:0}
+.pv span{font-size:13px;color:var(--mute);line-height:1.2}
+.pv b{font-size:17px;line-height:1.1;white-space:nowrap}
+.pv .up{color:var(--up-t)} .pv .dn{color:var(--dn-t)}
+.leg{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+.leg span{display:inline-flex;align-items:center;gap:7px}
+.leg i{width:20px;height:4px;border-radius:2px;background:var(--c)}
+.leg .br i{height:0;background:none;border-top:2px dashed var(--mute);border-radius:0}
 .sxc .ref{margin:6px 0 0;font-size:13px}
+.brecha{margin:12px 0 0;font-size:17px}
 /* ciudades */
 .head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
 .head h2{margin:0}
@@ -106,6 +118,12 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .cl .ref{margin:8px 0 0;font-size:13px;line-height:1.3}
 .cg #chart{flex:1;display:flex;align-items:center}
 .cg #chart>*{width:100%}
+.sub2{margin:18px 0 4px;font-size:16px;font-weight:700}
+.cg .hz .card{box-shadow:none;background:#f6f8f9}
+.cg .hz{align-self:flex-start}
+/* TOP: listas completas, los nombres largos pueden ocupar dos líneas */
+.t5 .nm>span:first-child{white-space:normal;overflow:visible}
+.t5 h2 small{font-size:14px;font-weight:500}
 /* top 5 cambio anual */
 .tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
 .tres>.sxc{grid-column:1/-1}
@@ -124,6 +142,7 @@ svg{width:100%;height:auto;display:block}
 svg text{font-family:inherit;fill:var(--mute);font-size:15px}
 svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .err{padding:24px;text-align:center}
+.top.g.sexo .cg{grid-column:1/-1}
 @media(max-width:600px){
   .top{grid-template-columns:1fr}
   .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
@@ -131,6 +150,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   .top:not(.g)>.hero .vars{grid-template-columns:1fr}
   .cl{contain:none;height:340px;min-height:0}
   .tres{grid-template-columns:1fr}
+  .sx{grid-template-columns:1fr}
 }
 @media(max-width:420px){.hz{grid-template-columns:1fr}}
 </style>
@@ -142,6 +162,8 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   </div>
   <nav class="hd-mid" aria-label="Vista">
     <button type="button" class="vt" data-vista="gen" aria-pressed="true">General</button>
+    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
+    <button type="button" class="vt" data-vista="sex" aria-pressed="false">Sexo</button>
     <button type="button" class="vt" data-vista="ciu" aria-pressed="false">23 ciudades</button>
   </nav>
   <div class="hd-right">
@@ -174,11 +196,12 @@ const persSg = m => m == null ? '—' : (m > 0 ? '+' : m < 0 ? '−' : '') + per
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
 
-// vista: 'gen' (nacional) | 'ciu' (ciudades). g = serie elegida en General (nacional o sexo); c = ciudad elegida en Ciudades.
-let D, st = {vista: 'gen', g: null, c: null, tab: 'doce'};
+// vista: 'gen' (nacional) | 'top' | 'sex' (por sexo) | 'ciu' (ciudades). c = ciudad elegida; s = sexo elegido.
+let D, st = {vista: 'gen', g: null, c: null, gtab: 'graf'};
+const COL_M = '#f2b01e', COL_H = '#2f6fd6';
+const colSexo = n => /muj/i.test(n) ? COL_M : COL_H;
 const nacional = () => ({nombre: 'Nacional', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
 const ciudadSerie = c => ({nombre: c.ciudad, datos: c.serie_12m, tipo: 'ciudad', d: c});
-const sexoSerie = s => ({nombre: s.sexo, datos: s.serie_12m, tipo: 'sexo', d: s});
 const cur = () => st.vista === 'gen' ? st.g : st.c;
 
 fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -192,45 +215,58 @@ fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.st
 
 function render() {
   document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
-  const dim = D.dimensiones, ciu = dim.ciudades, gen = st.vista === 'gen';
-  const nCiu = ciu.items.length;
+  const dim = D.dimensiones, ciu = dim.ciudades, v = st.vista;
   document.querySelectorAll('[data-vista]').forEach(b => {
-    b.setAttribute('aria-pressed', b.dataset.vista === st.vista);
-    if (b.dataset.vista === 'ciu') b.textContent = `${nCiu} ciudades`;
+    b.setAttribute('aria-pressed', b.dataset.vista === v);
+    if (b.dataset.vista === 'ciu') b.textContent = `${ciu.items.length} ciudades`;
   });
-
-  if (gen) {
-    $('#app').innerHTML = `
+  const topG = `
     <div class="top g" id="top">
       <section class="card cg" aria-label="Serie">
         <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
         <div id="chart"></div>
       </section>
       <section class="card hero" id="hero" aria-label="Indicador"></section>
-    </div>
+    </div>`;
 
-    <section aria-label="Hallazgos"><div class="hz">${D.hallazgos.map(x => `
-      <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}">
-        <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div></section>
-
+  if (v === 'gen') {
+    $('#app').innerHTML = topG;
+  } else if (v === 'top') {
+    $('#app').innerHTML = `
     <div class="tres">
-      <section class="card sxc" aria-label="Por sexo">
-        <h2>Por sexo</h2>
-        <div class="sx">${dim.sexo.items.map((s, i) => `
-          <button data-sx="${i}" aria-pressed="${st.g.tipo === 'sexo' && st.g.nombre === s.sexo}">
-            <div class="n">${esc(s.sexo)}</div>
-            <div class="t">${fmt(s.tasa_desempleo, 1)} %</div>
-            <div class="row2"><span>${pers(s.desocupados_miles)} personas</span>
-              <span class="${cls(s.var_anual_pp)}">${flecha(s.var_anual_pp)} ${sg(s.var_anual_pp)}</span></div>
-          </button>`).join('')}</div>
-        ${dim.sexo.brecha ? `<p class="brecha"><b>Brecha: ${fmt(dim.sexo.brecha.brecha_pp, 1)} pp</b> <span class="mute">(mujeres menos hombres)</span></p>` : ''}
-        <p class="ref">Variación frente a hace un año, en puntos porcentuales (pp).</p>
-      </section>
-      <section class="card t5" id="t5s" aria-label="Ciudades que más aumentaron"></section>
-      <section class="card t5" id="t5b" aria-label="Ciudades que más redujeron"></section>
+      <section class="card t5" id="t5s" aria-label="Ciudades que aumentaron"></section>
+      <section class="card t5" id="t5b" aria-label="Ciudades que redujeron"></section>
     </div>
     <p class="ref" style="margin:-6px 0 0">pp = puntos porcentuales: variación de la tasa de desempleo de cada ciudad frente a hace un año. Toca una ciudad para ver su detalle.</p>`;
     top5();
+  } else if (v === 'sex') {
+    const per = D.periodo, pp = (l, x) => `<div><span>${l}</span><b class="${cls(x)}">${flecha(x)} ${sg(x)}</b></div>`;
+    $('#app').innerHTML = `
+    <section class="card sxc" aria-label="Por sexo">
+      <div class="sx">${dim.sexo.items.map(x => `
+        <div class="pn" style="--c:${colSexo(x.sexo)}">
+          <div>
+            <div class="n"><i></i>${esc(x.sexo)}</div>
+            <div class="t">${fmt(x.tasa_desempleo, 1)}<span>%</span></div>
+            <div class="ds">${pers(x.desocupados_miles)} personas desocupadas</div>
+          </div>
+          <div class="pv">
+            ${pp('Vs. mes anterior', x.cambio_mes_pp)}
+            ${pp('Vs. hace un año', x.var_anual_pp)}
+            <div><span>Personas vs. hace un año</span><b class="${cls(x.desocupados_var_anual_miles)}">${flecha(x.desocupados_var_anual_miles)} ${persSg(x.desocupados_var_anual_miles)}</b></div>
+          </div>
+        </div>`).join('')}</div>
+      ${dim.sexo.brecha ? `<p class="brecha"><b>Brecha: ${fmt(dim.sexo.brecha.brecha_pp, 1)} pp</b> <span class="mute">(mujeres menos hombres)</span></p>` : ''}
+      <p class="ref">Variaciones en puntos porcentuales (pp), salvo las de personas. ${esc(per.etiqueta)} · Fuente: ${esc(D.fuente)}</p>
+    </section>
+    <div class="top g sexo" id="top">
+      <section class="card cg" aria-label="Serie por sexo">
+        <div class="head"><h2>Mujeres y hombres: últimos 12 meses</h2>
+          <div class="leg">${dim.sexo.items.map(x => `<span style="--c:${colSexo(x.sexo)}"><i></i>${esc(x.sexo)}</span>`).join('')}<span class="br"><i></i>Brecha</span></div></div>
+        <div id="chart"></div>
+      </section>
+    </div>`;
+    $('#chart').innerHTML = graficaSexo(dim.sexo.items);
   } else {
     $('#app').innerHTML = `
     <div class="top" id="top">
@@ -247,7 +283,7 @@ function render() {
     </div>`;
     lista();
   }
-  hero(); serie();
+  if (v === 'gen' || v === 'ciu') { hero(); serie(); }
 }
 
 function refTxt(refs) {
@@ -282,8 +318,6 @@ function marcar() {
   const dim = D.dimensiones;
   if (st.vista === 'ciu')
     document.querySelectorAll('[data-ci]').forEach(x => x.setAttribute('aria-pressed', dim.ciudades.items[x.dataset.ci].ciudad === st.c.nombre));
-  else
-    document.querySelectorAll('[data-sx]').forEach(x => x.setAttribute('aria-pressed', st.g.tipo === 'sexo' && dim.sexo.items[x.dataset.sx].sexo === st.g.nombre));
 }
 
 function lista() {
@@ -302,28 +336,40 @@ function lista() {
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
 }
 
+// Todas las ciudades que aumentaron / redujeron su tasa frente a hace un año (pp), en orden
 function top5() {
   const todas = D.dimensiones.ciudades.items, items = todas.filter(c => c.var_anual_pp != null);
-  const sube = items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp).slice(0, 5);
-  const baja = items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp).slice(0, 5);
-  const mx = Math.max(...[...sube, ...baja].map(c => Math.abs(c.var_anual_pp)), 0.01);
-  const bloque = (tit, arr, k, vacio) => `<h2 class="${k}">${tit}</h2>${arr.length ? arr.map((c, i) => `
-    <button class="tr" data-ci="${todas.indexOf(c)}" aria-pressed="false">
+  const sube = items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp);
+  const baja = items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp);
+  const mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
+  const bloque = (tit, arr, k, vacio) => `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
+    <button class="tr" data-ci="${todas.indexOf(c)}" title="${esc(c.ciudad)}" aria-pressed="false">
       <span class="rk">${i + 1}</span>
       <span class="nm"><span>${esc(c.ciudad)}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
       <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong>
         <small class="mute">hoy ${fmt(c.tasa_desempleo, 1)} %</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
-  $('#t5s').innerHTML = bloque('Las 5 que más aumentaron', sube, 'up', 'Ninguna ciudad aumentó frente a hace un año.');
-  $('#t5b').innerHTML = bloque('Las 5 que más redujeron', baja, 'dn', 'Ninguna ciudad redujo frente a hace un año.');
+  $('#t5s').innerHTML = bloque('Ciudades que aumentaron', sube, 'up', 'Ninguna ciudad aumentó frente a hace un año.');
+  $('#t5b').innerHTML = bloque('Ciudades que redujeron', baja, 'dn', 'Ninguna ciudad redujo frente a hace un año.');
+}
+
+// Paneles de hallazgos: dentro de General, pestaña Destacados
+function hallazgosHtml() {
+  return `<div class="hz">${(D.hallazgos || []).map(x => `
+    <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}">
+      <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`;
 }
 
 function serie() {
-  const s = cur(), mm = st.tab === 'mismo' && s.nac, datos = mm ? D.serie.mismo_mes : s.datos;
-  $('#serieT').textContent = `${s.nombre}: ${mm ? 'este mes, año a año' : 'últimos 12 meses'}`;
+  const s = cur(), dest = s.nac && st.gtab === 'dest';
+  $('#serieT').textContent = dest ? `${s.nombre}: destacados` : `${s.nombre}: últimos 12 meses`;
+  // Nacional: pestañas Gráficas / Destacados
   $('#tabs').innerHTML = s.nac
-    ? `<button data-tab="doce" aria-pressed="${!mm}">12 meses</button><button data-tab="mismo" aria-pressed="${mm}">Mismo mes por año</button>`
-    : s.tipo === 'sexo' ? `<button data-tab="nac" aria-pressed="false">Volver al nacional</button>` : '';
-  $('#chart').innerHTML = grafica(datos || [], mm);
+    ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
+    : '';
+  $('#chart').innerHTML = dest ? hallazgosHtml()
+    : s.nac
+    ? `<div class="dos">${grafica(s.datos || [], false)}<h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div>`
+    : grafica(s.datos || [], false);
 }
 
 function grafica(d, mm) {
@@ -343,6 +389,48 @@ function grafica(d, mm) {
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
 }
 
+// Dos series en una misma escala: mujeres (amarillo) y hombres (azul)
+function graficaSexo(items) {
+  const S = items.map(x => ({n: x.sexo, c: colSexo(x.sexo), d: x.serie_12m || []}));
+  const N = Math.min(...S.map(k => k.d.length));
+  if (S.length < 2 || N < 2) return '<p class="mute">Sin datos suficientes.</p>';
+  const W = 800, H = 290, L = 26, R = 26, T = 34, B = 34;
+  const vs = S.flatMap(k => k.d.slice(0, N).map(p => p.valor)), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .22;
+  const x = i => L + i * (W - L - R) / (N - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
+  const media = k => k.d.slice(0, N).reduce((a, p) => a + p.valor, 0) / N;
+  const halo = 'paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round';
+  let lines = '', pts = '', lab = '';
+  S.forEach((k, j) => {
+    const o = S[1 - j], alta = media(k) >= media(o);
+    lines += `<polyline fill="none" stroke="${k.c}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" points="${k.d.slice(0, N).map((p, i) => `${x(i)},${y(p.valor)}`).join(' ')}"/>`;
+    k.d.slice(0, N).forEach((p, i) => {
+      const ult = i === N - 1, v = p.valor, a = k.d[i - 1] && k.d[i - 1].valor, b = k.d[i + 1] && k.d[i + 1].valor;
+      pts += `<circle cx="${x(i)}" cy="${y(v)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : k.c}" stroke="${ult ? k.c : '#fff'}" stroke-width="${ult ? 3.5 : 1.5}"/>`;
+      if (i === 0 || ult || v === mx || v === mn || (v === Math.max(...k.d.slice(0, N).map(q => q.valor))) || (v === Math.min(...k.d.slice(0, N).map(q => q.valor)))) {
+        let arriba = alta;
+        if (a != null && b != null) { if (v >= a && v >= b) arriba = true; else if (v <= a && v <= b) arriba = false; }
+        const dy = y(o.d[i].valor) - y(v);            // >0: la otra serie queda debajo
+        if (arriba && dy < 0 && -dy < 32) arriba = false;
+        if (!arriba && dy > 0 && dy < 32) arriba = true;
+        lab += `<text class="v" style="${halo}" x="${x(i)}" y="${y(v) + (arriba ? -12 : 23)}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(v, 1)}</text>`;
+      }
+    });
+  });
+  // Brecha (mujeres menos hombres): conector vertical en el primer mes, el último, la mayor y la menor
+  const M = S.find(k => /muj/i.test(k.n)) || S[0], Hh = S.find(k => k !== M);
+  const br = Array.from({length: N}, (_, i) => M.d[i].valor - Hh.d[i].valor);
+  const idx = [...new Set([0, br.indexOf(Math.max(...br)), br.indexOf(Math.min(...br)), N - 1])].sort((a, b) => a - b);
+  let con = '';
+  idx.forEach(i => {
+    const y1 = y(M.d[i].valor), y2 = y(Hh.d[i].valor), xm = x(i), ult = i === N - 1;
+    con += `<line x1="${xm}" y1="${y1}" x2="${xm}" y2="${y2}" stroke="var(--mute)" stroke-width="2" stroke-dasharray="4 4"/>`;
+    lab += `<text class="v" style="${halo};font-size:14px" x="${xm + (ult ? -9 : 9)}" y="${(y1 + y2) / 2 + 5}" text-anchor="${ult ? 'end' : 'start'}">${fmt(br[i], 1)} pp</text>`;
+  });
+  lines = con + lines;
+  S[0].d.slice(0, N).forEach((p, i) => { lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${esc(p.mes)}</text>`; });
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Tasa de desempleo de mujeres y hombres, últimos 12 meses">${lines}${pts}${lab}</svg>`;
+}
+
 document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || !D) return;
   const dim = D.dimensiones;
@@ -350,18 +438,13 @@ document.addEventListener('click', e => {
     if (b.dataset.vista === st.vista) return;
     st.vista = b.dataset.vista; render(); $('#app').scrollTo({top: 0}); return;
   }
-  if (b.dataset.tab) {
-    if (b.dataset.tab === 'nac') { st.g = nacional(); st.tab = 'doce'; }
-    else st.tab = b.dataset.tab;
-  } else if (b.dataset.ci != null) {
+  if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
+  if (b.dataset.ci != null) {
     st.c = ciudadSerie(dim.ciudades.items[b.dataset.ci]);
-    // desde los top 5 (General) se abre el detalle de la ciudad en su pestaña
-    if (st.vista === 'gen') { st.vista = 'ciu'; render(); $('#app').scrollTo({top: 0}); return; }
-  } else if (b.dataset.sx != null) { st.g = sexoSerie(dim.sexo.items[b.dataset.sx]); }
-  else return;
+    // desde TOP se abre el detalle de la ciudad en su pestaña
+    if (st.vista !== 'ciu') { st.vista = 'ciu'; render(); $('#app').scrollTo({top: 0}); return; }
+  } else return;
   marcar(); hero(); serie();
-  // clic en "Por sexo" (más abajo): subir a la gráfica para ver el cambio
-  if (b.dataset.sx != null) $('#top').scrollIntoView({behavior: 'smooth', block: 'start'});
 });
 </script>
 </body>

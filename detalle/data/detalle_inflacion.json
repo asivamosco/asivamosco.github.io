@@ -1,0 +1,5226 @@
+{
+  "indicador": "inflacion",
+  "fuente": "Dane",
+  "generado_en": "2026-11-19T13:19:25+00:00",
+  "periodo": {
+    "anio": 2026,
+    "mes_num": 10,
+    "mes_nombre": "Octubre",
+    "etiqueta": "Octubre 2026"
+  },
+  "hero": {
+    "tasa_inflacion": 6.3,
+    "var_anual_pp": 0.79,
+    "cambio_mes_pp": 0.01,
+    "variacion_mensual": 0.2,
+    "variacion_mensual_hace_un_ano": 0.18,
+    "direccion_mes": "sube",
+    "direccion_anual": "sube",
+    "comparado_con_hace_un_ano": "Octubre 2025: 5.51 → ahora 6.3",
+    "previo": "Septiembre 2026: 6.29",
+    "actual": "Octubre 2026: 6.3",
+    "meses_seguidos_vs_ano_anterior": 10,
+    "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+    "rama": "nivel_mes",
+    "unidad": "%"
+  },
+  "hallazgos": [
+    {
+      "tipo": "indicador",
+      "titulo": "Inflación nacional",
+      "texto": "La inflación más alta para un octubre desde 2023.",
+      "rama": "nivel_mes"
+    },
+    {
+      "tipo": "mensual",
+      "titulo": "Variación del mes",
+      "texto": "Los precios subieron 0.20 % en octubre.",
+      "valor": 0.2,
+      "unidad": "%"
+    },
+    {
+      "tipo": "division_alta",
+      "titulo": "División con mayor inflación anual",
+      "texto": "Restaurantes Y Hoteles: 9.39 % anual (0.23 % en el mes).",
+      "valor": 9.39,
+      "unidad": "%",
+      "division": "Restaurantes Y Hoteles"
+    },
+    {
+      "tipo": "division_baja",
+      "titulo": "División con menor inflación anual",
+      "texto": "Prendas De Vestir Y Calzado: 3.14 % anual (0.24 % en el mes).",
+      "valor": 3.14,
+      "unidad": "%",
+      "division": "Prendas De Vestir Y Calzado"
+    },
+    {
+      "tipo": "ciudad_alta",
+      "titulo": "Ciudad con mayor inflación anual",
+      "texto": "Armenia: 7.29 % anual (0.99 pp sobre el total nacional).",
+      "valor": 7.29,
+      "unidad": "%",
+      "ciudad": "Armenia"
+    },
+    {
+      "tipo": "ciudad_baja",
+      "titulo": "Ciudad con menor inflación anual",
+      "texto": "Valledupar: 4.02 % anual (2.28 pp bajo el total nacional).",
+      "valor": 4.02,
+      "unidad": "%",
+      "ciudad": "Valledupar"
+    }
+  ],
+  "dimensiones": {
+    "unidad_cantidad": "variación porcentual",
+    "divisiones": {
+      "nota": "Variación del IPC nacional por división de gasto; cada división trae sus grupos.",
+      "orden_defecto": "tasa",
+      "items": [
+        {
+          "codigo": "11000000",
+          "division": "Restaurantes Y Hoteles",
+          "var_anual": 9.39,
+          "var_mensual": 0.23,
+          "var_anual_pp": 1.78,
+          "cambio_mes_pp": -0.05,
+          "direccion_anual": "sube",
+          "rank_hoy": 1,
+          "rank_prev": 1,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": 3.09,
+          "lectura_vs_total": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 1,
+          "puesto_variacion": 4,
+          "barra": 100,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.65,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.91,
+              "var_mensual": 1.24
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 9.01,
+              "var_mensual": 2.94
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 9.61,
+              "var_mensual": 1.38
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9.92,
+              "var_mensual": 0.86
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 9.61,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 9.62,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9.59,
+              "var_mensual": 0.39
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9.53,
+              "var_mensual": 0.3
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 9.36,
+              "var_mensual": 0.33
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 9.44,
+              "var_mensual": 0.28
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 9.39,
+              "var_mensual": 0.23
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "11100000",
+              "grupo": "Servicios De Suministro De Comidas Por Contrato",
+              "var_anual": 9.46,
+              "var_mensual": 0.22,
+              "var_anual_pp": 1.79,
+              "cambio_mes_pp": -0.05,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "11200000",
+              "grupo": "Servicios De Alojamiento",
+              "var_anual": 5.85,
+              "var_mensual": 0.65,
+              "var_anual_pp": 1.21,
+              "cambio_mes_pp": 0.46,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 61.8
+            }
+          ]
+        },
+        {
+          "codigo": "10000000",
+          "division": "Educación",
+          "var_anual": 7.44,
+          "var_mensual": 0,
+          "var_anual_pp": 0.1,
+          "cambio_mes_pp": -0.05,
+          "direccion_anual": "estable",
+          "rank_hoy": 2,
+          "rank_prev": 3,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_total": 1.14,
+          "lectura_vs_total": "por encima del total nacional",
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "puesto_anual": 2,
+          "puesto_variacion": 10,
+          "barra": 79.2,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 7.36,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.36,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.36,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7.44,
+              "var_mensual": 5.64
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7.54,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7.58,
+              "var_mensual": 0.07
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 7.58,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.57,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 7.57,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.45,
+              "var_mensual": 0.02
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.49,
+              "var_mensual": 1.43
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.44,
+              "var_mensual": 0.0
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "10200000",
+              "grupo": "Educación Secundaria",
+              "var_anual": 8.63,
+              "var_mensual": 0.01,
+              "var_anual_pp": -0.13,
+              "cambio_mes_pp": -0.11,
+              "direccion_anual": "estable",
+              "puesto_anual": 1,
+              "puesto_variacion": 2,
+              "barra": 100
+            },
+            {
+              "codigo": "10100000",
+              "grupo": "Educación Preescolar Y Básica Primaria",
+              "var_anual": 8.3,
+              "var_mensual": 0.01,
+              "var_anual_pp": -0.38,
+              "cambio_mes_pp": -0.06,
+              "direccion_anual": "baja",
+              "puesto_anual": 2,
+              "puesto_variacion": 3,
+              "barra": 96.2
+            },
+            {
+              "codigo": "10400000",
+              "grupo": "Educación Superior",
+              "var_anual": 5.94,
+              "var_mensual": 0,
+              "var_anual_pp": 1.1,
+              "cambio_mes_pp": -0.02,
+              "direccion_anual": "sube",
+              "puesto_anual": 3,
+              "puesto_variacion": 1,
+              "barra": 68.8
+            },
+            {
+              "codigo": "10500000",
+              "grupo": "Educación no atribuible a ningún nivel",
+              "var_anual": 4.91,
+              "var_mensual": 0,
+              "var_anual_pp": -1.19,
+              "cambio_mes_pp": 0.07,
+              "direccion_anual": "baja",
+              "puesto_anual": 4,
+              "puesto_variacion": 4,
+              "barra": 56.9
+            }
+          ]
+        },
+        {
+          "codigo": "06000000",
+          "division": "Salud",
+          "var_anual": 7.37,
+          "var_mensual": 0.26,
+          "var_anual_pp": 0.87,
+          "cambio_mes_pp": -0.42,
+          "direccion_anual": "sube",
+          "rank_hoy": 3,
+          "rank_prev": 2,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_total": 1.07,
+          "lectura_vs_total": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 3,
+          "puesto_variacion": 6,
+          "barra": 78.5,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6.88,
+              "var_mensual": 0.71
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 7.2,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.38,
+              "var_mensual": 1.21
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7.82,
+              "var_mensual": 0.94
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7.87,
+              "var_mensual": 1.06
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 8.21,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8.35,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.39,
+              "var_mensual": 0.39
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 8.37,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 8.3,
+              "var_mensual": 0.4
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.79,
+              "var_mensual": 0.12
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.37,
+              "var_mensual": 0.26
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "06200000",
+              "grupo": "Servicios Para Pacientes Externos",
+              "var_anual": 9.17,
+              "var_mensual": 0.07,
+              "var_anual_pp": 2.82,
+              "cambio_mes_pp": -0.19,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "06100000",
+              "grupo": "Productos, Artefactos Y Equipos Médicos",
+              "var_anual": 6.78,
+              "var_mensual": 0.35,
+              "var_anual_pp": 0.34,
+              "cambio_mes_pp": -0.53,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 73.9
+            },
+            {
+              "codigo": "06300000",
+              "grupo": "Servicios De Hospital",
+              "var_anual": 5.29,
+              "var_mensual": 0.04,
+              "var_anual_pp": -3.38,
+              "cambio_mes_pp": -0.17,
+              "direccion_anual": "baja",
+              "puesto_anual": 3,
+              "puesto_variacion": 3,
+              "barra": 57.7
+            }
+          ]
+        },
+        {
+          "codigo": "01000000",
+          "division": "Alimentos y bebidas no alcohólicas",
+          "var_anual": 7.31,
+          "var_mensual": 0.19,
+          "var_anual_pp": 0.67,
+          "cambio_mes_pp": 0.57,
+          "direccion_anual": "sube",
+          "rank_hoy": 4,
+          "rank_prev": 5,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_total": 1.01,
+          "lectura_vs_total": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 4,
+          "puesto_variacion": 8,
+          "barra": 77.8,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.74,
+              "var_mensual": -0.72
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.07,
+              "var_mensual": -0.11
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.11,
+              "var_mensual": 1.66
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.84,
+              "var_mensual": 1.3
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.27,
+              "var_mensual": 1.27
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.71,
+              "var_mensual": 1.51
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.04,
+              "var_mensual": -0.02
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.83,
+              "var_mensual": 0.67
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.82,
+              "var_mensual": -0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.1,
+              "var_mensual": 0.71
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.74,
+              "var_mensual": 0.78
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.31,
+              "var_mensual": 0.19
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "01100000",
+              "grupo": "Alimentos",
+              "var_anual": 7.99,
+              "var_mensual": 0.24,
+              "var_anual_pp": 2.31,
+              "cambio_mes_pp": 0.69,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "01200000",
+              "grupo": "Bebidas no alcohólicas",
+              "var_anual": 0.26,
+              "var_mensual": -0.37,
+              "var_anual_pp": -17.6,
+              "cambio_mes_pp": -0.6,
+              "direccion_anual": "baja",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 3.3
+            }
+          ]
+        },
+        {
+          "codigo": "05000000",
+          "division": "Muebles, artículos para el hogar y para la conservación ordinaria del hogar",
+          "var_anual": 6.6,
+          "var_mensual": -0.03,
+          "var_anual_pp": 3.11,
+          "cambio_mes_pp": -0.15,
+          "direccion_anual": "sube",
+          "rank_hoy": 5,
+          "rank_prev": 4,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_total": 0.3,
+          "lectura_vs_total": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 5,
+          "puesto_variacion": 2,
+          "barra": 70.3,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3.5,
+              "var_mensual": 0.19
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 3.31,
+              "var_mensual": -0.07
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.12,
+              "var_mensual": 1.5
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.73,
+              "var_mensual": 1.23
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.23,
+              "var_mensual": 0.9
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.79,
+              "var_mensual": 1.06
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.16,
+              "var_mensual": 0.53
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.22,
+              "var_mensual": 0.26
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.3,
+              "var_mensual": 0.24
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.67,
+              "var_mensual": 0.4
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.75,
+              "var_mensual": 0.23
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.6,
+              "var_mensual": -0.03
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "05600000",
+              "grupo": "Bienes Y Servicios Para Conservación Ordinaria Del Hogar",
+              "var_anual": 8.7,
+              "var_mensual": -0.04,
+              "var_anual_pp": 3.83,
+              "cambio_mes_pp": -0.28,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "05100000",
+              "grupo": "Muebles Y Accesorios, Alfombras Y Otros Materiales Para Pisos",
+              "var_anual": 4.26,
+              "var_mensual": 0.32,
+              "var_anual_pp": 1.64,
+              "cambio_mes_pp": 0.34,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 3,
+              "barra": 49
+            },
+            {
+              "codigo": "05400000",
+              "grupo": "Artículos de vidrio y cristal, vajilla y utensilios para el hogar",
+              "var_anual": 4.06,
+              "var_mensual": 0.19,
+              "var_anual_pp": 0.86,
+              "cambio_mes_pp": -0.06,
+              "direccion_anual": "sube",
+              "puesto_anual": 3,
+              "puesto_variacion": 4,
+              "barra": 46.7
+            },
+            {
+              "codigo": "05200000",
+              "grupo": "Productos Textiles Para El Hogar",
+              "var_anual": 1.82,
+              "var_mensual": 0.04,
+              "var_anual_pp": 0.09,
+              "cambio_mes_pp": -0.01,
+              "direccion_anual": "estable",
+              "puesto_anual": 4,
+              "puesto_variacion": 6,
+              "barra": 20.9
+            },
+            {
+              "codigo": "05500000",
+              "grupo": "Herramientas y equipos para el hogar y el jardín",
+              "var_anual": 0.28,
+              "var_mensual": 0.11,
+              "var_anual_pp": 3.53,
+              "cambio_mes_pp": 0.23,
+              "direccion_anual": "sube",
+              "puesto_anual": 5,
+              "puesto_variacion": 2,
+              "barra": 3.2
+            },
+            {
+              "codigo": "05300000",
+              "grupo": "Artefactos Para El Hogar",
+              "var_anual": -4.65,
+              "var_mensual": -0.86,
+              "var_anual_pp": 0.27,
+              "cambio_mes_pp": -0.15,
+              "direccion_anual": "sube",
+              "puesto_anual": 6,
+              "puesto_variacion": 5,
+              "barra": 53.4
+            }
+          ]
+        },
+        {
+          "codigo": "02000000",
+          "division": "Bebidas alcohólicas y tabaco",
+          "var_anual": 5.84,
+          "var_mensual": 0.16,
+          "var_anual_pp": -0.72,
+          "cambio_mes_pp": -0.21,
+          "direccion_anual": "baja",
+          "rank_hoy": 6,
+          "rank_prev": 6,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -0.46,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "La inflación más baja para un octubre desde 2021.",
+          "puesto_anual": 6,
+          "puesto_variacion": 12,
+          "barra": 62.2,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6.46,
+              "var_mensual": 0.44
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 6.37,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 7.58,
+              "var_mensual": 1.79
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7.76,
+              "var_mensual": 1.14
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.75,
+              "var_mensual": -0.37
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.91,
+              "var_mensual": 0.54
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.78,
+              "var_mensual": 0.27
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.02,
+              "var_mensual": 0.5
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 7.14,
+              "var_mensual": 0.25
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.94,
+              "var_mensual": 0.41
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.05,
+              "var_mensual": 0.23
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.84,
+              "var_mensual": 0.16
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "02200000",
+              "grupo": "Tabaco",
+              "var_anual": 12.39,
+              "var_mensual": 0.2,
+              "var_anual_pp": 2.06,
+              "cambio_mes_pp": -0.41,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "02100000",
+              "grupo": "Bebidas Alcohólicas",
+              "var_anual": 5.12,
+              "var_mensual": 0.16,
+              "var_anual_pp": -1.04,
+              "cambio_mes_pp": -0.2,
+              "direccion_anual": "baja",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 41.3
+            }
+          ]
+        },
+        {
+          "codigo": "04000000",
+          "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+          "var_anual": 5.62,
+          "var_mensual": 0.3,
+          "var_anual_pp": 0.32,
+          "cambio_mes_pp": -0.12,
+          "direccion_anual": "sube",
+          "rank_hoy": 7,
+          "rank_prev": 7,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -0.68,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "Completa 4 meses seguidos con más inflación que un año antes.",
+          "puesto_anual": 7,
+          "puesto_variacion": 9,
+          "barra": 59.9,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.29,
+              "var_mensual": 0.28
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.76,
+              "var_mensual": 0.08
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.59,
+              "var_mensual": 0.23
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 3.85,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.15,
+              "var_mensual": 0.85
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.11,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.5,
+              "var_mensual": 0.86
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.02,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.4,
+              "var_mensual": 0.55
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.74,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.74,
+              "var_mensual": 0.31
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.62,
+              "var_mensual": 0.3
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "04400000",
+              "grupo": "Suministro De Agua Y Servicios Diversos Relacionados Con La Vivienda",
+              "var_anual": 8.36,
+              "var_mensual": 0.07,
+              "var_anual_pp": 0.59,
+              "cambio_mes_pp": -1.08,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 3,
+              "barra": 100
+            },
+            {
+              "codigo": "04500000",
+              "grupo": "Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.82,
+              "var_mensual": 0.55,
+              "var_anual_pp": 2.28,
+              "cambio_mes_pp": 0.22,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 1,
+              "barra": 69.6
+            },
+            {
+              "codigo": "04100000",
+              "grupo": "Alquileres Efectivos De Alojamiento",
+              "var_anual": 5.12,
+              "var_mensual": 0.3,
+              "var_anual_pp": -0.25,
+              "cambio_mes_pp": 0,
+              "direccion_anual": "baja",
+              "puesto_anual": 3,
+              "puesto_variacion": 5,
+              "barra": 61.2
+            },
+            {
+              "codigo": "04200000",
+              "grupo": "Alquileres Imputados Del Alojamiento",
+              "var_anual": 5.02,
+              "var_mensual": 0.29,
+              "var_anual_pp": -0.11,
+              "cambio_mes_pp": -0.01,
+              "direccion_anual": "estable",
+              "puesto_anual": 4,
+              "puesto_variacion": 4,
+              "barra": 60
+            },
+            {
+              "codigo": "04300000",
+              "grupo": "Conservación Y Reparación De La Vivienda",
+              "var_anual": 3.26,
+              "var_mensual": 0.28,
+              "var_anual_pp": 1.02,
+              "cambio_mes_pp": -0.09,
+              "direccion_anual": "sube",
+              "puesto_anual": 5,
+              "puesto_variacion": 2,
+              "barra": 39
+            }
+          ]
+        },
+        {
+          "codigo": "12000000",
+          "division": "Bienes Y Servicios Diversos",
+          "var_anual": 5.37,
+          "var_mensual": 0.13,
+          "var_anual_pp": 0.71,
+          "cambio_mes_pp": -0.26,
+          "direccion_anual": "sube",
+          "rank_hoy": 8,
+          "rank_prev": 8,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -0.93,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 8,
+          "puesto_variacion": 7,
+          "barra": 57.2,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.79,
+              "var_mensual": 0.39
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.97,
+              "var_mensual": 0.36
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.23,
+              "var_mensual": 0.79
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.45,
+              "var_mensual": 1.02
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.09,
+              "var_mensual": 0.95
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.11,
+              "var_mensual": 0.63
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.05,
+              "var_mensual": 0.22
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.12,
+              "var_mensual": 0.3
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.97,
+              "var_mensual": -0.11
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.05,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.63,
+              "var_mensual": 0.05
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.37,
+              "var_mensual": 0.13
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "12700000",
+              "grupo": "Otros Servicios",
+              "var_anual": 11.67,
+              "var_mensual": 0.51,
+              "var_anual_pp": 5.25,
+              "cambio_mes_pp": 0.58,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "12400000",
+              "grupo": "Protección social",
+              "var_anual": 9.15,
+              "var_mensual": 0.3,
+              "var_anual_pp": 2.03,
+              "cambio_mes_pp": 0.24,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 78.4
+            },
+            {
+              "codigo": "12600000",
+              "grupo": "Servicios Financieros",
+              "var_anual": 6.13,
+              "var_mensual": 0.56,
+              "var_anual_pp": 1.1,
+              "cambio_mes_pp": 0.59,
+              "direccion_anual": "sube",
+              "puesto_anual": 3,
+              "puesto_variacion": 3,
+              "barra": 52.5
+            },
+            {
+              "codigo": "12100000",
+              "grupo": "Cuidado Personal",
+              "var_anual": 5.08,
+              "var_mensual": 0.11,
+              "var_anual_pp": 0.94,
+              "cambio_mes_pp": -0.28,
+              "direccion_anual": "sube",
+              "puesto_anual": 4,
+              "puesto_variacion": 4,
+              "barra": 43.5
+            },
+            {
+              "codigo": "12300000",
+              "grupo": "Efectos Personales",
+              "var_anual": 4.85,
+              "var_mensual": -1.01,
+              "var_anual_pp": -7.81,
+              "cambio_mes_pp": -2.23,
+              "direccion_anual": "baja",
+              "puesto_anual": 5,
+              "puesto_variacion": 6,
+              "barra": 41.6
+            },
+            {
+              "codigo": "12500000",
+              "grupo": "Seguro",
+              "var_anual": 1.28,
+              "var_mensual": 0.97,
+              "var_anual_pp": 0.81,
+              "cambio_mes_pp": 0.24,
+              "direccion_anual": "sube",
+              "puesto_anual": 6,
+              "puesto_variacion": 5,
+              "barra": 11
+            }
+          ]
+        },
+        {
+          "codigo": "07000000",
+          "division": "Transporte",
+          "var_anual": 5.19,
+          "var_mensual": 0.06,
+          "var_anual_pp": -0.02,
+          "cambio_mes_pp": -0.08,
+          "direccion_anual": "estable",
+          "rank_hoy": 9,
+          "rank_prev": 9,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -1.11,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "puesto_anual": 9,
+          "puesto_variacion": 11,
+          "barra": 55.3,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.33,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.35,
+              "var_mensual": 0.41
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.79,
+              "var_mensual": 2.14
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.27,
+              "var_mensual": 1.07
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.61,
+              "var_mensual": -0.22
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.95,
+              "var_mensual": 0.81
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.67,
+              "var_mensual": 0.61
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.47,
+              "var_mensual": 0.01
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.21,
+              "var_mensual": -0.24
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.25,
+              "var_mensual": 0.01
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.27,
+              "var_mensual": 0.13
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.19,
+              "var_mensual": 0.06
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "07300000",
+              "grupo": "Servicios De Transporte",
+              "var_anual": 10.8,
+              "var_mensual": 0,
+              "var_anual_pp": 1.92,
+              "cambio_mes_pp": -0.15,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100
+            },
+            {
+              "codigo": "07200000",
+              "grupo": "Funcionamiento De Equipo De Transporte Personal",
+              "var_anual": 3.37,
+              "var_mensual": 0.48,
+              "var_anual_pp": 0.27,
+              "cambio_mes_pp": 0.32,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 2,
+              "barra": 31.2
+            },
+            {
+              "codigo": "07100000",
+              "grupo": "Adquisición de vehículos",
+              "var_anual": -3.23,
+              "var_mensual": -0.58,
+              "var_anual_pp": -5.01,
+              "cambio_mes_pp": -0.67,
+              "direccion_anual": "baja",
+              "puesto_anual": 3,
+              "puesto_variacion": 3,
+              "barra": 29.9
+            }
+          ]
+        },
+        {
+          "codigo": "09000000",
+          "division": "Recreación Y Cultura",
+          "var_anual": 4.52,
+          "var_mensual": 0.44,
+          "var_anual_pp": 1.78,
+          "cambio_mes_pp": -0.39,
+          "direccion_anual": "sube",
+          "rank_hoy": 10,
+          "rank_prev": 10,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -1.78,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 10,
+          "puesto_variacion": 3,
+          "barra": 48.1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0.57,
+              "var_mensual": -0.48
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1.85,
+              "var_mensual": 1.04
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2.54,
+              "var_mensual": 0.5
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1.68,
+              "var_mensual": 0.08
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2.38,
+              "var_mensual": 0.88
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.52,
+              "var_mensual": 0.58
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 3.84,
+              "var_mensual": 0.77
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 3.92,
+              "var_mensual": 0.08
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3.74,
+              "var_mensual": -0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 4.98,
+              "var_mensual": 0.89
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 4.91,
+              "var_mensual": -0.21
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4.52,
+              "var_mensual": 0.44
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "09400000",
+              "grupo": "Servicios de recreación y culturales",
+              "var_anual": 7.39,
+              "var_mensual": 0.56,
+              "var_anual_pp": 3.76,
+              "cambio_mes_pp": -0.36,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 2,
+              "barra": 82.6
+            },
+            {
+              "codigo": "09300000",
+              "grupo": "Otros Artículos Y Equipo Para Recreación, Jardines Y Animales Domésticos.",
+              "var_anual": 5.04,
+              "var_mensual": -0.17,
+              "var_anual_pp": 3.94,
+              "cambio_mes_pp": -0.44,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 1,
+              "barra": 56.3
+            },
+            {
+              "codigo": "09500000",
+              "grupo": "Periódicos, Libros Y Papeles Y Útiles De Oficina",
+              "var_anual": 3.21,
+              "var_mensual": 0.06,
+              "var_anual_pp": -0.7,
+              "cambio_mes_pp": -0.02,
+              "direccion_anual": "baja",
+              "puesto_anual": 3,
+              "puesto_variacion": 4,
+              "barra": 35.9
+            },
+            {
+              "codigo": "09600000",
+              "grupo": "Paquetes turísticos",
+              "var_anual": 2.89,
+              "var_mensual": 2.16,
+              "var_anual_pp": -4.81,
+              "cambio_mes_pp": -1.2,
+              "direccion_anual": "baja",
+              "puesto_anual": 4,
+              "puesto_variacion": 5,
+              "barra": 32.3
+            },
+            {
+              "codigo": "09100000",
+              "grupo": "Equipo Audiovisual, Fotográfico Y De Procesamiento De Información",
+              "var_anual": -8.95,
+              "var_mensual": -1.59,
+              "var_anual_pp": 1.8,
+              "cambio_mes_pp": 0.16,
+              "direccion_anual": "sube",
+              "puesto_anual": 5,
+              "puesto_variacion": 3,
+              "barra": 100
+            }
+          ]
+        },
+        {
+          "codigo": "08000000",
+          "division": "Información Y Comunicación",
+          "var_anual": 4.47,
+          "var_mensual": 0,
+          "var_anual_pp": 3.78,
+          "cambio_mes_pp": 0.02,
+          "direccion_anual": "sube",
+          "rank_hoy": 11,
+          "rank_prev": 11,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -1.83,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre en toda la serie (desde 2020).",
+          "puesto_anual": 11,
+          "puesto_variacion": 1,
+          "barra": 47.6,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1.09,
+              "var_mensual": 0.35
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1.22,
+              "var_mensual": 0.03
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1.48,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1.51,
+              "var_mensual": 0.01
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.73,
+              "var_mensual": 2.96
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.88,
+              "var_mensual": -0.05
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.3,
+              "var_mensual": 0.25
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.16,
+              "var_mensual": -0.02
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 4.97,
+              "var_mensual": 0.04
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.97,
+              "var_mensual": 0.81
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 4.45,
+              "var_mensual": -0.02
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4.47,
+              "var_mensual": 0.0
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "08300000",
+              "grupo": "Servicios Telefónicos Y De Facsímile",
+              "var_anual": 4.94,
+              "var_mensual": 0,
+              "var_anual_pp": 2.77,
+              "cambio_mes_pp": 0,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 2,
+              "barra": 76.5
+            },
+            {
+              "codigo": "08200000",
+              "grupo": "Equipo Telefónico Y De Facsímile",
+              "var_anual": -6.46,
+              "var_mensual": -0.22,
+              "var_anual_pp": 18.07,
+              "cambio_mes_pp": 0.19,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 1,
+              "barra": 100
+            }
+          ]
+        },
+        {
+          "codigo": "03000000",
+          "division": "Prendas De Vestir Y Calzado",
+          "var_anual": 3.14,
+          "var_mensual": 0.24,
+          "var_anual_pp": 0.89,
+          "cambio_mes_pp": 0.02,
+          "direccion_anual": "sube",
+          "rank_hoy": 12,
+          "rank_prev": 12,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -3.16,
+          "lectura_vs_total": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_anual": 12,
+          "puesto_variacion": 5,
+          "barra": 33.4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 2,
+              "var_mensual": -0.02
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.12,
+              "var_mensual": 0.24
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2.45,
+              "var_mensual": 0.18
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2.61,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2.61,
+              "var_mensual": 0.19
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.67,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 2.7,
+              "var_mensual": 0.42
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 2.98,
+              "var_mensual": 0.43
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3.38,
+              "var_mensual": 0.31
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 3.26,
+              "var_mensual": -0.14
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 3.12,
+              "var_mensual": 0.1
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 3.14,
+              "var_mensual": 0.24
+            }
+          ],
+          "grupos": [
+            {
+              "codigo": "03100000",
+              "grupo": "Prendas De Vestir",
+              "var_anual": 3.36,
+              "var_mensual": 0.26,
+              "var_anual_pp": 0.71,
+              "cambio_mes_pp": 0.01,
+              "direccion_anual": "sube",
+              "puesto_anual": 1,
+              "puesto_variacion": 2,
+              "barra": 100
+            },
+            {
+              "codigo": "03200000",
+              "grupo": "Calzado",
+              "var_anual": 2.39,
+              "var_mensual": 0.17,
+              "var_anual_pp": 1.44,
+              "cambio_mes_pp": 0.04,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 1,
+              "barra": 71.1
+            }
+          ]
+        }
+      ]
+    },
+    "ciudades": {
+      "nota": "Inflación de cada ciudad (total del IPC); el desglose por división es del mismo mes.",
+      "orden_defecto": "tasa",
+      "items": [
+        {
+          "ciudad": "Armenia",
+          "var_anual": 7.29,
+          "var_mensual": 0.36,
+          "var_anual_pp": 1.6,
+          "cambio_mes_pp": 0.29,
+          "direccion_anual": "sube",
+          "rank_hoy": 1,
+          "rank_prev": 2,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": 0.99,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 1,
+          "puesto_variacion": 5,
+          "puesto_mensual": 8,
+          "barra": 100,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.11,
+              "var_mensual": -0.02
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5,
+              "var_mensual": 0.36
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.48,
+              "var_mensual": 1.48
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.61,
+              "var_mensual": 1.12
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.86,
+              "var_mensual": 0.71
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.56,
+              "var_mensual": 1.22
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.59,
+              "var_mensual": 0.49
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.59,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.52,
+              "var_mensual": 0.18
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.83,
+              "var_mensual": 0.65
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7,
+              "var_mensual": 0.24
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.29,
+              "var_mensual": 0.36
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 9.27,
+              "var_mensual": 0.15
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 8.26,
+              "var_mensual": 0.47
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 8.24,
+              "var_mensual": 0.42
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 8.19,
+              "var_mensual": 0.65
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.44,
+              "var_mensual": 0
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.27,
+              "var_mensual": 0.07
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.6,
+              "var_mensual": 0
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.51,
+              "var_mensual": 0
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 5.08,
+              "var_mensual": 0.61
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 4.99,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 4.78,
+              "var_mensual": 0.34
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 4.45,
+              "var_mensual": 0.06
+            }
+          ]
+        },
+        {
+          "ciudad": "Bucaramanga",
+          "var_anual": 7.15,
+          "var_mensual": 0.32,
+          "var_anual_pp": 0.98,
+          "cambio_mes_pp": 0.17,
+          "direccion_anual": "sube",
+          "rank_hoy": 2,
+          "rank_prev": 3,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": 0.85,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 2,
+          "puesto_variacion": 12,
+          "puesto_mensual": 10,
+          "barra": 98.1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.84,
+              "var_mensual": 0.05
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.78,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.91,
+              "var_mensual": 1.87
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.8,
+              "var_mensual": 0.95
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.78,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.53,
+              "var_mensual": 1.04
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.68,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 7.05,
+              "var_mensual": 0.36
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.78,
+              "var_mensual": 0.21
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.03,
+              "var_mensual": 0.67
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.98,
+              "var_mensual": 0.32
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.15,
+              "var_mensual": 0.32
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.4,
+              "var_mensual": 0.35
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 9.01,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Educación",
+              "var_anual": 8.35,
+              "var_mensual": 0
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 7.61,
+              "var_mensual": 0.33
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.65,
+              "var_mensual": 0.16
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.65,
+              "var_mensual": -0.2
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.22,
+              "var_mensual": 0.07
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 5.75,
+              "var_mensual": -0.19
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.64,
+              "var_mensual": 0.6
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.4,
+              "var_mensual": 0.12
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.15,
+              "var_mensual": -0.04
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.56,
+              "var_mensual": 0.21
+            }
+          ]
+        },
+        {
+          "ciudad": "Medellín",
+          "var_anual": 7.11,
+          "var_mensual": 0.22,
+          "var_anual_pp": 1.67,
+          "cambio_mes_pp": 0.07,
+          "direccion_anual": "sube",
+          "rank_hoy": 3,
+          "rank_prev": 1,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_nacional": 0.81,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 3,
+          "puesto_variacion": 3,
+          "puesto_mensual": 15,
+          "barra": 97.5,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.23,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.06,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.46,
+              "var_mensual": 1.43
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 6.19,
+              "var_mensual": 1.32
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.39,
+              "var_mensual": 0.97
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.43,
+              "var_mensual": 0.58
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.64,
+              "var_mensual": 0.73
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.98,
+              "var_mensual": 0.36
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.95,
+              "var_mensual": 0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 7.07,
+              "var_mensual": 0.32
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 7.04,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 7.11,
+              "var_mensual": 0.22
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 9.31,
+              "var_mensual": -0.1
+            },
+            {
+              "division": "Salud",
+              "var_anual": 8.55,
+              "var_mensual": 0.29
+            },
+            {
+              "division": "Educación",
+              "var_anual": 8.34,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 7.67,
+              "var_mensual": 0.52
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.99,
+              "var_mensual": -0.02
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.98,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 6.76,
+              "var_mensual": 0.24
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.17,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 6.06,
+              "var_mensual": -0.31
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 5.59,
+              "var_mensual": 0.13
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.9,
+              "var_mensual": 0.69
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 3.18,
+              "var_mensual": -0.01
+            }
+          ]
+        },
+        {
+          "ciudad": "Santa Marta",
+          "var_anual": 6.88,
+          "var_mensual": 0.25,
+          "var_anual_pp": 2.82,
+          "cambio_mes_pp": 1.01,
+          "direccion_anual": "sube",
+          "rank_hoy": 4,
+          "rank_prev": 15,
+          "lectura_ranking": "Sube 11 puestos en el ranking",
+          "brecha_vs_nacional": 0.58,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 4,
+          "puesto_variacion": 1,
+          "puesto_mensual": 13,
+          "barra": 94.4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.28,
+              "var_mensual": 0.18
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 3.64,
+              "var_mensual": 0.3
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 3.5,
+              "var_mensual": 1.23
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.06,
+              "var_mensual": 1.18
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.58,
+              "var_mensual": 0.47
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 3.95,
+              "var_mensual": 0.64
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.29,
+              "var_mensual": 0.64
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.49,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 4.97,
+              "var_mensual": 0.61
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.08,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.87,
+              "var_mensual": 0.03
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.88,
+              "var_mensual": 0.25
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 9.94,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Educación",
+              "var_anual": 8.85,
+              "var_mensual": 0
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 7.69,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 7.65,
+              "var_mensual": 0.22
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.49,
+              "var_mensual": 0.54
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 7.43,
+              "var_mensual": -0.27
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.2,
+              "var_mensual": 0.56
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.88,
+              "var_mensual": 0.32
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 5.73,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.53,
+              "var_mensual": 0.06
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.5,
+              "var_mensual": -0.02
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.83,
+              "var_mensual": 0.35
+            }
+          ]
+        },
+        {
+          "ciudad": "Pereira",
+          "var_anual": 6.82,
+          "var_mensual": 0.13,
+          "var_anual_pp": 0.8,
+          "cambio_mes_pp": 0.05,
+          "direccion_anual": "sube",
+          "rank_hoy": 5,
+          "rank_prev": 4,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_nacional": 0.52,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 5,
+          "puesto_variacion": 15,
+          "puesto_mensual": 18,
+          "barra": 93.6,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.62,
+              "var_mensual": 0.01
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.77,
+              "var_mensual": 0.59
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 6.17,
+              "var_mensual": 1.22
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 6.2,
+              "var_mensual": 1.35
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.48,
+              "var_mensual": 0.77
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.76,
+              "var_mensual": 1.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.69,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.98,
+              "var_mensual": 0.43
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.7,
+              "var_mensual": 0.22
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.85,
+              "var_mensual": 0.37
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.77,
+              "var_mensual": 0.07
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.82,
+              "var_mensual": 0.13
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.27,
+              "var_mensual": 0.22
+            },
+            {
+              "division": "Educación",
+              "var_anual": 8.45,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 7.17,
+              "var_mensual": -0.02
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.65,
+              "var_mensual": 0.1
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 6.47,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.31,
+              "var_mensual": -0.08
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 6.27,
+              "var_mensual": 0.3
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.22,
+              "var_mensual": 0.51
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.35,
+              "var_mensual": 0.09
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.04,
+              "var_mensual": 0.01
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.56,
+              "var_mensual": 0.55
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 2.69,
+              "var_mensual": 0.06
+            }
+          ]
+        },
+        {
+          "ciudad": "Villavicencio",
+          "var_anual": 6.77,
+          "var_mensual": 0.33,
+          "var_anual_pp": 0.78,
+          "cambio_mes_pp": 0,
+          "direccion_anual": "sube",
+          "rank_hoy": 6,
+          "rank_prev": 4,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_nacional": 0.47,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 6,
+          "puesto_variacion": 16,
+          "puesto_mensual": 9,
+          "barra": 92.9,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.56,
+              "var_mensual": 0.07
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.02,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.36,
+              "var_mensual": 1.2
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.3,
+              "var_mensual": 1.09
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.46,
+              "var_mensual": 0.72
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.73,
+              "var_mensual": 0.73
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.16,
+              "var_mensual": 0.59
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.3,
+              "var_mensual": 0.24
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.59,
+              "var_mensual": -0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.06,
+              "var_mensual": 0.43
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.77,
+              "var_mensual": 1.14
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.77,
+              "var_mensual": 0.33
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.26,
+              "var_mensual": 0.28
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 7.77,
+              "var_mensual": 1.12
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.68,
+              "var_mensual": 0.93
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 7.62,
+              "var_mensual": -0.09
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.62,
+              "var_mensual": 0
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 6.41,
+              "var_mensual": -0.03
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 4.85,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.36,
+              "var_mensual": 0.22
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 3.8,
+              "var_mensual": -0.3
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.78,
+              "var_mensual": 0.2
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 3.7,
+              "var_mensual": -0.3
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 2.96,
+              "var_mensual": -0.15
+            }
+          ]
+        },
+        {
+          "ciudad": "Ibagué",
+          "var_anual": 6.71,
+          "var_mensual": 0.12,
+          "var_anual_pp": 1.53,
+          "cambio_mes_pp": -0.06,
+          "direccion_anual": "sube",
+          "rank_hoy": 7,
+          "rank_prev": 4,
+          "lectura_ranking": "Baja 3 puestos en el ranking",
+          "brecha_vs_nacional": 0.41,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 7,
+          "puesto_variacion": 6,
+          "puesto_mensual": 20,
+          "barra": 92,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.72,
+              "var_mensual": 0.03
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.15,
+              "var_mensual": 0.03
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.97,
+              "var_mensual": 1.75
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.78,
+              "var_mensual": 0.8
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.21,
+              "var_mensual": 0.99
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.35,
+              "var_mensual": 0.9
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.61,
+              "var_mensual": 0.35
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.02,
+              "var_mensual": 0.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.45,
+              "var_mensual": -0.01
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.98,
+              "var_mensual": 0.42
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.77,
+              "var_mensual": 0.68
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.71,
+              "var_mensual": 0.12
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Salud",
+              "var_anual": 13.16,
+              "var_mensual": 0.2
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.9,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 9.25,
+              "var_mensual": 0.16
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 7.48,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 7.38,
+              "var_mensual": 0.23
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.02,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.32,
+              "var_mensual": 0.13
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.91,
+              "var_mensual": 0.28
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 4.84,
+              "var_mensual": -0.14
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.58,
+              "var_mensual": 0.17
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.26,
+              "var_mensual": 0.01
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 1.22,
+              "var_mensual": 0.25
+            }
+          ]
+        },
+        {
+          "ciudad": "Cali",
+          "var_anual": 6.68,
+          "var_mensual": 0.29,
+          "var_anual_pp": 1.63,
+          "cambio_mes_pp": -0.08,
+          "direccion_anual": "sube",
+          "rank_hoy": 8,
+          "rank_prev": 7,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_nacional": 0.38,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 8,
+          "puesto_variacion": 4,
+          "puesto_mensual": 11,
+          "barra": 91.6,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.86,
+              "var_mensual": -0.03
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.82,
+              "var_mensual": 0.31
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.33,
+              "var_mensual": 1.31
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.28,
+              "var_mensual": 0.81
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.36,
+              "var_mensual": 0.76
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.69,
+              "var_mensual": 1.09
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 6.04,
+              "var_mensual": 0.55
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.7,
+              "var_mensual": 0.58
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.41,
+              "var_mensual": 0.05
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.41,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.76,
+              "var_mensual": 0.41
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.68,
+              "var_mensual": 0.29
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 10.34,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 9.5,
+              "var_mensual": 0.32
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.99,
+              "var_mensual": 0.23
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.47,
+              "var_mensual": 0.17
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 6.39,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.86,
+              "var_mensual": 0.14
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.79,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Educación",
+              "var_anual": 5.68,
+              "var_mensual": 0
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.87,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 3.97,
+              "var_mensual": -0.1
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.38,
+              "var_mensual": 0.46
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 1.59,
+              "var_mensual": 0.91
+            }
+          ]
+        },
+        {
+          "ciudad": "Cartagena De Indias",
+          "var_anual": 6.4,
+          "var_mensual": 0.59,
+          "var_anual_pp": 1,
+          "cambio_mes_pp": 0.46,
+          "direccion_anual": "sube",
+          "rank_hoy": 9,
+          "rank_prev": 12,
+          "lectura_ranking": "Sube 3 puestos en el ranking",
+          "brecha_vs_nacional": 0.1,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 9,
+          "puesto_variacion": 11,
+          "puesto_mensual": 1,
+          "barra": 87.8,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.32,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.8,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.7,
+              "var_mensual": 0.85
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.04,
+              "var_mensual": 1.24
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.34,
+              "var_mensual": 0.8
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.21,
+              "var_mensual": 0.81
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.43,
+              "var_mensual": 0.58
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.69,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.02,
+              "var_mensual": 0.2
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.94,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.94,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.4,
+              "var_mensual": 0.59
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Educación",
+              "var_anual": 10.23,
+              "var_mensual": 0
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 9.59,
+              "var_mensual": 1.22
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 7.2,
+              "var_mensual": -0.03
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.74,
+              "var_mensual": 0.6
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 6.57,
+              "var_mensual": 0.11
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 6.4,
+              "var_mensual": 0.3
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.24,
+              "var_mensual": 1.44
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 5.85,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.51,
+              "var_mensual": 0.58
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.37,
+              "var_mensual": 0.29
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.32,
+              "var_mensual": 0.36
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 3.72,
+              "var_mensual": 0.04
+            }
+          ]
+        },
+        {
+          "ciudad": "Popayán",
+          "var_anual": 6.38,
+          "var_mensual": 0.43,
+          "var_anual_pp": 1.3,
+          "cambio_mes_pp": 0.53,
+          "direccion_anual": "sube",
+          "rank_hoy": 10,
+          "rank_prev": 16,
+          "lectura_ranking": "Sube 6 puestos en el ranking",
+          "brecha_vs_nacional": 0.08,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 10,
+          "puesto_variacion": 9,
+          "puesto_mensual": 4,
+          "barra": 87.5,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.09,
+              "var_mensual": 0.05
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.25,
+              "var_mensual": 0.16
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.54,
+              "var_mensual": 1.18
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.05,
+              "var_mensual": 0.98
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.25,
+              "var_mensual": 0.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.47,
+              "var_mensual": 0.67
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.43,
+              "var_mensual": 0.46
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.13,
+              "var_mensual": 0.66
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 6.2,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.08,
+              "var_mensual": 0.27
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.85,
+              "var_mensual": 0.18
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.38,
+              "var_mensual": 0.43
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Educación",
+              "var_anual": 9.59,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 9.48,
+              "var_mensual": 0.77
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.78,
+              "var_mensual": 0.08
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.68,
+              "var_mensual": 0.11
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.41,
+              "var_mensual": 0.4
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.32,
+              "var_mensual": -0.04
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.23,
+              "var_mensual": 0.02
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.01,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.76,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.42,
+              "var_mensual": 0
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.28,
+              "var_mensual": -0.06
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 3.11,
+              "var_mensual": 0.71
+            }
+          ]
+        },
+        {
+          "ciudad": "Neiva",
+          "var_anual": 6.34,
+          "var_mensual": 0.06,
+          "var_anual_pp": 1.49,
+          "cambio_mes_pp": 0.1,
+          "direccion_anual": "sube",
+          "rank_hoy": 11,
+          "rank_prev": 9,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_nacional": 0.04,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 11,
+          "puesto_variacion": 7,
+          "puesto_mensual": 21,
+          "barra": 87,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.6,
+              "var_mensual": -0.07
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.23,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.21,
+              "var_mensual": 1.09
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.33,
+              "var_mensual": 0.99
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.31,
+              "var_mensual": 0.7
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.9,
+              "var_mensual": 1.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.74,
+              "var_mensual": 0.41
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.01,
+              "var_mensual": 0.69
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.39,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.69,
+              "var_mensual": 0.49
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.24,
+              "var_mensual": 0.57
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.34,
+              "var_mensual": 0.06
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.21,
+              "var_mensual": 0.35
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 8.59,
+              "var_mensual": -0.8
+            },
+            {
+              "division": "Salud",
+              "var_anual": 8.3,
+              "var_mensual": 0.43
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.92,
+              "var_mensual": 0.55
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 6.74,
+              "var_mensual": 0.93
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.8,
+              "var_mensual": 0.62
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.65,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.12,
+              "var_mensual": 0.45
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 4.87,
+              "var_mensual": -0.07
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.18,
+              "var_mensual": 0.05
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 2.96,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 2.39,
+              "var_mensual": 0.12
+            }
+          ]
+        },
+        {
+          "ciudad": "Florencia",
+          "var_anual": 6.32,
+          "var_mensual": 0.52,
+          "var_anual_pp": 1.73,
+          "cambio_mes_pp": 0.44,
+          "direccion_anual": "sube",
+          "rank_hoy": 12,
+          "rank_prev": 14,
+          "lectura_ranking": "Sube 2 puestos en el ranking",
+          "brecha_vs_nacional": 0.02,
+          "lectura_vs_nacional": "por encima del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 12,
+          "puesto_variacion": 2,
+          "puesto_mensual": 2,
+          "barra": 86.7,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.37,
+              "var_mensual": -0.16
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.94,
+              "var_mensual": 0.26
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.31,
+              "var_mensual": 1.02
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.29,
+              "var_mensual": 0.94
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.51,
+              "var_mensual": 0.82
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.8,
+              "var_mensual": 0.86
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.84,
+              "var_mensual": 0.47
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.01,
+              "var_mensual": 0.44
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.56,
+              "var_mensual": 0.14
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.59,
+              "var_mensual": 0.28
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.88,
+              "var_mensual": 0.56
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.32,
+              "var_mensual": 0.52
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 9.39,
+              "var_mensual": 1.53
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.22,
+              "var_mensual": 0.24
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.09,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 7.07,
+              "var_mensual": 0.82
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.08,
+              "var_mensual": 0
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.65,
+              "var_mensual": 0.09
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 5.56,
+              "var_mensual": 0.7
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.46,
+              "var_mensual": 0.16
+            },
+            {
+              "division": "Salud",
+              "var_anual": 5.45,
+              "var_mensual": 0.34
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.11,
+              "var_mensual": 0.16
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.48,
+              "var_mensual": 0.15
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.67,
+              "var_mensual": 0.13
+            }
+          ]
+        },
+        {
+          "ciudad": "Cúcuta",
+          "var_anual": 6.28,
+          "var_mensual": 0.29,
+          "var_anual_pp": 0.95,
+          "cambio_mes_pp": -0.08,
+          "direccion_anual": "sube",
+          "rank_hoy": 13,
+          "rank_prev": 8,
+          "lectura_ranking": "Baja 5 puestos en el ranking",
+          "brecha_vs_nacional": -0.02,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 13,
+          "puesto_variacion": 14,
+          "puesto_mensual": 12,
+          "barra": 86.1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.03,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.68,
+              "var_mensual": 0.14
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.7,
+              "var_mensual": 0.81
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.81,
+              "var_mensual": 0.79
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.01,
+              "var_mensual": 0.88
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.96,
+              "var_mensual": 1.22
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.76,
+              "var_mensual": 0.15
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.92,
+              "var_mensual": 0.36
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.87,
+              "var_mensual": 0.3
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.02,
+              "var_mensual": 0.61
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.36,
+              "var_mensual": 0.5
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.28,
+              "var_mensual": 0.29
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Salud",
+              "var_anual": 9.5,
+              "var_mensual": 1.48
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.21,
+              "var_mensual": 0.21
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 7.35,
+              "var_mensual": 0.57
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.1,
+              "var_mensual": 0
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 6.79,
+              "var_mensual": 0.68
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.49,
+              "var_mensual": 0.22
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 6.08,
+              "var_mensual": 0.35
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 5.48,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.44,
+              "var_mensual": 0.01
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 5,
+              "var_mensual": 0.06
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 3.83,
+              "var_mensual": 0.05
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 3.56,
+              "var_mensual": 0.54
+            }
+          ]
+        },
+        {
+          "ciudad": "Tunja",
+          "var_anual": 6.12,
+          "var_mensual": 0.2,
+          "var_anual_pp": 1.02,
+          "cambio_mes_pp": 0.18,
+          "direccion_anual": "sube",
+          "rank_hoy": 14,
+          "rank_prev": 12,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_nacional": -0.18,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 14,
+          "puesto_variacion": 10,
+          "puesto_mensual": 16,
+          "barra": 84,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.59,
+              "var_mensual": -0.25
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.3,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.32,
+              "var_mensual": 1.09
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.96,
+              "var_mensual": 1.76
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.99,
+              "var_mensual": 0.76
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.42,
+              "var_mensual": 0.88
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.42,
+              "var_mensual": 0.1
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.98,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.71,
+              "var_mensual": 0.24
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.97,
+              "var_mensual": 0.54
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.94,
+              "var_mensual": 0.15
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.12,
+              "var_mensual": 0.2
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 7.61,
+              "var_mensual": 0.06
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 7.58,
+              "var_mensual": -0.1
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 6.72,
+              "var_mensual": 1.62
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 5.76,
+              "var_mensual": 0.04
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.62,
+              "var_mensual": 0.45
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.48,
+              "var_mensual": 0.06
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.33,
+              "var_mensual": 0.28
+            },
+            {
+              "division": "Educación",
+              "var_anual": 5.15,
+              "var_mensual": 0
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.1,
+              "var_mensual": 0.24
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.05,
+              "var_mensual": -0.13
+            },
+            {
+              "division": "Salud",
+              "var_anual": 4.24,
+              "var_mensual": 0.4
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.91,
+              "var_mensual": 0.02
+            }
+          ]
+        },
+        {
+          "ciudad": "Barranquilla",
+          "var_anual": 6.02,
+          "var_mensual": 0.18,
+          "var_anual_pp": 0.62,
+          "cambio_mes_pp": 0.57,
+          "direccion_anual": "sube",
+          "rank_hoy": 15,
+          "rank_prev": 19,
+          "lectura_ranking": "Sube 4 puestos en el ranking",
+          "brecha_vs_nacional": -0.28,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 15,
+          "puesto_variacion": 18,
+          "puesto_mensual": 17,
+          "barra": 82.6,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.54,
+              "var_mensual": 0.2
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.07,
+              "var_mensual": 0.37
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.43,
+              "var_mensual": 1.27
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.31,
+              "var_mensual": 1.17
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.61,
+              "var_mensual": 0.19
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.56,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.55,
+              "var_mensual": 0.37
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.99,
+              "var_mensual": 0.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.04,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.6,
+              "var_mensual": 0.56
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.45,
+              "var_mensual": 0.26
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 6.02,
+              "var_mensual": 0.18
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.59,
+              "var_mensual": -0.26
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.7,
+              "var_mensual": 0
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 7.44,
+              "var_mensual": 0.69
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.35,
+              "var_mensual": 0.8
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.67,
+              "var_mensual": 0.61
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 6.34,
+              "var_mensual": 0.06
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 5.15,
+              "var_mensual": 0.15
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 4.87,
+              "var_mensual": -0.05
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.86,
+              "var_mensual": 0
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.51,
+              "var_mensual": 0.36
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 3.58,
+              "var_mensual": 0.03
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 2.17,
+              "var_mensual": 0.19
+            }
+          ]
+        },
+        {
+          "ciudad": "Manizales",
+          "var_anual": 5.99,
+          "var_mensual": 0.22,
+          "var_anual_pp": 0.77,
+          "cambio_mes_pp": 0.04,
+          "direccion_anual": "sube",
+          "rank_hoy": 16,
+          "rank_prev": 11,
+          "lectura_ranking": "Baja 5 puestos en el ranking",
+          "brecha_vs_nacional": -0.31,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 16,
+          "puesto_variacion": 17,
+          "puesto_mensual": 14,
+          "barra": 82.2,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.96,
+              "var_mensual": -0.07
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.9,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.63,
+              "var_mensual": 1.7
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.76,
+              "var_mensual": 1.28
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.9,
+              "var_mensual": 0.62
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6.07,
+              "var_mensual": 0.67
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.79,
+              "var_mensual": 0.23
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.97,
+              "var_mensual": 0.31
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.83,
+              "var_mensual": 0.11
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.96,
+              "var_mensual": 0.2
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.95,
+              "var_mensual": 0.28
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.99,
+              "var_mensual": 0.22
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 10.33,
+              "var_mensual": 0.44
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.88,
+              "var_mensual": 0.2
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.87,
+              "var_mensual": 0.3
+            },
+            {
+              "division": "Educación",
+              "var_anual": 6.79,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 6.11,
+              "var_mensual": 0.34
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.68,
+              "var_mensual": 0.07
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.12,
+              "var_mensual": 0.1
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.66,
+              "var_mensual": 0.26
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 4.65,
+              "var_mensual": 0.35
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 4.07,
+              "var_mensual": -0.03
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 3.93,
+              "var_mensual": -0.02
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 2.49,
+              "var_mensual": 0.08
+            }
+          ]
+        },
+        {
+          "ciudad": "Sincelejo",
+          "var_anual": 5.94,
+          "var_mensual": 0.41,
+          "var_anual_pp": 1.31,
+          "cambio_mes_pp": 0.27,
+          "direccion_anual": "sube",
+          "rank_hoy": 17,
+          "rank_prev": 18,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": -0.36,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 17,
+          "puesto_variacion": 8,
+          "puesto_mensual": 6,
+          "barra": 81.5,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.37,
+              "var_mensual": 0.16
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.15,
+              "var_mensual": 0.29
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.33,
+              "var_mensual": 0.66
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.28,
+              "var_mensual": 0.69
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.33,
+              "var_mensual": 0.61
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.49,
+              "var_mensual": 0.74
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.69,
+              "var_mensual": 0.46
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.89,
+              "var_mensual": 0.28
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.09,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.42,
+              "var_mensual": 0.58
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.67,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.94,
+              "var_mensual": 0.41
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Educación",
+              "var_anual": 9.76,
+              "var_mensual": 0
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 7.92,
+              "var_mensual": 0.13
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.29,
+              "var_mensual": 1.1
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.7,
+              "var_mensual": 0.87
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 6.26,
+              "var_mensual": 0.46
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.76,
+              "var_mensual": -0.04
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 5.64,
+              "var_mensual": 0.45
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 5.44,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 5.23,
+              "var_mensual": -0.01
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.09,
+              "var_mensual": 0.43
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.84,
+              "var_mensual": 0.18
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 3.01,
+              "var_mensual": -0.04
+            }
+          ]
+        },
+        {
+          "ciudad": "Bogotá, D.C.",
+          "var_anual": 5.89,
+          "var_mensual": 0.12,
+          "var_anual_pp": 0.09,
+          "cambio_mes_pp": -0.17,
+          "direccion_anual": "estable",
+          "rank_hoy": 18,
+          "rank_prev": 10,
+          "lectura_ranking": "Baja 8 puestos en el ranking",
+          "brecha_vs_nacional": -0.41,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "Completa 6 meses seguidos con más inflación que un año antes.",
+          "puesto_tasa": 18,
+          "puesto_variacion": 21,
+          "puesto_mensual": 19,
+          "barra": 80.8,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 5.56,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5.41,
+              "var_mensual": 0.23
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5.54,
+              "var_mensual": 1.01
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5.05,
+              "var_mensual": 1.05
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5.62,
+              "var_mensual": 0.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5.6,
+              "var_mensual": 0.76
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.75,
+              "var_mensual": 0.43
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.98,
+              "var_mensual": 0.38
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.82,
+              "var_mensual": 0.15
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6.08,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 6.06,
+              "var_mensual": 0.37
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.89,
+              "var_mensual": 0.12
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 9.37,
+              "var_mensual": 0.29
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 7.35,
+              "var_mensual": -0.38
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.25,
+              "var_mensual": 0
+            },
+            {
+              "division": "Salud",
+              "var_anual": 6.95,
+              "var_mensual": 0.13
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.86,
+              "var_mensual": -0.12
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.32,
+              "var_mensual": 0.48
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 5.1,
+              "var_mensual": 0.13
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.81,
+              "var_mensual": -0.02
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 4.76,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.69,
+              "var_mensual": 0
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 4.38,
+              "var_mensual": 0.3
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 1.08,
+              "var_mensual": 0.27
+            }
+          ]
+        },
+        {
+          "ciudad": "Montería",
+          "var_anual": 5.57,
+          "var_mensual": 0.46,
+          "var_anual_pp": 0.96,
+          "cambio_mes_pp": 0.31,
+          "direccion_anual": "sube",
+          "rank_hoy": 19,
+          "rank_prev": 20,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": -0.73,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 19,
+          "puesto_variacion": 13,
+          "puesto_mensual": 3,
+          "barra": 76.4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.33,
+              "var_mensual": 0.05
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 3.92,
+              "var_mensual": 0.1
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.53,
+              "var_mensual": 1.1
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.94,
+              "var_mensual": 1.23
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.78,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.84,
+              "var_mensual": 0.57
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.12,
+              "var_mensual": 0.48
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5.03,
+              "var_mensual": 0.03
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.17,
+              "var_mensual": 0.17
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.37,
+              "var_mensual": 0.42
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.26,
+              "var_mensual": 0.39
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.57,
+              "var_mensual": 0.46
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Salud",
+              "var_anual": 8.34,
+              "var_mensual": 1.03
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.26,
+              "var_mensual": 1.45
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.67,
+              "var_mensual": 0
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 7.06,
+              "var_mensual": 0.49
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 6.46,
+              "var_mensual": 0.72
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.1,
+              "var_mensual": 0.25
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 5.75,
+              "var_mensual": -0.07
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 5.54,
+              "var_mensual": 0.93
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.13,
+              "var_mensual": -0.22
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 4.89,
+              "var_mensual": 0.09
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 4.77,
+              "var_mensual": 0.19
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.42,
+              "var_mensual": 0.01
+            }
+          ]
+        },
+        {
+          "ciudad": "Pasto",
+          "var_anual": 5.34,
+          "var_mensual": 0.41,
+          "var_anual_pp": 0.4,
+          "cambio_mes_pp": 0.29,
+          "direccion_anual": "sube",
+          "rank_hoy": 20,
+          "rank_prev": 21,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": -0.96,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "La inflación más alta para un octubre desde 2023.",
+          "puesto_tasa": 20,
+          "puesto_variacion": 19,
+          "puesto_mensual": 5,
+          "barra": 73.3,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.79,
+              "var_mensual": -0.06
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.31,
+              "var_mensual": 0.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.2,
+              "var_mensual": 0.85
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.37,
+              "var_mensual": 0.84
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.63,
+              "var_mensual": 0.82
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.37,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.52,
+              "var_mensual": 0.56
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.81,
+              "var_mensual": 0.25
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 4.83,
+              "var_mensual": 0.31
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 4.72,
+              "var_mensual": 0.22
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.05,
+              "var_mensual": 0.49
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 5.34,
+              "var_mensual": 0.41
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.75,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.2,
+              "var_mensual": 0
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 6.68,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 5.8,
+              "var_mensual": 1.02
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.75,
+              "var_mensual": 0.45
+            },
+            {
+              "division": "Salud",
+              "var_anual": 5.54,
+              "var_mensual": -0.01
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 4.92,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.77,
+              "var_mensual": 0.41
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.4,
+              "var_mensual": 0.03
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.38,
+              "var_mensual": 0.12
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 2.73,
+              "var_mensual": -0.1
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 2.69,
+              "var_mensual": 0.73
+            }
+          ]
+        },
+        {
+          "ciudad": "Riohacha",
+          "var_anual": 4.93,
+          "var_mensual": 0.4,
+          "var_anual_pp": 0.32,
+          "cambio_mes_pp": 0.4,
+          "direccion_anual": "sube",
+          "rank_hoy": 21,
+          "rank_prev": 22,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_nacional": -1.37,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "Completa 4 meses seguidos con más inflación que un año antes.",
+          "puesto_tasa": 21,
+          "puesto_variacion": 20,
+          "puesto_mensual": 7,
+          "barra": 67.6,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.53,
+              "var_mensual": 0.14
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 4.06,
+              "var_mensual": 0.3
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.52,
+              "var_mensual": 0.92
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 4.17,
+              "var_mensual": 0.59
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.69,
+              "var_mensual": 0.19
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 3.46,
+              "var_mensual": 0.45
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 3.28,
+              "var_mensual": 0.06
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 3.35,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3.6,
+              "var_mensual": 0.46
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 4.37,
+              "var_mensual": 0.71
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 4.53,
+              "var_mensual": 0.27
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4.93,
+              "var_mensual": 0.4
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 10.22,
+              "var_mensual": 0.27
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.78,
+              "var_mensual": 0.2
+            },
+            {
+              "division": "Salud",
+              "var_anual": 7.09,
+              "var_mensual": 0.44
+            },
+            {
+              "division": "Educación",
+              "var_anual": 7.05,
+              "var_mensual": 0
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 6.25,
+              "var_mensual": 0.93
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 4.99,
+              "var_mensual": 0.19
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 4.82,
+              "var_mensual": -0.34
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 4.58,
+              "var_mensual": 0.22
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.04,
+              "var_mensual": 0.04
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 3.86,
+              "var_mensual": 0.4
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 3.26,
+              "var_mensual": 0.44
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 1.2,
+              "var_mensual": -0.03
+            }
+          ]
+        },
+        {
+          "ciudad": "Valledupar",
+          "var_anual": 4.02,
+          "var_mensual": -1.32,
+          "var_anual_pp": -0.49,
+          "cambio_mes_pp": -1.66,
+          "direccion_anual": "baja",
+          "rank_hoy": 22,
+          "rank_prev": 17,
+          "lectura_ranking": "Baja 5 puestos en el ranking",
+          "brecha_vs_nacional": -2.28,
+          "lectura_vs_nacional": "por debajo del total nacional",
+          "comentario_popular": "Rompe una racha de 6 meses con más inflación que un año antes.",
+          "puesto_tasa": 22,
+          "puesto_variacion": 22,
+          "puesto_mensual": 22,
+          "barra": 55.1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.4,
+              "var_mensual": 0.01
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 3.49,
+              "var_mensual": 0.26
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 3.86,
+              "var_mensual": 0.8
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 3.53,
+              "var_mensual": 0.55
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.65,
+              "var_mensual": 0.51
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.07,
+              "var_mensual": 0.97
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.49,
+              "var_mensual": 0.56
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.8,
+              "var_mensual": 0.26
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5.17,
+              "var_mensual": 0.34
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 5.31,
+              "var_mensual": 0.53
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5.68,
+              "var_mensual": 0.52
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4.02,
+              "var_mensual": -1.32
+            }
+          ],
+          "divisiones": [
+            {
+              "division": "Salud",
+              "var_anual": 9.69,
+              "var_mensual": 0.94
+            },
+            {
+              "division": "Educación",
+              "var_anual": 9.12,
+              "var_mensual": 0
+            },
+            {
+              "division": "Restaurantes Y Hoteles",
+              "var_anual": 8.44,
+              "var_mensual": -0.17
+            },
+            {
+              "division": "Alimentos Y Bebidas No Alcohólicas",
+              "var_anual": 7.68,
+              "var_mensual": 0.59
+            },
+            {
+              "division": "Muebles, Artículos Para El Hogar Y Para La Conservación Ordinaria Del Hogar",
+              "var_anual": 5.58,
+              "var_mensual": 0.21
+            },
+            {
+              "division": "Bebidas Alcohólicas Y Tabaco",
+              "var_anual": 5.44,
+              "var_mensual": 0.35
+            },
+            {
+              "division": "Bienes Y Servicios Diversos",
+              "var_anual": 4.76,
+              "var_mensual": 0.15
+            },
+            {
+              "division": "Recreación Y Cultura",
+              "var_anual": 3.84,
+              "var_mensual": 0.2
+            },
+            {
+              "division": "Prendas De Vestir Y Calzado",
+              "var_anual": 3.37,
+              "var_mensual": 0.11
+            },
+            {
+              "division": "Información Y Comunicación",
+              "var_anual": 3.26,
+              "var_mensual": -0.05
+            },
+            {
+              "division": "Transporte",
+              "var_anual": 1,
+              "var_mensual": 0.11
+            },
+            {
+              "division": "Alojamiento, Agua, Electricidad, Gas Y Otros Combustibles",
+              "var_anual": 0.91,
+              "var_mensual": -4.19
+            }
+          ]
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total nacional",
+          "var_anual": 6.3,
+          "var_anual_pp": 0.79,
+          "var_mensual": 0.2
+        },
+        {
+          "nombre": "Otras Areas Urbanas",
+          "var_anual": 6.05,
+          "var_anual_pp": 1.01,
+          "var_mensual": 0.28
+        }
+      ]
+    }
+  },
+  "serie": {
+    "doce_meses": [
+      {
+        "mes": "Nov",
+        "anio": 2025,
+        "valor": 5.3,
+        "var_mensual": 0.07
+      },
+      {
+        "mes": "Dic",
+        "anio": 2025,
+        "valor": 5.1,
+        "var_mensual": 0.27
+      },
+      {
+        "mes": "Ene",
+        "anio": 2026,
+        "valor": 5.35,
+        "var_mensual": 1.18
+      },
+      {
+        "mes": "Feb",
+        "anio": 2026,
+        "valor": 5.29,
+        "var_mensual": 1.08
+      },
+      {
+        "mes": "Mar",
+        "anio": 2026,
+        "valor": 5.56,
+        "var_mensual": 0.78
+      },
+      {
+        "mes": "Abr",
+        "anio": 2026,
+        "valor": 5.68,
+        "var_mensual": 0.78
+      },
+      {
+        "mes": "May",
+        "anio": 2026,
+        "valor": 5.84,
+        "var_mensual": 0.47
+      },
+      {
+        "mes": "Jun",
+        "anio": 2026,
+        "valor": 6.14,
+        "var_mensual": 0.39
+      },
+      {
+        "mes": "Jul",
+        "anio": 2026,
+        "valor": 6.03,
+        "var_mensual": 0.17
+      },
+      {
+        "mes": "Ago",
+        "anio": 2026,
+        "valor": 6.24,
+        "var_mensual": 0.39
+      },
+      {
+        "mes": "Sep",
+        "anio": 2026,
+        "valor": 6.29,
+        "var_mensual": 0.37
+      },
+      {
+        "mes": "Oct",
+        "anio": 2026,
+        "valor": 6.3,
+        "var_mensual": 0.2
+      }
+    ],
+    "mismo_mes": [
+      {
+        "anio": 2022,
+        "valor": 12.22,
+        "var_mensual": 0.72
+      },
+      {
+        "anio": 2023,
+        "valor": 10.48,
+        "var_mensual": 0.25
+      },
+      {
+        "anio": 2024,
+        "valor": 5.41,
+        "var_mensual": -0.13
+      },
+      {
+        "anio": 2025,
+        "valor": 5.51,
+        "var_mensual": 0.18
+      },
+      {
+        "anio": 2026,
+        "valor": 6.3,
+        "var_mensual": 0.2
+      }
+    ]
+  }
+}
