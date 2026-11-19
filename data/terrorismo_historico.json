@@ -1,13 +1,8 @@
 [
   {
-    "mes": "Abr",
-    "anio": 2026,
-    "valor": 334.3
-  },
-  {
     "mes": "May",
     "anio": 2026,
-    "valor": 335.6
+    "valor": 340.1
   },
   {
     "mes": "Jun",
@@ -22,11 +17,16 @@
   {
     "mes": "Ago",
     "anio": 2026,
-    "valor": 357.8
+    "valor": 383.3
   },
   {
     "mes": "Sep",
     "anio": 2026,
-    "valor": 220.3
+    "valor": 232.3
+  },
+  {
+    "mes": "Oct",
+    "anio": 2026,
+    "valor": 236.5
   }
 ]

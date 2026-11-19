@@ -1,37 +1,37 @@
 [
   {
-    "mes": "Mayo",
-    "anio": 2026,
-    "total": 93755.96,
-    "colombia": 30427.91,
-    "exterior": 63328.05
-  },
-  {
     "mes": "Junio",
     "anio": 2026,
-    "total": 72128.53,
-    "colombia": 34091.94,
+    "total": 72123.95,
+    "colombia": 34087.36,
     "exterior": 38036.59
   },
   {
     "mes": "Julio",
     "anio": 2026,
-    "total": 79823.04,
-    "colombia": 33188.47,
-    "exterior": 46634.57
+    "total": 82825.99,
+    "colombia": 35601.32,
+    "exterior": 47224.67
   },
   {
     "mes": "Agosto",
     "anio": 2026,
-    "total": 84660.69,
-    "colombia": 19820.72,
-    "exterior": 64839.97
+    "total": 91857.09,
+    "colombia": 18504.37,
+    "exterior": 73352.71
   },
   {
     "mes": "Septiembre",
     "anio": 2026,
-    "total": 36635.24,
-    "colombia": 15601.53,
-    "exterior": 21033.71
+    "total": 60665.66,
+    "colombia": 22203.78,
+    "exterior": 38461.88
+  },
+  {
+    "mes": "Octubre",
+    "anio": 2026,
+    "total": 50531.14,
+    "colombia": 40851.56,
+    "exterior": 9679.59
   }
 ]
