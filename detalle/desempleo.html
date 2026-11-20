@@ -37,11 +37,13 @@ header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
   .hd-mid{order:3;flex:0 0 100%;justify-content:center;padding:0 10px}
   header.hd .vt{padding:10px 18px 9px;font-size:12px}
 }
-/* Celular en vertical: las tabs cuelgan del borde inferior del header (esquinas redondeadas abajo) y se mantienen pegadas arriba al hacer scroll */
+/* Celular en vertical: las tabs cuelgan del borde inferior del header, unidas en una sola tira separada por una línea fina, todas del mismo ancho */
 @media(max-width:600px) and (orientation:portrait){
   header.hd{margin-bottom:35px}
-  .hd-mid{position:absolute;top:100%;left:0;right:0;order:0;flex:none;width:100%;height:35px;align-self:auto;align-items:flex-start;justify-content:center;gap:6px;padding:0 10px;background:transparent;pointer-events:none}
-  header.hd .vt{pointer-events:auto;flex:1 1 auto;min-width:0;border-radius:0 0 10px 10px;padding:11px 8px 12px;font-size:12px;background:#2d4756;color:#cfe3ea}
+  .hd-mid{position:absolute;top:100%;left:0;right:0;order:0;flex:none;width:100%;height:35px;align-self:auto;align-items:flex-start;justify-content:center;gap:0;padding:0 10px;background:transparent;pointer-events:none}
+  header.hd .vt{pointer-events:auto;flex:1 1 0;min-width:0;border-radius:0;padding:11px 4px 12px;font-size:12px;background:#2d4756;color:#cfe3ea;border-left:1px solid rgba(255,255,255,.22);overflow:hidden;text-overflow:ellipsis}
+  header.hd .vt:first-child{border-left:0;border-bottom-left-radius:10px}
+  header.hd .vt:last-child{border-bottom-right-radius:10px}
   header.hd .vt:hover{background:#3a5a6b;color:#fff}
   header.hd .vt[aria-pressed=true]{background:#12303d;color:#fff}
 }
@@ -172,7 +174,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
     <button type="button" class="vt" data-vista="gen" aria-pressed="true">General</button>
     <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
     <button type="button" class="vt" data-vista="sex" aria-pressed="false">Sexo</button>
-    <button type="button" class="vt" data-vista="ciu" aria-pressed="false">23 ciudades</button>
+    <button type="button" class="vt" data-vista="ciu" aria-pressed="false">Ciudades</button>
   </nav>
   <div class="hd-right">
     <div class="btn-group">
@@ -226,7 +228,7 @@ function render() {
   const dim = D.dimensiones, ciu = dim.ciudades, v = st.vista;
   document.querySelectorAll('[data-vista]').forEach(b => {
     b.setAttribute('aria-pressed', b.dataset.vista === v);
-    if (b.dataset.vista === 'ciu') b.textContent = `${ciu.items.length} ciudades`;
+    if (b.dataset.vista === 'ciu') b.textContent = 'Ciudades';
   });
   const topG = `
     <div class="top g" id="top">
