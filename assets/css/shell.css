@@ -55,6 +55,16 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   header.hd .brand-txt{font-size:20px}
 }
 
+/* Título centrado en el header (páginas de detalle): solo en vertical, donde las tabs cuelgan debajo; tipografía de los títulos de los paneles */
+header.hd .hd-title{display:none}
+@media (max-width:1024px) and (orientation:portrait){
+  header.hd .hd-title{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:calc(100% - 200px);
+    font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:19px;line-height:1.1;text-align:center;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+}
+@media (max-width:600px) and (orientation:portrait){
+  header.hd .hd-title{font-size:16px}
+}
+
 /* ---------- FOOTER ---------- */
 footer.site-foot{flex:none;background:#12303d;color:#fff;padding:14px var(--gutter) 12px}
 .site-foot .foot-in{max-width:var(--col);margin:0 auto;padding:0}

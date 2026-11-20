@@ -170,6 +170,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   <div class="hd-left">
     <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
   </div>
+  <div class="hd-title" id="hdTitle" aria-live="polite"></div>
   <nav class="hd-mid" aria-label="Vista">
     <button type="button" class="vt" data-vista="gen" aria-pressed="true">General</button>
     <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
@@ -223,8 +224,18 @@ fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.st
   })
   .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend y publícalo en la carpeta data/ junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
 
+// Título del header: "<indicador> - <mes>", el mes sale de periodo (JSON)
+function tituloHeader(nombre) {
+  const p = D && D.periodo || {};
+  const norm = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const busca = t => (norm(t).match(/\b(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)[a-z]*\b/) || [])[1];
+  const m = busca(p.mes_nombre) || busca(p.etiqueta);
+  $('#hdTitle').textContent = m ? `${nombre} - ${m[0].toUpperCase()}${m.slice(1)}` : nombre;
+}
+
 function render() {
   document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
+  tituloHeader('Desempleo');
   const dim = D.dimensiones, ciu = dim.ciudades, v = st.vista;
   document.querySelectorAll('[data-vista]').forEach(b => {
     b.setAttribute('aria-pressed', b.dataset.vista === v);
