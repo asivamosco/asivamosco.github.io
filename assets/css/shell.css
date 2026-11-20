@@ -155,8 +155,9 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
    El número grande queda a la izquierda y las 4 variaciones en 2 × 2 a la derecha; debajo, la fuente. */
 @media (max-width:600px){
   body .top:not(.g)>.hero{display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "big vars" "src src"!important;column-gap:14px;row-gap:6px;align-content:start}
-  body .top:not(.g)>.hero.wt{grid-template-areas:"kick tabs" "big vars" "src src"!important}
-  body .top:not(.g)>.hero.wt.gr{grid-template-areas:"kick tabs" "gl gl"!important}
+  body .top:not(.g)>.hero.wt{grid-template-areas:"kick kick" "big vars" "src src"!important}
+  body .top:not(.g)>.hero.wt.gr{grid-template-areas:"kick kick" "gl gl"!important}
+  body .top:not(.g)>.hero .htabs{display:none}
   body .top:not(.g)>.hero .ttl{display:none}
   body .top:not(.g)>.hero .big{font-size:46px;margin:0;align-self:center}
   body .top:not(.g)>.hero .big span{font-size:19px;margin-left:2px}
@@ -165,4 +166,21 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   body .top:not(.g)>.hero .vars span{font-size:12px}
   body .top:not(.g)>.hero .vars b{font-size:17px}
   body .top:not(.g)>.hero .src{margin-top:0;font-size:12px;line-height:1.3}
+}
+
+/* ---------- CELULAR: espaciado entre paneles, gráfica baja y pestañas División / Grupos bajo el select ---------- */
+.cl .mtabs{display:none}
+@media (max-width:600px){
+  body.app>main{gap:8px;padding-top:6px;padding-bottom:12px}
+  body .top{gap:8px}
+  /* gráfica: sin altura mínima y con poco relleno */
+  body .top .cg{min-height:0;padding:10px 12px}
+  body .top .cg #chart{align-items:flex-start}
+  body .top .cg .head{margin-bottom:2px}
+  /* pestañas División / Grupos dentro de la tarjeta del select */
+  .cl .mtabs{display:flex;gap:6px;margin:8px 0 0;flex-wrap:nowrap}
+  .cl .mtabs:empty{display:none}
+  .cl .mtabs button{padding:4px 14px;font-size:14px}
+  /* Grupos: se oculta la gráfica y el panel muestra solo los grupos de la división */
+  body .top.vgr>.cg{display:none}
 }
