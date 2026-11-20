@@ -55,14 +55,18 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   header.hd .brand-txt{font-size:20px}
 }
 
-/* Título centrado en el header (páginas de detalle): solo en vertical, donde las tabs cuelgan debajo; tipografía de los títulos de los paneles */
+/* Título centrado en el header (páginas de detalle): solo en vertical, donde las tabs cuelgan debajo; tipografía de los títulos de los paneles.
+   El header pasa a 3 columnas (logo | título | botón) con laterales iguales, así el título queda exactamente en el centro. */
 header.hd .hd-title{display:none}
 @media (max-width:1024px) and (orientation:portrait){
-  header.hd .hd-title{display:block;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);max-width:calc(100% - 200px);
-    font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:19px;line-height:1.1;text-align:center;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none}
+  header.hd:has(.hd-title){display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+  header.hd .hd-title{display:block;grid-column:2;align-self:center;min-width:0;max-width:50vw;
+    font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:22px;line-height:1.1;text-align:center;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  header.hd:has(.hd-title) .hd-left{grid-column:1}
+  header.hd:has(.hd-title) .hd-right{grid-column:3}
 }
 @media (max-width:600px) and (orientation:portrait){
-  header.hd .hd-title{font-size:16px}
+  header.hd .hd-title{font-size:18px}
 }
 
 /* ---------- FOOTER ---------- */
