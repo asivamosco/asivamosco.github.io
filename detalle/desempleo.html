@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
@@ -36,6 +36,15 @@ header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
   header.hd{flex-wrap:wrap}
   .hd-mid{order:3;flex:0 0 100%;justify-content:center;padding:0 10px}
   header.hd .vt{padding:10px 18px 9px;font-size:12px}
+}
+/* Celular en vertical: las tabs pasan a una barra fija en la parte de abajo de la pantalla */
+@media(max-width:600px) and (orientation:portrait){
+  body{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))}
+  .hd-mid{position:fixed;left:0;right:0;bottom:0;z-index:30;order:0;flex:none;width:100%;align-self:auto;gap:0;padding:0 0 env(safe-area-inset-bottom,0px);
+    background:#12303d;box-shadow:0 -2px 12px rgba(18,48,61,.25)}
+  header.hd .vt{flex:1 1 0;min-width:0;border-radius:0;background:transparent;padding:16px 4px 15px;font-size:12px;border-top:3px solid transparent;overflow:hidden;text-overflow:ellipsis}
+  header.hd .vt:hover{background:rgba(255,255,255,.08)}
+  header.hd .vt[aria-pressed=true]{background:rgba(255,255,255,.12);color:#fff;border-top-color:#cfe3ea}
 }
 /* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
 main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100% - var(--col))/2)) 24px;display:grid;gap:18px;align-content:start}
