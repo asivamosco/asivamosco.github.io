@@ -149,3 +149,20 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
     .selL option:checked{background:#e9ebef}
   }
 }
+
+/* ---------- TARJETA DE INDICADOR (hero) en celular: compacta ----------
+   Vistas con select (divisiones / ciudades): el nombre ya lo da el select, así que se omite el título (.ttl).
+   El número grande queda a la izquierda y las 4 variaciones en 2 × 2 a la derecha; debajo, la fuente. */
+@media (max-width:600px){
+  body .top:not(.g)>.hero{display:grid!important;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "big vars" "src src"!important;column-gap:14px;row-gap:6px;align-content:start}
+  body .top:not(.g)>.hero.wt{grid-template-areas:"kick tabs" "big vars" "src src"!important}
+  body .top:not(.g)>.hero.wt.gr{grid-template-areas:"kick tabs" "gl gl"!important}
+  body .top:not(.g)>.hero .ttl{display:none}
+  body .top:not(.g)>.hero .big{font-size:46px;margin:0;align-self:center}
+  body .top:not(.g)>.hero .big span{font-size:19px;margin-left:2px}
+  body .top:not(.g)>.hero .vars{grid-template-columns:1fr 1fr;gap:6px 12px;align-self:center}
+  body .top:not(.g)>.hero .vars div{padding-bottom:5px;gap:1px}
+  body .top:not(.g)>.hero .vars span{font-size:12px}
+  body .top:not(.g)>.hero .vars b{font-size:17px}
+  body .top:not(.g)>.hero .src{margin-top:0;font-size:12px;line-height:1.3}
+}
