@@ -42,6 +42,19 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   header.hd .btn-caption{font-size:7px}
 }
 
+/* Celular y pantallas verticales (tablets): logo apilado — "Así" + ícono arriba, "Vamos" debajo — y sin "COLOMBIA".
+   Requiere el marcado <span class="brand-txt"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico">…</svg></span> */
+@media (max-width:1024px) and (orientation:portrait){
+  header.hd .brand-sub{display:none}
+  header.hd .brand-txt{display:inline-grid;grid-template-columns:auto auto;justify-content:start;align-items:center;font-size:34px;line-height:.95}
+  header.hd .brand-txt .b1{grid-column:1;grid-row:1}
+  header.hd .brand-txt .b2{grid-column:1 / span 2;grid-row:2}
+  header.hd .brand-txt .brand-ico{grid-column:2;grid-row:1}
+}
+@media (max-width:600px) and (orientation:portrait){
+  header.hd .brand-txt{font-size:26px}
+}
+
 /* ---------- FOOTER ---------- */
 footer.site-foot{flex:none;background:#12303d;color:#fff;padding:14px var(--gutter) 12px}
 .site-foot .foot-in{max-width:var(--col);margin:0 auto;padding:0}
