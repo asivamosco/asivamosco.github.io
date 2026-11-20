@@ -55,18 +55,20 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   header.hd .brand-txt{font-size:20px}
 }
 
-/* Título centrado en el header (páginas de detalle): solo en celulares y tablets (pantalla táctil) en vertical, nunca en escritorio, aunque la ventana sea angosta; tipografía de los títulos de los paneles.
+/* Título centrado en el header (index y páginas de detalle): solo en celulares y tablets (pantalla táctil) en vertical, nunca en escritorio, aunque la ventana sea angosta; va en una tab blanca con letra petróleo.
    El header pasa a 3 columnas (logo | título | botón) con laterales iguales, así el título queda exactamente en el centro. */
 header.hd .hd-title{display:none}
 @media (max-width:1024px) and (orientation:portrait) and (pointer:coarse){
   header.hd:has(.hd-title){display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
   header.hd .hd-title{display:block;grid-column:2;align-self:center;min-width:0;max-width:50vw;
-    font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:22px;line-height:1.1;text-align:center;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:20px;line-height:1.1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    /* tab blanca con letra petróleo */
+    background:#fff;color:#12303d;padding:6px 14px;border-radius:8px}
   header.hd:has(.hd-title) .hd-left{grid-column:1}
   header.hd:has(.hd-title) .hd-right{grid-column:3}
 }
 @media (max-width:600px) and (orientation:portrait) and (pointer:coarse){
-  header.hd .hd-title{font-size:18px}
+  header.hd .hd-title{font-size:17px;padding:5px 10px;border-radius:7px}
 }
 
 /* ---------- FOOTER ---------- */
