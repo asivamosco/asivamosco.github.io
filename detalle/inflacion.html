@@ -171,13 +171,9 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
 .hero .src{line-height:1.35}
 /* Celular: la lista de ciudades / divisiones se presenta como select */
-.selL{display:none}
 @media(max-width:600px){
   .cl .list{display:none}
   .cl{height:auto;min-height:0}
-  .selL{display:block;width:100%;margin:6px 0 0;padding:12px 38px 12px 12px;border:1px solid #c3cad0;border-radius:var(--r);
-    -webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312303d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center/12px 8px;
-    font:700 17px/1.2 "Roboto Condensed",system-ui,sans-serif;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 }
 </style>
 </head>
@@ -391,7 +387,7 @@ function listaDiv() {
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
   const sl = $('#selLista');
   sl.setAttribute('aria-label', 'Elegir división');
-  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.divisiones.items.indexOf(c)}"${st.dv.d === c ? ' selected' : ''}>${i + 1}. ${esc(nm(c.division))} · ${fmt(c.var_anual)} %</option>`).join('');
+  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.divisiones.items.indexOf(c)}"${st.dv.d === c ? ' selected' : ''}>${fmt(c.var_anual)} % · ${esc(nm(c.division))}</option>`).join('');
 }
 
 function lista() {
@@ -409,7 +405,7 @@ function lista() {
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
   const sl = $('#selLista');
   sl.setAttribute('aria-label', 'Elegir ciudad');
-  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${i + 1}. ${esc(c.ciudad)} · ${fmt(c.var_anual)} %</option>`).join('');
+  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${fmt(c.var_anual)} % · ${esc(c.ciudad)}</option>`).join('');
 }
 
 // Top 5 que más subieron / bajaron en inflación anual (pp vs. hace un año), por ciudad y por división
