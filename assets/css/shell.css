@@ -124,10 +124,10 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   .selL{display:block;width:100%;margin:6px 0 0;padding:12px 38px 12px 12px;border:1px solid #c3cad0;border-radius:var(--r,6px);
     -webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312303d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center/12px 8px;
     font:700 17px/1.2 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  /* Tarjeta con select: sin encabezado; el indicador (.clm) abajo a la izquierda y la referencia (.ref) abajo a la derecha.
+  /* Tarjeta con select: sin encabezado; el indicador (.clm) arriba a la izquierda y la referencia (.ref) arriba a la derecha, sobre el select.
      Marcado: <div class="clfoot"><small class="mute clm">Indicador</small><p class="ref">…</p></div> */
   .cl > .head{display:none}
-  .cl .clfoot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:8px}
+  .cl .clfoot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:0 2px 2px}
   .cl .clm{display:block;flex:none;font-size:13px}
   .cl .clfoot .ref{margin:0;text-align:right}
   /* Lista desplegada: texto completo, con salto de línea si no cabe */

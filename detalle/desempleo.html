@@ -40,6 +40,7 @@ header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
 /* Celular y tablet en vertical: las tabs cuelgan del borde inferior del header, unidas en una sola tira separada por una línea fina, todas del mismo ancho */
 @media(max-width:1024px) and (orientation:portrait){
   header.hd{margin-bottom:35px}
+  body.app>main{padding-top:8px}
   .hd-mid{position:absolute;top:100%;left:0;right:0;margin:0 auto;order:0;flex:none;width:calc(100% - 2*var(--gutter));max-width:var(--col);height:35px;align-self:auto;align-items:flex-start;justify-content:center;gap:0;padding:0;background:transparent;pointer-events:none}
   header.hd .vt{pointer-events:auto;flex:1 1 0;min-width:0;border-radius:0;padding:10px 4px 12px;font-size:12px;background:#2d4756;color:#cfe3ea;border-top:1px solid rgba(255,255,255,.22);border-left:1px solid rgba(255,255,255,.22);overflow:hidden;text-overflow:ellipsis}
   header.hd .vt:first-child{border-left:0;border-bottom-left-radius:10px}
@@ -298,9 +299,9 @@ function render() {
     <div class="top" id="top">
       <section class="card cl" aria-label="Por ciudad">
         <div class="head"><h2>Por ciudad</h2><small class="mute">Tasa de desempleo</small></div>
+        <div class="clfoot"><small class="mute clm">Tasa de desempleo</small><p class="ref">${refTxt(ciu.referencias)}</p></div>
         <select class="selL" id="selLista" aria-label="Elegir ciudad"></select>
         <div class="list" id="lista"></div>
-        <div class="clfoot"><small class="mute clm">Tasa de desempleo</small><p class="ref">${refTxt(ciu.referencias)}</p></div>
       </section>
       <section class="card cg" aria-label="Serie">
         <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
