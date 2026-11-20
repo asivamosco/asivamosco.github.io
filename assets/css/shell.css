@@ -135,9 +135,9 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   .cl .clfoot{display:none}
   /* Paneles que dependen del select: del título se omite el nombre elegido (ya lo da el select) y queda "Últimos 12 meses" / "Destacados".
      Marcado del título: <span class="serNm">Nombre: </span><span class="serTx">últimos 12 meses</span> */
-  .cl ~ .cg .serNm{display:none}
-  .cl ~ .cg .serTx{display:inline-block}
-  .cl ~ .cg .serTx::first-letter{text-transform:uppercase}
+  .cl ~ .cg .serNm,.top.g .cg .serNm{display:none}
+  .cl ~ .cg .serTx,.top.g .cg .serTx{display:inline-block}
+  .cl ~ .cg .serTx::first-letter,.top.g .cg .serTx::first-letter{text-transform:uppercase}
   /* Lista desplegada: texto completo, con salto de línea si no cabe */
   .selL option{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;padding:10px 12px;font:600 16px/1.25 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d)}
   /* Chrome/Edge recientes (select personalizable): el desplegable también respeta el ajuste de texto */
@@ -186,10 +186,10 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
 }
 
 /* Tarjeta "Inflación nacional" (vista General) en celular: mismo esquema compacto que las vistas con select.
-   Aquí no hay select, así que el título (.ttl) se conserva. */
+   El título "Inflación nacional" (.ttl) se omite en celular. */
 @media (max-width:600px){
-  body .top.g>.hero{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ttl ttl" "big vars" "src src";column-gap:14px;row-gap:6px;align-content:start}
-  body .top.g>.hero .ttl{grid-area:ttl;font-size:19px}
+  body .top.g>.hero{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"big vars" "src src";column-gap:14px;row-gap:6px;align-content:start}
+  body .top.g>.hero .ttl{display:none}
   body .top.g>.hero .big{grid-area:big;font-size:46px;margin:0;align-self:center}
   body .top.g>.hero .big span{font-size:19px;margin-left:2px}
   body .top.g>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:6px 12px;align-self:center}
