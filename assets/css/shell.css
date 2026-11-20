@@ -133,6 +133,11 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   /* Información que iba encima del select (indicador y referencia): oculta por ahora, pendiente de reubicar.
      Marcado: <div class="clfoot"><small class="mute clm">Indicador</small><p class="ref">…</p></div> */
   .cl .clfoot{display:none}
+  /* Paneles que dependen del select: del título se omite el nombre elegido (ya lo da el select) y queda "Últimos 12 meses" / "Destacados".
+     Marcado del título: <span class="serNm">Nombre: </span><span class="serTx">últimos 12 meses</span> */
+  .cl ~ .cg .serNm{display:none}
+  .cl ~ .cg .serTx{display:inline-block}
+  .cl ~ .cg .serTx::first-letter{text-transform:uppercase}
   /* Lista desplegada: texto completo, con salto de línea si no cabe */
   .selL option{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;padding:10px 12px;font:600 16px/1.25 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d)}
   /* Chrome/Edge recientes (select personalizable): el desplegable también respeta el ajuste de texto */
