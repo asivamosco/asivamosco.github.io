@@ -184,3 +184,35 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   /* Grupos: se oculta la gráfica y el panel muestra solo los grupos de la división */
   body .top.vgr>.cg{display:none}
 }
+
+/* Tarjeta "Inflación nacional" (vista General) en celular: mismo esquema compacto que las vistas con select.
+   Aquí no hay select, así que el título (.ttl) se conserva. */
+@media (max-width:600px){
+  body .top.g>.hero{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"ttl ttl" "big vars" "src src";column-gap:14px;row-gap:6px;align-content:start}
+  body .top.g>.hero .ttl{grid-area:ttl;font-size:19px}
+  body .top.g>.hero .big{grid-area:big;font-size:46px;margin:0;align-self:center}
+  body .top.g>.hero .big span{font-size:19px;margin-left:2px}
+  body .top.g>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:6px 12px;align-self:center}
+  body .top.g>.hero .vars div{padding-bottom:5px;gap:1px}
+  body .top.g>.hero .vars span{font-size:12px}
+  body .top.g>.hero .vars b{font-size:17px}
+  body .top.g>.hero .src{grid-area:src;margin-top:0;font-size:12px;line-height:1.3}
+}
+
+/* ---------- TOP (aumentaron / redujeron) ----------
+   Cada fila lleva su propio relleno de color (variable --p, proporcional al valor) en vez de la barra debajo del nombre;
+   el valor y el "hoy" van en la misma línea. Marcado de la fila: <button class="tr ru|rd" style="--p:NN%"> */
+.t5 .tr{width:100%;box-sizing:border-box;padding:9px 8px;border-radius:4px}
+.t5 .tr.ru{background-image:linear-gradient(90deg,color-mix(in srgb,var(--up,#e5533d) 20%,#fff) var(--p),transparent var(--p))}
+.t5 .tr.rd{background-image:linear-gradient(90deg,color-mix(in srgb,var(--dn,#1fb59b) 22%,#fff) var(--p),transparent var(--p))}
+.t5 .vl{display:flex;align-items:baseline;justify-content:flex-end;gap:6px;white-space:nowrap}
+.t5 .vl small{font-size:13px}
+@media (max-width:600px){
+  /* La vista TOP ocupa el alto disponible: pestañas arriba, y los dos paneles repartidos 60/40 con scroll propio */
+  body.app>main.vtop{display:flex;flex-direction:column;overflow:hidden}
+  main.vtop>.tabs{flex:none;margin:0}
+  main.vtop>.ref{flex:none;margin:0!important;font-size:11px;line-height:1.25}
+  main.vtop>.tres{flex:1 1 0;min-height:0;display:flex;flex-direction:column;gap:8px;align-items:stretch}
+  main.vtop .t5{flex:var(--w,50) 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 12px 6px}
+  main.vtop .t5 h2{position:sticky;top:0;z-index:1;margin:0;padding:10px 0 6px;background:var(--card,#fff);font-size:17px}
+}
