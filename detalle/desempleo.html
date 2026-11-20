@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=14">
+<link rel="stylesheet" href="../assets/css/shell.css?v=15">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -248,6 +248,7 @@ function tituloHeader(nombre) {
 function render() {
   document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
   tituloHeader('Desempleo');
+  $('#app').classList.toggle('vtop', st.vista === 'top');
   const dim = D.dimensiones, ciu = dim.ciudades, v = st.vista;
   document.querySelectorAll('[data-vista]').forEach(b => {
     b.setAttribute('aria-pressed', b.dataset.vista === v);
@@ -384,10 +385,12 @@ function top5() {
     <button class="tr" data-ci="${todas.indexOf(c)}" title="${esc(c.ciudad)}" aria-pressed="false">
       <span class="rk">${i + 1}</span>
       <span class="nm"><span>${esc(c.ciudad)}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
-      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong>
-        <small class="mute">hoy ${fmt(c.tasa_desempleo, 1)} %</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
+      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
   $('#t5s').innerHTML = bloque('Ciudades que aumentaron', sube, 'up', 'Ninguna ciudad aumentó frente a hace un año.');
   $('#t5b').innerHTML = bloque('Ciudades que redujeron', baja, 'dn', 'Ninguna ciudad redujo frente a hace un año.');
+  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
+  const wu = sube.length > baja.length ? 60 : sube.length < baja.length ? 40 : 50;
+  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
 }
 
 // Paneles de hallazgos: dentro de General, pestaña Destacados
