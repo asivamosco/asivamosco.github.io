@@ -126,7 +126,7 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
     font:700 17px/1.2 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   /* Tarjeta con select: sin encabezado; el indicador (.clm) abajo a la izquierda y la referencia (.ref) abajo a la derecha.
      Marcado: <div class="clfoot"><small class="mute clm">Indicador</small><p class="ref">…</p></div> */
-  .cl:has(> .selL) > .head{display:none}
+  .cl > .head{display:none}
   .cl .clfoot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:8px}
   .cl .clm{display:block;flex:none;font-size:13px}
   .cl .clfoot .ref{margin:0;text-align:right}
