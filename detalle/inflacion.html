@@ -170,6 +170,15 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .tr.g .wrap{white-space:normal;overflow:visible}
 .tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
 .hero .src{line-height:1.35}
+/* Celular: la lista de ciudades / divisiones se presenta como select */
+.selL{display:none}
+@media(max-width:600px){
+  .cl .list{display:none}
+  .cl{height:auto;min-height:0}
+  .selL{display:block;width:100%;margin:6px 0 0;padding:12px 38px 12px 12px;border:1px solid #c3cad0;border-radius:var(--r);
+    -webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312303d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center/12px 8px;
+    font:700 17px/1.2 "Roboto Condensed",system-ui,sans-serif;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
 </style>
 </head>
 <body class="app">
@@ -276,6 +285,7 @@ function render() {
     <div class="top" id="top">
       <section class="card cl" aria-label="Por división">
         <div class="head"><h2>Por división</h2><small class="mute">Inflación anual</small></div>
+        <select class="selL" id="selLista" aria-label="Elegir"></select>
         <div class="list" id="lista"></div>
         <p class="ref">Total nacional: ${fmt(D.hero.tasa_inflacion)} %</p>
       </section>
@@ -291,6 +301,7 @@ function render() {
     <div class="top" id="top">
       <section class="card cl" aria-label="Por ciudad">
         <div class="head"><h2>Por ciudad</h2><small class="mute">Inflación anual</small></div>
+        <select class="selL" id="selLista" aria-label="Elegir"></select>
         <div class="list" id="lista"></div>
         <p class="ref">${refTxt(ciu.referencias)}</p>
       </section>
@@ -342,10 +353,13 @@ function hero() {
 // Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
 function marcar() {
   const dim = D.dimensiones;
-  if (st.vista === 'ciu')
+  const sl = $('#selLista');
+  if (st.vista === 'ciu') {
     document.querySelectorAll('[data-ci]').forEach(x => x.setAttribute('aria-pressed', dim.ciudades.items[x.dataset.ci].ciudad === st.c.nombre));
-  else if (st.vista === 'div') {
+    if (sl) sl.value = dim.ciudades.items.findIndex(c => c.ciudad === st.c.nombre);
+  } else if (st.vista === 'div') {
     document.querySelectorAll('[data-dv]').forEach(x => x.setAttribute('aria-pressed', dim.divisiones.items[x.dataset.dv] === st.dv.d));
+    if (sl) sl.value = dim.divisiones.items.indexOf(st.dv.d);
   }
 }
 
@@ -375,6 +389,9 @@ function listaDiv() {
   }).join('');
   const r = l.querySelector('[aria-pressed=true]');
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
+  const sl = $('#selLista');
+  sl.setAttribute('aria-label', 'Elegir división');
+  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.divisiones.items.indexOf(c)}"${st.dv.d === c ? ' selected' : ''}>${i + 1}. ${esc(nm(c.division))} · ${fmt(c.var_anual)} %</option>`).join('');
 }
 
 function lista() {
@@ -390,6 +407,9 @@ function lista() {
   }).join('');
   const r = l.querySelector('[aria-pressed=true]');
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
+  const sl = $('#selLista');
+  sl.setAttribute('aria-label', 'Elegir ciudad');
+  sl.innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${i + 1}. ${esc(c.ciudad)} · ${fmt(c.var_anual)} %</option>`).join('');
 }
 
 // Top 5 que más subieron / bajaron en inflación anual (pp vs. hace un año), por ciudad y por división
@@ -470,6 +490,14 @@ document.addEventListener('click', e => {
     if (st.vista !== 'ciu') { st.vista = 'ciu'; render(); $('#app').scrollTo({top: 0}); return; }
   } else if (b.dataset.dv != null) { st.dv = divSerie(dim.divisiones.items[b.dataset.dv]); st.htab = 'div';
     if (st.vista !== 'div') { st.vista = 'div'; render(); $('#app').scrollTo({top: 0}); return; } }
+  else return;
+  marcar(); hero(); serie();
+});
+document.addEventListener('change', e => {
+  if (!D || e.target.id !== 'selLista') return;
+  const dim = D.dimensiones, i = e.target.value;
+  if (st.vista === 'ciu') st.c = ciudadSerie(dim.ciudades.items[i]);
+  else if (st.vista === 'div') { st.dv = divSerie(dim.divisiones.items[i]); st.htab = 'div'; }
   else return;
   marcar(); hero(); serie();
 });
