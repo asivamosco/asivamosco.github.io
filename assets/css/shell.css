@@ -200,13 +200,11 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
 }
 
 /* ---------- TOP (aumentaron / redujeron) ----------
-   Cada fila lleva su propio relleno de color (variable --p, proporcional al valor) en vez de la barra debajo del nombre;
-   el valor y el "hoy" van en la misma línea. Marcado de la fila: <button class="tr ru|rd" style="--p:NN%"> */
+   Fila a todo el ancho, con la barra proporcional debajo del nombre; solo se muestra el cambio en pp a la derecha. */
 .t5 .tr{width:100%;box-sizing:border-box;padding:9px 8px;border-radius:4px}
-.t5 .tr.ru{background-image:linear-gradient(90deg,color-mix(in srgb,var(--up,#e5533d) 20%,#fff) var(--p),transparent var(--p))}
-.t5 .tr.rd{background-image:linear-gradient(90deg,color-mix(in srgb,var(--dn,#1fb59b) 22%,#fff) var(--p),transparent var(--p))}
+/* Nombre en una sola línea; si no cabe, termina en puntos suspensivos (el nombre completo está en el title de la fila) */
+body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .t5 .vl{display:flex;align-items:baseline;justify-content:flex-end;gap:6px;white-space:nowrap}
-.t5 .vl small{font-size:13px}
 @media (max-width:600px){
   /* La vista TOP ocupa el alto disponible: pestañas arriba, y los dos paneles repartidos 60/40 con scroll propio */
   body.app>main.vtop{display:flex;flex-direction:column;overflow:hidden}

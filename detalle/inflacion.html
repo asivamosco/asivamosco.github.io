@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=10">
+<link rel="stylesheet" href="../assets/css/shell.css?v=13">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -132,7 +132,7 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .tres>.sxc{grid-column:1/-1}
 .t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
 .tr{all:unset;cursor:pointer;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:center;padding:9px 6px;border-top:1px solid var(--line);width:calc(100% - 12px)}
-.tr:hover{background-color:#f4f7f8} .tr[aria-pressed=true]{background-color:#e8f3f5}
+.tr:hover{background:#f4f7f8} .tr[aria-pressed=true]{background:#e8f3f5}
 .tr:focus-visible{outline:2px solid var(--acc)}
 .tr .bar b.up{background:var(--up)} .tr .bar b.dn{background:var(--dn)}
 .tr .vl strong.up{color:var(--up-t)} .tr .vl strong.dn{color:var(--dn-t)}
@@ -431,11 +431,10 @@ function top5() {
     const mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
     cnt[k] = arr.length;
     return `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
-    <button class="tr r${k === 'up' ? 'u' : 'd'}" ${attr}="${todas.indexOf(c)}" style="--p:${(100 * Math.abs(c.var_anual_pp) / mx).toFixed(1)}%" title="${esc(nom(c))}" aria-pressed="false">
+    <button class="tr" ${attr}="${todas.indexOf(c)}" title="${esc(nom(c))}" aria-pressed="false">
       <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(nom(c))}</span></span>
-      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong>
-        <small class="mute">hoy ${fmt(c.var_anual)} %</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
+      <span class="nm"><span>${esc(nom(c))}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
+      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
   };
   const nc = c => c.ciudad, nd = c => nm(c.division);
   const ciu = st.ttab === 'ciu';
