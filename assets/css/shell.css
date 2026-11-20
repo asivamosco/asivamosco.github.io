@@ -118,14 +118,17 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
    Uso: <select class="selL">. Oculto en escritorio; en celular reemplaza a la lista (.list).
    Las opciones se escriben "indicador · nombre" (sin numeración) y pueden ocupar varias líneas,
    así el nombre nunca se recorta en la lista desplegada. */
-.selL{display:none}
+.selL,.selW{display:none}
 .clm{display:none}
 @media (max-width:600px){
-  /* El select hace de TÍTULO de la tarjeta: sin caja ni borde, letra de título y la flecha a la derecha para volver a abrir la lista.
-     Debajo, las demás tarjetas muestran el detalle del valor elegido. */
-  .selL{display:block;width:100%;margin:0;padding:2px 32px 2px 0;border:0;border-radius:0;
-    -webkit-appearance:none;appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312303d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 4px center/14px 9px;
-    font:700 19px/1.2 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* El select hace de TÍTULO de la tarjeta: un <span class="selT"> muestra completo el valor elegido (varias líneas si hace falta)
+     y el <select class="selL"> va transparente encima, así al tocar el título se abre la lista. La flecha a la derecha indica que se puede cambiar.
+     Marcado: <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista"></select></div>
+     y la página llama a selTitle() para copiar el texto de la opción elegida en #selT. */
+  .selW{display:block;position:relative}
+  .selT{display:block;padding:2px 34px 2px 0;font:700 19px/1.25 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d);overflow-wrap:anywhere;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2312303d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 4px top 9px/14px 9px}
+  .selW .selL{display:block;position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;opacity:0;cursor:pointer;font-size:16px;-webkit-appearance:none;appearance:none}
   .cl > .head{display:none}
   /* Información que iba encima del select (indicador y referencia): oculta por ahora, pendiente de reubicar.
      Marcado: <div class="clfoot"><small class="mute clm">Indicador</small><p class="ref">…</p></div> */
@@ -135,11 +138,6 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   /* Chrome/Edge recientes (select personalizable): el desplegable también respeta el ajuste de texto */
   @supports (appearance:base-select){
     .selL,.selL::picker(select){appearance:base-select}
-    /* Select cerrado: título que puede ocupar varias líneas; sin el ícono propio del navegador (la flecha es el chevron del fondo) */
-    .selL{display:flex;align-items:center;justify-content:flex-start}
-    .selL::picker-icon{display:none;content:none}
-    .selL{align-items:flex-start}
-    .selL selectedcontent{display:block;flex:1 1 auto;min-width:0;white-space:normal;overflow-wrap:anywhere}
     .selL::picker(select){border:1px solid #c3cad0;border-radius:var(--r,6px);background:#fff;max-height:60vh}
     .selL option{display:block}
     .selL option::checkmark{display:none}

@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=2">
+<link rel="stylesheet" href="../assets/css/shell.css?v=4">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -204,6 +204,12 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 const IND = new URLSearchParams(location.search).get('ind') || 'desempleo';
 const URL_JSON = `data/detalle_${IND}.json`;
 const $ = s => document.querySelector(s);
+// Celular: el select va invisible sobre un título que muestra completo (con saltos de línea) el valor elegido
+function selTitle() {
+  const sl = document.getElementById('selLista'), t = document.getElementById('selT');
+  if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
+}
+document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (n, d = 1) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
@@ -300,7 +306,7 @@ function render() {
       <section class="card cl" aria-label="Por ciudad">
         <div class="head"><h2>Por ciudad</h2><small class="mute">Tasa de desempleo</small></div>
         <div class="clfoot"><small class="mute clm">Tasa de desempleo</small><p class="ref">${refTxt(ciu.referencias)}</p></div>
-        <select class="selL" id="selLista" aria-label="Elegir ciudad"></select>
+        <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir ciudad"></select></div>
         <div class="list" id="lista"></div>
       </section>
       <section class="card cg" aria-label="Serie">
@@ -347,7 +353,7 @@ function marcar() {
   if (st.vista === 'ciu') {
     document.querySelectorAll('[data-ci]').forEach(x => x.setAttribute('aria-pressed', dim.ciudades.items[x.dataset.ci].ciudad === st.c.nombre));
     const sl = $('#selLista');
-    if (sl) sl.value = dim.ciudades.items.findIndex(c => c.ciudad === st.c.nombre);
+    if (sl) sl.value = dim.ciudades.items.findIndex(c => c.ciudad === st.c.nombre); selTitle();
   }
 }
 
@@ -365,7 +371,7 @@ function lista() {
   // deja visible la ciudad elegida (p. ej. si se llegó desde los top 5)
   const r = l.querySelector('[aria-pressed=true]');
   if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
-  $('#selLista').innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${fmt(c.tasa_desempleo, 1)} % · ${esc(c.ciudad)}</option>`).join('');
+  $('#selLista').innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${fmt(c.tasa_desempleo, 1)} % · ${esc(c.ciudad)}</option>`).join(''); selTitle();
 }
 
 // Todas las ciudades que aumentaron / redujeron su tasa frente a hace un año (pp), en orden
