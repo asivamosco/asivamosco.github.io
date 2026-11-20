@@ -135,6 +135,10 @@ body.app .page > .zone > footer.site-foot{flex:none;margin-top:0}
   /* Chrome/Edge recientes (select personalizable): el desplegable también respeta el ajuste de texto */
   @supports (appearance:base-select){
     .selL,.selL::picker(select){appearance:base-select}
+    /* Select cerrado: una sola línea; sin el ícono propio del navegador (la flecha es el chevron del fondo) */
+    .selL{display:flex;align-items:center;justify-content:flex-start}
+    .selL::picker-icon{display:none;content:none}
+    .selL selectedcontent{display:block;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
     .selL::picker(select){border:1px solid #c3cad0;border-radius:var(--r,6px);background:#fff;max-height:60vh}
     .selL option{display:block}
     .selL option::checkmark{display:none}
