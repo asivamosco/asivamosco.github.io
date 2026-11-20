@@ -283,7 +283,7 @@ function render() {
         <div class="head"><h2>Por división</h2><small class="mute">Inflación anual</small></div>
         <select class="selL" id="selLista" aria-label="Elegir"></select>
         <div class="list" id="lista"></div>
-        <p class="ref">Total nacional: ${fmt(D.hero.tasa_inflacion)} %</p>
+        <div class="clfoot"><small class="mute clm">Inflación anual</small><p class="ref">Total nacional: ${fmt(D.hero.tasa_inflacion)} %</p></div>
       </section>
       <section class="card cg" aria-label="Serie">
         <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
@@ -299,7 +299,7 @@ function render() {
         <div class="head"><h2>Por ciudad</h2><small class="mute">Inflación anual</small></div>
         <select class="selL" id="selLista" aria-label="Elegir"></select>
         <div class="list" id="lista"></div>
-        <p class="ref">${refTxt(ciu.referencias)}</p>
+        <div class="clfoot"><small class="mute clm">Inflación anual</small><p class="ref">${refTxt(ciu.referencias)}</p></div>
       </section>
       <section class="card cg" aria-label="Serie">
         <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
