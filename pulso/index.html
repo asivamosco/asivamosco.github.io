@@ -493,17 +493,21 @@ main{row-gap:0!important}
   .pers .pyr{top:calc(6px + var(--sube))}
   .mid{min-height:0;max-height:100%;overflow:auto}
 }
-/* Pantallas bajas (iPhone SE y similares): panel de temas más compacto para que quepan los 6 sin desplazar */
+/* Celular vertical: el tamaño de los paneles crece con el alto de la pantalla y se ajusta justo al espacio disponible.
+   --t = cuánto espacio extra hay sobre el mínimo (667px de alto, iPhone SE): 0px = compacto, 88px = tamaño normal. */
 @media(orientation:portrait) and (max-width:760px) and (max-height:760px){
-  .mid{padding-top:4px;padding-bottom:4px;gap:4px}
-  .vtabs .sg button{padding:5px 8px}
-  .vp #pulso-pct{gap:5px}
-  .pitem{padding:5px 8px 4px;gap:2px}
-  .phead{gap:0}
-  .ptit{font-size:12px}.pwin{font-size:11px}
-  .pgrid{row-gap:3px}
-  .ppct{font-size:17px}.pbar{height:9px}
-  .pdl{font-size:11px;line-height:1.1}.pmes{font-size:10px;line-height:1.05}
+  main{--t:clamp(0px,calc(100vh - 667px),88px)}
+  @supports (height:100dvh){main{--t:clamp(0px,calc(100dvh - 667px),88px)}}
+  .mid{padding-top:calc(4px + var(--t)*.04);padding-bottom:calc(4px + var(--t)*.04);gap:calc(4px + var(--t)*.02)}
+  .vtabs .sg button{padding-top:calc(5px + var(--t)*.02);padding-bottom:calc(5px + var(--t)*.02)}
+  .vp #pulso-pct{gap:calc(5px + var(--t)*.01)}
+  .pitem{padding:calc(5px + var(--t)*.02) 8px calc(4px + var(--t)*.02);gap:calc(2px + var(--t)*.03)}
+  .phead{gap:calc(var(--t)*.02)}
+  .ptit{font-size:calc(12px + var(--t)*.005)}.pwin{font-size:calc(11px + var(--t)*.005)}
+  .pgrid{row-gap:calc(3px + var(--t)*.03)}
+  .ppct{font-size:calc(17px + var(--t)*.02)}.pbar{height:calc(9px + var(--t)*.03)}
+  .pdl{font-size:calc(11px + var(--t)*.005);line-height:1.12}
+  .pmes{font-size:calc(10px + var(--t)*.01);line-height:calc(10.5px + var(--t)*.0435)}
 }
 </style>
 </head>
