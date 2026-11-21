@@ -429,19 +429,13 @@ main.vp .mid{align-self:start}
 .pmes{font-weight:400;font-size:11px;color:var(--mute);white-space:nowrap;text-align:center}
 @media(max-width:480px){.pitem{padding:5px 8px 5px 7px}.ptit{font-size:13px}.psub{font-size:10px}.pgrid{grid-template-columns:38px minmax(0,1fr) 38px;column-gap:6px}.ppct{font-size:16px}.pbar{height:12px}.pdl{font-size:10.5px}.pmes{font-size:10px}}
 
-/* ===== Efecto glass en las cards de los presidentes ===== */
-body{background:
-  radial-gradient(circle at 10% 12%,rgba(228,156,48,.38) 0,transparent 42%),
-  radial-gradient(circle at 90% 12%,rgba(0,99,156,.32) 0,transparent 42%),
-  var(--bg);background-attachment:fixed}
-.pers{
-  background:linear-gradient(145deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.22) 55%,var(--glass,rgba(255,255,255,.3)) 100%);
-  -webkit-backdrop-filter:blur(16px) saturate(170%);backdrop-filter:blur(16px) saturate(170%);
-  border:1px solid rgba(255,255,255,.7);border-top:3px solid;
-  box-shadow:0 8px 28px rgba(18,48,61,.14),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.25)}
-.pers.p{--glass:rgba(228,156,48,.22);border-top-color:var(--cP)}
-.pers.a{--glass:rgba(0,99,156,.20);border-top-color:var(--cA)}
-.pers .pid{text-shadow:0 1px 0 rgba(255,255,255,.6)}
+
+/* ===== Cards de presidentes: color plano, sin efectos ===== */
+.pers{box-shadow:none;border-top-width:0}
+.pers.p{background:var(--cP);color:var(--ink)}
+.pers.a{background:var(--cA);color:#fff}
+.pers.p .pper{color:rgba(18,48,61,.78)}
+.pers.a .pper{color:rgba(255,255,255,.85)}
 </style>
 </head>
 <body class="app">
