@@ -165,7 +165,10 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 }
 /* Ciudades en celular: en vez de "Desempleo por ciudad", el panel muestra el nombre de la ciudad elegida (en escritorio queda el rótulo y debajo el nombre) */
 .hero .kc{display:none}
+/* Ciudades, escritorio: sin el rótulo "Desempleo por ciudad" (el nombre ya está como título del panel) */
+.hero .kick.kv{display:none}
 @media(max-width:600px){
+  body .top:not(.g)>.hero .kick.kv{display:block}
   body .top:not(.g)>.hero .kk{display:none}
   body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
 }
@@ -415,7 +418,7 @@ function hero() {
       + `<div><span class="mute">Personas vs. hace un año</span><b class="${cls(d.desocupados_var_anual_miles)}">${flecha(d.desocupados_var_anual_miles)} ${persSg(d.desocupados_var_anual_miles)}</b></div>`;
     if (s.tipo === 'ciudad') src = `Trimestre móvil que termina en ${per.mes_nombre} ${per.anio} · Fuente: ${D.fuente}`;
   }
-  $('#hero').innerHTML = `${kick ? `<div class="kick"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}
+  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}
     <div class="ttl">${esc(ttl)}</div>
     <div class="big">${fmt(tasa, 1)}<span>%</span></div>
     <div class="vars">${filas}</div>
@@ -476,7 +479,9 @@ function hallazgosHtml() {
 
 function serie() {
   const s = cur(), dest = s.nac && st.gtab === 'dest';
-  $('#serieT').innerHTML = `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
+  // Ciudades: el título es solo "Últimos 12 meses" (el nombre ya está en el panel del indicador)
+  $('#serieT').innerHTML = !s.nac ? '<span class="serTx">Últimos 12 meses</span>'
+    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
   // Nacional: pestañas Gráficas / Destacados
   $('#tabs').innerHTML = s.nac
     ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
