@@ -7,7 +7,7 @@
 
 /* Ancho de columna común = el de las tarjetas del index (3 de 226px + 2 huecos de 14px = 706px).
    Lo usan footer/banner, header y el contenido de todas las páginas. */
-:root{--col:706px;--gutter:20px}
+:root{--col:706px;--gutter:20px;--brand-acc:#E0A938}
 @media (min-width:601px) and (max-width:900px){:root{--col:772px}}
 @media (max-width:600px){:root{--gutter:10px}}
 
@@ -20,6 +20,11 @@ header.hd a.home{display:block;color:#fff;text-decoration:none;border-radius:6px
 /* Ícono en la línea de "Así Vamos": apoyado en la línea base y con la altura de las mayúsculas A y V de Anton (0,86em) */
 header.hd .brand-ico{display:inline-block;width:.89em;height:.86em;margin-left:.3em;vertical-align:baseline;color:#fff}
 header.hd a.home:focus-visible{outline:2px solid #fff;outline-offset:4px}
+/* Color de marca: "Vamos" y la línea de tendencia + puntos del ícono en ámbar #E0A938; "Así" y las barras quedan blancos */
+header.hd .brand-txt .b2{color:var(--brand-acc)}
+/* Ícono: línea de tendencia y puntos en ámbar (las barras siguen blancas por currentColor) */
+header.hd .brand-ico polyline,header.hd .brand-ico .ln{stroke:var(--brand-acc)}
+header.hd .brand-ico circle,header.hd .brand-ico .dot{stroke:var(--brand-acc)}   /* solo el contorno: los puntos siguen huecos */
 header.hd .brand-col{display:flex;flex-direction:column;align-items:flex-start;gap:5px}
 header.hd .brand-txt{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:30px;line-height:1;letter-spacing:.01em}
 header.hd .brand-sub{display:block;font-size:9px;font-weight:700;letter-spacing:.32em;line-height:1;color:#cfe3ea}
