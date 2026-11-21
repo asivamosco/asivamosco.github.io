@@ -407,30 +407,39 @@ main{row-gap:0}
 .bc{background:var(--wt,#fff)}
 /* ===== Vista Pulso %: reparto porcentual de rendimiento por tema ===== */
 #pulso-pct{display:none}
-.vp #pulso-pct{display:flex;flex-direction:column;gap:7px;flex:1 0 auto}
+.vp #pulso-pct{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-content:start;flex:1 0 auto}
 .vp .head,.vp #tabla,.vp #chart,.vp .foot,.vp #barras{display:none}
 .vp .vtabs .bcap{display:block}
 .vp .vtabs .info{display:grid}
 main.vp .mid{align-self:start}
-.pitem{display:flex;flex-direction:column;gap:3px;width:100%;padding:6px 10px;border:1px solid var(--line);border-radius:var(--r);background:#fff;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(18,48,61,.06)}
-.pitem:hover{box-shadow:var(--sh)}
-.phead{display:flex;justify-content:center;align-items:baseline;gap:8px;text-align:center}
-.ptit{font-weight:800;font-size:14px;line-height:1.15}
-.pwin{font-size:14px;font-weight:400;line-height:1.15;color:var(--mute);white-space:nowrap}
-.pwin b{font-weight:800}.pwin .wp{color:var(--cPt)}.pwin .wa{color:var(--cA)}
 .psub{font-size:11px;line-height:1.1;color:var(--mute);white-space:nowrap}
-.pgrid{display:grid;grid-template-columns:46px minmax(0,1fr) 46px;column-gap:8px;row-gap:2px;align-items:center}
-.ppct{font:400 19px/1 Anton,Impact,sans-serif}
+.ptick{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:rgba(255,255,255,.9)}
+/* Panel por tema: título, ganador, % de cada uno, barra y cambios */
+.pitem{display:flex;flex-direction:column;gap:7px;width:100%;min-width:0;padding:9px 11px 8px;border:1px solid var(--line);border-radius:var(--r);background:#fff;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(18,48,61,.06)}
+.pitem:hover{box-shadow:var(--sh)}
+.phead{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
+.ptit{font-weight:800;font-size:14px;line-height:1.15}
+.pwin{font-size:13px;font-weight:400;line-height:1.15;color:var(--mute);white-space:nowrap}
+.pwin b{font-weight:800}.pwin .wp{color:var(--cPt)}.pwin .wa{color:var(--cA)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;column-gap:8px;row-gap:6px;align-items:center}
+.ppct{font:400 24px/1 Anton,Impact,sans-serif}
 .ppct.p{color:var(--cPt)}.ppct.a{color:var(--cA);text-align:right}
-.pbar{position:relative;display:flex;height:14px;border-radius:3px;overflow:hidden;background:#e1e7ea}
+.pbar{grid-column:1/-1;position:relative;display:flex;height:14px;border-radius:3px;overflow:hidden;background:#e1e7ea}
 .pfp,.pfa{height:100%;transition:width .35s ease}
 .pfp{background:var(--cP)}.pfa{background:var(--cA)}
-.ptick{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:rgba(255,255,255,.9)}
-.pdl{grid-column:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:8px;font-weight:800;font-size:11.5px;line-height:1.1}
-.pdl>:last-child{justify-self:end}
+.pdl{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:6px;font-weight:800;font-size:11.5px;line-height:1.15}
+.pdl>:last-child{justify-self:end;text-align:right}
 .pdl .ok,.pdl .mal,.pdl .neu{color:#3f5764}
-.pmes{font-weight:400;font-size:11px;color:var(--mute);white-space:nowrap;text-align:center}
-@media(max-width:480px){.pitem{padding:5px 8px}.ptit{font-size:13px}.pwin{font-size:12.5px}.psub{font-size:10px}.pgrid{grid-template-columns:38px minmax(0,1fr) 38px;column-gap:6px}.ppct{font-size:16px}.pbar{height:12px}.pdl{font-size:10.5px}.pmes{font-size:10px}}
+.pmes{grid-column:1/-1;text-align:center;font-weight:400;font-size:11px;color:var(--mute);white-space:nowrap}
+@media(min-width:761px){.da{display:none}}
+@media(max-width:760px){
+  .vp #pulso-pct{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .dw{display:none}
+  .pitem{padding:7px 8px 6px;gap:5px}
+  .ptit{font-size:12.5px}.pwin{font-size:11.5px}
+  .ppct{font-size:19px}.pbar{height:12px}
+  .pdl{font-size:10.5px}.pmes{font-size:10px}
+}
 
 
 
@@ -636,14 +645,15 @@ function repartoPct(q){
 function drawPulsoPct(){
   const filas = IND.map((q, i) => {
     const m = mx(q), r = repartoPct(q);
-    if (!r) return `<button class="pitem" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6"><span class="phead"><span class="ptit">${q.t}</span><span class="psub">Sin datos aún</span></span></button>`;
-    const v = veredicto(q), GAN = v === 'p' ? ' - Mejor <b class="wp">Petro</b>' : v === 'a' ? ' - Mejor <b class="wa">Abelardo</b>' : ' - Empate', dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0];
-    const dv = (d, s) => { const z = Math.abs(d) < eps(q.d); return `<span class="${cls(q, s)}">${z ? 'Sin cambio' : (d > 0 ? 'Aumentó ' : 'Decreció ') + sg(d, q.d) + q.du}</span>`; };
-    return `<button class="pitem" data-i="${i}" aria-label="${q.t}${GAN.replace(/<[^>]+>/g, '')}: Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
-      `<span class="phead"><span class="ptit">${q.t}</span><span class="pwin">${GAN}</span></span>` +
-      `<span class="pgrid"><span class="ppct p">${r.p}%</span>` +
+    if (!r) return `<button class="pitem" data-i="${i}"><span class="phead"><span class="ptit">${q.t}</span><span class="pwin">Sin datos aún</span></span></button>`;
+    const v = veredicto(q), W = v === 'p' ? 'Mejor <b class="wp">Petro</b>' : v === 'a' ? 'Mejor <b class="wa">Abelardo</b>' : 'Empate', dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0];
+    // Escritorio: "Aumentó +2,69 pp"; celular: "▲ +2,69 pp"
+    const dv = (d, s) => { const z = Math.abs(d) < eps(q.d); return `<span class="${cls(q, s)}">${z ? 'Sin cambio' : `<span class="dw">${d > 0 ? 'Aumentó' : 'Decreció'} </span><span class="da">${d > 0 ? '▲' : '▼'} </span>${sg(d, q.d)}${q.du}`}</span>`; };
+    return `<button class="pitem" data-i="${i}" aria-label="${q.t}: ${W.replace(/<[^>]+>/g, '')}. Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
+      `<span class="phead"><span class="ptit">${q.t}</span><span class="pwin">${W}</span></span>` +
+      `<span class="pgrid"><span class="ppct p">${r.p}%</span><span class="ppct a">${r.a}%</span>` +
       `<span class="pbar" title="Petro ${r.p}% · Abelardo ${r.a}%"><span class="pfp" style="width:${r.p}%"></span><span class="pfa" style="width:${r.a}%"></span><i class="ptick"></i></span>` +
-      `<span class="ppct a">${r.a}%</span><span></span><span class="pdl">${dv(dp, q.P)}<span class="pmes">a ${etq(m)}</span>${dv(da, q.A)}</span><span></span></span></button>`;
+      `<span class="pdl">${dv(dp, q.P)}${dv(da, q.A)}</span><span class="pmes">a ${etq(m)}</span></span></button>`;
   }).join('');
   $('#pulso-pct').innerHTML = filas;
 }
