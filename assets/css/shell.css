@@ -222,3 +222,30 @@ body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:e
   main.vtop .t5{flex:var(--w,50) 1 0;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 12px 6px}
   main.vtop .t5 h2{position:sticky;top:0;z-index:1;margin:0;padding:10px 0 6px;background:var(--card,#fff);font-size:17px}
 }
+
+/* ---------- NACIONAL en celular ----------
+   1) El indicador (hero) va arriba de la gráfica.
+   2) Las dos gráficas (Últimos 12 meses / Mismo mes por año) se deslizan en horizontal (swipe) y cada una lleva su título.
+   3) "Destacados" es un interruptor bajo las pestañas: encendido oculta los demás paneles y muestra solo los destacados.
+   Marcado: <button class="swd" id="swd" role="switch" aria-checked data-gtab><span>Destacados</span><i class="swd-k"></i></button>
+   y .dos > .sl (cada gráfica con su h3.sub2; el .t1 solo se ve en celular). En escritorio el interruptor no aparece. */
+.swd{display:none}
+.sub2.t1{display:none}
+@media (max-width:600px){
+  .swd{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:0;background:none;padding:2px 0;cursor:pointer;font:700 15px/1 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d)}
+  .swd-k{position:relative;display:inline-block;width:42px;height:24px;border-radius:999px;background:#b9c4cb;transition:background .15s}
+  .swd-k::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3);transition:transform .15s}
+  .swd[aria-checked=true] .swd-k{background:var(--ink,#12303d)}
+  .swd[aria-checked=true] .swd-k::after{transform:translateX(18px)}
+  .swd:focus-visible{outline:2px solid var(--acc,#0f6b7a);outline-offset:3px}
+  /* el interruptor reemplaza a las pestañas Gráficas / Destacados y al título de la tarjeta */
+  .top.g:not(.sexo) .cg .head{display:none}
+  .top.g>.hero{order:-1}
+  .sub2.t1{display:block}
+  .dos{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .dos::-webkit-scrollbar{display:none}
+  .dos>.sl{flex:0 0 100%;min-width:0;scroll-snap-align:start}
+  .dos .sub2{margin:0 0 4px}
+  /* Destacados encendido: solo los destacados */
+  .top.g.vdest>.hero{display:none}
+}

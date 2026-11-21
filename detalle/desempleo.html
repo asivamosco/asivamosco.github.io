@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=16">
+<link rel="stylesheet" href="../assets/css/shell.css?v=17">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -265,6 +265,7 @@ function render() {
     if (b.dataset.vista === 'ciu') b.textContent = 'Ciudades';
   });
   const topG = `
+    <button class="swd" id="swd" type="button" role="switch" aria-checked="false" data-gtab="dest"><span>Destacados</span><i class="swd-k"></i></button>
     <div class="top g" id="top">
       <section class="card cg" aria-label="Serie">
         <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
@@ -419,8 +420,11 @@ function serie() {
     : '';
   $('#chart').innerHTML = dest ? hallazgosHtml()
     : s.nac
-    ? `<div class="dos">${grafica(s.datos || [], false)}<h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div>`
+    ? `<div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>`
     : grafica(s.datos || [], false);
+  // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
+  const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
+  const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
 }
 
 function grafica(d, mm) {
