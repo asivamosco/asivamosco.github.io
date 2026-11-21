@@ -171,6 +171,12 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .tr.g .wrap{white-space:normal;overflow:visible}
 .tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
 .hero .src{line-height:1.35}
+/* Ciudades y Divisiones en celular: en vez del rótulo ("Inflación por ciudad" / "por división de gasto"), el panel muestra el nombre elegido (en escritorio queda el rótulo y debajo el nombre) */
+.hero .kc{display:none}
+@media(max-width:600px){
+  body .top:not(.g)>.hero .kk{display:none}
+  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
+}
 /* Celular: la lista de ciudades / divisiones se presenta como select */
 @media(max-width:600px){
   .cl .list{display:none}
@@ -379,7 +385,7 @@ function hero() {
   const cuerpo = gr ? gruposHtml(d) : `<div class="big">${fmt(tasa)}<span>%</span></div>
     <div class="vars">${filas}</div>
     <small class="mute src">${com ? esc(com) + '<br>' : ''}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
-  $('#hero').innerHTML = `${kick ? `<div class="kick">${esc(kick)}</div>` : ''}${tabsH}
+  $('#hero').innerHTML = `${kick ? `<div class="kick"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
     <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
   // Celular: las pestañas División / Grupos van bajo el select; en Grupos se oculta la gráfica (clase vgr)
   const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;

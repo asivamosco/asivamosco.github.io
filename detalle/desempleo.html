@@ -163,6 +163,12 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   .tres{grid-template-columns:1fr}
   .sx{grid-template-columns:1fr}
 }
+/* Ciudades en celular: en vez de "Desempleo por ciudad", el panel muestra el nombre de la ciudad elegida (en escritorio queda el rótulo y debajo el nombre) */
+.hero .kc{display:none}
+@media(max-width:600px){
+  body .top:not(.g)>.hero .kk{display:none}
+  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
+}
 /* Sexo en celular: un solo panel tipo tabla (filas = medidas, columnas = Mujeres / Hombres); en escritorio siguen los dos paneles */
 .sxt{display:none}
 @media(max-width:600px){
@@ -409,7 +415,7 @@ function hero() {
       + `<div><span class="mute">Personas vs. hace un año</span><b class="${cls(d.desocupados_var_anual_miles)}">${flecha(d.desocupados_var_anual_miles)} ${persSg(d.desocupados_var_anual_miles)}</b></div>`;
     if (s.tipo === 'ciudad') src = `Trimestre móvil que termina en ${per.mes_nombre} ${per.anio} · Fuente: ${D.fuente}`;
   }
-  $('#hero').innerHTML = `${kick ? `<div class="kick">${esc(kick)}</div>` : ''}
+  $('#hero').innerHTML = `${kick ? `<div class="kick"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}
     <div class="ttl">${esc(ttl)}</div>
     <div class="big">${fmt(tasa, 1)}<span>%</span></div>
     <div class="vars">${filas}</div>
