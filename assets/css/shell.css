@@ -231,7 +231,7 @@ body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:e
    y .dos > .sl (cada gráfica con su h3.sub2; el .t1 solo se ve en celular). En escritorio el interruptor no aparece. */
 .swd{display:none}
 .sub2.t1{display:none}
-.hnac{display:none}
+.hnac{display:block;margin:0 0 4px}
 .dnav{display:none}
 @media (max-width:600px){
   .swd{display:inline-flex;align-items:center;gap:10px;align-self:start;justify-self:end;border:0;background:none;padding:2px 0;cursor:pointer;font:700 15px/1 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d)}
@@ -256,9 +256,8 @@ body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:e
   .dnav button:disabled{opacity:.25;cursor:default}
   .dnav i{width:7px;height:7px;border-radius:50%;background:#b9c4cb;transition:background .15s}
   .dnav i.on{background:var(--ink,#12303d)}
-  /* El destacado "nacional" no va en la lista: su texto se muestra dentro del panel del indicador (.hnac, en la fuente del hero) */
+  /* El destacado "nacional" no va en la lista: su texto se muestra dentro del panel del indicador (.hnac, en la fuente del hero; en todas las pantallas) */
   .hz .card.nac{display:none}
-  .hnac{display:block;margin:0 0 4px}
   /* Destacados encendido: solo los destacados */
   .top.g.vdest>.hero{display:none}
 }

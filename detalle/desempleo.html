@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=19">
+<link rel="stylesheet" href="../assets/css/shell.css?v=20">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -469,7 +469,7 @@ function top5() {
 
 // Paneles de hallazgos: dentro de General, pestaña Destacados
 function hallazgosHtml() {
-  return `<div class="hz">${(D.hallazgos || []).map(x => `
+  return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x)).map(x => `
     <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
       <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`;
 }

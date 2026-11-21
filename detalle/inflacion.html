@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=19">
+<link rel="stylesheet" href="../assets/css/shell.css?v=20">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -239,6 +239,8 @@ document.addEventListener('click', e => {
   const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
   d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
 });
+// Destacado "variación del mes": tampoco va en la lista (ya está en el panel del indicador)
+const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
@@ -498,7 +500,7 @@ function serie() {
 
 // Paneles de hallazgos (antes en TOP); ahora dentro de General, pestaña Destacados
 function hallazgosHtml() {
-  return `<div class="hz">${(D.hallazgos || []).map(x => `
+  return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x) && !esVarMes(x)).map(x => `
     <div class="card ${/_alta$/.test(x.tipo) ? 'sube' : /_baja$/.test(x.tipo) ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
       <h3>${esc(x.titulo)}</h3><p>${esc(nm(x.texto))}</p></div>`).join('')}</div>`;
 }
