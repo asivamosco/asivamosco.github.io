@@ -387,7 +387,7 @@ main{row-gap:0}
   .pid,.pid.nw{position:relative;z-index:1}
 }
 @media(orientation:portrait) and (min-width:761px){
-  main{max-width:calc(var(--col) + 32px);grid-template-columns:minmax(140px,240px) minmax(0,1fr) minmax(140px,240px)}
+  main{max-width:calc(var(--col) + 32px);grid-template-columns:minmax(140px,228px) minmax(0,1fr) minmax(140px,228px)}
 }
 
 /* ===== Respaldo para navegadores sin aspect-ratio (tablets antiguas) ===== */
@@ -443,9 +443,10 @@ main.vp .mid{align-self:start}
 .pers.p .pid{left:0;right:auto;text-align:left;border-radius:0 var(--r) 0 0}
 .pers.a .pid{right:0;left:auto;text-align:right;border-radius:var(--r) 0 0 0}
 .pers .pyr{position:absolute;top:10px;right:10px;z-index:2;text-align:right;white-space:nowrap;font-size:12px;line-height:1.15;color:var(--mute)}
+.pers{container-type:inline-size}
+.pers .pnom{font-size:clamp(10px,6.6cqw,15.5px);white-space:nowrap}
 @media(max-width:760px){
-  .pers .pid,.pers .pid.nw{padding:4px 8px 5px;white-space:normal}
-  .pers .pnom{font-size:clamp(11.5px,3.4vw,15px)}
+  .pers .pid,.pers .pid.nw{padding:4px 8px 5px;white-space:nowrap}
   .pers .pyr{top:6px;right:6px;font-size:10px}
 }
 @supports not (aspect-ratio:1/1){.pers .foto{height:0;padding-bottom:81.7%}}
