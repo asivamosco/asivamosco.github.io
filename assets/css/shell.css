@@ -60,20 +60,23 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
   header.hd .brand-txt{font-size:20px}
 }
 
-/* Título centrado en el header (index y páginas de detalle): solo en celulares y tablets (pantalla táctil) en vertical, nunca en escritorio, aunque la ventana sea angosta; va en una tab blanca con letra petróleo.
+/* Título centrado en el header (index y páginas de detalle): solo en celulares y tablets (pantalla táctil) en vertical, nunca en escritorio, aunque la ventana sea angosta.
+   Letra blanca centrada, sin pestaña; tras el mes lleva una flecha (.ar) roja si el indicador subió o verde si bajó frente al mes anterior.
    El header pasa a 3 columnas (logo | título | botón) con laterales iguales, así el título queda exactamente en el centro. */
 header.hd .hd-title{display:none}
 @media (max-width:1024px) and (orientation:portrait) and (pointer:coarse){
   header.hd:has(.hd-title){display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
-  header.hd .hd-title{display:block;grid-column:2;align-self:start;min-width:0;max-width:50vw;
+  header.hd .hd-title{display:block;grid-column:2;align-self:center;min-width:0;max-width:50vw;
     font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:20px;line-height:1.1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    /* tab blanca con letra petróleo, colgando del borde superior del header */
-    background:#fff;color:#12303d;padding:7px 16px 8px;border-radius:0 0 10px 10px}
+    background:none;color:#fff;padding:0}
+  header.hd .hd-title .ar{font-size:.8em;margin-left:5px}
+  header.hd .hd-title .ar.up{color:var(--up,#e8553d)}
+  header.hd .hd-title .ar.dn{color:var(--dn,#14b8a6)}
   header.hd:has(.hd-title) .hd-left{grid-column:1}
   header.hd:has(.hd-title) .hd-right{grid-column:3}
 }
 @media (max-width:600px) and (orientation:portrait) and (pointer:coarse){
-  header.hd .hd-title{font-size:17px;padding:6px 12px 7px;border-radius:0 0 8px 8px}
+  header.hd .hd-title{font-size:17px}
 }
 
 /* ---------- FOOTER ---------- */
