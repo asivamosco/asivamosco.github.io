@@ -179,6 +179,8 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 }
 /* Celular: la lista de ciudades / divisiones se presenta como select */
 @media(max-width:600px){
+  /* el nombre del select se recorta a una sola línea (el nombre completo está en el panel del indicador) */
+  .selT{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .cl .list{display:none}
   .cl{height:auto;min-height:0}
 }
