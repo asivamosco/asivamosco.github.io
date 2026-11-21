@@ -6,7 +6,7 @@
 <title>Detalle · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=17">
+<link rel="stylesheet" href="../assets/css/shell.css?v=19">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
@@ -210,6 +210,22 @@ function selTitle() {
   if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
 }
 document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
+// Destacado "nacional": en celular no va en la lista de destacados (se oculta con .nac)
+const esNac = x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*(desempleo|inflaci[oó]n|costo de vida)\s+nacional\b/i.test(x.titulo || '');
+// Carrusel de gráficas (celular): flechas y puntos de guía
+const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
+const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
+function dosAct(d) {
+  const i = Math.round(d.scrollLeft / dosPaso(d)), nav = d.parentNode.querySelector('.dnav'); if (!nav) return;
+  nav.querySelectorAll('i').forEach((x, k) => x.classList.toggle('on', k === i));
+  nav.querySelector('[data-dir="-1"]').disabled = i <= 0; nav.querySelector('[data-dir="1"]').disabled = i >= 1;
+}
+document.addEventListener('scroll', e => { if (e.target.classList && e.target.classList.contains('dos')) dosAct(e.target); }, true);
+document.addEventListener('click', e => {
+  const b = e.target.closest('.dnav button'); if (!b) return;
+  const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
+  d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
+});
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (n, d = 1) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
@@ -342,7 +358,9 @@ function hero() {
   const s = cur(), h = D.hero, per = D.periodo, d = s.d;
   let kick = '', ttl = 'Desempleo nacional', tasa = h.tasa_desempleo, filas, src = `${per.etiqueta} · Fuente: ${D.fuente}`;
   const pp = (l, v) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v)}</b></div>`;
+  let hn = '';
   if (s.tipo === 'nac') {
+    const hz = (D.hallazgos || []).find(esNac); hn = hz ? `<span class="hnac">${esc(hz.texto)}</span>` : '';
     filas = pp('Vs. mes anterior', h.cambio_mes_pp) + pp('Vs. hace un año', h.var_anual_pp);
   } else {
     kick = s.tipo === 'ciudad' ? 'Desempleo por ciudad' : 'Desempleo nacional · por sexo';
@@ -356,7 +374,7 @@ function hero() {
     <div class="ttl">${esc(ttl)}</div>
     <div class="big">${fmt(tasa, 1)}<span>%</span></div>
     <div class="vars">${filas}</div>
-    <small class="mute src">${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
+    <small class="mute src">${hn}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
 }
 
 // Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
@@ -407,7 +425,7 @@ function top5() {
 // Paneles de hallazgos: dentro de General, pestaña Destacados
 function hallazgosHtml() {
   return `<div class="hz">${(D.hallazgos || []).map(x => `
-    <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}">
+    <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
       <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`;
 }
 
@@ -420,7 +438,7 @@ function serie() {
     : '';
   $('#chart').innerHTML = dest ? hallazgosHtml()
     : s.nac
-    ? `<div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>`
+    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
     : grafica(s.datos || [], false);
   // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
   const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
