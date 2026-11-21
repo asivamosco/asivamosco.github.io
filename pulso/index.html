@@ -450,6 +450,21 @@ main.vp .mid{align-self:start}
   .pers .pyr{top:6px;right:6px;font-size:10px}
 }
 @supports not (aspect-ratio:1/1){.pers .foto{height:0;padding-bottom:81.7%}}
+
+/* ===== Celular vertical: cards casi del ancho del nombre de Abelardo ===== */
+@media(orientation:portrait) and (max-width:760px){
+  main{--nf:clamp(11px,3.1vw,14px);grid-template-columns:repeat(2,calc(var(--nf)*10.2 + 26px));justify-content:space-between;column-gap:8px}
+  .pers{container-type:normal}
+  .pers .pnom{font-size:var(--nf)}
+}
+
+/* ===== Sin espacio entre las cards de los presidentes y el panel de abajo ===== */
+main{row-gap:0!important}
+.mid{margin-top:0}
+.pers{margin-bottom:0}
+@media(orientation:portrait) and (max-width:760px){
+  .pers{align-self:end}
+}
 </style>
 </head>
 <body class="app">
