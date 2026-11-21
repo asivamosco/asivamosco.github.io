@@ -173,7 +173,10 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .hero .src{line-height:1.35}
 /* Ciudades y Divisiones en celular: en vez del rótulo ("Inflación por ciudad" / "por división de gasto"), el panel muestra el nombre elegido (en escritorio queda el rótulo y debajo el nombre) */
 .hero .kc{display:none}
+/* Divisiones, escritorio: sin el rótulo "Inflación por división de gasto" (el nombre ya está como título del panel) */
+.hero .kick.kv{display:none}
 @media(max-width:600px){
+  body .top:not(.g)>.hero .kick.kv{display:block}
   body .top:not(.g)>.hero .kk{display:none}
   body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
 }
@@ -389,7 +392,7 @@ function hero() {
   const cuerpo = gr ? gruposHtml(d) : `<div class="big">${fmt(tasa)}<span>%</span></div>
     <div class="vars">${filas}</div>
     <small class="mute src">${com ? esc(com) + '<br>' : ''}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
-  $('#hero').innerHTML = `${kick ? `<div class="kick"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
+  $('#hero').innerHTML = `${kick ? `<div class="kick${s.tipo === 'div' ? ' kv' : ''}"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
     <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
   // Celular: las pestañas División / Grupos van bajo el select; en Grupos se oculta la gráfica (clase vgr)
   const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;
@@ -486,7 +489,9 @@ function top5() {
 
 function serie() {
   const s = cur(), dest = s.nac && st.gtab === 'dest';
-  $('#serieT').innerHTML = `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
+  // Divisiones: el título es solo "Últimos 12 meses" (el nombre de la división ya está en el panel del indicador)
+  $('#serieT').innerHTML = s.tipo === 'div' ? '<span class="serTx">Últimos 12 meses</span>'
+    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
   // Nacional: pestañas Gráficas / Destacados
   $('#tabs').innerHTML = s.nac
     ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
