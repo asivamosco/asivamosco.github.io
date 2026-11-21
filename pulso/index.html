@@ -405,6 +405,28 @@ main{row-gap:0}
 
 /* Fondo de cada gráfica: tono del ganador, muy claro */
 .bc{background:var(--wt,#fff)}
+/* ===== Vista Pulso %: reparto porcentual de rendimiento por tema ===== */
+#pulso-pct{display:none}
+.vp #pulso-pct{display:flex;flex-direction:column;gap:7px;flex:1 0 auto}
+.vp .head,.vp #tabla,.vp #chart,.vp .foot,.vp #barras{display:none}
+.vp .vtabs .bcap{display:block}
+.vp .vtabs .info{display:grid}
+main.vp .mid{align-self:start}
+.pitem{display:flex;flex-direction:column;gap:3px;width:100%;padding:6px 10px 6px 9px;border:1px solid var(--line);border-left:5px solid var(--w,#a9bac4);border-radius:var(--r);background:var(--wt,#fff);cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(18,48,61,.06)}
+.pitem:hover{box-shadow:var(--sh)}
+.phead{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:8px}
+.phead .psub{grid-column:2;text-align:center}
+.ptit{font-weight:800;font-size:14px;line-height:1.15}
+.psub{font-size:11px;line-height:1.1;color:var(--mute);white-space:nowrap}
+.pgrid{display:grid;grid-template-columns:46px minmax(0,1fr) 46px;column-gap:8px;row-gap:2px;align-items:center}
+.ppct{font:400 19px/1 Anton,Impact,sans-serif}
+.ppct.p{color:var(--cPt)}.ppct.a{color:var(--cA);text-align:right}
+.pbar{position:relative;display:flex;height:14px;border-radius:3px;overflow:hidden;background:#e1e7ea}
+.pfp,.pfa{height:100%;transition:width .35s ease}
+.pfp{background:var(--cP)}.pfa{background:var(--cA)}
+.ptick{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:rgba(255,255,255,.9)}
+.pdl{grid-column:2;display:flex;justify-content:space-between;gap:8px;font-weight:800;font-size:11.5px;line-height:1.1}
+@media(max-width:480px){.pitem{padding:5px 8px 5px 7px}.ptit{font-size:13px}.psub{font-size:10px}.pgrid{grid-template-columns:38px minmax(0,1fr) 38px;column-gap:6px}.ppct{font-size:16px}.pbar{height:12px}.pdl{font-size:10.5px}}
 </style>
 </head>
 <body class="app">
@@ -431,8 +453,9 @@ main{row-gap:0}
     <div class="ptl"><h1>Mejor desempeño</h1><b class="sc"></b></div>
   </div>
   <section class="card mid" aria-label="Comparación por indicador">
-    <div class="vtabs"><span class="bcap">Cambio en lo que va del mandato</span><div class="sg" role="tablist" aria-label="Vista"><button role="tab" data-vista="b">Barras</button><button role="tab" data-vista="t">Tabla</button><button role="tab" data-vista="s">Serie</button></div><button class="info info-t" aria-label="Cómo se compara">i</button></div>
+    <div class="vtabs"><span class="bcap">Cambio en lo que va del mandato</span><div class="sg" role="tablist" aria-label="Vista"><button role="tab" data-vista="b">Barras</button><button role="tab" data-vista="p">Pulso %</button><button role="tab" data-vista="t">Tabla</button><button role="tab" data-vista="s">Serie</button></div><button class="info info-t" aria-label="Cómo se compara">i</button></div>
     <div id="barras"></div>
+    <div id="pulso-pct"></div>
     <div class="head">
       <div><h3 id="tit"></h3><div class="src" id="src"></div></div>
       <div class="hr"><div class="win" id="win"></div><button class="info" id="infoBtn" aria-label="Cómo se compara">i</button></div>
@@ -457,6 +480,7 @@ main{row-gap:0}
     <li><strong>Quién gana.</strong> Se compara el cambio de cada gobierno desde Inicio hasta cada mes (la tabla muestra los tres últimos meses con dato). Gana quien mejora más en la dirección favorable.</li>
     <li><strong>Dirección favorable.</strong> Menos es mejor en costo de vida, desempleo, criminalidad y terrorismo; más es mejor en economía e incautación de cocaína.</li>
     <li><strong>Barras.</strong> Cada barra es el cambio de ese gobierno entre Inicio y el último mes con dato de Abelardo en ese tema, comparado con el mismo mes de Petro. La franja superior de cada gráfica toma el color de quien mejora más; al tocar una gráfica ves su serie.</li>
+    <li><strong>Pulso %.</strong> Reparte el 100 % entre los dos gobiernos con una sola fórmula. La mejora de cada uno es el cambio desde Inicio hasta el último mes con dato, medido en la dirección favorable (negativa si empeora). Con <em>a</em> = mejora de Abelardo y <em>p</em> = mejora de Petro, se calcula la diferencia normalizada <em>d</em> = (<em>a</em> − <em>p</em>) / (|<em>a</em>| + |<em>p</em>|), que va de −1 a +1 y no depende de las unidades. Abelardo recibe 50 + 40·<em>d</em> % y Petro el resto. Así el reparto nunca baja de 10 % ni sube de 90 %, y quien gana siempre queda del lado mayor del 50 %. Si ambos empeoran, se lleva más quien empeoró menos. Cuando uno mejora y el otro empeora, el resultado es 90/10: indica quién va mejor, no cuánta distancia hay entre ambos.</li>
     <li><strong>Fuentes.</strong> Dane, Policía Nacional y Mindefensa. Este prototipo usa cifras inventadas solo para probar el diseño.</li>
   </ul>
   <button onclick="this.closest('dialog').close()">Cerrar</button>
@@ -476,7 +500,7 @@ main{row-gap:0}
 let MA = 3;   // meses de gobierno de Abelardo con dato (máximo entre temas); se recalcula al cargar los JSON
 let IND = [];   // se llena desde pulso_data/pulso.json
 const DATA_URL = window.PULSO_DATA_URL || 'pulso_data/pulso.json';
-let win = 3, sel = 0, vista = 'b';   // win = MA: el eje llega hasta lo que lleva Abelardo
+let win = 3, sel = 0, vista = 'p';   // win = MA: el eje llega hasta lo que lleva Abelardo
 
 const $ = s => document.querySelector(s);
 const fmt = (n,d=1) => Number(n).toLocaleString('es-CO',{minimumFractionDigits:d,maximumFractionDigits:d});
@@ -550,6 +574,35 @@ function drawBarras(){
   $('#barras').innerHTML = `<div class="bgrid">${cuerpo}</div>`;
 }
 
+// Reparto entre Petro y Abelardo: d = (mA − mP) / (|mA| + |mP|), entre −1 y +1; % Abelardo = 50 + 40·d; % Petro = 100 − % Abelardo.
+// mejora medida en la dirección favorable (negativa si empeora). Un solo criterio para todos los casos; el reparto queda siempre entre 10 y 90,
+// y el ganador (d > 0 si y solo si mA > mP) siempre queda del lado mayor del 50 %.
+const PCT_AMP = 40;
+function repartoPct(q){
+  const m = mx(q);
+  if (m < 1) return null;
+  const mP = mejora(q, q.P, m), mA = mejora(q, q.A, m), tot = Math.abs(mP) + Math.abs(mA);
+  if (tot < 1e-9 || Math.abs(mP - mA) < eps(q.d)) return {p: 50, a: 50};
+  const d = (mA - mP) / tot;
+  const a = Math.round(50 + PCT_AMP * d);
+  return {p: 100 - a, a};
+}
+
+function drawPulsoPct(){
+  const filas = IND.map((q, i) => {
+    const m = mx(q), r = repartoPct(q);
+    if (!r) return `<button class="pitem" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6"><span class="phead"><span class="ptit">${q.t}</span><span class="psub">Sin datos aún</span></span></button>`;
+    const v = veredicto(q), dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0];
+    const dv = (d, s) => { const z = Math.abs(d) < eps(q.d); return `<span class="${cls(q, s)}">${z ? 'Sin cambio' : (d > 0 ? 'Aumentó ' : 'Decreció ') + sg(d, q.d) + q.du}</span>`; };
+    return `<button class="pitem" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]}" aria-label="${q.t}: Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
+      `<span class="phead"><span class="ptit">${q.t}</span><span class="psub">a ${etq(m)}</span></span>` +
+      `<span class="pgrid"><span class="ppct p">${r.p}%</span>` +
+      `<span class="pbar" title="Petro ${r.p}% · Abelardo ${r.a}%"><span class="pfp" style="width:${r.p}%"></span><span class="pfa" style="width:${r.a}%"></span><i class="ptick"></i></span>` +
+      `<span class="ppct a">${r.a}%</span><span></span><span class="pdl">${dv(dp, q.P)}${dv(da, q.A)}</span><span></span></span></button>`;
+  }).join('');
+  $('#pulso-pct').innerHTML = filas;
+}
+
 function drawTabla(){
   const s0 = Math.max(1, MA - 2), ms = [s0, s0 + 1, s0 + 2], NOM = {p:'Petro', a:'Abelardo', e:'Empate', n:'Sin dato'}, LT = {p:'Petro', a:'Abelardo', e:'Empate', n:'—'};
   let h = '<div class="r"><div class="th"></div>' + ms.map(m => `<div class="th">${etq(m)}</div>`).join('') + '</div>';
@@ -566,6 +619,8 @@ function drawTabla(){
 function render(){
   document.querySelector('main').classList.toggle('vt', vista === 't');
   document.querySelector('main').classList.toggle('vb', vista === 'b');
+  document.querySelector('main').classList.toggle('vp', vista === 'p');
+  $('.bcap').textContent = vista === 'p' ? 'Reparto de rendimiento por tema' : 'Cambio en lo que va del mandato';
   document.querySelectorAll('.vtabs [data-vista]').forEach(b => b.setAttribute('aria-selected', b.dataset.vista === vista));
   if (!IND.length) return;
   const ind = IND[sel], v = veredicto(ind), m = mx(ind);
@@ -578,6 +633,7 @@ function render(){
   const st = (n, s, col) => { const dl = s[m] - s[0]; return `<span><i class="dot" style="background:${col}"></i>${n} <b>${fmt(s[m], ind.d)}${ind.u}</b> <span class="${cls(ind, s)}">${flecha(dl)} ${sg(dl, ind.d)}${ind.du}</span></span>`; };
   $('#stats').innerHTML = st('Petro', ind.P, 'var(--cP)') + st('Abelardo', ind.A, 'var(--cA)');
   if (vista === 'b') drawBarras();
+  else if (vista === 'p') drawPulsoPct();
   else if (vista === 't'){
     $('#tit').textContent = 'Marcador por mes';
     $('#src').textContent = 'Cambio desde la posesión · Fuentes: Dane, Policía Nal. y Mindefensa';
@@ -585,7 +641,7 @@ function render(){
   } else drawChart(ind);
 }
 document.addEventListener('click', e => {
-  const vv = e.target.closest('.vtabs [data-vista]'), tt = e.target.closest('.tt, .bc');
+  const vv = e.target.closest('.vtabs [data-vista]'), tt = e.target.closest('.tt, .bc, .pitem');
   if (vv){ vista = vv.dataset.vista; render(); return; }
   if (tt){ sel = +tt.dataset.i; vista = 's'; render(); return; }
 });
