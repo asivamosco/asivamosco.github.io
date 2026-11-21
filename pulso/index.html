@@ -482,6 +482,29 @@ main{row-gap:0!important}
   .t-full{display:none}.t-mov{display:inline}
   .vs>span{display:none}
 }
+
+/* ===== Celular vertical: las fotos suben y sobresalen de la card (la mano de Petro llega al header) =====
+   --sube = cuánto sobresale la foto por encima de la card; esa misma altura se la gana el panel de temas.
+   El panel de temas pasa a desplazarse por dentro solo si aun así no cabe; las cards quedan fijas arriba. */
+@media(orientation:portrait) and (max-width:760px){
+  main{--sube:22px;overflow:visible;grid-template-rows:auto minmax(0,1fr)}
+  .pers{overflow:visible;position:relative;z-index:999;pointer-events:none}
+  .pers .foto{margin-top:calc(-1 * var(--sube))}
+  .pers .pyr{top:calc(6px + var(--sube))}
+  .mid{min-height:0;max-height:100%;overflow:auto}
+}
+/* Pantallas bajas (iPhone SE y similares): panel de temas más compacto para que quepan los 6 sin desplazar */
+@media(orientation:portrait) and (max-width:760px) and (max-height:760px){
+  .mid{padding-top:4px;padding-bottom:4px;gap:4px}
+  .vtabs .sg button{padding:5px 8px}
+  .vp #pulso-pct{gap:5px}
+  .pitem{padding:5px 8px 4px;gap:2px}
+  .phead{gap:0}
+  .ptit{font-size:12px}.pwin{font-size:11px}
+  .pgrid{row-gap:3px}
+  .ppct{font-size:17px}.pbar{height:9px}
+  .pdl{font-size:11px;line-height:1.1}.pmes{font-size:10px;line-height:1.05}
+}
 </style>
 </head>
 <body class="app">
