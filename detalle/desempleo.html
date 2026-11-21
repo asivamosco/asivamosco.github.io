@@ -163,6 +163,22 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   .tres{grid-template-columns:1fr}
   .sx{grid-template-columns:1fr}
 }
+/* Sexo en celular: un solo panel tipo tabla (filas = medidas, columnas = Mujeres / Hombres); en escritorio siguen los dos paneles */
+.sxt{display:none}
+@media(max-width:600px){
+  .sx{display:none}
+  .sxt{display:table;width:100%;border-collapse:collapse;table-layout:fixed}
+  .sxt col.c0{width:34%}
+  .sxt thead th{border-top:4px solid var(--c);padding:8px 4px 6px;text-align:left;font-size:15px;font-weight:500;color:var(--mute);white-space:nowrap}
+  .sxt thead th:first-child{border-top:0}
+  .sxt thead th i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:6px}
+  .sxt tbody th{padding:9px 6px 9px 0;text-align:left;font-size:13px;font-weight:400;line-height:1.2;color:var(--mute)}
+  .sxt td{padding:9px 4px;font-size:15px;font-weight:700;white-space:nowrap}
+  .sxt tbody tr+tr>*{border-top:1px solid var(--line)}
+  .sxt .rt td{font-size:34px;line-height:1.1}
+  .sxt .rt td span{margin-left:2px;font-size:16px;color:var(--mute)}
+  .sxt td.up{color:var(--up-t)} .sxt td.dn{color:var(--dn-t)}
+}
 @media(max-width:420px){.hz{grid-template-columns:1fr}}
 /* Celular: la lista de ciudades / divisiones se presenta como select */
 @media(max-width:600px){
@@ -271,6 +287,22 @@ function tituloHeader(nombre) {
   }
 }
 
+// Sexo (celular): tabla única con la tasa y las medidas de cada sexo en columnas
+function sexTabla(items) {
+  const c = (v, t) => `<td class="${cls(v)}">${flecha(v)} ${t}</td>`;
+  const fila = (l, f) => `<tr><th scope="row">${l}</th>${items.map(f).join('')}</tr>`;
+  return `<table class="sxt">
+    <colgroup><col class="c0"><col><col></colgroup>
+    <thead><tr><th></th>${items.map(x => `<th scope="col" style="--c:${colSexo(x.sexo)}"><i></i>${esc(x.sexo)}</th>`).join('')}</tr></thead>
+    <tbody>
+      <tr class="rt"><th scope="row">Tasa de desempleo</th>${items.map(x => `<td>${fmt(x.tasa_desempleo, 1)}<span>%</span></td>`).join('')}</tr>
+      ${fila('Personas desocupadas', x => `<td>${pers(x.desocupados_miles)}</td>`)}
+      ${fila('Vs. mes anterior', x => c(x.cambio_mes_pp, sg(x.cambio_mes_pp)))}
+      ${fila('Vs. hace un año', x => c(x.var_anual_pp, sg(x.var_anual_pp)))}
+      ${fila('Personas vs. hace un año', x => c(x.desocupados_var_anual_miles, persSg(x.desocupados_var_anual_miles)))}
+    </tbody></table>`;
+}
+
 function render() {
   document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
   tituloHeader('Desempleo');
@@ -317,6 +349,7 @@ function render() {
             <div><span>Personas vs. hace un año</span><b class="${cls(x.desocupados_var_anual_miles)}">${flecha(x.desocupados_var_anual_miles)} ${persSg(x.desocupados_var_anual_miles)}</b></div>
           </div>
         </div>`).join('')}</div>
+      ${sexTabla(dim.sexo.items)}
       ${dim.sexo.brecha ? `<p class="brecha"><b>Brecha: ${fmt(dim.sexo.brecha.brecha_pp, 1)} pp</b> <span class="mute">(mujeres menos hombres)</span></p>` : ''}
       <p class="ref">Variaciones en puntos porcentuales (pp), salvo las de personas. ${esc(per.etiqueta)} · Fuente: ${esc(D.fuente)}</p>
     </section>
