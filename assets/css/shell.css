@@ -12,7 +12,7 @@
 @media (max-width:600px){:root{--gutter:10px}}
 
 /* ---------- HEADER ---------- */
-header.hd{--gx:max(var(--gutter),calc(50vw - var(--col)/2));flex:none;display:flex;align-items:stretch;padding:0;background:#12303d;color:#fff}
+header.hd{--gx:max(var(--gutter),calc(50vw - var(--col)/2));flex:none;display:flex;align-items:stretch;padding:0;background:var(--hd-bg,#12303d);color:#fff}
 .hd-left{flex:1 1 auto;min-width:0;display:flex;align-items:center;padding:10px 0 9px var(--gx,20px)}
 .hd-right{flex:none;display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:10px var(--gx,20px) 9px 0}
 header.hd h1.brand{margin:0;padding:0;display:flex;font-size:inherit;font-weight:400;color:#fff;white-space:nowrap}
@@ -261,3 +261,53 @@ body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:e
   /* Destacados encendido: solo los destacados */
   .top.g.vdest>.hero{display:none}
 }
+
+/* =========================================================
+   TABS DE VISTA del header (Nacional · TOP · Divisiones · Ciudades)
+   Estandarizadas para todas las páginas de detalle: se editan SOLO aquí.
+   Colores: cambia las variables --tab-*.
+   ========================================================= */
+:root{
+  --tab-bg:#005F73;                      /* pestaña inactiva (petróleo/teal) */
+  --tab-bg-h:#0A7B91;                    /* hover */
+  --tab-fg:#cfe3ea;                      /* texto inactiva */
+  --tab-on-bg:var(--bg,#e9ebef);         /* activa, escritorio: se funde con el fondo de la página */
+  --tab-on-fg:var(--ink,#12303d);
+  --tab-on-bg-m:#12303d;                 /* activa, celular/tablet vertical */
+  --tab-on-fg-m:#fff;
+}
+.hd-mid{flex:none;display:flex;align-items:flex-end;align-self:flex-end;gap:6px;padding:0 12px}
+header.hd .vt{border:0;border-radius:10px 10px 0 0;background:var(--tab-bg);color:var(--tab-fg);padding:12px 22px 11px;
+  font-family:"Roboto Condensed",system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:.02em;line-height:1;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s}
+header.hd .vt:hover{background:var(--tab-bg-h);color:#fff}
+header.hd .vt[aria-pressed=true]{background:var(--tab-on-bg);color:var(--tab-on-fg)}
+header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+@media(max-width:600px){
+  header.hd{flex-wrap:wrap}
+  .hd-mid{order:3;flex:0 0 100%;justify-content:center;padding:0 10px}
+  header.hd .vt{padding:10px 18px 9px;font-size:14px}
+}
+/* Celular y tablet en vertical: las tabs cuelgan del borde inferior del header, unidas en una sola tira separada por una línea fina, todas del mismo ancho */
+@media(max-width:1024px) and (orientation:portrait){
+  header.hd{margin-bottom:35px}
+  body.app>main{padding-top:8px}
+  .hd-mid{position:absolute;top:100%;left:0;right:0;margin:0 auto;order:0;flex:none;width:calc(100% - 2*var(--gutter));max-width:var(--col);height:35px;align-self:auto;align-items:flex-start;justify-content:center;gap:0;padding:0;background:transparent;pointer-events:none}
+  header.hd .vt{pointer-events:auto;flex:1 1 0;min-width:0;border-radius:0;padding:10px 4px 12px;font-size:15px;background:var(--tab-bg);color:var(--tab-fg);border-top:1px solid rgba(255,255,255,.22);border-left:1px solid rgba(255,255,255,.22);overflow:hidden;text-overflow:ellipsis}
+  header.hd .vt:first-child{border-left:0;border-bottom-left-radius:10px}
+  header.hd .vt:last-child{border-bottom-right-radius:10px}
+  header.hd .vt:hover{background:var(--tab-bg-h);color:#fff}
+  header.hd .vt[aria-pressed=true]{background:var(--tab-on-bg-m);color:var(--tab-on-fg-m)}
+}
+
+/* =========================================================
+   PANELES de las páginas de detalle (<section class="card …">)
+   Regla común: borde superior grueso. Aplica a todos los paneles (gráfica, indicador,
+   listas, TOP, por sexo…) y NO a las tarjetas internas (.hz .card, "Destacados"), que son <div>.
+   Para cambiar grosor o color, edita solo estas dos variables.
+   ========================================================= */
+:root{
+  --panel-bt:4px;
+  --hd-bg:#12303d;            /* color del header (fondo del header y borde de los paneles) */
+  --panel-bt-color:var(--hd-bg);
+}
+main section.card{border-top:var(--panel-bt) solid var(--panel-bt-color)}
