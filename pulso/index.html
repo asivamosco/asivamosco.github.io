@@ -523,6 +523,21 @@ main{row-gap:0!important}
   main.vp .mid,main.vb .mid{background:transparent;box-shadow:none;border-top:0;border-radius:0;padding:0 0 2px;gap:calc(3px + var(--t,88px)*.03)}
   main.vp .mid>.vtabs,main.vb .mid>.vtabs{flex:none;background:#fff;border-top:3px solid #12303d;border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh);padding:calc(3px + var(--t,88px)*.03) 10px}
 }
+
+/* ===== Celular: cards de los temas en 2 columnas x 3 filas (mismo orden en Pulso % y Barras) y barras horizontales ===== */
+@media(max-width:760px){
+  .pitem,.bc{order:var(--o,0)}
+  .bgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .bc .bp{height:46px;margin-top:4px}
+  .bc .bi{top:0;bottom:0;left:4px;right:4px}
+  .bc.hn .bi{left:40px}.bc.hp .bi{right:40px}
+  .bc .bz{top:-3px;bottom:-3px!important;left:var(--zl);right:auto;width:1px;height:auto}
+  .bc .bb{bottom:auto!important;left:var(--bl)!important;height:calc(50% - 3px)!important;width:var(--bw)!important;min-height:0;min-width:2px;border-radius:0 2px 2px 0}
+  .bc .bb.neg{border-radius:2px 0 0 2px}
+  .bc .bb.p{top:0}.bc .bb.a{top:calc(50% + 3px)}
+  .bc .bv{left:100%;right:auto;top:50%;bottom:auto!important;transform:translateY(-50%);margin:0 0 0 3px!important}
+  .bc .bb.neg .bv{left:auto;right:100%;top:50%!important;margin:0 3px 0 0!important}
+}
 </style>
 </head>
 <body class="app">
@@ -650,21 +665,25 @@ function drawChart(ind){
   el.innerHTML = `<svg role="img" aria-label="Serie de ${ind.t}: Abelardo y Petro por mes de gobierno">${s}</svg>`;
 }
 
+// Orden de las cards en celular (2 columnas x 3 filas): Costo de Vida, Criminalidad, Desempleo, Cocaína, Economía, Terrorismo
+const ORDEN = ['costo','crimin','desempleo','coca','econom','terror'];
+const ordenTema = q => { const t = (q.t + ' ' + (q.c || '')).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(), k = ORDEN.findIndex(x => t.includes(x)); return k < 0 ? 99 : k; };
+
 function drawBarras(){
   const cuerpo = IND.map((q, i) => {
     const m = mx(q);
-    if (m < 1) return `<button class="bc" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6" title="Sin datos"><span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span><div class="bp" style="display:grid;place-items:center;color:var(--mute);font-size:12px">Sin datos aún</div><div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
+    if (m < 1) return `<button class="bc" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6;--o:${ordenTema(q)}" title="Sin datos"><span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span><div class="bp" style="display:grid;place-items:center;color:var(--mute);font-size:12px">Sin datos aún</div><div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
     const dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0], v = veredicto(q);
     const lo = Math.min(0, dp, da), hi = Math.max(0, dp, da), span = hi - lo || 1, zb = -lo / span * 100;
     const bar = (d, k, s) => {
       const z = Math.abs(d) < eps(q.d), h = Math.abs(d) / span * 100, neg = !z && d < 0;
       const txt = (z ? fmt(0, q.d) : sg(d, q.d)) + (q.du ? `<span class="u">${q.du}</span>` : '');
-      return `<div class="bb ${k}${neg ? ' neg' : ''}" style="bottom:${neg ? zb - h : zb}%;height:${h}%"><span class="bv ${cls(q, s)}">${txt}</span></div>`;
+      return `<div class="bb ${k}${neg ? ' neg' : ''}" style="bottom:${neg ? zb - h : zb}%;height:${h}%;--bl:${neg ? zb - h : zb}%;--bw:${h}%"><span class="bv ${cls(q, s)}">${txt}</span></div>`;
     };
     const ganador = v === 'e' ? 'Empate' : 'Mejor ' + (v === 'a' ? 'Abelardo' : 'Petro');
-    return `<button class="bc" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
+    return `<button class="bc${lo < 0 ? ' hn' : ''}${hi > 0 ? ' hp' : ''}" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]};--o:${ordenTema(q)}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
       `<span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}${' · a ' + etq(m)}</span>` +
-      `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
+      `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%;--zl:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
       `<div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
   }).join('');
   $('#barras').innerHTML = `<div class="bgrid">${cuerpo}</div>`;
@@ -687,11 +706,11 @@ function repartoPct(q){
 function drawPulsoPct(){
   const filas = IND.map((q, i) => {
     const m = mx(q), r = repartoPct(q);
-    if (!r) return `<button class="pitem" data-i="${i}"><span class="phead"><span class="ptit">${q.t}</span><span class="pwin">Sin datos aún</span></span></button>`;
+    if (!r) return `<button class="pitem" data-i="${i}" style="--o:${ordenTema(q)}"><span class="phead"><span class="ptit">${q.t}</span><span class="pwin">Sin datos aún</span></span></button>`;
     const v = veredicto(q), W = v === 'p' ? 'Mejor <b class="wp">Petro</b>' : v === 'a' ? 'Mejor <b class="wa">Abelardo</b>' : 'Empate', dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0];
     // Escritorio: "Aumentó +2,69 pp"; celular: "▲ +2,69 pp"
     const dv = (d, s) => { const z = Math.abs(d) < eps(q.d); return `<span class="${cls(q, s)}">${z ? 'Sin cambio' : `<span class="dw">${d > 0 ? 'Aumentó' : 'Decreció'} </span><span class="da">${d > 0 ? '▲' : '▼'} </span>${sg(d, q.d)}${q.du}`}</span>`; };
-    return `<button class="pitem" data-i="${i}" style="--w:${COL[v]}" aria-label="${q.t}: ${W.replace(/<[^>]+>/g, '')}. Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
+    return `<button class="pitem" data-i="${i}" style="--w:${COL[v]};--o:${ordenTema(q)}" aria-label="${q.t}: ${W.replace(/<[^>]+>/g, '')}. Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
       `<span class="phead"><span class="ptit">${q.t}</span><span class="pwin">${W}</span></span>` +
       `<span class="pgrid"><span class="ppct p">${r.p}%</span><span class="ppct a">${r.a}%</span>` +
       `<span class="pbar" title="Petro ${r.p}% · Abelardo ${r.a}%"><span class="pfp" style="width:${r.p}%"></span><span class="pfa" style="width:${r.a}%"></span><i class="ptick"></i></span>` +
