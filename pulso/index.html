@@ -509,6 +509,17 @@ main{row-gap:0!important}
   .pdl{font-size:calc(11px + var(--t)*.005);line-height:1.12}
   .pmes{font-size:calc(10px + var(--t)*.01);line-height:calc(10.5px + var(--t)*.0435)}
 }
+
+/* ===== Panel solo para los botones: las cards de los temas (Pulso % y Barras) quedan fuera, sobre el fondo =====
+   Escritorio: la pestaña de botones queda como estaba y la línea negra bajo las cards de los presidentes se mantiene.
+   Celular: el panel blanco es solo la franja de botones (con su línea negra arriba). */
+@media(min-width:761px){
+  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none}
+}
+@media(max-width:760px){
+  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none;border-top:0;border-radius:0;padding:0 1px 2px;gap:calc(3px + var(--t,88px)*.03)}
+  main.vp .mid>.vtabs,main.vb .mid>.vtabs{flex:none;background:#fff;border-top:3px solid #12303d;border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh);padding:calc(3px + var(--t,88px)*.03) 10px}
+}
 </style>
 </head>
 <body class="app">
