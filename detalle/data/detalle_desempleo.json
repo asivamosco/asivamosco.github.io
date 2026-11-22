@@ -1,7 +1,7 @@
 {
   "indicador": "desempleo",
   "fuente": "Dane",
-  "generado_en": "2026-11-19T13:19:25+00:00",
+  "generado_en": "2026-11-22T15:49:13+00:00",
   "periodo": {
     "anio": 2026,
     "mes_num": 9,
@@ -73,62 +73,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 10.8563
+              "valor": 10.8563,
+              "var_anual_pp": -0.3443,
+              "valor_hace_12": 11.2007
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 9.0524
+              "valor": 9.0524,
+              "var_anual_pp": -1.2855,
+              "valor_hace_12": 10.3379
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 10.1097
+              "valor": 10.1097,
+              "var_anual_pp": -1.8055,
+              "valor_hace_12": 11.9152
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 13.8159
+              "valor": 13.8159,
+              "var_anual_pp": -2.0,
+              "valor_hace_12": 15.8159
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 11.6774
+              "valor": 11.6774,
+              "var_anual_pp": -1.7546,
+              "valor_hace_12": 13.432
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 11.0235
+              "valor": 11.0235,
+              "var_anual_pp": -1.5653,
+              "valor_hace_12": 12.5888
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.9289
+              "valor": 10.9289,
+              "var_anual_pp": -0.2388,
+              "valor_hace_12": 11.1677
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.8975
+              "valor": 9.8975,
+              "var_anual_pp": -1.7461,
+              "valor_hace_12": 11.6436
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 9.8742
+              "valor": 9.8742,
+              "var_anual_pp": -0.9348,
+              "valor_hace_12": 10.809
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 10.0546
+              "valor": 10.0546,
+              "var_anual_pp": -1.0457,
+              "valor_hace_12": 11.1002
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 11.6017
+              "valor": 11.6017,
+              "var_anual_pp": 0.4292,
+              "valor_hace_12": 11.1725
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.0652
+              "valor": 10.0652,
+              "var_anual_pp": 0.4258,
+              "valor_hace_12": 9.6394
             }
           ]
         },
@@ -148,62 +172,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 6.2221
+              "valor": 6.2221,
+              "var_anual_pp": -1.3987,
+              "valor_hace_12": 7.6208
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 5.5108
+              "valor": 5.5108,
+              "var_anual_pp": -1.0196,
+              "valor_hace_12": 6.5304
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 6.3828
+              "valor": 6.3828,
+              "var_anual_pp": -0.6272,
+              "valor_hace_12": 7.01
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 8.6574
+              "valor": 8.6574,
+              "var_anual_pp": 0.0796,
+              "valor_hace_12": 8.5779
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 7.3871
+              "valor": 7.3871,
+              "var_anual_pp": -0.5788,
+              "valor_hace_12": 7.9659
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 7.1159
+              "valor": 7.1159,
+              "var_anual_pp": -0.2397,
+              "valor_hace_12": 7.3556
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 7.1334
+              "valor": 7.1334,
+              "var_anual_pp": 0.1065,
+              "valor_hace_12": 7.0269
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 6.6204
+              "valor": 6.6204,
+              "var_anual_pp": -0.5085,
+              "valor_hace_12": 7.1289
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 6.6022
+              "valor": 6.6022,
+              "var_anual_pp": -0.2715,
+              "valor_hace_12": 6.8737
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 6.6501
+              "valor": 6.6501,
+              "var_anual_pp": -0.4851,
+              "valor_hace_12": 7.1352
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.6675
+              "valor": 7.6675,
+              "var_anual_pp": 0.9522,
+              "valor_hace_12": 6.7152
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 6.477
+              "valor": 6.477,
+              "var_anual_pp": -0.5947,
+              "valor_hace_12": 7.0717
             }
           ]
         }
@@ -243,62 +291,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 7.6723
+              "valor": 7.6723,
+              "var_anual_pp": -1.5999,
+              "valor_hace_12": 9.2722
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 6.9742
+              "valor": 6.9742,
+              "var_anual_pp": -1.5692,
+              "valor_hace_12": 8.5434
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 6.4813
+              "valor": 6.4813,
+              "var_anual_pp": -2.2926,
+              "valor_hace_12": 8.774
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 7.5115
+              "valor": 7.5115,
+              "var_anual_pp": -1.7705,
+              "valor_hace_12": 9.282
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 8.1855
+              "valor": 8.1855,
+              "var_anual_pp": -1.7788,
+              "valor_hace_12": 9.9643
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 8.7972
+              "valor": 8.7972,
+              "var_anual_pp": -1.278,
+              "valor_hace_12": 10.0751
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 8.1777
+              "valor": 8.1777,
+              "var_anual_pp": -0.7371,
+              "valor_hace_12": 8.9148
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.4259
+              "valor": 8.4259,
+              "var_anual_pp": -0.2761,
+              "valor_hace_12": 8.702
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.1276
+              "valor": 8.1276,
+              "var_anual_pp": -0.2161,
+              "valor_hace_12": 8.3437
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.0474
+              "valor": 8.0474,
+              "var_anual_pp": -0.4604,
+              "valor_hace_12": 8.5078
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.9148
+              "valor": 7.9148,
+              "var_anual_pp": -0.2681,
+              "valor_hace_12": 8.1828
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 7.6338
+              "valor": 7.6338,
+              "var_anual_pp": -0.4264,
+              "valor_hace_12": 8.0602
             }
           ],
           "puesto_cantidad": 1,
@@ -328,62 +400,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 6.8783
+              "valor": 6.8783,
+              "var_anual_pp": -0.7899,
+              "valor_hace_12": 7.6682
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 7.2761
+              "valor": 7.2761,
+              "var_anual_pp": -0.0917,
+              "valor_hace_12": 7.3678
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 7.512
+              "valor": 7.512,
+              "var_anual_pp": 0.5106,
+              "valor_hace_12": 7.0014
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 7.9872
+              "valor": 7.9872,
+              "var_anual_pp": 1.0424,
+              "valor_hace_12": 6.9448
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 9.0187
+              "valor": 9.0187,
+              "var_anual_pp": 1.7244,
+              "valor_hace_12": 7.2943
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 10.3783
+              "valor": 10.3783,
+              "var_anual_pp": 2.4724,
+              "valor_hace_12": 7.9059
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 9.8372
+              "valor": 9.8372,
+              "var_anual_pp": 2.0263,
+              "valor_hace_12": 7.8108
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.5911
+              "valor": 8.5911,
+              "var_anual_pp": 0.3915,
+              "valor_hace_12": 8.1996
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 7.0715
+              "valor": 7.0715,
+              "var_anual_pp": -0.5484,
+              "valor_hace_12": 7.6199
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 6.9693
+              "valor": 6.9693,
+              "var_anual_pp": -0.3606,
+              "valor_hace_12": 7.3299
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.472
+              "valor": 7.472,
+              "var_anual_pp": 1.1059,
+              "valor_hace_12": 6.3662
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 7.7605
+              "valor": 7.7605,
+              "var_anual_pp": 1.3643,
+              "valor_hace_12": 6.3962
             }
           ],
           "puesto_cantidad": 2,
@@ -413,62 +509,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.4548
+              "valor": 8.4548,
+              "var_anual_pp": -1.4559,
+              "valor_hace_12": 9.9107
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.2532
+              "valor": 8.2532,
+              "var_anual_pp": -1.1389,
+              "valor_hace_12": 9.3921
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 7.2991
+              "valor": 7.2991,
+              "var_anual_pp": -1.9591,
+              "valor_hace_12": 9.2582
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 8.1586
+              "valor": 8.1586,
+              "var_anual_pp": -2.3918,
+              "valor_hace_12": 10.5504
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 9.0382
+              "valor": 9.0382,
+              "var_anual_pp": -1.7038,
+              "valor_hace_12": 10.7421
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 9.8247
+              "valor": 9.8247,
+              "var_anual_pp": -0.8111,
+              "valor_hace_12": 10.6358
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 8.7259
+              "valor": 8.7259,
+              "var_anual_pp": -0.9301,
+              "valor_hace_12": 9.656
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.5566
+              "valor": 8.5566,
+              "var_anual_pp": -0.5766,
+              "valor_hace_12": 9.1333
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.378
+              "valor": 8.378,
+              "var_anual_pp": -0.6003,
+              "valor_hace_12": 8.9783
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.8936
+              "valor": 8.8936,
+              "var_anual_pp": 1.0447,
+              "valor_hace_12": 7.8488
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 9.1799
+              "valor": 9.1799,
+              "var_anual_pp": 1.4068,
+              "valor_hace_12": 7.7731
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 9.5925
+              "valor": 9.5925,
+              "var_anual_pp": 1.4532,
+              "valor_hace_12": 8.1393
             }
           ],
           "puesto_cantidad": 3,
@@ -498,62 +618,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 9.2041
+              "valor": 9.2041,
+              "var_anual_pp": -3.0008,
+              "valor_hace_12": 12.2049
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.8777
+              "valor": 8.8777,
+              "var_anual_pp": -2.4162,
+              "valor_hace_12": 11.2939
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.7222
+              "valor": 8.7222,
+              "var_anual_pp": -1.3316,
+              "valor_hace_12": 10.0538
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 8.7209
+              "valor": 8.7209,
+              "var_anual_pp": -1.5783,
+              "valor_hace_12": 10.2991
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 9.962
+              "valor": 9.962,
+              "var_anual_pp": -0.8022,
+              "valor_hace_12": 10.7642
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 9.9853
+              "valor": 9.9853,
+              "var_anual_pp": -0.7841,
+              "valor_hace_12": 10.7694
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.7397
+              "valor": 10.7397,
+              "var_anual_pp": 0.1174,
+              "valor_hace_12": 10.6223
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.3541
+              "valor": 9.3541,
+              "var_anual_pp": -0.7677,
+              "valor_hace_12": 10.1218
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 9.2698
+              "valor": 9.2698,
+              "var_anual_pp": -0.8286,
+              "valor_hace_12": 10.0984
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.5998
+              "valor": 8.5998,
+              "var_anual_pp": -1.3168,
+              "valor_hace_12": 9.9166
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 9.5901
+              "valor": 9.5901,
+              "var_anual_pp": -0.1418,
+              "valor_hace_12": 9.7319
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.1765
+              "valor": 10.1765,
+              "var_anual_pp": 0.5358,
+              "valor_hace_12": 9.6407
             }
           ],
           "puesto_cantidad": 4,
@@ -583,62 +727,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 11.1449
+              "valor": 11.1449,
+              "var_anual_pp": -0.2596,
+              "valor_hace_12": 11.4044
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 12.6344
+              "valor": 12.6344,
+              "var_anual_pp": 1.02,
+              "valor_hace_12": 11.6144
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 14.1358
+              "valor": 14.1358,
+              "var_anual_pp": 3.1928,
+              "valor_hace_12": 10.943
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 14.5987
+              "valor": 14.5987,
+              "var_anual_pp": 4.1202,
+              "valor_hace_12": 10.4785
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 14.1767
+              "valor": 14.1767,
+              "var_anual_pp": 4.2302,
+              "valor_hace_12": 9.9466
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 13.7715
+              "valor": 13.7715,
+              "var_anual_pp": 3.7387,
+              "valor_hace_12": 10.0329
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 13.052
+              "valor": 13.052,
+              "var_anual_pp": 3.5445,
+              "valor_hace_12": 9.5075
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 12.8474
+              "valor": 12.8474,
+              "var_anual_pp": 3.2959,
+              "valor_hace_12": 9.5515
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 13.1818
+              "valor": 13.1818,
+              "var_anual_pp": 3.7037,
+              "valor_hace_12": 9.4781
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 13.5865
+              "valor": 13.5865,
+              "var_anual_pp": 3.7308,
+              "valor_hace_12": 9.8557
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 14.4313
+              "valor": 14.4313,
+              "var_anual_pp": 5.0297,
+              "valor_hace_12": 9.4016
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 13.6795
+              "valor": 13.6795,
+              "var_anual_pp": 4.0094,
+              "valor_hace_12": 9.6702
             }
           ],
           "puesto_cantidad": 5,
@@ -668,62 +836,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 7.2854
+              "valor": 7.2854,
+              "var_anual_pp": -0.9982,
+              "valor_hace_12": 8.2835
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 7.5524
+              "valor": 7.5524,
+              "var_anual_pp": 0.0162,
+              "valor_hace_12": 7.5362
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.2468
+              "valor": 8.2468,
+              "var_anual_pp": -0.1118,
+              "valor_hace_12": 8.3586
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.1173
+              "valor": 9.1173,
+              "var_anual_pp": 0.202,
+              "valor_hace_12": 8.9153
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 9.0896
+              "valor": 9.0896,
+              "var_anual_pp": -0.9314,
+              "valor_hace_12": 10.021
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 8.4437
+              "valor": 8.4437,
+              "var_anual_pp": -1.2092,
+              "valor_hace_12": 9.6529
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 7.9342
+              "valor": 7.9342,
+              "var_anual_pp": -0.8681,
+              "valor_hace_12": 8.8023
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.3285
+              "valor": 8.3285,
+              "var_anual_pp": 0.8928,
+              "valor_hace_12": 7.4357
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.2161
+              "valor": 8.2161,
+              "var_anual_pp": 0.9008,
+              "valor_hace_12": 7.3153
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 7.2392
+              "valor": 7.2392,
+              "var_anual_pp": -1.2427,
+              "valor_hace_12": 8.482
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.2837
+              "valor": 7.2837,
+              "var_anual_pp": -1.3649,
+              "valor_hace_12": 8.6486
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 8.4758
+              "valor": 8.4758,
+              "var_anual_pp": 0.1613,
+              "valor_hace_12": 8.3145
             }
           ],
           "puesto_cantidad": 6,
@@ -753,62 +945,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 10.497
+              "valor": 10.497,
+              "var_anual_pp": -0.9616,
+              "valor_hace_12": 11.4585
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 10.4706
+              "valor": 10.4706,
+              "var_anual_pp": -0.6205,
+              "valor_hace_12": 11.0911
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 11.0577
+              "valor": 11.0577,
+              "var_anual_pp": -0.3889,
+              "valor_hace_12": 11.4466
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 12.6291
+              "valor": 12.6291,
+              "var_anual_pp": -0.8174,
+              "valor_hace_12": 13.4464
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 12.3271
+              "valor": 12.3271,
+              "var_anual_pp": -2.0554,
+              "valor_hace_12": 14.3824
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 12.0094
+              "valor": 12.0094,
+              "var_anual_pp": -2.1673,
+              "valor_hace_12": 14.1767
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.8553
+              "valor": 10.8553,
+              "var_anual_pp": -1.5977,
+              "valor_hace_12": 12.4531
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 11.1323
+              "valor": 11.1323,
+              "var_anual_pp": -0.1807,
+              "valor_hace_12": 11.313
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 10.0088
+              "valor": 10.0088,
+              "var_anual_pp": -1.1312,
+              "valor_hace_12": 11.14
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 9.6398
+              "valor": 9.6398,
+              "var_anual_pp": -0.7532,
+              "valor_hace_12": 10.3929
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 10.0934
+              "valor": 10.0934,
+              "var_anual_pp": -0.2441,
+              "valor_hace_12": 10.3375
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.3907
+              "valor": 10.3907,
+              "var_anual_pp": 0.0834,
+              "valor_hace_12": 10.3073
             }
           ],
           "puesto_cantidad": 7,
@@ -838,62 +1054,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 7.3393
+              "valor": 7.3393,
+              "var_anual_pp": -4.2857,
+              "valor_hace_12": 11.6249
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 7.6315
+              "valor": 7.6315,
+              "var_anual_pp": -1.883,
+              "valor_hace_12": 9.5145
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 7.2616
+              "valor": 7.2616,
+              "var_anual_pp": -3.428,
+              "valor_hace_12": 10.6896
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.0767
+              "valor": 9.0767,
+              "var_anual_pp": -1.7486,
+              "valor_hace_12": 10.8254
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 8.879
+              "valor": 8.879,
+              "var_anual_pp": -2.47,
+              "valor_hace_12": 11.349
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 9.095
+              "valor": 9.095,
+              "var_anual_pp": -1.0224,
+              "valor_hace_12": 10.1174
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 7.6022
+              "valor": 7.6022,
+              "var_anual_pp": -2.0439,
+              "valor_hace_12": 9.6461
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 7.792
+              "valor": 7.792,
+              "var_anual_pp": -2.141,
+              "valor_hace_12": 9.933
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 7.2013
+              "valor": 7.2013,
+              "var_anual_pp": -1.8486,
+              "valor_hace_12": 9.0499
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 7.4849
+              "valor": 7.4849,
+              "var_anual_pp": -1.5194,
+              "valor_hace_12": 9.0043
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.929
+              "valor": 7.929,
+              "var_anual_pp": -0.3465,
+              "valor_hace_12": 8.2755
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 9.7395
+              "valor": 9.7395,
+              "var_anual_pp": 1.3873,
+              "valor_hace_12": 8.3522
             }
           ],
           "puesto_cantidad": 8,
@@ -923,62 +1163,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 9.5409
+              "valor": 9.5409,
+              "var_anual_pp": -1.6772,
+              "valor_hace_12": 11.2181
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 9.3969
+              "valor": 9.3969,
+              "var_anual_pp": -0.6237,
+              "valor_hace_12": 10.0206
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 10.2101
+              "valor": 10.2101,
+              "var_anual_pp": 0.3435,
+              "valor_hace_12": 9.8666
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 12.4467
+              "valor": 12.4467,
+              "var_anual_pp": -0.1273,
+              "valor_hace_12": 12.574
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 13.0083
+              "valor": 13.0083,
+              "var_anual_pp": -1.9961,
+              "valor_hace_12": 15.0044
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 12.3351
+              "valor": 12.3351,
+              "var_anual_pp": -3.4221,
+              "valor_hace_12": 15.7571
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 11.184
+              "valor": 11.184,
+              "var_anual_pp": -3.5026,
+              "valor_hace_12": 14.6866
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 11.5383
+              "valor": 11.5383,
+              "var_anual_pp": -1.8177,
+              "valor_hace_12": 13.356
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 12.7601
+              "valor": 12.7601,
+              "var_anual_pp": -0.1342,
+              "valor_hace_12": 12.8943
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 12.7493
+              "valor": 12.7493,
+              "var_anual_pp": -0.0968,
+              "valor_hace_12": 12.8462
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 11.7598
+              "valor": 11.7598,
+              "var_anual_pp": -0.7746,
+              "valor_hace_12": 12.5345
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 11.1414
+              "valor": 11.1414,
+              "var_anual_pp": -0.263,
+              "valor_hace_12": 11.4044
             }
           ],
           "puesto_cantidad": 9,
@@ -1008,62 +1272,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.1667
+              "valor": 8.1667,
+              "var_anual_pp": -1.1411,
+              "valor_hace_12": 9.3078
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 7.1526
+              "valor": 7.1526,
+              "var_anual_pp": -1.3152,
+              "valor_hace_12": 8.4678
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 7.4177
+              "valor": 7.4177,
+              "var_anual_pp": -1.5135,
+              "valor_hace_12": 8.9312
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 7.6621
+              "valor": 7.6621,
+              "var_anual_pp": -1.9351,
+              "valor_hace_12": 9.5972
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 8.5919
+              "valor": 8.5919,
+              "var_anual_pp": -1.8463,
+              "valor_hace_12": 10.4383
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 8.5092
+              "valor": 8.5092,
+              "var_anual_pp": -1.8674,
+              "valor_hace_12": 10.3766
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 8.3189
+              "valor": 8.3189,
+              "var_anual_pp": -1.9163,
+              "valor_hace_12": 10.2352
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.235
+              "valor": 8.235,
+              "var_anual_pp": -1.481,
+              "valor_hace_12": 9.716
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.0832
+              "valor": 8.0832,
+              "var_anual_pp": -0.9352,
+              "valor_hace_12": 9.0184
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.3291
+              "valor": 8.3291,
+              "var_anual_pp": -0.1801,
+              "valor_hace_12": 8.5093
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 8.7179
+              "valor": 8.7179,
+              "var_anual_pp": 0.4019,
+              "valor_hace_12": 8.316
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 8.5717
+              "valor": 8.5717,
+              "var_anual_pp": 0.389,
+              "valor_hace_12": 8.1826
             }
           ],
           "puesto_cantidad": 10,
@@ -1093,62 +1381,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.0813
+              "valor": 8.0813,
+              "var_anual_pp": -2.8937,
+              "valor_hace_12": 10.9751
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.5854
+              "valor": 8.5854,
+              "var_anual_pp": -1.264,
+              "valor_hace_12": 9.8494
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.525
+              "valor": 8.525,
+              "var_anual_pp": -1.6282,
+              "valor_hace_12": 10.1532
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 10.1687
+              "valor": 10.1687,
+              "var_anual_pp": -1.2158,
+              "valor_hace_12": 11.3845
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 10.4799
+              "valor": 10.4799,
+              "var_anual_pp": -2.4984,
+              "valor_hace_12": 12.9783
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 11.2265
+              "valor": 11.2265,
+              "var_anual_pp": -0.869,
+              "valor_hace_12": 12.0955
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.5851
+              "valor": 10.5851,
+              "var_anual_pp": -0.8034,
+              "valor_hace_12": 11.3885
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 10.8685
+              "valor": 10.8685,
+              "var_anual_pp": 0.3716,
+              "valor_hace_12": 10.4968
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 11.3299
+              "valor": 11.3299,
+              "var_anual_pp": 0.9514,
+              "valor_hace_12": 10.3785
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 11.2232
+              "valor": 11.2232,
+              "var_anual_pp": 0.8189,
+              "valor_hace_12": 10.4043
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 11.6699
+              "valor": 11.6699,
+              "var_anual_pp": 1.8685,
+              "valor_hace_12": 9.8014
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 11.3108
+              "valor": 11.3108,
+              "var_anual_pp": 1.9238,
+              "valor_hace_12": 9.3869
             }
           ],
           "puesto_cantidad": 11,
@@ -1178,62 +1490,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 9.8151
+              "valor": 9.8151,
+              "var_anual_pp": -2.6344,
+              "valor_hace_12": 12.4495
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 9.7761
+              "valor": 9.7761,
+              "var_anual_pp": -2.8578,
+              "valor_hace_12": 12.6338
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 9.15
+              "valor": 9.15,
+              "var_anual_pp": -3.1722,
+              "valor_hace_12": 12.3222
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.6265
+              "valor": 9.6265,
+              "var_anual_pp": -2.2896,
+              "valor_hace_12": 11.9161
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 9.5931
+              "valor": 9.5931,
+              "var_anual_pp": -2.5947,
+              "valor_hace_12": 12.1878
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 10.5234
+              "valor": 10.5234,
+              "var_anual_pp": -1.4677,
+              "valor_hace_12": 11.9911
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 9.4739
+              "valor": 9.4739,
+              "var_anual_pp": -0.1456,
+              "valor_hace_12": 9.6195
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.5866
+              "valor": 9.5866,
+              "var_anual_pp": 1.7819,
+              "valor_hace_12": 7.8046
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 9.5055
+              "valor": 9.5055,
+              "var_anual_pp": 1.5803,
+              "valor_hace_12": 7.9252
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 9.7536
+              "valor": 9.7536,
+              "var_anual_pp": 0.7405,
+              "valor_hace_12": 9.0131
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 10.1431
+              "valor": 10.1431,
+              "var_anual_pp": 0.6557,
+              "valor_hace_12": 9.4874
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.0268
+              "valor": 10.0268,
+              "var_anual_pp": 0.3293,
+              "valor_hace_12": 9.6975
             }
           ],
           "puesto_cantidad": 12,
@@ -1263,62 +1599,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 6.8114
+              "valor": 6.8114,
+              "var_anual_pp": -2.628,
+              "valor_hace_12": 9.4394
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 6.7595
+              "valor": 6.7595,
+              "var_anual_pp": -1.5937,
+              "valor_hace_12": 8.3532
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 6.9818
+              "valor": 6.9818,
+              "var_anual_pp": -0.3617,
+              "valor_hace_12": 7.3435
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 7.7119
+              "valor": 7.7119,
+              "var_anual_pp": -0.2612,
+              "valor_hace_12": 7.9731
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 8.013
+              "valor": 8.013,
+              "var_anual_pp": -0.8045,
+              "valor_hace_12": 8.8174
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 8.0223
+              "valor": 8.0223,
+              "var_anual_pp": -0.9615,
+              "valor_hace_12": 8.9838
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 7.4505
+              "valor": 7.4505,
+              "var_anual_pp": -0.5308,
+              "valor_hace_12": 7.9812
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 7.5488
+              "valor": 7.5488,
+              "var_anual_pp": -0.2026,
+              "valor_hace_12": 7.7514
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 7.9093
+              "valor": 7.9093,
+              "var_anual_pp": -0.1923,
+              "valor_hace_12": 8.1016
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.0575
+              "valor": 8.0575,
+              "var_anual_pp": 0.3423,
+              "valor_hace_12": 7.7152
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 7.9887
+              "valor": 7.9887,
+              "var_anual_pp": 0.7195,
+              "valor_hace_12": 7.2692
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 7.7136
+              "valor": 7.7136,
+              "var_anual_pp": 1.1178,
+              "valor_hace_12": 6.5957
             }
           ],
           "puesto_cantidad": 13,
@@ -1348,62 +1708,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 9.1055
+              "valor": 9.1055,
+              "var_anual_pp": -0.0664,
+              "valor_hace_12": 9.1719
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 9.064
+              "valor": 9.064,
+              "var_anual_pp": 0.0288,
+              "valor_hace_12": 9.0351
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 9.8386
+              "valor": 9.8386,
+              "var_anual_pp": 0.8824,
+              "valor_hace_12": 8.9561
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.959
+              "valor": 9.959,
+              "var_anual_pp": 0.3286,
+              "valor_hace_12": 9.6305
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 10.6785
+              "valor": 10.6785,
+              "var_anual_pp": 1.0424,
+              "valor_hace_12": 9.6361
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 11.7209
+              "valor": 11.7209,
+              "var_anual_pp": 1.9524,
+              "valor_hace_12": 9.7685
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 11.963
+              "valor": 11.963,
+              "var_anual_pp": 3.2499,
+              "valor_hace_12": 8.7131
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 11.7376
+              "valor": 11.7376,
+              "var_anual_pp": 3.427,
+              "valor_hace_12": 8.3106
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 10.1306
+              "valor": 10.1306,
+              "var_anual_pp": 2.4735,
+              "valor_hace_12": 7.6571
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.8726
+              "valor": 8.8726,
+              "var_anual_pp": 0.7613,
+              "valor_hace_12": 8.1113
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 8.6395
+              "valor": 8.6395,
+              "var_anual_pp": 0.1637,
+              "valor_hace_12": 8.4758
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 8.7608
+              "valor": 8.7608,
+              "var_anual_pp": 0.1721,
+              "valor_hace_12": 8.5887
             }
           ],
           "puesto_cantidad": 14,
@@ -1433,62 +1817,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.3388
+              "valor": 8.3388,
+              "var_anual_pp": -0.1864,
+              "valor_hace_12": 8.5252
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 9.0238
+              "valor": 9.0238,
+              "var_anual_pp": 0.4328,
+              "valor_hace_12": 8.591
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.3049
+              "valor": 8.3049,
+              "var_anual_pp": -0.6797,
+              "valor_hace_12": 8.9847
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 8.4521
+              "valor": 8.4521,
+              "var_anual_pp": -0.1901,
+              "valor_hace_12": 8.6421
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 8.0697
+              "valor": 8.0697,
+              "var_anual_pp": -1.0455,
+              "valor_hace_12": 9.1152
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 9.0608
+              "valor": 9.0608,
+              "var_anual_pp": -0.4228,
+              "valor_hace_12": 9.4836
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 8.13
+              "valor": 8.13,
+              "var_anual_pp": -1.761,
+              "valor_hace_12": 9.891
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.2197
+              "valor": 8.2197,
+              "var_anual_pp": -1.3429,
+              "valor_hace_12": 9.5626
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 7.9585
+              "valor": 7.9585,
+              "var_anual_pp": -1.5118,
+              "valor_hace_12": 9.4703
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 9.7694
+              "valor": 9.7694,
+              "var_anual_pp": -0.4962,
+              "valor_hace_12": 10.2655
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 10.1976
+              "valor": 10.1976,
+              "var_anual_pp": 0.4708,
+              "valor_hace_12": 9.7268
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.4779
+              "valor": 10.4779,
+              "var_anual_pp": 1.055,
+              "valor_hace_12": 9.4229
             }
           ],
           "puesto_cantidad": 15,
@@ -1518,62 +1926,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 12.3037
+              "valor": 12.3037,
+              "var_anual_pp": 0.1751,
+              "valor_hace_12": 12.1287
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 11.52
+              "valor": 11.52,
+              "var_anual_pp": -0.3469,
+              "valor_hace_12": 11.8669
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 11.3873
+              "valor": 11.3873,
+              "var_anual_pp": -0.1543,
+              "valor_hace_12": 11.5416
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 11.5602
+              "valor": 11.5602,
+              "var_anual_pp": -0.4237,
+              "valor_hace_12": 11.9839
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 12.3442
+              "valor": 12.3442,
+              "var_anual_pp": -0.7522,
+              "valor_hace_12": 13.0964
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 11.7805
+              "valor": 11.7805,
+              "var_anual_pp": -2.0882,
+              "valor_hace_12": 13.8687
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.7544
+              "valor": 10.7544,
+              "var_anual_pp": -2.3838,
+              "valor_hace_12": 13.1382
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 10.9748
+              "valor": 10.9748,
+              "var_anual_pp": -2.2136,
+              "valor_hace_12": 13.1884
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 11.7194
+              "valor": 11.7194,
+              "var_anual_pp": -1.0063,
+              "valor_hace_12": 12.7257
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 12.9655
+              "valor": 12.9655,
+              "var_anual_pp": 0.6964,
+              "valor_hace_12": 12.2691
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 12.9145
+              "valor": 12.9145,
+              "var_anual_pp": 1.4816,
+              "valor_hace_12": 11.4329
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 12.665
+              "valor": 12.665,
+              "var_anual_pp": 1.1972,
+              "valor_hace_12": 11.4678
             }
           ],
           "puesto_cantidad": 16,
@@ -1603,62 +2035,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 9.0883
+              "valor": 9.0883,
+              "var_anual_pp": -0.8022,
+              "valor_hace_12": 9.8904
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.3827
+              "valor": 8.3827,
+              "var_anual_pp": -1.7116,
+              "valor_hace_12": 10.0943
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 9.8316
+              "valor": 9.8316,
+              "var_anual_pp": 0.2174,
+              "valor_hace_12": 9.6142
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 11.3635
+              "valor": 11.3635,
+              "var_anual_pp": 0.9494,
+              "valor_hace_12": 10.4141
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 12.9613
+              "valor": 12.9613,
+              "var_anual_pp": 1.5372,
+              "valor_hace_12": 11.4241
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 12.7061
+              "valor": 12.7061,
+              "var_anual_pp": 2.0998,
+              "valor_hace_12": 10.6063
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.8663
+              "valor": 10.8663,
+              "var_anual_pp": 0.7787,
+              "valor_hace_12": 10.0876
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.9398
+              "valor": 9.9398,
+              "var_anual_pp": 0.1274,
+              "valor_hace_12": 9.8124
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.6967
+              "valor": 8.6967,
+              "var_anual_pp": -1.6635,
+              "valor_hace_12": 10.3602
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.5139
+              "valor": 8.5139,
+              "var_anual_pp": -2.0464,
+              "valor_hace_12": 10.5602
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 9.1811
+              "valor": 9.1811,
+              "var_anual_pp": -0.4388,
+              "valor_hace_12": 9.6199
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.4602
+              "valor": 10.4602,
+              "var_anual_pp": 1.4006,
+              "valor_hace_12": 9.0596
             }
           ],
           "puesto_cantidad": 17,
@@ -1688,62 +2144,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.2852
+              "valor": 8.2852,
+              "var_anual_pp": -1.8736,
+              "valor_hace_12": 10.1588
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 7.895
+              "valor": 7.895,
+              "var_anual_pp": -1.6509,
+              "valor_hace_12": 9.5459
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.2098
+              "valor": 8.2098,
+              "var_anual_pp": -1.2998,
+              "valor_hace_12": 9.5096
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.5522
+              "valor": 9.5522,
+              "var_anual_pp": -0.7171,
+              "valor_hace_12": 10.2693
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 10.0933
+              "valor": 10.0933,
+              "var_anual_pp": -0.6212,
+              "valor_hace_12": 10.7145
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 10.9529
+              "valor": 10.9529,
+              "var_anual_pp": -0.5557,
+              "valor_hace_12": 11.5085
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 9.276
+              "valor": 9.276,
+              "var_anual_pp": -1.5248,
+              "valor_hace_12": 10.8008
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.6598
+              "valor": 9.6598,
+              "var_anual_pp": -0.7256,
+              "valor_hace_12": 10.3854
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 9.166
+              "valor": 9.166,
+              "var_anual_pp": -0.4899,
+              "valor_hace_12": 9.6559
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 9.7432
+              "valor": 9.7432,
+              "var_anual_pp": 0.4974,
+              "valor_hace_12": 9.2458
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 9.3644
+              "valor": 9.3644,
+              "var_anual_pp": 0.5748,
+              "valor_hace_12": 8.7896
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 9.2083
+              "valor": 9.2083,
+              "var_anual_pp": 0.7512,
+              "valor_hace_12": 8.4571
             }
           ],
           "puesto_cantidad": 18,
@@ -1773,62 +2253,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.6605
+              "valor": 8.6605,
+              "var_anual_pp": -2.3558,
+              "valor_hace_12": 11.0163
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.9245
+              "valor": 8.9245,
+              "var_anual_pp": -2.9734,
+              "valor_hace_12": 11.898
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 9.3105
+              "valor": 9.3105,
+              "var_anual_pp": -1.7403,
+              "valor_hace_12": 11.0508
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 10.7829
+              "valor": 10.7829,
+              "var_anual_pp": -0.5194,
+              "valor_hace_12": 11.3023
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 11.8003
+              "valor": 11.8003,
+              "var_anual_pp": 0.7992,
+              "valor_hace_12": 11.0011
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 10.596
+              "valor": 10.596,
+              "var_anual_pp": -0.6686,
+              "valor_hace_12": 11.2646
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 9.8651
+              "valor": 9.8651,
+              "var_anual_pp": -1.4011,
+              "valor_hace_12": 11.2662
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 8.4471
+              "valor": 8.4471,
+              "var_anual_pp": -2.2587,
+              "valor_hace_12": 10.7058
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 8.7966
+              "valor": 8.7966,
+              "var_anual_pp": -1.6154,
+              "valor_hace_12": 10.412
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.1976
+              "valor": 8.1976,
+              "var_anual_pp": -1.6069,
+              "valor_hace_12": 9.8045
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 9.308
+              "valor": 9.308,
+              "var_anual_pp": 0.7485,
+              "valor_hace_12": 8.5596
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 9.217
+              "valor": 9.217,
+              "var_anual_pp": 0.1822,
+              "valor_hace_12": 9.0348
             }
           ],
           "puesto_cantidad": 19,
@@ -1858,62 +2362,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.6669
+              "valor": 8.6669,
+              "var_anual_pp": -2.5316,
+              "valor_hace_12": 11.1985
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.8659
+              "valor": 8.8659,
+              "var_anual_pp": -1.5334,
+              "valor_hace_12": 10.3993
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 9.8522
+              "valor": 9.8522,
+              "var_anual_pp": -0.0732,
+              "valor_hace_12": 9.9254
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 11.1945
+              "valor": 11.1945,
+              "var_anual_pp": 0.6958,
+              "valor_hace_12": 10.4987
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 11.8783
+              "valor": 11.8783,
+              "var_anual_pp": 0.8278,
+              "valor_hace_12": 11.0505
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 12.1444
+              "valor": 12.1444,
+              "var_anual_pp": -0.0324,
+              "valor_hace_12": 12.1768
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 11.5439
+              "valor": 11.5439,
+              "var_anual_pp": 0.272,
+              "valor_hace_12": 11.2719
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 11.568
+              "valor": 11.568,
+              "var_anual_pp": 0.2107,
+              "valor_hace_12": 11.3573
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 11.5602
+              "valor": 11.5602,
+              "var_anual_pp": 1.1569,
+              "valor_hace_12": 10.4033
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 12.4288
+              "valor": 12.4288,
+              "var_anual_pp": 1.4726,
+              "valor_hace_12": 10.9563
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 12.5167
+              "valor": 12.5167,
+              "var_anual_pp": 2.4852,
+              "valor_hace_12": 10.0315
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 13.1602
+              "valor": 13.1602,
+              "var_anual_pp": 3.9179,
+              "valor_hace_12": 9.2423
             }
           ],
           "puesto_cantidad": 20,
@@ -1943,62 +2471,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 23.9328
+              "valor": 23.9328,
+              "var_anual_pp": -2.2786,
+              "valor_hace_12": 26.2114
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 21.7671
+              "valor": 21.7671,
+              "var_anual_pp": -4.5526,
+              "valor_hace_12": 26.3197
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 23.0937
+              "valor": 23.0937,
+              "var_anual_pp": -5.0822,
+              "valor_hace_12": 28.1759
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 24.5616
+              "valor": 24.5616,
+              "var_anual_pp": -6.3437,
+              "valor_hace_12": 30.9053
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 26.3177
+              "valor": 26.3177,
+              "var_anual_pp": -8.1942,
+              "valor_hace_12": 34.5119
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 25.9641
+              "valor": 25.9641,
+              "var_anual_pp": -9.6465,
+              "valor_hace_12": 35.6105
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 25.0923
+              "valor": 25.0923,
+              "var_anual_pp": -8.1129,
+              "valor_hace_12": 33.2051
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 23.9373
+              "valor": 23.9373,
+              "var_anual_pp": -5.8913,
+              "valor_hace_12": 29.8286
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 23.2913
+              "valor": 23.2913,
+              "var_anual_pp": -2.876,
+              "valor_hace_12": 26.1673
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 22.9594
+              "valor": 22.9594,
+              "var_anual_pp": -1.37,
+              "valor_hace_12": 24.3295
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 23.8258
+              "valor": 23.8258,
+              "var_anual_pp": -0.5881,
+              "valor_hace_12": 24.4138
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 23.373
+              "valor": 23.373,
+              "var_anual_pp": -0.5948,
+              "valor_hace_12": 23.9679
             }
           ],
           "puesto_cantidad": 21,
@@ -2028,62 +2580,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 12.1515
+              "valor": 12.1515,
+              "var_anual_pp": -3.1808,
+              "valor_hace_12": 15.3323
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 11.7123
+              "valor": 11.7123,
+              "var_anual_pp": -2.2877,
+              "valor_hace_12": 14.0
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 11.0354
+              "valor": 11.0354,
+              "var_anual_pp": -4.622,
+              "valor_hace_12": 15.6574
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 13.6355
+              "valor": 13.6355,
+              "var_anual_pp": -3.1826,
+              "valor_hace_12": 16.8181
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 14.2604
+              "valor": 14.2604,
+              "var_anual_pp": -4.0923,
+              "valor_hace_12": 18.3527
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 14.6666
+              "valor": 14.6666,
+              "var_anual_pp": -3.0618,
+              "valor_hace_12": 17.7285
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 12.8168
+              "valor": 12.8168,
+              "var_anual_pp": -3.8975,
+              "valor_hace_12": 16.7142
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 12.0571
+              "valor": 12.0571,
+              "var_anual_pp": -3.3177,
+              "valor_hace_12": 15.3748
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 11.8103
+              "valor": 11.8103,
+              "var_anual_pp": -2.7182,
+              "valor_hace_12": 14.5285
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 11.7969
+              "valor": 11.7969,
+              "var_anual_pp": -2.6058,
+              "valor_hace_12": 14.4027
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 11.3835
+              "valor": 11.3835,
+              "var_anual_pp": -2.8529,
+              "valor_hace_12": 14.2364
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 10.8213
+              "valor": 10.8213,
+              "var_anual_pp": -3.4202,
+              "valor_hace_12": 14.2415
             }
           ],
           "puesto_cantidad": 22,
@@ -2113,62 +2689,86 @@
             {
               "mes": "Oct",
               "anio": 2025,
-              "valor": 8.144
+              "valor": 8.144,
+              "var_anual_pp": -4.776,
+              "valor_hace_12": 12.9199
             },
             {
               "mes": "Nov",
               "anio": 2025,
-              "valor": 8.163
+              "valor": 8.163,
+              "var_anual_pp": -5.0731,
+              "valor_hace_12": 13.236
             },
             {
               "mes": "Dic",
               "anio": 2025,
-              "valor": 8.5529
+              "valor": 8.5529,
+              "var_anual_pp": -4.8133,
+              "valor_hace_12": 13.3662
             },
             {
               "mes": "Ene",
               "anio": 2026,
-              "valor": 9.0273
+              "valor": 9.0273,
+              "var_anual_pp": -5.85,
+              "valor_hace_12": 14.8773
             },
             {
               "mes": "Feb",
               "anio": 2026,
-              "valor": 10.2763
+              "valor": 10.2763,
+              "var_anual_pp": -5.3017,
+              "valor_hace_12": 15.578
             },
             {
               "mes": "Mar",
               "anio": 2026,
-              "valor": 10.9657
+              "valor": 10.9657,
+              "var_anual_pp": -6.2067,
+              "valor_hace_12": 17.1723
             },
             {
               "mes": "Abr",
               "anio": 2026,
-              "valor": 10.9122
+              "valor": 10.9122,
+              "var_anual_pp": -2.8593,
+              "valor_hace_12": 13.7715
             },
             {
               "mes": "May",
               "anio": 2026,
-              "valor": 9.7934
+              "valor": 9.7934,
+              "var_anual_pp": -2.7934,
+              "valor_hace_12": 12.5868
             },
             {
               "mes": "Jun",
               "anio": 2026,
-              "valor": 9.2188
+              "valor": 9.2188,
+              "var_anual_pp": -0.4687,
+              "valor_hace_12": 9.6875
             },
             {
               "mes": "Jul",
               "anio": 2026,
-              "valor": 8.0609
+              "valor": 8.0609,
+              "var_anual_pp": -1.2796,
+              "valor_hace_12": 9.3405
             },
             {
               "mes": "Ago",
               "anio": 2026,
-              "valor": 8.1741
+              "valor": 8.1741,
+              "var_anual_pp": 0.0435,
+              "valor_hace_12": 8.1305
             },
             {
               "mes": "Sep",
               "anio": 2026,
-              "valor": 8.237
+              "valor": 8.237,
+              "var_anual_pp": 0.6775,
+              "valor_hace_12": 7.5594
             }
           ],
           "puesto_cantidad": 23,
@@ -2208,62 +2808,86 @@
       {
         "mes": "Oct",
         "anio": 2025,
-        "valor": 8.2037
+        "valor": 8.2037,
+        "var_anual_pp": -0.9301,
+        "valor_hace_12": 9.1338
       },
       {
         "mes": "Nov",
         "anio": 2025,
-        "valor": 7.0249
+        "valor": 7.0249,
+        "var_anual_pp": -1.1439,
+        "valor_hace_12": 8.1688
       },
       {
         "mes": "Dic",
         "anio": 2025,
-        "valor": 7.9771
+        "valor": 7.9771,
+        "var_anual_pp": -1.1482,
+        "valor_hace_12": 9.1253
       },
       {
         "mes": "Ene",
         "anio": 2026,
-        "valor": 10.8595
+        "valor": 10.8595,
+        "var_anual_pp": -0.7766,
+        "valor_hace_12": 11.636
       },
       {
         "mes": "Feb",
         "anio": 2026,
-        "valor": 9.235
+        "valor": 9.235,
+        "var_anual_pp": -1.0955,
+        "valor_hace_12": 10.3305
       },
       {
         "mes": "Mar",
         "anio": 2026,
-        "valor": 8.7934
+        "valor": 8.7934,
+        "var_anual_pp": -0.823,
+        "valor_hace_12": 9.6164
       },
       {
         "mes": "Abr",
         "anio": 2026,
-        "valor": 8.7815
+        "valor": 8.7815,
+        "var_anual_pp": -0.001,
+        "valor_hace_12": 8.7825
       },
       {
         "mes": "May",
         "anio": 2026,
-        "valor": 8.0207
+        "valor": 8.0207,
+        "var_anual_pp": -1.0158,
+        "valor_hace_12": 9.0364
       },
       {
         "mes": "Jun",
         "anio": 2026,
-        "valor": 8.0269
+        "valor": 8.0269,
+        "var_anual_pp": -0.5271,
+        "valor_hace_12": 8.554
       },
       {
         "mes": "Jul",
         "anio": 2026,
-        "valor": 8.1046
+        "valor": 8.1046,
+        "var_anual_pp": -0.7372,
+        "valor_hace_12": 8.8418
       },
       {
         "mes": "Ago",
         "anio": 2026,
-        "valor": 9.3637
+        "valor": 9.3637,
+        "var_anual_pp": 0.7652,
+        "valor_hace_12": 8.5985
       },
       {
         "mes": "Sep",
         "anio": 2026,
-        "valor": 8.017
+        "valor": 8.017,
+        "var_anual_pp": -0.1565,
+        "valor_hace_12": 8.1735
       }
     ],
     "mismo_mes": [

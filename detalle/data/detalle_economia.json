@@ -1,0 +1,1936 @@
+{
+  "indicador": "economia",
+  "fuente": "Dane",
+  "generado_en": "2026-11-22T15:49:13+00:00",
+  "periodo": {
+    "anio": 2026,
+    "mes_num": 9,
+    "mes_nombre": "Septiembre",
+    "etiqueta": "Septiembre 2026"
+  },
+  "hero": {
+    "crecimiento_anual": 1.44,
+    "var_anual_pp": -2.66,
+    "cambio_mes_pp": 2.0,
+    "variacion_mensual": 2.82,
+    "variacion_mensual_hace_un_ano": 0.79,
+    "indice": 127.27,
+    "indice_desest": 128.78,
+    "direccion_mes": "sube",
+    "direccion_anual": "baja",
+    "direccion_variacion_mensual": "sube",
+    "comparado_con_hace_un_ano": "Septiembre 2025: 4.1 → ahora 1.44",
+    "previo": "Agosto 2026: -0.56",
+    "actual": "Septiembre 2026: 1.44",
+    "meses_seguidos_vs_ano_anterior": 0,
+    "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+    "rama": "nivel_mes",
+    "unidad": "%"
+  },
+  "hallazgos": [
+    {
+      "tipo": "indicador",
+      "titulo": "Crecimiento de la economía",
+      "texto": "El crecimiento anual más bajo para un septiembre desde 2024.",
+      "rama": "nivel_mes"
+    },
+    {
+      "tipo": "mensual",
+      "titulo": "Variación del mes",
+      "texto": "La economía creció 2.82 % en septiembre frente al mes anterior (serie desestacionalizada).",
+      "valor": 2.82,
+      "unidad": "%"
+    },
+    {
+      "tipo": "sector_alto",
+      "titulo": "Sector con mayor crecimiento anual",
+      "texto": "Actividades secundarias: 2.34 % anual (5.87 % en el mes).",
+      "valor": 2.34,
+      "unidad": "%",
+      "sector": "Actividades secundarias"
+    },
+    {
+      "tipo": "actividad_alta",
+      "titulo": "Actividad con mayor crecimiento anual",
+      "texto": "Administración pública, educación y salud: 4.07 % anual (4.19 % en el mes).",
+      "valor": 4.07,
+      "unidad": "%",
+      "actividad": "Administración pública, educación y salud"
+    },
+    {
+      "tipo": "actividad_baja",
+      "titulo": "Actividad con menor crecimiento anual",
+      "texto": "Información y comunicaciones: -4.73 % anual (-1.02 % en el mes).",
+      "valor": -4.73,
+      "unidad": "%",
+      "actividad": "Información y comunicaciones"
+    },
+    {
+      "tipo": "actividad_mes",
+      "titulo": "Actividad con mayor variación del mes",
+      "texto": "Industria y construcción: 5.87 % frente al mes anterior (2.34 % anual).",
+      "valor": 5.87,
+      "unidad": "%",
+      "actividad": "Industria y construcción"
+    }
+  ],
+  "dimensiones": {
+    "unidad_cantidad": "variación porcentual anual",
+    "sectores": {
+      "nota": "Crecimiento anual del valor agregado por gran sector; cada sector trae sus actividades.",
+      "orden_defecto": "tasa",
+      "items": [
+        {
+          "codigo": "secundarias",
+          "sector": "Actividades secundarias",
+          "var_anual": 2.34,
+          "var_mensual": 5.87,
+          "var_anual_pp": -1.35,
+          "cambio_mes_pp": 4.55,
+          "direccion_anual": "baja",
+          "rank_hoy": 1,
+          "rank_prev": 2,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_total": 0.9,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 1,
+          "puesto_variacion": 1,
+          "puesto_mensual": 1,
+          "barra": 100.0,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 1.46,
+              "var_mensual": -0.18,
+              "indice_desest": null,
+              "var_anual_pp": -0.39,
+              "valor_hace_12": 1.85
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0.36,
+              "var_mensual": -1.97,
+              "indice_desest": null,
+              "var_anual_pp": 2.82,
+              "valor_hace_12": -2.46
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -0.11,
+              "var_mensual": 0.51,
+              "indice_desest": null,
+              "var_anual_pp": 0.87,
+              "valor_hace_12": -0.98
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": -1.64,
+              "var_mensual": 0.28,
+              "indice_desest": null,
+              "var_anual_pp": -1.58,
+              "valor_hace_12": -0.06
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": -0.55,
+              "var_mensual": 0.04,
+              "indice_desest": null,
+              "var_anual_pp": 3.55,
+              "valor_hace_12": -4.1
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2.8,
+              "var_mensual": 1.96,
+              "indice_desest": null,
+              "var_anual_pp": -0.04,
+              "valor_hace_12": 2.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 1.65,
+              "var_mensual": -1.53,
+              "indice_desest": null,
+              "var_anual_pp": 5.47,
+              "valor_hace_12": -3.82
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1.3,
+              "var_mensual": 0.89,
+              "indice_desest": null,
+              "var_anual_pp": 1.91,
+              "valor_hace_12": -0.61
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 3.6,
+              "var_mensual": 1.23,
+              "indice_desest": null,
+              "var_anual_pp": 1.13,
+              "valor_hace_12": 2.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -2.1,
+              "var_mensual": -0.19,
+              "indice_desest": null,
+              "var_anual_pp": -6.87,
+              "valor_hace_12": 4.77
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -2.21,
+              "var_mensual": -4.3,
+              "indice_desest": null,
+              "var_anual_pp": -1.94,
+              "valor_hace_12": -0.27
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 2.34,
+              "var_mensual": 5.87,
+              "indice_desest": null,
+              "var_anual_pp": -1.35,
+              "valor_hace_12": 3.69
+            }
+          ],
+          "actividades": [
+            {
+              "codigo": "industria_construccion",
+              "actividad": "Industria y construcción",
+              "var_anual": 2.34,
+              "var_mensual": 5.87,
+              "var_anual_pp": -1.35,
+              "cambio_mes_pp": 4.55,
+              "direccion_anual": "baja",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100.0
+            }
+          ]
+        },
+        {
+          "codigo": "terciarias",
+          "sector": "Actividades terciarias",
+          "var_anual": 1.93,
+          "var_mensual": 1.43,
+          "var_anual_pp": -2.52,
+          "cambio_mes_pp": 1.58,
+          "direccion_anual": "baja",
+          "rank_hoy": 2,
+          "rank_prev": 1,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_total": 0.49,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 2,
+          "puesto_variacion": 2,
+          "puesto_mensual": 3,
+          "barra": 82.5,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 4.19,
+              "var_mensual": 0.59,
+              "indice_desest": null,
+              "var_anual_pp": 0.33,
+              "valor_hace_12": 3.86
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3.77,
+              "var_mensual": -0.25,
+              "indice_desest": null,
+              "var_anual_pp": 2.13,
+              "valor_hace_12": 1.64
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1.7,
+              "var_mensual": -0.05,
+              "indice_desest": null,
+              "var_anual_pp": -2.89,
+              "valor_hace_12": 4.59
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2.44,
+              "var_mensual": 0.18,
+              "indice_desest": null,
+              "var_anual_pp": -0.92,
+              "valor_hace_12": 3.36
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2.69,
+              "var_mensual": 0.45,
+              "indice_desest": null,
+              "var_anual_pp": -0.26,
+              "valor_hace_12": 2.95
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.88,
+              "var_mensual": 1.19,
+              "indice_desest": null,
+              "var_anual_pp": 1.1,
+              "valor_hace_12": 3.78
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.87,
+              "var_mensual": 0.42,
+              "indice_desest": null,
+              "var_anual_pp": 3.57,
+              "valor_hace_12": 1.3
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.95,
+              "var_mensual": 1.35,
+              "indice_desest": null,
+              "var_anual_pp": 2.24,
+              "valor_hace_12": 3.71
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.15,
+              "var_mensual": -1.11,
+              "indice_desest": null,
+              "var_anual_pp": -0.05,
+              "valor_hace_12": 4.2
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 1.75,
+              "var_mensual": -0.4,
+              "indice_desest": null,
+              "var_anual_pp": -4.55,
+              "valor_hace_12": 6.3
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0.35,
+              "var_mensual": -1.86,
+              "indice_desest": null,
+              "var_anual_pp": -4.0,
+              "valor_hace_12": 4.35
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1.93,
+              "var_mensual": 1.43,
+              "indice_desest": null,
+              "var_anual_pp": -2.52,
+              "valor_hace_12": 4.45
+            }
+          ],
+          "actividades": [
+            {
+              "codigo": "gobierno_educacion_salud",
+              "actividad": "Administración pública, educación y salud",
+              "var_anual": 4.07,
+              "var_mensual": 4.19,
+              "var_anual_pp": -2.44,
+              "cambio_mes_pp": 3.97,
+              "direccion_anual": "baja",
+              "puesto_anual": 1,
+              "puesto_variacion": 4,
+              "barra": 86.0
+            },
+            {
+              "codigo": "electricidad_agua",
+              "actividad": "Electricidad, gas y agua",
+              "var_anual": 3.89,
+              "var_mensual": 0.14,
+              "var_anual_pp": 2.31,
+              "cambio_mes_pp": -0.33,
+              "direccion_anual": "sube",
+              "puesto_anual": 2,
+              "puesto_variacion": 1,
+              "barra": 82.2
+            },
+            {
+              "codigo": "inmobiliarias",
+              "actividad": "Actividades inmobiliarias",
+              "var_anual": 1.89,
+              "var_mensual": 0.2,
+              "var_anual_pp": -0.08,
+              "cambio_mes_pp": 0.03,
+              "direccion_anual": "estable",
+              "puesto_anual": 3,
+              "puesto_variacion": 2,
+              "barra": 40.0
+            },
+            {
+              "codigo": "comercio_transporte_alojamiento",
+              "actividad": "Comercio, transporte y alojamiento",
+              "var_anual": 1.23,
+              "var_mensual": 0.07,
+              "var_anual_pp": -4.18,
+              "cambio_mes_pp": 2.02,
+              "direccion_anual": "baja",
+              "puesto_anual": 4,
+              "puesto_variacion": 5,
+              "barra": 26.0
+            },
+            {
+              "codigo": "profesionales_servicios",
+              "actividad": "Actividades profesionales y de servicios",
+              "var_anual": 1.21,
+              "var_mensual": 0.45,
+              "var_anual_pp": -0.63,
+              "cambio_mes_pp": -0.01,
+              "direccion_anual": "baja",
+              "puesto_anual": 5,
+              "puesto_variacion": 3,
+              "barra": 25.6
+            },
+            {
+              "codigo": "financieras",
+              "actividad": "Actividades financieras",
+              "var_anual": -3.44,
+              "var_mensual": -1.86,
+              "var_anual_pp": -8.44,
+              "cambio_mes_pp": -4.9,
+              "direccion_anual": "baja",
+              "puesto_anual": 6,
+              "puesto_variacion": 7,
+              "barra": 72.7
+            },
+            {
+              "codigo": "tic",
+              "actividad": "Información y comunicaciones",
+              "var_anual": -4.73,
+              "var_mensual": -1.02,
+              "var_anual_pp": -6.96,
+              "cambio_mes_pp": -2.32,
+              "direccion_anual": "baja",
+              "puesto_anual": 7,
+              "puesto_variacion": 6,
+              "barra": 100.0
+            }
+          ]
+        },
+        {
+          "codigo": "primarias",
+          "sector": "Actividades primarias",
+          "var_anual": -1.81,
+          "var_mensual": 3.53,
+          "var_anual_pp": -5.69,
+          "cambio_mes_pp": 0.69,
+          "direccion_anual": "baja",
+          "rank_hoy": 3,
+          "rank_prev": 3,
+          "lectura_ranking": "Mantiene su posición en el ranking",
+          "brecha_vs_total": -3.25,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2022.",
+          "puesto_anual": 3,
+          "puesto_variacion": 3,
+          "puesto_mensual": 2,
+          "barra": 77.4,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 0.82,
+              "var_mensual": -0.17,
+              "indice_desest": null,
+              "var_anual_pp": -3.84,
+              "valor_hace_12": 4.66
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": -2.34,
+              "var_mensual": -5.59,
+              "indice_desest": null,
+              "var_anual_pp": -0.14,
+              "valor_hace_12": -2.2
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -3.57,
+              "var_mensual": 1.07,
+              "indice_desest": null,
+              "var_anual_pp": -6.24,
+              "valor_hace_12": 2.67
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": -3.87,
+              "var_mensual": 0.01,
+              "indice_desest": null,
+              "var_anual_pp": -2.59,
+              "valor_hace_12": -1.28
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": -3.41,
+              "var_mensual": 0.69,
+              "indice_desest": null,
+              "var_anual_pp": -1.59,
+              "valor_hace_12": -1.82
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 1.22,
+              "var_mensual": 2.36,
+              "indice_desest": null,
+              "var_anual_pp": -8.49,
+              "valor_hace_12": 9.71
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": -2.98,
+              "var_mensual": -2.28,
+              "indice_desest": null,
+              "var_anual_pp": 0.32,
+              "valor_hace_12": -3.3
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0.24,
+              "var_mensual": -0.16,
+              "indice_desest": null,
+              "var_anual_pp": 2.79,
+              "valor_hace_12": -2.55
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0.87,
+              "var_mensual": 1.58,
+              "indice_desest": null,
+              "var_anual_pp": -1.6,
+              "valor_hace_12": 2.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -4.14,
+              "var_mensual": -1.26,
+              "indice_desest": null,
+              "var_anual_pp": -4.01,
+              "valor_hace_12": -0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -2.5,
+              "var_mensual": -1.47,
+              "indice_desest": null,
+              "var_anual_pp": -1.46,
+              "valor_hace_12": -1.04
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": -1.81,
+              "var_mensual": 3.53,
+              "indice_desest": null,
+              "var_anual_pp": -5.69,
+              "valor_hace_12": 3.88
+            }
+          ],
+          "actividades": [
+            {
+              "codigo": "agro_mineria",
+              "actividad": "Agropecuario y minería",
+              "var_anual": -1.81,
+              "var_mensual": 3.53,
+              "var_anual_pp": -5.69,
+              "cambio_mes_pp": 0.69,
+              "direccion_anual": "baja",
+              "puesto_anual": 1,
+              "puesto_variacion": 1,
+              "barra": 100.0
+            }
+          ]
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total economía",
+          "var_anual": 1.44,
+          "var_anual_pp": -2.66,
+          "var_mensual": 2.82
+        }
+      ]
+    },
+    "actividades": {
+      "nota": "Crecimiento anual del valor agregado por actividad económica (9 actividades del ISE).",
+      "orden_defecto": "tasa",
+      "items": [
+        {
+          "codigo": "gobierno_educacion_salud",
+          "actividad": "Administración pública, educación y salud",
+          "sector": "terciarias",
+          "var_anual": 4.07,
+          "var_mensual": 4.19,
+          "var_anual_pp": -2.44,
+          "cambio_mes_pp": 3.97,
+          "indice": 163.67,
+          "indice_desest": 169.39,
+          "direccion_anual": "baja",
+          "rank_hoy": 1,
+          "rank_prev": 5,
+          "lectura_ranking": "Sube 4 puestos en el ranking",
+          "brecha_vs_total": 2.63,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 1,
+          "puesto_variacion": 5,
+          "puesto_mensual": 2,
+          "barra": 86.0,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 6.96,
+              "var_mensual": 2.02,
+              "indice_desest": 165.98,
+              "var_anual_pp": -0.08,
+              "valor_hace_12": 7.04
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6.03,
+              "var_mensual": -0.27,
+              "indice_desest": 165.53,
+              "var_anual_pp": 6.08,
+              "valor_hace_12": -0.05
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.58,
+              "var_mensual": -1.74,
+              "indice_desest": 162.65,
+              "var_anual_pp": -6.85,
+              "valor_hace_12": 9.43
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4.44,
+              "var_mensual": 1.17,
+              "indice_desest": 164.55,
+              "var_anual_pp": -1.07,
+              "valor_hace_12": 5.51
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 3.83,
+              "var_mensual": 0.51,
+              "indice_desest": 165.39,
+              "var_anual_pp": -3.41,
+              "valor_hace_12": 7.24
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6.87,
+              "var_mensual": 1.74,
+              "indice_desest": 168.27,
+              "var_anual_pp": 1.86,
+              "valor_hace_12": 5.01
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 10.29,
+              "var_mensual": 2.8,
+              "indice_desest": 172.99,
+              "var_anual_pp": 11.74,
+              "valor_hace_12": -1.45
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 12.56,
+              "var_mensual": 3.08,
+              "indice_desest": 178.33,
+              "var_anual_pp": 10.93,
+              "valor_hace_12": 1.63
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 6.97,
+              "var_mensual": -3.73,
+              "indice_desest": 171.67,
+              "var_anual_pp": 0.31,
+              "valor_hace_12": 6.66
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 2.94,
+              "var_mensual": 0.42,
+              "indice_desest": 172.39,
+              "var_anual_pp": -6.49,
+              "valor_hace_12": 9.43
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0.1,
+              "var_mensual": -5.69,
+              "indice_desest": 162.58,
+              "var_anual_pp": -6.79,
+              "valor_hace_12": 6.89
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 4.07,
+              "var_mensual": 4.19,
+              "indice_desest": 169.39,
+              "var_anual_pp": -2.44,
+              "valor_hace_12": 6.51
+            }
+          ]
+        },
+        {
+          "codigo": "electricidad_agua",
+          "actividad": "Electricidad, gas y agua",
+          "sector": "terciarias",
+          "var_anual": 3.89,
+          "var_mensual": 0.14,
+          "var_anual_pp": 2.31,
+          "cambio_mes_pp": -0.33,
+          "indice": 128.95,
+          "indice_desest": 128.48,
+          "direccion_anual": "sube",
+          "rank_hoy": 2,
+          "rank_prev": 1,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_total": 2.45,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "El crecimiento anual más alto para un septiembre desde 2023.",
+          "puesto_anual": 2,
+          "puesto_variacion": 1,
+          "puesto_mensual": 6,
+          "barra": 82.2,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 1.78,
+              "var_mensual": 0.43,
+              "indice_desest": 124.0,
+              "var_anual_pp": 0.89,
+              "valor_hace_12": 0.89
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4.39,
+              "var_mensual": 0.48,
+              "indice_desest": 124.6,
+              "var_anual_pp": 5.49,
+              "valor_hace_12": -1.1
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.41,
+              "var_mensual": 0.3,
+              "indice_desest": 124.97,
+              "var_anual_pp": 1.37,
+              "valor_hace_12": 1.04
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2.4,
+              "var_mensual": 0.05,
+              "indice_desest": 125.04,
+              "var_anual_pp": 2.45,
+              "valor_hace_12": -0.05
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1.33,
+              "var_mensual": -0.92,
+              "indice_desest": 123.89,
+              "var_anual_pp": 3.53,
+              "valor_hace_12": -2.2
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.99,
+              "var_mensual": 2.12,
+              "indice_desest": 126.51,
+              "var_anual_pp": 5.1,
+              "valor_hace_12": -1.11
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4.2,
+              "var_mensual": 0.45,
+              "indice_desest": 127.09,
+              "var_anual_pp": 5.49,
+              "valor_hace_12": -1.29
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5.4,
+              "var_mensual": 1.71,
+              "indice_desest": 129.25,
+              "var_anual_pp": 4.03,
+              "valor_hace_12": 1.37
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.68,
+              "var_mensual": -0.76,
+              "indice_desest": 128.27,
+              "var_anual_pp": 1.95,
+              "valor_hace_12": 2.73
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3.45,
+              "var_mensual": 0.3,
+              "indice_desest": 128.65,
+              "var_anual_pp": 0.21,
+              "valor_hace_12": 3.24
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 4.22,
+              "var_mensual": -0.27,
+              "indice_desest": 128.3,
+              "var_anual_pp": 3.02,
+              "valor_hace_12": 1.2
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 3.89,
+              "var_mensual": 0.14,
+              "indice_desest": 128.48,
+              "var_anual_pp": 2.31,
+              "valor_hace_12": 1.58
+            }
+          ]
+        },
+        {
+          "codigo": "industria_construccion",
+          "actividad": "Industria y construcción",
+          "sector": "secundarias",
+          "var_anual": 2.34,
+          "var_mensual": 5.87,
+          "var_anual_pp": -1.35,
+          "cambio_mes_pp": 4.55,
+          "indice": 100.91,
+          "indice_desest": 100.46,
+          "direccion_anual": "baja",
+          "rank_hoy": 3,
+          "rank_prev": 7,
+          "lectura_ranking": "Sube 4 puestos en el ranking",
+          "brecha_vs_total": 0.9,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 3,
+          "puesto_variacion": 4,
+          "puesto_mensual": 1,
+          "barra": 49.5,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 1.46,
+              "var_mensual": -0.18,
+              "indice_desest": 98.01,
+              "var_anual_pp": -0.39,
+              "valor_hace_12": 1.85
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0.36,
+              "var_mensual": -1.97,
+              "indice_desest": 96.07,
+              "var_anual_pp": 2.82,
+              "valor_hace_12": -2.46
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -0.11,
+              "var_mensual": 0.51,
+              "indice_desest": 96.57,
+              "var_anual_pp": 0.87,
+              "valor_hace_12": -0.98
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": -1.64,
+              "var_mensual": 0.28,
+              "indice_desest": 96.84,
+              "var_anual_pp": -1.58,
+              "valor_hace_12": -0.06
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": -0.55,
+              "var_mensual": 0.04,
+              "indice_desest": 96.88,
+              "var_anual_pp": 3.55,
+              "valor_hace_12": -4.1
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2.8,
+              "var_mensual": 1.96,
+              "indice_desest": 98.78,
+              "var_anual_pp": -0.04,
+              "valor_hace_12": 2.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 1.65,
+              "var_mensual": -1.53,
+              "indice_desest": 97.27,
+              "var_anual_pp": 5.47,
+              "valor_hace_12": -3.82
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1.3,
+              "var_mensual": 0.89,
+              "indice_desest": 98.14,
+              "var_anual_pp": 1.91,
+              "valor_hace_12": -0.61
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 3.6,
+              "var_mensual": 1.23,
+              "indice_desest": 99.34,
+              "var_anual_pp": 1.13,
+              "valor_hace_12": 2.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -2.1,
+              "var_mensual": -0.19,
+              "indice_desest": 99.15,
+              "var_anual_pp": -6.87,
+              "valor_hace_12": 4.77
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -2.21,
+              "var_mensual": -4.3,
+              "indice_desest": 94.89,
+              "var_anual_pp": -1.94,
+              "valor_hace_12": -0.27
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 2.34,
+              "var_mensual": 5.87,
+              "indice_desest": 100.46,
+              "var_anual_pp": -1.35,
+              "valor_hace_12": 3.69
+            }
+          ]
+        },
+        {
+          "codigo": "inmobiliarias",
+          "actividad": "Actividades inmobiliarias",
+          "sector": "terciarias",
+          "var_anual": 1.89,
+          "var_mensual": 0.2,
+          "var_anual_pp": -0.08,
+          "cambio_mes_pp": 0.03,
+          "indice": 132.0,
+          "indice_desest": 132.05,
+          "direccion_anual": "estable",
+          "rank_hoy": 4,
+          "rank_prev": 2,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_total": 0.45,
+          "lectura_vs_total": "por encima del total de la economía",
+          "comentario_popular": "Prácticamente igual que hace un año.",
+          "puesto_anual": 4,
+          "puesto_variacion": 2,
+          "puesto_mensual": 5,
+          "barra": 40.0,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 2.01,
+              "var_mensual": 0.18,
+              "indice_desest": 129.81,
+              "var_anual_pp": -0.16,
+              "valor_hace_12": 2.17
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 2.05,
+              "var_mensual": 0.17,
+              "indice_desest": 130.03,
+              "var_anual_pp": -0.12,
+              "valor_hace_12": 2.17
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.05,
+              "var_mensual": 0.17,
+              "indice_desest": 130.25,
+              "var_anual_pp": -0.16,
+              "valor_hace_12": 2.21
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2.03,
+              "var_mensual": 0.16,
+              "indice_desest": 130.46,
+              "var_anual_pp": -0.23,
+              "valor_hace_12": 2.26
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1.98,
+              "var_mensual": 0.14,
+              "indice_desest": 130.64,
+              "var_anual_pp": -0.26,
+              "valor_hace_12": 2.24
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2.01,
+              "var_mensual": 0.16,
+              "indice_desest": 130.85,
+              "var_anual_pp": -0.1,
+              "valor_hace_12": 2.11
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.1,
+              "var_mensual": 0.16,
+              "indice_desest": 131.06,
+              "var_anual_pp": 0.24,
+              "valor_hace_12": 1.86
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 2.1,
+              "var_mensual": 0.15,
+              "indice_desest": 131.26,
+              "var_anual_pp": 0.32,
+              "valor_hace_12": 1.78
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 2.13,
+              "var_mensual": 0.17,
+              "indice_desest": 131.48,
+              "var_anual_pp": 0.38,
+              "valor_hace_12": 1.75
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 2.02,
+              "var_mensual": 0.13,
+              "indice_desest": 131.65,
+              "var_anual_pp": 0.19,
+              "valor_hace_12": 1.83
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1.86,
+              "var_mensual": 0.1,
+              "indice_desest": 131.79,
+              "var_anual_pp": -0.05,
+              "valor_hace_12": 1.91
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1.89,
+              "var_mensual": 0.2,
+              "indice_desest": 132.05,
+              "var_anual_pp": -0.08,
+              "valor_hace_12": 1.97
+            }
+          ]
+        },
+        {
+          "codigo": "comercio_transporte_alojamiento",
+          "actividad": "Comercio, transporte y alojamiento",
+          "sector": "terciarias",
+          "var_anual": 1.23,
+          "var_mensual": 0.07,
+          "var_anual_pp": -4.18,
+          "cambio_mes_pp": 2.02,
+          "indice": 130.2,
+          "indice_desest": 134.32,
+          "direccion_anual": "baja",
+          "rank_hoy": 5,
+          "rank_prev": 6,
+          "lectura_ranking": "Sube 1 puesto en el ranking",
+          "brecha_vs_total": -0.21,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 5,
+          "puesto_variacion": 6,
+          "puesto_mensual": 7,
+          "barra": 26.0,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 4.63,
+              "var_mensual": 0.99,
+              "indice_desest": 133.88,
+              "var_anual_pp": -0.02,
+              "valor_hace_12": 4.65
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3.4,
+              "var_mensual": 0.15,
+              "indice_desest": 134.08,
+              "var_anual_pp": -1.92,
+              "valor_hace_12": 5.32
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.08,
+              "var_mensual": -0.5,
+              "indice_desest": 133.41,
+              "var_anual_pp": -2.01,
+              "valor_hace_12": 4.09
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1.67,
+              "var_mensual": 0.63,
+              "indice_desest": 134.26,
+              "var_anual_pp": -3.57,
+              "valor_hace_12": 5.24
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 3.05,
+              "var_mensual": -0.61,
+              "indice_desest": 133.44,
+              "var_anual_pp": 2.42,
+              "valor_hace_12": 0.63
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4.19,
+              "var_mensual": 0.42,
+              "indice_desest": 134.0,
+              "var_anual_pp": -1.21,
+              "valor_hace_12": 5.4
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.32,
+              "var_mensual": 0.17,
+              "indice_desest": 134.22,
+              "var_anual_pp": -2.54,
+              "valor_hace_12": 4.86
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 2.8,
+              "var_mensual": 0.82,
+              "indice_desest": 135.32,
+              "var_anual_pp": -4.33,
+              "valor_hace_12": 7.13
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1.96,
+              "var_mensual": -0.55,
+              "indice_desest": 134.58,
+              "var_anual_pp": -3.11,
+              "valor_hace_12": 5.07
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 1.69,
+              "var_mensual": 0.08,
+              "indice_desest": 134.69,
+              "var_anual_pp": -5.28,
+              "valor_hace_12": 6.97
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -0.79,
+              "var_mensual": -0.34,
+              "indice_desest": 134.23,
+              "var_anual_pp": -6.57,
+              "valor_hace_12": 5.78
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1.23,
+              "var_mensual": 0.07,
+              "indice_desest": 134.32,
+              "var_anual_pp": -4.18,
+              "valor_hace_12": 5.41
+            }
+          ]
+        },
+        {
+          "codigo": "profesionales_servicios",
+          "actividad": "Actividades profesionales y de servicios",
+          "sector": "terciarias",
+          "var_anual": 1.21,
+          "var_mensual": 0.45,
+          "var_anual_pp": -0.63,
+          "cambio_mes_pp": -0.01,
+          "indice": 120.51,
+          "indice_desest": 124.22,
+          "direccion_anual": "baja",
+          "rank_hoy": 6,
+          "rank_prev": 4,
+          "lectura_ranking": "Baja 2 puestos en el ranking",
+          "brecha_vs_total": -0.23,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2024.",
+          "puesto_anual": 6,
+          "puesto_variacion": 3,
+          "puesto_mensual": 4,
+          "barra": 25.6,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 1.43,
+              "var_mensual": -0.07,
+              "indice_desest": 122.75,
+              "var_anual_pp": 2.42,
+              "valor_hace_12": -0.99
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 2.37,
+              "var_mensual": 0.39,
+              "indice_desest": 123.23,
+              "var_anual_pp": 3.52,
+              "valor_hace_12": -1.15
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2.32,
+              "var_mensual": 0.74,
+              "indice_desest": 124.14,
+              "var_anual_pp": 0.29,
+              "valor_hace_12": 2.03
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1.76,
+              "var_mensual": -0.49,
+              "indice_desest": 123.54,
+              "var_anual_pp": 2.04,
+              "valor_hace_12": -0.28
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2.11,
+              "var_mensual": 0.16,
+              "indice_desest": 123.73,
+              "var_anual_pp": 2.32,
+              "valor_hace_12": -0.21
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.89,
+              "var_mensual": 0.95,
+              "indice_desest": 124.9,
+              "var_anual_pp": 2.82,
+              "valor_hace_12": 1.07
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.09,
+              "var_mensual": 0.03,
+              "indice_desest": 124.94,
+              "var_anual_pp": 1.06,
+              "valor_hace_12": 1.03
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 4.02,
+              "var_mensual": 0.82,
+              "indice_desest": 125.96,
+              "var_anual_pp": 2.82,
+              "valor_hace_12": 1.2
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 4.15,
+              "var_mensual": -0.33,
+              "indice_desest": 125.54,
+              "var_anual_pp": 2.98,
+              "valor_hace_12": 1.17
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0.22,
+              "var_mensual": -2.1,
+              "indice_desest": 122.9,
+              "var_anual_pp": -1.77,
+              "valor_hace_12": 1.99
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1.22,
+              "var_mensual": 0.62,
+              "indice_desest": 123.66,
+              "var_anual_pp": -0.11,
+              "valor_hace_12": 1.33
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1.21,
+              "var_mensual": 0.45,
+              "indice_desest": 124.22,
+              "var_anual_pp": -0.63,
+              "valor_hace_12": 1.84
+            }
+          ]
+        },
+        {
+          "codigo": "agro_mineria",
+          "actividad": "Agropecuario y minería",
+          "sector": "primarias",
+          "var_anual": -1.81,
+          "var_mensual": 3.53,
+          "var_anual_pp": -5.69,
+          "cambio_mes_pp": 0.69,
+          "indice": 107.66,
+          "indice_desest": 104.64,
+          "direccion_anual": "baja",
+          "rank_hoy": 7,
+          "rank_prev": 9,
+          "lectura_ranking": "Sube 2 puestos en el ranking",
+          "brecha_vs_total": -3.25,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2022.",
+          "puesto_anual": 7,
+          "puesto_variacion": 7,
+          "puesto_mensual": 3,
+          "barra": 38.3,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 0.82,
+              "var_mensual": -0.17,
+              "indice_desest": 106.57,
+              "var_anual_pp": -3.84,
+              "valor_hace_12": 4.66
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": -2.34,
+              "var_mensual": -5.59,
+              "indice_desest": 100.61,
+              "var_anual_pp": -0.14,
+              "valor_hace_12": -2.2
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -3.57,
+              "var_mensual": 1.07,
+              "indice_desest": 101.68,
+              "var_anual_pp": -6.24,
+              "valor_hace_12": 2.67
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": -3.87,
+              "var_mensual": 0.01,
+              "indice_desest": 101.7,
+              "var_anual_pp": -2.59,
+              "valor_hace_12": -1.28
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": -3.41,
+              "var_mensual": 0.69,
+              "indice_desest": 102.4,
+              "var_anual_pp": -1.59,
+              "valor_hace_12": -1.82
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 1.22,
+              "var_mensual": 2.36,
+              "indice_desest": 104.82,
+              "var_anual_pp": -8.49,
+              "valor_hace_12": 9.71
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": -2.98,
+              "var_mensual": -2.28,
+              "indice_desest": 102.43,
+              "var_anual_pp": 0.32,
+              "valor_hace_12": -3.3
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0.24,
+              "var_mensual": -0.16,
+              "indice_desest": 102.27,
+              "var_anual_pp": 2.79,
+              "valor_hace_12": -2.55
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0.87,
+              "var_mensual": 1.58,
+              "indice_desest": 103.89,
+              "var_anual_pp": -1.6,
+              "valor_hace_12": 2.47
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -4.14,
+              "var_mensual": -1.26,
+              "indice_desest": 102.58,
+              "var_anual_pp": -4.01,
+              "valor_hace_12": -0.13
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -2.5,
+              "var_mensual": -1.47,
+              "indice_desest": 101.07,
+              "var_anual_pp": -1.46,
+              "valor_hace_12": -1.04
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": -1.81,
+              "var_mensual": 3.53,
+              "indice_desest": 104.64,
+              "var_anual_pp": -5.69,
+              "valor_hace_12": 3.88
+            }
+          ]
+        },
+        {
+          "codigo": "financieras",
+          "actividad": "Actividades financieras",
+          "sector": "terciarias",
+          "var_anual": -3.44,
+          "var_mensual": -1.86,
+          "var_anual_pp": -8.44,
+          "cambio_mes_pp": -4.9,
+          "indice": 153.01,
+          "indice_desest": 153.15,
+          "direccion_anual": "baja",
+          "rank_hoy": 8,
+          "rank_prev": 3,
+          "lectura_ranking": "Baja 5 puestos en el ranking",
+          "brecha_vs_total": -4.88,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre en toda la serie (desde 2005).",
+          "puesto_anual": 8,
+          "puesto_variacion": 9,
+          "puesto_mensual": 9,
+          "barra": 72.7,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": 3.06,
+              "var_mensual": -2.16,
+              "indice_desest": 154.99,
+              "var_anual_pp": 0.22,
+              "valor_hace_12": 2.84
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1.94,
+              "var_mensual": -0.59,
+              "indice_desest": 154.07,
+              "var_anual_pp": -0.14,
+              "valor_hace_12": 2.08
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -3.2,
+              "var_mensual": -4.43,
+              "indice_desest": 147.25,
+              "var_anual_pp": 2.37,
+              "valor_hace_12": -5.57
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": -0.39,
+              "var_mensual": 3.14,
+              "indice_desest": 151.87,
+              "var_anual_pp": -1.76,
+              "valor_hace_12": 1.37
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1.54,
+              "var_mensual": 1.99,
+              "indice_desest": 154.89,
+              "var_anual_pp": -2.24,
+              "valor_hace_12": 3.78
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7.16,
+              "var_mensual": 5.22,
+              "indice_desest": 162.97,
+              "var_anual_pp": 1.84,
+              "valor_hace_12": 5.32
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 2.58,
+              "var_mensual": -3.87,
+              "indice_desest": 156.66,
+              "var_anual_pp": 0.18,
+              "valor_hace_12": 2.4
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1.84,
+              "var_mensual": 2.12,
+              "indice_desest": 159.98,
+              "var_anual_pp": -7.55,
+              "valor_hace_12": 9.39
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8.83,
+              "var_mensual": -1.39,
+              "indice_desest": 157.77,
+              "var_anual_pp": 11.68,
+              "valor_hace_12": -2.85
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -0.4,
+              "var_mensual": -1.11,
+              "indice_desest": 156.02,
+              "var_anual_pp": -6.48,
+              "valor_hace_12": 6.08
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1.46,
+              "var_mensual": 0.02,
+              "indice_desest": 156.05,
+              "var_anual_pp": -0.29,
+              "valor_hace_12": 1.75
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": -3.44,
+              "var_mensual": -1.86,
+              "indice_desest": 153.15,
+              "var_anual_pp": -8.44,
+              "valor_hace_12": 5.0
+            }
+          ]
+        },
+        {
+          "codigo": "tic",
+          "actividad": "Información y comunicaciones",
+          "sector": "terciarias",
+          "var_anual": -4.73,
+          "var_mensual": -1.02,
+          "var_anual_pp": -6.96,
+          "cambio_mes_pp": -2.32,
+          "indice": 127.14,
+          "indice_desest": 126.33,
+          "direccion_anual": "baja",
+          "rank_hoy": 9,
+          "rank_prev": 8,
+          "lectura_ranking": "Baja 1 puesto en el ranking",
+          "brecha_vs_total": -6.17,
+          "lectura_vs_total": "por debajo del total de la economía",
+          "comentario_popular": "El crecimiento anual más bajo para un septiembre desde 2009.",
+          "puesto_anual": 9,
+          "puesto_variacion": 8,
+          "puesto_mensual": 8,
+          "barra": 100.0,
+          "serie_12m": [
+            {
+              "mes": "Oct",
+              "anio": 2025,
+              "valor": -0.76,
+              "var_mensual": -2.31,
+              "indice_desest": 129.54,
+              "var_anual_pp": 3.03,
+              "valor_hace_12": -3.79
+            },
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": -0.51,
+              "var_mensual": 0.12,
+              "indice_desest": 129.69,
+              "var_anual_pp": -0.17,
+              "valor_hace_12": -0.34
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": -1.64,
+              "var_mensual": 1.84,
+              "indice_desest": 132.07,
+              "var_anual_pp": -7.73,
+              "valor_hace_12": 6.09
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1.37,
+              "var_mensual": -0.57,
+              "indice_desest": 131.31,
+              "var_anual_pp": 0.75,
+              "valor_hace_12": 0.62
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": -0.1,
+              "var_mensual": -0.37,
+              "indice_desest": 130.82,
+              "var_anual_pp": -2.21,
+              "valor_hace_12": 2.11
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3.36,
+              "var_mensual": -0.08,
+              "indice_desest": 130.72,
+              "var_anual_pp": 4.2,
+              "valor_hace_12": -0.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 1.1,
+              "var_mensual": 0.85,
+              "indice_desest": 131.84,
+              "var_anual_pp": -1.65,
+              "valor_hace_12": 2.75
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1.58,
+              "var_mensual": -0.19,
+              "indice_desest": 131.59,
+              "var_anual_pp": 0.44,
+              "valor_hace_12": 1.14
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": -2.6,
+              "var_mensual": -2.03,
+              "indice_desest": 128.92,
+              "var_anual_pp": -6.81,
+              "valor_hace_12": 4.21
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": -1.66,
+              "var_mensual": 0.54,
+              "indice_desest": 129.62,
+              "var_anual_pp": -4.86,
+              "valor_hace_12": 3.2
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": -2.41,
+              "var_mensual": -1.54,
+              "indice_desest": 127.62,
+              "var_anual_pp": -3.05,
+              "valor_hace_12": 0.64
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": -4.73,
+              "var_mensual": -1.02,
+              "indice_desest": 126.33,
+              "var_anual_pp": -6.96,
+              "valor_hace_12": 2.23
+            }
+          ]
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total economía",
+          "var_anual": 1.44,
+          "var_anual_pp": -2.66,
+          "var_mensual": 2.82
+        }
+      ]
+    }
+  },
+  "serie": {
+    "doce_meses": [
+      {
+        "mes": "Oct",
+        "anio": 2025,
+        "valor": 3.22,
+        "var_mensual": 0.51,
+        "indice_desest": 127.51,
+        "var_anual_pp": -0.3,
+        "valor_hace_12": 3.52
+      },
+      {
+        "mes": "Nov",
+        "anio": 2025,
+        "valor": 2.41,
+        "var_mensual": -1.51,
+        "indice_desest": 125.59,
+        "var_anual_pp": 1.97,
+        "valor_hace_12": 0.44
+      },
+      {
+        "mes": "Dic",
+        "anio": 2025,
+        "valor": 0.7,
+        "var_mensual": 0.26,
+        "indice_desest": 125.92,
+        "var_anual_pp": -3.0,
+        "valor_hace_12": 3.7
+      },
+      {
+        "mes": "Ene",
+        "anio": 2026,
+        "valor": 0.85,
+        "var_mensual": 0.16,
+        "indice_desest": 126.12,
+        "var_anual_pp": -1.19,
+        "valor_hace_12": 2.04
+      },
+      {
+        "mes": "Feb",
+        "anio": 2026,
+        "valor": 1.25,
+        "var_mensual": 0.56,
+        "indice_desest": 126.82,
+        "var_anual_pp": 0.07,
+        "valor_hace_12": 1.18
+      },
+      {
+        "mes": "Mar",
+        "anio": 2026,
+        "valor": 3.91,
+        "var_mensual": 1.13,
+        "indice_desest": 128.25,
+        "var_anual_pp": -0.37,
+        "valor_hace_12": 4.28
+      },
+      {
+        "mes": "Abr",
+        "anio": 2026,
+        "valor": 3.16,
+        "var_mensual": 0.18,
+        "indice_desest": 128.48,
+        "var_anual_pp": 3.3,
+        "valor_hace_12": -0.14
+      },
+      {
+        "mes": "May",
+        "anio": 2026,
+        "valor": 4.4,
+        "var_mensual": 1.42,
+        "indice_desest": 130.3,
+        "var_anual_pp": 2.33,
+        "valor_hace_12": 2.07
+      },
+      {
+        "mes": "Jun",
+        "anio": 2026,
+        "valor": 3.56,
+        "var_mensual": -1.13,
+        "indice_desest": 128.83,
+        "var_anual_pp": 0.02,
+        "valor_hace_12": 3.54
+      },
+      {
+        "mes": "Jul",
+        "anio": 2026,
+        "valor": 0.25,
+        "var_mensual": -0.07,
+        "indice_desest": 128.74,
+        "var_anual_pp": -4.72,
+        "valor_hace_12": 4.97
+      },
+      {
+        "mes": "Ago",
+        "anio": 2026,
+        "valor": -0.56,
+        "var_mensual": -2.71,
+        "indice_desest": 125.25,
+        "var_anual_pp": -3.32,
+        "valor_hace_12": 2.76
+      },
+      {
+        "mes": "Sep",
+        "anio": 2026,
+        "valor": 1.44,
+        "var_mensual": 2.82,
+        "indice_desest": 128.78,
+        "var_anual_pp": -2.66,
+        "valor_hace_12": 4.1
+      }
+    ],
+    "mismo_mes": [
+      {
+        "anio": 2022,
+        "valor": 4.21,
+        "var_mensual": 0.96
+      },
+      {
+        "anio": 2023,
+        "valor": -0.46,
+        "var_mensual": 0.0
+      },
+      {
+        "anio": 2024,
+        "valor": 0.53,
+        "var_mensual": -0.56
+      },
+      {
+        "anio": 2025,
+        "valor": 4.1,
+        "var_mensual": 0.79
+      },
+      {
+        "anio": 2026,
+        "valor": 1.44,
+        "var_mensual": 2.82
+      }
+    ]
+  }
+}

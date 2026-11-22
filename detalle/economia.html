@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Detalle · Así Vamos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/shell.css?v=23">
+<style>
+:root{
+  --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
+  --acc:#0f6b7a; --up:#14b8a6; --dn:#e8553d; --up-l:#14b8a6; --dn-l:#e8553d; /* economía: crecer = verde, caer = rojo */
+  --mal:#e8553d; --ok:#14b8a6; --up-t:#0b8577; --dn-t:#c4412b;
+  --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+.up{color:var(--up)} .dn{color:var(--dn)}
+/* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
+.vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
+a,button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+/* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
+header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
+.hd-left{flex:1 1 0}
+.hd-right{flex:none}
+/* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
+main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100% - var(--col))/2)) 24px;display:grid;gap:18px;align-content:start}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
+.card h2{margin:0 0 12px;font-size:19px;font-weight:700}
+.badge{position:absolute;top:-10px;right:14px;background:#dde5ea;color:#3f5563;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
+.mute{color:var(--mute)} small{font-size:13px}
+/* hero (card pequeña, cambia con la selección) */
+.hero{display:flex;flex-direction:column;gap:8px}
+.hero .kick{font-size:14px;color:var(--mute);line-height:1.2}
+.hero .ttl{font-size:20px;font-weight:700;line-height:1.2}
+.hero .big{font-size:64px;font-weight:700;line-height:1;letter-spacing:-1px;margin:2px 0 4px}
+.hero .big span{font-size:26px;margin-left:4px;color:var(--mute)}
+.vars{display:grid;gap:10px}
+/* etiqueta arriba, cifra debajo: el texto no se comprime junto a la cifra */
+.vars div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.vars span{font-size:13px;line-height:1.2}
+.vars b{font-size:20px;line-height:1.1;white-space:nowrap}
+.hero .src{margin-top:auto;font-size:12.5px;line-height:1.3}
+/* hallazgos */
+.hz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
+.hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
+.hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
+.hz p{margin:0;font-size:17px}
+/* sexo */
+.sx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sx button{all:unset;cursor:pointer;display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r)}
+.sx button:focus-visible{outline:2px solid var(--acc)}
+.sx button[aria-pressed=true]{border-color:var(--acc);background:#eef6f7}
+.sx .n{font-size:15px;color:var(--mute)} .sx .t{font-size:40px;font-weight:700;line-height:1.1}
+.sx .row2{display:flex;justify-content:space-between;margin-top:6px}
+.brecha{margin:12px 0 0;font-size:17px}
+.sxc .ref{margin:6px 0 0;font-size:13px}
+/* ciudades */
+.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.head h2{margin:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
+.seg button[aria-pressed=true]{background:var(--acc);color:#fff}
+.list{display:grid;align-content:start}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(20,184,166,var(--a,.1))}
+.row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
+.row .vl{display:block}
+.row:focus-visible{outline:2px solid var(--acc)}
+.rk{color:var(--mute);text-align:right;font-size:14px}
+.nm{display:grid;gap:5px;min-width:0}
+.nm>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{display:block;height:6px;background:#e6ecef;border-radius:3px;overflow:hidden}
+.bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
+.vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
+.vr{text-align:right;font-size:15px;font-weight:500}
+.ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
+/* bloque superior (3 columnas). General: gráfica (2) + indicador (1). Ciudades: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
+.top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px;scroll-margin-top:84px}
+.top>.card{display:flex;flex-direction:column;min-width:0}
+.cg{grid-column:2/4;grid-row:1;min-height:300px}
+.top>.hero{grid-column:3;grid-row:1}
+.top.g .cg{grid-column:1/3}
+.cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
+.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "big vars" "src src";column-gap:20px;row-gap:6px;align-content:start}
+.top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
+.top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
+.top:not(.g)>.hero .ttl{font-size:22px}
+.top:not(.g)>.hero .big{align-self:center;margin:0}
+.top:not(.g)>.hero .src{grid-area:src;margin-top:6px}
+.cl .head h2{font-size:17px}
+.cl .seg button{padding:4px 10px;font-size:14px}
+.cl .list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
+.cl .vl strong{font-size:17px}
+.cl .ref{margin:8px 0 0;font-size:13px;line-height:1.3}
+.cg #chart{flex:1;display:flex;align-items:center}
+.cg #chart>*{width:100%}
+.sub2{margin:18px 0 4px;font-size:16px;font-weight:700}
+.cg .hz .card{box-shadow:none;background:#f6f8f9}
+.cg .hz{align-self:flex-start}
+/* TOP: listas completas, los nombres largos pueden ocupar dos líneas */
+.t5 .nm>span:first-child{white-space:normal;overflow:visible}
+.t5 h2 small{font-size:14px;font-weight:500}
+#app>.tabs{margin:0}
+/* top 5 cambio anual */
+.tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.tres>.sxc{grid-column:1/-1}
+.t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
+.tr{all:unset;cursor:pointer;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:center;padding:9px 6px;border-top:1px solid var(--line);width:calc(100% - 12px)}
+.tr:hover{background:#f4f7f8} .tr[aria-pressed=true]{background:#e8f3f5}
+.tr:focus-visible{outline:2px solid var(--acc)}
+.tr .bar b.up{background:var(--up)} .tr .bar b.dn{background:var(--dn)}
+.tr .vl strong.up{color:var(--up-t)} .tr .vl strong.dn{color:var(--dn-t)}
+.t5 .vacio{margin:0;padding:12px 6px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+/* serie */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+svg{width:100%;height:auto;display:block}
+svg text{font-family:inherit;fill:var(--mute);font-size:15px}
+svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
+.err{padding:24px;text-align:center}
+@media(max-width:600px){
+  .top{grid-template-columns:1fr}
+  .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
+  .top:not(.g)>.hero{display:flex}
+  .top:not(.g)>.hero .vars{grid-template-columns:1fr}
+  .cl{contain:none;height:340px;min-height:0}
+  .tres{grid-template-columns:1fr}
+}
+@media(max-width:420px){.hz{grid-template-columns:1fr}}
+/* divisiones de gasto */
+.sx{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.sx .n{line-height:1.2;min-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sx .t{font-size:34px}.sx .row2{gap:8px;font-size:14px}
+.gt{margin:18px 0 4px;font-size:16px;font-weight:700}
+.tr.g{cursor:default;width:100%}
+.hero.wt{grid-template-areas:"kick tabs" "ttl ttl" "big vars" "src src"!important}
+.hero.wt.gr{grid-template-areas:"kick tabs" "ttl ttl" "gl gl"!important}
+.hero .htabs{grid-area:tabs;justify-self:end;margin:0}
+.hero .htabs button{padding:3px 12px;font-size:14px}
+.gwrap{grid-area:gl;min-width:0}
+.glist{max-height:250px;overflow-y:auto;overscroll-behavior:contain;border-bottom:1px solid var(--line)}
+.glist .tr:first-child{border-top:0}
+.gwrap .ref{margin:6px 0 0;font-size:13px}.tr.g:hover{background:none}
+.tr.g .wrap{white-space:normal;overflow:visible}
+.tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
+.hero .src{line-height:1.35}
+/* Ciudades y Divisiones en celular: en vez del rótulo ("Inflación por ciudad" / "por división de gasto"), el panel muestra el nombre elegido (en escritorio queda el rótulo y debajo el nombre) */
+.hero .kc{display:none}
+/* Ciudades y Divisiones, escritorio: sin el rótulo "Inflación por ciudad / por división de gasto" (el nombre ya está como título del panel) */
+.hero .kick.kv{display:none}
+@media(max-width:600px){
+  body .top:not(.g)>.hero .kick.kv{display:block}
+  body .top:not(.g)>.hero .kk{display:none}
+  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
+}
+/* Celular: la lista de ciudades / divisiones se presenta como select */
+@media(max-width:600px){
+  /* el nombre del select se recorta a una sola línea (el nombre completo está en el panel del indicador) */
+  .selT{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cl .list{display:none}
+  .cl{height:auto;min-height:0}
+}
+/* flecha del título del header: mismos colores que el resto de la página */
+header .ar.up{color:#2dd4bf} header .ar.dn{color:#f0735e}
+.row .nm>small{font-size:12px;line-height:1.1}
+</style>
+</head>
+<body class="app">
+<header class="hd">
+  <div class="hd-left">
+    <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
+  </div>
+  <div class="hd-title" id="hdTitle" aria-live="polite"></div>
+  <nav class="hd-mid" aria-label="Vista">
+    <button type="button" class="vt" data-vista="gen" aria-pressed="true">Total</button>
+    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
+    <button type="button" class="vt" data-vista="sec" aria-pressed="false">Sectores</button>
+    <button type="button" class="vt" data-vista="act" aria-pressed="false">Actividades</button>
+  </nav>
+  <div class="hd-right">
+    <div class="btn-group">
+      <a class="help-btn" href="../index.html" aria-label="Volver al inicio" title="Inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h5v-6h3v6h5V10"/></svg></a>
+    </div>
+  </div>
+</header>
+<main id="app" aria-live="polite"><div class="card err mute">Cargando…</div></main>
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="ad-wrap" id="adWrap">
+      <div class="ad-label">Aliado estratégico</div>
+      <div class="sp" id="adA"><span>Espacio publicitario</span></div>
+    </div>
+    <p class="foot-txt">Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
+  </div>
+</footer>
+
+<script>
+const IND = new URLSearchParams(location.search).get('ind') || 'economia';
+const URL_JSON = `data/detalle_${IND}.json`;
+const $ = s => document.querySelector(s);
+// Celular: el select va invisible sobre un título que muestra completo (con saltos de línea) el valor elegido
+function selTitle() {
+  const sl = document.getElementById('selLista'), t = document.getElementById('selT');
+  if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
+}
+document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
+// Destacado "nacional": en celular no va en la lista de destacados (se oculta con .nac)
+const esNac = x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*(desempleo|inflaci[oó]n|costo de vida)\s+nacional\b/i.test(x.titulo || '') || /^\s*crecimiento de la econom[ií]a/i.test(x.titulo || '');
+// Carrusel de gráficas (celular): flechas y puntos de guía
+const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
+const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
+function dosAct(d) {
+  const i = Math.round(d.scrollLeft / dosPaso(d)), nav = d.parentNode.querySelector('.dnav'); if (!nav) return;
+  nav.querySelectorAll('i').forEach((x, k) => x.classList.toggle('on', k === i));
+  nav.querySelector('[data-dir="-1"]').disabled = i <= 0; nav.querySelector('[data-dir="1"]').disabled = i >= 1;
+}
+document.addEventListener('scroll', e => { if (e.target.classList && e.target.classList.contains('dos')) dosAct(e.target); }, true);
+document.addEventListener('click', e => {
+  const b = e.target.closest('.dnav button'); if (!b) return;
+  const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
+  d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
+});
+// Destacado "variación del mes": tampoco va en la lista (ya está en el panel del indicador)
+const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
+const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
+// Nombres del DANE vienen en Title Case ("Restaurantes Y Hoteles"): se pasan a formato de oración
+const nm = s => String(s ?? '').replace(/\b(Y|De|Del|La|El|Los|Las|Para|Por|En|Con|A|O)\b/g, (m, _, o) => o ? m.toLowerCase() : m);
+// En economía, crecer es lo bueno (verde, clase 'up') y caer lo malo (rojo, clase 'dn'); los colores se invierten en :root
+const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
+const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
+
+// vista: 'gen' (total) | 'top' | 'sec' (sectores: primarias/secundarias/terciarias) | 'act' (actividades). sc = sector elegido; a = actividad elegida.
+const SEC = {primarias: 'Primarias', secundarias: 'Secundarias', terciarias: 'Terciarias'};
+let D, st = {vista: 'gen', g: null, a: null, sc: null, tab: 'doce', htab: 'sec', gtab: 'graf', ttab: 'act'};
+const total = () => ({nombre: 'Total economía', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
+const actSerie = a => ({nombre: a.actividad, datos: a.serie_12m, tipo: 'act', d: a});
+const secSerie = s => ({nombre: nm(s.sector), datos: s.serie_12m, tipo: 'sec', d: s});
+const cur = () => st.vista === 'gen' ? st.g : st.vista === 'sec' ? st.sc : st.a;
+const porPuesto = it => [...it].sort((a, b) => a.puesto_anual - b.puesto_anual);
+
+fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    D = d; st.g = total();
+    const pa = porPuesto(d.dimensiones.actividades.items)[0]; st.a = pa ? actSerie(pa) : null;
+    const ps = porPuesto(d.dimensiones.sectores.items)[0]; st.sc = ps ? secSerie(ps) : null;
+    render();
+  })
+  .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend (kpi.vw_economia_detalle → campo detalle) y publícalo en la carpeta data/ junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
+
+// Título del header: "<indicador> - <mes>", el mes sale de periodo (JSON)
+function tituloHeader(nombre) {
+  const p = D && D.periodo || {};
+  const norm = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const busca = t => (norm(t).match(/\b(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)[a-z]*\b/) || [])[1];
+  const m = busca(p.mes_nombre) || busca(p.etiqueta);
+  const t = $('#hdTitle');
+  t.textContent = m ? `${nombre} - ${m[0].toUpperCase()}${m.slice(1)}` : nombre;
+  // Flecha tras el mes: sube (rojo) / baja (verde) frente al mes anterior
+  const dlt = D && D.hero ? D.hero.cambio_mes_pp : null;
+  if (dlt != null && Math.abs(dlt) >= 0.005) {
+    const ar = document.createElement('span');
+    ar.className = 'ar ' + (dlt > 0 ? 'up' : 'dn');
+    ar.textContent = dlt > 0 ? '▲' : '▼';
+    ar.setAttribute('aria-label', dlt > 0 ? 'subió frente al mes anterior' : 'bajó frente al mes anterior');
+    t.appendChild(ar);
+  }
+}
+
+function render() {
+  document.title = 'Economía · Así Vamos';
+  tituloHeader('Economía');
+  $('#app').classList.toggle('vtop', st.vista === 'top');
+  const dim = D.dimensiones, gen = st.vista === 'gen';
+  document.querySelectorAll('[data-vista]').forEach(b => b.setAttribute('aria-pressed', b.dataset.vista === st.vista));
+
+  if (gen) {
+    $('#app').innerHTML = `
+    <button class="swd" id="swd" type="button" role="switch" aria-checked="false" data-gtab="dest"><span>Destacados</span><i class="swd-k"></i></button>
+    <div class="top g" id="top">
+      <section class="card cg" aria-label="Serie">
+        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
+        <div id="chart"></div>
+      </section>
+      <section class="card hero" id="hero" aria-label="Indicador"></section>
+    </div>`;
+  } else if (st.vista === 'top') {
+    $('#app').innerHTML = `
+    <div class="tabs" role="group" aria-label="Ver por">
+      <button data-ttab="act" aria-pressed="${st.ttab === 'act'}">Actividades</button>
+      <button data-ttab="sec" aria-pressed="${st.ttab === 'sec'}">Sectores</button>
+    </div>
+    <div class="tres">
+      <section class="card t5" id="t5s" aria-label="Aceleraron"></section>
+      <section class="card t5" id="t5b" aria-label="Desaceleraron"></section>
+    </div>
+    <p class="ref" style="margin:-6px 0 0">pp = puntos porcentuales: cambio del crecimiento anual frente a hace un año, por actividad y por sector. Toca una actividad o un sector para ver su detalle.</p>`;
+    top5();
+  } else {
+    const sec = st.vista === 'sec';
+    $('#app').innerHTML = `
+    <div class="top" id="top">
+      <section class="card cl" aria-label="${sec ? 'Por sector' : 'Por actividad'}">
+        <div class="head"><h2>${sec ? 'Por sector' : 'Por actividad'}</h2><small class="mute">Crecimiento anual</small></div>
+        <div class="clfoot"><small class="mute clm">Crecimiento anual</small><p class="ref">${refTxt(dim[sec ? 'sectores' : 'actividades'].referencias)}</p></div>
+        <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir"></select></div>
+        ${sec ? '<div class="tabs htabs mtabs" id="mtabs" role="group" aria-label="Contenido del panel"></div>' : ''}
+        <div class="list" id="lista"></div>
+      </section>
+      <section class="card cg" aria-label="Serie">
+        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
+        <div id="chart"></div>
+      </section>
+      <section class="card hero" id="hero" aria-label="Indicador"></section>
+    </div>`;
+    lista();
+  }
+  if (st.vista !== 'top') { hero(); serie(); }
+}
+
+function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${fmt(r.var_anual)} %`).join(' · '); }
+
+// Card de indicador: total de la economía por defecto; cambia con la actividad o el sector elegidos
+function hero() {
+  const s = cur(), h = D.hero, per = D.periodo, d = s.d;
+  let kick = '', ttl = 'Crecimiento de la economía', tasa = h.crecimiento_anual, com = h.comentario_popular, idx = h.indice_desest, extra = '';
+  const src = `${per.etiqueta} · Fuente: ${D.fuente}`;
+  const pp = (l, v) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v)}</b></div>`;
+  let filas;
+  if (s.tipo === 'nac') {
+    filas = `<div><span class="mute">Variación del mes</span><b class="${cls(h.variacion_mensual)}">${fmt(h.variacion_mensual)} %</b></div>`
+      + `<div><span class="mute">Mismo mes, año anterior</span><b>${fmt(h.variacion_mensual_hace_un_ano)} %</b></div>`
+      + pp('Vs. mes anterior', h.cambio_mes_pp) + pp('Vs. hace un año', h.var_anual_pp);
+  } else {
+    kick = s.tipo === 'act' ? 'Crecimiento por actividad' : 'Crecimiento por sector';
+    ttl = s.nombre; tasa = d.var_anual; com = d.comentario_popular; idx = d.indice_desest;
+    if (s.tipo === 'act') extra = `Sector: ${esc(SEC[d.sector] || d.sector)}`;
+    filas = `<div><span class="mute">Variación del mes</span><b class="${cls(d.var_mensual)}">${fmt(d.var_mensual)} %</b></div>`
+      + pp('Vs. mes anterior', d.cambio_mes_pp) + pp('Vs. hace un año', d.var_anual_pp)
+      + `<div><span class="mute">Frente al total de la economía</span><b class="${cls(d.brecha_vs_total)}">${flecha(d.brecha_vs_total)} ${sg(d.brecha_vs_total)}</b></div>`;
+  }
+  if (idx != null) extra += `${extra ? ' · ' : ''}Índice desestacionalizado: ${fmt(idx)}`;
+  const enSec = s.tipo === 'sec', gr = enSec && st.htab === 'acts';
+  $('#hero').className = 'card hero' + (enSec ? ' wt' + (gr ? ' gr' : '') : '');
+  const nA = enSec ? (d.actividades || []).length : 0;
+  const tabBtns = enSec ? `<button data-htab="sec" aria-pressed="${!gr}">Sector</button>
+      <button data-htab="acts" aria-pressed="${gr}">Actividades${nA ? ` (${nA})` : ''}</button>` : '';
+  const tabsH = enSec ? `<div class="tabs htabs" role="group" aria-label="Contenido del panel">${tabBtns}</div>` : '';
+  const cuerpo = gr ? actsHtml(d) : `<div class="big ${cls(tasa)}">${fmt(tasa)}<span>%</span></div>
+    <div class="vars">${filas}</div>
+    <small class="mute src">${com ? esc(com) + '<br>' : ''}${extra ? extra + '<br>' : ''}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
+  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
+    <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
+  // Celular: las pestañas Sector / Actividades van bajo el select; en Actividades se oculta la gráfica (clase vgr)
+  const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;
+  const tp = $('#top'); if (tp) tp.classList.toggle('vgr', gr);
+}
+
+// Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
+function marcar() {
+  const sec = st.vista === 'sec', items = D.dimensiones[sec ? 'sectores' : 'actividades'].items, sel = (sec ? st.sc : st.a).d, sl = $('#selLista');
+  document.querySelectorAll(sec ? '[data-sc]' : '[data-ac]').forEach(x => x.setAttribute('aria-pressed', items[sec ? x.dataset.sc : x.dataset.ac] === sel));
+  if (sl) sl.value = items.indexOf(sel); selTitle();
+}
+
+// Actividades del sector elegido (van dentro del panel; con scroll si la lista es larga)
+function actsHtml(d) {
+  const gs = [...(d.actividades || [])].sort((a, b) => b.var_anual - a.var_anual), mx = Math.max(...gs.map(g => Math.abs(g.var_anual)), 0.01);
+  if (!gs.length) return '<div class="gwrap"><p class="vacio">Este sector no tiene actividades.</p></div>';
+  return `<div class="gwrap"><div class="glist" tabindex="0" aria-label="Actividades del sector">${gs.map((g, i) => `
+    <div class="tr g">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span class="wrap">${esc(g.actividad)}</span><span class="bar"><b class="${cls(g.var_anual)}" style="width:${100 * Math.abs(g.var_anual) / mx}%"></b></span></span>
+      <span class="vl"><strong class="${cls(g.var_anual)}">${fmt(g.var_anual)} %</strong>
+        <small class="${cls(g.var_anual_pp)}">${flecha(g.var_anual_pp)} ${sg(g.var_anual_pp)} pp</small></span></div>`).join('')}</div>
+    <p class="ref">Crecimiento anual de cada actividad; debajo, cambio frente a hace un año en pp (puntos porcentuales).</p></div>`;
+}
+
+// Lista lateral: sectores o actividades, ordenadas por crecimiento anual
+function lista() {
+  const sec = st.vista === 'sec', todas = D.dimensiones[sec ? 'sectores' : 'actividades'].items, items = porPuesto(todas), sel = (sec ? st.sc : st.a).d;
+  const nom = c => sec ? nm(c.sector) : c.actividad, attr = sec ? 'data-sc' : 'data-ac';
+  const ts = items.map(c => c.var_anual || 0), mx = Math.max(...ts), mn = Math.min(...ts);
+  const l = $('#lista');
+  l.innerHTML = items.map((c, i) => {
+    const a = .08 + .52 * ((c.var_anual || 0) - mn) / ((mx - mn) || 1);
+    return `<button class="row" style="--a:${a.toFixed(2)}" ${attr}="${todas.indexOf(c)}" title="${esc(nom(c))}" aria-pressed="${sel === c}">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span>${esc(nom(c))}</span>${sec ? '' : `<small class="mute">${esc(SEC[c.sector] || c.sector)}</small>`}</span>
+      <span class="vl"><strong>${fmt(c.var_anual)} %</strong></span></button>`;
+  }).join('');
+  const r = l.querySelector('[aria-pressed=true]');
+  if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
+  const sl = $('#selLista');
+  sl.setAttribute('aria-label', sec ? 'Elegir sector' : 'Elegir actividad');
+  sl.innerHTML = items.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fmt(c.var_anual)} % · ${esc(nom(c))}</option>`).join(''); selTitle();
+}
+
+// Top: actividades / sectores que más aceleraron o se desaceleraron (pp frente a hace un año)
+function top5() {
+  const dim = D.dimensiones, cnt = {up: 0, dn: 0};
+  const bloque = (tit, todas, nom, attr, k, vacio) => {
+    const items = todas.filter(c => c.var_anual_pp != null);
+    const arr = (k === 'up' ? items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp)
+                            : items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp));
+    const mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
+    cnt[k] = arr.length;
+    return `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
+    <button class="tr" ${attr}="${todas.indexOf(c)}" title="${esc(nom(c))}" aria-pressed="false">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span>${esc(nom(c))}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
+      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
+  };
+  const act = st.ttab === 'act';
+  const todas = act ? dim.actividades.items : dim.sectores.items, nomf = act ? (c => c.actividad) : (c => nm(c.sector)), attr = act ? 'data-ac' : 'data-sc';
+  const et = act ? 'Actividades' : 'Sectores', ning = act ? 'Ninguna actividad' : 'Ningún sector';
+  $('#t5s').innerHTML = bloque(`${et} que aceleraron`, todas, nomf, attr, 'up', `${ning} aceleró frente a hace un año.`);
+  $('#t5b').innerHTML = bloque(`${et} que se desaceleraron`, todas, nomf, attr, 'dn', `${ning} se desaceleró frente a hace un año.`);
+  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
+  const wu = cnt.up > cnt.dn ? 60 : cnt.up < cnt.dn ? 40 : 50;
+  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
+}
+
+function serie() {
+  const s = cur(), dest = s.nac && st.gtab === 'dest';
+  // Ciudades y divisiones: el título es solo "Últimos 12 meses" (el nombre ya está en el panel del indicador)
+  $('#serieT').innerHTML = !s.nac ? '<span class="serTx">Últimos 12 meses</span>'
+    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
+  // Nacional: pestañas Gráficas / Destacados
+  $('#tabs').innerHTML = s.nac
+    ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
+    : '';
+  $('#chart').innerHTML = dest ? hallazgosHtml()
+    : s.nac
+    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
+    : grafica(s.datos || [], false);
+  // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
+  const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
+  const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
+}
+
+// Paneles de hallazgos (antes en TOP); ahora dentro de General, pestaña Destacados
+function hallazgosHtml() {
+  return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x) && !esVarMes(x)).map(x => `
+    <div class="card ${/_alt[ao]$/.test(x.tipo) ? 'sube' : /_baj[ao]$/.test(x.tipo) ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
+      <h3>${esc(x.titulo)}</h3><p>${esc(nm(x.texto))}</p></div>`).join('')}</div>`;
+}
+
+function grafica(d, mm) {
+  if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
+  const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
+  const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
+  const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
+  let seg = '', pts = '', lab = '';
+  // 12 meses: si cada punto trae var_anual_pp (cambio vs. el mismo mes del año anterior), la línea va neutra y el color lo ponen los puntos
+  const yoy = !mm && d.some(p => p.var_anual_pp != null);
+  const zl = (mn - pad < 0 && mx + pad > 0) ? `<line x1="${L}" y1="${y(0)}" x2="${W - R}" y2="${y(0)}" stroke="#b8c6cd" stroke-width="1.5" stroke-dasharray="5 5"/><text x="${L}" y="${y(0) - 5}" font-size="12">0</text>` : '';
+  d.forEach((p, i) => {
+    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${yoy ? '#aebfc8' : p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
+    const ult = i === d.length - 1;
+    const cp = yoy && p.var_anual_pp != null ? (p.var_anual_pp > 0.004 ? 'var(--up-l)' : p.var_anual_pp < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
+    const tip = yoy && p.valor_hace_12 != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(p.valor)} % · hace un año: ${fmt(p.valor_hace_12)} % (${sg(p.var_anual_pp)} pp)</title>` : '';
+    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
+    if (i === 0 || ult || p.valor === mx || p.valor === mn)
+      lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor)}</text>`;
+    if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
+  });
+  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${zl}${seg}${pts}${lab}</svg>`;
+  return yoy ? `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> por encima del mismo mes del año anterior &nbsp; <span class="dn">●</span> por debajo</p></div>` : svg;
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b || !D) return;
+  const dim = D.dimensiones;
+  if (b.dataset.vista) {
+    if (b.dataset.vista === st.vista) return;
+    st.vista = b.dataset.vista; render(); $('#app').scrollTo({top: 0}); return;
+  }
+  if (b.dataset.htab) { st.htab = b.dataset.htab; hero(); return; }
+  if (b.dataset.ttab) { st.ttab = b.dataset.ttab; render(); return; }
+  if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
+  if (b.dataset.tab) {
+    st.tab = b.dataset.tab;
+  } else if (b.dataset.ac != null) {
+    st.a = actSerie(dim.actividades.items[b.dataset.ac]);
+    // desde TOP se abre el detalle de la actividad en su pestaña
+    if (st.vista !== 'act') { st.vista = 'act'; render(); $('#app').scrollTo({top: 0}); return; }
+  } else if (b.dataset.sc != null) {
+    st.sc = secSerie(dim.sectores.items[b.dataset.sc]); st.htab = 'sec';
+    if (st.vista !== 'sec') { st.vista = 'sec'; render(); $('#app').scrollTo({top: 0}); return; }
+  } else return;
+  marcar(); hero(); serie();
+});
+document.addEventListener('change', e => {
+  if (!D || e.target.id !== 'selLista') return;
+  const dim = D.dimensiones, i = e.target.value;
+  if (st.vista === 'act') st.a = actSerie(dim.actividades.items[i]);
+  else if (st.vista === 'sec') { st.sc = secSerie(dim.sectores.items[i]); st.htab = 'sec'; }
+  else return;
+  marcar(); hero(); serie();
+});
+</script>
+</body>
+</html>

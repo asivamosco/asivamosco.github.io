@@ -479,15 +479,20 @@ function grafica(d, mm) {
   const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
   const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
   let seg = '', pts = '', lab = '';
+  // 12 meses: si cada punto trae var_anual_pp (cambio vs. el mismo mes del año anterior), la línea va neutra y el color lo ponen los puntos
+  const yoy = !mm && d.some(p => p.var_anual_pp != null);
   d.forEach((p, i) => {
-    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="3.5" stroke-linecap="round"/>`;
+    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${yoy ? '#aebfc8' : p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
     const ult = i === d.length - 1;
-    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4}" fill="${ult ? '#fff' : 'var(--ink)'}" stroke="${ult ? 'var(--acc)' : 'none'}" stroke-width="3.5"/>`;
+    const cp = yoy && p.var_anual_pp != null ? (p.var_anual_pp > 0.004 ? 'var(--up-l)' : p.var_anual_pp < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
+    const tip = yoy && p.valor_hace_12 != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(p.valor, 1)} % · hace un año: ${fmt(p.valor_hace_12, 1)} % (${sg(p.var_anual_pp)} pp)</title>` : '';
+    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
     if (i === 0 || ult || p.valor === mx || p.valor === mn)
       lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor, 1)}</text>`;
     if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
   });
-  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
+  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
+  return yoy ? `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> por encima del mismo mes del año anterior &nbsp; <span class="dn">●</span> por debajo</p></div>` : svg;
 }
 
 // Dos series en una misma escala: mujeres (amarillo) y hombres (azul)
