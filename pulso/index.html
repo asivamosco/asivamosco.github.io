@@ -300,7 +300,7 @@ main.vt .mid{align-self:start;padding-top:4px}
 .vtabs .sg button{flex:none;border:0;background:#fff;padding:7px 10px;cursor:pointer;font-weight:600;font-size:14px;white-space:nowrap}
 .vtabs .sg button+button{border-left:1px solid var(--line)}
 .vtabs .sg button[aria-selected=true]{background:#12303d;color:#fff;font-weight:700}
-.vtabs .info{display:none}.vb .vtabs .info{display:grid}
+.vtabs .info{display:none}.vb .vtabs .info,.vt .vtabs .info{display:grid}
 main.vb .mid{align-self:start}
 #barras{display:none}
 .vb #barras{display:flex;flex-direction:column;gap:8px}
@@ -333,7 +333,7 @@ main.vb .mid{align-self:start}
   .tcol .ptl{flex:1}
   .tcol .vtabs{flex:none;position:relative;z-index:2;flex-wrap:wrap;justify-content:center;gap:5px 6px;
     background:#fff;border-top:3px solid #12303d;border-radius:var(--r) var(--r) 0 0;
-    padding:7px 8px 8px;margin-bottom:-3px;box-shadow:0 -2px 8px rgba(18,48,61,.07),-3px 0 6px -2px rgba(18,48,61,.08),3px 0 6px -2px rgba(18,48,61,.08)}
+    padding:7px 8px 8px;margin-bottom:0;box-shadow:0 -2px 8px rgba(18,48,61,.07),-3px 0 6px -2px rgba(18,48,61,.08),3px 0 6px -2px rgba(18,48,61,.08)}
   .tcol .vtabs .bcap{flex:0 0 100%;text-align:center}
   .tcol .vtabs .sg{margin-left:0}
   .tcol .vtabs .sg button{padding:6px 8px;font-size:13.5px}
@@ -415,7 +415,8 @@ main.vp .mid{align-self:start}
 .psub{font-size:11px;line-height:1.1;color:var(--mute);white-space:nowrap}
 .ptick{position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:rgba(255,255,255,.9)}
 /* Panel por tema: título, ganador, % de cada uno, barra y cambios */
-.pitem{display:flex;flex-direction:column;gap:7px;width:100%;min-width:0;padding:9px 11px 8px;border:1px solid var(--line);border-radius:var(--r);background:#fff;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(18,48,61,.06)}
+.pitem{display:flex;flex-direction:column;gap:7px;width:100%;min-width:0;padding:7px 11px 8px;border:1px solid var(--line);border-radius:var(--r);background:#fff;cursor:pointer;text-align:left;box-shadow:0 1px 2px rgba(18,48,61,.06)}
+.pitem{border-top:3px solid var(--w,#a9bac4)}
 .pitem:hover{box-shadow:var(--sh)}
 .phead{display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center}
 .ptit{font-weight:800;font-size:14px;line-height:1.15}
@@ -435,7 +436,7 @@ main.vp .mid{align-self:start}
 @media(max-width:760px){
   .vp #pulso-pct{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
   .dw{display:none}
-  .pitem{padding:7px 8px 6px;gap:5px}
+  .pitem{padding:5px 8px 6px;gap:5px}
   .ptit{font-size:12.5px}.pwin{font-size:11.5px}
   .ppct{font-size:19px}.pbar{height:12px}
   .pdl{font-size:10.5px}.pmes{font-size:10px}
@@ -501,7 +502,7 @@ main{row-gap:0!important}
   .mid{padding-top:calc(4px + var(--t)*.04);padding-bottom:calc(4px + var(--t)*.04);gap:calc(4px + var(--t)*.02)}
   .vtabs .sg button{padding-top:calc(5px + var(--t)*.02);padding-bottom:calc(5px + var(--t)*.02)}
   .vp #pulso-pct{gap:calc(5px + var(--t)*.01)}
-  .pitem{padding:calc(5px + var(--t)*.02) 8px calc(4px + var(--t)*.02);gap:calc(2px + var(--t)*.03)}
+  .pitem{padding:calc(3px + var(--t)*.02) 8px calc(4px + var(--t)*.02);gap:calc(2px + var(--t)*.03)}
   .phead{gap:calc(var(--t)*.02)}
   .ptit{font-size:calc(12px + var(--t)*.005)}.pwin{font-size:calc(11px + var(--t)*.005)}
   .pgrid{row-gap:calc(3px + var(--t)*.03)}
@@ -514,10 +515,12 @@ main{row-gap:0!important}
    Escritorio: la pestaña de botones queda como estaba y la línea negra bajo las cards de los presidentes se mantiene.
    Celular: el panel blanco es solo la franja de botones (con su línea negra arriba). */
 @media(min-width:761px){
-  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none}
+  .mid{border-radius:0 0 var(--r) var(--r)}
+  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none;padding-left:0;padding-right:0}
 }
 @media(max-width:760px){
-  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none;border-top:0;border-radius:0;padding:0 1px 2px;gap:calc(3px + var(--t,88px)*.03)}
+  .mid{border-radius:0 0 var(--r) var(--r)}
+  main.vp .mid,main.vb .mid{background:transparent;box-shadow:none;border-top:0;border-radius:0;padding:0 0 2px;gap:calc(3px + var(--t,88px)*.03)}
   main.vp .mid>.vtabs,main.vb .mid>.vtabs{flex:none;background:#fff;border-top:3px solid #12303d;border-radius:0 0 var(--r) var(--r);box-shadow:var(--sh);padding:calc(3px + var(--t,88px)*.03) 10px}
 }
 </style>
@@ -688,7 +691,7 @@ function drawPulsoPct(){
     const v = veredicto(q), W = v === 'p' ? 'Mejor <b class="wp">Petro</b>' : v === 'a' ? 'Mejor <b class="wa">Abelardo</b>' : 'Empate', dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0];
     // Escritorio: "Aumentó +2,69 pp"; celular: "▲ +2,69 pp"
     const dv = (d, s) => { const z = Math.abs(d) < eps(q.d); return `<span class="${cls(q, s)}">${z ? 'Sin cambio' : `<span class="dw">${d > 0 ? 'Aumentó' : 'Decreció'} </span><span class="da">${d > 0 ? '▲' : '▼'} </span>${sg(d, q.d)}${q.du}`}</span>`; };
-    return `<button class="pitem" data-i="${i}" aria-label="${q.t}: ${W.replace(/<[^>]+>/g, '')}. Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
+    return `<button class="pitem" data-i="${i}" style="--w:${COL[v]}" aria-label="${q.t}: ${W.replace(/<[^>]+>/g, '')}. Petro ${r.p}%, Abelardo ${r.a}%. Ver serie">` +
       `<span class="phead"><span class="ptit">${q.t}</span><span class="pwin">${W}</span></span>` +
       `<span class="pgrid"><span class="ppct p">${r.p}%</span><span class="ppct a">${r.a}%</span>` +
       `<span class="pbar" title="Petro ${r.p}% · Abelardo ${r.a}%"><span class="pfp" style="width:${r.p}%"></span><span class="pfa" style="width:${r.a}%"></span><i class="ptick"></i></span>` +
@@ -700,7 +703,7 @@ function drawPulsoPct(){
 function drawTabla(){
   const s0 = Math.max(1, MA - 2), ms = [s0, s0 + 1, s0 + 2], NOM = {p:'Petro', a:'Abelardo', e:'Empate', n:'Sin dato'}, LT = {p:'Petro', a:'Abelardo', e:'Empate', n:'—'};
   let h = '<div class="r"><div class="th"></div>' + ms.map(m => `<div class="th">${etq(m)}</div>`).join('') + '</div>';
-  h += '<div class="r"><div class="th mkl"><button class="info info-t" aria-label="Cómo se compara">i</button><span>Marcador</span></div>' +
+  h += '<div class="r"><div class="th mkl"><span>Marcador</span></div>' +
     ms.map(m => { const c = {p:0,a:0,e:0,n:0}; IND.forEach(q => c[veredictoM(q, m)]++); return `<div class="mk" aria-label="${etq(m)}: Petro ${c.p}, Abelardo ${c.a}">${c.p}-${c.a}</div>`; }).join('') + '</div>';
   h += '<div class="ln"></div>';
   IND.forEach((q, i) => {
