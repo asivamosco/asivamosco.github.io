@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/shell.css?v=1">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
-  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#0F6CBD;--cP:#E86F1C;--cPt:#B85214;--tA:#E2F0F7;--tP:#FBECE3;
+  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#336D94;--cP:#C9742B;--cPt:#9E5A1F;--tA:#E4EDF3;--tP:#F9EEE3;
   --r:6px;--sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#12303d}
 *{box-sizing:border-box}
@@ -687,7 +687,7 @@ const veredicto = ind => veredictoM(ind, mx(ind));
 const cls = (ind, s) => { const m = mejora(ind, s); return Math.abs(m) < eps(ind.d) ? 'neu' : m > 0 ? 'ok' : 'mal'; };
 const flecha = dl => Math.abs(dl) < 1e-9 ? '■' : dl > 0 ? '▲' : '▼';
 const COL = {a:'var(--cA)', p:'var(--cP)', e:'#a9bac4'};
-const TINT = {a:'#eaf4f9', p:'#fdf3ec', e:'#f1f4f6', n:'#f1f4f6'};   // fondo muy claro del color del ganador
+const TINT = {a:'#e8eff4', p:'#fbf1e7', e:'#f1f4f6', n:'#f1f4f6'};   // fondo muy claro del color del ganador
 
 function drawChart(ind){
   if (!ind) return;
