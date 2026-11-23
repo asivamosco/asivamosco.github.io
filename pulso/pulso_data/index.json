@@ -1,0 +1,41 @@
+{
+  "temas": [
+    {
+      "id": "inflacion",
+      "archivo": "inflacion.json",
+      "mes_max_A": 3,
+      "mes_max_P": 3
+    },
+    {
+      "id": "desempleo",
+      "archivo": "desempleo.json",
+      "mes_max_A": 2,
+      "mes_max_P": 2
+    },
+    {
+      "id": "economia",
+      "archivo": "economia.json",
+      "mes_max_A": 2,
+      "mes_max_P": 2
+    },
+    {
+      "id": "criminalidad",
+      "archivo": "criminalidad.json",
+      "mes_max_A": 3,
+      "mes_max_P": 3
+    },
+    {
+      "id": "cocaina",
+      "archivo": "cocaina.json",
+      "mes_max_A": 3,
+      "mes_max_P": 3
+    },
+    {
+      "id": "terrorismo",
+      "archivo": "terrorismo.json",
+      "mes_max_A": 3,
+      "mes_max_P": 3
+    }
+  ],
+  "corte": "2026-11-23"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "economia",
+  "t": "Economía",
+  "c": "Economía",
+  "sub": "Actividad económica (ISE desestacionalizado, acumulado)",
+  "fuente": "Dane",
+  "mejor": "subir",
+  "d": 2,
+  "u": " %",
+  "du": " pp",
+  "A": [
+    0.0,
+    -2.71,
+    0.04
+  ],
+  "P": [
+    0.0,
+    1.67,
+    2.64
+  ],
+  "periodos": {
+    "A": [
+      "2026-07-01",
+      "2026-08-01",
+      "2026-09-01"
+    ],
+    "P": [
+      "2022-07-01",
+      "2022-08-01",
+      "2022-09-01"
+    ]
+  },
+  "meta": {
+    "tipo_serie": "acum",
+    "mes_max_A": 2,
+    "mes_max_P": 2,
+    "generado": "2026-11-23T11:03:39+00:00"
+  }
+}

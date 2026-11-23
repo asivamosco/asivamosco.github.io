@@ -1,0 +1,43 @@
+{
+  "id": "terrorismo",
+  "t": "Terrorismo",
+  "c": "Terrorismo",
+  "sub": "Índice integral de violencia (mensual)",
+  "fuente": "Mindefensa / Policía Nal.",
+  "mejor": "bajar",
+  "d": 0,
+  "u": "",
+  "du": "",
+  "A": [
+    260.0,
+    402.0,
+    258.0,
+    236.0
+  ],
+  "P": [
+    451.0,
+    276.0,
+    243.0,
+    161.0
+  ],
+  "periodos": {
+    "A": [
+      "2026-07-01",
+      "2026-08-01",
+      "2026-09-01",
+      "2026-10-01"
+    ],
+    "P": [
+      "2022-07-01",
+      "2022-08-01",
+      "2022-09-01",
+      "2022-10-01"
+    ]
+  },
+  "meta": {
+    "tipo_serie": "level",
+    "mes_max_A": 3,
+    "mes_max_P": 3,
+    "generado": "2026-11-23T11:03:39+00:00"
+  }
+}

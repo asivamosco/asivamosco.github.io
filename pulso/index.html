@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="../assets/css/shell.css?v=1">
 <style>
 :root{--bg:#e9ebef;--card:#fff;--ink:#12303d;--mute:#6f8695;--line:#e1e7ea;--acc:#0f6b7a;
-  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#00639c;--cP:#e49c30;--cPt:#b87a14;--tA:#e0eef7;--tP:#fdf1dc;
+  --ok-t:#0b8577;--mal-t:#c4412b;--cA:#0F6CBD;--cP:#E86F1C;--cPt:#B85214;--tA:#E2F0F7;--tP:#FBECE3;
   --r:6px;--sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#12303d}
 *{box-sizing:border-box}
@@ -207,10 +207,10 @@ dialog button{border:0;background:#12303d;color:#fff;border-radius:var(--r);padd
 /* ===== Tabla: temas sin card, cuadros claros con letra oscura, marcador bajo cada mes ===== */
 .tt{border:0;border-radius:0;background:transparent;box-shadow:none;padding:6px 2px;min-height:34px;font-weight:600}
 .tt:hover{background:transparent;text-decoration:underline}
-.sq.p{background:transparent;color:#8a5a0a}
-.sq.a{background:transparent;color:#00436b}
+.sq.p{background:transparent;color:#B85214}
+.sq.a{background:transparent;color:#145071}
 .sq.e{background:transparent;color:#5b7381}
-.lg b.p{background:transparent;color:#8a5a0a}.lg b.a{background:transparent;color:#00436b}.lg b.e{background:transparent;color:#5b7381}
+.lg b.p{background:transparent;color:#B85214}.lg b.a{background:transparent;color:#145071}.lg b.e{background:transparent;color:#5b7381}
 .tb .th{align-self:end}
 @media(max-width:480px){.tt{padding:5px 2px;border-left-width:0}}
 
@@ -563,6 +563,14 @@ main{row-gap:0!important}
   .ptl .sc{gap:8px}
   .ptl .sc .n{min-width:56px;height:48px;padding:0 12px;font-size:34px}
 }
+
+/* ===== Celular vertical: cards de los presidentes con un pequeño espacio bajo el header ===== */
+@media(orientation:portrait) and (max-width:760px){
+  main{padding-top:10px!important;--sube:0px}
+  .pers{align-self:start;margin-top:0}
+  /* shell.css reserva 35px bajo el header para las tabs .hd-mid; esta página no las usa */
+  header.hd{margin-bottom:0!important}
+}
 </style>
 </head>
 <body class="app">
@@ -660,7 +668,7 @@ const veredicto = ind => veredictoM(ind, mx(ind));
 const cls = (ind, s) => { const m = mejora(ind, s); return Math.abs(m) < eps(ind.d) ? 'neu' : m > 0 ? 'ok' : 'mal'; };
 const flecha = dl => Math.abs(dl) < 1e-9 ? '■' : dl > 0 ? '▲' : '▼';
 const COL = {a:'var(--cA)', p:'var(--cP)', e:'#a9bac4'};
-const TINT = {a:'#eaf3f9', p:'#fdf5e6', e:'#f1f4f6', n:'#f1f4f6'};   // fondo muy claro del color del ganador
+const TINT = {a:'#eaf4f9', p:'#fdf3ec', e:'#f1f4f6', n:'#f1f4f6'};   // fondo muy claro del color del ganador
 
 function drawChart(ind){
   if (!ind) return;

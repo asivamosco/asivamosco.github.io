@@ -14,61 +14,61 @@
   {
     "mes": "Enero",
     "anio": 2026,
-    "indice": 5.1395,
-    "var_anual": 9.01
+    "indice": 5.1138,
+    "var_anual": 8.46
   },
   {
     "mes": "Febrero",
     "anio": 2026,
-    "indice": 5.0746,
-    "var_anual": 14.56
+    "indice": 5.0413,
+    "var_anual": 13.8
   },
   {
     "mes": "Marzo",
     "anio": 2026,
-    "indice": 5.4088,
-    "var_anual": 8.77
+    "indice": 5.3715,
+    "var_anual": 8.02
   },
   {
     "mes": "Abril",
     "anio": 2026,
-    "indice": 4.9982,
-    "var_anual": 4.33
+    "indice": 4.9619,
+    "var_anual": 3.57
   },
   {
     "mes": "Mayo",
     "anio": 2026,
-    "indice": 5.5118,
-    "var_anual": 19.83
+    "indice": 5.4127,
+    "var_anual": 17.68
   },
   {
     "mes": "Junio",
     "anio": 2026,
-    "indice": 5.2048,
-    "var_anual": 9.77
+    "indice": 4.9633,
+    "var_anual": 4.67
   },
   {
     "mes": "Julio",
     "anio": 2026,
-    "indice": 5.3463,
-    "var_anual": -0.09
+    "indice": 5.2085,
+    "var_anual": -2.67
   },
   {
     "mes": "Agosto",
     "anio": 2026,
-    "indice": 5.1971,
-    "var_anual": -0.97
+    "indice": 5.3271,
+    "var_anual": 1.51
   },
   {
     "mes": "Septiembre",
     "anio": 2026,
-    "indice": 4.2143,
-    "var_anual": -20.33
+    "indice": 4.8193,
+    "var_anual": -8.89
   },
   {
     "mes": "Octubre",
     "anio": 2026,
     "indice": 4.0462,
-    "var_anual": -24.79
+    "var_anual": -24.8
   }
 ]

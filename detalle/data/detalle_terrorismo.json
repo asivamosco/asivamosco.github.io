@@ -1,0 +1,4562 @@
+{
+  "hero": {
+    "casos": 117,
+    "indice": 236.5,
+    "unidad": "índice",
+    "casos_hace_12": 92,
+    "direccion_mes": "baja",
+    "var_anual_pct": 32.42,
+    "var_casos_pct": 27.17,
+    "indice_hace_12": 178.6,
+    "masacres_casos": 5,
+    "direccion_anual": "sube",
+    "indice_anterior": 257.8,
+    "var_mensual_pct": -8.26,
+    "masacres_victimas": 18,
+    "comentario_popular": "Se registra una baja este mes en el índice integral.",
+    "terrorismo_eventos": 28,
+    "fuerza_publica_afectados": 71,
+    "meses_seguidos_vs_ano_anterior": 3
+  },
+  "serie": {
+    "mismo_mes": [
+      {
+        "anio": 2022,
+        "valor": 161.0,
+        "var_anual_pct": null
+      },
+      {
+        "anio": 2023,
+        "valor": 134.0,
+        "var_anual_pct": -16.77
+      },
+      {
+        "anio": 2024,
+        "valor": 315.5,
+        "var_anual_pct": 135.45
+      },
+      {
+        "anio": 2025,
+        "valor": 178.6,
+        "var_anual_pct": -43.39
+      },
+      {
+        "anio": 2026,
+        "valor": 236.5,
+        "var_anual_pct": 32.42
+      }
+    ],
+    "doce_meses": [
+      {
+        "mes": "Nov",
+        "anio": 2025,
+        "valor": 197.9,
+        "valor_hace_12": 226.0,
+        "var_anual_pct": -12.43
+      },
+      {
+        "mes": "Dic",
+        "anio": 2025,
+        "valor": 220.5,
+        "valor_hace_12": 226.0,
+        "var_anual_pct": -2.43
+      },
+      {
+        "mes": "Ene",
+        "anio": 2026,
+        "valor": 244.5,
+        "valor_hace_12": 270.0,
+        "var_anual_pct": -9.44
+      },
+      {
+        "mes": "Feb",
+        "anio": 2026,
+        "valor": 235.0,
+        "valor_hace_12": 264.8,
+        "var_anual_pct": -11.25
+      },
+      {
+        "mes": "Mar",
+        "anio": 2026,
+        "valor": 366.6,
+        "valor_hace_12": 254.0,
+        "var_anual_pct": 44.33
+      },
+      {
+        "mes": "Abr",
+        "anio": 2026,
+        "valor": 347.8,
+        "valor_hace_12": 294.5,
+        "var_anual_pct": 18.1
+      },
+      {
+        "mes": "May",
+        "anio": 2026,
+        "valor": 366.6,
+        "valor_hace_12": 242.0,
+        "var_anual_pct": 51.49
+      },
+      {
+        "mes": "Jun",
+        "anio": 2026,
+        "valor": 209.0,
+        "valor_hace_12": 245.5,
+        "var_anual_pct": -14.87
+      },
+      {
+        "mes": "Jul",
+        "anio": 2026,
+        "valor": 260.0,
+        "valor_hace_12": 268.5,
+        "var_anual_pct": -3.17
+      },
+      {
+        "mes": "Ago",
+        "anio": 2026,
+        "valor": 402.3,
+        "valor_hace_12": 391.5,
+        "var_anual_pct": 2.76
+      },
+      {
+        "mes": "Sep",
+        "anio": 2026,
+        "valor": 257.8,
+        "valor_hace_12": 238.0,
+        "var_anual_pct": 8.32
+      },
+      {
+        "mes": "Oct",
+        "anio": 2026,
+        "valor": 236.5,
+        "valor_hace_12": 178.6,
+        "var_anual_pct": 32.42
+      }
+    ]
+  },
+  "fuente": "Ministerio de Defensa",
+  "periodo": {
+    "anio": 2026,
+    "mes_num": 10,
+    "etiqueta": "Octubre 2026",
+    "mes_nombre": "Octubre"
+  },
+  "hallazgos": [
+    {
+      "tipo": "indicador",
+      "texto": "El índice subió 32,42 % frente a octubre de 2025 (117 hechos en el mes).",
+      "valor": 32.42,
+      "titulo": "Índice de terrorismo y seguridad",
+      "unidad": "%"
+    },
+    {
+      "tipo": "mensual",
+      "texto": "El índice bajó 8,26 % frente al mes anterior.",
+      "valor": -8.26,
+      "titulo": "Variación del mes",
+      "unidad": "%"
+    },
+    {
+      "tipo": "record_serie",
+      "texto": "El índice más bajo desde junio de 2026.",
+      "titulo": "Frente a toda la serie"
+    },
+    {
+      "tipo": "racha",
+      "texto": "El índice lleva 3 meses seguidos por encima del mismo mes del año anterior.",
+      "valor": 3,
+      "titulo": "Racha",
+      "unidad": "meses"
+    },
+    {
+      "tipo": "masacres",
+      "texto": "Hubo 5 masacres en octubre con 18 víctimas (hace un año: 5 con 17 víctimas).",
+      "valor": 5,
+      "titulo": "Masacres",
+      "unidad": "masacres"
+    },
+    {
+      "tipo": "fuerza_publica",
+      "texto": "71 uniformados afectados en octubre, 10 de ellos asesinados.",
+      "valor": 71,
+      "titulo": "Fuerza Pública",
+      "unidad": "uniformados"
+    },
+    {
+      "tipo": "arma_top",
+      "texto": "Dron / explosivo: 10 de 28 eventos de terrorismo (35,7 %).",
+      "valor": 35.7,
+      "titulo": "Arma o medio más usado",
+      "unidad": "%"
+    },
+    {
+      "tipo": "depto_baja",
+      "texto": "Nariño: 100,00 % menos hechos (0 frente a 6).",
+      "valor": -100.0,
+      "titulo": "Departamento con mayor reducción",
+      "unidad": "%"
+    },
+    {
+      "tipo": "depto_alta",
+      "texto": "Chocó: 1.900,00 % más hechos (20 frente a 1).",
+      "valor": 1900.0,
+      "titulo": "Departamento con mayor aumento",
+      "unidad": "%"
+    },
+    {
+      "tipo": "depto_aporte",
+      "texto": "Chocó explica el 22,89 % del aumento de hechos del país (19 de 83).",
+      "valor": 22.89,
+      "titulo": "Quién pesa más en el cambio",
+      "unidad": "%"
+    },
+    {
+      "tipo": "deptos_suben",
+      "texto": "En 10 de 33 departamentos aumentaron los hechos frente a hace un año.",
+      "valor": 10,
+      "titulo": "Departamentos al alza",
+      "unidad": "departamentos"
+    },
+    {
+      "tipo": "municipio_baja",
+      "texto": "Patía (Cauca): 100,00 % menos hechos (0 frente a 14).",
+      "valor": -100.0,
+      "titulo": "Municipio con mayor reducción",
+      "unidad": "%"
+    },
+    {
+      "tipo": "municipio_alta",
+      "texto": "Cali (Valle del Cauca): 450,00 % más hechos (11 frente a 2).",
+      "valor": 450.0,
+      "titulo": "Municipio con mayor aumento",
+      "unidad": "%"
+    }
+  ],
+  "indicador": "terrorismo",
+  "dimensiones": {
+    "componentes": {
+      "items": [
+        {
+          "hijos": [
+            {
+              "nombre": "Herido",
+              "cantidad": 61,
+              "var_anual_pct": 0.0,
+              "cantidad_hace_12": 61,
+              "participacion_pct": 85.92
+            },
+            {
+              "nombre": "Asesinado",
+              "cantidad": 10,
+              "var_anual_pct": 150.0,
+              "cantidad_hace_12": 4,
+              "participacion_pct": 14.08
+            }
+          ],
+          "nombre": "Afectación a la Fuerza Pública",
+          "unidad": "afectados",
+          "cantidad": 71,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 42,
+              "valor_hace_12": 58,
+              "var_anual_pct": -27.59
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 66,
+              "valor_hace_12": 67,
+              "var_anual_pct": -1.49
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 49,
+              "valor_hace_12": 54,
+              "var_anual_pct": -9.26
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 68,
+              "valor_hace_12": 87,
+              "var_anual_pct": -21.84
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 85,
+              "valor_hace_12": 101,
+              "var_anual_pct": -15.84
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 63,
+              "valor_hace_12": 105,
+              "var_anual_pct": -40.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 116,
+              "valor_hace_12": 81,
+              "var_anual_pct": 43.21
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 55,
+              "valor_hace_12": 84,
+              "var_anual_pct": -34.52
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 84,
+              "valor_hace_12": 81,
+              "var_anual_pct": 3.7
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 123,
+              "valor_hace_12": 92,
+              "var_anual_pct": 33.7
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 70,
+              "valor_hace_12": 85,
+              "var_anual_pct": -17.65
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 71,
+              "valor_hace_12": 65,
+              "var_anual_pct": 9.23
+            }
+          ],
+          "diferencia": 6,
+          "puesto_var": 2,
+          "hijos_titulo": "Acciones",
+          "var_anual_pct": 9.23,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 1,
+          "cantidad_hace_12": 65,
+          "participacion_pct": 60.68,
+          "comentario_popular": "71 afectados en octubre (9,23 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Dron / explosivo",
+              "cantidad": 10,
+              "var_anual_pct": 233.33,
+              "cantidad_hace_12": 3,
+              "participacion_pct": 35.71
+            },
+            {
+              "nombre": "Artefacto explosivo/carga dinamita",
+              "cantidad": 9,
+              "var_anual_pct": 200.0,
+              "cantidad_hace_12": 3,
+              "participacion_pct": 32.14
+            },
+            {
+              "nombre": "Arma de fuego",
+              "cantidad": 4,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 14.29
+            },
+            {
+              "nombre": "Panfletos volantes impresos",
+              "cantidad": 2,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 7.14
+            },
+            {
+              "nombre": "Carro bomba",
+              "cantidad": 1,
+              "var_anual_pct": 0.0,
+              "cantidad_hace_12": 1,
+              "participacion_pct": 3.57
+            },
+            {
+              "nombre": "Granada de mano",
+              "cantidad": 1,
+              "var_anual_pct": 0.0,
+              "cantidad_hace_12": 1,
+              "participacion_pct": 3.57
+            },
+            {
+              "nombre": "Moto bomba",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 3.57
+            }
+          ],
+          "nombre": "Terrorismo",
+          "unidad": "eventos",
+          "cantidad": 28,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 24,
+              "valor_hace_12": 17,
+              "var_anual_pct": 41.18
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 24,
+              "valor_hace_12": 22,
+              "var_anual_pct": 9.09
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 24,
+              "valor_hace_12": 32,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 30,
+              "valor_hace_12": 33,
+              "var_anual_pct": -9.09
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 31,
+              "valor_hace_12": 11,
+              "var_anual_pct": 181.82
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 30,
+              "valor_hace_12": 17,
+              "var_anual_pct": 76.47
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 40,
+              "valor_hace_12": 13,
+              "var_anual_pct": 207.69
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 21,
+              "valor_hace_12": 25,
+              "var_anual_pct": -16.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 39,
+              "valor_hace_12": 16,
+              "var_anual_pct": 143.75
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 43,
+              "valor_hace_12": 16,
+              "var_anual_pct": 168.75
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 25,
+              "valor_hace_12": 13,
+              "var_anual_pct": 92.31
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 28,
+              "valor_hace_12": 10,
+              "var_anual_pct": 180.0
+            }
+          ],
+          "diferencia": 18,
+          "puesto_var": 1,
+          "hijos_titulo": "Armas y medios",
+          "var_anual_pct": 180.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 2,
+          "cantidad_hace_12": 10,
+          "participacion_pct": 23.93,
+          "comentario_popular": "28 eventos en octubre (180,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Huila",
+              "cantidad": 8,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 44.44
+            },
+            {
+              "nombre": "Bolívar",
+              "cantidad": 4,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 22.22
+            },
+            {
+              "nombre": "Antioquia",
+              "cantidad": 3,
+              "var_anual_pct": -25.0,
+              "cantidad_hace_12": 4,
+              "participacion_pct": 16.67
+            },
+            {
+              "nombre": "Caquetá",
+              "cantidad": 3,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 16.67
+            }
+          ],
+          "nombre": "Masacres",
+          "unidad": "víctimas",
+          "cantidad": 18,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 26,
+              "valor_hace_12": 31,
+              "var_anual_pct": -16.13
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 19,
+              "valor_hace_12": 24,
+              "var_anual_pct": -20.83
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 40,
+              "valor_hace_12": 36,
+              "var_anual_pct": 11.11
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 18,
+              "valor_hace_12": 15,
+              "var_anual_pct": 20.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 49,
+              "valor_hace_12": 20,
+              "var_anual_pct": 145.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 63,
+              "valor_hace_12": 25,
+              "var_anual_pct": 152.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 28,
+              "valor_hace_12": 25,
+              "var_anual_pct": 12.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 23,
+              "valor_hace_12": 18,
+              "var_anual_pct": 27.78
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 29,
+              "var_anual_pct": -48.28
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 30,
+              "valor_hace_12": 64,
+              "var_anual_pct": -53.13
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 23,
+              "valor_hace_12": 21,
+              "var_anual_pct": 9.52
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 18,
+              "valor_hace_12": 17,
+              "var_anual_pct": 5.88
+            }
+          ],
+          "diferencia": 1,
+          "puesto_var": 3,
+          "hijos_titulo": "Departamentos",
+          "var_anual_pct": 5.88,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 3,
+          "cantidad_hace_12": 17,
+          "participacion_pct": 15.38,
+          "comentario_popular": "18 víctimas en octubre (5,88 % más que hace un año)."
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total nacional",
+          "var_anual_pct": 27.17
+        }
+      ]
+    },
+    "departamentos": {
+      "items": [
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 15,
+              "var_anual_pct": 650.0,
+              "cantidad_hace_12": 2,
+              "participacion_pct": 71.43
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 6,
+              "var_anual_pct": 200.0,
+              "cantidad_hace_12": 2,
+              "participacion_pct": 28.57
+            }
+          ],
+          "nombre": "Valle del Cauca",
+          "unidad": "hechos",
+          "cantidad": 21,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 14,
+              "valor_hace_12": 12,
+              "var_anual_pct": 16.67
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8,
+              "valor_hace_12": 17,
+              "var_anual_pct": -52.94
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 11,
+              "valor_hace_12": 19,
+              "var_anual_pct": -42.11
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 14,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 21,
+              "valor_hace_12": 10,
+              "var_anual_pct": 110.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 16,
+              "var_anual_pct": -6.25
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 15,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 28,
+              "var_anual_pct": -64.29
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 8,
+              "var_anual_pct": -12.5
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 13,
+              "valor_hace_12": 25,
+              "var_anual_pct": -48.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 22,
+              "valor_hace_12": 16,
+              "var_anual_pct": 37.5
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 21,
+              "valor_hace_12": 4,
+              "var_anual_pct": 425.0
+            }
+          ],
+          "diferencia": 17,
+          "municipios": [
+            {
+              "nombre": "Cali",
+              "cantidad": 11,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": 450.0,
+              "fuerza_publica": 11,
+              "cantidad_hace_12": 2
+            },
+            {
+              "nombre": "Cali (Ct)",
+              "cantidad": 4,
+              "masacres": 0,
+              "terrorismo": 4,
+              "var_anual_pct": 300.0,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 1
+            },
+            {
+              "nombre": "Tulua",
+              "cantidad": 2,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 2,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Dagua",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Jamundí",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": 0.0,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 1
+            },
+            {
+              "nombre": "Palmira",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Sevilla",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 3,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": 425.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 1,
+          "cantidad_hace_12": 4,
+          "participacion_pct": 17.95,
+          "comentario_popular": "21 hechos en octubre (425,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 19,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 95.0
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 1,
+              "var_anual_pct": 0.0,
+              "cantidad_hace_12": 1,
+              "participacion_pct": 5.0
+            }
+          ],
+          "nombre": "Chocó",
+          "unidad": "hechos",
+          "cantidad": 20,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 4,
+              "var_anual_pct": -75.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 10,
+              "var_anual_pct": -90.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 11,
+              "valor_hace_12": 9,
+              "var_anual_pct": 22.22
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 7,
+              "var_anual_pct": -85.71
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 3,
+              "var_anual_pct": 66.67
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 1,
+              "var_anual_pct": 200.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 9,
+              "valor_hace_12": 1,
+              "var_anual_pct": 800.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 17,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 3,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 3,
+              "var_anual_pct": 66.67
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 20,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1900.0
+            }
+          ],
+          "diferencia": 19,
+          "municipios": [
+            {
+              "nombre": "San Jose Del Palmar",
+              "cantidad": 19,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 19,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Río Iro",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 1,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": 1900.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 2,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 17.09,
+          "comentario_popular": "20 hechos en octubre (1.900,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Masacres (víctimas)",
+              "cantidad": 8,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 40.0
+            },
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 7,
+              "var_anual_pct": 600.0,
+              "cantidad_hace_12": 1,
+              "participacion_pct": 35.0
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 5,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 25.0
+            }
+          ],
+          "nombre": "Huila",
+          "unidad": "hechos",
+          "cantidad": 20,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4,
+              "valor_hace_12": 8,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 5,
+              "valor_hace_12": 1,
+              "var_anual_pct": 400.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 2,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 1,
+              "var_anual_pct": 600.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9,
+              "valor_hace_12": 4,
+              "var_anual_pct": 125.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 2,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 5,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 11,
+              "var_anual_pct": -72.73
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 35,
+              "valor_hace_12": 3,
+              "var_anual_pct": 1066.67
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 3,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 20,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1900.0
+            }
+          ],
+          "diferencia": 19,
+          "municipios": [
+            {
+              "nombre": "Algeciras",
+              "cantidad": 9,
+              "masacres": 3,
+              "terrorismo": 3,
+              "var_anual_pct": null,
+              "fuerza_publica": 3,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Suaza",
+              "cantidad": 5,
+              "masacres": 5,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Neiva",
+              "cantidad": 4,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 4,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Aipe",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Palermo",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 2,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": 1900.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 3,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 17.09,
+          "comentario_popular": "20 hechos en octubre (1.900,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 9,
+              "var_anual_pct": -57.14,
+              "cantidad_hace_12": 21,
+              "participacion_pct": 60.0
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 6,
+              "var_anual_pct": 50.0,
+              "cantidad_hace_12": 4,
+              "participacion_pct": 40.0
+            }
+          ],
+          "nombre": "Cauca",
+          "unidad": "hechos",
+          "cantidad": 15,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 31,
+              "valor_hace_12": 5,
+              "var_anual_pct": 520.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 17,
+              "valor_hace_12": 13,
+              "var_anual_pct": 30.77
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 12,
+              "valor_hace_12": 23,
+              "var_anual_pct": -47.83
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 21,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 34,
+              "valor_hace_12": 54,
+              "var_anual_pct": -37.04
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 53,
+              "valor_hace_12": 14,
+              "var_anual_pct": 278.57
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 43,
+              "valor_hace_12": 19,
+              "var_anual_pct": 126.32
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 15,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 16,
+              "valor_hace_12": 43,
+              "var_anual_pct": -62.79
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 23,
+              "valor_hace_12": 14,
+              "var_anual_pct": 64.29
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 26,
+              "valor_hace_12": 38,
+              "var_anual_pct": -31.58
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 25,
+              "var_anual_pct": -40.0
+            }
+          ],
+          "diferencia": -10,
+          "municipios": [
+            {
+              "nombre": "Guapi",
+              "cantidad": 5,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 5,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Popayán (Ct)",
+              "cantidad": 4,
+              "masacres": 0,
+              "terrorismo": 4,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "La Sierra",
+              "cantidad": 2,
+              "masacres": 0,
+              "terrorismo": 2,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "La Vega",
+              "cantidad": 2,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 2,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Timbío",
+              "cantidad": 2,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 2,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 6,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -40.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 4,
+          "cantidad_hace_12": 25,
+          "participacion_pct": 12.82,
+          "comentario_popular": "15 hechos en octubre (40,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 8,
+              "var_anual_pct": 60.0,
+              "cantidad_hace_12": 5,
+              "participacion_pct": 57.14
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 6,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 42.86
+            }
+          ],
+          "nombre": "Norte de Santander",
+          "unidad": "hechos",
+          "cantidad": 14,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 6,
+              "valor_hace_12": 9,
+              "var_anual_pct": -33.33
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 8,
+              "valor_hace_12": 14,
+              "var_anual_pct": -42.86
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 21,
+              "valor_hace_12": 9,
+              "var_anual_pct": 133.33
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 17,
+              "valor_hace_12": 23,
+              "var_anual_pct": -26.09
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 24,
+              "var_anual_pct": -37.5
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 27,
+              "valor_hace_12": 8,
+              "var_anual_pct": 237.5
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 40,
+              "valor_hace_12": 17,
+              "var_anual_pct": 135.29
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 35,
+              "valor_hace_12": 4,
+              "var_anual_pct": 775.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 21,
+              "valor_hace_12": 18,
+              "var_anual_pct": 16.67
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 44,
+              "valor_hace_12": 6,
+              "var_anual_pct": 633.33
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 18,
+              "valor_hace_12": 4,
+              "var_anual_pct": 350.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 14,
+              "valor_hace_12": 5,
+              "var_anual_pct": 180.0
+            }
+          ],
+          "diferencia": 9,
+          "municipios": [
+            {
+              "nombre": "Cucuta",
+              "cantidad": 5,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 5,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Tibú",
+              "cantidad": 5,
+              "masacres": 0,
+              "terrorismo": 2,
+              "var_anual_pct": 0.0,
+              "fuerza_publica": 3,
+              "cantidad_hace_12": 5
+            },
+            {
+              "nombre": "Cúcuta (Ct)",
+              "cantidad": 2,
+              "masacres": 0,
+              "terrorismo": 2,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "El Tarra",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Sardinata",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 5,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": 180.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 5,
+          "cantidad_hace_12": 5,
+          "participacion_pct": 11.97,
+          "comentario_popular": "14 hechos en octubre (180,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 6,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 66.67
+            },
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 3,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 33.33
+            }
+          ],
+          "nombre": "Cesar",
+          "unidad": "hechos",
+          "cantidad": 9,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 53,
+              "valor_hace_12": 6,
+              "var_anual_pct": 783.33
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 8,
+              "var_anual_pct": -37.5
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 4,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 8,
+              "valor_hace_12": 9,
+              "var_anual_pct": -11.11
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 6,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 9,
+              "valor_hace_12": 4,
+              "var_anual_pct": 125.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 13,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1200.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 11,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 9,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 9,
+          "municipios": [
+            {
+              "nombre": "Pelaya",
+              "cantidad": 7,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 6,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Aguachica",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "La Gloria",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 23,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 6,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 7.69,
+          "comentario_popular": "9 hechos en octubre (sin registros hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Masacres (víctimas)",
+              "cantidad": 3,
+              "var_anual_pct": -25.0,
+              "cantidad_hace_12": 4,
+              "participacion_pct": 75.0
+            },
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": -90.91,
+              "cantidad_hace_12": 11,
+              "participacion_pct": 25.0
+            }
+          ],
+          "nombre": "Antioquia",
+          "unidad": "hechos",
+          "cantidad": 4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 16,
+              "valor_hace_12": 21,
+              "var_anual_pct": -23.81
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 6,
+              "valor_hace_12": 17,
+              "var_anual_pct": -64.71
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 22,
+              "valor_hace_12": 14,
+              "var_anual_pct": 57.14
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 12,
+              "valor_hace_12": 11,
+              "var_anual_pct": 9.09
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 8,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 28,
+              "var_anual_pct": -75.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 18,
+              "valor_hace_12": 7,
+              "var_anual_pct": 157.14
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 17,
+              "var_anual_pct": -41.18
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 9,
+              "var_anual_pct": -44.44
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 53,
+              "var_anual_pct": -81.13
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 17,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 16,
+              "var_anual_pct": -75.0
+            }
+          ],
+          "diferencia": -12,
+          "municipios": [
+            {
+              "nombre": "Segovia",
+              "cantidad": 3,
+              "masacres": 3,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "Jerico",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 7,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -75.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 7,
+          "cantidad_hace_12": 16,
+          "participacion_pct": 3.42,
+          "comentario_popular": "4 hechos en octubre (75,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Masacres (víctimas)",
+              "cantidad": 4,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Bolívar",
+          "unidad": "hechos",
+          "cantidad": 4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 4,
+              "valor_hace_12": 9,
+              "var_anual_pct": -55.56
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 20,
+              "valor_hace_12": 17,
+              "var_anual_pct": 17.65
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 4,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 13,
+              "var_anual_pct": -53.85
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 14,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1300.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 10,
+              "var_anual_pct": -80.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 13,
+              "valor_hace_12": 2,
+              "var_anual_pct": 550.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 16,
+              "var_anual_pct": -93.75
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 9,
+              "var_anual_pct": -77.78
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 1,
+              "var_anual_pct": 300.0
+            }
+          ],
+          "diferencia": 3,
+          "municipios": [
+            {
+              "nombre": "Cartagena De Indias",
+              "cantidad": 4,
+              "masacres": 4,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 4,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": 300.0,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 8,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 3.42,
+          "comentario_popular": "4 hechos en octubre (300,00 % más que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Masacres (víctimas)",
+              "cantidad": 3,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 75.0
+            },
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 25.0
+            }
+          ],
+          "nombre": "Caquetá",
+          "unidad": "hechos",
+          "cantidad": 4,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 3,
+              "valor_hace_12": 1,
+              "var_anual_pct": 200.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 3,
+              "var_anual_pct": -33.33
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 9,
+              "valor_hace_12": 6,
+              "var_anual_pct": 50.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 4,
+          "municipios": [
+            {
+              "nombre": "El Paujil",
+              "cantidad": 3,
+              "masacres": 3,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            },
+            {
+              "nombre": "San Vicente Del Caguan",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 22,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 9,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 3.42,
+          "comentario_popular": "4 hechos en octubre (sin registros hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": -85.71,
+              "cantidad_hace_12": 7,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Arauca",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 2,
+              "valor_hace_12": 5,
+              "var_anual_pct": -60.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 9,
+              "var_anual_pct": -88.89
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 8,
+              "var_anual_pct": -37.5
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 10,
+              "var_anual_pct": -30.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 2,
+              "var_anual_pct": 400.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 2,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 5,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 16,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1500.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 7,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 9,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 7,
+              "var_anual_pct": -85.71
+            }
+          ],
+          "diferencia": -6,
+          "municipios": [
+            {
+              "nombre": "Arauquita",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": -85.71,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 7
+            }
+          ],
+          "puesto_var": 9,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -85.71,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 10,
+          "cantidad_hace_12": 7,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (85,71 % menos que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Boyacá",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 1,
+              "var_anual_pct": 100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 10,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 1,
+          "municipios": [
+            {
+              "nombre": "Tunja",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 21,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 11,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (sin registros hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Córdoba",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 5,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 1,
+          "municipios": [
+            {
+              "nombre": "San Antero",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 24,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 12,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (sin registros hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Terrorismo (eventos)",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Guaviare",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 3,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 8,
+              "var_anual_pct": -87.5
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 4,
+              "var_anual_pct": -75.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 1,
+              "var_anual_pct": 900.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 1,
+              "var_anual_pct": 200.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 26,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 1,
+              "var_anual_pct": 900.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 7,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 1,
+              "var_anual_pct": 300.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 4,
+              "var_anual_pct": -75.0
+            }
+          ],
+          "diferencia": -3,
+          "municipios": [
+            {
+              "nombre": "El Retorno",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 1,
+              "var_anual_pct": null,
+              "fuerza_publica": 0,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 8,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -75.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 13,
+          "cantidad_hace_12": 4,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (75,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Meta",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 2,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 1,
+              "var_anual_pct": 400.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 6,
+              "var_anual_pct": -83.33
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 4,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 4,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 3,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 4,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 4,
+              "var_anual_pct": 150.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 12,
+              "valor_hace_12": 4,
+              "var_anual_pct": 200.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 1,
+          "municipios": [
+            {
+              "nombre": "Villavicencio",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 27,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "sube",
+          "puesto_cantidad": 14,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (sin registros hace un año)."
+        },
+        {
+          "hijos": [
+            {
+              "nombre": "Afectación Fuerza Pública",
+              "cantidad": 1,
+              "var_anual_pct": null,
+              "cantidad_hace_12": 0,
+              "participacion_pct": 100.0
+            }
+          ],
+          "nombre": "Santander",
+          "unidad": "hechos",
+          "cantidad": 1,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 8,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 3,
+              "var_anual_pct": 133.33
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 1,
+              "var_anual_pct": 400.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 5,
+              "var_anual_pct": -60.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 7,
+              "var_anual_pct": -85.71
+            }
+          ],
+          "diferencia": -6,
+          "municipios": [
+            {
+              "nombre": "Bucaramanga",
+              "cantidad": 1,
+              "masacres": 0,
+              "terrorismo": 0,
+              "var_anual_pct": null,
+              "fuerza_publica": 1,
+              "cantidad_hace_12": 0
+            }
+          ],
+          "puesto_var": 10,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -85.71,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 15,
+          "cantidad_hace_12": 7,
+          "participacion_pct": 0.85,
+          "comentario_popular": "1 hechos en octubre (85,71 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Amazonas",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 20,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 16,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Atlántico",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3,
+              "valor_hace_12": 4,
+              "var_anual_pct": -25.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 8,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 3,
+              "var_anual_pct": 233.33
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 1,
+              "var_anual_pct": 500.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -4,
+          "municipios": [],
+          "puesto_var": 11,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 17,
+          "cantidad_hace_12": 4,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Bogotá D.C.",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 7,
+              "valor_hace_12": 3,
+              "var_anual_pct": 133.33
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 8,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 1,
+              "var_anual_pct": 100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 3,
+              "var_anual_pct": 100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -3,
+          "municipios": [],
+          "puesto_var": 12,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 18,
+          "cantidad_hace_12": 3,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Caldas",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 3,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -1,
+          "municipios": [],
+          "puesto_var": 13,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 19,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Casanare",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 1,
+              "var_anual_pct": 100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -3,
+          "municipios": [],
+          "puesto_var": 14,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 20,
+          "cantidad_hace_12": 3,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Cundinamarca",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 3,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 25,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 21,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Guainía",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 26,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 22,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "La Guajira",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 8,
+              "valor_hace_12": 3,
+              "var_anual_pct": 166.67
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 2,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 5,
+              "var_anual_pct": 20.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 15,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -1,
+          "municipios": [],
+          "puesto_var": 15,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 23,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Magdalena",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 3,
+              "var_anual_pct": 66.67
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 2,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -1,
+          "municipios": [],
+          "puesto_var": 16,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 24,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Nariño",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 3,
+              "valor_hace_12": 13,
+              "var_anual_pct": -76.92
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 2,
+              "valor_hace_12": 6,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 5,
+              "var_anual_pct": -60.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 10,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 10,
+              "valor_hace_12": 2,
+              "var_anual_pct": 400.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 14,
+              "valor_hace_12": 11,
+              "var_anual_pct": 27.27
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 19,
+              "var_anual_pct": -73.68
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 8,
+              "valor_hace_12": 17,
+              "var_anual_pct": -52.94
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 3,
+              "var_anual_pct": 66.67
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 11,
+              "var_anual_pct": -72.73
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 2,
+              "valor_hace_12": 7,
+              "var_anual_pct": -71.43
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 6,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -6,
+          "municipios": [],
+          "puesto_var": 17,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 25,
+          "cantidad_hace_12": 6,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Putumayo",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 4,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 3,
+              "var_anual_pct": 66.67
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 28,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 26,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Quindío",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 1,
+              "var_anual_pct": 0.0
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 3,
+              "var_anual_pct": -66.67
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -1,
+          "municipios": [],
+          "puesto_var": 18,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 27,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Risaralda",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 6,
+              "valor_hace_12": 2,
+              "var_anual_pct": 200.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 5,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 29,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 28,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "San Andrés y Providencia",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 30,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 29,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Sucre",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 3,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 2,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 31,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 30,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Tolima",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 4,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 1,
+              "valor_hace_12": 2,
+              "var_anual_pct": -50.0
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 20,
+              "valor_hace_12": 1,
+              "var_anual_pct": 1900.0
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 2,
+              "var_anual_pct": 50.0
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            }
+          ],
+          "diferencia": -1,
+          "municipios": [],
+          "puesto_var": 19,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": -100.0,
+          "direccion_anual": "baja",
+          "puesto_cantidad": 31,
+          "cantidad_hace_12": 1,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre (100,00 % menos que hace un año)."
+        },
+        {
+          "hijos": [],
+          "nombre": "Vaupés",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 32,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 32,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        },
+        {
+          "hijos": [],
+          "nombre": "Vichada",
+          "unidad": "hechos",
+          "cantidad": 0,
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 1,
+              "var_anual_pct": -100.0
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 3,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 0,
+              "valor_hace_12": 0,
+              "var_anual_pct": null
+            }
+          ],
+          "diferencia": 0,
+          "municipios": [],
+          "puesto_var": 33,
+          "hijos_titulo": "Fuentes",
+          "var_anual_pct": null,
+          "direccion_anual": "estable",
+          "puesto_cantidad": 33,
+          "cantidad_hace_12": 0,
+          "participacion_pct": 0.0,
+          "comentario_popular": "0 hechos en octubre."
+        }
+      ],
+      "referencias": [
+        {
+          "nombre": "Total nacional",
+          "var_anual_pct": 27.17
+        }
+      ]
+    },
+    "unidad_cantidad": "hechos"
+  },
+  "generado_en": "2026-11-23T11:02:20+00:00"
+}
