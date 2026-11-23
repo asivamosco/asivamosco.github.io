@@ -494,7 +494,8 @@ main{row-gap:0!important}
   .pers{overflow:visible;position:relative;z-index:999;pointer-events:none}
   .pers .foto{margin-top:calc(-1 * var(--sube))}
   .pers .pyr{top:calc(6px + var(--sube))}
-  .mid{min-height:0;max-height:100%;overflow:auto}
+  .mid{min-height:0;max-height:100%;overflow:auto;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none}
+  .mid::-webkit-scrollbar{display:none;width:0;height:0}
 }
 /* Celular vertical: el tamaño de los paneles crece con el alto de la pantalla y se ajusta justo al espacio disponible.
    --t = cuánto espacio extra hay sobre el mínimo (667px de alto, iPhone SE): 0px = compacto, 88px = tamaño normal. */
@@ -543,7 +544,7 @@ main{row-gap:0!important}
   .pitem,.bc{order:var(--o,0)}
   .bgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
   /* misma altura que las cards de Pulso %: la card se estira y las barras quedan centradas, con su grosor fijo */
-  .bc{min-height:calc(97px + var(--t,88px)*.3)}
+  .bc{min-height:calc(88px + var(--t,88px)*.3)}
 }
 @media(min-width:761px){
   .bc .bi{height:56px}
