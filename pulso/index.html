@@ -531,13 +531,16 @@ main{row-gap:0!important}
 .bc .bw{display:block}
 .bc .bn{display:none}
 .bc .bp{flex:1 1 auto;height:auto;min-height:46px;margin-top:4px;display:flex;align-items:center}
-.bc .bi{position:relative;top:auto;bottom:auto;left:auto;right:auto;width:auto;flex:1 1 auto;height:46px;margin:0 4px}
-.bc.hn .bi{margin-left:40px}.bc.hp .bi{margin-right:40px}
-.bc .bz{top:-3px;bottom:-3px!important;left:var(--zl);right:auto;width:1px;height:auto}
+.bc .bi{position:relative;top:auto;bottom:auto;left:auto;right:auto;width:auto;flex:1 1 auto;height:46px;margin:0 8px}
+.bc.hn .bi{margin-left:var(--lp,54px)}.bc.hp .bi{margin-right:var(--lp,54px)}
+.bc .bz{top:-4px;bottom:-4px!important;left:var(--zl);right:auto;width:2px;margin-left:-1px;height:auto;background:rgba(18,48,61,.6);z-index:2}
 .bc .bb{bottom:auto!important;left:var(--bl)!important;height:calc(50% - 3px)!important;width:var(--bw)!important;min-height:0;min-width:2px;border-radius:0 2px 2px 0}
 .bc .bb.neg{border-radius:2px 0 0 2px}
 .bc .bb.p{top:0}.bc .bb.a{top:calc(50% + 3px)}
-.bc .bv{left:100%;right:auto;top:50%;bottom:auto!important;transform:translateY(-50%);margin:0 0 0 3px!important}
+.bc .bv{left:100%;right:auto;top:50%;bottom:auto!important;transform:translateY(-50%);margin:0 0 0 3px!important;color:var(--ink)}
+.bc .bv::before{content:"";display:inline-block;box-sizing:border-box;width:7px;height:7px;margin-right:3px;border-radius:50%;vertical-align:1px;border:1.5px solid var(--mute);background:var(--mute)}
+.bc .bv.ok::before{border-color:var(--ok-t);background:var(--ok-t)}
+.bc .bv.mal::before{border-color:var(--mal-t);background:var(--mal-t)}
 .bc .bb.neg .bv{left:auto;right:100%;top:50%!important;margin:0 3px 0 0!important}
 @media(max-width:760px){
   .bc .bm{display:inline}.bc .bm2{display:none}
@@ -625,6 +628,7 @@ main{row-gap:0!important}
     <li><strong>Quién gana.</strong> Se compara el cambio de cada gobierno desde Inicio hasta cada mes (la tabla muestra los tres últimos meses con dato). Gana quien mejora más en la dirección favorable.</li>
     <li><strong>Dirección favorable.</strong> Menos es mejor en costo de vida, desempleo, criminalidad y terrorismo; más es mejor en economía e incautación de cocaína.</li>
     <li><strong>Pulso.</strong> Cada barra es el cambio de ese gobierno entre Inicio y el último mes con dato de Abelardo en ese tema, comparado con el mismo mes de Petro. La franja superior de cada gráfica toma el color de quien mejora más; al tocar una gráfica ves su serie.</li>
+    <li><strong>Punto junto al número.</strong> Punto verde: ese gobierno mejoró en el tema. Punto rojo: empeoró. Punto gris: sin cambio.</li>
     <li><strong>Fuentes.</strong> Dane, Policía Nacional y Mindefensa. Este prototipo usa cifras inventadas solo para probar el diseño.</li>
   </ul>
   <button onclick="this.closest('dialog').close()">Cerrar</button>
@@ -707,14 +711,17 @@ function drawBarras(){
     const m = mx(q);
     if (m < 1) return `<button class="bc" data-i="${i}" style="--w:#a9bac4;--wt:#f1f4f6;--o:${ordenTema(q)}" title="Sin datos"><span class="bt">${q.c}</span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}</span><div class="bp" style="display:grid;place-items:center;color:var(--mute);font-size:12px">Sin datos aún</div><div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
     const dp = q.P[m] - q.P[0], da = q.A[m] - q.A[0], v = veredicto(q);
-    const lo = Math.min(0, dp, da), hi = Math.max(0, dp, da), span = hi - lo || 1, zb = -lo / span * 100;
+    const lo = Math.min(0, dp, da), hi = Math.max(0, dp, da), span = (hi - lo || 1) / .9, zb = -lo / span * 100;
     const bar = (d, k, s) => {
       const z = Math.abs(d) < eps(q.d), h = Math.abs(d) / span * 100, neg = !z && d < 0;
       const txt = (z ? fmt(0, q.d) : sg(d, q.d)) + (q.du ? `<span class="u">${q.du}</span>` : '');
       return `<div class="bb ${k}${neg ? ' neg' : ''}" style="bottom:${neg ? zb - h : zb}%;height:${h}%;--bl:${neg ? zb - h : zb}%;--bw:${h}%"><span class="bv ${cls(q, s)}">${txt}</span></div>`;
     };
+    // espacio para el número (y su punto) fuera de la barra: crece con la cantidad de caracteres
+    const nch = d => (Math.abs(d) < eps(q.d) ? fmt(0, q.d) : sg(d, q.d)).length + (q.du || '').length;
+    const lp = Math.max(40, Math.round(Math.max(nch(dp), nch(da)) * 6.4 + 12));
     const ganador = v === 'e' ? 'Empate' : 'Mejor ' + (v === 'a' ? 'Abelardo' : 'Petro');
-    return `<button class="bc${lo < 0 ? ' hn' : ''}${hi > 0 ? ' hp' : ''}" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]};--o:${ordenTema(q)}" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
+    return `<button class="bc${lo < 0 ? ' hn' : ''}${hi > 0 ? ' hp' : ''}" data-i="${i}" style="--w:${COL[v]};--wt:${TINT[v]};--o:${ordenTema(q)};--lp:${lp}px" title="${ganador}" aria-label="${q.t}: Petro ${sg(dp, q.d)}${q.du}, Abelardo ${sg(da, q.d)}${q.du}. ${ganador}. Ver serie">` +
       `<span class="bt">${q.c}</span><span class="pwin bw">${v === 'p' ? 'Mejor <b class="wp">Petro</b>' : v === 'a' ? 'Mejor <b class="wa">Abelardo</b>' : 'Empate'}<span class="bm"> · a ${etq(m)}</span></span><span class="bh">${q.mejor === 'bajar' ? '↓ menos es mejor' : '↑ más es mejor'}<span class="bm2">${' · a ' + etq(m)}</span></span>` +
       `<div class="bp"><div class="bi"><div class="bz" style="bottom:${zb}%;--zl:${zb}%"></div>${bar(dp, 'p', q.P)}${bar(da, 'a', q.A)}</div></div>` +
       `<div class="bn"><span class="p">Petro</span><span class="a">Abelardo</span></div></button>`;
