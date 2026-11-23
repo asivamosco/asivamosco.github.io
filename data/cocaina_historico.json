@@ -2,36 +2,26 @@
   {
     "mes": "Junio",
     "anio": 2026,
-    "total": 72123.95,
-    "colombia": 34087.36,
-    "exterior": 38036.59
+    "total": 34087.36
   },
   {
     "mes": "Julio",
     "anio": 2026,
-    "total": 82825.99,
-    "colombia": 35601.32,
-    "exterior": 47224.67
+    "total": 35601.32
   },
   {
     "mes": "Agosto",
     "anio": 2026,
-    "total": 91857.09,
-    "colombia": 18504.37,
-    "exterior": 73352.71
+    "total": 18504.37
   },
   {
     "mes": "Septiembre",
     "anio": 2026,
-    "total": 60665.66,
-    "colombia": 22203.78,
-    "exterior": 38461.88
+    "total": 22203.78
   },
   {
     "mes": "Octubre",
     "anio": 2026,
-    "total": 50531.14,
-    "colombia": 40851.56,
-    "exterior": 9679.59
+    "total": 40851.56
   }
 ]

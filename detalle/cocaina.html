@@ -20,55 +20,75 @@
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
 .up{color:var(--up)} .dn{color:var(--dn)}
+/* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
 .vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
 a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+/* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
 header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
-.hd-left{flex:1 1 0}
-.hd-right{flex:none}
 /* flecha del mes en el header (fondo oscuro): tonos claros de los colores neutros */
 header.hd .ar.up{color:#5fd0e0} header.hd .ar.dn{color:#f2b66b}
+.hd-left{flex:1 1 0}
+.hd-right{flex:none}
+/* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
 main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100% - var(--col))/2)) 24px;display:grid;gap:18px;align-content:start}
 .card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
 .card h2{margin:0 0 12px;font-size:19px;font-weight:700}
+.badge{position:absolute;top:-10px;right:14px;background:#dde5ea;color:#3f5563;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
 .mute{color:var(--mute)} small{font-size:13px}
-/* hero */
+/* hero (card pequeña, cambia con la selección) */
 .hero{display:flex;flex-direction:column;gap:8px}
 .hero .kick{font-size:14px;color:var(--mute);line-height:1.2}
 .hero .ttl{font-size:20px;font-weight:700;line-height:1.2}
 .hero .big{font-size:64px;font-weight:700;line-height:1;letter-spacing:-1px;margin:2px 0 4px}
 .hero .big span{font-size:26px;margin-left:4px;color:var(--mute)}
 .vars{display:grid;gap:10px}
+/* etiqueta arriba, cifra debajo: el texto no se comprime junto a la cifra */
 .vars div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border-bottom:1px solid var(--line);padding-bottom:8px}
 .vars span{font-size:13px;line-height:1.2}
 .vars b{font-size:20px;line-height:1.1;white-space:nowrap}
-.hero .src{margin-top:auto;font-size:12.5px;line-height:1.35}
+.hero .src{margin-top:auto;font-size:12.5px;line-height:1.3}
 /* hallazgos */
 .hz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
 .hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
 .hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
 .hz p{margin:0;font-size:17px}
-/* lista de tipos */
+/* sexo */
+.sx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.sx button{all:unset;cursor:pointer;display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r)}
+.sx button:focus-visible{outline:2px solid var(--acc)}
+.sx button[aria-pressed=true]{border-color:var(--acc);background:#eef6f7}
+.sx .n{font-size:15px;color:var(--mute)} .sx .t{font-size:40px;font-weight:700;line-height:1.1}
+.sx .row2{display:flex;justify-content:space-between;margin-top:6px}
+.brecha{margin:12px 0 0;font-size:17px}
+.sxc .ref{margin:6px 0 0;font-size:13px}
+/* ciudades */
 .head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
 .head h2{margin:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
+.seg button[aria-pressed=true]{background:var(--acc);color:#fff}
 .list{display:grid;align-content:start}
 .row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(15,107,122,var(--a,.1))}
 .row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
+.row .vl{display:block}
 .row:focus-visible{outline:2px solid var(--acc)}
 .rk{color:var(--mute);text-align:right;font-size:14px}
 .nm{display:grid;gap:5px;min-width:0}
 .nm>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar{display:block;height:6px;background:#e6ecef;border-radius:3px;overflow:hidden}
+.bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
 .vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
 .vr{text-align:right;font-size:15px;font-weight:500}
 .ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
-/* bloque superior (3 columnas). Total: gráfica (2) + indicador (1). Tipo: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
+/* bloque superior (3 columnas). General: gráfica (2) + indicador (1). Ciudades: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
 .top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px;scroll-margin-top:84px}
 .top>.card{display:flex;flex-direction:column;min-width:0}
 .cg{grid-column:2/4;grid-row:1;min-height:300px}
 .top>.hero{grid-column:3;grid-row:1}
 .top.g .cg{grid-column:1/3}
-.cl{grid-column:1;grid-row:1/3;contain:size;min-height:300px;padding:14px 12px}
+.cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
 .top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "big vars" "src src";column-gap:20px;row-gap:6px;align-content:start}
 .top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
 .top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
@@ -76,6 +96,7 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .top:not(.g)>.hero .big{align-self:center;margin:0}
 .top:not(.g)>.hero .src{grid-area:src;margin-top:6px}
 .cl .head h2{font-size:17px}
+.cl .seg button{padding:4px 10px;font-size:14px}
 .cl .list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
 .cl .vl strong{font-size:17px}
 .cl .ref{margin:8px 0 0;font-size:13px;line-height:1.3}
@@ -84,6 +105,20 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .sub2{margin:18px 0 4px;font-size:16px;font-weight:700}
 .cg .hz .card{box-shadow:none;background:#f6f8f9}
 .cg .hz{align-self:flex-start}
+/* TOP: listas completas, los nombres largos pueden ocupar dos líneas */
+.t5 .nm>span:first-child{white-space:normal;overflow:visible}
+.t5 h2 small{font-size:14px;font-weight:500}
+#app>.tabs{margin:0}
+/* top 5 cambio anual */
+.tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.tres>.sxc{grid-column:1/-1}
+.t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
+.tr{all:unset;cursor:pointer;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:center;padding:9px 6px;border-top:1px solid var(--line);width:calc(100% - 12px)}
+.tr:hover{background:#f4f7f8} .tr[aria-pressed=true]{background:#e8f3f5}
+.tr:focus-visible{outline:2px solid var(--acc)}
+.tr .bar b.up{background:var(--up)} .tr .bar b.dn{background:var(--dn)}
+.tr .vl strong.up{color:var(--up-t)} .tr .vl strong.dn{color:var(--dn-t)}
+.t5 .vacio{margin:0;padding:12px 6px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
 /* serie */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
@@ -98,21 +133,46 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   .top:not(.g)>.hero{display:flex}
   .top:not(.g)>.hero .vars{grid-template-columns:1fr}
   .cl{contain:none;height:340px;min-height:0}
+  .tres{grid-template-columns:1fr}
 }
 @media(max-width:420px){.hz{grid-template-columns:1fr}}
+/* divisiones de gasto */
+.sx{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.sx .n{line-height:1.2;min-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sx .t{font-size:34px}.sx .row2{gap:8px;font-size:14px}
+.gt{margin:18px 0 4px;font-size:16px;font-weight:700}
+.tr.g{cursor:default;width:100%}
+.hero.wt{grid-template-areas:"kick tabs" "ttl ttl" "big vars" "src src"!important}
+.hero.wt.gr{grid-template-areas:"kick tabs" "ttl ttl" "gl gl"!important}
+.hero .htabs{grid-area:tabs;justify-self:end;margin:0}
+.hero .htabs button{padding:3px 12px;font-size:14px}
+.gwrap{grid-area:gl;min-width:0}
+.glist{max-height:250px;overflow-y:auto;overscroll-behavior:contain;border-bottom:1px solid var(--line)}
+.glist .tr:first-child{border-top:0}
+.gwrap .ref{margin:6px 0 0;font-size:13px}.tr.g:hover{background:none}
+.tr.g .wrap{white-space:normal;overflow:visible}
+.tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
+.hero .src{line-height:1.35}
+/* Ciudades y Divisiones en celular: en vez del rótulo ("Inflación por ciudad" / "por división de gasto"), el panel muestra el nombre elegido (en escritorio queda el rótulo y debajo el nombre) */
 .hero .kc{display:none}
+/* Ciudades y Divisiones, escritorio: sin el rótulo "Inflación por ciudad / por división de gasto" (el nombre ya está como título del panel) */
 .hero .kick.kv{display:none}
 @media(max-width:600px){
   body .top:not(.g)>.hero .kick.kv{display:block}
   body .top:not(.g)>.hero .kk{display:none}
   body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
+}
+/* Celular: la lista de ciudades / divisiones se presenta como select */
+@media(max-width:600px){
+  /* el nombre del select se recorta a una sola línea (el nombre completo está en el panel del indicador) */
   .selT{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .cl .list{display:none}
   .cl{height:auto;min-height:0}
 }
-/* las filas de la lista muestran los kg y, debajo, la variación anual */
+/* las filas de las listas muestran los kg y, debajo, la variación anual */
 .row .vl{display:flex;flex-direction:column;align-items:flex-end}
-.row .vl small{font-size:12px;line-height:1.1;font-weight:700}
+.row .vl small,.tr .vl small{font-size:12px;line-height:1.1;font-weight:700}
+.row .nm>small{font-size:12px;line-height:1.1}
 </style>
 </head>
 <body class="app">
@@ -121,6 +181,12 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
     <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
   </div>
   <div class="hd-title" id="hdTitle" aria-live="polite"></div>
+  <nav class="hd-mid" aria-label="Vista">
+    <button type="button" class="vt" data-vista="gen" aria-pressed="true">Total</button>
+    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
+    <button type="button" class="vt" data-vista="dep" aria-pressed="false">Dptos</button>
+    <button type="button" class="vt" data-vista="ciu" aria-pressed="false">Ciudades</button>
+  </nav>
   <div class="hd-right">
     <div class="btn-group">
       <a class="help-btn" href="../index.html" aria-label="Volver al inicio" title="Inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h5v-6h3v6h5V10"/></svg></a>
@@ -142,15 +208,14 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 const IND = new URLSearchParams(location.search).get('ind') || 'cocaina';
 const URL_JSON = `data/detalle_${IND}.json`;
 const $ = s => document.querySelector(s);
-// Celular: el select va invisible sobre un título que muestra completo el valor elegido
+// Celular: el select va invisible sobre un título que muestra completo (con saltos de línea) el valor elegido
 function selTitle() {
   const sl = document.getElementById('selLista'), t = document.getElementById('selT');
   if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
 }
 document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
-// Destacado del indicador principal y "variación del mes": ya están en el panel del indicador, no van en la lista
+// Destacado del indicador principal: en celular no va en la lista de destacados (ya está en el panel del indicador)
 const esNac = x => x.tipo === 'indicador' || /(^|_)nac(ional)?($|_)/i.test(x.tipo || '');
-const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
 // Carrusel de gráficas (celular): flechas y puntos de guía
 const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
 const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
@@ -165,6 +230,8 @@ document.addEventListener('click', e => {
   const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
   d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
 });
+// Destacado "variación del mes": tampoco va en la lista (ya está en el panel del indicador)
+const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
 const fm0 = n => fmt(n, 0);
@@ -172,14 +239,20 @@ const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '')
 // Colores neutros (ver :root): 'up' = más cocaína incautada, 'dn' = menos
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
+// Departamentos, ciudades y municipios con pocos kg (< 10) se muestran con 2 decimales para no verse como 0
+const dq = n => n != null && n !== 0 && Math.abs(n) < 10 ? 2 : 0;
+const fq = n => fmt(n, dq(n));
 
-// vista: 'gen' (total) | 'tip' (Colombia / Exterior)
-// Solo se muestra lo incautado en Colombia (sin exterior): no hay dimensiones
-const DIMS = {};
-let D, UN = 'kg', st = {vista: 'gen', g: null, sel: {tip: null}, gtab: 'graf'};
+// vista: 'gen' (total) | 'top' | 'dep' (departamentos) | 'ciu' (ciudades con más kg).
+// Cada lista (dep/ciu) tiene el mismo esquema de items; sus "hijos": departamento -> municipios (la ciudad no tiene).
+const DIMS = {
+  dep: {k: 'departamentos', una: 'Departamento', hijos: 'Municipios', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Kg por departamento'},
+  ciu: {k: 'ciudades',      una: 'Ciudad',       hijos: null,         plural: 'Ciudades',      ning: 'Ninguna ciudad',       titulo: 'Por ciudad',        kick: 'Kg por ciudad'}
+};
+let D, UN = 'kg', st = {vista: 'gen', g: null, sel: {dep: null, ciu: null}, htab: 'ent', gtab: 'graf', ttab: 'dep'};
 const total = () => ({nombre: 'Cocaína incautada en Colombia', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
 const entSerie = (v, d) => ({nombre: d.nombre, datos: d.serie_12m, tipo: v, d});
-const items = v => D.dimensiones[DIMS[v].k].items;
+const items = v => ((D.dimensiones || {})[DIMS[v].k] || {}).items || [];
 const cur = () => st.vista === 'gen' ? st.g : st.sel[st.vista];
 
 fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -189,6 +262,13 @@ fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.st
       const p = [...items(v)].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad)[0];
       st.sel[v] = p ? entSerie(v, p) : null;
     });
+    // Si el JSON no trae una dimensión, se ocultan sus pestañas del header (y TOP si no hay ninguna)
+    const hay = Object.keys(DIMS).filter(v => items(v).length);
+    document.querySelectorAll('[data-vista]').forEach(b => {
+      const v = b.dataset.vista;
+      if ((DIMS[v] && !hay.includes(v)) || (v === 'top' && !hay.length)) b.style.display = 'none';
+    });
+    if (hay.length && !hay.includes(st.ttab)) st.ttab = hay[0];
     render();
   })
   .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend (kpi.vw_cocaina_detalle → campo detalle, solo Colombia) y publícalo en la carpeta data/ junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
@@ -215,6 +295,7 @@ function tituloHeader(nombre) {
 function render() {
   document.title = 'Cocaína · Así Vamos';
   tituloHeader('Cocaína');
+  $('#app').classList.toggle('vtop', st.vista === 'top');
   const gen = st.vista === 'gen';
   document.querySelectorAll('[data-vista]').forEach(b => b.setAttribute('aria-pressed', b.dataset.vista === st.vista));
 
@@ -228,14 +309,26 @@ function render() {
       </section>
       <section class="card hero" id="hero" aria-label="Indicador"></section>
     </div>`;
+  } else if (st.vista === 'top') {
+    $('#app').innerHTML = `
+    <div class="tabs" role="group" aria-label="Ver por">
+      ${Object.keys(DIMS).filter(v => items(v).length).map(v => `<button data-ttab="${v}" aria-pressed="${st.ttab === v}">${DIMS[v].plural}</button>`).join('')}
+    </div>
+    <div class="tres">
+      <section class="card t5" id="t5s" aria-label="Aumentaron"></section>
+      <section class="card t5" id="t5b" aria-label="Redujeron"></section>
+    </div>
+    <p class="ref" style="margin:-6px 0 0">Variación porcentual de los kg incautados frente al mismo mes de hace un año; debajo, el cambio en kg. Toca un departamento o una ciudad para ver su detalle.</p>`;
+    top5();
   } else {
     const c = DIMS[st.vista];
     $('#app').innerHTML = `
     <div class="top" id="top">
       <section class="card cl" aria-label="${c.titulo}">
         <div class="head"><h2>${c.titulo}</h2><small class="mute">${esc(UN)} del mes</small></div>
-        <div class="clfoot"><small class="mute clm">${esc(UN)} del mes</small><p class="ref">${refTxt(D.dimensiones[c.k].referencias)}</p></div>
+        <div class="clfoot"><small class="mute clm">${esc(UN)} del mes</small><p class="ref">${refTxt(((D.dimensiones || {})[c.k] || {}).referencias)}</p></div>
         <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir"></select></div>
+        <div class="tabs htabs mtabs" id="mtabs" role="group" aria-label="Contenido del panel"></div>
         <div class="list" id="lista"></div>
       </section>
       <section class="card cg" aria-label="Serie">
@@ -246,17 +339,17 @@ function render() {
     </div>`;
     lista();
   }
-  hero(); serie();
+  if (st.vista !== 'top') { hero(); serie(); }
 }
 
 function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${sg(r.var_anual_pct)} % vs. hace un año`).join(' · '); }
 
-// Card de indicador: total nacional por defecto; cambia con el tipo elegido (Colombia / Exterior)
+// Card de indicador: total de Colombia por defecto; cambia con el departamento o la ciudad elegidos
 function hero() {
   const s = cur(), h = D.hero, per = D.periodo, d = s.d;
   let kick = '', ttl = 'Cocaína incautada en Colombia', big = fm0(h.total), unit = UN, com = h.comentario_popular, extra = '';
   const src = `${per.etiqueta} · Solo Colombia (no incluye incautaciones en el exterior) · Fuente: ${D.fuente}`;
-  const vp = (l, v, dd = 2) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v, dd)} %</b></div>`;
+  const vp = (l, v, dd = 2) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${v == null ? '—' : sg(v, dd) + ' %'}</b></div>`;
   let filas;
   if (s.tipo === 'nac') {
     filas = vp('Vs. hace un año', h.var_anual_pct) + vp('Vs. mes anterior', h.var_mensual_pct)
@@ -266,18 +359,28 @@ function hero() {
     if (h.acumulado_anio != null) ex.push(`Acumulado ${per.anio}: ${fm0(h.acumulado_anio)} ${esc(UN)}${h.var_acumulado_pct != null ? ` (${sg(h.var_acumulado_pct, 1)} % vs. ${per.anio - 1})` : ''}`);
     extra = ex.join('<br>');
   } else {
-    kick = DIMS[s.tipo].kick; ttl = s.nombre; big = fm0(d.cantidad); com = d.comentario_popular;
+    kick = DIMS[s.tipo].kick; ttl = s.nombre; big = fq(d.cantidad); com = d.comentario_popular;
     filas = vp('Vs. hace un año', d.var_anual_pct)
-      + `<div><span class="mute">Hace un año</span><b>${fm0(d.cantidad_hace_12)} ${esc(UN)}</b></div>`
-      + `<div><span class="mute">Diferencia</span><b class="${cls(d.diferencia)}">${flecha(d.diferencia)} ${sg(d.diferencia, 0)} ${esc(UN)}</b></div>`
-      + `<div><span class="mute">Del total</span><b>${fmt(d.participacion_pct, 1)} %</b></div>`;
+      + `<div><span class="mute">Hace un año</span><b>${fq(d.cantidad_hace_12)} ${esc(UN)}</b></div>`
+      + `<div><span class="mute">Diferencia</span><b class="${cls(d.diferencia)}">${flecha(d.diferencia)} ${sg(d.diferencia, dq(d.diferencia))} ${esc(UN)}</b></div>`
+      + `<div><span class="mute">Del total nacional</span><b>${fmt(d.participacion_pct, 1)} %</b></div>`;
+    if (s.tipo === 'ciu' && d.departamento) extra = `Departamento: ${esc(d.departamento)}`;
   }
-  $('#hero').className = 'card hero';
-  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}
-    <div class="ttl">${esc(ttl)}</div>
-    <div class="big">${big}<span>${esc(unit)}</span></div>
+  // Pestañas del panel (solo donde la entidad tiene hijos: departamento -> municipios)
+  const enE = s.tipo !== 'nac', cfg = DIMS[s.tipo], conH = enE && !!cfg.hijos, gr = conH && st.htab === 'hijos';
+  $('#hero').className = 'card hero' + (conH ? ' wt' + (gr ? ' gr' : '') : '');
+  const nH = conH ? (d.hijos || []).length : 0;
+  const tabBtns = conH ? `<button data-htab="ent" aria-pressed="${!gr}">${cfg.una}</button>
+      <button data-htab="hijos" aria-pressed="${gr}">${cfg.hijos}${nH ? ` (${nH})` : ''}</button>` : '';
+  const tabsH = conH ? `<div class="tabs htabs" role="group" aria-label="Contenido del panel">${tabBtns}</div>` : '';
+  const cuerpo = gr ? hijosHtml(d, cfg) : `<div class="big">${big}<span>${esc(unit)}</span></div>
     <div class="vars">${filas}</div>
     <small class="mute src">${com ? esc(com) + '<br>' : ''}${extra ? extra + '<br>' : ''}${esc(src)}</small>`;
+  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
+    <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
+  // Celular: las pestañas de la entidad / sus hijos van bajo el select; en la pestaña de hijos se oculta la gráfica (clase vgr)
+  const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;
+  const tp = $('#top'); if (tp) tp.classList.toggle('vgr', gr);
 }
 
 // Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
@@ -287,7 +390,20 @@ function marcar() {
   if (sl) sl.value = its.indexOf(sel); selTitle();
 }
 
-// Lista lateral: Colombia y Exterior, ordenados por cantidad
+// Hijos de la entidad elegida (departamento -> municipios), con scroll si la lista es larga
+function hijosHtml(d, cfg) {
+  const hs = [...(d.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), 0.01);
+  if (!hs.length) return `<div class="gwrap"><p class="vacio">Sin detalle de ${cfg.hijos.toLowerCase()}.</p></div>`;
+  return `<div class="gwrap"><div class="glist" tabindex="0" aria-label="${esc(cfg.hijos)}">${hs.map((h, i) => `
+    <div class="tr g">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span class="wrap">${esc(h.nombre)}</span><span class="bar"><b class="${cls(h.var_anual_pct)}" style="width:${100 * (h.participacion_pct || 0) / mx}%"></b></span></span>
+      <span class="vl"><strong>${fq(h.cantidad)}</strong>
+        <small class="${cls(h.var_anual_pct)}">${flecha(h.var_anual_pct)} ${h.var_anual_pct == null ? 'nuevo' : sg(h.var_anual_pct, 1) + ' %'}</small></span></div>`).join('')}</div>
+    <p class="ref">${esc(UN)} del mes; debajo, variación frente a hace un año. La barra muestra su peso dentro de ${esc(d.nombre)}.</p></div>`;
+}
+
+// Lista lateral: departamentos o ciudades, ordenados por kg
 function lista() {
   const v = st.vista, todas = items(v), its = [...todas].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad), sel = st.sel[v].d;
   const ts = its.map(c => c.cantidad || 0), mx = Math.max(...ts), mn = Math.min(...ts);
@@ -296,16 +412,43 @@ function lista() {
     const a = .08 + .52 * ((c.cantidad || 0) - mn) / ((mx - mn) || 1);
     return `<button class="row" style="--a:${a.toFixed(2)}" data-e="${todas.indexOf(c)}" data-v="${v}" title="${esc(c.nombre)}" aria-pressed="${sel === c}">
       <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(c.nombre)}</span></span>
-      <span class="vl"><strong>${fm0(c.cantidad)}</strong><small class="${cls(c.var_anual_pct)}">${c.var_anual_pct == null ? 'nuevo' : sg(c.var_anual_pct, 1) + ' %'}</small></span></button>`;
+      <span class="nm"><span>${esc(c.nombre)}</span>${v === 'ciu' && c.departamento ? `<small class="mute">${esc(c.departamento)}</small>` : ''}</span>
+      <span class="vl"><strong>${fq(c.cantidad)}</strong><small class="${cls(c.var_anual_pct)}">${c.var_anual_pct == null ? 'nuevo' : sg(c.var_anual_pct, 1) + ' %'}</small></span></button>`;
   }).join('');
+  const r = l.querySelector('[aria-pressed=true]');
+  if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
   const sl = $('#selLista');
   sl.setAttribute('aria-label', 'Elegir ' + DIMS[v].una.toLowerCase());
-  sl.innerHTML = its.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fm0(c.cantidad)} ${esc(UN)} · ${esc(c.nombre)}</option>`).join(''); selTitle();
+  sl.innerHTML = its.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fq(c.cantidad)} ${esc(UN)} · ${esc(c.nombre)}${v === 'ciu' && c.departamento ? ' (' + esc(c.departamento) + ')' : ''}</option>`).join(''); selTitle();
+}
+
+// Top: departamentos / ciudades que más aumentaron o redujeron sus kg (% vs. hace un año)
+function top5() {
+  const v = st.ttab, cfg = DIMS[v], todas = items(v), cnt = {up: 0, dn: 0};
+  const bloque = (tit, k, vacio) => {
+    const its = todas.filter(c => c.var_anual_pct != null);
+    const arr = (k === 'up' ? its.filter(c => c.var_anual_pct > 0).sort((a, b) => b.var_anual_pct - a.var_anual_pct)
+                            : its.filter(c => c.var_anual_pct < 0).sort((a, b) => a.var_anual_pct - b.var_anual_pct));
+    const mx = Math.max(...its.map(c => Math.abs(c.var_anual_pct)), 0.01);
+    cnt[k] = arr.length;
+    return `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
+    <button class="tr" data-e="${todas.indexOf(c)}" data-v="${v}" title="${esc(c.nombre)}" aria-pressed="false">
+      <span class="rk">${i + 1}</span>
+      <span class="nm"><span>${esc(c.nombre)}</span>${v === 'ciu' && c.departamento ? `<small class="mute">${esc(c.departamento)}</small>` : ''}<span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pct) / mx}%"></b></span></span>
+      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pct)} ${sg(c.var_anual_pct, 1)} %</strong><small class="${k}">${sg(c.diferencia, dq(c.diferencia))} ${esc(UN)}</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
+  };
+  $('#t5s').innerHTML = bloque(`${cfg.plural} que aumentaron`, 'up', `${cfg.ning} aumentó sus kg frente a hace un año.`);
+  $('#t5b').innerHTML = bloque(`${cfg.plural} que redujeron`, 'dn', `${cfg.ning} redujo sus kg frente a hace un año.`);
+  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
+  const wu = cnt.up > cnt.dn ? 60 : cnt.up < cnt.dn ? 40 : 50;
+  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
 }
 
 function serie() {
   const s = cur(), dest = s.nac && st.gtab === 'dest';
+  // Departamentos y ciudades: pocos kg se grafican con 2 decimales
+  const dd = !s.nac && Math.max(...(s.datos || []).map(p => p.valor)) < 10 ? 2 : 0;
+  // El título es solo "kg por mes: últimos 12 meses" (el nombre ya está en el panel del indicador)
   $('#serieT').innerHTML = !s.nac ? `<span class="serTx">${esc(UN)} por mes: últimos 12 meses</span>`
     : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
   // Total: pestañas Gráficas / Destacados
@@ -315,7 +458,7 @@ function serie() {
   $('#chart').innerHTML = dest ? hallazgosHtml()
     : s.nac
     ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses (${esc(UN)})</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año (${esc(UN)})</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
-    : grafica(s.datos || [], false);
+    : grafica(s.datos || [], false, dd);
   // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
   const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
   const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
@@ -354,19 +497,23 @@ document.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || !D) return;
   if (b.dataset.vista) {
     if (b.dataset.vista === st.vista) return;
-    st.vista = b.dataset.vista; render(); $('#app').scrollTo({top: 0}); return;
+    st.vista = b.dataset.vista; st.htab = 'ent'; render(); $('#app').scrollTo({top: 0}); return;
   }
+  if (b.dataset.htab) { st.htab = b.dataset.htab; hero(); return; }
+  if (b.dataset.ttab) { st.ttab = b.dataset.ttab; render(); return; }
   if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
   if (b.dataset.e != null) {
+    // desde TOP se abre el detalle en la pestaña de esa dimensión
     const v = b.dataset.v || st.vista;
-    st.sel[v] = entSerie(v, items(v)[b.dataset.e]);
+    st.sel[v] = entSerie(v, items(v)[b.dataset.e]); st.htab = 'ent';
+    if (st.vista !== v) { st.vista = v; render(); $('#app').scrollTo({top: 0}); return; }
   } else return;
   marcar(); hero(); serie();
 });
 document.addEventListener('change', e => {
   if (!D || e.target.id !== 'selLista' || !DIMS[st.vista]) return;
   const v = st.vista;
-  st.sel[v] = entSerie(v, items(v)[e.target.value]);
+  st.sel[v] = entSerie(v, items(v)[e.target.value]); st.htab = 'ent';
   marcar(); hero(); serie();
 });
 </script>

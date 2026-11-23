@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="assets/css/background.css?v=2">
 
   <style>
-    /* Colores de mejora / empeora del index */
+    /* Colores de mejora (ámbar) / empeora (gris) del index */
     :root{
-      --ok:#085E6B;  --ok-rgb:8,94,107;    --ok-txt:#085E6B;
-      --mal:#D9822B; --mal-rgb:217,130,43; --mal-txt:#D9822B;
+      --ok:#E3A02B;  --ok-rgb:227,160,43;  --ok-txt:#B7791F;
+      --mal:#64748B; --mal-rgb:100,116,139; --mal-txt:#556070;
     }
 
     /* Grosor de la línea de los sparklines */
@@ -31,7 +31,7 @@
     header.hd .pulse-btn{
       display:inline-flex !important;align-items:center;justify-content:center;
       height:34px;padding:0 10px !important;margin:0 !important;
-      background:linear-gradient(180deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,.06) 48%,rgba(0,0,0,.2) 100%),linear-gradient(90deg,#E86F1C 50%,#0F6CBD 50%) !important;color:#fff !important;
+      background:linear-gradient(180deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,.06) 48%,rgba(0,0,0,.2) 100%),linear-gradient(90deg,#D9822B 50%,#3F4E59 50%) !important;color:#fff !important;
       border:0 !important;border-radius:6px !important;
       /* relieve: brillo arriba, sombra interna abajo y borde inferior que lo despega del header */
       box-shadow:inset 0 1px 0 rgba(255,255,255,.6),inset 0 -2px 0 rgba(0,0,0,.28),0 2px 0 rgba(0,0,0,.4),0 5px 9px rgba(0,0,0,.35) !important;
@@ -177,7 +177,7 @@
           <div class="sub">Fuente: Policía Nal.</div>
         </a>
 
-        <a class="card glass" id="cardNarco" href="#" data-dashboard aria-label="Incautación Cocaína">
+        <a class="card glass" id="cardNarco" href="detalle/cocaina.html?ind=cocaina" data-dashboard aria-label="Incautación Cocaína">
           <div class="head"><h2>Incautación Cocaína</h2><span class="go" aria-hidden="true">›</span></div>
           <div class="spark" id="sparkNarco"></div>
           <div class="sub">Fuente: Mindefensa</div>
