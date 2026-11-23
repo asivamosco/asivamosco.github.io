@@ -815,6 +815,8 @@ else window.addEventListener('resize', () => drawChart(IND[sel]));
     const r = await fetch(DATA_URL, {cache: 'no-cache'});
     if (!r.ok) throw new Error('HTTP ' + r.status);
     IND = await r.json();
+    // nombre corto del tema de cocaína en las cards: "Incautación Cocaína"
+    IND.forEach(q => { const n = ((q.c || q.t || '') + '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); if (n.includes('coca') && !n.includes('incaut')) q.c = 'Incautación Cocaína'; });
     // meses de gobierno de Abelardo con dato = el máximo entre temas; ventana inicial = "hasta hoy"
     MA = Math.max(1, ...IND.map(q => q.A.length - 1));
     win = MA;
