@@ -1,0 +1,424 @@
+{
+  "indicador": "cocaina",
+  "fuente": "Mindefensa - Información Estadística Desagregada (Lucha Antidrogas)",
+  "generado_en": "2026-11-23T14:50:13+00:00",
+  "fecha_corte": "2026-10-31",
+  "fecha_fuente": "2026-11-17",
+  "periodo": {
+    "anio": 2026,
+    "mes_num": 10,
+    "mes_nombre": "Octubre",
+    "etiqueta": "Octubre 2026"
+  },
+  "hero": {
+    "total": 50531.1436,
+    "total_anterior": 60665.6637,
+    "total_hace_12": 86758.642,
+    "var_anual_pct": -41.76,
+    "var_anual_abs": -36227.4984,
+    "var_mensual_pct": -16.71,
+    "colombia": 40851.5576,
+    "exterior": 9679.586,
+    "colombia_hace_12": 18448.517,
+    "exterior_hace_12": 68310.125,
+    "participacion_exterior_pct": 19.16,
+    "acumulado_anio": 821085.0234,
+    "acumulado_anio_anterior": 868597.3589,
+    "var_acumulado_pct": -5.47,
+    "direccion_anual": "baja",
+    "direccion_mes": "baja",
+    "meses_seguidos_vs_ano_anterior": 2,
+    "comentario_popular": "La menor cantidad de cocaína incautada en un mes desde diciembre de 2025.",
+    "unidad": "kg"
+  },
+  "hallazgos": [
+    {
+      "tipo": "indicador",
+      "titulo": "Cocaína incautada",
+      "texto": "La cocaína incautada bajó 41,76 % frente a octubre de 2025 (50.531 kg en el mes).",
+      "valor": -41.76,
+      "unidad": "%"
+    },
+    {
+      "tipo": "mensual",
+      "titulo": "Variación del mes",
+      "texto": "La cocaína incautada bajó 16,71 % frente al mes anterior.",
+      "valor": -16.71,
+      "unidad": "%"
+    },
+    {
+      "tipo": "record_mes",
+      "titulo": "Frente a otros octubre",
+      "texto": "La menor cantidad de cocaína incautada para un octubre desde 2022."
+    },
+    {
+      "tipo": "record_serie",
+      "titulo": "Frente a toda la serie",
+      "texto": "La menor cantidad de cocaína incautada en un mes desde diciembre de 2025."
+    },
+    {
+      "tipo": "acumulado",
+      "titulo": "Acumulado del año",
+      "texto": "Entre enero y octubre de 2026 se incautaron 821.085 kg: 5,47 % menos que en el mismo periodo de 2025 (868.597 kg).",
+      "valor": -5.47,
+      "unidad": "%"
+    },
+    {
+      "tipo": "participacion_exterior",
+      "titulo": "Dónde se incauta",
+      "texto": "El 19,16 % de la cocaína del mes se incautó en el exterior (9.680 kg), frente al 78,74 % de hace un año.",
+      "valor": 19.16,
+      "unidad": "%"
+    },
+    {
+      "tipo": "tipo_baja",
+      "titulo": "Tipo con mayor reducción",
+      "texto": "En el exterior: 85,83 % menos (9.680 kg frente a 68.310 kg).",
+      "valor": -85.83,
+      "unidad": "%",
+      "tipo_nombre": "En el exterior"
+    },
+    {
+      "tipo": "tipo_alta",
+      "titulo": "Tipo con mayor aumento",
+      "texto": "En Colombia: 121,44 % más (40.852 kg frente a 18.449 kg).",
+      "valor": 121.44,
+      "unidad": "%",
+      "tipo_nombre": "En Colombia"
+    },
+    {
+      "tipo": "tipo_aporte",
+      "titulo": "Quién pesa más en el cambio",
+      "texto": "En el exterior explica el 161,84 % de la reducción del total (58.631 kg de 36.227 kg).",
+      "valor": 161.84,
+      "unidad": "%",
+      "tipo_nombre": "En el exterior"
+    }
+  ],
+  "dimensiones": {
+    "unidad_cantidad": "kg",
+    "tipos": {
+      "referencias": [
+        {
+          "nombre": "Total",
+          "var_anual_pct": -41.76
+        }
+      ],
+      "items": [
+        {
+          "nombre": "En Colombia",
+          "clave": "colombia",
+          "cantidad": 40851.5576,
+          "cantidad_hace_12": 18448.517,
+          "diferencia": 22403.0406,
+          "var_anual_pct": 121.44,
+          "participacion_pct": 80.84,
+          "puesto_cantidad": 1,
+          "puesto_var": 1,
+          "direccion_anual": "sube",
+          "comentario_popular": "40.852 kg incautados en colombia en octubre (121,44 % más que hace un año).",
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 43840.9413,
+              "var_anual_pct": 265.71,
+              "valor_hace_12": 11987.8935
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 12442.3511,
+              "var_anual_pct": 51.28,
+              "valor_hace_12": 8224.4807
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 16139.045,
+              "var_anual_pct": -21.25,
+              "valor_hace_12": 20495.1281
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 40006.7932,
+              "var_anual_pct": 32.67,
+              "valor_hace_12": 30154.0085
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 35728.9811,
+              "var_anual_pct": -14.42,
+              "valor_hace_12": 41751.5872
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 26876.2584,
+              "var_anual_pct": 57.76,
+              "valor_hace_12": 17036.202
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 31733.0275,
+              "var_anual_pct": 8.43,
+              "valor_hace_12": 29267.0412
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 34087.3609,
+              "var_anual_pct": 7.33,
+              "valor_hace_12": 31760.7518
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 35601.3205,
+              "var_anual_pct": 24.35,
+              "valor_hace_12": 28630.6244
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 18504.3715,
+              "var_anual_pct": -38.85,
+              "valor_hace_12": 30262.4707
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 22203.7837,
+              "var_anual_pct": 1.67,
+              "valor_hace_12": 21838.884
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 40851.5576,
+              "var_anual_pct": 121.44,
+              "valor_hace_12": 18448.517
+            }
+          ]
+        },
+        {
+          "nombre": "En el exterior",
+          "clave": "exterior",
+          "cantidad": 9679.586,
+          "cantidad_hace_12": 68310.125,
+          "diferencia": -58630.539,
+          "var_anual_pct": -85.83,
+          "participacion_pct": 19.16,
+          "puesto_cantidad": 2,
+          "puesto_var": 2,
+          "direccion_anual": "baja",
+          "comentario_popular": "9.680 kg incautados en el exterior en octubre (85,83 % menos que hace un año).",
+          "serie_12m": [
+            {
+              "mes": "Nov",
+              "anio": 2025,
+              "valor": 34979.409,
+              "var_anual_pct": -37.97,
+              "valor_hace_12": 56392.15
+            },
+            {
+              "mes": "Dic",
+              "anio": 2025,
+              "valor": 24665.48,
+              "var_anual_pct": -43.31,
+              "valor_hace_12": 43509.38
+            },
+            {
+              "mes": "Ene",
+              "anio": 2026,
+              "valor": 58308.648,
+              "var_anual_pct": -20.07,
+              "valor_hace_12": 72951.708
+            },
+            {
+              "mes": "Feb",
+              "anio": 2026,
+              "valor": 83342.23,
+              "var_anual_pct": 111.19,
+              "valor_hace_12": 39462.27
+            },
+            {
+              "mes": "Mar",
+              "anio": 2026,
+              "valor": 60421.646,
+              "var_anual_pct": 8.53,
+              "valor_hace_12": 55670.799
+            },
+            {
+              "mes": "Abr",
+              "anio": 2026,
+              "valor": 46737.918,
+              "var_anual_pct": -8.5,
+              "valor_hace_12": 51078.76
+            },
+            {
+              "mes": "May",
+              "anio": 2026,
+              "valor": 63786.646,
+              "var_anual_pct": -4.59,
+              "valor_hace_12": 66856.012
+            },
+            {
+              "mes": "Jun",
+              "anio": 2026,
+              "valor": 38036.59,
+              "var_anual_pct": -51.53,
+              "valor_hace_12": 78475.74
+            },
+            {
+              "mes": "Jul",
+              "anio": 2026,
+              "valor": 47224.666,
+              "var_anual_pct": -12.21,
+              "valor_hace_12": 53794.399
+            },
+            {
+              "mes": "Ago",
+              "anio": 2026,
+              "valor": 73352.714,
+              "var_anual_pct": 58.95,
+              "valor_hace_12": 46148.175
+            },
+            {
+              "mes": "Sep",
+              "anio": 2026,
+              "valor": 38461.88,
+              "var_anual_pct": -41.9,
+              "valor_hace_12": 66204.156
+            },
+            {
+              "mes": "Oct",
+              "anio": 2026,
+              "valor": 9679.586,
+              "var_anual_pct": -85.83,
+              "valor_hace_12": 68310.125
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "serie": {
+    "doce_meses": [
+      {
+        "mes": "Nov",
+        "anio": 2025,
+        "valor": 78820.3503,
+        "var_anual_pct": 15.27,
+        "valor_hace_12": 68380.0435
+      },
+      {
+        "mes": "Dic",
+        "anio": 2025,
+        "valor": 37107.8311,
+        "var_anual_pct": -28.27,
+        "valor_hace_12": 51733.8607
+      },
+      {
+        "mes": "Ene",
+        "anio": 2026,
+        "valor": 74447.693,
+        "var_anual_pct": -20.33,
+        "valor_hace_12": 93446.8361
+      },
+      {
+        "mes": "Feb",
+        "anio": 2026,
+        "valor": 123349.0232,
+        "var_anual_pct": 77.18,
+        "valor_hace_12": 69616.2785
+      },
+      {
+        "mes": "Mar",
+        "anio": 2026,
+        "valor": 96150.6272,
+        "var_anual_pct": -1.31,
+        "valor_hace_12": 97422.3862
+      },
+      {
+        "mes": "Abr",
+        "anio": 2026,
+        "valor": 73614.1763,
+        "var_anual_pct": 8.07,
+        "valor_hace_12": 68114.962
+      },
+      {
+        "mes": "May",
+        "anio": 2026,
+        "valor": 95519.6735,
+        "var_anual_pct": -0.63,
+        "valor_hace_12": 96123.0532
+      },
+      {
+        "mes": "Jun",
+        "anio": 2026,
+        "valor": 72123.9509,
+        "var_anual_pct": -34.57,
+        "valor_hace_12": 110236.4918
+      },
+      {
+        "mes": "Jul",
+        "anio": 2026,
+        "valor": 82825.9865,
+        "var_anual_pct": 0.49,
+        "valor_hace_12": 82425.0234
+      },
+      {
+        "mes": "Ago",
+        "anio": 2026,
+        "valor": 91857.0855,
+        "var_anual_pct": 20.22,
+        "valor_hace_12": 76410.6457
+      },
+      {
+        "mes": "Sep",
+        "anio": 2026,
+        "valor": 60665.6637,
+        "var_anual_pct": -31.1,
+        "valor_hace_12": 88043.04
+      },
+      {
+        "mes": "Oct",
+        "anio": 2026,
+        "valor": 50531.1436,
+        "var_anual_pct": -41.76,
+        "valor_hace_12": 86758.642
+      }
+    ],
+    "mismo_mes": [
+      {
+        "anio": 2022,
+        "valor": 40388.9509,
+        "var_anual_pct": -38.1
+      },
+      {
+        "anio": 2023,
+        "valor": 70571.5219,
+        "var_anual_pct": 74.73
+      },
+      {
+        "anio": 2024,
+        "valor": 84287.6055,
+        "var_anual_pct": 19.44
+      },
+      {
+        "anio": 2025,
+        "valor": 86758.642,
+        "var_anual_pct": 2.93
+      },
+      {
+        "anio": 2026,
+        "valor": 50531.1436,
+        "var_anual_pct": -41.76
+      }
+    ]
+  }
+}
