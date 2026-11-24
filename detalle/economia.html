@@ -46,6 +46,13 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .vars span{font-size:13px;line-height:1.2}
 .vars b{font-size:20px;line-height:1.1;white-space:nowrap}
 .hero .src{margin-top:auto;font-size:12.5px;line-height:1.3}
+.hero .per{grid-area:per;font-size:14px;font-weight:700;color:var(--mute);line-height:1.2}
+.hero .fte{grid-area:fte;justify-self:center;text-align:center;font-size:12px;line-height:1.2}
+.vars.tri{grid-template-columns:1fr!important;gap:6px;align-content:center}
+.vars.tri .th{font-size:13px;color:var(--mute);font-weight:600}
+.vars.tri div{flex-direction:row;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:5px}
+.vars.tri div span{font-size:14px}.vars.tri b{font-size:18px}
+.vars.tri .vt b{font-size:15px}
 /* hallazgos */
 .hz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
@@ -87,7 +94,7 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .top>.hero{grid-column:3;grid-row:1}
 .top.g .cg{grid-column:1/3}
 .cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
-.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "big vars" "src src";column-gap:20px;row-gap:6px;align-content:start}
+.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "per per" "big vars" "src src" "fte fte";column-gap:20px;row-gap:6px;align-content:start}
 .top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
 .top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
 .top:not(.g)>.hero .ttl{font-size:22px}
@@ -128,8 +135,22 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 @media(max-width:600px){
   .top{grid-template-columns:1fr}
   .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
-  .top:not(.g)>.hero{display:flex}
-  .top:not(.g)>.hero .vars{grid-template-columns:1fr}
+  /* panel del indicador en dos zonas (50 % cifra grande con el texto debajo, ambos centrados · 50 % tabla de los 4 meses anteriores).
+     Aplica a la vista General (.top.g) y a Sectores/Actividades (.top:not(.g)); !important porque shell.css también define este panel en celular */
+  body .top.g>.hero:not(.gr),body .top:not(.g)>.hero:not(.gr){display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:28px!important;row-gap:4px!important;align-content:start}
+  body .top.g>.hero{grid-template-areas:"per vars" "big vars" "src vars" "fte fte"!important}
+  body .top.g.vdest>.hero{display:none!important}   /* con Destacados activo el panel se oculta (regla de shell.css) */
+  body .top:not(.g)>.hero:not(.gr){grid-template-areas:"kick kick" "per vars" "big vars" "src vars" "fte fte"!important}
+  body .top.g>.hero .big,body .top:not(.g)>.hero .big{font-size:52px!important;align-self:end!important;justify-self:center!important;text-align:center!important;margin:0!important}
+  body .top.g>.hero .big span,body .top:not(.g)>.hero .big span{font-size:24px!important}
+  body .top.g>.hero .fte,body .top:not(.g)>.hero .fte{margin-top:4px!important;justify-self:center!important;text-align:center!important}
+  body .top.g>.hero .per,body .top:not(.g)>.hero .per{font-size:14px!important;justify-self:center!important;text-align:center!important;align-self:start!important}
+  body .top.g>.hero .src,body .top:not(.g)>.hero .src{align-self:start!important;justify-self:center!important;text-align:center!important;margin-top:6px!important;font-size:12px!important;line-height:1.35!important}
+  body .top.g>.hero .vars.tri,body .top:not(.g)>.hero .vars.tri{grid-template-columns:1fr!important;align-self:start!important;gap:4px!important}
+  body .top.g>.hero .vars.tri div,body .top:not(.g)>.hero .vars.tri div{padding-bottom:4px!important;flex-direction:row!important;justify-content:space-between!important;align-items:baseline!important;gap:6px!important}
+  body .top.g>.hero .vars.tri span,body .top:not(.g)>.hero .vars.tri span{font-size:13px!important}
+  body .top.g>.hero .vars.tri b,body .top:not(.g)>.hero .vars.tri b{font-size:17px!important}
+  body .top.g>.hero .vars.tri .th,body .top:not(.g)>.hero .vars.tri .th{text-align:center!important;justify-self:center!important;width:100%}
   .cl{contain:none;height:340px;min-height:0}
   .tres{grid-template-columns:1fr}
 }
@@ -140,7 +161,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .sx .t{font-size:34px}.sx .row2{gap:8px;font-size:14px}
 .gt{margin:18px 0 4px;font-size:16px;font-weight:700}
 .tr.g{cursor:default;width:100%}
-.hero.wt{grid-template-areas:"kick tabs" "ttl ttl" "big vars" "src src"!important}
+.hero.wt{grid-template-areas:"kick tabs" "ttl ttl" "per per" "big vars" "src src" "fte fte"!important}
 .hero.wt.gr{grid-template-areas:"kick tabs" "ttl ttl" "gl gl"!important}
 .hero .htabs{grid-area:tabs;justify-self:end;margin:0}
 .hero .htabs button{padding:3px 12px;font-size:14px}
@@ -331,32 +352,30 @@ function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${fmt(r.
 // Card de indicador: total de la economía por defecto; cambia con la actividad o el sector elegidos
 function hero() {
   const s = cur(), h = D.hero, per = D.periodo, d = s.d;
-  let kick = '', ttl = 'Crecimiento de la economía', tasa = h.crecimiento_anual, com = h.comentario_popular, idx = h.indice_desest, extra = '';
-  const src = `${per.etiqueta} · Fuente: ${D.fuente}`;
-  const pp = (l, v) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v)}</b></div>`;
-  let filas;
-  if (s.tipo === 'nac') {
-    filas = `<div><span class="mute">Variación del mes</span><b class="${cls(h.variacion_mensual)}">${fmt(h.variacion_mensual)} %</b></div>`
-      + `<div><span class="mute">Mismo mes, año anterior</span><b>${fmt(h.variacion_mensual_hace_un_ano)} %</b></div>`
-      + pp('Vs. mes anterior', h.cambio_mes_pp) + pp('Vs. hace un año', h.var_anual_pp);
-  } else {
+  let kick = '', ttl = 'Crecimiento de la economía', tasa = h.crecimiento_anual, com = h.comentario_popular, idx = h.indice, extra = '';
+  // Tabla: crecimiento anual de los hasta 4 meses anteriores (de la misma serie que la gráfica), del más reciente al más antiguo
+  const filaT = p => `<div><span>${esc(p.mes)}${p.anio !== per.anio ? ' ' + p.anio : ''}</span><b class="${cls(p.valor)}">${fmt(p.valor)} %</b></div>`;
+  const ant = (s.datos || []).slice(-5, -1).reverse().filter(p => p.valor != null);
+  let filas = ant.length ? `<span class="th">Crecimiento anual</span>${ant.map(filaT).join('')}` : '';
+  if (s.tipo !== 'nac') {
     kick = s.tipo === 'act' ? 'Crecimiento por actividad' : 'Crecimiento por sector';
-    ttl = s.nombre; tasa = d.var_anual; com = d.comentario_popular; idx = d.indice_desest;
+    ttl = s.nombre; tasa = d.var_anual; com = d.comentario_popular; idx = d.indice;
     if (s.tipo === 'act') extra = `Sector: ${esc(SEC[d.sector] || d.sector)}`;
-    filas = `<div><span class="mute">Variación del mes</span><b class="${cls(d.var_mensual)}">${fmt(d.var_mensual)} %</b></div>`
-      + pp('Vs. mes anterior', d.cambio_mes_pp) + pp('Vs. hace un año', d.var_anual_pp)
-      + `<div><span class="mute">Frente al total de la economía</span><b class="${cls(d.brecha_vs_total)}">${flecha(d.brecha_vs_total)} ${sg(d.brecha_vs_total)}</b></div>`;
+    if (d.brecha_vs_total != null)
+      filas += `<div class="vt"><span>Frente al total</span><b class="${cls(d.brecha_vs_total)}">${flecha(d.brecha_vs_total)} ${sg(d.brecha_vs_total)} pp</b></div>`;
   }
-  if (idx != null) extra += `${extra ? ' · ' : ''}Índice desestacionalizado: ${fmt(idx)}`;
+  if (idx != null) extra += `${extra ? ' · ' : ''}Índice ISE: ${fmt(idx)}`;
   const enSec = s.tipo === 'sec', gr = enSec && st.htab === 'acts';
   $('#hero').className = 'card hero' + (enSec ? ' wt' + (gr ? ' gr' : '') : '');
   const nA = enSec ? (d.actividades || []).length : 0;
   const tabBtns = enSec ? `<button data-htab="sec" aria-pressed="${!gr}">Sector</button>
       <button data-htab="acts" aria-pressed="${gr}">Actividades${nA ? ` (${nA})` : ''}</button>` : '';
   const tabsH = enSec ? `<div class="tabs htabs" role="group" aria-label="Contenido del panel">${tabBtns}</div>` : '';
-  const cuerpo = gr ? actsHtml(d) : `<div class="big ${cls(tasa)}">${fmt(tasa)}<span>%</span></div>
-    <div class="vars">${filas}</div>
-    <small class="mute src">${com ? esc(com) + '<br>' : ''}${extra ? extra + '<br>' : ''}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
+  const cuerpo = gr ? actsHtml(d) : `<div class="per">${esc(per.etiqueta)}</div>
+    <div class="big ${cls(tasa)}">${fmt(tasa)}<span>%</span></div>
+    <div class="vars tri">${filas}</div>
+    <small class="mute src">${com ? esc(com) : ''}${extra ? (com ? '<br>' : '') + extra : ''}</small>
+    <small class="mute fte">Fuente: ${esc(D.fuente)}</small>`;
   $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
     <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
   // Celular: las pestañas Sector / Actividades van bajo el select; en Actividades se oculta la gráfica (clase vgr)
@@ -440,7 +459,7 @@ function serie() {
     : '';
   $('#chart').innerHTML = dest ? hallazgosHtml()
     : s.nac
-    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
+    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false, 'var')}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true, 'indice')}</div></div>${DNAV}</div>`
     : grafica(s.datos || [], false);
   // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
   const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
@@ -454,26 +473,40 @@ function hallazgosHtml() {
       <h3>${esc(x.titulo)}</h3><p>${esc(nm(x.texto))}</p></div>`).join('')}</div>`;
 }
 
-function grafica(d, mm) {
+// campo = 'indice' grafica el nivel del índice ISE (como la tarjeta del index); por defecto grafica la tasa anual ('valor', %)
+function grafica(d, mm, campo = 'valor') {
   if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
-  const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
-  const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
+  const ix = campo === 'indice' && d.every(p => p.indice != null);   // si el JSON aún no trae 'indice', vuelve a la tasa anual
+  const vr = campo === 'var' && !mm;   // 'var': grafica las variaciones (crecimiento anual %) y pinta cada punto por su signo
+  const val = p => ix ? p.indice : p.valor;
+  const hace = p => ix ? p.indice_hace_12 : p.valor_hace_12;
+  const dif = p => ix ? (p.indice_hace_12 == null ? null : p.indice - p.indice_hace_12) : p.var_anual_pp;
+  const u = ix ? '' : ' %', ud = ix ? 'pts' : 'pp';
+  const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = mm ? 58 : 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
+  const vs = d.map(val), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
   const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
   let seg = '', pts = '', lab = '';
   // 12 meses: si cada punto trae var_anual_pp (cambio vs. el mismo mes del año anterior), la línea va neutra y el color lo ponen los puntos
-  const yoy = !mm && d.some(p => p.var_anual_pp != null);
+  const yoy = !mm && d.some(p => dif(p) != null);
   const zl = (mn - pad < 0 && mx + pad > 0) ? `<line x1="${L}" y1="${y(0)}" x2="${W - R}" y2="${y(0)}" stroke="#b8c6cd" stroke-width="1.5" stroke-dasharray="5 5"/><text x="${L}" y="${y(0) - 5}" font-size="12">0</text>` : '';
   d.forEach((p, i) => {
-    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${yoy ? '#aebfc8' : p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
+    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(val(d[i - 1]))}" x2="${x(i)}" y2="${y(val(p))}" stroke="${yoy ? '#aebfc8' : val(p) > val(d[i - 1]) ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
     const ult = i === d.length - 1;
-    const cp = yoy && p.var_anual_pp != null ? (p.var_anual_pp > 0.004 ? 'var(--up-l)' : p.var_anual_pp < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
-    const tip = yoy && p.valor_hace_12 != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(p.valor)} % · hace un año: ${fmt(p.valor_hace_12)} % (${sg(p.var_anual_pp)} pp)</title>` : '';
-    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
-    if (i === 0 || ult || p.valor === mx || p.valor === mn)
-      lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor)}</text>`;
-    if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
+    const vm = mm && p.valor != null ? (p.valor > 0.004 ? 'var(--up-l)' : p.valor < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
+    const cp = vm || (vr && p.valor != null ? (p.valor > 0.004 ? 'var(--up-l)' : p.valor < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : yoy && dif(p) != null ? (dif(p) > 0.004 ? 'var(--up-l)' : dif(p) < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null);
+    const tip = yoy && hace(p) != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(val(p))}${u} · hace un año: ${fmt(hace(p))}${u} (${sg(dif(p))} ${ud})</title>` : '';
+    pts += `<circle cx="${x(i)}" cy="${y(val(p))}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
+    if (mm || vr || i === 0 || ult || val(p) === mx || val(p) === mn) {
+      const bajo = vr && !ult && val(p) <= Math.min(i ? val(d[i - 1]) : Infinity, i < d.length - 1 ? val(d[i + 1]) : Infinity);   // mínimo local: la cifra va debajo del punto
+      const col = vr ? (val(p) > 0.004 ? 'var(--up-t)' : val(p) < -0.004 ? 'var(--dn-t)' : 'var(--ink)') : null;
+      lab += `<text class="v" x="${x(i)}" y="${y(val(p)) + (bajo ? 22 : -12)}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}"${vr ? ` style="fill:${col};font-size:14px"` : ''}>${fmt(val(p))}</text>`;
+    }
+    if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${mm ? H - 30 : H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
+    if (mm && p.valor != null) lab += `<text class="v" x="${x(i)}" y="${H - 9}" text-anchor="middle" style="fill:${p.valor > 0.004 ? 'var(--up-t)' : p.valor < -0.004 ? 'var(--dn-t)' : 'var(--ink)'};font-size:15px">${sg(p.valor)} %</text>`;
   });
   const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${zl}${seg}${pts}${lab}</svg>`;
+  if (mm && d.some(p => p.valor != null)) return `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px">Cifra sobre cada punto: índice ISE · debajo del año: variación anual (frente al mismo mes del año anterior)</p></div>`;
+  if (vr) return `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> crecimiento anual positivo &nbsp; <span class="dn">●</span> negativo &nbsp; (cifras en %)</p></div>`;
   return yoy ? `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> por encima del mismo mes del año anterior &nbsp; <span class="dn">●</span> por debajo</p></div>` : svg;
 }
 

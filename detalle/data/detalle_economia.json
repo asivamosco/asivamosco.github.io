@@ -1,7 +1,7 @@
 {
   "indicador": "economia",
   "fuente": "Dane",
-  "generado_en": "2026-11-23T22:11:11+00:00",
+  "generado_en": "2026-11-24T12:00:33+00:00",
   "periodo": {
     "anio": 2026,
     "mes_num": 9,
@@ -103,109 +103,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 1.46,
+              "indice": null,
               "var_mensual": -0.18,
               "indice_desest": null,
               "var_anual_pp": -0.39,
-              "valor_hace_12": 1.85
+              "valor_hace_12": 1.85,
+              "indice_hace_12": null
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 0.36,
+              "indice": null,
               "var_mensual": -1.97,
               "indice_desest": null,
               "var_anual_pp": 2.82,
-              "valor_hace_12": -2.46
+              "valor_hace_12": -2.46,
+              "indice_hace_12": null
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -0.11,
+              "indice": null,
               "var_mensual": 0.51,
               "indice_desest": null,
               "var_anual_pp": 0.87,
-              "valor_hace_12": -0.98
+              "valor_hace_12": -0.98,
+              "indice_hace_12": null
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": -1.64,
+              "indice": null,
               "var_mensual": 0.28,
               "indice_desest": null,
               "var_anual_pp": -1.58,
-              "valor_hace_12": -0.06
+              "valor_hace_12": -0.06,
+              "indice_hace_12": null
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": -0.55,
+              "indice": null,
               "var_mensual": 0.04,
               "indice_desest": null,
               "var_anual_pp": 3.55,
-              "valor_hace_12": -4.1
+              "valor_hace_12": -4.1,
+              "indice_hace_12": null
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 2.8,
+              "indice": null,
               "var_mensual": 1.96,
               "indice_desest": null,
               "var_anual_pp": -0.04,
-              "valor_hace_12": 2.84
+              "valor_hace_12": 2.84,
+              "indice_hace_12": null
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 1.65,
+              "indice": null,
               "var_mensual": -1.53,
               "indice_desest": null,
               "var_anual_pp": 5.47,
-              "valor_hace_12": -3.82
+              "valor_hace_12": -3.82,
+              "indice_hace_12": null
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 1.3,
+              "indice": null,
               "var_mensual": 0.89,
               "indice_desest": null,
               "var_anual_pp": 1.91,
-              "valor_hace_12": -0.61
+              "valor_hace_12": -0.61,
+              "indice_hace_12": null
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 3.6,
+              "indice": null,
               "var_mensual": 1.23,
               "indice_desest": null,
               "var_anual_pp": 1.13,
-              "valor_hace_12": 2.47
+              "valor_hace_12": 2.47,
+              "indice_hace_12": null
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -2.1,
+              "indice": null,
               "var_mensual": -0.19,
               "indice_desest": null,
               "var_anual_pp": -6.87,
-              "valor_hace_12": 4.77
+              "valor_hace_12": 4.77,
+              "indice_hace_12": null
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -2.21,
+              "indice": null,
               "var_mensual": -4.3,
               "indice_desest": null,
               "var_anual_pp": -1.94,
-              "valor_hace_12": -0.27
+              "valor_hace_12": -0.27,
+              "indice_hace_12": null
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 2.34,
+              "indice": null,
               "var_mensual": 5.87,
               "indice_desest": null,
               "var_anual_pp": -1.35,
-              "valor_hace_12": 3.69
+              "valor_hace_12": 3.69,
+              "indice_hace_12": null
             }
           ],
           "actividades": [
@@ -246,109 +270,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 4.19,
+              "indice": null,
               "var_mensual": 0.59,
               "indice_desest": null,
               "var_anual_pp": 0.33,
-              "valor_hace_12": 3.86
+              "valor_hace_12": 3.86,
+              "indice_hace_12": null
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 3.77,
+              "indice": null,
               "var_mensual": -0.25,
               "indice_desest": null,
               "var_anual_pp": 2.13,
-              "valor_hace_12": 1.64
+              "valor_hace_12": 1.64,
+              "indice_hace_12": null
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 1.7,
+              "indice": null,
               "var_mensual": -0.05,
               "indice_desest": null,
               "var_anual_pp": -2.89,
-              "valor_hace_12": 4.59
+              "valor_hace_12": 4.59,
+              "indice_hace_12": null
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 2.44,
+              "indice": null,
               "var_mensual": 0.18,
               "indice_desest": null,
               "var_anual_pp": -0.92,
-              "valor_hace_12": 3.36
+              "valor_hace_12": 3.36,
+              "indice_hace_12": null
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 2.69,
+              "indice": null,
               "var_mensual": 0.45,
               "indice_desest": null,
               "var_anual_pp": -0.26,
-              "valor_hace_12": 2.95
+              "valor_hace_12": 2.95,
+              "indice_hace_12": null
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 4.88,
+              "indice": null,
               "var_mensual": 1.19,
               "indice_desest": null,
               "var_anual_pp": 1.1,
-              "valor_hace_12": 3.78
+              "valor_hace_12": 3.78,
+              "indice_hace_12": null
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 4.87,
+              "indice": null,
               "var_mensual": 0.42,
               "indice_desest": null,
               "var_anual_pp": 3.57,
-              "valor_hace_12": 1.3
+              "valor_hace_12": 1.3,
+              "indice_hace_12": null
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 5.95,
+              "indice": null,
               "var_mensual": 1.35,
               "indice_desest": null,
               "var_anual_pp": 2.24,
-              "valor_hace_12": 3.71
+              "valor_hace_12": 3.71,
+              "indice_hace_12": null
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 4.15,
+              "indice": null,
               "var_mensual": -1.11,
               "indice_desest": null,
               "var_anual_pp": -0.05,
-              "valor_hace_12": 4.2
+              "valor_hace_12": 4.2,
+              "indice_hace_12": null
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 1.75,
+              "indice": null,
               "var_mensual": -0.4,
               "indice_desest": null,
               "var_anual_pp": -4.55,
-              "valor_hace_12": 6.3
+              "valor_hace_12": 6.3,
+              "indice_hace_12": null
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 0.35,
+              "indice": null,
               "var_mensual": -1.86,
               "indice_desest": null,
               "var_anual_pp": -4.0,
-              "valor_hace_12": 4.35
+              "valor_hace_12": 4.35,
+              "indice_hace_12": null
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 1.93,
+              "indice": null,
               "var_mensual": 1.43,
               "indice_desest": null,
               "var_anual_pp": -2.52,
-              "valor_hace_12": 4.45
+              "valor_hace_12": 4.45,
+              "indice_hace_12": null
             }
           ],
           "actividades": [
@@ -461,109 +509,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 0.82,
+              "indice": null,
               "var_mensual": -0.17,
               "indice_desest": null,
               "var_anual_pp": -3.84,
-              "valor_hace_12": 4.66
+              "valor_hace_12": 4.66,
+              "indice_hace_12": null
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": -2.34,
+              "indice": null,
               "var_mensual": -5.59,
               "indice_desest": null,
               "var_anual_pp": -0.14,
-              "valor_hace_12": -2.2
+              "valor_hace_12": -2.2,
+              "indice_hace_12": null
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -3.57,
+              "indice": null,
               "var_mensual": 1.07,
               "indice_desest": null,
               "var_anual_pp": -6.24,
-              "valor_hace_12": 2.67
+              "valor_hace_12": 2.67,
+              "indice_hace_12": null
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": -3.87,
+              "indice": null,
               "var_mensual": 0.01,
               "indice_desest": null,
               "var_anual_pp": -2.59,
-              "valor_hace_12": -1.28
+              "valor_hace_12": -1.28,
+              "indice_hace_12": null
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": -3.41,
+              "indice": null,
               "var_mensual": 0.69,
               "indice_desest": null,
               "var_anual_pp": -1.59,
-              "valor_hace_12": -1.82
+              "valor_hace_12": -1.82,
+              "indice_hace_12": null
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 1.22,
+              "indice": null,
               "var_mensual": 2.36,
               "indice_desest": null,
               "var_anual_pp": -8.49,
-              "valor_hace_12": 9.71
+              "valor_hace_12": 9.71,
+              "indice_hace_12": null
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": -2.98,
+              "indice": null,
               "var_mensual": -2.28,
               "indice_desest": null,
               "var_anual_pp": 0.32,
-              "valor_hace_12": -3.3
+              "valor_hace_12": -3.3,
+              "indice_hace_12": null
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 0.24,
+              "indice": null,
               "var_mensual": -0.16,
               "indice_desest": null,
               "var_anual_pp": 2.79,
-              "valor_hace_12": -2.55
+              "valor_hace_12": -2.55,
+              "indice_hace_12": null
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 0.87,
+              "indice": null,
               "var_mensual": 1.58,
               "indice_desest": null,
               "var_anual_pp": -1.6,
-              "valor_hace_12": 2.47
+              "valor_hace_12": 2.47,
+              "indice_hace_12": null
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -4.14,
+              "indice": null,
               "var_mensual": -1.26,
               "indice_desest": null,
               "var_anual_pp": -4.01,
-              "valor_hace_12": -0.13
+              "valor_hace_12": -0.13,
+              "indice_hace_12": null
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -2.5,
+              "indice": null,
               "var_mensual": -1.47,
               "indice_desest": null,
               "var_anual_pp": -1.46,
-              "valor_hace_12": -1.04
+              "valor_hace_12": -1.04,
+              "indice_hace_12": null
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": -1.81,
+              "indice": null,
               "var_mensual": 3.53,
               "indice_desest": null,
               "var_anual_pp": -5.69,
-              "valor_hace_12": 3.88
+              "valor_hace_12": 3.88,
+              "indice_hace_12": null
             }
           ],
           "actividades": [
@@ -621,109 +693,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 6.96,
+              "indice": 164.12,
               "var_mensual": 2.02,
               "indice_desest": 165.98,
               "var_anual_pp": -0.08,
-              "valor_hace_12": 7.04
+              "valor_hace_12": 7.04,
+              "indice_hace_12": 153.43
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 6.03,
+              "indice": 175.14,
               "var_mensual": -0.27,
               "indice_desest": 165.53,
               "var_anual_pp": 6.08,
-              "valor_hace_12": -0.05
+              "valor_hace_12": -0.05,
+              "indice_hace_12": 165.17
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 2.58,
+              "indice": 189.54,
               "var_mensual": -1.74,
               "indice_desest": 162.65,
               "var_anual_pp": -6.85,
-              "valor_hace_12": 9.43
+              "valor_hace_12": 9.43,
+              "indice_hace_12": 184.77
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 4.44,
+              "indice": 143.11,
               "var_mensual": 1.17,
               "indice_desest": 164.55,
               "var_anual_pp": -1.07,
-              "valor_hace_12": 5.51
+              "valor_hace_12": 5.51,
+              "indice_hace_12": 137.03
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 3.83,
+              "indice": 157.07,
               "var_mensual": 0.51,
               "indice_desest": 165.39,
               "var_anual_pp": -3.41,
-              "valor_hace_12": 7.24
+              "valor_hace_12": 7.24,
+              "indice_hace_12": 151.28
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 6.87,
+              "indice": 170.26,
               "var_mensual": 1.74,
               "indice_desest": 168.27,
               "var_anual_pp": 1.86,
-              "valor_hace_12": 5.01
+              "valor_hace_12": 5.01,
+              "indice_hace_12": 159.31
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 10.29,
+              "indice": 171.58,
               "var_mensual": 2.8,
               "indice_desest": 172.99,
               "var_anual_pp": 11.74,
-              "valor_hace_12": -1.45
+              "valor_hace_12": -1.45,
+              "indice_hace_12": 155.57
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 12.56,
+              "indice": 176.82,
               "var_mensual": 3.08,
               "indice_desest": 178.33,
               "var_anual_pp": 10.93,
-              "valor_hace_12": 1.63
+              "valor_hace_12": 1.63,
+              "indice_hace_12": 157.09
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 6.97,
+              "indice": 173.76,
               "var_mensual": -3.73,
               "indice_desest": 171.67,
               "var_anual_pp": 0.31,
-              "valor_hace_12": 6.66
+              "valor_hace_12": 6.66,
+              "indice_hace_12": 162.44
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 2.94,
+              "indice": 176.93,
               "var_mensual": 0.42,
               "indice_desest": 172.39,
               "var_anual_pp": -6.49,
-              "valor_hace_12": 9.43
+              "valor_hace_12": 9.43,
+              "indice_hace_12": 171.87
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 0.1,
+              "indice": 156.78,
               "var_mensual": -5.69,
               "indice_desest": 162.58,
               "var_anual_pp": -6.79,
-              "valor_hace_12": 6.89
+              "valor_hace_12": 6.89,
+              "indice_hace_12": 156.62
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 4.07,
+              "indice": 163.67,
               "var_mensual": 4.19,
               "indice_desest": 169.39,
               "var_anual_pp": -2.44,
-              "valor_hace_12": 6.51
+              "valor_hace_12": 6.51,
+              "indice_hace_12": 157.28
             }
           ]
         },
@@ -753,109 +849,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 1.78,
+              "indice": 126.05,
               "var_mensual": 0.43,
               "indice_desest": 124.0,
               "var_anual_pp": 0.89,
-              "valor_hace_12": 0.89
+              "valor_hace_12": 0.89,
+              "indice_hace_12": 123.85
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 4.39,
+              "indice": 125.9,
               "var_mensual": 0.48,
               "indice_desest": 124.6,
               "var_anual_pp": 5.49,
-              "valor_hace_12": -1.1
+              "valor_hace_12": -1.1,
+              "indice_hace_12": 120.61
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 2.41,
+              "indice": 126.76,
               "var_mensual": 0.3,
               "indice_desest": 124.97,
               "var_anual_pp": 1.37,
-              "valor_hace_12": 1.04
+              "valor_hace_12": 1.04,
+              "indice_hace_12": 123.77
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 2.4,
+              "indice": 124.4,
               "var_mensual": 0.05,
               "indice_desest": 125.04,
               "var_anual_pp": 2.45,
-              "valor_hace_12": -0.05
+              "valor_hace_12": -0.05,
+              "indice_hace_12": 121.48
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 1.33,
+              "indice": 116.92,
               "var_mensual": -0.92,
               "indice_desest": 123.89,
               "var_anual_pp": 3.53,
-              "valor_hace_12": -2.2
+              "valor_hace_12": -2.2,
+              "indice_hace_12": 115.38
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 3.99,
+              "indice": 128.03,
               "var_mensual": 2.12,
               "indice_desest": 126.51,
               "var_anual_pp": 5.1,
-              "valor_hace_12": -1.11
+              "valor_hace_12": -1.11,
+              "indice_hace_12": 123.12
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 4.2,
+              "indice": 123.97,
               "var_mensual": 0.45,
               "indice_desest": 127.09,
               "var_anual_pp": 5.49,
-              "valor_hace_12": -1.29
+              "valor_hace_12": -1.29,
+              "indice_hace_12": 118.97
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 5.4,
+              "indice": 129.81,
               "var_mensual": 1.71,
               "indice_desest": 129.25,
               "var_anual_pp": 4.03,
-              "valor_hace_12": 1.37
+              "valor_hace_12": 1.37,
+              "indice_hace_12": 123.16
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 4.68,
+              "indice": 126.11,
               "var_mensual": -0.76,
               "indice_desest": 128.27,
               "var_anual_pp": 1.95,
-              "valor_hace_12": 2.73
+              "valor_hace_12": 2.73,
+              "indice_hace_12": 120.47
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 3.45,
+              "indice": 131.13,
               "var_mensual": 0.3,
               "indice_desest": 128.65,
               "var_anual_pp": 0.21,
-              "valor_hace_12": 3.24
+              "valor_hace_12": 3.24,
+              "indice_hace_12": 126.76
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 4.22,
+              "indice": 131.23,
               "var_mensual": -0.27,
               "indice_desest": 128.3,
               "var_anual_pp": 3.02,
-              "valor_hace_12": 1.2
+              "valor_hace_12": 1.2,
+              "indice_hace_12": 125.91
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 3.89,
+              "indice": 128.95,
               "var_mensual": 0.14,
               "indice_desest": 128.48,
               "var_anual_pp": 2.31,
-              "valor_hace_12": 1.58
+              "valor_hace_12": 1.58,
+              "indice_hace_12": 124.13
             }
           ]
         },
@@ -885,109 +1005,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 1.46,
+              "indice": 101.72,
               "var_mensual": -0.18,
               "indice_desest": 98.01,
               "var_anual_pp": -0.39,
-              "valor_hace_12": 1.85
+              "valor_hace_12": 1.85,
+              "indice_hace_12": 100.26
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 0.36,
+              "indice": 102.51,
               "var_mensual": -1.97,
               "indice_desest": 96.07,
               "var_anual_pp": 2.82,
-              "valor_hace_12": -2.46
+              "valor_hace_12": -2.46,
+              "indice_hace_12": 102.15
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -0.11,
+              "indice": 97.78,
               "var_mensual": 0.51,
               "indice_desest": 96.57,
               "var_anual_pp": 0.87,
-              "valor_hace_12": -0.98
+              "valor_hace_12": -0.98,
+              "indice_hace_12": 97.88
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": -1.64,
+              "indice": 88.3,
               "var_mensual": 0.28,
               "indice_desest": 96.84,
               "var_anual_pp": -1.58,
-              "valor_hace_12": -0.06
+              "valor_hace_12": -0.06,
+              "indice_hace_12": 89.77
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": -0.55,
+              "indice": 94.13,
               "var_mensual": 0.04,
               "indice_desest": 96.88,
               "var_anual_pp": 3.55,
-              "valor_hace_12": -4.1
+              "valor_hace_12": -4.1,
+              "indice_hace_12": 94.65
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 2.8,
+              "indice": 97.67,
               "var_mensual": 1.96,
               "indice_desest": 98.78,
               "var_anual_pp": -0.04,
-              "valor_hace_12": 2.84
+              "valor_hace_12": 2.84,
+              "indice_hace_12": 95.01
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 1.65,
+              "indice": 92.64,
               "var_mensual": -1.53,
               "indice_desest": 97.27,
               "var_anual_pp": 5.47,
-              "valor_hace_12": -3.82
+              "valor_hace_12": -3.82,
+              "indice_hace_12": 91.14
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 1.3,
+              "indice": 102.44,
               "var_mensual": 0.89,
               "indice_desest": 98.14,
               "var_anual_pp": 1.91,
-              "valor_hace_12": -0.61
+              "valor_hace_12": -0.61,
+              "indice_hace_12": 101.12
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 3.6,
+              "indice": 96.12,
               "var_mensual": 1.23,
               "indice_desest": 99.34,
               "var_anual_pp": 1.13,
-              "valor_hace_12": 2.47
+              "valor_hace_12": 2.47,
+              "indice_hace_12": 92.78
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -2.1,
+              "indice": 99.04,
               "var_mensual": -0.19,
               "indice_desest": 99.15,
               "var_anual_pp": -6.87,
-              "valor_hace_12": 4.77
+              "valor_hace_12": 4.77,
+              "indice_hace_12": 101.17
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -2.21,
+              "indice": 99.38,
               "var_mensual": -4.3,
               "indice_desest": 94.89,
               "var_anual_pp": -1.94,
-              "valor_hace_12": -0.27
+              "valor_hace_12": -0.27,
+              "indice_hace_12": 101.62
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 2.34,
+              "indice": 100.91,
               "var_mensual": 5.87,
               "indice_desest": 100.46,
               "var_anual_pp": -1.35,
-              "valor_hace_12": 3.69
+              "valor_hace_12": 3.69,
+              "indice_hace_12": 98.6
             }
           ]
         },
@@ -1017,109 +1161,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 2.01,
+              "indice": 130.01,
               "var_mensual": 0.18,
               "indice_desest": 129.81,
               "var_anual_pp": -0.16,
-              "valor_hace_12": 2.17
+              "valor_hace_12": 2.17,
+              "indice_hace_12": 127.46
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 2.05,
+              "indice": 130.4,
               "var_mensual": 0.17,
               "indice_desest": 130.03,
               "var_anual_pp": -0.12,
-              "valor_hace_12": 2.17
+              "valor_hace_12": 2.17,
+              "indice_hace_12": 127.78
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 2.05,
+              "indice": 130.55,
               "var_mensual": 0.17,
               "indice_desest": 130.25,
               "var_anual_pp": -0.16,
-              "valor_hace_12": 2.21
+              "valor_hace_12": 2.21,
+              "indice_hace_12": 127.93
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 2.03,
+              "indice": 130.5,
               "var_mensual": 0.16,
               "indice_desest": 130.46,
               "var_anual_pp": -0.23,
-              "valor_hace_12": 2.26
+              "valor_hace_12": 2.26,
+              "indice_hace_12": 127.91
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 1.98,
+              "indice": 130.58,
               "var_mensual": 0.14,
               "indice_desest": 130.64,
               "var_anual_pp": -0.26,
-              "valor_hace_12": 2.24
+              "valor_hace_12": 2.24,
+              "indice_hace_12": 128.04
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 2.01,
+              "indice": 130.71,
               "var_mensual": 0.16,
               "indice_desest": 130.85,
               "var_anual_pp": -0.1,
-              "valor_hace_12": 2.11
+              "valor_hace_12": 2.11,
+              "indice_hace_12": 128.13
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 2.1,
+              "indice": 130.94,
               "var_mensual": 0.16,
               "indice_desest": 131.06,
               "var_anual_pp": 0.24,
-              "valor_hace_12": 1.86
+              "valor_hace_12": 1.86,
+              "indice_hace_12": 128.24
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 2.1,
+              "indice": 131.18,
               "var_mensual": 0.15,
               "indice_desest": 131.26,
               "var_anual_pp": 0.32,
-              "valor_hace_12": 1.78
+              "valor_hace_12": 1.78,
+              "indice_hace_12": 128.49
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 2.13,
+              "indice": 131.4,
               "var_mensual": 0.17,
               "indice_desest": 131.48,
               "var_anual_pp": 0.38,
-              "valor_hace_12": 1.75
+              "valor_hace_12": 1.75,
+              "indice_hace_12": 128.66
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 2.02,
+              "indice": 131.42,
               "var_mensual": 0.13,
               "indice_desest": 131.65,
               "var_anual_pp": 0.19,
-              "valor_hace_12": 1.83
+              "valor_hace_12": 1.83,
+              "indice_hace_12": 128.83
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 1.86,
+              "indice": 131.58,
               "var_mensual": 0.1,
               "indice_desest": 131.79,
               "var_anual_pp": -0.05,
-              "valor_hace_12": 1.91
+              "valor_hace_12": 1.91,
+              "indice_hace_12": 129.18
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 1.89,
+              "indice": 132.0,
               "var_mensual": 0.2,
               "indice_desest": 132.05,
               "var_anual_pp": -0.08,
-              "valor_hace_12": 1.97
+              "valor_hace_12": 1.97,
+              "indice_hace_12": 129.55
             }
           ]
         },
@@ -1149,109 +1317,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 4.63,
+              "indice": 134.51,
               "var_mensual": 0.99,
               "indice_desest": 133.88,
               "var_anual_pp": -0.02,
-              "valor_hace_12": 4.65
+              "valor_hace_12": 4.65,
+              "indice_hace_12": 128.56
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 3.4,
+              "indice": 142.01,
               "var_mensual": 0.15,
               "indice_desest": 134.08,
               "var_anual_pp": -1.92,
-              "valor_hace_12": 5.32
+              "valor_hace_12": 5.32,
+              "indice_hace_12": 137.33
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 2.08,
+              "indice": 162.68,
               "var_mensual": -0.5,
               "indice_desest": 133.41,
               "var_anual_pp": -2.01,
-              "valor_hace_12": 4.09
+              "valor_hace_12": 4.09,
+              "indice_hace_12": 159.36
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 1.67,
+              "indice": 126.54,
               "var_mensual": 0.63,
               "indice_desest": 134.26,
               "var_anual_pp": -3.57,
-              "valor_hace_12": 5.24
+              "valor_hace_12": 5.24,
+              "indice_hace_12": 124.46
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 3.05,
+              "indice": 120.39,
               "var_mensual": -0.61,
               "indice_desest": 133.44,
               "var_anual_pp": 2.42,
-              "valor_hace_12": 0.63
+              "valor_hace_12": 0.63,
+              "indice_hace_12": 116.83
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 4.19,
+              "indice": 132.75,
               "var_mensual": 0.42,
               "indice_desest": 134.0,
               "var_anual_pp": -1.21,
-              "valor_hace_12": 5.4
+              "valor_hace_12": 5.4,
+              "indice_hace_12": 127.41
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 2.32,
+              "indice": 126.89,
               "var_mensual": 0.17,
               "indice_desest": 134.22,
               "var_anual_pp": -2.54,
-              "valor_hace_12": 4.86
+              "valor_hace_12": 4.86,
+              "indice_hace_12": 124.02
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 2.8,
+              "indice": 132.8,
               "var_mensual": 0.82,
               "indice_desest": 135.32,
               "var_anual_pp": -4.33,
-              "valor_hace_12": 7.13
+              "valor_hace_12": 7.13,
+              "indice_hace_12": 129.18
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 1.96,
+              "indice": 130.33,
               "var_mensual": -0.55,
               "indice_desest": 134.58,
               "var_anual_pp": -3.11,
-              "valor_hace_12": 5.07
+              "valor_hace_12": 5.07,
+              "indice_hace_12": 127.83
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 1.69,
+              "indice": 135.16,
               "var_mensual": 0.08,
               "indice_desest": 134.69,
               "var_anual_pp": -5.28,
-              "valor_hace_12": 6.97
+              "valor_hace_12": 6.97,
+              "indice_hace_12": 132.91
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -0.79,
+              "indice": 135.65,
               "var_mensual": -0.34,
               "indice_desest": 134.23,
               "var_anual_pp": -6.57,
-              "valor_hace_12": 5.78
+              "valor_hace_12": 5.78,
+              "indice_hace_12": 136.73
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 1.23,
+              "indice": 130.2,
               "var_mensual": 0.07,
               "indice_desest": 134.32,
               "var_anual_pp": -4.18,
-              "valor_hace_12": 5.41
+              "valor_hace_12": 5.41,
+              "indice_hace_12": 128.62
             }
           ]
         },
@@ -1281,109 +1473,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 1.43,
+              "indice": 120.51,
               "var_mensual": -0.07,
               "indice_desest": 122.75,
               "var_anual_pp": 2.42,
-              "valor_hace_12": -0.99
+              "valor_hace_12": -0.99,
+              "indice_hace_12": 118.8
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 2.37,
+              "indice": 129.88,
               "var_mensual": 0.39,
               "indice_desest": 123.23,
               "var_anual_pp": 3.52,
-              "valor_hace_12": -1.15
+              "valor_hace_12": -1.15,
+              "indice_hace_12": 126.87
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": 2.32,
+              "indice": 152.56,
               "var_mensual": 0.74,
               "indice_desest": 124.14,
               "var_anual_pp": 0.29,
-              "valor_hace_12": 2.03
+              "valor_hace_12": 2.03,
+              "indice_hace_12": 149.1
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 1.76,
+              "indice": 110.76,
               "var_mensual": -0.49,
               "indice_desest": 123.54,
               "var_anual_pp": 2.04,
-              "valor_hace_12": -0.28
+              "valor_hace_12": -0.28,
+              "indice_hace_12": 108.84
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 2.11,
+              "indice": 114.57,
               "var_mensual": 0.16,
               "indice_desest": 123.73,
               "var_anual_pp": 2.32,
-              "valor_hace_12": -0.21
+              "valor_hace_12": -0.21,
+              "indice_hace_12": 112.2
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 3.89,
+              "indice": 123.74,
               "var_mensual": 0.95,
               "indice_desest": 124.9,
               "var_anual_pp": 2.82,
-              "valor_hace_12": 1.07
+              "valor_hace_12": 1.07,
+              "indice_hace_12": 119.11
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 2.09,
+              "indice": 122.86,
               "var_mensual": 0.03,
               "indice_desest": 124.94,
               "var_anual_pp": 1.06,
-              "valor_hace_12": 1.03
+              "valor_hace_12": 1.03,
+              "indice_hace_12": 120.35
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 4.02,
+              "indice": 124.11,
               "var_mensual": 0.82,
               "indice_desest": 125.96,
               "var_anual_pp": 2.82,
-              "valor_hace_12": 1.2
+              "valor_hace_12": 1.2,
+              "indice_hace_12": 119.32
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 4.15,
+              "indice": 125.73,
               "var_mensual": -0.33,
               "indice_desest": 125.54,
               "var_anual_pp": 2.98,
-              "valor_hace_12": 1.17
+              "valor_hace_12": 1.17,
+              "indice_hace_12": 120.72
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": 0.22,
+              "indice": 123.99,
               "var_mensual": -2.1,
               "indice_desest": 122.9,
               "var_anual_pp": -1.77,
-              "valor_hace_12": 1.99
+              "valor_hace_12": 1.99,
+              "indice_hace_12": 123.72
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 1.22,
+              "indice": 119.99,
               "var_mensual": 0.62,
               "indice_desest": 123.66,
               "var_anual_pp": -0.11,
-              "valor_hace_12": 1.33
+              "valor_hace_12": 1.33,
+              "indice_hace_12": 118.55
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": 1.21,
+              "indice": 120.51,
               "var_mensual": 0.45,
               "indice_desest": 124.22,
               "var_anual_pp": -0.63,
-              "valor_hace_12": 1.84
+              "valor_hace_12": 1.84,
+              "indice_hace_12": 119.07
             }
           ]
         },
@@ -1413,109 +1629,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 0.82,
+              "indice": 109.59,
               "var_mensual": -0.17,
               "indice_desest": 106.57,
               "var_anual_pp": -3.84,
-              "valor_hace_12": 4.66
+              "valor_hace_12": 4.66,
+              "indice_hace_12": 108.7
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": -2.34,
+              "indice": 101.2,
               "var_mensual": -5.59,
               "indice_desest": 100.61,
               "var_anual_pp": -0.14,
-              "valor_hace_12": -2.2
+              "valor_hace_12": -2.2,
+              "indice_hace_12": 103.63
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -3.57,
+              "indice": 103.73,
               "var_mensual": 1.07,
               "indice_desest": 101.68,
               "var_anual_pp": -6.24,
-              "valor_hace_12": 2.67
+              "valor_hace_12": 2.67,
+              "indice_hace_12": 107.57
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": -3.87,
+              "indice": 99.17,
               "var_mensual": 0.01,
               "indice_desest": 101.7,
               "var_anual_pp": -2.59,
-              "valor_hace_12": -1.28
+              "valor_hace_12": -1.28,
+              "indice_hace_12": 103.16
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": -3.41,
+              "indice": 95.14,
               "var_mensual": 0.69,
               "indice_desest": 102.4,
               "var_anual_pp": -1.59,
-              "valor_hace_12": -1.82
+              "valor_hace_12": -1.82,
+              "indice_hace_12": 98.5
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 1.22,
+              "indice": 106.33,
               "var_mensual": 2.36,
               "indice_desest": 104.82,
               "var_anual_pp": -8.49,
-              "valor_hace_12": 9.71
+              "valor_hace_12": 9.71,
+              "indice_hace_12": 105.05
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": -2.98,
+              "indice": 94.82,
               "var_mensual": -2.28,
               "indice_desest": 102.43,
               "var_anual_pp": 0.32,
-              "valor_hace_12": -3.3
+              "valor_hace_12": -3.3,
+              "indice_hace_12": 97.73
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 0.24,
+              "indice": 102.69,
               "var_mensual": -0.16,
               "indice_desest": 102.27,
               "var_anual_pp": 2.79,
-              "valor_hace_12": -2.55
+              "valor_hace_12": -2.55,
+              "indice_hace_12": 102.44
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 0.87,
+              "indice": 100.68,
               "var_mensual": 1.58,
               "indice_desest": 103.89,
               "var_anual_pp": -1.6,
-              "valor_hace_12": 2.47
+              "valor_hace_12": 2.47,
+              "indice_hace_12": 99.82
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -4.14,
+              "indice": 106.25,
               "var_mensual": -1.26,
               "indice_desest": 102.58,
               "var_anual_pp": -4.01,
-              "valor_hace_12": -0.13
+              "valor_hace_12": -0.13,
+              "indice_hace_12": 110.84
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -2.5,
+              "indice": 107.74,
               "var_mensual": -1.47,
               "indice_desest": 101.07,
               "var_anual_pp": -1.46,
-              "valor_hace_12": -1.04
+              "valor_hace_12": -1.04,
+              "indice_hace_12": 110.5
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": -1.81,
+              "indice": 107.66,
               "var_mensual": 3.53,
               "indice_desest": 104.64,
               "var_anual_pp": -5.69,
-              "valor_hace_12": 3.88
+              "valor_hace_12": 3.88,
+              "indice_hace_12": 109.64
             }
           ]
         },
@@ -1545,109 +1785,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": 3.06,
+              "indice": 151.86,
               "var_mensual": -2.16,
               "indice_desest": 154.99,
               "var_anual_pp": 0.22,
-              "valor_hace_12": 2.84
+              "valor_hace_12": 2.84,
+              "indice_hace_12": 147.36
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": 1.94,
+              "indice": 152.03,
               "var_mensual": -0.59,
               "indice_desest": 154.07,
               "var_anual_pp": -0.14,
-              "valor_hace_12": 2.08
+              "valor_hace_12": 2.08,
+              "indice_hace_12": 149.14
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -3.2,
+              "indice": 152.94,
               "var_mensual": -4.43,
               "indice_desest": 147.25,
               "var_anual_pp": 2.37,
-              "valor_hace_12": -5.57
+              "valor_hace_12": -5.57,
+              "indice_hace_12": 157.99
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": -0.39,
+              "indice": 150.94,
               "var_mensual": 3.14,
               "indice_desest": 151.87,
               "var_anual_pp": -1.76,
-              "valor_hace_12": 1.37
+              "valor_hace_12": 1.37,
+              "indice_hace_12": 151.53
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": 1.54,
+              "indice": 150.27,
               "var_mensual": 1.99,
               "indice_desest": 154.89,
               "var_anual_pp": -2.24,
-              "valor_hace_12": 3.78
+              "valor_hace_12": 3.78,
+              "indice_hace_12": 147.99
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 7.16,
+              "indice": 166.19,
               "var_mensual": 5.22,
               "indice_desest": 162.97,
               "var_anual_pp": 1.84,
-              "valor_hace_12": 5.32
+              "valor_hace_12": 5.32,
+              "indice_hace_12": 155.09
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 2.58,
+              "indice": 158.16,
               "var_mensual": -3.87,
               "indice_desest": 156.66,
               "var_anual_pp": 0.18,
-              "valor_hace_12": 2.4
+              "valor_hace_12": 2.4,
+              "indice_hace_12": 154.19
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 1.84,
+              "indice": 157.3,
               "var_mensual": 2.12,
               "indice_desest": 159.98,
               "var_anual_pp": -7.55,
-              "valor_hace_12": 9.39
+              "valor_hace_12": 9.39,
+              "indice_hace_12": 154.46
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": 8.83,
+              "indice": 160.14,
               "var_mensual": -1.39,
               "indice_desest": 157.77,
               "var_anual_pp": 11.68,
-              "valor_hace_12": -2.85
+              "valor_hace_12": -2.85,
+              "indice_hace_12": 147.15
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -0.4,
+              "indice": 157.21,
               "var_mensual": -1.11,
               "indice_desest": 156.02,
               "var_anual_pp": -6.48,
-              "valor_hace_12": 6.08
+              "valor_hace_12": 6.08,
+              "indice_hace_12": 157.84
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": 1.46,
+              "indice": 155.63,
               "var_mensual": 0.02,
               "indice_desest": 156.05,
               "var_anual_pp": -0.29,
-              "valor_hace_12": 1.75
+              "valor_hace_12": 1.75,
+              "indice_hace_12": 153.39
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": -3.44,
+              "indice": 153.01,
               "var_mensual": -1.86,
               "indice_desest": 153.15,
               "var_anual_pp": -8.44,
-              "valor_hace_12": 5.0
+              "valor_hace_12": 5.0,
+              "indice_hace_12": 158.47
             }
           ]
         },
@@ -1677,109 +1941,133 @@
               "mes": "Oct",
               "anio": 2025,
               "valor": -0.76,
+              "indice": 128.95,
               "var_mensual": -2.31,
               "indice_desest": 129.54,
               "var_anual_pp": 3.03,
-              "valor_hace_12": -3.79
+              "valor_hace_12": -3.79,
+              "indice_hace_12": 129.95
             },
             {
               "mes": "Nov",
               "anio": 2025,
               "valor": -0.51,
+              "indice": 132.2,
               "var_mensual": 0.12,
               "indice_desest": 129.69,
               "var_anual_pp": -0.17,
-              "valor_hace_12": -0.34
+              "valor_hace_12": -0.34,
+              "indice_hace_12": 132.88
             },
             {
               "mes": "Dic",
               "anio": 2025,
               "valor": -1.64,
+              "indice": 157.15,
               "var_mensual": 1.84,
               "indice_desest": 132.07,
               "var_anual_pp": -7.73,
-              "valor_hace_12": 6.09
+              "valor_hace_12": 6.09,
+              "indice_hace_12": 159.77
             },
             {
               "mes": "Ene",
               "anio": 2026,
               "valor": 1.37,
+              "indice": 120.62,
               "var_mensual": -0.57,
               "indice_desest": 131.31,
               "var_anual_pp": 0.75,
-              "valor_hace_12": 0.62
+              "valor_hace_12": 0.62,
+              "indice_hace_12": 118.98
             },
             {
               "mes": "Feb",
               "anio": 2026,
               "valor": -0.1,
+              "indice": 123.45,
               "var_mensual": -0.37,
               "indice_desest": 130.82,
               "var_anual_pp": -2.21,
-              "valor_hace_12": 2.11
+              "valor_hace_12": 2.11,
+              "indice_hace_12": 123.57
             },
             {
               "mes": "Mar",
               "anio": 2026,
               "valor": 3.36,
+              "indice": 131.76,
               "var_mensual": -0.08,
               "indice_desest": 130.72,
               "var_anual_pp": 4.2,
-              "valor_hace_12": -0.84
+              "valor_hace_12": -0.84,
+              "indice_hace_12": 127.48
             },
             {
               "mes": "Abr",
               "anio": 2026,
               "valor": 1.1,
+              "indice": 126.69,
               "var_mensual": 0.85,
               "indice_desest": 131.84,
               "var_anual_pp": -1.65,
-              "valor_hace_12": 2.75
+              "valor_hace_12": 2.75,
+              "indice_hace_12": 125.31
             },
             {
               "mes": "May",
               "anio": 2026,
               "valor": 1.58,
+              "indice": 128.98,
               "var_mensual": -0.19,
               "indice_desest": 131.59,
               "var_anual_pp": 0.44,
-              "valor_hace_12": 1.14
+              "valor_hace_12": 1.14,
+              "indice_hace_12": 126.98
             },
             {
               "mes": "Jun",
               "anio": 2026,
               "valor": -2.6,
+              "indice": 131.44,
               "var_mensual": -2.03,
               "indice_desest": 128.92,
               "var_anual_pp": -6.81,
-              "valor_hace_12": 4.21
+              "valor_hace_12": 4.21,
+              "indice_hace_12": 134.95
             },
             {
               "mes": "Jul",
               "anio": 2026,
               "valor": -1.66,
+              "indice": 129.02,
               "var_mensual": 0.54,
               "indice_desest": 129.62,
               "var_anual_pp": -4.86,
-              "valor_hace_12": 3.2
+              "valor_hace_12": 3.2,
+              "indice_hace_12": 131.19
             },
             {
               "mes": "Ago",
               "anio": 2026,
               "valor": -2.41,
+              "indice": 123.61,
               "var_mensual": -1.54,
               "indice_desest": 127.62,
               "var_anual_pp": -3.05,
-              "valor_hace_12": 0.64
+              "valor_hace_12": 0.64,
+              "indice_hace_12": 126.66
             },
             {
               "mes": "Sep",
               "anio": 2026,
               "valor": -4.73,
+              "indice": 127.14,
               "var_mensual": -1.02,
               "indice_desest": 126.33,
               "var_anual_pp": -6.96,
-              "valor_hace_12": 2.23
+              "valor_hace_12": 2.23,
+              "indice_hace_12": 133.46
             }
           ]
         }
@@ -1800,135 +2088,164 @@
         "mes": "Oct",
         "anio": 2025,
         "valor": 3.22,
+        "indice": 127.98,
         "var_mensual": 0.51,
         "indice_desest": 127.51,
         "var_anual_pp": -0.3,
-        "valor_hace_12": 3.52
+        "valor_hace_12": 3.52,
+        "indice_hace_12": 123.99
       },
       {
         "mes": "Nov",
         "anio": 2025,
         "valor": 2.41,
+        "indice": 131.07,
         "var_mensual": -1.51,
         "indice_desest": 125.59,
         "var_anual_pp": 1.97,
-        "valor_hace_12": 0.44
+        "valor_hace_12": 0.44,
+        "indice_hace_12": 127.98
       },
       {
         "mes": "Dic",
         "anio": 2025,
         "valor": 0.7,
+        "indice": 140.01,
         "var_mensual": 0.26,
         "indice_desest": 125.92,
         "var_anual_pp": -3.0,
-        "valor_hace_12": 3.7
+        "valor_hace_12": 3.7,
+        "indice_hace_12": 139.03
       },
       {
         "mes": "Ene",
         "anio": 2026,
         "valor": 0.85,
+        "indice": 117.42,
         "var_mensual": 0.16,
         "indice_desest": 126.12,
         "var_anual_pp": -1.19,
-        "valor_hace_12": 2.04
+        "valor_hace_12": 2.04,
+        "indice_hace_12": 116.43
       },
       {
         "mes": "Feb",
         "anio": 2026,
         "valor": 1.25,
+        "indice": 119.42,
         "var_mensual": 0.56,
         "indice_desest": 126.82,
         "var_anual_pp": 0.07,
-        "valor_hace_12": 1.18
+        "valor_hace_12": 1.18,
+        "indice_hace_12": 117.94
       },
       {
         "mes": "Mar",
         "anio": 2026,
         "valor": 3.91,
+        "indice": 128.82,
         "var_mensual": 1.13,
         "indice_desest": 128.25,
         "var_anual_pp": -0.37,
-        "valor_hace_12": 4.28
+        "valor_hace_12": 4.28,
+        "indice_hace_12": 123.98
       },
       {
         "mes": "Abr",
         "anio": 2026,
         "valor": 3.16,
+        "indice": 124.08,
         "var_mensual": 0.18,
         "indice_desest": 128.48,
         "var_anual_pp": 3.3,
-        "valor_hace_12": -0.14
+        "valor_hace_12": -0.14,
+        "indice_hace_12": 120.28
       },
       {
         "mes": "May",
         "anio": 2026,
         "valor": 4.4,
+        "indice": 129.51,
         "var_mensual": 1.42,
         "indice_desest": 130.3,
         "var_anual_pp": 2.33,
-        "valor_hace_12": 2.07
+        "valor_hace_12": 2.07,
+        "indice_hace_12": 124.06
       },
       {
         "mes": "Jun",
         "anio": 2026,
         "valor": 3.56,
+        "indice": 127.47,
         "var_mensual": -1.13,
         "indice_desest": 128.83,
         "var_anual_pp": 0.02,
-        "valor_hace_12": 3.54
+        "valor_hace_12": 3.54,
+        "indice_hace_12": 123.09
       },
       {
         "mes": "Jul",
         "anio": 2026,
         "valor": 0.25,
+        "indice": 130.66,
         "var_mensual": -0.07,
         "indice_desest": 128.74,
         "var_anual_pp": -4.72,
-        "valor_hace_12": 4.97
+        "valor_hace_12": 4.97,
+        "indice_hace_12": 130.34
       },
       {
         "mes": "Ago",
         "anio": 2026,
         "valor": -0.56,
+        "indice": 126.62,
         "var_mensual": -2.71,
         "indice_desest": 125.25,
         "var_anual_pp": -3.32,
-        "valor_hace_12": 2.76
+        "valor_hace_12": 2.76,
+        "indice_hace_12": 127.33
       },
       {
         "mes": "Sep",
         "anio": 2026,
         "valor": 1.44,
+        "indice": 127.27,
         "var_mensual": 2.82,
         "indice_desest": 128.78,
         "var_anual_pp": -2.66,
-        "valor_hace_12": 4.1
+        "valor_hace_12": 4.1,
+        "indice_hace_12": 125.46
       }
     ],
     "mismo_mes": [
       {
         "anio": 2022,
         "valor": 4.21,
+        "indice": 120.45,
         "var_mensual": 0.96
       },
       {
         "anio": 2023,
         "valor": -0.46,
+        "indice": 119.89,
         "var_mensual": 0.0
       },
       {
         "anio": 2024,
         "valor": 0.53,
+        "indice": 120.52,
         "var_mensual": -0.56
       },
       {
         "anio": 2025,
         "valor": 4.1,
+        "indice": 125.46,
         "var_mensual": 0.79
       },
       {
         "anio": 2026,
         "valor": 1.44,
+        "indice": 127.27,
         "var_mensual": 2.82
       }
     ]
