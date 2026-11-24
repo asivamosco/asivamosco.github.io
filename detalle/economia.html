@@ -89,17 +89,17 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
 /* bloque superior (3 columnas). General: gráfica (2) + indicador (1). Ciudades: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
 .top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px;scroll-margin-top:84px}
-.top>.card{display:flex;flex-direction:column;min-width:0}
+.top>.card,.car>.card{display:flex;flex-direction:column;min-width:0}
 .cg{grid-column:2/4;grid-row:1;min-height:300px}
 .top>.hero{grid-column:3;grid-row:1}
 .top.g .cg{grid-column:1/3}
 .cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
-.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "per per" "big vars" "src src" "fte fte";column-gap:20px;row-gap:6px;align-content:start}
-.top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
-.top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
-.top:not(.g)>.hero .ttl{font-size:22px}
-.top:not(.g)>.hero .big{align-self:center;margin:0}
-.top:not(.g)>.hero .src{grid-area:src;margin-top:6px}
+.top:not(.g) .hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "per per" "big vars" "src src" "fte fte";column-gap:20px;row-gap:6px;align-content:start}
+.top:not(.g) .hero .kick{grid-area:kick}.top:not(.g) .hero .ttl{grid-area:ttl}.top:not(.g) .hero .big{grid-area:big}
+.top:not(.g) .hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
+.top:not(.g) .hero .ttl{font-size:22px}
+.top:not(.g) .hero .big{align-self:center;margin:0}
+.top:not(.g) .hero .src{grid-area:src;margin-top:6px}
 .cl .head h2{font-size:17px}
 .cl .seg button{padding:4px 10px;font-size:14px}
 .cl .list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
@@ -114,7 +114,11 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .t5 .nm>span:first-child{white-space:normal;overflow:visible}
 .t5 h2 small{font-size:14px;font-weight:500}
 #app>.tabs{margin:0}
-/* top 5 cambio anual */
+/* vista Destacados */
+.cdest .hz .card{box-shadow:none;background:#f6f8f9}
+/* Top dentro del panel del indicador */
+.hero .tres{margin-top:4px}
+.hero .t5 h2{font-size:16px;margin:0 0 6px}
 .tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
 .tres>.sxc{grid-column:1/-1}
 .t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
@@ -134,25 +138,45 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .err{padding:24px;text-align:center}
 @media(max-width:600px){
   .top{grid-template-columns:1fr}
-  .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
-  /* panel del indicador en dos zonas (50 % cifra grande con el texto debajo, ambos centrados · 50 % tabla de los 4 meses anteriores).
-     Aplica a la vista General (.top.g) y a Sectores/Actividades (.top:not(.g)); !important porque shell.css también define este panel en celular */
-  body .top.g>.hero:not(.gr),body .top:not(.g)>.hero:not(.gr){display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:28px!important;row-gap:4px!important;align-content:start}
-  body .top.g>.hero{grid-template-areas:"per vars" "big vars" "src vars" "fte fte"!important}
-  body .top.g.vdest>.hero{display:none!important}   /* con Destacados activo el panel se oculta (regla de shell.css) */
-  body .top:not(.g)>.hero:not(.gr){grid-template-areas:"kick kick" "per vars" "big vars" "src vars" "fte fte"!important}
-  body .top.g>.hero .big,body .top:not(.g)>.hero .big{font-size:52px!important;align-self:end!important;justify-self:center!important;text-align:center!important;margin:0!important}
-  body .top.g>.hero .big span,body .top:not(.g)>.hero .big span{font-size:24px!important}
-  body .top.g>.hero .fte,body .top:not(.g)>.hero .fte{margin-top:4px!important;justify-self:center!important;text-align:center!important}
-  body .top.g>.hero .per,body .top:not(.g)>.hero .per{font-size:14px!important;justify-self:center!important;text-align:center!important;align-self:start!important}
-  body .top.g>.hero .src,body .top:not(.g)>.hero .src{align-self:start!important;justify-self:center!important;text-align:center!important;margin-top:6px!important;font-size:12px!important;line-height:1.35!important}
-  body .top.g>.hero .vars.tri,body .top:not(.g)>.hero .vars.tri{grid-template-columns:1fr!important;align-self:start!important;gap:4px!important}
-  body .top.g>.hero .vars.tri div,body .top:not(.g)>.hero .vars.tri div{padding-bottom:4px!important;flex-direction:row!important;justify-content:space-between!important;align-items:baseline!important;gap:6px!important}
-  body .top.g>.hero .vars.tri span,body .top:not(.g)>.hero .vars.tri span{font-size:13px!important}
-  body .top.g>.hero .vars.tri b,body .top:not(.g)>.hero .vars.tri b{font-size:17px!important}
-  body .top.g>.hero .vars.tri .th,body .top:not(.g)>.hero .vars.tri .th{text-align:center!important;justify-self:center!important;width:100%}
+  .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g) .hero{grid-column:1;grid-row:auto}
+  /* Panel del indicador (celular), Total / Sectores / Actividades:
+       título arriba · [periodo + cifra grande | tabla de meses anteriores] · comentario · fuente.
+     La cuadrícula define TODAS las áreas; el rótulo .kick y las pestañas .htabs se ocultan (las pestañas ya están en el panel del selector).
+     Antes, .ttl y .htabs apuntaban a áreas que no existían en la plantilla y creaban columnas extra que aplastaban la cifra. */
+  body .top .hero:not(.gr){display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-rows:auto auto 1fr auto auto!important;grid-template-areas:"ttl ttl" "per vars" "big vars" "src src" "fte fte"!important;column-gap:16px!important;row-gap:6px!important;align-content:start!important}
+  body .top .hero.gr{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"ttl" "gl"!important;row-gap:8px!important;align-content:start!important}
+  body .top .hero .kick,body .top .hero .htabs{display:none!important}
+  body .top .hero .ttl{display:block!important;grid-area:ttl!important;font-size:20px!important;line-height:1.2!important;margin:0 0 4px!important}
+  body .top .hero .per{grid-area:per!important;justify-self:center!important;text-align:center!important;align-self:start!important;font-size:14px!important}
+  body .top .hero .big{grid-area:big!important;font-size:clamp(34px,11.5vw,46px)!important;white-space:nowrap!important;align-self:center!important;justify-self:center!important;text-align:center!important;margin:0!important}
+  body .top .hero .big span{font-size:.5em!important;margin-left:2px!important}
+  body .top .hero .vars.tri{grid-area:vars!important;grid-template-columns:1fr!important;align-self:start!important;gap:4px!important;min-width:0!important}
+  body .top .hero .vars.tri div{padding-bottom:4px!important;flex-direction:row!important;justify-content:space-between!important;align-items:baseline!important;gap:6px!important}
+  body .top .hero .vars.tri span{font-size:13px!important}
+  body .top .hero .vars.tri b{font-size:17px!important}
+  body .top .hero .vars.tri .th{text-align:left!important;justify-self:start!important;width:100%;padding-bottom:2px}
+  /* "Frente al total": etiqueta arriba y cifra debajo, para que no se parta en 4 líneas */
+  body .top .hero .vars.tri .vt{flex-direction:column!important;align-items:flex-start!important;gap:0!important;border-bottom:0!important}
+  body .top .hero .vars.tri .vt b{font-size:15px!important}
+  body .top .hero .src{grid-area:src!important;justify-self:stretch!important;text-align:left!important;margin:2px 0 0!important;font-size:12.5px!important;line-height:1.35!important}
+  body .top .hero .fte{grid-area:fte!important;margin-top:2px!important;justify-self:center!important;text-align:center!important}
   .cl{contain:none;height:340px;min-height:0}
+  /* Sectores y Actividades en celular: orden selector → indicador → gráfica de últimos 12 meses */
+  body .top:not(.g)>.cl{order:1}
+  body .top:not(.g)>.cnav{order:2}
+  body .top:not(.g)>.carw{order:3}
   .tres{grid-template-columns:1fr}
+  /* Slide Actividades del carrusel (solo celular; en escritorio las actividades van en el panel con sus pestañas) */
+  body .top .car>.card.cacts{display:flex}
+  /* Flechas del carrusel bajo el selector, con el título de la ficha anterior y la próxima */
+  body .top>.cnav{display:flex;align-items:center;gap:8px;margin:-4px 0}
+  .cnav button{flex:1 1 0;min-width:0;border:0;background:none;padding:6px 2px;font:700 15px/1.1 "Roboto Condensed",system-ui,sans-serif;color:var(--ink,#12303d);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cnav button[data-cdir="-1"]{text-align:left}
+  .cnav button[data-cdir="1"]{text-align:right}
+  .cnav button:disabled{opacity:0;cursor:default}
+  .cnav .cd{flex:none;display:flex;gap:6px}
+  .cnav i{width:7px;height:7px;border-radius:50%;background:#b9c4cb;transition:background .15s}
+  .cnav i.on{background:var(--ink,#12303d)}
 }
 @media(max-width:420px){.hz{grid-template-columns:1fr}}
 /* divisiones de gasto */
@@ -176,11 +200,9 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 .hero .kc{display:none}
 /* Ciudades y Divisiones, escritorio: sin el rótulo "Inflación por ciudad / por división de gasto" (el nombre ya está como título del panel) */
 .hero .kick.kv{display:none}
-@media(max-width:600px){
-  body .top:not(.g)>.hero .kick.kv{display:block}
-  body .top:not(.g)>.hero .kk{display:none}
-  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
-}
+
+.cnav{display:none}
+.car>.card.cacts{display:none}
 /* Celular: la lista de ciudades / divisiones se presenta como select */
 @media(max-width:600px){
   /* el nombre del select se recorta a una sola línea (el nombre completo está en el panel del indicador) */
@@ -191,6 +213,25 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
 /* flecha del título del header: mismos colores que el resto de la página */
 header .ar.up{color:var(--up-hd)} header .ar.dn{color:var(--dn-hd)}
 .row .nm>small{font-size:12px;line-height:1.1}
+/* Total: carrusel Crecimiento → Últimos 12 meses → Mismo mes por año → Top sectores → Top actividades.
+   Escritorio: los contenedores no cuentan en la cuadrícula; indicador a la derecha (2 filas), gráficas a la izquierda y los Top a todo el ancho debajo. */
+.top.g .car>.hero{grid-column:3;grid-row:1/3}
+.top.g .car>.cs1{grid-column:1/3;grid-row:1}
+.top.g .car>.cs2{grid-column:1/3;grid-row:2}
+.top.g .car>.ctop{grid-column:1/-1}
+.cgt{margin:0 0 6px;font-size:16px;font-weight:700}
+.gch{flex:1;display:flex;align-items:center}.gch>*{width:100%}
+.ctop .ctt{margin:0 0 8px;font-size:20px;font-weight:700;line-height:1.2}
+/* Sectores / Actividades: hero + gráfica. Escritorio: los contenedores no cuentan en la cuadrícula; celular: carrusel horizontal */
+.carw,.car{display:contents}
+@media(min-width:601px){.carw .dnav{display:none}}
+@media(max-width:600px){
+  .top:not(.g){grid-template-columns:minmax(0,1fr)}
+  .carw{display:block;min-width:0}
+  .car{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;align-items:flex-start}
+  .car::-webkit-scrollbar{display:none}
+  .car>.card{flex:0 0 100%;min-width:0;scroll-snap-align:start}
+}
 </style>
 </head>
 <body class="app">
@@ -201,7 +242,7 @@ header .ar.up{color:var(--up-hd)} header .ar.dn{color:var(--dn-hd)}
   <div class="hd-title" id="hdTitle" aria-live="polite"></div>
   <nav class="hd-mid" aria-label="Vista">
     <button type="button" class="vt" data-vista="gen" aria-pressed="true">Total</button>
-    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
+    <button type="button" class="vt" data-vista="dest" aria-pressed="false">Destacados</button>
     <button type="button" class="vt" data-vista="sec" aria-pressed="false">Sectores</button>
     <button type="button" class="vt" data-vista="act" aria-pressed="false">Actividades</button>
   </nav>
@@ -236,18 +277,39 @@ document.addEventListener('change', e => { if (e.target.id === 'selLista') selTi
 const esNac = x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*(desempleo|inflaci[oó]n|costo de vida)\s+nacional\b/i.test(x.titulo || '') || /^\s*crecimiento de la econom[ií]a/i.test(x.titulo || '');
 // Carrusel de gráficas (celular): flechas y puntos de guía
 const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
-const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
+const dosPaso = d => d.firstElementChild.offsetWidth + 12;
 function dosAct(d) {
   const i = Math.round(d.scrollLeft / dosPaso(d)), nav = d.parentNode.querySelector('.dnav'); if (!nav) return;
   nav.querySelectorAll('i').forEach((x, k) => x.classList.toggle('on', k === i));
   nav.querySelector('[data-dir="-1"]').disabled = i <= 0; nav.querySelector('[data-dir="1"]').disabled = i >= 1;
 }
-document.addEventListener('scroll', e => { if (e.target.classList && e.target.classList.contains('dos')) dosAct(e.target); }, true);
+document.addEventListener('scroll', e => { if (e.target.classList && (e.target.classList.contains('dos') || e.target.classList.contains('car'))) { dosAct(e.target); if (e.target.classList.contains('car')) carNav(); } }, true);
 document.addEventListener('click', e => {
   const b = e.target.closest('.dnav button'); if (!b) return;
-  const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
+  const d = b.closest('.dosw,.carw').querySelector('.dos,.car'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
   d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
 });
+// Carrusel de Sectores / Actividades (celular): flechas bajo el selector con el título de la ficha anterior y la próxima
+const MOV = matchMedia('(max-width:600px)');
+const carFichas = c => [...c.children].filter(x => getComputedStyle(x).display !== 'none');
+function carNav(forzar) {
+  const c = $('.car'), n = $('#cnav'); if (!c || !n) return;
+  const f = carFichas(c), i = Math.max(0, Math.min(f.length - 1, Math.round(c.scrollLeft / dosPaso(c))));
+  const clave = f.map(x => x.dataset.lbl).join('|') + '#' + i;
+  if (!forzar && n.dataset.k === clave) return;
+  n.dataset.k = clave;
+  const a = f[i - 1], b = f[i + 1];
+  n.innerHTML = `<button type="button" data-cdir="-1"${a ? '' : ' disabled'} aria-label="Anterior">${a ? '‹ ' + esc(a.dataset.lbl) : ''}</button>
+    <span class="cd" aria-hidden="true">${f.map((_, k) => `<i class="${k === i ? 'on' : ''}"></i>`).join('')}</span>
+    <button type="button" data-cdir="1"${b ? '' : ' disabled'} aria-label="Siguiente">${b ? esc(b.dataset.lbl) + ' ›' : ''}</button>`;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.cnav button'); if (!b || b.disabled) return;
+  const c = $('.car'); if (!c) return;
+  const f = carFichas(c), i = Math.round(c.scrollLeft / dosPaso(c)), j = Math.max(0, Math.min(f.length - 1, i + Number(b.dataset.cdir)));
+  c.scrollTo({left: j * dosPaso(c), behavior: 'smooth'});
+});
+MOV.addEventListener('change', () => { if (D && $('#hero')) hero(); });
 // Destacado "variación del mes": tampoco va en la lista (ya está en el panel del indicador)
 const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -259,9 +321,9 @@ const nm = s => String(s ?? '').replace(/\b(Y|De|Del|La|El|Los|Las|Para|Por|En|C
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
 
-// vista: 'gen' (total) | 'top' | 'sec' (sectores: primarias/secundarias/terciarias) | 'act' (actividades). sc = sector elegido; a = actividad elegida.
+// vista: 'gen' (total) | 'dest' (destacados) | 'sec' (sectores: primarias/secundarias/terciarias) | 'act' (actividades). sc = sector elegido; a = actividad elegida. htab: 'sec' = detalle, 'acts' = actividades del sector, 'top' = aceleraron/desaceleraron.
 const SEC = {primarias: 'Primarias', secundarias: 'Secundarias', terciarias: 'Terciarias'};
-let D, st = {vista: 'gen', g: null, a: null, sc: null, tab: 'doce', htab: 'sec', gtab: 'graf', ttab: 'act'};
+let D, st = {vista: 'gen', g: null, a: null, sc: null, tab: 'doce', htab: 'sec'};
 const total = () => ({nombre: 'Total economía', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
 const actSerie = a => ({nombre: a.actividad, datos: a.serie_12m, tipo: 'act', d: a});
 const secSerie = s => ({nombre: nm(s.sector), datos: s.serie_12m, tipo: 'sec', d: s});
@@ -299,32 +361,23 @@ function tituloHeader(nombre) {
 function render() {
   document.title = 'Economía · Así Vamos';
   tituloHeader('Economía');
-  $('#app').classList.toggle('vtop', st.vista === 'top');
   const dim = D.dimensiones, gen = st.vista === 'gen';
   document.querySelectorAll('[data-vista]').forEach(b => b.setAttribute('aria-pressed', b.dataset.vista === st.vista));
 
   if (gen) {
     $('#app').innerHTML = `
-    <button class="swd" id="swd" type="button" role="switch" aria-checked="false" data-gtab="dest"><span>Destacados</span><i class="swd-k"></i></button>
     <div class="top g" id="top">
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
+      <div class="cnav" id="cnav"></div>
+      <div class="carw"><div class="car">
+        <section class="card hero" id="hero" aria-label="Indicador"></section>
+        <section class="card cg cs1" data-lbl="Últimos 12 meses" aria-label="Últimos 12 meses"><h3 class="cgt">Últimos 12 meses</h3><div class="gch" id="c12"></div></section>
+        <section class="card cg cs2" data-lbl="Mismo mes por año" aria-label="Mismo mes por año"><h3 class="cgt">Mismo mes por año</h3><div class="gch" id="cmm"></div></section>
+        <section class="card ctop" data-lbl="Top sectores" aria-label="Top sectores"><h2 class="ctt">Top · Sectores</h2>${topHtml(false)}</section>
+        <section class="card ctop" data-lbl="Top actividades" aria-label="Top actividades"><h2 class="ctt">Top · Actividades</h2>${topHtml(true)}</section>
+      </div></div>
     </div>`;
-  } else if (st.vista === 'top') {
-    $('#app').innerHTML = `
-    <div class="tabs" role="group" aria-label="Ver por">
-      <button data-ttab="act" aria-pressed="${st.ttab === 'act'}">Actividades</button>
-      <button data-ttab="sec" aria-pressed="${st.ttab === 'sec'}">Sectores</button>
-    </div>
-    <div class="tres">
-      <section class="card t5" id="t5s" aria-label="Aceleraron"></section>
-      <section class="card t5" id="t5b" aria-label="Desaceleraron"></section>
-    </div>
-    <p class="ref" style="margin:-6px 0 0">pp = puntos porcentuales: cambio del crecimiento anual frente a hace un año, por actividad y por sector. Toca una actividad o un sector para ver su detalle.</p>`;
-    top5();
+  } else if (st.vista === 'dest') {
+    $('#app').innerHTML = `<section class="card cdest" aria-label="Destacados"><h2>Destacados</h2>${hallazgosHtml()}</section>`;
   } else {
     const sec = st.vista === 'sec';
     $('#app').innerHTML = `
@@ -333,18 +386,21 @@ function render() {
         <div class="head"><h2>${sec ? 'Por sector' : 'Por actividad'}</h2><small class="mute">Crecimiento anual</small></div>
         <div class="clfoot"><small class="mute clm">Crecimiento anual</small><p class="ref">${refTxt(dim[sec ? 'sectores' : 'actividades'].referencias)}</p></div>
         <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir"></select></div>
-        ${sec ? '<div class="tabs htabs mtabs" id="mtabs" role="group" aria-label="Contenido del panel"></div>' : ''}
         <div class="list" id="lista"></div>
       </section>
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
+      <div class="cnav" id="cnav"></div>
+      <div class="carw"><div class="car">
+        <section class="card hero" id="hero" aria-label="Indicador"></section>
+        ${sec ? '<section class="card hero gr cacts" id="heroActs" data-lbl="Actividades" aria-label="Actividades del sector"></section>' : ''}
+        <section class="card cg" data-lbl="Últimos 12 meses" aria-label="Serie">
+          <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
+          <div id="chart"></div>
+        </section>
+      </div></div>
     </div>`;
     lista();
   }
-  if (st.vista !== 'top') { hero(); serie(); }
+  if (st.vista !== 'dest') { hero(); serie(); }
 }
 
 function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${fmt(r.var_anual)} %`).join(' · '); }
@@ -365,11 +421,13 @@ function hero() {
       filas += `<div class="vt"><span>Frente al total</span><b class="${cls(d.brecha_vs_total)}">${flecha(d.brecha_vs_total)} ${sg(d.brecha_vs_total)} pp</b></div>`;
   }
   if (idx != null) extra += `${extra ? ' · ' : ''}Índice ISE: ${fmt(idx)}`;
+  // Celular: Actividades es una ficha propia del carrusel, así que el panel nunca muestra la pestaña 'acts'
+  if (MOV.matches && st.htab === 'acts') st.htab = 'sec';
   const enSec = s.tipo === 'sec', gr = enSec && st.htab === 'acts';
-  $('#hero').className = 'card hero' + (enSec ? ' wt' + (gr ? ' gr' : '') : '');
+  $('#hero').className = 'card hero' + (enSec || gr ? ' wt' + (gr ? ' gr' : '') : '');
   const nA = enSec ? (d.actividades || []).length : 0;
-  const tabBtns = enSec ? `<button data-htab="sec" aria-pressed="${!gr}">Sector</button>
-      <button data-htab="acts" aria-pressed="${gr}">Actividades${nA ? ` (${nA})` : ''}</button>` : '';
+  const tabBtns = enSec ? `<button data-htab="sec" aria-pressed="${st.htab === 'sec'}">Sector</button>
+      <button data-htab="acts" aria-pressed="${st.htab === 'acts'}">Actividades${nA ? ` (${nA})` : ''}</button>` : '';
   const tabsH = enSec ? `<div class="tabs htabs" role="group" aria-label="Contenido del panel">${tabBtns}</div>` : '';
   const cuerpo = gr ? actsHtml(d) : `<div class="per">${esc(per.etiqueta)}</div>
     <div class="big ${cls(tasa)}">${fmt(tasa)}<span>%</span></div>
@@ -378,9 +436,11 @@ function hero() {
     <small class="mute fte">Fuente: ${esc(D.fuente)}</small>`;
   $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
     <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
-  // Celular: las pestañas Sector / Actividades van bajo el select; en Actividades se oculta la gráfica (clase vgr)
-  const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;
-  const tp = $('#top'); if (tp) tp.classList.toggle('vgr', gr);
+  // Celular: Sector / Actividades / Últimos 12 meses son fichas del carrusel
+  $('#hero').dataset.lbl = enSec ? 'Sector' : s.tipo === 'act' ? 'Actividad' : 'Crecimiento';
+  const ha = $('#heroActs');
+  if (ha && enSec) ha.innerHTML = `<div class=\"ttl\">Actividades${nA ? ` (${nA})` : ''}</div>${actsHtml(d)}`;
+  carNav(true);
 }
 
 // Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
@@ -423,50 +483,44 @@ function lista() {
   sl.innerHTML = items.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fmt(c.var_anual)} % · ${esc(nom(c))}</option>`).join(''); selTitle();
 }
 
-// Top: actividades / sectores que más aceleraron o se desaceleraron (pp frente a hace un año)
-function top5() {
-  const dim = D.dimensiones, cnt = {up: 0, dn: 0};
-  const bloque = (tit, todas, nom, attr, k, vacio) => {
-    const items = todas.filter(c => c.var_anual_pp != null);
-    const arr = (k === 'up' ? items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp)
-                            : items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp));
-    const mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
-    cnt[k] = arr.length;
-    return `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
-    <button class="tr" ${attr}="${todas.indexOf(c)}" title="${esc(nom(c))}" aria-pressed="false">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(nom(c))}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
-      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
-  };
-  const act = st.ttab === 'act';
-  const todas = act ? dim.actividades.items : dim.sectores.items, nomf = act ? (c => c.actividad) : (c => nm(c.sector)), attr = act ? 'data-ac' : 'data-sc';
+// Top (fichas de Total): lo que más aceleró y se desaceleró frente a hace un año (pp)
+function topHtml(act) {
+  const todas = D.dimensiones[act ? 'actividades' : 'sectores'].items;
+  const nomf = act ? (c => c.actividad) : (c => nm(c.sector)), attr = act ? 'data-ac' : 'data-sc';
+  const items = todas.filter(c => c.var_anual_pp != null), mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
   const et = act ? 'Actividades' : 'Sectores', ning = act ? 'Ninguna actividad' : 'Ningún sector';
-  $('#t5s').innerHTML = bloque(`${et} que aceleraron`, todas, nomf, attr, 'up', `${ning} aceleró frente a hace un año.`);
-  $('#t5b').innerHTML = bloque(`${et} que se desaceleraron`, todas, nomf, attr, 'dn', `${ning} se desaceleró frente a hace un año.`);
-  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
-  const wu = cnt.up > cnt.dn ? 60 : cnt.up < cnt.dn ? 40 : 50;
-  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
+  const bloque = k => {
+    const arr = k === 'up' ? items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp)
+                           : items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp);
+    const tit = k === 'up' ? 'aceleraron' : 'se desaceleraron';
+    return `<div class="t5"><h2 class="${k}">${et} que ${tit} <small>(${arr.length})</small></h2>${arr.length ? `<div class="glist" tabindex="0">${arr.map((c, i) => `
+      <button class="tr" ${attr}="${todas.indexOf(c)}" title="${esc(nomf(c))}" aria-pressed="false">
+        <span class="rk">${i + 1}</span>
+        <span class="nm"><span>${esc(nomf(c))}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
+        <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('')}</div>`
+      : `<p class="vacio">${ning} ${k === 'up' ? 'aceleró' : 'se desaceleró'} frente a hace un año.</p>`}</div>`;
+  };
+  return `<div class="gwrap"><div class="tres">${bloque('up')}${bloque('dn')}</div>
+    <p class="ref">pp = puntos porcentuales: cambio del crecimiento anual frente a hace un año. Toca un elemento para ver su detalle.</p></div>`;
 }
 
 function serie() {
-  const s = cur(), dest = s.nac && st.gtab === 'dest';
+  const s = cur();
+  if (st.vista === 'gen') {
+    $('#c12').innerHTML = grafica(s.datos || [], false, 'var');
+    $('#cmm').innerHTML = grafica(D.serie.mismo_mes || [], true, 'indice');
+    return;
+  }
   // Ciudades y divisiones: el título es solo "Últimos 12 meses" (el nombre ya está en el panel del indicador)
   $('#serieT').innerHTML = !s.nac ? '<span class="serTx">Últimos 12 meses</span>'
-    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
-  // Nacional: pestañas Gráficas / Destacados
-  $('#tabs').innerHTML = s.nac
-    ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
-    : '';
-  $('#chart').innerHTML = dest ? hallazgosHtml()
-    : s.nac
+    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">últimos 12 meses</span>`;
+  $('#tabs').innerHTML = '';
+  $('#chart').innerHTML = s.nac
     ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false, 'var')}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true, 'indice')}</div></div>${DNAV}</div>`
     : grafica(s.datos || [], false);
-  // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
-  const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
-  const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
 }
 
-// Paneles de hallazgos (antes en TOP); ahora dentro de General, pestaña Destacados
+// Paneles de hallazgos: vista Destacados
 function hallazgosHtml() {
   return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x) && !esVarMes(x)).map(x => `
     <div class="card ${/_alt[ao]$/.test(x.tipo) ? 'sube' : /_baj[ao]$/.test(x.tipo) ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
@@ -515,27 +569,28 @@ document.addEventListener('click', e => {
   const dim = D.dimensiones;
   if (b.dataset.vista) {
     if (b.dataset.vista === st.vista) return;
-    st.vista = b.dataset.vista; render(); $('#app').scrollTo({top: 0}); return;
+    st.vista = b.dataset.vista; st.htab = 'sec'; render(); $('#app').scrollTo({top: 0}); return;
   }
-  if (b.dataset.htab) { st.htab = b.dataset.htab; hero(); return; }
-  if (b.dataset.ttab) { st.ttab = b.dataset.ttab; render(); return; }
-  if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
+  if (b.dataset.htab) {
+    st.htab = b.dataset.htab; hero();
+    const c = $('.car'); if (c) c.scrollTo({left: 0, behavior: 'smooth'});
+    return;
+  }
   if (b.dataset.tab) {
     st.tab = b.dataset.tab;
   } else if (b.dataset.ac != null) {
-    st.a = actSerie(dim.actividades.items[b.dataset.ac]);
-    // desde TOP se abre el detalle de la actividad en su pestaña
-    if (st.vista !== 'act') { st.vista = 'act'; render(); $('#app').scrollTo({top: 0}); return; }
+    st.a = actSerie(dim.actividades.items[b.dataset.ac]); st.htab = 'sec';
+    if (st.vista === 'gen') { st.vista = 'act'; render(); $('#app').scrollTo({top: 0}); return; }
   } else if (b.dataset.sc != null) {
     st.sc = secSerie(dim.sectores.items[b.dataset.sc]); st.htab = 'sec';
-    if (st.vista !== 'sec') { st.vista = 'sec'; render(); $('#app').scrollTo({top: 0}); return; }
+    if (st.vista === 'gen') { st.vista = 'sec'; render(); $('#app').scrollTo({top: 0}); return; }
   } else return;
   marcar(); hero(); serie();
 });
 document.addEventListener('change', e => {
   if (!D || e.target.id !== 'selLista') return;
   const dim = D.dimensiones, i = e.target.value;
-  if (st.vista === 'act') st.a = actSerie(dim.actividades.items[i]);
+  if (st.vista === 'act') { st.a = actSerie(dim.actividades.items[i]); st.htab = 'sec'; }
   else if (st.vista === 'sec') { st.sc = secSerie(dim.sectores.items[i]); st.htab = 'sec'; }
   else return;
   marcar(); hero(); serie();
