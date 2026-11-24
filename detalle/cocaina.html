@@ -170,7 +170,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   .cl .list{display:none}
   .cl{height:auto;min-height:0}
 }
-/* las filas de las listas muestran los kg y, debajo, la variación anual */
+/* las filas de las listas muestran las toneladas y, debajo, la variación anual */
 .row .vl{display:flex;flex-direction:column;align-items:flex-end}
 .row .vl small,.tr .vl small{font-size:12px;line-height:1.1;font-weight:700}
 .row .nm>small{font-size:12px;line-height:1.1}
@@ -235,22 +235,21 @@ document.addEventListener('click', e => {
 const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
-const fm0 = n => fmt(n, 0);
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
 // Colores (ver :root): 'up' = más cocaína incautada (mejora, ámbar), 'dn' = menos (empeora, gris)
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
-// Departamentos, ciudades y municipios con pocos kg (< 10) se muestran con 2 decimales para no verse como 0
-const dq = n => n != null && n !== 0 && Math.abs(n) < 10 ? 2 : 0;
+// Toneladas: 3 decimales si < 1, 2 si < 10 y 1 si >= 10, para que valores pequeños no se vean como 0
+const dq = n => n == null || n === 0 ? 0 : Math.abs(n) < 1 ? 3 : Math.abs(n) < 10 ? 2 : 1;
 const fq = n => fmt(n, dq(n));
 
-// vista: 'gen' (total) | 'top' | 'dep' (departamentos) | 'ciu' (ciudades con más kg).
+// vista: 'gen' (total) | 'top' | 'dep' (departamentos) | 'ciu' (ciudades con más toneladas).
 // Cada lista (dep/ciu) tiene el mismo esquema de items; sus "hijos": departamento -> municipios (la ciudad no tiene).
 const DIMS = {
-  dep: {k: 'departamentos', una: 'Departamento', hijos: 'Municipios', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Kg por departamento'},
-  ciu: {k: 'ciudades',      una: 'Ciudad',       hijos: null,         plural: 'Ciudades',      ning: 'Ninguna ciudad',       titulo: 'Por ciudad',        kick: 'Kg por ciudad'}
+  dep: {k: 'departamentos', una: 'Departamento', hijos: 'Municipios', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Toneladas por departamento'},
+  ciu: {k: 'ciudades',      una: 'Ciudad',       hijos: null,         plural: 'Ciudades',      ning: 'Ninguna ciudad',       titulo: 'Por ciudad',        kick: 'Toneladas por ciudad'}
 };
-let D, UN = 'kg', st = {vista: 'gen', g: null, sel: {dep: null, ciu: null}, htab: 'ent', gtab: 'graf', ttab: 'dep'};
+let D, UN = 't', st = {vista: 'gen', g: null, sel: {dep: null, ciu: null}, htab: 'ent', gtab: 'graf', ttab: 'dep'};
 const total = () => ({nombre: 'Cocaína incautada en Colombia', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
 const entSerie = (v, d) => ({nombre: d.nombre, datos: d.serie_12m, tipo: v, d});
 const items = v => ((D.dimensiones || {})[DIMS[v].k] || {}).items || [];
@@ -258,7 +257,7 @@ const cur = () => st.vista === 'gen' ? st.g : st.sel[st.vista];
 
 fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then(d => {
-    D = d; UN = (d.hero && d.hero.unidad) || 'kg'; st.g = total();
+    D = d; UN = (d.hero && d.hero.unidad) || 't'; st.g = total();
     Object.keys(DIMS).forEach(v => {
       const p = [...items(v)].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad)[0];
       st.sel[v] = p ? entSerie(v, p) : null;
@@ -319,7 +318,7 @@ function render() {
       <section class="card t5" id="t5s" aria-label="Aumentaron"></section>
       <section class="card t5" id="t5b" aria-label="Redujeron"></section>
     </div>
-    <p class="ref" style="margin:-6px 0 0">Variación porcentual de los kg incautados frente al mismo mes de hace un año; debajo, el cambio en kg. Toca un departamento o una ciudad para ver su detalle.</p>`;
+    <p class="ref" style="margin:-6px 0 0">Variación porcentual de las toneladas incautadas frente al mismo mes de hace un año; debajo, el cambio en toneladas. Toca un departamento o una ciudad para ver su detalle.</p>`;
     top5();
   } else {
     const c = DIMS[st.vista];
@@ -348,16 +347,16 @@ function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${sg(r.v
 // Card de indicador: total de Colombia por defecto; cambia con el departamento o la ciudad elegidos
 function hero() {
   const s = cur(), h = D.hero, per = D.periodo, d = s.d;
-  let kick = '', ttl = 'Cocaína incautada en Colombia', big = fm0(h.total), unit = UN, com = h.comentario_popular, extra = '';
+  let kick = '', ttl = 'Cocaína incautada en Colombia', big = fq(h.total), unit = UN, com = h.comentario_popular, extra = '';
   const src = `${per.etiqueta} · Solo Colombia (no incluye incautaciones en el exterior) · Fuente: ${D.fuente}`;
   const vp = (l, v, dd = 2) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${v == null ? '—' : sg(v, dd) + ' %'}</b></div>`;
   let filas;
   if (s.tipo === 'nac') {
     filas = vp('Vs. hace un año', h.var_anual_pct) + vp('Vs. mes anterior', h.var_mensual_pct)
-      + `<div><span class="mute">Hace un año</span><b>${fm0(h.total_hace_12)} ${esc(UN)}</b></div>`
-      + `<div><span class="mute">Diferencia</span><b class="${cls(h.var_anual_abs)}">${flecha(h.var_anual_abs)} ${sg(h.var_anual_abs, 0)} ${esc(UN)}</b></div>`;
+      + `<div><span class="mute">Hace un año</span><b>${fq(h.total_hace_12)} ${esc(UN)}</b></div>`
+      + `<div><span class="mute">Diferencia</span><b class="${cls(h.var_anual_abs)}">${flecha(h.var_anual_abs)} ${sg(h.var_anual_abs, dq(h.var_anual_abs))} ${esc(UN)}</b></div>`;
     const ex = [];
-    if (h.acumulado_anio != null) ex.push(`Acumulado ${per.anio}: ${fm0(h.acumulado_anio)} ${esc(UN)}${h.var_acumulado_pct != null ? ` (${sg(h.var_acumulado_pct, 1)} % vs. ${per.anio - 1})` : ''}`);
+    if (h.acumulado_anio != null) ex.push(`Acumulado ${per.anio}: ${fq(h.acumulado_anio)} ${esc(UN)}${h.var_acumulado_pct != null ? ` (${sg(h.var_acumulado_pct, 1)} % vs. ${per.anio - 1})` : ''}`);
     extra = ex.join('<br>');
   } else {
     kick = DIMS[s.tipo].kick; ttl = s.nombre; big = fq(d.cantidad); com = d.comentario_popular;
@@ -404,7 +403,7 @@ function hijosHtml(d, cfg) {
     <p class="ref">${esc(UN)} del mes; debajo, variación frente a hace un año. La barra muestra su peso dentro de ${esc(d.nombre)}.</p></div>`;
 }
 
-// Lista lateral: departamentos o ciudades, ordenados por kg
+// Lista lateral: departamentos o ciudades, ordenados por toneladas
 function lista() {
   const v = st.vista, todas = items(v), its = [...todas].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad), sel = st.sel[v].d;
   const ts = its.map(c => c.cantidad || 0), mx = Math.max(...ts), mn = Math.min(...ts);
@@ -423,7 +422,7 @@ function lista() {
   sl.innerHTML = its.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fq(c.cantidad)} ${esc(UN)} · ${esc(c.nombre)}${v === 'ciu' && c.departamento ? ' (' + esc(c.departamento) + ')' : ''}</option>`).join(''); selTitle();
 }
 
-// Top: departamentos / ciudades que más aumentaron o redujeron sus kg (% vs. hace un año)
+// Top: departamentos / ciudades que más aumentaron o redujeron sus toneladas (% vs. hace un año)
 function top5() {
   const v = st.ttab, cfg = DIMS[v], todas = items(v), cnt = {up: 0, dn: 0};
   const bloque = (tit, k, vacio) => {
@@ -438,8 +437,8 @@ function top5() {
       <span class="nm"><span>${esc(c.nombre)}</span>${v === 'ciu' && c.departamento ? `<small class="mute">${esc(c.departamento)}</small>` : ''}<span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pct) / mx}%"></b></span></span>
       <span class="vl"><strong class="${k}">${flecha(c.var_anual_pct)} ${sg(c.var_anual_pct, 1)} %</strong><small class="${k}">${sg(c.diferencia, dq(c.diferencia))} ${esc(UN)}</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
   };
-  $('#t5s').innerHTML = bloque(`${cfg.plural} que aumentaron`, 'up', `${cfg.ning} aumentó sus kg frente a hace un año.`);
-  $('#t5b').innerHTML = bloque(`${cfg.plural} que redujeron`, 'dn', `${cfg.ning} redujo sus kg frente a hace un año.`);
+  $('#t5s').innerHTML = bloque(`${cfg.plural} que aumentaron`, 'up', `${cfg.ning} aumentó sus toneladas frente a hace un año.`);
+  $('#t5b').innerHTML = bloque(`${cfg.plural} que redujeron`, 'dn', `${cfg.ning} redujo sus toneladas frente a hace un año.`);
   // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
   const wu = cnt.up > cnt.dn ? 60 : cnt.up < cnt.dn ? 40 : 50;
   $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
@@ -447,9 +446,7 @@ function top5() {
 
 function serie() {
   const s = cur(), dest = s.nac && st.gtab === 'dest';
-  // Departamentos y ciudades: pocos kg se grafican con 2 decimales
-  const dd = !s.nac && Math.max(...(s.datos || []).map(p => p.valor)) < 10 ? 2 : 0;
-  // El título es solo "kg por mes: últimos 12 meses" (el nombre ya está en el panel del indicador)
+  // El título es solo "t por mes: últimos 12 meses" (el nombre ya está en el panel del indicador)
   $('#serieT').innerHTML = !s.nac ? `<span class="serTx">${esc(UN)} por mes: últimos 12 meses</span>`
     : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
   // Total: pestañas Gráficas / Destacados
@@ -459,7 +456,7 @@ function serie() {
   $('#chart').innerHTML = dest ? hallazgosHtml()
     : s.nac
     ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses (${esc(UN)})</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año (${esc(UN)})</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
-    : grafica(s.datos || [], false, dd);
+    : grafica(s.datos || [], false);
   // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
   const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
   const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
@@ -472,7 +469,7 @@ function hallazgosHtml() {
       <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`;
 }
 
-function grafica(d, mm, dec = 0) {
+function grafica(d, mm, dec = dq(Math.max(0, ...d.map(p => p.valor)))) {
   if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
   const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
   const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
