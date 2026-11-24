@@ -320,3 +320,5 @@ header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
   --panel-bt-color:var(--hd-bg);
 }
 main section.card{border-top:var(--panel-bt) solid var(--panel-bt-color)}
+/* Celular: borde superior de los paneles más delgado */
+@media (max-width:600px){:root{--panel-bt:3px}}
