@@ -8,6 +8,14 @@
 /* Ancho de columna común = el de las tarjetas del index (3 de 226px + 2 huecos de 14px = 706px).
    Lo usan footer/banner, header y el contenido de todas las páginas. */
 :root{--col:706px;--gutter:20px;--brand-acc:#E0A938}
+
+/* Colores de mejora / empeora (fuente única para index y páginas de detalle).
+   ámbar = mejora, gris = empeora. Cada página decide qué dirección (sube/baja) es la buena
+   asignando --up / --dn a --ok o --mal. Los -hd son versiones claras para el header oscuro. */
+:root{
+  --ok:#E3A02B;  --ok-rgb:227,160,43;  --ok-txt:#B7791F;  --ok-hd:#F2B84B;
+  --mal:#64748B; --mal-rgb:100,116,139; --mal-txt:#556070; --mal-hd:#A9B6C6;
+}
 @media (min-width:601px) and (max-width:900px){:root{--col:772px}}
 @media (max-width:600px){:root{--gutter:10px}}
 
@@ -61,7 +69,7 @@ header.hd .help-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
 }
 
 /* Título centrado en el header (index y páginas de detalle): solo en celulares y tablets (pantalla táctil) en vertical, nunca en escritorio, aunque la ventana sea angosta.
-   Letra blanca centrada, sin pestaña; tras el mes lleva una flecha (.ar) roja si el indicador subió o verde si bajó frente al mes anterior.
+   Letra blanca centrada, sin pestaña; tras el mes lleva una flecha (.ar) del color de mejora/empeora (ámbar/gris) según el indicador frente al mes anterior.
    El header pasa a 3 columnas (logo | título | botón) con laterales iguales, así el título queda exactamente en el centro. */
 header.hd .hd-title{display:none}
 @media (max-width:1024px) and (orientation:portrait) and (pointer:coarse){
@@ -70,8 +78,8 @@ header.hd .hd-title{display:none}
     font-family:"Roboto Condensed",system-ui,sans-serif;font-weight:700;font-size:20px;line-height:1.1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     background:none;color:#fff;padding:0}
   header.hd .hd-title .ar{font-size:.8em;margin-left:5px}
-  header.hd .hd-title .ar.up{color:var(--up,#e8553d)}
-  header.hd .hd-title .ar.dn{color:var(--dn,#14b8a6)}
+  header.hd .hd-title .ar.up{color:var(--up-hd,var(--up,#A9B6C6))}
+  header.hd .hd-title .ar.dn{color:var(--dn-hd,var(--dn,#F2B84B))}
   header.hd:has(.hd-title) .hd-left{grid-column:1}
   header.hd:has(.hd-title) .hd-right{grid-column:3}
 }
@@ -265,38 +273,39 @@ body .t5 .nm>span:first-child{white-space:nowrap;overflow:hidden;text-overflow:e
 /* =========================================================
    TABS DE VISTA del header (Nacional · TOP · Divisiones · Ciudades)
    Estandarizadas para todas las páginas de detalle: se editan SOLO aquí.
+   Estilo: tira segmentada de esquinas redondeadas, separada por líneas finas.
    Colores: cambia las variables --tab-*.
    ========================================================= */
 :root{
-  --tab-bg:#005F73;                      /* pestaña inactiva (petróleo/teal) */
-  --tab-bg-h:#0A7B91;                    /* hover */
-  --tab-fg:#cfe3ea;                      /* texto inactiva */
-  --tab-on-bg:var(--bg,#e9ebef);         /* activa, escritorio: se funde con el fondo de la página */
-  --tab-on-fg:var(--ink,#12303d);
-  --tab-on-bg-m:#12303d;                 /* activa, celular/tablet vertical */
-  --tab-on-fg-m:#fff;
+  --tab-bg:#526573;                      /* pestañas inactivas */
+  --tab-fg:#FFFFFF;                      /* texto inactivas */
+  --tab-on-bg:#D9822B;                   /* pestaña activa */
+  --tab-on-fg:#FFFFFF;                   /* texto activa */
+  --tab-bg-h:#5F7384;                    /* hover (solo inactivas) */
+  --tab-sep:rgba(0,0,0,.22);             /* línea fina entre pestañas */
+  --tab-r:6px;                           /* radio de la tira */
+  --tab-sh:0 1px 2px rgba(18,48,61,.16),0 4px 10px rgba(18,48,61,.2);
+  --tab-on-bg-m:var(--tab-on-bg);        /* alias (compatibilidad) */
+  --tab-on-fg-m:var(--tab-on-fg);
 }
-.hd-mid{flex:none;display:flex;align-items:flex-end;align-self:flex-end;gap:6px;padding:0 12px}
-header.hd .vt{border:0;border-radius:10px 10px 0 0;background:var(--tab-bg);color:var(--tab-fg);padding:12px 22px 11px;
+.hd-mid{flex:none;display:flex;align-items:stretch;align-self:center;gap:0;margin:0 12px;padding:0;border-radius:var(--tab-r);overflow:hidden;box-shadow:var(--tab-sh)}
+header.hd .vt{border:0;border-left:1px solid var(--tab-sep);border-radius:0;background:var(--tab-bg);color:var(--tab-fg);padding:10px 22px;
   font-family:"Roboto Condensed",system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:.02em;line-height:1;white-space:nowrap;cursor:pointer;transition:background .15s,color .15s}
-header.hd .vt:hover{background:var(--tab-bg-h);color:#fff}
-header.hd .vt[aria-pressed=true]{background:var(--tab-on-bg);color:var(--tab-on-fg)}
+header.hd .vt:first-child{border-left:0}
+header.hd .vt:hover{background:var(--tab-bg-h);color:var(--tab-fg)}
+header.hd .vt[aria-pressed=true],header.hd .vt[aria-pressed=true]:hover{background:var(--tab-on-bg);color:var(--tab-on-fg)}
 header.hd .vt:focus-visible{outline:2px solid #fff;outline-offset:-2px}
 @media(max-width:600px){
   header.hd{flex-wrap:wrap}
-  .hd-mid{order:3;flex:0 0 100%;justify-content:center;padding:0 10px}
-  header.hd .vt{padding:10px 18px 9px;font-size:14px}
+  .hd-mid{order:3;flex:0 0 auto;margin:6px auto 8px}
+  header.hd .vt{padding:9px 16px;font-size:14px}
 }
-/* Celular y tablet en vertical: las tabs cuelgan del borde inferior del header, unidas en una sola tira separada por una línea fina, todas del mismo ancho */
+/* Celular y tablet en vertical: la tira cuelga bajo el header (6px de separación), a todo el ancho de la columna, con todas las pestañas del mismo ancho */
 @media(max-width:1024px) and (orientation:portrait){
-  header.hd{margin-bottom:35px}
+  header.hd{margin-bottom:42px}
   body.app>main{padding-top:8px}
-  .hd-mid{position:absolute;top:100%;left:0;right:0;margin:0 auto;order:0;flex:none;width:calc(100% - 2*var(--gutter));max-width:var(--col);height:35px;align-self:auto;align-items:flex-start;justify-content:center;gap:0;padding:0;background:transparent;pointer-events:none}
-  header.hd .vt{pointer-events:auto;flex:1 1 0;min-width:0;border-radius:0;padding:10px 4px 12px;font-size:15px;background:var(--tab-bg);color:var(--tab-fg);border-top:1px solid rgba(255,255,255,.22);border-left:1px solid rgba(255,255,255,.22);overflow:hidden;text-overflow:ellipsis}
-  header.hd .vt:first-child{border-left:0;border-bottom-left-radius:10px}
-  header.hd .vt:last-child{border-bottom-right-radius:10px}
-  header.hd .vt:hover{background:var(--tab-bg-h);color:#fff}
-  header.hd .vt[aria-pressed=true]{background:var(--tab-on-bg-m);color:var(--tab-on-fg-m)}
+  .hd-mid{position:absolute;top:calc(100% + 6px);left:0;right:0;margin:0 auto;order:0;flex:none;width:calc(100% - 2*var(--gutter));max-width:var(--col);height:36px;align-self:auto;align-items:stretch;justify-content:center;background:var(--tab-bg);pointer-events:none}
+  header.hd .vt{pointer-events:auto;flex:1 1 0;min-width:0;padding:0 4px;font-size:15px;overflow:hidden;text-overflow:ellipsis}
 }
 
 /* =========================================================

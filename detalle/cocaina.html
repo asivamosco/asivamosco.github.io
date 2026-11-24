@@ -6,14 +6,15 @@
 <title>Cocaína · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=23">
+<link rel="stylesheet" href="../assets/css/shell.css?v=25">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
   --acc:#0f6b7a;
-  /* Cocaína incautada: subir o bajar no es "bueno" ni "malo" por sí solo, así que se usan colores neutros
-     (azul petróleo = más, ámbar = menos) en vez del rojo/verde de crimen */
-  --up:#0f6b7a; --dn:#d9822b; --up-l:#0f6b7a; --dn-l:#d9822b; --up-t:#0b5561; --dn-t:#a8610f;
+  /* Cocaína incautada: incautar más es mejor (ámbar, clase 'up'), incautar menos es peor (gris, clase 'dn').
+     Los colores viven en shell.css (--ok / --mal) */
+  --up:var(--ok); --dn:var(--mal); --up-l:var(--ok); --dn-l:var(--mal);
+  --up-t:var(--ok-txt); --dn-t:var(--mal-txt); --up-hd:var(--ok-hd); --dn-hd:var(--mal-hd);
   --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
 }
 *{box-sizing:border-box}
@@ -26,8 +27,8 @@ a,button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 /* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
 header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
-/* flecha del mes en el header (fondo oscuro): tonos claros de los colores neutros */
-header.hd .ar.up{color:#5fd0e0} header.hd .ar.dn{color:#f2b66b}
+/* flecha del mes en el header (fondo oscuro): tonos claros de mejora/empeora */
+header.hd .ar.up{color:var(--up-hd)} header.hd .ar.dn{color:var(--dn-hd)}
 .hd-left{flex:1 1 0}
 .hd-right{flex:none}
 /* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
@@ -70,7 +71,7 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
 .seg button[aria-pressed=true]{background:var(--acc);color:#fff}
 .list{display:grid;align-content:start}
-.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(15,107,122,var(--a,.1))}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(var(--ok-rgb),var(--a,.1))}
 .row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
 .row .vl{display:block}
 .row:focus-visible{outline:2px solid var(--acc)}
@@ -236,7 +237,7 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
 const fm0 = n => fmt(n, 0);
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
-// Colores neutros (ver :root): 'up' = más cocaína incautada, 'dn' = menos
+// Colores (ver :root): 'up' = más cocaína incautada (mejora, ámbar), 'dn' = menos (empeora, gris)
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
 // Departamentos, ciudades y municipios con pocos kg (< 10) se muestran con 2 decimales para no verse como 0

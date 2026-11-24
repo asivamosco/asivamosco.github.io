@@ -6,12 +6,14 @@
 <title>Terrorismo · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=23">
+<link rel="stylesheet" href="../assets/css/shell.css?v=25">
 <style>
 :root{
   --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
-  --acc:#0f6b7a; --up:#e8553d; --dn:#14b8a6; --up-l:#e8553d; --dn-l:#14b8a6;
-  --mal:#e8553d; --ok:#14b8a6; --up-t:#c4412b; --dn-t:#0b8577;
+  --acc:#0f6b7a;
+  /* mejora/empeora: los colores viven en shell.css (--ok ámbar, --mal gris). Aquí subir = malo */
+  --up:var(--mal); --dn:var(--ok); --up-l:var(--mal); --dn-l:var(--ok);
+  --up-t:var(--mal-txt); --dn-t:var(--ok-txt); --up-hd:var(--mal-hd); --dn-hd:var(--ok-hd);
   --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
 }
 *{box-sizing:border-box}
@@ -66,7 +68,7 @@ main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100
 .seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
 .seg button[aria-pressed=true]{background:var(--acc);color:#fff}
 .list{display:grid;align-content:start}
-.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(232,85,61,var(--a,.1))}
+.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(var(--mal-rgb),var(--a,.1))}
 .row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
 .row .vl{display:block}
 .row:focus-visible{outline:2px solid var(--acc)}
@@ -243,7 +245,7 @@ const fm0 = n => fmt(n, 0);
 const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
 // Nombres del DANE vienen en Title Case ("Restaurantes Y Hoteles"): se pasan a formato de oración
 const nm = s => String(s ?? '').replace(/\b(Y|De|Del|La|El|Los|Las|Para|Por|En|Con|A|O)\b/g, (m, _, o) => o ? m.toLowerCase() : m);
-// En terrorismo, subir es lo malo (rojo, clase 'up') y bajar lo bueno (verde, clase 'dn')
+// En terrorismo, subir es lo malo (gris, clase 'up') y bajar lo bueno (ámbar, clase 'dn')
 const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
 const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
 
@@ -279,7 +281,7 @@ function tituloHeader(nombre) {
   const m = busca(p.mes_nombre) || busca(p.etiqueta);
   const t = $('#hdTitle');
   t.textContent = m ? `${nombre} - ${m[0].toUpperCase()}${m.slice(1)}` : nombre;
-  // Flecha tras el mes: sube (rojo) / baja (verde) frente al mes anterior
+  // Flecha tras el mes: sube (gris) / baja (ámbar) frente al mes anterior
   const dlt = D && D.hero ? D.hero.var_mensual_pct : null;
   if (dlt != null && Math.abs(dlt) >= 0.005) {
     const ar = document.createElement('span');
