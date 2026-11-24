@@ -3,184 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Detalle · Así Vamos</title>
+<title>Desempleo · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=25">
-<style>
-:root{
-  --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
-  --acc:#0f6b7a;
-  /* mejora/empeora: los colores viven en shell.css (--ok ámbar, --mal gris). Aquí subir = malo */
-  --up:var(--mal); --dn:var(--ok); --up-l:var(--mal); --dn-l:var(--ok);
-  --up-t:var(--mal-txt); --dn-t:var(--ok-txt); --up-hd:var(--mal-hd); --dn-hd:var(--ok-hd);
-  --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
-}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
-.up{color:var(--up)} .dn{color:var(--dn)}
-/* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
-.vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
-a,button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-/* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
-header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
-.hd-left{flex:1 1 0}
-.hd-right{flex:none}
-/* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
-main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100% - var(--col))/2)) 24px;display:grid;gap:18px;align-content:start}
-.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
-.card h2{margin:0 0 12px;font-size:19px;font-weight:700}
-.badge{position:absolute;top:-10px;right:14px;background:#dde5ea;color:#3f5563;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
-.mute{color:var(--mute)} small{font-size:13px}
-/* hero (card pequeña, cambia con la selección) */
-.hero{display:flex;flex-direction:column;gap:8px}
-.hero .kick{font-size:14px;color:var(--mute);line-height:1.2}
-.hero .ttl{font-size:20px;font-weight:700;line-height:1.2}
-.hero .big{font-size:64px;font-weight:700;line-height:1;letter-spacing:-1px;margin:2px 0 4px}
-.hero .big span{font-size:26px;margin-left:4px;color:var(--mute)}
-.vars{display:grid;gap:10px}
-/* etiqueta arriba, cifra debajo: el texto no se comprime junto a la cifra */
-.vars div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.vars span{font-size:13px;line-height:1.2}
-.vars b{font-size:20px;line-height:1.1;white-space:nowrap}
-.hero .src{margin-top:auto;font-size:12.5px;line-height:1.3}
-/* hallazgos */
-.hz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
-.hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
-.hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
-.hz p{margin:0;font-size:17px}
-/* sexo: un panel por serie (mujeres amarillo, hombres azul), mismos colores que la gráfica */
-.sx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.pn{border:1px solid var(--line);border-top:4px solid var(--c);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:12px}
-.pn .n{font-size:15px;color:var(--mute);display:flex;align-items:center;gap:8px}
-.pn .n i{width:12px;height:12px;border-radius:50%;background:var(--c);flex:none}
-.pn .t{font-size:44px;font-weight:700;line-height:1.1;margin:2px 0 4px}
-.pn .t span{font-size:22px;margin-left:3px;color:var(--mute)}
-.pn .ds{font-size:15px;line-height:1.25}
-.pv div{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
-.pv{border-top:1px solid var(--line);padding-top:8px}
-.pv div:last-child{border-bottom:0;padding-bottom:0}
-.pv span{font-size:13px;color:var(--mute);line-height:1.2}
-.pv b{font-size:17px;line-height:1.1;white-space:nowrap}
-.pv .up{color:var(--up-t)} .pv .dn{color:var(--dn-t)}
-.leg{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
-.leg span{display:inline-flex;align-items:center;gap:7px}
-.leg i{width:20px;height:4px;border-radius:2px;background:var(--c)}
-.leg .br i{height:0;background:none;border-top:2px dashed var(--mute);border-radius:0}
-.sxc .ref{margin:6px 0 0;font-size:13px}
-.brecha{margin:12px 0 0;font-size:17px}
-/* ciudades */
-.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
-.head h2{margin:0}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
-.seg button[aria-pressed=true]{background:var(--acc);color:#fff}
-.list{display:grid;align-content:start}
-.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(var(--mal-rgb),var(--a,.1))}
-.row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
-.row .vl{display:block}
-.row:focus-visible{outline:2px solid var(--acc)}
-.rk{color:var(--mute);text-align:right;font-size:14px}
-.nm{display:grid;gap:5px;min-width:0}
-.nm>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar{display:block;height:6px;background:#e6ecef;border-radius:3px;overflow:hidden}
-.bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
-.vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
-.vr{text-align:right;font-size:15px;font-weight:500}
-.ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
-/* bloque superior (3 columnas). General: gráfica (2) + indicador (1). Ciudades: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
-.top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px;scroll-margin-top:84px}
-.top>.card{display:flex;flex-direction:column;min-width:0}
-.cg{grid-column:2/4;grid-row:1;min-height:300px}
-.top>.hero{grid-column:3;grid-row:1}
-.top.g .cg{grid-column:1/3}
-.cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
-.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-template-areas:"kick vars" "ttl vars" "big vars" "src src";column-gap:20px;row-gap:6px;align-content:start}
-.top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
-.top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:start}
-.top:not(.g)>.hero .src{grid-area:src;margin-top:6px}
-.cl .head h2{font-size:17px}
-.cl .seg button{padding:4px 10px;font-size:14px}
-.cl .list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
-.cl .vl strong{font-size:17px}
-.cl .ref{margin:8px 0 0;font-size:13px;line-height:1.3}
-.cg #chart{flex:1;display:flex;align-items:center}
-.cg #chart>*{width:100%}
-.sub2{margin:18px 0 4px;font-size:16px;font-weight:700}
-.cg .hz .card{box-shadow:none;background:#f6f8f9}
-.cg .hz{align-self:flex-start}
-/* TOP: listas completas, los nombres largos pueden ocupar dos líneas */
-.t5 .nm>span:first-child{white-space:normal;overflow:visible}
-.t5 h2 small{font-size:14px;font-weight:500}
-/* top 5 cambio anual */
-.tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.tres>.sxc{grid-column:1/-1}
-.t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
-.tr{all:unset;cursor:pointer;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:center;padding:9px 6px;border-top:1px solid var(--line);width:calc(100% - 12px)}
-.tr:hover{background:#f4f7f8} .tr[aria-pressed=true]{background:#e8f3f5}
-.tr:focus-visible{outline:2px solid var(--acc)}
-.tr .bar b.up{background:var(--up)} .tr .bar b.dn{background:var(--dn)}
-.tr .vl strong.up{color:var(--up-t)} .tr .vl strong.dn{color:var(--dn-t)}
-.t5 .vacio{margin:0;padding:12px 6px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
-/* serie */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
-.tabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
-svg{width:100%;height:auto;display:block}
-svg text{font-family:inherit;fill:var(--mute);font-size:15px}
-svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
-.err{padding:24px;text-align:center}
-.top.g.sexo .cg{grid-column:1/-1}
-@media(max-width:600px){
-  .top{grid-template-columns:1fr}
-  .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
-  .top:not(.g)>.hero{display:flex}
-  .top:not(.g)>.hero .vars{grid-template-columns:1fr}
-  .cl{contain:none;height:340px;min-height:0}
-  .tres{grid-template-columns:1fr}
-  .sx{grid-template-columns:1fr}
-}
-/* Ciudades en celular: en vez de "Desempleo por ciudad", el panel muestra el nombre de la ciudad elegida (en escritorio queda el rótulo y debajo el nombre) */
-.hero .kc{display:none}
-/* Ciudades, escritorio: sin el rótulo "Desempleo por ciudad" (el nombre ya está como título del panel) */
-.hero .kick.kv{display:none}
-@media(max-width:600px){
-  body .top:not(.g)>.hero .kick.kv{display:block}
-  body .top:not(.g)>.hero .kk{display:none}
-  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
-}
-/* Sexo en celular: un solo panel tipo tabla (filas = medidas, columnas = Mujeres / Hombres); en escritorio siguen los dos paneles */
-.sxt{display:none}
-@media(max-width:600px){
-  .sx{display:none}
-  .sxt{display:table;width:100%;border-collapse:collapse;table-layout:fixed}
-  .sxt col.c0{width:34%}
-  .sxt thead th{border-top:4px solid var(--c);padding:8px 4px 6px;text-align:left;font-size:15px;font-weight:500;color:var(--mute);white-space:nowrap}
-  .sxt thead th:first-child{border-top:0}
-  .sxt thead th i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c);margin-right:6px}
-  .sxt tbody th{padding:9px 6px 9px 0;text-align:left;font-size:13px;font-weight:400;line-height:1.2;color:var(--mute)}
-  .sxt td{padding:9px 4px;font-size:15px;font-weight:700;white-space:nowrap}
-  .sxt tbody tr+tr>*{border-top:1px solid var(--line)}
-  .sxt .rt td{font-size:34px;line-height:1.1}
-  .sxt .rt td span{margin-left:2px;font-size:16px;color:var(--mute)}
-  .sxt td.up{color:var(--up-t)} .sxt td.dn{color:var(--dn-t)}
-  /* Interruptor "12 meses": encendido muestra solo la gráfica de últimos 12 meses (más alta); apagado, solo la tabla comparativa */
-  #app.vs12 .sxc{display:none}
-  #app:not(.vs12) .top.g.sexo{display:none}
-  .top.g.sexo .cg .head h2{display:none}
-}
-@media(max-width:420px){.hz{grid-template-columns:1fr}}
-/* Celular: la lista de ciudades / divisiones se presenta como select */
-@media(max-width:600px){
-  .cl .list{display:none}
-  .cl{height:auto;min-height:0}
-}
-</style>
+<link rel="stylesheet" href="../assets/css/shell.css?v=26">
 </head>
-<body class="app">
+<body class="app det">
 <header class="hd">
   <div class="hd-left">
     <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
@@ -188,7 +16,7 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   <div class="hd-title" id="hdTitle" aria-live="polite"></div>
   <nav class="hd-mid" aria-label="Vista">
     <button type="button" class="vt" data-vista="gen" aria-pressed="true">Nacional</button>
-    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
+    <button type="button" class="vt" data-vista="dest" aria-pressed="false">Destacados</button>
     <button type="button" class="vt" data-vista="sex" aria-pressed="false">Sexo</button>
     <button type="button" class="vt" data-vista="ciu" aria-pressed="false">Ciudades</button>
   </nav>
@@ -209,77 +37,13 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   </div>
 </footer>
 
+<script src="asivamos.js"></script>
 <script>
-const IND = new URLSearchParams(location.search).get('ind') || 'desempleo';
-const URL_JSON = `data/detalle_${IND}.json`;
-const $ = s => document.querySelector(s);
-// Celular: el select va invisible sobre un título que muestra completo (con saltos de línea) el valor elegido
-function selTitle() {
-  const sl = document.getElementById('selLista'), t = document.getElementById('selT');
-  if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
-}
-document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
-// Destacado "nacional": en celular no va en la lista de destacados (se oculta con .nac)
-const esNac = x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*(desempleo|inflaci[oó]n|costo de vida)\s+nacional\b/i.test(x.titulo || '');
-// Carrusel de gráficas (celular): flechas y puntos de guía
-const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
-const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
-function dosAct(d) {
-  const i = Math.round(d.scrollLeft / dosPaso(d)), nav = d.parentNode.querySelector('.dnav'); if (!nav) return;
-  nav.querySelectorAll('i').forEach((x, k) => x.classList.toggle('on', k === i));
-  nav.querySelector('[data-dir="-1"]').disabled = i <= 0; nav.querySelector('[data-dir="1"]').disabled = i >= 1;
-}
-document.addEventListener('scroll', e => { if (e.target.classList && e.target.classList.contains('dos')) dosAct(e.target); }, true);
-document.addEventListener('click', e => {
-  const b = e.target.closest('.dnav button'); if (!b) return;
-  const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
-  d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
-});
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const fmt = (n, d = 1) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
-const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
+const {fmt, sg, cls, flecha, vp, esc} = AV;
 const pers = m => m == null ? '—' : Math.round(m * 1000).toLocaleString('es-CO');
 const persSg = m => m == null ? '—' : (m > 0 ? '+' : m < 0 ? '−' : '') + pers(Math.abs(m));
-// En desempleo, subir es lo malo (gris) y bajar lo bueno (ámbar)
-const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
-const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
-
-// vista: 'gen' (nacional) | 'top' | 'sex' (por sexo) | 'ciu' (ciudades). c = ciudad elegida; s = sexo elegido.
-let D, st = {vista: 'gen', g: null, c: null, gtab: 'graf', s12: false};
 const COL_M = '#f2b01e', COL_H = '#2f6fd6';
 const colSexo = n => /muj/i.test(n) ? COL_M : COL_H;
-const nacional = () => ({nombre: 'Nacional', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
-const ciudadSerie = c => ({nombre: c.ciudad, datos: c.serie_12m, tipo: 'ciudad', d: c});
-const cur = () => st.vista === 'gen' ? st.g : st.c;
-
-fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => {
-    D = d; st.g = nacional();
-    const primera = [...d.dimensiones.ciudades.items].sort((a, b) => a.puesto_tasa - b.puesto_tasa)[0];
-    st.c = primera ? ciudadSerie(primera) : null;
-    render();
-  })
-  .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend y publícalo en la carpeta data/ junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
-
-// Título del header: "<indicador> - <mes>", el mes sale de periodo (JSON)
-function tituloHeader(nombre) {
-  const p = D && D.periodo || {};
-  const norm = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const busca = t => (norm(t).match(/\b(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)[a-z]*\b/) || [])[1];
-  const m = busca(p.mes_nombre) || busca(p.etiqueta);
-  const t = $('#hdTitle');
-  t.textContent = m ? `${nombre} - ${m[0].toUpperCase()}${m.slice(1)}` : nombre;
-  // Flecha tras el mes: sube (gris) / baja (ámbar) frente al mes anterior
-  const dlt = D && D.hero ? D.hero.cambio_mes_pp : null;
-  if (dlt != null && Math.abs(dlt) >= 0.005) {
-    const ar = document.createElement('span');
-    ar.className = 'ar ' + (dlt > 0 ? 'up' : 'dn');
-    ar.textContent = dlt > 0 ? '▲' : '▼';
-    ar.setAttribute('aria-label', dlt > 0 ? 'subió frente al mes anterior' : 'bajó frente al mes anterior');
-    t.appendChild(ar);
-  }
-}
-
 // Sexo (celular): tabla única con la tasa y las medidas de cada sexo en columnas
 function sexTabla(items) {
   const c = (v, t) => `<td class="${cls(v)}">${flecha(v)} ${t}</td>`;
@@ -294,207 +58,6 @@ function sexTabla(items) {
       ${fila('Vs. hace un año', x => c(x.var_anual_pp, sg(x.var_anual_pp)))}
       ${fila('Personas vs. hace un año', x => c(x.desocupados_var_anual_miles, persSg(x.desocupados_var_anual_miles)))}
     </tbody></table>`;
-}
-
-function render() {
-  document.title = `${D.hero ? 'Desempleo' : IND} · Así Vamos`;
-  tituloHeader('Desempleo');
-  $('#app').classList.toggle('vtop', st.vista === 'top');
-  $('#app').classList.toggle('vs12', st.vista === 'sex' && st.s12);
-  const dim = D.dimensiones, ciu = dim.ciudades, v = st.vista;
-  document.querySelectorAll('[data-vista]').forEach(b => {
-    b.setAttribute('aria-pressed', b.dataset.vista === v);
-    if (b.dataset.vista === 'ciu') b.textContent = 'Ciudades';
-  });
-  const topG = `
-    <button class="swd" id="swd" type="button" role="switch" aria-checked="false" data-gtab="dest"><span>Destacados</span><i class="swd-k"></i></button>
-    <div class="top g" id="top">
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
-    </div>`;
-
-  if (v === 'gen') {
-    $('#app').innerHTML = topG;
-  } else if (v === 'top') {
-    $('#app').innerHTML = `
-    <div class="tres">
-      <section class="card t5" id="t5s" aria-label="Ciudades que aumentaron"></section>
-      <section class="card t5" id="t5b" aria-label="Ciudades que redujeron"></section>
-    </div>
-    <p class="ref" style="margin:-6px 0 0">pp = puntos porcentuales: variación de la tasa de desempleo de cada ciudad frente a hace un año. Toca una ciudad para ver su detalle.</p>`;
-    top5();
-  } else if (v === 'sex') {
-    const per = D.periodo, pp = (l, x) => `<div><span>${l}</span><b class="${cls(x)}">${flecha(x)} ${sg(x)}</b></div>`;
-    $('#app').innerHTML = `
-    <button class="swd" type="button" role="switch" aria-checked="${st.s12}" data-s12="1"><span>12 meses</span><i class="swd-k"></i></button>
-    <section class="card sxc" aria-label="Por sexo">
-      <div class="sx">${dim.sexo.items.map(x => `
-        <div class="pn" style="--c:${colSexo(x.sexo)}">
-          <div>
-            <div class="n"><i></i>${esc(x.sexo)}</div>
-            <div class="t">${fmt(x.tasa_desempleo, 1)}<span>%</span></div>
-            <div class="ds">${pers(x.desocupados_miles)} personas desocupadas</div>
-          </div>
-          <div class="pv">
-            ${pp('Vs. mes anterior', x.cambio_mes_pp)}
-            ${pp('Vs. hace un año', x.var_anual_pp)}
-            <div><span>Personas vs. hace un año</span><b class="${cls(x.desocupados_var_anual_miles)}">${flecha(x.desocupados_var_anual_miles)} ${persSg(x.desocupados_var_anual_miles)}</b></div>
-          </div>
-        </div>`).join('')}</div>
-      ${sexTabla(dim.sexo.items)}
-      ${dim.sexo.brecha ? `<p class="brecha"><b>Brecha: ${fmt(dim.sexo.brecha.brecha_pp, 1)} pp</b> <span class="mute">(mujeres menos hombres)</span></p>` : ''}
-      <p class="ref">Variaciones en puntos porcentuales (pp), salvo las de personas. ${esc(per.etiqueta)} · Fuente: ${esc(D.fuente)}</p>
-    </section>
-    <div class="top g sexo" id="top">
-      <section class="card cg" aria-label="Serie por sexo">
-        <div class="head"><h2>Mujeres y hombres: últimos 12 meses</h2>
-          <div class="leg">${dim.sexo.items.map(x => `<span style="--c:${colSexo(x.sexo)}"><i></i>${esc(x.sexo)}</span>`).join('')}<span class="br"><i></i>Brecha</span></div></div>
-        <div id="chart"></div>
-      </section>
-    </div>`;
-    $('#chart').innerHTML = graficaSexo(dim.sexo.items);
-  } else {
-    $('#app').innerHTML = `
-    <div class="top" id="top">
-      <section class="card cl" aria-label="Por ciudad">
-        <div class="head"><h2>Por ciudad</h2><small class="mute">Tasa de desempleo</small></div>
-        <div class="clfoot"><small class="mute clm">Tasa de desempleo</small><p class="ref">${refTxt(ciu.referencias)}</p></div>
-        <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir ciudad"></select></div>
-        <div class="list" id="lista"></div>
-      </section>
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
-    </div>`;
-    lista();
-  }
-  if (v === 'gen' || v === 'ciu') { hero(); serie(); }
-}
-
-function refTxt(refs) {
-  const t = (refs || []).find(r => /23/.test(r.nombre));
-  return t ? `Referencia, ${esc(t.nombre)}: ${fmt(t.tasa_desempleo, 1)} % · ${pers(t.desocupados_miles)} personas.` : '';
-}
-
-// Card de indicador: nacional por defecto; cambia con la ciudad o el sexo elegidos
-function hero() {
-  const s = cur(), h = D.hero, per = D.periodo, d = s.d;
-  let kick = '', ttl = 'Desempleo nacional', tasa = h.tasa_desempleo, filas, src = `${per.etiqueta} · Fuente: ${D.fuente}`;
-  const pp = (l, v) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v)}</b></div>`;
-  let hn = '';
-  if (s.tipo === 'nac') {
-    const hz = (D.hallazgos || []).find(esNac); hn = hz ? `<span class="hnac">${esc(hz.texto)}</span>` : '';
-    filas = pp('Vs. mes anterior', h.cambio_mes_pp) + pp('Vs. hace un año', h.var_anual_pp);
-  } else {
-    kick = s.tipo === 'ciudad' ? 'Desempleo por ciudad' : 'Desempleo nacional · por sexo';
-    ttl = s.nombre; tasa = d.tasa_desempleo;
-    filas = `<div><span class="mute">Desocupados</span><b>${pers(d.desocupados_miles)}</b></div>`
-      + pp('Vs. mes anterior', d.cambio_mes_pp) + pp('Vs. hace un año', d.var_anual_pp)
-      + `<div><span class="mute">Personas vs. hace un año</span><b class="${cls(d.desocupados_var_anual_miles)}">${flecha(d.desocupados_var_anual_miles)} ${persSg(d.desocupados_var_anual_miles)}</b></div>`;
-    if (s.tipo === 'ciudad') src = `Trimestre móvil que termina en ${per.mes_nombre} ${per.anio} · Fuente: ${D.fuente}`;
-  }
-  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}
-    <div class="ttl">${esc(ttl)}</div>
-    <div class="big">${fmt(tasa, 1)}<span>%</span></div>
-    <div class="vars">${filas}</div>
-    <small class="mute src">${hn}${esc(src)}<br>Variaciones en pp = puntos porcentuales</small>`;
-}
-
-// Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
-function marcar() {
-  const dim = D.dimensiones;
-  if (st.vista === 'ciu') {
-    document.querySelectorAll('[data-ci]').forEach(x => x.setAttribute('aria-pressed', dim.ciudades.items[x.dataset.ci].ciudad === st.c.nombre));
-    const sl = $('#selLista');
-    if (sl) sl.value = dim.ciudades.items.findIndex(c => c.ciudad === st.c.nombre); selTitle();
-  }
-}
-
-function lista() {
-  const items = [...D.dimensiones.ciudades.items].sort((a, b) => a.puesto_tasa - b.puesto_tasa);
-  const ts = items.map(c => c.tasa_desempleo || 0), mx = Math.max(...ts), mn = Math.min(...ts);
-  const l = $('#lista');
-  l.innerHTML = items.map((c, i) => {
-    const a = .08 + .52 * ((c.tasa_desempleo || 0) - mn) / ((mx - mn) || 1);
-    return `<button class="row" style="--a:${a.toFixed(2)}" data-ci="${D.dimensiones.ciudades.items.indexOf(c)}" title="${esc(c.ciudad)}" aria-pressed="${st.c.nombre === c.ciudad}">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(c.ciudad)}</span></span>
-      <span class="vl"><strong>${fmt(c.tasa_desempleo, 1)} %</strong></span></button>`;
-  }).join('');
-  // deja visible la ciudad elegida (p. ej. si se llegó desde los top 5)
-  const r = l.querySelector('[aria-pressed=true]');
-  if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
-  $('#selLista').innerHTML = items.map((c, i) => `<option value="${D.dimensiones.ciudades.items.indexOf(c)}"${st.c.nombre === c.ciudad ? ' selected' : ''}>${fmt(c.tasa_desempleo, 1)} % · ${esc(c.ciudad)}</option>`).join(''); selTitle();
-}
-
-// Todas las ciudades que aumentaron / redujeron su tasa frente a hace un año (pp), en orden
-function top5() {
-  const todas = D.dimensiones.ciudades.items, items = todas.filter(c => c.var_anual_pp != null);
-  const sube = items.filter(c => c.var_anual_pp > 0).sort((a, b) => b.var_anual_pp - a.var_anual_pp);
-  const baja = items.filter(c => c.var_anual_pp < 0).sort((a, b) => a.var_anual_pp - b.var_anual_pp);
-  const mx = Math.max(...items.map(c => Math.abs(c.var_anual_pp)), 0.01);
-  const bloque = (tit, arr, k, vacio) => `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
-    <button class="tr" data-ci="${todas.indexOf(c)}" title="${esc(c.ciudad)}" aria-pressed="false">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(c.ciudad)}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pp) / mx}%"></b></span></span>
-      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pp)} ${sg(c.var_anual_pp)}</strong></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
-  $('#t5s').innerHTML = bloque('Ciudades que aumentaron', sube, 'up', 'Ninguna ciudad aumentó frente a hace un año.');
-  $('#t5b').innerHTML = bloque('Ciudades que redujeron', baja, 'dn', 'Ninguna ciudad redujo frente a hace un año.');
-  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
-  const wu = sube.length > baja.length ? 60 : sube.length < baja.length ? 40 : 50;
-  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
-}
-
-// Paneles de hallazgos: dentro de General, pestaña Destacados
-function hallazgosHtml() {
-  return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x)).map(x => `
-    <div class="card ${x.tipo === 'ciudad_sube' ? 'sube' : x.tipo === 'ciudad_baja' ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
-      <h3>${esc(x.titulo)}</h3><p>${esc(x.texto)}</p></div>`).join('')}</div>`;
-}
-
-function serie() {
-  const s = cur(), dest = s.nac && st.gtab === 'dest';
-  // Ciudades: el título es solo "Últimos 12 meses" (el nombre ya está en el panel del indicador)
-  $('#serieT').innerHTML = !s.nac ? '<span class="serTx">Últimos 12 meses</span>'
-    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
-  // Nacional: pestañas Gráficas / Destacados
-  $('#tabs').innerHTML = s.nac
-    ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
-    : '';
-  $('#chart').innerHTML = dest ? hallazgosHtml()
-    : s.nac
-    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
-    : grafica(s.datos || [], false);
-  // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
-  const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
-  const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
-}
-
-function grafica(d, mm) {
-  if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
-  const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
-  const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
-  const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
-  let seg = '', pts = '', lab = '';
-  // 12 meses: si cada punto trae var_anual_pp (cambio vs. el mismo mes del año anterior), la línea va neutra y el color lo ponen los puntos
-  const yoy = !mm && d.some(p => p.var_anual_pp != null);
-  d.forEach((p, i) => {
-    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${yoy ? '#aebfc8' : p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
-    const ult = i === d.length - 1;
-    const cp = yoy && p.var_anual_pp != null ? (p.var_anual_pp > 0.004 ? 'var(--up-l)' : p.var_anual_pp < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
-    const tip = yoy && p.valor_hace_12 != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(p.valor, 1)} % · hace un año: ${fmt(p.valor_hace_12, 1)} % (${sg(p.var_anual_pp)} pp)</title>` : '';
-    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
-    if (i === 0 || ult || p.valor === mx || p.valor === mn)
-      lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor, 1)}</text>`;
-    if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
-  });
-  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
-  return yoy ? `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> por encima del mismo mes del año anterior &nbsp; <span class="dn">●</span> por debajo</p></div>` : svg;
 }
 
 // Dos series en una misma escala: mujeres (amarillo) y hombres (azul)
@@ -540,29 +103,69 @@ function graficaSexo(items) {
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Tasa de desempleo de mujeres y hombres, últimos 12 meses">${lines}${pts}${lab}</svg>`;
 }
 
-document.addEventListener('click', e => {
-  const b = e.target.closest('button'); if (!b || !D) return;
-  const dim = D.dimensiones;
-  if (b.dataset.vista) {
-    if (b.dataset.vista === st.vista) return;
-    st.vista = b.dataset.vista; render(); $('#app').scrollTo({top: 0}); return;
+
+// Vista Sexo: carrusel Mujeres y hombres → Últimos 12 meses (con brecha) → Brecha de género
+function vistaSexo(D) {
+  const dim = D.dimensiones, per = D.periodo, br = dim.sexo.brecha, pp = (l, x) => `<div><span>${l}</span><b class="${cls(x)}">${flecha(x)} ${sg(x)}</b></div>`;
+  $('#app').innerHTML = `
+  <div class="top g sexo sexo2" id="top">
+    <div class="cnav" id="cnav"></div>
+    <div class="carw"><div class="car">
+      <section class="card sxc" data-lbl="Mujeres y hombres" aria-label="Por sexo">
+        <div class="sx">${dim.sexo.items.map(x => `
+          <div class="pn" style="--c:${colSexo(x.sexo)}">
+            <div><div class="n"><i></i>${esc(x.sexo)}</div><div class="t">${fmt(x.tasa_desempleo, 1)}<span>%</span></div><div class="ds">${pers(x.desocupados_miles)} personas desocupadas</div></div>
+            <div class="pv">${pp('Vs. mes anterior', x.cambio_mes_pp)}${pp('Vs. hace un año', x.var_anual_pp)}
+              <div><span>Personas vs. hace un año</span><b class="${cls(x.desocupados_var_anual_miles)}">${flecha(x.desocupados_var_anual_miles)} ${persSg(x.desocupados_var_anual_miles)}</b></div>
+              <div><span>Participación (TGP)</span><b>${fmt(x.tgp, 1)} %</b></div><div><span>Ocupación</span><b>${fmt(x.tasa_ocup, 1)} %</b></div><div><span>Subempleo</span><b>${fmt(x.subempleo, 1)} %</b></div>
+            </div>
+          </div>`).join('')}</div>
+        ${sexTabla(dim.sexo.items)}
+        <p class="ref">Variaciones en puntos porcentuales (pp), salvo las de personas. ${esc(per.etiqueta)} · Fuente: ${esc(D.fuente)}</p>
+      </section>
+      <section class="card cg" data-lbl="Últimos 12 meses" aria-label="Serie por sexo">
+        <div class="head"><h2>Mujeres y hombres: últimos 12 meses</h2>
+          <div class="leg">${dim.sexo.items.map(x => `<span style="--c:${colSexo(x.sexo)}"><i></i>${esc(x.sexo)}</span>`).join('')}<span class="br"><i></i>Brecha</span></div></div>
+        <div id="chart">${graficaSexo(dim.sexo.items)}</div>
+      </section>${br ? `
+      <section class="card hero" data-lbl="Brecha de género" aria-label="Brecha de género">
+        <div class="ttl">Brecha de género</div>
+        <div class="big">${fmt(br.brecha_pp, 1)}<span>pp</span></div>
+        <div class="vars">${vp('Vs. hace un año', br.variacion_anual_brecha_pp, sg(br.variacion_anual_brecha_pp))}${vp('Vs. mes anterior', br.cambio_mes_pp, sg(br.cambio_mes_pp))}
+          <div><span class="mute">Mujeres</span><b>${fmt(br.td_mujeres, 1)} %</b></div><div><span class="mute">Hombres</span><b>${fmt(br.td_hombres, 1)} %</b></div></div>
+        <small class="mute src">${br.comentario_popular ? esc(br.comentario_popular) + '<br>' : ''}Mujeres menos hombres, en puntos porcentuales · ${esc(per.etiqueta)} · Fuente: ${esc(D.fuente)}</small>
+      </section>` : ''}
+    </div></div>
+  </div>`;
+}
+const $ = s => document.querySelector(s);
+AV.init({
+  ind: 'desempleo', title: 'Desempleo', docTitle: 'Desempleo', nacTitle: 'Nacional',
+  deltaMes: D => D.hero.cambio_mes_pp,
+  g: {dec: 1, unit: ' %', vf: 'var_anual_pp', vs: ' pp', calcMM: true},
+  prevTitle: 'Tasa de meses anteriores · vs. hace un año',
+  nota: 'Variaciones en pp = puntos porcentuales',
+  esNac: x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*desempleo\s+nacional\b/i.test(x.titulo || ''),
+  nac: D => { const h = D.hero; return {ttl: 'Desempleo nacional', big: fmt(h.tasa_desempleo, 1), unit: '%', com: h.comentario_popular,
+    filas: vp('Vs. mes anterior', h.cambio_mes_pp, sg(h.cambio_mes_pp)) + vp('Vs. hace un año', h.var_anual_pp, sg(h.var_anual_pp))}; },
+  custom: {sex: vistaSexo},
+  dims: {
+    ciu: {
+      k: 'ciudades', una: 'Ciudad', plural: 'Ciudades', ning: 'Ninguna ciudad', titulo: 'Por ciudad', medida: 'Tasa de desempleo', kick: 'Desempleo por ciudad',
+      ref: D => { const t = ((D.dimensiones.ciudades || {}).referencias || []).find(r => /23/.test(r.nombre)); return t ? `Referencia, ${esc(t.nombre)}: ${fmt(t.tasa_desempleo, 1)} % · ${pers(t.desocupados_miles)} personas.` : ''; },
+      nom: x => x.ciudad, val: x => x.tasa_desempleo, valTxt: x => fmt(x.tasa_desempleo, 1) + ' %', vr: x => x.var_anual_pp,
+      ord: (a, b) => a.puesto_tasa - b.puesto_tasa, serie: x => x.serie_12m, topSub: x => `hoy ${fmt(x.tasa_desempleo, 1)} %`, top: true,
+      hero: (x, D) => ({ttl: x.ciudad, big: fmt(x.tasa_desempleo, 1), unit: '%', com: x.comentario_popular,
+        src: `Trimestre móvil que termina en ${D.periodo.mes_nombre} ${D.periodo.anio} · Fuente: ${D.fuente}`,
+        filas: `<div><span class="mute">Desocupados</span><b>${pers(x.desocupados_miles)}</b></div>`
+          + vp('Vs. mes anterior', x.cambio_mes_pp, sg(x.cambio_mes_pp)) + vp('Vs. hace un año', x.var_anual_pp, sg(x.var_anual_pp))
+          + vp('Personas vs. hace un año', x.desocupados_var_anual_miles, persSg(x.desocupados_var_anual_miles))}),
+      // Datos que ya venían en el JSON y no se mostraban
+      hijos: {label: 'Mercado laboral', rank: false, nota: 'Trimestre móvil que termina en el mes del periodo.',
+        get: x => [['Participación (TGP)', x.tgp], ['Ocupación', x.tasa_ocup], ['Subempleo', x.subempleo]].filter(r => r[1] != null)
+          .map(r => ({nombre: r[0], valTxt: fmt(r[1], 1) + ' %', w: Math.min(100, r[1])}))}
+    }
   }
-  if (b.dataset.s12 != null) { st.s12 = !st.s12; $('#app').classList.toggle('vs12', st.s12); b.setAttribute('aria-checked', String(st.s12)); return; }
-  if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
-  if (b.dataset.ci != null) {
-    st.c = ciudadSerie(dim.ciudades.items[b.dataset.ci]);
-    // desde TOP se abre el detalle de la ciudad en su pestaña
-    if (st.vista !== 'ciu') { st.vista = 'ciu'; render(); $('#app').scrollTo({top: 0}); return; }
-  } else return;
-  marcar(); hero(); serie();
-});
-document.addEventListener('change', e => {
-  if (!D || e.target.id !== 'selLista') return;
-  const dim = D.dimensiones, i = e.target.value;
-  if (st.vista === 'ciu') st.c = ciudadSerie(dim.ciudades.items[i]);
-  
-  else return;
-  marcar(); hero(); serie();
 });
 </script>
 </body>
