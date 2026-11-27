@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Narcotráfico · Así Vamos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/shell.css?v=26">
+<style>
+/* Narcotráfico (incautaciones y laboratorios): más resultados es lo bueno (ámbar) y menos lo malo (gris), al revés que en crimen */
+body.det{--up:var(--ok); --dn:var(--mal); --up-l:var(--ok); --dn-l:var(--mal);
+  --up-t:var(--ok-txt); --dn-t:var(--mal-txt); --up-hd:var(--ok-hd); --dn-hd:var(--mal-hd)}
+body.det .row{background:rgba(var(--ok-rgb),var(--a,.1))}
+/* Nacional: un tema por debajo de su promedio de 12 meses se pinta en el gris de "por debajo" (la intensidad sigue cuánto se aleja) */
+body.det .row.rw-dn{background:rgba(var(--mal-rgb,100,116,139),var(--a,.1))}
+/* Pestañas del panel (Tema / Dónde se incautó / Países): una sola línea a todo el ancho del panel (escritorio). Igual que terrorismo.html */
+@media(min-width:601px){
+  .hero.wt{grid-template-areas:"tabs tabs" "ttl ttl" "big vars" "src src"!important}
+  .hero.wt.gr{grid-template-areas:"tabs tabs" "ttl ttl" "gl gl"!important}
+  .hero .htabs{justify-self:stretch;display:flex;flex-wrap:nowrap;gap:6px}
+  .hero .htabs button{flex:1 1 0;min-width:0;padding:3px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}
+/* Nacional: el panel "Por tema" va a la derecha (escritorio). Se invierte el sentido de las columnas de .top y se restaura el normal en sus hijos */
+@media(min-width:601px){
+  body[data-av-vista="comp"] .top{direction:rtl}
+  body[data-av-vista="comp"] .top>*{direction:ltr}
+}
+/* Nacional: el panel del tema va en dos columnas. Izquierda: la cifra del mes y debajo "Vs. promedio" y "Promedio 12 meses previos".
+   Derecha: los 4 meses previos (solo el valor) (lista .prev que arma asivamos.js con dims.com.prev) */
+@media(min-width:601px){
+  body[data-av-vista="com"] .top .hero.wt:not(.gr){grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:20px!important;grid-template-areas:"tabs tabs" "ttl ttl" "big prev" "vars prev" "src src"!important}
+}
+@media(max-width:600px){
+  body[data-av-vista="com"] .top .hero:not(.gr){grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"kick kick" "big prev" "vars prev" "src src"!important}
+}
+body[data-av-vista="com"] .top .hero:not(.gr) .vars{grid-template-columns:1fr!important;align-self:start}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev{align-self:start;margin-top:0}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev .pr{gap:6px;font-size:13px}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev .pr b{font-size:14px}
+/* Pantallas muy angostas: la lista de meses previos pasa a todo el ancho, debajo de la cifra y las variaciones */
+@media(max-width:380px){
+  body[data-av-vista="com"] .top .hero:not(.gr){grid-template-columns:auto minmax(0,1fr)!important;grid-template-areas:"kick kick" "big vars" "prev prev" "src src"!important}
+  body[data-av-vista="com"] .top .hero:not(.gr) .vars{grid-template-columns:1fr 1fr!important}
+}
+/* Pestañas de las gráficas (12 meses / mismo mes / trimestre). :where() deja especificidad 0: si shell.css ya estiliza .tabs/.htabs, manda shell.css */
+:where(.gtabs){display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+:where(.gtabs) button{flex:1 1 0;min-width:0;padding:4px 8px;border:1px solid #c9d4da;border-radius:999px;background:#fff;color:#12303f;font:inherit;font-size:.85em;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+:where(.gtabs) button[aria-pressed="true"]{background:#12303f;border-color:#12303f;color:#fff}
+/* Sin países para la variable elegida (base de coca, laboratorios): la ficha no aparece en el carrusel del celular */
+@media(max-width:600px){ body .top .car>.card.nada{display:none!important} }
+</style>
+</head>
+<body class="app det">
+<header class="hd">
+  <div class="hd-left">
+    <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
+  </div>
+  <div class="hd-title" id="hdTitle" aria-live="polite"></div>
+  <nav class="hd-mid" aria-label="Vista">
+    <button type="button" class="vt" data-vista="comp" aria-pressed="true">Nacional</button>
+    <button type="button" class="vt" data-vista="dest" aria-pressed="false">Destacados</button>
+    <button type="button" class="vt" data-vista="dep" aria-pressed="false">Dptos</button>
+  </nav>
+  <div class="hd-right">
+    <div class="btn-group">
+      <a class="help-btn" href="../index.html" aria-label="Volver al inicio" title="Inicio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h5v-6h3v6h5V10"/></svg></a>
+    </div>
+  </div>
+</header>
+<main id="app" aria-live="polite"><div class="card err mute">Cargando…</div></main>
+<footer class="site-foot">
+  <div class="foot-in">
+    <div class="ad-wrap" id="adWrap">
+      <div class="ad-label">Aliado estratégico</div>
+      <div class="sp" id="adA"><span>Espacio publicitario</span></div>
+    </div>
+    <p class="foot-txt">Así Vamos © 2026 | Datos oficiales | asivamos.co@gmail.com</p>
+  </div>
+</footer>
+
+<script src="asivamos.js"></script>
+<script>
+const {fmt, sg, cls, flecha, vp, esc} = AV;
+// Unidad base: toneladas (sin índice; las cifras son reales)
+const UN = D => (D.hero && D.hero.unidad) || 't';
+// Decimales de los % de las gráficas de línea (departamentos): 3 si < 0,1, 2 si < 10 y 1 si >= 10
+const dq = n => n == null || n === 0 ? 1 : Math.abs(n) < 0.1 ? 3 : Math.abs(n) < 10 ? 2 : 1;
+// Toneladas físicas (cocaína y base de coca): 3 decimales si < 1, 2 si < 10, 1 si >= 10
+const tdec = n => n == null || n === 0 ? 0 : Math.abs(n) < 1 ? 3 : Math.abs(n) < 10 ? 2 : 1;
+const tq = n => fmt(n, tdec(n));
+const pct = (v, d = 2) => v == null ? '—' : sg(v, d) + ' %';
+const SRC = D => `${D.periodo.etiqueta} · Colombia y exterior · Fuente: ${D.fuente}`;
+const celda = (l, t, c = '') => `<div><span class="mute">${l}</span><b${c ? ` class="${c}"` : ''}>${t}</b></div>`;
+// Estado frente al promedio mensual de los 12 meses previos (el mes actual no entra en el promedio). "En línea" = dentro de la banda (hero.banda_pct)
+const EST = {encima: 'Por encima', linea: 'En línea', debajo: 'Por debajo'};
+const estFrase = e => ({encima: 'Por encima', linea: 'En línea con', debajo: 'Por debajo'})[e] + ' del promedio mensual de los 12 meses previos';
+// corto = true: "labs" en lugar de "laboratorios"
+const natTxt = (v, x, corto = false) => v == null ? '—' : x.unidad_nativa === 'und' ? `${fmt(v, 0)} ${corto ? 'labs' : 'laboratorios'}` : `${tq(v)} t`;
+// Nombres cortos solo en la lista de Nacional; en los demás paneles se dejan largos
+const NCORTO = {cocaina: 'Cocaína', base_coca: 'Base de coca', laboratorios: 'Laboratorios'};
+const nomUn = x => x.unidad_nativa === 'und' ? 'Laboratorios' : 'Toneladas';
+
+// Desglose físico de un territorio: cocaína, base de coca y laboratorios (omite lo que está en cero)
+const desglose = x => [x.cocaina_t > 0 ? `Cocaína ${tq(x.cocaina_t)} t` : '', x.base_coca_t > 0 ? `Base de coca ${tq(x.base_coca_t)} t` : '',
+  x.laboratorios > 0 ? `Laboratorios ${fmt(x.laboratorios, 0)}` : ''].filter(Boolean).join(' · ');
+
+// Panel de un departamento: cantidades reales y % de las toneladas incautadas en el mes (cocaína + base)
+const heroEnt = (x, D) => ({
+  ttl: x.nombre, big: fmt(x.participacion_pct, 1), unit: '% de las toneladas', com: x.comentario_popular, src: SRC(D),
+  extra: '',
+  filas: celda('Cocaína', `${tq(x.cocaina_t || 0)} t`)
+    + celda('Base de coca', `${tq(x.base_coca_t || 0)} t`)
+    + celda('Laboratorios', fmt(x.laboratorios || 0, 0))});
+
+// Panel de un tema (cocaína, base de coca, laboratorios): cantidad real del mes frente al promedio de 12 meses previos
+const heroComp = (x, D) => { const nat = x.unidad_nativa === 'und';
+  return {
+    ttl: x.nombre, big: nat ? fmt(x.cantidad_nativa, 0) : tq(x.cantidad_nativa), unit: nat ? 'labs' : 't', com: x.comentario_popular, src: SRC(D),
+    extra: x.estado ? `${esc(estFrase(x.estado))} (en línea: ±${fmt((D.hero || {}).banda_pct, 0)} %)` : '',
+    filas: vp('Vs. promedio 12 meses', x.var_ref_pct, pct(x.var_ref_pct))
+      + celda('Promedio 12 meses previos', natTxt(x.ref_nativa, x, true))}; };
+
+// Hijos de la entidad elegida (departamento -> municipios), ordenados por toneladas; la barra es su % de las toneladas del mes
+// Bajo el nombre va el desglose real (cocaína, base, laboratorios) y a la derecha el % de las toneladas del mes
+const hijosGet = (x, campo = 'participacion_total_pct') => { const hs = [...(x.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h[campo] || 0), .01);
+  return hs.map(h => ({nombre: h.nombre, valTxt: `${fmt(h[campo], 1)} %`, delta: 0, det: desglose(h), sub: '', w: 100 * (h[campo] || 0) / mx})); };
+
+// Dónde se incautó un tema: Colombia y exterior (ambos suman el tema). Cantidad real; debajo, la variación frente al promedio mensual de los 12 meses previos.
+const hijosComp = x => { const hs = [...(x.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), .01);
+  return hs.map(h => ({nombre: h.nombre, valTxt: natTxt(h.cantidad_nativa, x), delta: 0,
+    det: h.var_ref_pct == null ? '' : `${pct(h.var_ref_pct, 1)} vs. promedio 12 meses previos`,
+    sub: `${fmt(h.participacion_pct, 1)} %`, w: 100 * (h.participacion_pct || 0) / mx})); };
+// Países del exterior (cada tema trae los suyos): cantidad real y peso dentro del exterior
+const paisesGet = x => { const hs = [...(x.paises || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), .01);
+  return hs.map(h => ({nombre: h.nombre, valTxt: natTxt(h.cantidad, x), delta: 0, det: '', sub: `${fmt(h.participacion_pct, 1)} %`, w: 100 * (h.participacion_pct || 0) / mx})); };
+
+// Campos comunes de las dimensiones
+const base = k => ({
+  k, medida: D => `${UN(D)} incautadas`, ref: () => '',
+  nom: x => x.nombre, val: x => x.cantidad, valTxt: x => tq(x.cantidad), vr: x => x.var_ref_pct,
+  opt: x => `${tq(x.cantidad)} t · ${x.nombre}`,
+  ord: (a, b) => a.puesto_cantidad - b.puesto_cantidad, serie: x => x.serie_12m, top: false
+});
+
+AV.init({
+  ind: 'narcotrafico', title: 'Narcotráfico', docTitle: 'Narcotráfico',
+  vista0: 'comp', sinTotal: true,   // sin índice: no hay ficha Total; se abre en Nacional
+  pmov: {meses: 3, card: 'Trimestre móvil', ant: 'mismo trimestre del año anterior'},   // trimestre móvil (los últimos 3 meses, p. ej. Ago–Oct) de cada año
+  aniosMov: ['dep'],   // Dptos: barras verticales por trimestre móvil en % de las toneladas (item.serie_anios, con 'temas' reales por variable)
+  deltaMes: () => null,   // sin índice no hay flecha de variación mensual en el título
+  // Gráficas: temas en su unidad real (t o labs), con el color según el promedio de 12 meses; departamentos en % de las toneladas
+  g: {dec: (d, ctx, s) => { const mx = Math.max(0, ...d.map(p => p.valor)); return s && s.tipo === 'comp' ? (s.d.unidad_nativa === 'und' ? 0 : tdec(mx)) : dq(mx); },
+    unit: (ctx, D, s) => s && s.tipo === 'comp' ? (s.d.unidad_nativa === 'und' ? ' labs' : ' t') : s && s.tipo === 'dep' ? ' %' : ' ' + UN(D), vd: 1, vs: ' %', vf: 'var_ref_pct', useBanda: true, refKey: 'ref_12m', refLbl: 'promedio 12 meses previos',
+    ley: '<span class="up">●</span> por encima del promedio de los 12 meses previos (fuera de la banda) &nbsp; <span class="dn">●</span> por debajo', nulo: x => x.estado ? 'nuevo' : '', calcMM: false,
+    por: {dep: {barras: true, escalaPropia: true},   // Dptos: barras verticales por trimestre móvil
+          comp: {barras: true}}},                     // Temas: la gráfica de trimestre móvil también son barras
+  tit: {ent: (D, s) => s && s.tipo === 'dep' ? (((s.d.serie_anios || [])[0] || {}).temas ? 'Incautaciones por variable: trimestre móvil, por año' : '% de las toneladas del trimestre móvil, por año') : `${UN(D)} por mes: últimos 12 meses`},
+  // No hay indicador principal; los destacados que no son de un tema se muestran todos
+  esNac: x => x.tipo === 'indicador',
+  esVarMes: () => false,
+  dims: {
+    comp: {...base('componentes'), una: 'Tema', plural: 'Temas', ning: 'Ningún tema', titulo: D => D.periodo.mes_nombre, kick: 'Tema',   // el panel lleva el mes reciente (p. ej. Octubre)
+      medida: () => '',   // sin subtítulo: el mes ya va en el título
+      ref: D => `Cantidades del mes: cocaína y base de coca en toneladas, laboratorios en unidades. A la derecha, la variación frente al promedio mensual de los 12 meses previos (en línea: ±${fmt((D.hero || {}).banda_pct, 0)} %).`,
+      val: x => Math.abs(x.var_ref_pct || 0),
+      // Color de la fila: ámbar si está por encima o en línea, gris si está por debajo; intensidad = cuánto se aleja del promedio (50 % o más = máxima)
+      rowCls: x => x.estado === 'debajo' ? 'rw-dn' : '',
+      alfa: x => Math.abs(x.var_ref_pct || 0) / 50,
+      nom: x => NCORTO[x.codigo] || x.nombre,
+      valTxt: x => natTxt(x.cantidad_nativa, x, true),
+      opt: x => `${natTxt(x.cantidad_nativa, x, true)} · ${NCORTO[x.codigo] || x.nombre}`,
+      sub: x => x.ref_nativa == null ? '' : `Prom. 12 meses: ${natTxt(x.ref_nativa, x, true)}`,
+      hero: (x, D) => heroComp(x, D),
+      prev: {titulo: (D, d) => `Meses anteriores (${d.unidad_nativa === 'und' ? 'labs' : 't'})`},   // los 4 meses previos, solo su valor (columna derecha del panel)
+      // Tres gráficas por tema: últimos 12 meses, mismo mes por año y trimestre móvil por año (el mismo formato de Dptos)
+      graficas: [
+        {lbl: 'Últimos 12 meses', titulo: (D, s) => `${nomUn(s.d)} por mes: últimos 12 meses`, datos: d => d.serie_12m},
+        {lbl: 'Mismo mes por año', titulo: (D, s) => `${nomUn(s.d)}: ${D.periodo.mes_nombre.toLowerCase()} de cada año`, datos: d => d.serie_mismo_mes, mm: true,
+          ov: {vf: 'var_anual_pct', useBanda: false, mmNota: 'Cifra sobre cada punto: valor del mes · debajo: variación frente al mismo mes del año anterior'}},
+        {lbl: 'Trimestre móvil', titulo: (D, s) => `${nomUn(s.d)}: trimestre móvil, por año`, datos: d => d.serie_anios, anual: true}
+      ],
+      hijos: {label: x => x.codigo === 'laboratorios' ? 'Dónde se destruyeron' : 'Dónde se incautó', get: hijosComp,
+        nota: (d, D) => `Cantidad real en Colombia y en el exterior; ambas suman el total de ${esc(d.nombre.toLowerCase())}. A la derecha, su peso dentro del total (la barra muestra ese mismo peso); debajo, el cambio frente al promedio mensual de los 12 meses previos.`},
+      hijos2: {label: 'Países', get: paisesGet,
+        nota: (d, D) => `Cantidad real por país del exterior; a la derecha, su peso dentro del exterior. La barra muestra ese mismo peso.`}},
+    // Departamentos y municipios: solo informativos (cifra real + % de las toneladas del mes), sin comparación con el promedio de 12 meses
+    dep: {...base('departamentos'), vr: () => null, medida: () => '% de las toneladas incautadas · cantidades debajo',
+      ref: () => 'Cifras informativas, sin comparación con el promedio: cocaína y base de coca en toneladas, laboratorios en unidades. A la derecha, el % que aporta a las toneladas incautadas del mes (cocaína + base de coca, Colombia y exterior).',
+      valTxt: x => `${fmt(x.participacion_pct, 1)} %`, opt: x => `${fmt(x.participacion_pct, 1)} % · ${x.nombre}`, sub: x => desglose(x), una: 'Departamento', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Aporte por departamento',
+      hero: (x, D) => heroEnt(x, D),
+      hijos: {label: 'Municipios', get: hijosGet,
+        nota: (d, D) => `% que aporta cada municipio a las toneladas incautadas del mes (cocaína + base de coca); debajo del nombre, las cantidades reales (toneladas y laboratorios en unidades). Cifras informativas, sin comparación con el promedio. La barra muestra ese mismo peso (el mayor = barra completa).`}}
+  }
+});
+</script>
+</body>
+</html>

@@ -6,192 +6,64 @@
 <title>Terrorismo · Así Vamos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:wght@400;600;700&family=Montserrat:wght@700;800&display=swap&family=Roboto+Condensed:wght@400;500;700" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/shell.css?v=25">
+<link rel="stylesheet" href="../assets/css/shell.css?v=26">
 <style>
-:root{
-  --bg:#e9ebef; --card:#fff; --ink:#12303d; --mute:#6f8695; --line:#e1e7ea;
-  --acc:#0f6b7a;
-  /* mejora/empeora: los colores viven en shell.css (--ok ámbar, --mal gris). Aquí subir = malo */
-  --up:var(--mal); --dn:var(--ok); --up-l:var(--mal); --dn-l:var(--ok);
-  --up-t:var(--mal-txt); --dn-t:var(--ok-txt); --up-hd:var(--mal-hd); --dn-hd:var(--ok-hd);
-  --r:6px; --sh:0 1px 2px rgba(18,48,61,.06),0 10px 26px rgba(18,48,61,.09);
-}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:400 16px/1.4 "Roboto Condensed",system-ui,sans-serif;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
-.up{color:var(--up)} .dn{color:var(--dn)}
-/* texto pequeño: variante más oscura para legibilidad sobre blanco (los números grandes quedan con el color vivo) */
-.vr.up,.row2 .up{color:var(--up-t)} .vr.dn,.row2 .dn{color:var(--dn-t)}
-a,button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-/* Header y footer: mismo estilo del index (petróleo, a todo el ancho; contenido alineado con la columna de 960 px) */
-header.hd{--hd-acc:#cfe3ea;position:sticky;top:0;z-index:20}
-.hd-left{flex:1 1 0}
-.hd-right{flex:none}
-/* main ocupa todo el ancho (el scroll queda en el borde de la pantalla); el contenido se centra en --col con padding */
-main{width:100%;max-width:none;margin:0;padding:20px max(var(--gutter),calc((100% - var(--col))/2)) 24px;display:grid;gap:18px;align-content:start}
-.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:18px 20px;position:relative}
-.card h2{margin:0 0 12px;font-size:19px;font-weight:700}
-.badge{position:absolute;top:-10px;right:14px;background:#dde5ea;color:#3f5563;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px}
-.mute{color:var(--mute)} small{font-size:13px}
-/* hero (card pequeña, cambia con la selección) */
-.hero{display:flex;flex-direction:column;gap:8px}
-.hero .kick{font-size:14px;color:var(--mute);line-height:1.2}
-.hero .ttl{font-size:20px;font-weight:700;line-height:1.2}
-.hero .big{font-size:64px;font-weight:700;line-height:1;letter-spacing:-1px;margin:2px 0 4px}
-.hero .big span{font-size:26px;margin-left:4px;color:var(--mute)}
-.vars{display:grid;gap:10px}
-/* etiqueta arriba, cifra debajo: el texto no se comprime junto a la cifra */
-.vars div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.vars span{font-size:13px;line-height:1.2}
-.vars b{font-size:20px;line-height:1.1;white-space:nowrap}
-.hero .src{margin-top:auto;font-size:12.5px;line-height:1.3}
-/* hallazgos */
-.hz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.hz .card{padding:14px 16px;border-left:4px solid var(--acc)}
-.hz .card.sube{border-left-color:var(--up-l)} .hz .card.baja{border-left-color:var(--dn-l)}
-.hz h3{margin:0 0 4px;font-size:15px;color:var(--mute);font-weight:500}
-.hz p{margin:0;font-size:17px}
-/* sexo */
-.sx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.sx button{all:unset;cursor:pointer;display:block;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r)}
-.sx button:focus-visible{outline:2px solid var(--acc)}
-.sx button[aria-pressed=true]{border-color:var(--acc);background:#eef6f7}
-.sx .n{font-size:15px;color:var(--mute)} .sx .t{font-size:40px;font-weight:700;line-height:1.1}
-.sx .row2{display:flex;justify-content:space-between;margin-top:6px}
-.brecha{margin:12px 0 0;font-size:17px}
-.sxc .ref{margin:6px 0 0;font-size:13px}
-/* ciudades */
-.head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
-.head h2{margin:0}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-.seg button{border:0;background:#fff;padding:6px 14px;cursor:pointer;font-weight:500}
-.seg button[aria-pressed=true]{background:var(--acc);color:#fff}
-.list{display:grid;align-content:start}
-.row{all:unset;cursor:pointer;display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px 8px;border-top:1px solid #fff;background:rgba(var(--mal-rgb),var(--a,.1))}
-.row:hover{filter:brightness(.95)} .row[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ink)}
-.row .vl{display:block}
-.row:focus-visible{outline:2px solid var(--acc)}
-.rk{color:var(--mute);text-align:right;font-size:14px}
-.nm{display:grid;gap:5px;min-width:0}
-.nm>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.bar{display:block;height:6px;background:#e6ecef;border-radius:3px;overflow:hidden}
-.bar b{display:block;height:100%;background:var(--acc);border-radius:3px;transition:width .3s}
-.vl{text-align:right;display:grid} .vl strong{font-size:19px;line-height:1.1}
-.vr{text-align:right;font-size:15px;font-weight:500}
-.ref{margin:10px 0 0;font-size:14px;color:var(--mute)}
-/* bloque superior (3 columnas). General: gráfica (2) + indicador (1). Ciudades: lista (1, alta) + gráfica (2) y debajo el indicador en franja */
-.top{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:14px;scroll-margin-top:84px}
-.top>.card{display:flex;flex-direction:column;min-width:0}
-.cg{grid-column:2/4;grid-row:1;min-height:300px}
-.top>.hero{grid-column:3;grid-row:1}
-.top.g .cg{grid-column:1/3}
-.cl{grid-column:1;grid-row:1/3;contain:size;min-height:460px;padding:14px 12px}
-.top:not(.g)>.hero{grid-column:2/4;grid-row:2;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-areas:"kick kick" "ttl ttl" "big vars" "src src";column-gap:20px;row-gap:6px;align-content:start}
-.top:not(.g)>.hero .kick{grid-area:kick}.top:not(.g)>.hero .ttl{grid-area:ttl}.top:not(.g)>.hero .big{grid-area:big}
-.top:not(.g)>.hero .vars{grid-area:vars;grid-template-columns:1fr 1fr;gap:12px 16px;align-content:center;align-self:center}
-.top:not(.g)>.hero .ttl{font-size:22px}
-.top:not(.g)>.hero .big{align-self:center;margin:0}
-.top:not(.g)>.hero .src{grid-area:src;margin-top:6px}
-.cl .head h2{font-size:17px}
-.cl .seg button{padding:4px 10px;font-size:14px}
-.cl .list{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain}
-.cl .vl strong{font-size:17px}
-.cl .ref{margin:8px 0 0;font-size:13px;line-height:1.3}
-.cg #chart{flex:1;display:flex;align-items:center}
-.cg #chart>*{width:100%}
-.sub2{margin:18px 0 4px;font-size:16px;font-weight:700}
-.cg .hz .card{box-shadow:none;background:#f6f8f9}
-.cg .hz{align-self:flex-start}
-/* TOP: listas completas, los nombres largos pueden ocupar dos líneas */
-.t5 .nm>span:first-child{white-space:normal;overflow:visible}
-.t5 h2 small{font-size:14px;font-weight:500}
-#app>.tabs{margin:0}
-/* top 5 cambio anual */
-.tres{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
-.tres>.sxc{grid-column:1/-1}
-.t5 h2.up{color:var(--up-t)} .t5 h2.dn{color:var(--dn-t)}
-.tr{all:unset;cursor:pointer;display:grid;grid-template-columns:22px 1fr auto;gap:4px 10px;align-items:center;padding:9px 6px;border-top:1px solid var(--line);width:calc(100% - 12px)}
-.tr:hover{background:#f4f7f8} .tr[aria-pressed=true]{background:#e8f3f5}
-.tr:focus-visible{outline:2px solid var(--acc)}
-.tr .bar b.up{background:var(--up)} .tr .bar b.dn{background:var(--dn)}
-.tr .vl strong.up{color:var(--up-t)} .tr .vl strong.dn{color:var(--dn-t)}
-.t5 .vacio{margin:0;padding:12px 6px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
-/* serie */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 14px;cursor:pointer}
-.tabs button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
-svg{width:100%;height:auto;display:block}
-svg text{font-family:inherit;fill:var(--mute);font-size:15px}
-svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
-.err{padding:24px;text-align:center}
-@media(max-width:600px){
-  .top{grid-template-columns:1fr}
-  .top>.card,.top .cg,.top.g .cg,.top>.hero,.top:not(.g)>.hero{grid-column:1;grid-row:auto}
-  .top:not(.g)>.hero{display:flex}
-  .top:not(.g)>.hero .vars{grid-template-columns:1fr}
-  .cl{contain:none;height:340px;min-height:0}
-  .tres{grid-template-columns:1fr}
-}
-@media(max-width:420px){.hz{grid-template-columns:1fr}}
-/* divisiones de gasto */
-.sx{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
-.sx .n{line-height:1.2;min-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.sx .t{font-size:34px}.sx .row2{gap:8px;font-size:14px}
-.gt{margin:18px 0 4px;font-size:16px;font-weight:700}
-.tr.g{cursor:default;width:100%;box-sizing:border-box;grid-template-columns:22px minmax(0,1fr) auto}
+/* Terrorismo (terrorismo, masacres y fuerza pública): subir es lo malo (gris) y bajar lo bueno (ámbar): son los colores por defecto de shell.css para las páginas de detalle.
+   Misma disposición que narcotrafico.html: sin índice (cifras reales), se abre en Nacional (3 temas), Destacados y Dptos. */
+.tr.g{grid-template-columns:22px minmax(0,1fr) auto}
 .tr .nm{min-width:0}
-.hero.wt{grid-template-areas:"kick tabs" "ttl ttl" "big vars" "src src"!important}
-.hero.wt.gr{grid-template-areas:"kick tabs" "ttl ttl" "gl gl"!important}
-.hero .htabs{grid-area:tabs;justify-self:end;margin:0}
-.hero .htabs button{padding:3px 12px;font-size:14px}
-.gwrap{grid-area:gl;min-width:0}
-.glist{max-height:250px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;border-bottom:1px solid var(--line)}
-.glist .tr:first-child{border-top:0}
+.glist{overflow-x:hidden}
 .tr .nm>small{font-size:12px;line-height:1.2}
-.gwrap .ref{margin:6px 0 0;font-size:13px}.tr.g:hover{background:none}
-.tr.g .wrap{white-space:normal;overflow:visible}
-.tr .bar b.up{background:var(--up)}.tr .bar b.dn{background:var(--dn)}
-.hero .src{line-height:1.35}
-/* Ciudades y Divisiones en celular: en vez del rótulo ("Inflación por ciudad" / "por división de gasto"), el panel muestra el nombre elegido (en escritorio queda el rótulo y debajo el nombre) */
-.hero .kc{display:none}
-/* Ciudades y Divisiones, escritorio: sin el rótulo "Inflación por ciudad / por división de gasto" (el nombre ya está como título del panel) */
-.hero .kick.kv{display:none}
-@media(max-width:600px){
-  body .top:not(.g)>.hero .kick.kv{display:block}
-  body .top:not(.g)>.hero .kk{display:none}
-  body .top:not(.g)>.hero .kc{display:block;font-size:20px;font-weight:700;line-height:1.2;color:var(--ink)}
-}
-/* Celular: la lista de ciudades / divisiones se presenta como select */
-@media(max-width:600px){
-  /* el nombre del select se recorta a una sola línea (el nombre completo está en el panel del indicador) */
-  .selT{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .cl .list{display:none}
-  .cl{height:auto;min-height:0}
-}
-/* terrorismo: las filas de las listas muestran hechos y, debajo, la variación anual */
-.row .vl{display:flex;flex-direction:column;align-items:flex-end}
-.row .vl small,.tr .vl small{font-size:12px;line-height:1.1;font-weight:700}
-.row .nm>small{font-size:12px;line-height:1.1}
-/* pestañas del panel (Departamento / Fuentes / Municipios): una sola línea a todo el ancho del panel (escritorio) */
+/* Nacional: la fila de un tema por encima (o en línea con) su promedio de 12 meses se pinta en el gris de "malo"; por debajo, en ámbar (la intensidad sigue cuánto se aleja).
+   Solo en Nacional: en Dptos las filas siguen el color por defecto (variación frente al mismo mes del año anterior) */
+body[data-av-vista="com"] .row{background:rgba(var(--mal-rgb,100,116,139),var(--a,.1))}
+body[data-av-vista="com"] .row.rw-dn{background:rgba(var(--ok-rgb),var(--a,.1))}
+/* Pestañas del panel (Tema / Armas y medios / Departamentos / Acciones / Fuentes / Municipios): una sola línea a todo el ancho del panel (escritorio) */
 @media(min-width:601px){
   .hero.wt{grid-template-areas:"tabs tabs" "ttl ttl" "big vars" "src src"!important}
   .hero.wt.gr{grid-template-areas:"tabs tabs" "ttl ttl" "gl gl"!important}
   .hero .htabs{justify-self:stretch;display:flex;flex-wrap:nowrap;gap:6px}
   .hero .htabs button{flex:1 1 0;min-width:0;padding:3px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 }
+/* Nacional: el panel "Por tema" va a la derecha (escritorio). Se invierte el sentido de las columnas de .top y se restaura el normal en sus hijos */
+@media(min-width:601px){
+  body[data-av-vista="com"] .top{direction:rtl}
+  body[data-av-vista="com"] .top>*{direction:ltr}
+}
+/* Nacional: el panel del tema va en dos columnas. Izquierda: la cifra del mes y debajo "Vs. promedio" y "Promedio 12 meses previos".
+   Derecha: los 4 meses previos (solo el valor) (lista .prev que arma asivamos.js con dims.com.prev) */
+@media(min-width:601px){
+  body[data-av-vista="com"] .top .hero.wt:not(.gr){grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;column-gap:20px!important;grid-template-areas:"tabs tabs" "ttl ttl" "big prev" "vars prev" "src src"!important}
+}
+@media(max-width:600px){
+  body[data-av-vista="com"] .top .hero:not(.gr){grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;grid-template-areas:"kick kick" "big prev" "vars prev" "src src"!important}
+}
+body[data-av-vista="com"] .top .hero:not(.gr) .vars{grid-template-columns:1fr!important;align-self:start}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev{align-self:start;margin-top:0}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev .pr{gap:6px;font-size:13px}
+body[data-av-vista="com"] .top .hero:not(.gr) .prev .pr b{font-size:14px}
+/* Pantallas muy angostas: la lista de meses previos pasa a todo el ancho, debajo de la cifra y las variaciones */
+@media(max-width:380px){
+  body[data-av-vista="com"] .top .hero:not(.gr){grid-template-columns:auto minmax(0,1fr)!important;grid-template-areas:"kick kick" "big vars" "prev prev" "src src"!important}
+  body[data-av-vista="com"] .top .hero:not(.gr) .vars{grid-template-columns:1fr 1fr!important}
+}
+/* Pestañas de las gráficas (12 meses / mismo mes / trimestre). :where() deja especificidad 0: si shell.css ya estiliza .tabs/.htabs, manda shell.css */
+:where(.gtabs){display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+:where(.gtabs) button{flex:1 1 0;min-width:0;padding:4px 8px;border:1px solid #c9d4da;border-radius:999px;background:#fff;color:#12303f;font:inherit;font-size:.85em;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+:where(.gtabs) button[aria-pressed="true"]{background:#12303f;border-color:#12303f;color:#fff}
+/* Sin municipios para el departamento elegido: la ficha no aparece en el carrusel del celular */
+@media(max-width:600px){ body .top .car>.card.nada{display:none!important} }
 </style>
 </head>
-<body class="app">
+<body class="app det">
 <header class="hd">
   <div class="hd-left">
     <h1 class="brand"><a class="home" href="../index.html" aria-label="Así Vamos, volver al inicio"><span class="brand-col"><span class="brand-txt" aria-hidden="true"><span class="b1">Así</span> <span class="b2">Vamos</span><svg class="brand-ico" viewBox="4 7 39.5 38.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="6" y="33" width="6.5" height="11"/><rect x="15" y="26" width="7" height="18"/><rect x="24.5" y="29" width="7.5" height="15"/><rect x="34.5" y="21" width="7" height="23"/><polyline points="8,21 18,14 28,18 38,11"/><g fill="#12303d"><circle cx="8" cy="21" r="2.8"/><circle cx="18" cy="14" r="2.8"/><circle cx="28" cy="18" r="2.8"/><circle cx="38" cy="11" r="2.8"/></g></svg></span><span class="brand-sub" aria-hidden="true">COLOMBIA</span></span></a></h1>
   </div>
   <div class="hd-title" id="hdTitle" aria-live="polite"></div>
   <nav class="hd-mid" aria-label="Vista">
-    <button type="button" class="vt" data-vista="gen" aria-pressed="true">Total</button>
-    <button type="button" class="vt" data-vista="top" aria-pressed="false">TOP</button>
-    <button type="button" class="vt" data-vista="com" aria-pressed="false">Tipos</button>
+    <button type="button" class="vt" data-vista="com" aria-pressed="true">Nacional</button>
+    <button type="button" class="vt" data-vista="dest" aria-pressed="false">Destacados</button>
     <button type="button" class="vt" data-vista="dep" aria-pressed="false">Dptos</button>
   </nav>
   <div class="hd-right">
@@ -211,325 +83,119 @@ svg text.v{fill:var(--ink);font-weight:700;font-size:16px}
   </div>
 </footer>
 
+<script src="asivamos.js"></script>
 <script>
-const IND = new URLSearchParams(location.search).get('ind') || 'terrorismo';
-const URL_JSON = `data/detalle_${IND}.json`;
-const $ = s => document.querySelector(s);
-// Celular: el select va invisible sobre un título que muestra completo (con saltos de línea) el valor elegido
-function selTitle() {
-  const sl = document.getElementById('selLista'), t = document.getElementById('selT');
-  if (sl && t) t.textContent = sl.selectedOptions[0] ? sl.selectedOptions[0].textContent : '';
-}
-document.addEventListener('change', e => { if (e.target.id === 'selLista') selTitle(); });
-// Destacado "nacional": en celular no va en la lista de destacados (se oculta con .nac)
-const esNac = x => /(^|_)nac(ional)?($|_)/i.test(x.tipo || '') || /^\s*[ií]ndice de terrorismo/i.test(x.titulo || '');
-// Carrusel de gráficas (celular): flechas y puntos de guía
-const DNAV = '<div class="dnav" aria-hidden="true"><button type="button" data-dir="-1" disabled>‹</button><i class="on"></i><i></i><button type="button" data-dir="1">›</button></div>';
-const dosPaso = d => d.querySelector('.sl').offsetWidth + 12;
-function dosAct(d) {
-  const i = Math.round(d.scrollLeft / dosPaso(d)), nav = d.parentNode.querySelector('.dnav'); if (!nav) return;
-  nav.querySelectorAll('i').forEach((x, k) => x.classList.toggle('on', k === i));
-  nav.querySelector('[data-dir="-1"]').disabled = i <= 0; nav.querySelector('[data-dir="1"]').disabled = i >= 1;
-}
-document.addEventListener('scroll', e => { if (e.target.classList && e.target.classList.contains('dos')) dosAct(e.target); }, true);
-document.addEventListener('click', e => {
-  const b = e.target.closest('.dnav button'); if (!b) return;
-  const d = b.closest('.dosw').querySelector('.dos'), i = Math.max(0, Math.min(1, Math.round(d.scrollLeft / dosPaso(d)) + Number(b.dataset.dir)));
-  d.scrollTo({left: i * dosPaso(d), behavior: 'smooth'});
-});
-// Destacado "variación del mes": tampoco va en la lista (ya está en el panel del indicador)
-const esVarMes = x => /(variacion|var)_(del_)?(mes|mensual)|^mensual$/i.test(x.tipo || '') || /^\s*variaci[oó]n\s+(del\s+)?mes\b/i.test(x.titulo || '');
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const fmt = (n, d = 2) => n == null ? '—' : Number(n).toLocaleString('es-CO', {minimumFractionDigits: d, maximumFractionDigits: d});
+const {fmt, sg, cls, flecha, vp, esc} = AV;
 const fm0 = n => fmt(n, 0);
-const sg  = (n, d = 2) => n == null ? '—' : (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d);
-// Nombres del DANE vienen en Title Case ("Restaurantes Y Hoteles"): se pasan a formato de oración
-const nm = s => String(s ?? '').replace(/\b(Y|De|Del|La|El|Los|Las|Para|Por|En|Con|A|O)\b/g, (m, _, o) => o ? m.toLowerCase() : m);
-// En terrorismo, subir es lo malo (gris, clase 'up') y bajar lo bueno (ámbar, clase 'dn')
-const cls = n => n == null || Math.abs(n) < 0.005 ? '' : n > 0 ? 'up' : 'dn';
-const flecha = n => n == null || Math.abs(n) < 0.005 ? '■' : n > 0 ? '▲' : '▼';
+const pct = (v, d = 2) => v == null ? '—' : sg(v, d) + ' %';
+const celda = (l, t, c = '') => `<div><span class="mute">${l}</span><b${c ? ` class="${c}"` : ''}>${t}</b></div>`;
+const SRC = D => `${D.periodo.etiqueta} · Colombia · Fuente: ${D.fuente}`;
+// Sin índice: las cifras son reales. "hechos" = eventos de terrorismo + víctimas de masacres + uniformados afectados (lo calcula kpi.vw_terrorismo_detalle); cada elemento trae su unidad
+const und = x => x.unidad || 'hechos';
+const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+// Nombres cortos solo en la lista de Nacional; en los demás paneles se dejan largos (clave: codigo del tema)
+const NCORTO = {T: 'Terrorismo', M: 'Masacres', F: 'Fuerza Pública'};
+// Estado frente al promedio mensual de los 12 meses previos (el mes actual no entra en el promedio). "En línea" = dentro de la banda (hero.banda_pct)
+const EST = {encima: 'Por encima', linea: 'En línea', debajo: 'Por debajo'};
+const estFrase = e => ({encima: 'Por encima', linea: 'En línea con', debajo: 'Por debajo'})[e] + ' del promedio mensual de los 12 meses previos';
+const refTxt = r => (r || []).map(x => `${esc(x.nombre)}: ${sg(x.var_ref_pct)} % vs. promedio de los 12 meses previos`).join(' · ');
+// Promedio de hechos: 1 decimal (es un promedio de conteos)
+const prom = x => x.ref_12m == null ? '—' : `${fmt(x.ref_12m, 1)} ${esc(und(x))}`;
+const TOP_REF = 'Variación porcentual de los hechos frente al mismo mes de hace un año; debajo, el cambio en número de hechos (terrorismo: eventos; masacres: víctimas; Fuerza Pública: afectados). Toca un departamento para ver su detalle.';
 
-// vista: 'gen' (total) | 'top' | 'com' (tipos: terrorismo / masacres / fuerza pública) | 'dep' (departamentos; cada uno trae sus municipios).
-// Cada lista (com/dep) tiene el mismo esquema de items; sus "hijos" cambian: tipo -> armas / departamentos / acciones, departamento -> las 3 fuentes (y, en otra pestaña, sus municipios).
-// "hechos" = eventos de terrorismo + víctimas de masacres + uniformados afectados (lo calcula kpi.vw_terrorismo_detalle).
-const DIMS = {
-  com: {k: 'componentes',   una: 'Tipo',         hijos: 'Fuentes', plural: 'Tipos',         ning: 'Ningún tipo',         titulo: 'Por tipo',         kick: 'Hechos por tipo'},
-  dep: {k: 'departamentos', una: 'Departamento', hijos: 'Fuentes', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Hechos por departamento'}
-};
-let D, st = {vista: 'gen', g: null, sel: {com: null, dep: null}, tab: 'doce', htab: 'ent', gtab: 'graf', ttab: 'com'};
-const total = () => ({nombre: 'Índice de terrorismo', datos: D.serie.doce_meses, nac: true, tipo: 'nac'});
-const entSerie = (v, d) => ({nombre: d.nombre, datos: d.serie_12m, tipo: v, d});
-const items = v => D.dimensiones[DIMS[v].k].items;
-const cur = () => st.vista === 'gen' ? st.g : st.sel[st.vista];
+// Panel de un departamento: hechos del mes, el valor de cada fuente (afectación a la Fuerza Pública, terrorismo y masacres) y su % del total nacional.
+// Las fuentes salen de los hijos del departamento (los que no tienen hechos en el mes no vienen: valen 0)
+const fuenteVal = (x, pref) => { const h = (x.hijos || []).find(h => String(h.nombre).startsWith(pref)); return h ? h.cantidad : 0; };
+const heroEnt = (x, D) => ({
+  ttl: x.nombre, big: fm0(x.cantidad), unit: esc(und(x)), com: '', src: SRC(D),
+  filas: celda('Afectación', fm0(fuenteVal(x, 'Afectación')))
+    + celda('Terrorismo', fm0(fuenteVal(x, 'Terrorismo')))
+    + celda('Masacres', fm0(fuenteVal(x, 'Masacres')))
+    + celda('Del total de hechos', `${fmt(x.participacion_pct, 1)} %`)});
 
-fetch(URL_JSON, {cache: 'no-store'}).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(d => {
-    D = d; st.g = total();
-    Object.keys(DIMS).forEach(v => {
-      const p = [...items(v)].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad)[0];
-      st.sel[v] = p ? entSerie(v, p) : null;
-    });
-    render();
-  })
-  .catch(() => { $('#app').innerHTML = `<div class="card err">No se pudo cargar <b>${esc(URL_JSON)}</b>.<br><span class="mute">Genera el archivo con el backend (kpi.vw_terrorismo_detalle → campo detalle) y publícalo en la carpeta data/ junto a esta página (si abres el HTML desde el disco, el navegador bloquea la lectura: usa un servidor local).</span></div>`; });
+// Panel de un tema (terrorismo, masacres, fuerza pública): cantidad real del mes frente al promedio de 12 meses previos
+const heroComp = (x, D) => ({
+  ttl: x.nombre, big: fm0(x.cantidad), unit: esc(und(x)), com: x.comentario_popular, src: SRC(D),
+  extra: x.estado ? `${esc(estFrase(x.estado))} (en línea: ±${fmt((D.hero || {}).banda_pct, 0)} %)` : '',
+  filas: vp('Vs. promedio 12 meses', x.var_ref_pct, pct(x.var_ref_pct))
+    + celda('Promedio 12 meses previos', prom(x))});
 
-// Título del header: "<indicador> - <mes>", el mes sale de periodo (JSON)
-function tituloHeader(nombre) {
-  const p = D && D.periodo || {};
-  const norm = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const busca = t => (norm(t).match(/\b(ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic)[a-z]*\b/) || [])[1];
-  const m = busca(p.mes_nombre) || busca(p.etiqueta);
-  const t = $('#hdTitle');
-  t.textContent = m ? `${nombre} - ${m[0].toUpperCase()}${m.slice(1)}` : nombre;
-  // Flecha tras el mes: sube (gris) / baja (ámbar) frente al mes anterior
-  const dlt = D && D.hero ? D.hero.var_mensual_pct : null;
-  if (dlt != null && Math.abs(dlt) >= 0.005) {
-    const ar = document.createElement('span');
-    ar.className = 'ar ' + (dlt > 0 ? 'up' : 'dn');
-    ar.textContent = dlt > 0 ? '▲' : '▼';
-    ar.setAttribute('aria-label', dlt > 0 ? 'subió frente al mes anterior' : 'bajó frente al mes anterior');
-    t.appendChild(ar);
-  }
-}
+// Hijos de un departamento (las 3 fuentes), ordenados por cantidad; la barra es su peso dentro del departamento
+const hijosGet = x => { const hs = [...(x.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), .01);
+  return hs.map(h => ({nombre: h.nombre, valTxt: fm0(h.cantidad), delta: h.var_anual_pct,
+    sub: `${flecha(h.var_anual_pct)} ${h.var_anual_pct == null ? 'nuevo' : sg(h.var_anual_pct, 1) + ' %'}`, w: 100 * (h.participacion_pct || 0) / mx})); };
 
-function render() {
-  document.title = 'Terrorismo · Así Vamos';
-  tituloHeader('Terrorismo');
-  $('#app').classList.toggle('vtop', st.vista === 'top');
-  const gen = st.vista === 'gen';
-  document.querySelectorAll('[data-vista]').forEach(b => b.setAttribute('aria-pressed', b.dataset.vista === st.vista));
+// Hijos de un tema (armas y medios / departamentos de masacres / acciones): cantidad real; a la derecha su peso dentro del tema; debajo, el cambio frente al promedio mensual de los 12 meses previos
+const hijosComp = x => { const hs = [...(x.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), .01);
+  return hs.map(h => ({nombre: h.nombre, valTxt: fm0(h.cantidad), delta: 0,
+    det: h.var_ref_pct == null ? '' : `${pct(h.var_ref_pct, 1)} vs. promedio 12 meses previos`,
+    sub: `${fmt(h.participacion_pct, 1)} %`, w: 100 * (h.participacion_pct || 0) / mx})); };
 
-  if (gen) {
-    $('#app').innerHTML = `
-    <button class="swd" id="swd" type="button" role="switch" aria-checked="false" data-gtab="dest"><span>Destacados</span><i class="swd-k"></i></button>
-    <div class="top g" id="top">
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
-    </div>`;
-  } else if (st.vista === 'top') {
-    $('#app').innerHTML = `
-    <div class="tabs" role="group" aria-label="Ver por">
-      ${Object.keys(DIMS).map(v => `<button data-ttab="${v}" aria-pressed="${st.ttab === v}">${DIMS[v].plural}</button>`).join('')}
-    </div>
-    <div class="tres">
-      <section class="card t5" id="t5s" aria-label="Aumentaron"></section>
-      <section class="card t5" id="t5b" aria-label="Redujeron"></section>
-    </div>
-    <p class="ref" style="margin:-6px 0 0">Variación porcentual de los hechos frente al mismo mes de hace un año; debajo, el cambio en número de hechos (terrorismo: eventos; masacres: víctimas; Fuerza Pública: afectados). Toca un tipo, departamento o municipio para ver su detalle.</p>`;
-    top5();
-  } else {
-    const c = DIMS[st.vista];
-    $('#app').innerHTML = `
-    <div class="top" id="top">
-      <section class="card cl" aria-label="${c.titulo}">
-        <div class="head"><h2>${c.titulo}</h2><small class="mute">Hechos del mes</small></div>
-        <div class="clfoot"><small class="mute clm">Hechos del mes</small><p class="ref">${refTxt(D.dimensiones[c.k].referencias)}</p></div>
-        <div class="selW"><span class="selT" id="selT"></span><select class="selL" id="selLista" aria-label="Elegir"></select></div>
-        <div class="tabs htabs mtabs" id="mtabs" role="group" aria-label="Contenido del panel"></div>
-        <div class="list" id="lista"></div>
-      </section>
-      <section class="card cg" aria-label="Serie">
-        <div class="head"><h2 id="serieT"></h2><div class="tabs" id="tabs"></div></div>
-        <div id="chart"></div>
-      </section>
-      <section class="card hero" id="hero" aria-label="Indicador"></section>
-    </div>`;
-    lista();
-  }
-  if (st.vista !== 'top') { hero(); serie(); }
-}
+// Municipios del departamento elegido: total de hechos y, debajo, el valor de cada una de las 3 fuentes (sin municipios con hechos: ni pestaña ni ficha)
+const munGet = x => { const ms = x.municipios || [], mx = Math.max(...ms.map(m => m.cantidad || 0), 1);
+  return ms.map(m => ({nombre: m.nombre, valTxt: fm0(m.cantidad), delta: m.var_anual_pct,
+    sub: `${flecha(m.var_anual_pct)} ${m.var_anual_pct == null ? 'nuevo' : sg(m.var_anual_pct, 1) + ' %'}`, w: 100 * (m.cantidad || 0) / mx,
+    det: `Terrorismo ${fm0(m.terrorismo)} · Masacres ${fm0(m.masacres)} · F. Pública ${fm0(m.fuerza_publica)}`})); };
+const municipios = {label: 'Municipios', get: munGet,
+  nota: 'Hechos del mes en cada municipio; debajo, variación frente a hace un año. Terrorismo: eventos; masacres: víctimas; F. Pública: uniformados afectados.'};
 
-function refTxt(refs) { return (refs || []).map(r => `${esc(r.nombre)}: ${sg(r.var_anual_pct)} % en hechos`).join(' · '); }
-
-// Card de indicador: índice nacional por defecto; cambia con el tipo, departamento o municipio elegidos
-function hero() {
-  const s = cur(), h = D.hero, per = D.periodo, d = s.d;
-  let kick = '', ttl = 'Índice de terrorismo y seguridad', big = fmt(h.indice), unit = '', com = h.comentario_popular, extra = '';
-  const src = `${per.etiqueta} · Fuente: ${D.fuente}`;
-  const vp = (l, v, dd = 2) => `<div><span class="mute">${l}</span><b class="${cls(v)}">${flecha(v)} ${sg(v, dd)} %</b></div>`;
-  let filas;
-  if (s.tipo === 'nac') {
-    filas = vp('Vs. hace un año', h.var_anual_pct) + vp('Vs. mes anterior', h.var_mensual_pct)
-      + `<div><span class="mute">Hechos del mes</span><b>${fm0(h.casos)}</b></div>`
-      + `<div><span class="mute">Hechos hace un año</span><b>${fm0(h.casos_hace_12)}</b></div>`;
-    extra = [h.indice_hace_12 != null ? `Índice hace un año: ${fmt(h.indice_hace_12)}` : '',
-      h.terrorismo_eventos != null ? `Terrorismo: ${fm0(h.terrorismo_eventos)} eventos · Masacres: ${fm0(h.masacres_victimas)} víctimas · Fuerza Pública: ${fm0(h.fuerza_publica_afectados)} afectados` : ''].filter(Boolean).join('<br>');
-  } else {
-    kick = DIMS[s.tipo].kick; ttl = s.nombre; big = fm0(d.cantidad); unit = d.unidad || 'hechos'; com = d.comentario_popular;
-    filas = vp('Vs. hace un año', d.var_anual_pct)
-      + `<div><span class="mute">Hace un año</span><b>${fm0(d.cantidad_hace_12)}</b></div>`
-      + `<div><span class="mute">Diferencia</span><b class="${cls(d.diferencia)}">${flecha(d.diferencia)} ${sg(d.diferencia, 0)}</b></div>`
-      + `<div><span class="mute">Del total de hechos</span><b>${fmt(d.participacion_pct, 1)} %</b></div>`;
-      }
-  const enE = s.tipo !== 'nac', cfg = DIMS[s.tipo], hayMun = enE && Array.isArray(d.municipios);
-  if (st.htab === 'mun' && !hayMun) st.htab = 'ent';
-  const gr = enE && (st.htab === 'hijos' || st.htab === 'mun');
-  $('#hero').className = 'card hero' + (enE ? ' wt' + (gr ? ' gr' : '') : '');
-  const nH = enE ? (d.hijos || []).length : 0;
-  const tabBtns = enE ? `<button data-htab="ent" aria-pressed="${!gr}">${cfg.una}</button>
-      <button data-htab="hijos" aria-pressed="${st.htab === 'hijos'}">${d.hijos_titulo || cfg.hijos}${nH ? ` (${nH})` : ''}</button>${hayMun ? `
-      <button data-htab="mun" aria-pressed="${st.htab === 'mun'}">Municipios (${d.municipios.length})</button>` : ''}` : '';
-  const tabsH = enE ? `<div class="tabs htabs" role="group" aria-label="Contenido del panel">${tabBtns}</div>` : '';
-  const cuerpo = st.htab === 'mun' && hayMun ? municipiosHtml(d) : gr ? hijosHtml(d, cfg) : `<div class="big">${big}${unit ? `<span>${unit}</span>` : ''}</div>
-    <div class="vars">${filas}</div>
-    <small class="mute src">${com ? esc(com) + '<br>' : ''}${extra ? extra + '<br>' : ''}${esc(src)}</small>`;
-  $('#hero').innerHTML = `${kick ? `<div class="kick kv"><span class="kk">${esc(kick)}</span><span class="kc">${esc(ttl)}</span></div>` : ''}${tabsH}
-    <div class="ttl">${esc(ttl)}</div>${cuerpo}`;
-  // Celular: las pestañas de la entidad / sus hijos van bajo el select; en la pestaña de hijos se oculta la gráfica (clase vgr)
-  const mt = $('#mtabs'); if (mt) mt.innerHTML = tabBtns;
-  const tp = $('#top'); if (tp) tp.classList.toggle('vgr', gr);
-}
-
-// Actualiza el resaltado de la selección sin reconstruir la lista (conserva scroll y foco)
-function marcar() {
-  const v = st.vista, its = items(v), sel = st.sel[v].d, sl = $('#selLista');
-  document.querySelectorAll('#lista [data-e]').forEach(x => x.setAttribute('aria-pressed', its[x.dataset.e] === sel));
-  if (sl) sl.value = its.indexOf(sel); selTitle();
-}
-
-// Hijos de la entidad elegida (tipo -> armas / departamentos / acciones; departamento / municipio -> las 3 fuentes), con scroll si la lista es larga
-function hijosHtml(d, cfg) {
-  const lb = d.hijos_titulo || cfg.hijos;
-  const hs = [...(d.hijos || [])].sort((a, b) => b.cantidad - a.cantidad), mx = Math.max(...hs.map(h => h.participacion_pct || 0), 0.01);
-  if (!hs.length) return `<div class="gwrap"><p class="vacio">Sin detalle de ${lb.toLowerCase()}.</p></div>`;
-  return `<div class="gwrap"><div class="glist" tabindex="0" aria-label="${esc(lb)}">${hs.map((h, i) => `
-    <div class="tr g">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span class="wrap">${esc(h.nombre)}</span><span class="bar"><b class="${cls(h.var_anual_pct)}" style="width:${100 * (h.participacion_pct || 0) / mx}%"></b></span></span>
-      <span class="vl"><strong>${fm0(h.cantidad)}</strong>
-        <small class="${cls(h.var_anual_pct)}">${flecha(h.var_anual_pct)} ${h.var_anual_pct == null ? 'nuevo' : sg(h.var_anual_pct, 1) + ' %'}</small></span></div>`).join('')}</div>
-    <p class="ref">Cantidad del mes; debajo, variación frente a hace un año. La barra muestra su peso dentro de ${esc(d.nombre)}.</p></div>`;
-}
-
-// Municipios del departamento elegido: total de hechos y, debajo, el valor de cada una de las 3 fuentes
-function municipiosHtml(d) {
-  const ms = d.municipios || [], mx = Math.max(...ms.map(m => m.cantidad || 0), 1);
-  if (!ms.length) return `<div class="gwrap"><p class="vacio">Sin municipios con hechos en el mes.</p></div>`;
-  return `<div class="gwrap"><div class="glist" tabindex="0" aria-label="Municipios de ${esc(d.nombre)}">${ms.map((m, i) => `
-    <div class="tr g">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span class="wrap">${esc(m.nombre)}</span><span class="bar"><b class="${cls(m.var_anual_pct)}" style="width:${100 * (m.cantidad || 0) / mx}%"></b></span>
-        <small class="mute">Terrorismo ${fm0(m.terrorismo)} · Masacres ${fm0(m.masacres)} · F. Pública ${fm0(m.fuerza_publica)}</small></span>
-      <span class="vl"><strong>${fm0(m.cantidad)}</strong>
-        <small class="${cls(m.var_anual_pct)}">${flecha(m.var_anual_pct)} ${m.var_anual_pct == null ? 'nuevo' : sg(m.var_anual_pct, 1) + ' %'}</small></span></div>`).join('')}</div>
-    <p class="ref">Hechos del mes en cada municipio; debajo, variación frente a hace un año. Terrorismo: eventos; masacres: víctimas; F. Pública: uniformados afectados.</p></div>`;
-}
-
-// Lista lateral: tipos, departamentos o municipios, ordenados por número de hechos
-function lista() {
-  const v = st.vista, todas = items(v), its = [...todas].sort((a, b) => a.puesto_cantidad - b.puesto_cantidad), sel = st.sel[v].d;
-  const ts = its.map(c => c.cantidad || 0), mx = Math.max(...ts), mn = Math.min(...ts);
-  const l = $('#lista');
-  l.innerHTML = its.map((c, i) => {
-    const a = .08 + .52 * ((c.cantidad || 0) - mn) / ((mx - mn) || 1);
-    return `<button class="row" style="--a:${a.toFixed(2)}" data-e="${todas.indexOf(c)}" data-v="${v}" title="${esc(c.nombre)}" aria-pressed="${sel === c}">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(c.nombre)}</span></span>
-      <span class="vl"><strong>${fm0(c.cantidad)}</strong><small class="${cls(c.var_anual_pct)}">${c.var_anual_pct == null ? (c.cantidad > 0 ? 'nuevo' : '—') : sg(c.var_anual_pct, 1) + ' %'}</small></span></button>`;
-  }).join('');
-  const r = l.querySelector('[aria-pressed=true]');
-  if (r) l.scrollTop = Math.max(0, r.offsetTop - l.offsetTop - (l.clientHeight - r.offsetHeight) / 2);
-  const sl = $('#selLista');
-  sl.setAttribute('aria-label', 'Elegir ' + DIMS[v].una.toLowerCase());
-  sl.innerHTML = its.map(c => `<option value="${todas.indexOf(c)}"${sel === c ? ' selected' : ''}>${fm0(c.cantidad)} · ${esc(c.nombre)}</option>`).join(''); selTitle();
-}
-
-// Top: tipos / departamentos / municipios que más aumentaron o redujeron sus hechos (% vs. hace un año)
-function top5() {
-  const v = st.ttab, cfg = DIMS[v], todas = items(v), cnt = {up: 0, dn: 0};
-  const bloque = (tit, k, vacio) => {
-    const its = todas.filter(c => c.var_anual_pct != null);
-    const arr = (k === 'up' ? its.filter(c => c.var_anual_pct > 0).sort((a, b) => b.var_anual_pct - a.var_anual_pct)
-                            : its.filter(c => c.var_anual_pct < 0).sort((a, b) => a.var_anual_pct - b.var_anual_pct));
-    const mx = Math.max(...its.map(c => Math.abs(c.var_anual_pct)), 0.01);
-    cnt[k] = arr.length;
-    return `<h2 class="${k}">${tit} <small>(${arr.length})</small></h2>${arr.length ? arr.map((c, i) => `
-    <button class="tr" data-e="${todas.indexOf(c)}" data-v="${v}" title="${esc(c.nombre)}" aria-pressed="false">
-      <span class="rk">${i + 1}</span>
-      <span class="nm"><span>${esc(c.nombre)}</span><span class="bar"><b class="${k}" style="width:${100 * Math.abs(c.var_anual_pct) / mx}%"></b></span></span>
-      <span class="vl"><strong class="${k}">${flecha(c.var_anual_pct)} ${sg(c.var_anual_pct, 1)} %</strong><small class="${k}">${sg(c.diferencia, 0)} hechos</small></span></button>`).join('') : `<p class="vacio">${vacio}</p>`}`;
-  };
-  $('#t5s').innerHTML = bloque(`${cfg.plural} que aumentaron`, 'up', `${cfg.ning} aumentó sus hechos frente a hace un año.`);
-  $('#t5b').innerHTML = bloque(`${cfg.plural} que redujeron`, 'dn', `${cfg.ning} redujo sus hechos frente a hace un año.`);
-  // Celular: los dos paneles se reparten el alto disponible, 60 % al que tenga más registros y 40 % al otro (cada uno con su scroll)
-  const wu = cnt.up > cnt.dn ? 60 : cnt.up < cnt.dn ? 40 : 50;
-  $('#t5s').style.setProperty('--w', wu); $('#t5b').style.setProperty('--w', 100 - wu);
-}
-
-function serie() {
-  const s = cur(), dest = s.nac && st.gtab === 'dest';
-  // Ciudades y divisiones: el título es solo "Últimos 12 meses" (el nombre ya está en el panel del indicador)
-  $('#serieT').innerHTML = !s.nac ? '<span class="serTx">Hechos por mes: últimos 12 meses</span>'
-    : `<span class="serNm">${esc(s.nombre)}: </span><span class="serTx">${dest ? 'destacados' : 'últimos 12 meses'}</span>`;
-  // Nacional: pestañas Gráficas / Destacados
-  $('#tabs').innerHTML = s.nac
-    ? `<button data-gtab="graf" aria-pressed="${!dest}">Gráficas</button><button data-gtab="dest" aria-pressed="${dest}">Destacados</button>`
-    : '';
-  $('#chart').innerHTML = dest ? hallazgosHtml()
-    : s.nac
-    ? `<div class="dosw"><div class="dos"><div class="sl"><h3 class="sub2 t1">Últimos 12 meses</h3>${grafica(s.datos || [], false, 2)}</div><div class="sl"><h3 class="sub2">Mismo mes por año</h3>${grafica(D.serie.mismo_mes || [], true)}</div></div>${DNAV}</div>`
-    : grafica(s.datos || [], false, 0, s.d && s.d.unidad || 'hechos');
-  // Celular: interruptor Destacados bajo las pestañas; encendido oculta los demás paneles (clase vdest)
-  const sw = $('#swd'); if (sw) { sw.dataset.gtab = dest ? 'graf' : 'dest'; sw.setAttribute('aria-checked', String(dest)); }
-  const tp = $('#top'); if (tp) tp.classList.toggle('vdest', !!dest);
-}
-
-// Paneles de hallazgos (antes en TOP); ahora dentro de General, pestaña Destacados
-function hallazgosHtml() {
-  return `<div class="hz">${(D.hallazgos || []).filter(x => !esNac(x) && !esVarMes(x)).map(x => `
-    <div class="card ${/_alt[ao]$/.test(x.tipo) ? 'sube' : /_baj[ao]$/.test(x.tipo) ? 'baja' : ''}${esNac(x) ? ' nac' : ''}">
-      <h3>${esc(x.titulo)}</h3><p>${esc(nm(x.texto))}</p></div>`).join('')}</div>`;
-}
-
-function grafica(d, mm, dec = 2, unid = 'hechos') {
-  if (d.length < 2) return '<p class="mute">Sin datos suficientes.</p>';
-  const W = 520, H = matchMedia('(max-width:600px)').matches ? 190 : 250, L = 24, R = 24, T = 30, B = 34, paso = d.length > 13 ? Math.ceil(d.length / 8) : 1;
-  const vs = d.map(p => p.valor), mn = Math.min(...vs), mx = Math.max(...vs), pad = (mx - mn || 1) * .25;
-  const x = i => L + i * (W - L - R) / (d.length - 1), y = v => T + (H - T - B) * (1 - (v - (mn - pad)) / (mx - mn + 2 * pad));
-  let seg = '', pts = '', lab = '';
-  // 12 meses: si cada punto trae var_anual_pct (variación vs. el mismo mes del año anterior), la línea va neutra y el color lo ponen los puntos
-  const yoy = !mm && d.some(p => p.var_anual_pct != null);
-  d.forEach((p, i) => {
-    if (i) seg += `<line x1="${x(i - 1)}" y1="${y(d[i - 1].valor)}" x2="${x(i)}" y2="${y(p.valor)}" stroke="${yoy ? '#aebfc8' : p.valor > d[i - 1].valor ? 'var(--up-l)' : 'var(--dn-l)'}" stroke-width="${yoy ? 3 : 3.5}" stroke-linecap="round"/>`;
-    const ult = i === d.length - 1;
-    const cp = yoy && p.var_anual_pct != null ? (p.var_anual_pct > 0.004 ? 'var(--up-l)' : p.var_anual_pct < -0.004 ? 'var(--dn-l)' : 'var(--ink)') : null;
-    const tip = yoy && p.valor_hace_12 != null ? `<title>${esc(p.mes)} ${p.anio}: ${fmt(p.valor, dec)}${dec ? '' : ' ' + unid} · hace un año: ${fmt(p.valor_hace_12, dec)} (${sg(p.var_anual_pct, 1)} %)</title>` : '';
-    pts += `<circle cx="${x(i)}" cy="${y(p.valor)}" r="${ult ? 7 : 4.5}" fill="${ult ? '#fff' : cp || 'var(--ink)'}" stroke="${ult ? cp || 'var(--acc)' : 'none'}" stroke-width="3.5">${tip}</circle>`;
-    if (i === 0 || ult || p.valor === mx || p.valor === mn)
-      lab += `<text class="v" x="${x(i)}" y="${y(p.valor) - 12}" text-anchor="${i === 0 ? 'start' : ult ? 'end' : 'middle'}">${fmt(p.valor, dec)}</text>`;
-    if ((d.length - 1 - i) % paso === 0) lab += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle">${mm ? p.anio : esc(p.mes)}</text>`;
-  });
-  const svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Serie de ${mm ? 'años' : 'meses'}">${seg}${pts}${lab}</svg>`;
-  return yoy ? `<div class="gf">${svg}<p class="ref" style="margin:2px 0 0;font-size:13px"><span class="up">●</span> por encima del mismo mes del año anterior &nbsp; <span class="dn">●</span> por debajo</p></div>` : svg;
-}
-
-document.addEventListener('click', e => {
-  const b = e.target.closest('button'); if (!b || !D) return;
-  if (b.dataset.vista) {
-    if (b.dataset.vista === st.vista) return;
-    st.vista = b.dataset.vista; st.htab = 'ent'; render(); $('#app').scrollTo({top: 0}); return;
-  }
-  if (b.dataset.htab) { st.htab = b.dataset.htab; hero(); return; }
-  if (b.dataset.ttab) { st.ttab = b.dataset.ttab; render(); return; }
-  if (b.dataset.gtab) { st.gtab = b.dataset.gtab; serie(); return; }
-  if (b.dataset.tab) {
-    st.tab = b.dataset.tab;
-  } else if (b.dataset.e != null) {
-    // desde TOP se abre el detalle en la pestaña de esa dimensión
-    const v = b.dataset.v || st.vista;
-    st.sel[v] = entSerie(v, items(v)[b.dataset.e]); st.htab = 'ent';
-    if (st.vista !== v) { st.vista = v; render(); $('#app').scrollTo({top: 0}); return; }
-  } else return;
-  marcar(); hero(); serie();
+// Campos comunes de las dimensiones
+const base = k => ({
+  k, medida: 'Hechos del mes', ref: D => (((D.dimensiones || {})[k] || {}).referencias || []).map(r => `${esc(r.nombre)}: ${sg(r.var_anual_pct)} % en hechos`).join(' · '),
+  nom: x => x.nombre, val: x => x.cantidad, valTxt: x => fm0(x.cantidad), vr: x => x.var_anual_pct,
+  ord: (a, b) => a.puesto_cantidad - b.puesto_cantidad, serie: x => x.serie_12m,
+  topSub: x => `${sg(x.diferencia, 0)} ${und(x)}`, top: true, topRef: TOP_REF,
+  topTxt: {upS: 'aumentó sus hechos', dnS: 'redujo sus hechos'},
+  nuevos: {filtro: x => x.cantidad > 0, txt: x => `${fm0(x.cantidad)} ${und(x)}`},
+  hero: heroEnt,
+  hijos: {label: x => x.hijos_titulo || 'Fuentes', get: hijosGet,
+    nota: d => `Cantidad del mes; debajo, variación frente a hace un año. La barra muestra su peso dentro de ${esc(d.nombre)}.`}
 });
-document.addEventListener('change', e => {
-  if (!D || e.target.id !== 'selLista' || !DIMS[st.vista]) return;
-  const v = st.vista;
-  st.sel[v] = entSerie(v, items(v)[e.target.value]); st.htab = 'ent';
-  marcar(); hero(); serie();
+
+AV.init({
+  ind: 'terrorismo', title: 'Terrorismo', docTitle: 'Terrorismo',
+  vista0: 'com', sinTotal: true,   // sin índice: no hay ficha Total; se abre en Nacional (los 3 temas)
+  pmov: {meses: 3, card: 'Trimestre móvil', ant: 'mismo trimestre del año anterior'},   // trimestre móvil (los últimos 3 meses, p. ej. Ago–Oct) de cada año
+  aniosMov: ['dep'],   // Dptos: barras verticales, una por año con el trimestre móvil en el eje X, en suma de hechos (item.serie_anios, con 'temas' por fuente)
+  deltaMes: () => null,   // sin índice no hay flecha de variación mensual en el título
+  // Gráficas: temas y departamentos en cantidades reales (con su propia unidad); los temas con el color según el promedio de 12 meses previos (banda ±hero.banda_pct).
+  // Departamentos (por.dep): siguen contra el mismo mes del año anterior
+  g: {dec: () => 0, unit: (ctx, D, s) => ' ' + ((s && s.d && und(s.d)) || 'hechos'), vd: 1, vs: ' %', vf: 'var_ref_pct', useBanda: true, refKey: 'ref_12m', refLbl: 'promedio 12 meses previos',
+    ley: '<span class="up">●</span> por encima del promedio de los 12 meses previos (fuera de la banda) &nbsp; <span class="dn">●</span> por debajo',
+    nulo: () => '', calcMM: false, mmNota: 'Cifra sobre cada punto: valor del mes · debajo: variación frente al promedio mensual de los 12 meses previos a ese mes',
+    por: {dep: {barras: 'suma', vf: 'var_anual_pct', useBanda: false, refKey: 'valor_hace_12', refLbl: undefined, ley: undefined, nulo: x => x.cantidad > 0 ? 'nuevo' : '—'},
+          comp: {barras: true}}},   // Temas: la gráfica de trimestre móvil también son barras
+  tit: {ent: (D, s) => s && s.tipo === 'dep' ? (((s.d.serie_anios || [])[0] || {}).temas ? 'Hechos por tema: trimestre móvil, por año' : 'Hechos del trimestre móvil, por año') : 'Hechos por mes: últimos 12 meses'},
+  // No hay indicador principal: todos los destacados se muestran
+  esNac: () => false,
+  esVarMes: () => false,
+  dims: {
+    com: {...base('componentes'), una: 'Tema', plural: 'Temas', ning: 'Ningún tema', titulo: D => D.periodo.mes_nombre, kick: 'Tema',   // el panel lleva el mes reciente (p. ej. Octubre)
+      medida: () => '',   // sin subtítulo: el mes ya va en el título
+      ref: D => `Cantidades del mes: eventos de terrorismo, víctimas de masacres y uniformados afectados. A la derecha, la variación frente al promedio mensual de los 12 meses previos (en línea: ±${fmt((D.hero || {}).banda_pct, 0)} %).`,
+      val: x => Math.abs(x.var_ref_pct || 0),
+      vr: x => x.var_ref_pct,
+      // Color de la fila: gris si está por encima o en línea, ámbar si está por debajo; intensidad = cuánto se aleja del promedio (50 % o más = máxima)
+      rowCls: x => x.estado === 'debajo' ? 'rw-dn' : '',
+      alfa: x => Math.abs(x.var_ref_pct || 0) / 50,
+      top: false, topOk: x => !!x.estado && x.estado !== 'linea',
+      nom: x => NCORTO[x.codigo] || x.nombre,
+      valTxt: x => `${fm0(x.cantidad)} ${und(x)}`,
+      opt: x => `${fm0(x.cantidad)} ${und(x)} · ${NCORTO[x.codigo] || x.nombre}`,
+      sub: x => x.ref_12m == null ? '' : `Prom. 12 meses: ${prom(x)}`,
+      hero: (x, D) => heroComp(x, D),
+      prev: {titulo: (D, d) => `Meses anteriores (${und(d)})`},   // los 4 meses previos, solo su valor (columna derecha del panel)
+      // Tres gráficas por tema: últimos 12 meses, mismo mes por año y trimestre móvil por año (el mismo formato de Dptos)
+      graficas: [
+        {lbl: 'Últimos 12 meses', titulo: (D, s) => `${cap(und(s.d))} por mes: últimos 12 meses`, datos: d => d.serie_12m},
+        {lbl: 'Mismo mes por año', titulo: (D, s) => `${cap(und(s.d))}: ${D.periodo.mes_nombre.toLowerCase()} de cada año`, datos: d => d.serie_mismo_mes, mm: true,
+          ov: {vf: 'var_anual_pct', useBanda: false, mmNota: 'Cifra sobre cada punto: valor del mes · debajo: variación frente al mismo mes del año anterior'}},
+        {lbl: 'Trimestre móvil', titulo: (D, s) => `${cap(und(s.d))}: trimestre móvil, por año`, datos: d => d.serie_anios, anual: true}
+      ],
+      hijos: {label: x => x.hijos_titulo || 'Detalle', get: hijosComp,
+        nota: (d, D) => `Cantidad real del mes en cada categoría de ${esc(d.nombre.toLowerCase())}. A la derecha, su peso dentro del total (la barra muestra ese mismo peso); debajo, el cambio frente al promedio mensual de los 12 meses previos.`}},
+    dep: {...base('departamentos'), una: 'Departamento', plural: 'Departamentos', ning: 'Ningún departamento', titulo: 'Por departamento', kick: 'Hechos por departamento', hijos2: municipios}
+  }
 });
 </script>
 </body>

@@ -97,6 +97,17 @@
     }
 
 
+
+    /* Card Narcotráfico: solo la línea de Cocaína, con las toneladas del primer y del último mes sobre la línea */
+    #sparkNarco{align-items:stretch}
+    .nv{width:100%;display:flex;flex-direction:column;justify-content:center}
+    .nv-main{display:flex;flex-direction:column;align-items:stretch}
+    .nv-lbl{font-size:11px;font-weight:600;color:#6f8695;line-height:1.1;text-align:left}
+    .nv-main svg{display:block;width:100%;height:auto;overflow:visible}
+    @media (max-width:600px) and (orientation:portrait){
+      .nv-lbl{font-size:9px}
+    }
+
     /* Footer: espacio de Aliado estratégico (igual que en Pulso) */
     footer.site-foot .sponsors,footer.site-foot .ad-wrap{display:block}
     footer.site-foot .ad-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#cfe3ea;font-weight:700;margin:0 0 4px 2px}
@@ -177,10 +188,10 @@
           <div class="sub">Fuente: Policía Nal.</div>
         </a>
 
-        <a class="card glass" id="cardNarco" href="detalle/cocaina.html?ind=cocaina" data-dashboard aria-label="Incautación Cocaína">
-          <div class="head"><h2>Incautación Cocaína</h2><span class="go" aria-hidden="true">›</span></div>
+        <a class="card glass" id="cardNarco" href="narcotrafico.html" data-dashboard aria-label="Narcotráfico">
+          <div class="head"><h2>Narcotráfico</h2><span class="go" aria-hidden="true">›</span></div>
           <div class="spark" id="sparkNarco"></div>
-          <div class="sub">Fuente: Mindefensa</div>
+          <div class="sub" id="subNarco">Fuente: datos.gov.co</div>
         </a>
 
         <a class="card glass" id="cardTerrorismo" href="detalle/terrorismo.html?ind=terrorismo" data-dashboard aria-label="Terrorismo">

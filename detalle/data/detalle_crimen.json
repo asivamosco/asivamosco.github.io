@@ -1,7 +1,7 @@
 {
   "indicador": "crimen",
   "fuente": "Policía Nacional",
-  "generado_en": "2026-11-24T18:48:44+00:00",
+  "generado_en": "2026-11-27T19:57:33+00:00",
   "periodo": {
     "anio": 2026,
     "mes_num": 10,
@@ -60,10 +60,10 @@
     {
       "tipo": "depto_baja",
       "titulo": "Departamento con mayor reducción",
-      "texto": "Bogotá D.C.: 47,88 % menos casos (13.942 frente a 26.749).",
+      "texto": "Bogota: 47,88 % menos casos (13.942 frente a 26.749).",
       "valor": -47.88,
       "unidad": "%",
-      "departamento": "Bogotá D.C."
+      "departamento": "Bogota"
     },
     {
       "tipo": "depto_alta",
@@ -76,10 +76,10 @@
     {
       "tipo": "depto_aporte",
       "titulo": "Quién pesa más en el cambio",
-      "texto": "Bogotá D.C. explica el 63,20 % de la reducción de casos del país (12.807 casos de 20.263).",
+      "texto": "Bogota explica el 63,20 % de la reducción de casos del país (12.807 casos de 20.263).",
       "valor": 63.2,
       "unidad": "%",
-      "departamento": "Bogotá D.C."
+      "departamento": "Bogota"
     },
     {
       "tipo": "deptos_suben",
@@ -128,14 +128,14 @@
           "comentario_popular": "18.340 casos en octubre (35,85 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 6710,
               "cantidad_hace_12": 12227,
               "var_anual_pct": -45.12,
               "participacion_pct": 36.6
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 1773,
               "cantidad_hace_12": 2251,
               "var_anual_pct": -21.24,
@@ -289,7 +289,7 @@
               "participacion_pct": 0.5
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 59,
               "cantidad_hace_12": 101,
               "var_anual_pct": -41.58,
@@ -459,7 +459,7 @@
           "comentario_popular": "8.970 casos en octubre (30,29 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 1709,
               "cantidad_hace_12": 4952,
               "var_anual_pct": -65.49,
@@ -480,7 +480,7 @@
               "participacion_pct": 8.5
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 709,
               "cantidad_hace_12": 882,
               "var_anual_pct": -19.61,
@@ -634,7 +634,7 @@
               "participacion_pct": 0.4
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 31,
               "cantidad_hace_12": 34,
               "var_anual_pct": -8.82,
@@ -790,7 +790,7 @@
           "comentario_popular": "7.707 casos en octubre (8,09 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 1407,
               "cantidad_hace_12": 2224,
               "var_anual_pct": -36.74,
@@ -811,7 +811,7 @@
               "participacion_pct": 9.8
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 752,
               "cantidad_hace_12": 791,
               "var_anual_pct": -4.93,
@@ -937,7 +937,7 @@
               "participacion_pct": 1.1
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 76,
               "cantidad_hace_12": 69,
               "var_anual_pct": 10.14,
@@ -1121,7 +1121,7 @@
           "comentario_popular": "6.915 casos en octubre (18,43 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 1017,
               "cantidad_hace_12": 2215,
               "var_anual_pct": -54.09,
@@ -1135,7 +1135,7 @@
               "participacion_pct": 13.3
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 674,
               "cantidad_hace_12": 620,
               "var_anual_pct": 8.71,
@@ -1268,7 +1268,7 @@
               "participacion_pct": 1.2
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 66,
               "cantidad_hace_12": 48,
               "var_anual_pct": 37.5,
@@ -1452,14 +1452,14 @@
           "comentario_popular": "6.130 casos en octubre (8,49 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 1007,
               "cantidad_hace_12": 2090,
               "var_anual_pct": -51.82,
               "participacion_pct": 16.4
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 737,
               "cantidad_hace_12": 590,
               "var_anual_pct": 24.92,
@@ -1620,7 +1620,7 @@
               "participacion_pct": 0.7
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 40,
               "cantidad_hace_12": 45,
               "var_anual_pct": -11.11,
@@ -1783,14 +1783,14 @@
           "comentario_popular": "2.225 casos en octubre (27,14 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 472,
               "cantidad_hace_12": 487,
               "var_anual_pct": -3.08,
               "participacion_pct": 21.2
             },
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 383,
               "cantidad_hace_12": 481,
               "var_anual_pct": -20.37,
@@ -1888,7 +1888,7 @@
               "participacion_pct": 1.4
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 31,
               "cantidad_hace_12": 37,
               "var_anual_pct": -16.22,
@@ -2086,7 +2086,7 @@
           "comentario_popular": "2.083 casos en octubre (27,40 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 486,
               "cantidad_hace_12": 789,
               "var_anual_pct": -38.4,
@@ -2100,7 +2100,7 @@
               "participacion_pct": 15.1
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 151,
               "cantidad_hace_12": 230,
               "var_anual_pct": -34.35,
@@ -2268,7 +2268,7 @@
               "participacion_pct": 0.5
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 7,
               "cantidad_hace_12": 17,
               "var_anual_pct": -58.82,
@@ -2417,14 +2417,14 @@
           "comentario_popular": "1.763 casos en octubre (2,27 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 498,
               "cantidad_hace_12": 517,
               "var_anual_pct": -3.68,
               "participacion_pct": 28.2
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 176,
               "cantidad_hace_12": 186,
               "var_anual_pct": -5.38,
@@ -2557,7 +2557,7 @@
               "participacion_pct": 1.6
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 27,
               "cantidad_hace_12": 10,
               "var_anual_pct": 170,
@@ -2741,7 +2741,7 @@
           "comentario_popular": "1.759 casos en octubre (29,50 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 326,
               "cantidad_hace_12": 625,
               "var_anual_pct": -47.84,
@@ -2755,7 +2755,7 @@
               "participacion_pct": 9.8
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 173,
               "cantidad_hace_12": 174,
               "var_anual_pct": -0.57,
@@ -2916,7 +2916,7 @@
               "participacion_pct": 0.4
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 7,
               "cantidad_hace_12": 15,
               "var_anual_pct": -53.33,
@@ -3072,7 +3072,7 @@
           "comentario_popular": "1.059 casos en octubre (4,68 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 183,
               "cantidad_hace_12": 199,
               "var_anual_pct": -8.04,
@@ -3086,7 +3086,7 @@
               "participacion_pct": 13.6
             },
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 79,
               "cantidad_hace_12": 99,
               "var_anual_pct": -20.2,
@@ -3142,7 +3142,7 @@
               "participacion_pct": 3.7
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 32,
               "cantidad_hace_12": 25,
               "var_anual_pct": 28,
@@ -3396,14 +3396,14 @@
               "participacion_pct": 11.0
             },
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 87,
               "cantidad_hace_12": 197,
               "var_anual_pct": -55.84,
               "participacion_pct": 10.9
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 72,
               "cantidad_hace_12": 117,
               "var_anual_pct": -38.46,
@@ -3501,7 +3501,7 @@
               "participacion_pct": 1.6
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 11,
               "cantidad_hace_12": 22,
               "var_anual_pct": -50,
@@ -3678,14 +3678,14 @@
           "comentario_popular": "623 casos en octubre (28,56 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 226,
               "cantidad_hace_12": 319,
               "var_anual_pct": -29.15,
               "participacion_pct": 36.3
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 166,
               "cantidad_hace_12": 185,
               "var_anual_pct": -10.27,
@@ -3727,7 +3727,7 @@
               "participacion_pct": 3.9
             },
             {
-              "nombre": "La Guajira",
+              "nombre": "Guajira",
               "cantidad": 13,
               "cantidad_hace_12": 11,
               "var_anual_pct": 18.18,
@@ -4102,7 +4102,7 @@
               "participacion_pct": 14.3
             },
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 2,
               "cantidad_hace_12": 2,
               "var_anual_pct": 0,
@@ -4244,7 +4244,7 @@
           "comentario_popular": "9 casos en octubre (55,00 % menos que hace un año).",
           "hijos": [
             {
-              "nombre": "Bogotá D.C.",
+              "nombre": "Bogota",
               "cantidad": 5,
               "cantidad_hace_12": 12,
               "var_anual_pct": -58.33,
@@ -4386,7 +4386,7 @@
               "participacion_pct": 14.3
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 1,
               "cantidad_hace_12": 2,
               "var_anual_pct": -50,
@@ -4507,7 +4507,7 @@
               "participacion_pct": 33.3
             },
             {
-              "nombre": "Valle del Cauca",
+              "nombre": "Valle",
               "cantidad": 1,
               "cantidad_hace_12": 0,
               "var_anual_pct": null,
@@ -4605,7 +4605,7 @@
       ],
       "items": [
         {
-          "nombre": "Bogotá D.C.",
+          "nombre": "Bogota",
           "cantidad": 13942,
           "cantidad_hace_12": 26749,
           "diferencia": -12807,
@@ -5008,7 +5008,7 @@
           ]
         },
         {
-          "nombre": "Valle del Cauca",
+          "nombre": "Valle",
           "cantidad": 6040,
           "cantidad_hace_12": 6717,
           "diferencia": -677,
@@ -8991,7 +8991,7 @@
           ]
         },
         {
-          "nombre": "La Guajira",
+          "nombre": "Guajira",
           "cantidad": 400,
           "cantidad_hace_12": 436,
           "diferencia": -36,
@@ -10702,7 +10702,7 @@
       "items": [
         {
           "nombre": "Bogotá D.C.",
-          "departamento": "Bogotá D.C.",
+          "departamento": "Bogota",
           "cantidad": 13942,
           "cantidad_hace_12": 26749,
           "diferencia": -12807,
@@ -10901,7 +10901,7 @@
         },
         {
           "nombre": "Cali",
-          "departamento": "Valle del Cauca",
+          "departamento": "Valle",
           "cantidad": 3837,
           "cantidad_hace_12": 4270,
           "diferencia": -433,
